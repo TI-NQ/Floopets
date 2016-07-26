@@ -1,8 +1,7 @@
 <?php
 	class gestion_permisos
 	{
-		// Metodo Create()
-		// El metodo guarda los datos en la tabla contactos, captura todos los parametros desde el formulario.
+		// Metodo Create()		
 		function Create($cod_permiso,$permiso_nombre)
 		{
 			//Instanciamos y nos conectamos a la bd

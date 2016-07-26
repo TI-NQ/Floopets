@@ -2,7 +2,6 @@
 	class gestion_tipo_denuncia
 	{
 		// Metodo Create()
-		// El metodo guarda los datos en la tabla contactos, captura todos los parametros desde el formulario.
 		function Create($td_tipo_denuncia,$td_nombre,$td_estado)
 		{
 			//Instanciamos y nos conectamos a la bd

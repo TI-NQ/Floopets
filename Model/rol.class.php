@@ -1,8 +1,7 @@
 <?php
 	class gestion_rol
 	{
-		// Metodo Create()
-		// El metodo guarda los datos en la tabla contactos, captura todos los parametros desde el formulario.
+		// Metodo Create()		
 		function Create($cod_rol,$rol_nombre)
 		{
 			//Instanciamos y nos conectamos a la bd

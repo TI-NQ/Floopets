@@ -1,8 +1,7 @@
 <?php
 	class gestion_cuidado
 	{
-		// Metodo Create()
-		// El metodo guarda los datos en la tabla contactos, captura todos los parametros desde el formulario.
+		// Metodo Create()	
 		function Create($cu_cod_cuidado,$cu_nombre,$cu_descripcion)
 		{
 			//Instanciamos y nos conectamos a la bd

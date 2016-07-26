@@ -1,8 +1,7 @@
 <?php
 	class gestion_animal
 	{
-		// Metodo Create()
-		// El metodo guarda los datos en la tabla contactos, captura todos los parametros desde el formulario.
+		// Metodo Create()		
 		function Create($ta_cod_tipo_animal,$ta_nombre,$cu_cod_cuidado,$tamano,$galeria,$video)
 		{
 			//Instanciamos y nos conectamos a la bd
