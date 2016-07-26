@@ -1,6 +1,6 @@
 <?php 
-	require_once("../Model/db_conn.php");
-	require_once("../Model/empresa.class.php");
+	require_once("../Model/conexion.php");
+	require_once("../Model/tipo_organizacion.class.php");
 
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
@@ -12,11 +12,10 @@
 			try {
 				Gestion_tipo_organizacion::Create($to_nombre);
 				$mensaje = "Se elimino exitosamente";
-			header("Location: ../View/registrar_tipo_organizacion.php?m=".$mensaje);
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-				header("Location: ../View/registrar_tipo_organizacion.php?m=".$mensaje);
 			}
+			header("Location: ../View/registrar_tipo_organizacion.php?m=$mensaje");
 
 			break;
 		
