@@ -1,4 +1,4 @@
-<?php 
+<?php
 	class gestion_tipo_evento{
 
 		function Create($te_nombre,$te_estado){
@@ -12,9 +12,9 @@
 			$query=$conexion->prepare($consulta);
 			$query->exetute(array($te_nombre,$te_estado));
 
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 		}
-		
+
 
 		function ReadALL(){
 			//Instanciamos y nos conectamos a la bd
@@ -28,7 +28,7 @@
 			$query=$conexion->prepare($consulta);
 			$query->execute();
 			$resultado = $query->fetchALL(PDO::FETCH_BOTH);
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 
 			return $resultado;
 		}
@@ -41,12 +41,12 @@
 
 			//Creamos el query de la consulta a la bd
 			$consulta="SELECT * FROM tipo_evento WHERE te_cod_tipo_evento=? ";
-			
+
 			$query=$conexion->prepare($consulta);
 			$query->execute(array($te_cod_tipo_evento));
 
 			$resultado = $query->fetch(PDO::FETCH_BOTH);
-		
+
 			floopets_BD::Disconect();
 			return $resultado;
 		}

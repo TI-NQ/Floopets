@@ -11,7 +11,7 @@
 			$consulta ="INSERT INTO adopcion (ado_cod_adopcion,ani_cod_animal,usu_cod_usuario,ado_fecha,ado_hora) VALUES (?,?,?,?,?)";
 			$query = $conexion->prepare($consulta);
 			$query->execute(array($ado_cod_adopcion,$ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora));
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 		}
 		function ReadAll()
 		{

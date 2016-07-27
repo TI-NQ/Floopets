@@ -1,7 +1,7 @@
 <?php
 	class gestion_denuncia
 	{
-		// Metodo Create()		
+		// Metodo Create()
 		function Create($de_cod_denuncia,$usu_cod_usuario,$td_tipo_denuncia,$descripcion,$de_fecha)
 		{
 			//Instanciamos y nos conectamos a la bd
@@ -11,7 +11,7 @@
 			$consulta ="INSERT INTO denuncia (de_cod_denuncia,usu_cod_usuario,td_tipo_denuncia,descripcion,de_fecha) VALUES (?,?,?,?,?)";
 			$query = $conexion->prepare($consulta);
 			$query->execute(array($de_cod_denuncia,$usu_cod_usuario,$td_tipo_denuncia,$descripcion,$de_fecha));
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 		}
 
 	}

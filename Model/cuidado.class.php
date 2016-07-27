@@ -1,7 +1,7 @@
 <?php
 	class gestion_cuidado
 	{
-		// Metodo Create()	
+		// Metodo Create()
 		function Create($cu_cod_cuidado,$cu_nombre,$cu_descripcion)
 		{
 			//Instanciamos y nos conectamos a la bd
@@ -11,7 +11,7 @@
 			$consulta ="INSERT INTO cuidado (cu_cod_cuidado,cu_nombre,cu_descripcion) VALUES (?,?,?)";
 			$query = $conexion->prepare($consulta);
 			$query->execute(array($cu_cod_cuidado,$cu_nombre,$cu_descripcion));
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 		}
 
 	}

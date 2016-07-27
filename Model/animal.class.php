@@ -11,7 +11,7 @@
 			$consulta ="INSERT INTO animal (ani_cod_animal,ra_cod_raza,ani_nombre,ani_esterilizado,ani_edad,ani_descripcion,ani_numero_microchip) VALUES (?,?,?,?,?,?,?)";
 			$query = $conexion->prepare($consulta);
 			$query->execute(array($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip));
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 		}
 		function ReadAll()
 		{

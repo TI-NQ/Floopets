@@ -12,7 +12,7 @@
 			$consulta ="INSERT INTO vacunas (vac_cod_vacuna,vac_nombre,fecha) VALUES (?,?,?)";
 			$query = $conexion->prepare($consulta);
 			$query->execute(array($vac_cod_vacuna,$vac_nombre,$fecha));
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 		}
 
 	}

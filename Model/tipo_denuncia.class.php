@@ -11,7 +11,7 @@
 			$consulta ="INSERT INTO tipo_denuncia (td_tipo_denuncia,td_nombre,td_estado) VALUES (?,?,?)";
 			$query = $conexion->prepare($consulta);
 			$query->execute(array($td_tipo_denuncia,$td_nombre,$td_estado));
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 		}
 
 	}

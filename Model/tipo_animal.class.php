@@ -1,7 +1,7 @@
 <?php
 	class gestion_animal
 	{
-		// Metodo Create()		
+		// Metodo Create()
 		function Create($ta_cod_tipo_animal,$ta_nombre,$cu_cod_cuidado,$tamano,$galeria,$video)
 		{
 			//Instanciamos y nos conectamos a la bd
@@ -11,7 +11,7 @@
 			$consulta ="INSERT INTO tipo_animal (ta_cod_tipo_animal,ta_nombre,cu_cod_cuidado,tamano,galeria,video) VALUES (?,?,?,?,?,?)";
 			$query = $conexion->prepare($consulta);
 			$query->execute(array($ta_cod_tipo_animal,$ta_nombre,$cu_cod_cuidado,$tamano,$galeria,$video));
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 		}
 
 	}

@@ -1,5 +1,5 @@
-<?php 
-	
+<?php
+
 	class Gestion_tipo_donacion{
 
 		function Create($td_nombre,$td_estado){
@@ -14,7 +14,7 @@
 			$query = $conexion->prepare($consulta);
 			$query->execute(array($td_nombre,$td_estado));
 
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 	}
 
 		function ReadALL(){
@@ -30,7 +30,7 @@
 			$query->execute();
 
 			$resultado = $query->fetchALL(PDO::FETCH_BOTH);
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 
 			return $resultado;
 		}
@@ -41,7 +41,7 @@
 			$Conexion = floopets_BD::Connect();
 			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 			//Crear el query que vamos a realizar
 			$consulta = "SELECT * FROM tipo_donacion WHERE td_cod_tipo_donacion=?";
@@ -54,7 +54,7 @@
 			//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
 
 			$resultado = $query->fetch(PDO::FETCH_BOTH);
-		
+
 			floopets_BD::Disconect();
 			return $resultado;
         }
@@ -64,16 +64,16 @@
 			$Conexion = floopets_BD::Connect();
 			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 			//Crear el query que vamos a realizar
 			$consulta = "UPDATE tipo_donacion SET td_nombre=?, td_estado=? WHERE td_cod_tipo_donacion = ?" ;
 
 			$query = $Conexion->prepare($consulta);
-			$query->execute(array($td_nombre,$td_estado,$td_cod_tipo_donacion));		
+			$query->execute(array($td_nombre,$td_estado,$td_cod_tipo_donacion));
 
 			floopets_BD::Disconect();
-			
+
 	}
 
 		function Delete($td_cod_tipo_donacion){
@@ -81,17 +81,17 @@
 			$Conexion = floopets_BD::Connect();
 			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 			//Crear el query que vamos a realizar
 			$consulta = "DELETE FROM tipo_donacion WHERE td_cod_tipo_donacion = ?" ;
 
 			$query = $Conexion->prepare($consulta);
-			$query->execute(array($td_cod_tipo_donacion));		
+			$query->execute(array($td_cod_tipo_donacion));
 
 			floopets_BD::Disconect();
-			
-	}	
+
+	}
 
 	}
 

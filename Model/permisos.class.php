@@ -1,7 +1,7 @@
 <?php
 	class gestion_permisos
 	{
-		// Metodo Create()		
+		// Metodo Create()
 		function Create($cod_permiso,$permiso_nombre)
 		{
 			//Instanciamos y nos conectamos a la bd
@@ -11,7 +11,7 @@
 			$consulta ="INSERT INTO permiso (cod_permiso,permiso_nombre) VALUES (?,?)";
 			$query = $conexion->prepare($consulta);
 			$query->execute(array($cod_permiso,$permiso_nombre));
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 		}
 
 	}
