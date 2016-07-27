@@ -1,9 +1,9 @@
-<form action="../Controller/tipo_donacion.controller.php" method="POST">
+<form action="../Controller/tipo_evento.controller.php" method="POST">
 	<div class="form-group">
 		<label class="form-label">nombre</label>
-		<input class="form-control"  name="td_nombre" required>
+		<input class="form-control"  name="te_nombre" required>
 		<label class="form-label">estado</label>
-		<input class="form-control"  name="td_estado" required>
+		<input class="form-control"  name="te_estado" required>
 
 	</div>
 	<div class="form-group">

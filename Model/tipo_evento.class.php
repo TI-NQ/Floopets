@@ -1,16 +1,16 @@
 <?php
-	class gestion_tipo_evento{
+	class Gestion_tipo_evento{
 
 		function Create($te_nombre,$te_estado){
 			//Instanciamos y nos conectamos a la bd
-			$conexion=floopets_BD::Connet();
+			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 			//Creamos el query de la consulta a la BD
 			$consulta="INSERT INTO tipo_evento (te_nombre,te_estado) VALUES (?,?)";
 
 			$query=$conexion->prepare($consulta);
-			$query->exetute(array($te_nombre,$te_estado));
+			$query->execute(array($te_nombre,$te_estado));
 
 			floopets_BD::Disconnect();
 		}
@@ -18,7 +18,7 @@
 
 		function ReadALL(){
 			//Instanciamos y nos conectamos a la bd
-			$conexion=floopets_BD::Connet();
+			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 
@@ -33,9 +33,9 @@
 			return $resultado;
 		}
 
-		function ReadByID($te_cod_tipo_evento){
+		function ReadbyID($te_cod_tipo_evento){
 			//Intanciamos y nos conectamos a la bd
-			$conexion=floopets_BD::Connet();
+			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 
@@ -47,7 +47,7 @@
 
 			$resultado = $query->fetch(PDO::FETCH_BOTH);
 
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 			return $resultado;
 		}
 
