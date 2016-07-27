@@ -59,6 +59,23 @@
 			//Creamos el query de la consulta a la bd
 			$consulta = "UPDATE tipo_evento SET te_nombre=?, te_estado=? WHERE td_cod_tipo_evento = ?" ;
 		}
+
+		function Delete($te_cod_tipo_evento){
+			//Instanciamos y nos conectamos a la bd
+			$Conexion = floopets_BD::Connect();
+			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		
+
+			//Crear el query que vamos a realizar
+			$consulta = "DELETE FROM tipo_evento WHERE te_cod_tipo_evento = ?" ;
+
+			$query = $Conexion->prepare($consulta);
+			$query->execute(array($te_cod_tipo_evento));		
+
+			floopets_BD::Disconect();
+			
+	}	
 	}
 
 
