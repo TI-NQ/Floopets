@@ -14,7 +14,7 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/registrar_tipo_organizacion.php?m=$mensaje");
+			header("Location: ../View/gestion_tipo_organizacion.php?m=$mensaje");
 
 			break;
 			case 'u':
@@ -27,7 +27,7 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/registrar_tipo_organizacion.php?m=$mensaje");
+			header("Location: ../View/gestion_tipo_organizacion.php?m=$mensaje");
 
 				break;
 
@@ -35,10 +35,10 @@
 			try {
           $tipo_organizacion = Gestion_tipo_organizacion::Delete(base64_decode($_REQUEST["tp"]));
           $mensaje = "se elimino correctamente";
-          header("Location: ../View/registrar_tipo_organizacion.php?m=".$mensaje);
+          header("Location: ../View/gestion_tipo_organizacion.php?m=".$mensaje);
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-          header("Location: ../View/registrar_tipo_organizacion.php?m=".$mensaje);
+          header("Location: ../View/gestion_tipo_organizacion.php?m=".$mensaje);
         }
       break;
 			
