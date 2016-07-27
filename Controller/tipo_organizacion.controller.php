@@ -6,12 +6,11 @@
 	switch ($accion) {
 		case 'c':
 				
-			$to_cod_tipo_organizacion 	= $_POST["to_cod_tipo_organizacion"];
 			$to_nombre			= $_POST["to_nombre"];
 
 			try {
 				Gestion_tipo_organizacion::Create($to_nombre);
-				$mensaje = "Se elimino exitosamente";
+				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}

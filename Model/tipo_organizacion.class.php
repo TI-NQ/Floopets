@@ -7,7 +7,7 @@ class Gestion_tipo_organizacion{
 	function Create($to_nombre){
 
 		//Instanciamos y nos conectamos a la bd
-		$Conexion = floopets::Connect();
+		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
 		$consulta = "INSERT INTO tipo_organizacion (to_nombre) VALUES (?)";
@@ -15,7 +15,7 @@ class Gestion_tipo_organizacion{
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($to_nombre));
 
-		floopets::Disconnect();
+		floopets_BD::Disconnect();
 	}
 
 	//Metodo ReadAll()
@@ -24,7 +24,7 @@ class Gestion_tipo_organizacion{
 	function ReadAll(){
 
 		//Instanciamos y nos conectamos a la bd
-		$Conexion = floopets::Connect();
+		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		
@@ -42,12 +42,12 @@ class Gestion_tipo_organizacion{
 		$resultado = $query->fetchALL(PDO::FETCH_BOTH);
 		return $resultado;
 
-		floopets::Disconnect();
+		floopets_BD::Disconnect();
 	}
 	
 	function Update($to_cod_tipo_organizacion,$to_nombre){
 	//Instanciamos y nos conectamos a la bd
-		$Conexion = floopets::Connect();
+		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		
@@ -58,12 +58,12 @@ class Gestion_tipo_organizacion{
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($to_cod_tipo_organizacion,$to_nombre));		
 
-		floopets::Disconnect();
+		floopets_BD::Disconnect();
 	
 	}
 		function Delete($to_cod_tipo_organizacion){
 	//Instanciamos y nos conectamos a la bd
-		$Conexion = floopets::Connect();
+		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
 		
@@ -74,7 +74,7 @@ class Gestion_tipo_organizacion{
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($to_cod_tipo_organizacion));		
 
-		floopets::Disconnect();
+		floopets_BD::Disconnect();
 	}
 }
 
