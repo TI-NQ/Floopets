@@ -60,15 +60,15 @@
 				floopets_BD::Disconnect();
 
 		}
-			function Delete($vac_nombre,$fecha,$vac_cod_vacuna)
-			{
+		function Delete($vac_cod_vacuna)
+		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
 				$consulta = "DELETE FROM vacunas WHERE vac_cod_vacuna = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($vac_nombre,$fecha,$vac_cod_vacuna));
+				$query->execute(array($vac_cod_vacuna));
 				floopets_BD::Disconnect();
 		}
 

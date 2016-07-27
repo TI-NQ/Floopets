@@ -32,6 +32,17 @@
 				header("Location: ../View/gestion_vacunas.php?m= ".$mensaje );
 				break;
 
+		case 'd':
+					try {
+		          $vacunas = gestion_vacuna::Delete(base64_decode($_REQUEST["ui"]));
+		          $mensaje = "Se eliminó correctamente";
+		          header("Location: ../View/gestion_vacunas.php?m=".$mensaje);
+		        } catch (Exception $e) {
+		          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
+		          header("Location: ../View/gestion_vacunas.php?m=".$mensaje);
+		        }
+		      break;
+
 	}
 
  ?>

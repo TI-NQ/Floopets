@@ -1,11 +1,11 @@
-<?php 
+<?php
 	require_once("../Model/conexion.php");
 	require_once("../Model/tipo_organizacion.class.php");
 
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
 		case 'c':
-				
+
 			$to_nombre			= $_POST["to_nombre"];
 
 			try {
@@ -30,7 +30,7 @@
 			header("Location: ../View/registrar_tipo_organizacion.php?m=$mensaje");
 
 				break;
-		
+
 		case 'd':
 			try {
           $tipo_organizacion = Gestion_tipo_organizacion::Delete(base64_decode($_REQUEST["tp"]));
@@ -41,7 +41,7 @@
           header("Location: ../View/registrar_tipo_organizacion.php?m=".$mensaje);
         }
       break;
-			break;
+			
 	}
 
- ?>	
+ ?>

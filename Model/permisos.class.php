@@ -45,6 +45,29 @@
 			return $resultado;
 			floopets_BD::Disconnect();
 		}
+		function Update($cod_permiso,$permiso_nombre)
+		{
+				//Instanciamos y nos conectamos a la bd
+				$Conexion = floopets_BD::Connect();
+				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				//Crear el query que vamos a realizar
+				$consulta = "UPDATE permiso SET permiso_nombre = ? WHERE cod_permiso = ?" ;
+				$query = $Conexion->prepare($consulta);
+				$query->execute(array($permiso_nombre,$cod_permiso));
+				floopets_BD::Disconnect();
+
+		}
+		function Delete($cod_permiso)
+		{
+				//Instanciamos y nos conectamos a la bd
+				$Conexion = floopets_BD::Connect();
+				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				//Crear el query que vamos a realizar
+				$consulta = "DELETE FROM permiso WHERE cod_permiso = ?" ;
+				$query = $Conexion->prepare($consulta);
+				$query->execute(array($vac_cod_vacuna));
+				floopets_BD::Disconnect();
+		}
 
 
 	}
