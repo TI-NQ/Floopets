@@ -5,8 +5,7 @@
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
 		case 'c':
-
-			$va_cod_vacuna 	= $_POST["va_cod_vacuna"];
+			// $va_cod_vacuna 	= $_POST["va_cod_vacuna"];
 			$vac_nombre			= $_POST["vac_nombre"];
       $fecha          = $_POST["fecha"];
 			try {
@@ -19,9 +18,20 @@
 
 			break;
 
-		default:
-			# code...
-			break;
+		case 'u':
+			$vac_cod_vacuna = $_POST["vac_cod_vacuna"];
+			$vac_nombre			= $_POST["vac_nombre"];
+      $fecha          = $_POST["fecha"];
+
+				try{
+					gestion_vacuna::Update($vac_cod_vacuna,$vac_nombre,$fecha);
+					$mensaje = "Se actualizo correctamente";
+				}catch(Exception $e){
+					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
+				}
+				header("Location: ../View/gestion_vacunas.php?m= ".$mensaje );
+				break;
+
 	}
 
  ?>

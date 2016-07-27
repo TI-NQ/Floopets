@@ -11,7 +11,7 @@
 				$consulta ="INSERT INTO usuario (usu_cod_usuario,usu_nombre,usu_apellido,usu_telefono,usu_cedula,usu_email,cod_rol) VALUES (?,?,?,?,?,?,?)";
 				$query = $conexion->prepare($consulta);
 				$query->execute(array($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol));
-				floopets_BD::Disconect();
+				floopets_BD::Disconnect();
 		}
 
 	}
