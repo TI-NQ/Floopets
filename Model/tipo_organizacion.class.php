@@ -81,11 +81,13 @@ class Gestion_tipo_organizacion{
 		$consulta = "UPDATE tipo_organizacion SET to_nombre = ? WHERE to_cod_tipo_organizacion = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($to_cod_tipo_organizacion,$to_nombre));		
+		$query->execute(array($to_nombre,$to_cod_tipo_organizacion));		
 
 		floopets_BD::Disconnect();
 	
 	}
+
+
 		function Delete($to_cod_tipo_organizacion){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
