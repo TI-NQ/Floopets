@@ -55,7 +55,7 @@
 
 			$resultado = $query->fetch(PDO::FETCH_BOTH);
 
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 			return $resultado;
         }
 
@@ -72,7 +72,7 @@
 			$query = $Conexion->prepare($consulta);
 			$query->execute(array($td_nombre,$td_estado,$td_cod_tipo_donacion));
 
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 
 	}
 
@@ -89,7 +89,7 @@
 			$query = $Conexion->prepare($consulta);
 			$query->execute(array($td_cod_tipo_donacion));
 
-			floopets_BD::Disconect();
+			floopets_BD::Disconnect();
 
 	}
 

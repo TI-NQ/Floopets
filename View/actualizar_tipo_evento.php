@@ -6,7 +6,7 @@
 
 <form action="../Controller/tipo_evento.controller.php" method="POST">
 	<div class="form-group">
-		<input type="text" name="te_cod_tipo_evento"hidden />
+		<input type="text" name="te_cod_tipo_evento" value="<?php echo $tipo_evento[0]?>"hidden/>
 		<label class="form-label">nombre</label>
 		<input class="form-control"  name="te_nombre" value="<?php echo $tipo_evento[1]?>"required>
 		<label class="form-label">estado</label>
@@ -14,6 +14,7 @@
 
 	</div>
 	<div class="form-group">
-		<button name="accion" value="u" class="btn btn-primary">Registrar</button>
+		<button name="accion" value="u" class="btn btn-primary">Actualizar</button>
+		
 	</div>
 </form>
