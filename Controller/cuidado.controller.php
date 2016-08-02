@@ -25,11 +25,12 @@
 
 			try {
 				Gestion_cuidado::Update($cu_cod_cuidado,$cu_nombre,$cu_descripcion);
-				$mensaje = "Se creo exitosamente";
+				$mensaje = "Se actializo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
 			header("Location: ../View/gestion_cuidado.php?m=$mensaje");
+			break;
 		
 		case 'd':
 			try {
@@ -40,7 +41,7 @@
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
           header("Location: ../View/gestion_cuidado.php?m=".$mensaje);
         }
-      break;
+      
 			break;
 	}
 

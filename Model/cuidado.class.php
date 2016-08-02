@@ -18,7 +18,7 @@ class Gestion_cuidado{
 		floopets_BD::Disconnect();
 	}
 	
-	function ReadbyID($cu_nombre){
+	function ReadbyID($cu_cod_cuidado){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
@@ -27,10 +27,10 @@ class Gestion_cuidado{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM cuidado WHERE cu_nombre=?";
+		$consulta = "SELECT * FROM cuidado WHERE cu_cod_cuidado=?";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($cu_nombre));
+		$query->execute(array($cu_cod_cuidado));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
@@ -78,7 +78,7 @@ class Gestion_cuidado{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE cuidado SET cu_nombre = ?, cu_descripcion=? WHERE cu_cod_cuidado = ?" ;
+		$consulta = "UPDATE cuidado SET cu_nombre = ?, cu_descripcion= ? WHERE cu_cod_cuidado = ?" ;
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($cu_nombre,$cu_descripcion,$cu_cod_cuidado));		
