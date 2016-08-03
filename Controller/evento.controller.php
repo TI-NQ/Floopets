@@ -12,7 +12,7 @@
 		# crear
 		#iniciamos las variables   que se envian desde el  formulario  y las  que necesito  para  almacenar la tabla.
 		case 'c':
-		$te_cod_tipo_evento=$_POST["eve_nombre"];
+		$te_cod_tipo_evento=$_POST["te_cod_tipo_evento"];
 		$eve_nombre=$_POST["eve_nombre"];
 		$eve_direccion=$_POST["eve_direccion"];
 		$eve_fecha=$_POST["eve_fecha"];
@@ -58,7 +58,7 @@
 		          header("Location: ../View/gestion_evento.php?m=".$mensaje);
 		        } catch (Exception $e) {
 		          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-		          header("Location: ../View/gestion_tipo_evento.php?m=".$mensaje);
+		          header("Location: ../View/gestion_evento.php?m=".$mensaje);
 		        }
 		      break;
  	}

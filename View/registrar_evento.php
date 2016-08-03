@@ -2,9 +2,7 @@
 <form action="../Controller/evento.controller.php" method="POST">
 	<h1>Registrar Evento</h1>
 	<div class="form-group">
-		<label>Codigo evento:</label>
-		<input name="eve_cod_evento"></input>
-		<br>
+
 		<label>Codigo tipo evento:</label>
 		<input name="te_cod_tipo_evento"></input>
 		<br>
