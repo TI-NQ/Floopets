@@ -1,0 +1,46 @@
+*{
+	margin: 0;
+	padding: 0;
+}
+video{
+	width: 100%;
+}
+.container__perros{
+	width: 100%;
+	height: 768px;
+	background-color: #ff7043;
+}
+.container__perros img{
+	margin-left: -100px;
+	width: 120%;
+	height: 768px;
+}
+.container__gatos img{
+	width: 120%;
+	height: 768px;
+}
+.container__gatos{
+	width: 100%;
+	height: 768px;
+	background-color: #ffa726;
+}
+.container__img{
+	margin-top: -100px;
+	width: 100%;
+	height: 1300px;
+	background-color: #00b3ae;
+}
+.container__form__help{
+	margin-top: -100px;
+	width: 100%;
+	height: 1300px;
+	background-color: #00b3ae;
+}
+.mon{
+	width: 150%;
+	margin-top: -600px;
+}
+.nub{
+	width: 100%;
+	margin-top: -60px;
+}
