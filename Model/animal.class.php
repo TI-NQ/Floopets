@@ -38,7 +38,7 @@
 			//Crear el query que vamos a realizar
 			$consulta = "UPDATE animal SET ra_cod_raza,ani_nombre,ani_esterilizado,ani_edad,ani_descripcion,ani_numero_microchip WHERE ani_cod_animal = ?" ;
 			$query = $Conexion->prepare($consulta);
-			$query->execute(array($ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_cod_animal,$ra_cod_raza));
+			$query->execute(array($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_cod_animal));
 			floopets::Disconnect();
 		}
 			function Delete($ani_cod_animal)

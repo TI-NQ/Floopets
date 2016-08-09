@@ -41,7 +41,7 @@
 
 		case 'd':
 			try {
-          $animal = gestion_animal::Delete(base64_decode($_REQUEST["cu"]));
+          $animal = gestion_animal::Delete(base64_decode($_REQUEST["an"]));
           $mensaje = "Se elimino correctamente";
           header("Location: ../View/gestion_animal.php?m=".$mensaje);
         } catch (Exception $e) {
