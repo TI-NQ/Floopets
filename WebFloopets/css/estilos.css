@@ -59,6 +59,9 @@ Contenido titulos:  font-family: 'Roboto Condensed', sans-serif;
 .container__img{
 	width: 100%;
 }
+.bran{
+	width: 40%;
+}
 .container__img h2{
 	font-family: 'Roboto Condensed', sans-serif;
 	color: white;
