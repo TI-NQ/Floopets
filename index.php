@@ -31,7 +31,7 @@
 					<img src="WebFloopets/images/2.jpg">
 					
 				</div>
-				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png">
+<!-- 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png"> -->
 		</div>
 		<!-- Andrea Guzman -->
 
@@ -42,17 +42,31 @@
 
 		<div class="row">
 			<div class="container__img col s12 m4 l4" >
-			<h2>Ayuda una Mascota</h2>
-			<img class="bran" src="WebFloopets/images/ayuda.png"></img>
+			<center><h2>Ayuda una Mascota</h2></center>
+			<center><img class="bran" src="WebFloopets/images/ayuda.png"></img></center>
 			</div>
 			<div class="container__form__help col s12 m8 l8">
 			    <div class="row">
 				    <form class="col s12">
+				    <center><h2>Seleccione una opcion</h2></center>
 				      <div class="row">
-				        <div class="input-field col s6">
-				          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-				          <label for="first_name">First Name</label>
-				        </div>
+				        <div class="input-field col s6 mascota">
+    						<select>
+						      <option value="" disabled selected>Elige una opcion</option>
+						      <option value="1">Gato</option>
+						      <option value="2">Perro</option>
+    						</select>
+    						<label>Selecciona un tipo de mascota</label>
+  						</div>
+				        <div class="input-field col s6 mascota">
+    						<select>
+						      <option value="" disabled selected>Elige una opcion</option>
+						      <option value="1">Perdida</option>
+						      <option value="2">Maltrato</option>
+    						</select>
+    						<label>Selecciona un tipo de denuncia</label>
+  						</div>
+				      </div>
 				        <div class="input-field col s6">
 				          <input id="last_name" type="text" class="validate">
 				          <label for="last_name">Last Name</label>
@@ -95,6 +109,7 @@
       	<script type="text/javascript">
       		 $(document).ready(function(){
      			 $('.parallax').parallax();
+     			 $('select').material_select();
     		});
       	</script>
 </html>

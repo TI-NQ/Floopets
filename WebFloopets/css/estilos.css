@@ -5,8 +5,8 @@ body{
 	background-color: #00b3ae;
 }
 /*import font
-font-family: 'Roboto', sans-serif;
-font-family: 'Roboto Condensed', sans-serif;
+Contenido general:  font-family: 'Roboto', sans-serif;
+Contenido titulos:  font-family: 'Roboto Condensed', sans-serif;
 */
 
 /*-----------------------------------------------estilos seccion 1-----------------------------------------------*/
@@ -39,6 +39,24 @@ font-family: 'Roboto Condensed', sans-serif;
 .container__img{
 	width: 100%;
 }
+.container__img h2{
+	font-family: 'Roboto Condensed', sans-serif;
+	color: white;
+}
 .container__form__help{
 	width: 100%;
+}
+.mascota label{
+	color: white;
+	font-size: 15px;
+}
+.container__form__help h2{
+	font-family: 'Roboto Condensed', sans-serif;
+	color: white;
+}
+.select-wrapper input.select-dropdown{
+	border-bottom: 1px solid #fff;
+}
+input {
+    color: white;
 }
