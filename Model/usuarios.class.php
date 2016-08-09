@@ -1,18 +1,17 @@
 <?php
-	class gestion_permisos
+
+	class gestion_usuarios
 	{
-		// Metodo Create()
-		function Create($permiso_nombre)
-		{
-			//Instanciamos y nos conectamos a la bd
-			$conexion=floopets_BD::Connect();
-			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-			//Crear el query que vamos a realizar.
-			//Si la pk es autoincremental se excluye del INSERT
-			$consulta ="INSERT INTO permiso (permiso_nombre) VALUES (?)";
-			$query = $conexion->prepare($consulta);
-			$query->execute(array($permiso_nombre));
-			floopets_BD::Disconnect();
+			function Create($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol)
+			{
+				//Instanciamos y nos conectamos a la bd
+				$conexion=floopets_BD::Connect();
+				$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+				//Creamos el query de la consulta a la BD
+				$consulta ="INSERT INTO usuario (usu_cod_usuario,usu_nombre,usu_apellido,usu_telefono,usu_email,cod_rol) VALUES (?,?,?,?,?,?)";
+				$query = $conexion->prepare($consulta);
+				$query->execute(array($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol));
+				floopets_BD::Disconnect();
 		}
 		function ReadAll()
 		{
@@ -20,7 +19,7 @@
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "SELECT * FROM permiso";
+				$consulta = "SELECT * FROM usuario";
 				$query = $Conexion->prepare($consulta);
 				$query->execute();
 				//Devolvemos el resultado en un arreglo
@@ -30,15 +29,15 @@
 				return $resultado;
 				floopets_BD::Disconnect();
 		}
-		function ReadbyID($cod_permiso)
+		function ReadbyID($usu_cod_usuario)
 		{
 			//Instanciamos y nos conectamos a la bd
 			$Conexion = floopets_BD::Connect();
 			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-			$consulta = "SELECT * FROM permiso WHERE cod_permiso=?";
+			$consulta = "SELECT * FROM usuario WHERE usu_cod_usuario=?";
 			$query = $Conexion->prepare($consulta);
-			$query->execute(array($cod_permiso));
+			$query->execute(array($usu_cod_usuario));
 			//Devolvemos el resultado en un arreglo
 			//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
 			//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
@@ -46,27 +45,27 @@
 			return $resultado;
 			floopets_BD::Disconnect();
 		}
-		function Update($cod_permiso,$permiso_nombre)
+		function Update($usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_cod_usuario)
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "UPDATE permiso SET permiso_nombre = ? WHERE cod_permiso = ?" ;
+				$consulta = "UPDATE usuario SET usu_nombre=?,usu_apellido=?,usu_telefono=?,usu_email=?,cod_rol=? WHERE usu_cod_usuario = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($permiso_nombre,$cod_permiso));
+				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_cod_usuario));
 				floopets_BD::Disconnect();
 
 		}
-		function Delete($cod_permiso)
+		function Delete($usu_cod_usuario)
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "DELETE FROM permiso WHERE cod_permiso = ?" ;
+				$consulta = "DELETE FROM usuario WHERE usu_cod_usuario = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($cod_permiso));
+				$query->execute(array($usu_cod_usuario));
 				floopets_BD::Disconnect();
 		}
 
