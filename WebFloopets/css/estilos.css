@@ -25,6 +25,14 @@ font-family: 'Roboto Condensed', sans-serif;
 	margin-top: 85vh;
 	left: 240px;
 	width: 200px;
+<<<<<<< HEAD
+=======
+	text-transform: inherit;
+	font-size: 30px;
+	font-family: 'Roboto', sans-serif;
+	background-color: rgba(255,179,0,0.8) !important;
+	border-radius: 10px;
+>>>>>>> origin/master
 }
 .container__gatos img{
 	width: 100%;
@@ -35,6 +43,22 @@ font-family: 'Roboto Condensed', sans-serif;
 	padding: 0 !important;
 	
 }
+<<<<<<< HEAD
+=======
+.boton1{
+	position: absolute;
+	z-index: 4; 
+	margin-top: 85vh;
+	left: 945px;
+	width: 200px;
+	text-transform: inherit;
+	font-size: 30px;
+	font-family: 'Roboto', sans-serif;
+	background-color: rgba(255,179,0,0.8) !important;
+	border-radius: 10px;
+}
+
+>>>>>>> origin/master
 /*----------------------------------------------estilos seccion 2----------------------------------------------*/
 .container__img{
 	width: 100%;
@@ -42,7 +66,39 @@ font-family: 'Roboto Condensed', sans-serif;
 .container__form__help{
 	width: 100%;
 }
+<<<<<<< HEAD
 /*----------------------------------------------estilos seccion Cuidados----------------------------------------------*/
 #Cuidados img{
 	width: 60%;
 }
+=======
+.mascota label{
+	color: white;
+	font-size: 15px;
+}
+.container__form__help h2{
+	font-family: 'Roboto Condensed', sans-serif;
+	color: white;
+}
+.select-wrapper input.select-dropdown{
+	border-bottom: 1px solid #fff;
+}
+textarea.materialize-textarea {
+	border-bottom: 1px solid #fff;
+}
+.textarea label{
+	color: #fff;
+}
+input {
+    color: white;
+}
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 1px 0 0 #fff;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #fff;
+}
+/*-----------------------------------------------estilos parallax-----------------------------------------------*/
+>>>>>>> origin/master
