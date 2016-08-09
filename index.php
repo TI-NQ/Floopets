@@ -83,13 +83,13 @@
 				          <label for="email">Email</label>
 				        </div>
 				      </div>
-<<<<<<< HEAD
+
 				    </form>
-=======
+
 				      <a class="waves-effect waves-light btn right">button</a>
 				</div>
 				</form>
->>>>>>> origin/master
+
   				</div>
 			</div>
 			

@@ -25,14 +25,13 @@ font-family: 'Roboto Condensed', sans-serif;
 	margin-top: 85vh;
 	left: 240px;
 	width: 200px;
-<<<<<<< HEAD
-=======
+
 	text-transform: inherit;
 	font-size: 30px;
 	font-family: 'Roboto', sans-serif;
 	background-color: rgba(255,179,0,0.8) !important;
 	border-radius: 10px;
->>>>>>> origin/master
+
 }
 .container__gatos img{
 	width: 100%;
@@ -43,8 +42,7 @@ font-family: 'Roboto Condensed', sans-serif;
 	padding: 0 !important;
 	
 }
-<<<<<<< HEAD
-=======
+
 .boton1{
 	position: absolute;
 	z-index: 4; 
@@ -58,7 +56,7 @@ font-family: 'Roboto Condensed', sans-serif;
 	border-radius: 10px;
 }
 
->>>>>>> origin/master
+
 /*----------------------------------------------estilos seccion 2----------------------------------------------*/
 .container__img{
 	width: 100%;
@@ -66,12 +64,12 @@ font-family: 'Roboto Condensed', sans-serif;
 .container__form__help{
 	width: 100%;
 }
-<<<<<<< HEAD
+
 /*----------------------------------------------estilos seccion Cuidados----------------------------------------------*/
 #Cuidados img{
 	width: 60%;
 }
-=======
+
 .mascota label{
 	color: white;
 	font-size: 15px;
@@ -101,4 +99,3 @@ textarea.materialize-textarea:focus:not([readonly]) + label {
   color: #fff;
 }
 /*-----------------------------------------------estilos parallax-----------------------------------------------*/
->>>>>>> origin/master
