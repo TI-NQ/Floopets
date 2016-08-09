@@ -23,22 +23,10 @@
 		<div class="row">
 
 				<div class="container__perros col s12 m6 l6">
-<<<<<<< HEAD
 					<div class="">
 						<span>sfjhsdfh</span>
 						<button class="boton btn waves-effect waves-light btn-large">Perros</button>
 					</div>				
-=======
-
-					
-						<span>sfjhsdfh</span>
-						<button class="boton btn waves-effect waves-light btn-large">Perros</button>
-					</div>				
-
-
-					<button class="boton waves-effect waves-light btn btn-large">Perros</button>				
-
->>>>>>> origin/master
 					<img src="WebFloopets/images/1.jpg">					
 				</div>
 				<div class="container__gatos col s12 m6 l6">
@@ -112,27 +100,7 @@
 		</div>
 		<div class="parallax-container">
       		<div class="parallax"><img class="mon" src="WebFloopets/recursos/images/montañas.png"></div>
-<<<<<<< HEAD
     	</div>		
-=======
-    	</div>
-    	<!-- Cuidados David Pabon -->
-		<div class="class container">
-		<h1 class="text-black center">Cuidados</h1>
-				<div class="section" id="Cuidados">
-					<div class="carousel carousel-slider">
-					    <a class="carousel-item" href="#one!"><img src="WebFloopets/images/Cuidado1.jpg"></a>
-					    <a class="carousel-item" href="#two!"><img src="WebFloopets/images/Cuidado2.jpg"></a>
-					    <a class="carousel-item" href="#three!"><img src="WebFloopets/images/Cuidado3.jpg"></a>
-					    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Vacuna1.jpg"></a>
-					  </div>
-				  </div>
-		 </div>
-
-    	
-
-		
->>>>>>> origin/master
 	</body>
 		<!--Import jQuery before materialize.js-->
       	<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js">
