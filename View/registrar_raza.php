@@ -4,22 +4,26 @@
 	<div class="form-group">
 		<label>nombre raza:</label>
 		<input name="ra_nombre"></input>
-		<br>
-		<label>Nombre organización:</label>
-		<input name="org_nombre"></input>
-		<br>
-		<label>Nit:</label>
-		<input name="org_nit"></input>
-		<br>
-		<label>Email:</label>
-		<input  name="org_email"></input>
-		<br>
-		<label>Telefono:</label>
-		<input type="numeric" name="org_telefono"></input>
-		<br>
-		<label>Dirección:</label>
-		<input name="org_direccion"></input>
-		<br>
+		
+		</div>
+		<div class="input-field col s12">
+                        <select  Required name="ta_cod_tipo_animal">
+                            <option value="" disabled selected>tipo animal</option>
+                            <?php
+                                 // Cargo la bd
+                                 require_once("../Model/conexion.php");
+                                // Cargo la clase tipo empresa
+                                require_once("../Model/tipo_animal.class.php");
+
+                                 $tipo = Gestion_raza::ReadAll();
+
+                                foreach ($tipo as $row){
+                                    echo "<option value='".$row["ta_cod_tipo_animal"]."'>".$row["Nombre"]."</option>";
+                                }
+                             ?>
+                        </select>
+                        <label></label>
+                    </div>
 
 	</div>
 	<div class="form-group">

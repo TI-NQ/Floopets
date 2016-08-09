@@ -1,24 +1,24 @@
 <?php 
 	
-class Gestion_cuidado{
+class Gestion_raza{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
-	function Create($cu_nombre,$cu_descripcion,$galeria,$video){
+	function Create($ra_nombre,$ta_cod_tipo_animal){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO cuidado (cu_nombre,cu_descripcion,galeria,video) VALUES (?,?,?,?)";
+		$consulta = "INSERT INTO raza (ra_nombre,ta_cod_tipo_animal) VALUES (?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($cu_nombre,$cu_descripcion,$galeria,$video));
+		$query->execute(array($ra_nombre,$ta_cod_tipo_animal));
 
 		floopets_BD::Disconnect();
 	}
 	
-	function ReadbyID($cu_cod_cuidado){
+	function ReadbyID($ra_cod_raza){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
@@ -27,10 +27,10 @@ class Gestion_cuidado{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM cuidado WHERE cu_cod_cuidado=?";
+		$consulta = "SELECT * FROM raza WHERE ra_cod_raza=?";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($cu_cod_cuidado));
+		$query->execute(array($ra_cod_raza));
 
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
@@ -55,7 +55,7 @@ class Gestion_cuidado{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM cuidado";
+		$consulta = "SELECT * FROM raza";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute();
@@ -70,7 +70,7 @@ class Gestion_cuidado{
 		floopets_BD::Disconnect();
 	}
 	
-	function Update($cu_cod_cuidado,$cu_nombre,$cu_descripcion,$galeria,$video){
+	function Update($ra_cod_raza,$ra_nombre,$ta_cod_tipo_animal){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -78,17 +78,17 @@ class Gestion_cuidado{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE cuidado SET cu_nombre = ?, cu_descripcion= ? , galeria =?, video= ? WHERE cu_cod_cuidado = ?" ;
+		$consulta = "UPDATE raza SET ra_nombre = ?, ta_cod_tipo_animal= ?  WHERE ra_cod_raza = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($cu_nombre,$cu_descripcion,$galeria,$video,$cu_cod_cuidado));		
+		$query->execute(array($ra_nombre,$ta_cod_tipo_animal,$ra_cod_raza));		
 
 		floopets_BD::Disconnect();
 	
 	}
 
 
-		function Delete($cu_cod_cuidado){
+		function Delete($ra_cod_raza){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -96,10 +96,10 @@ class Gestion_cuidado{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "DELETE FROM cuidado WHERE cu_cod_cuidado = ?" ;
+		$consulta = "DELETE FROM raza WHERE ra_cod_raza = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($cu_cod_cuidado));		
+		$query->execute(array($ra_cod_raza));		
 
 		floopets_BD::Disconnect();
 	}
