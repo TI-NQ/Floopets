@@ -23,15 +23,15 @@
 		<div class="row">
 
 				<div class="container__perros col s12 m6 l6">
-<<<<<<< HEAD
+
 					
 						<span>sfjhsdfh</span>
 						<button class="boton btn waves-effect waves-light btn-large">Perros</button>
 					</div>				
-=======
+
 
 					<button class="boton waves-effect waves-light btn btn-large">Perros</button>				
->>>>>>> origin/master
+
 					<img src="WebFloopets/images/1.jpg">					
 				</div>
 				<div class="container__gatos col s12 m6 l6">
