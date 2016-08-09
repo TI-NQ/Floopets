@@ -24,8 +24,6 @@
                         </select>
                         <label></label>
                     </div>
-
-	</div>
 	<div class="form-group">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
 	</div>
