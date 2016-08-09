@@ -22,9 +22,9 @@ font-family: 'Roboto Condensed', sans-serif;
 .boton{
 	position: absolute;
 	z-index: 2; 
-	margin-top: 50vh;
-	left: 50px;
-
+	margin-top: 85vh;
+	left: 240px;
+	width: 200px;
 }
 .container__gatos img{
 	width: 100%;
