@@ -1,10 +1,7 @@
-*{
-	margin: 0;
-	padding: 0;
-}
 video{
 	width: 100%;
 }
+/*-----------------------------------------------estilos seccion 1-----------------------------------------------*/
 .container__perros{
 	width: 100%;
 	height: 768px;
@@ -29,16 +26,13 @@ video{
 	padding: 0 !important;
 	
 }
+/*----------------------------------------------estilos seccion 2----------------------------------------------*/
 .container__img{
-	margin-top: -100px;
 	width: 100%;
-	height: 1300px;
 	background-color: #00b3ae;
 }
 .container__form__help{
-	margin-top: -100px;
 	width: 100%;
-	height: 1300px;
 	background-color: #00b3ae;
 }
 .mon{
