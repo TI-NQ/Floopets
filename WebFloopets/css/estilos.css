@@ -4,6 +4,11 @@ video{
 body{
 	background-color: #00b3ae;
 }
+/*import font
+font-family: 'Roboto', sans-serif;
+font-family: 'Roboto Condensed', sans-serif;
+*/
+
 /*-----------------------------------------------estilos seccion 1-----------------------------------------------*/
 .container__perros{
 	width: 100%;

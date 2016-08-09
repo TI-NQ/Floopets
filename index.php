@@ -43,7 +43,7 @@
 		<div class="row">
 			<div class="container__img col s12 m4 l4" >
 			<h2>Ayuda una Mascota</h2>
-			<img class="bran" src=""></img>
+			<img class="bran" src="WebFloopets/images/ayuda.png"></img>
 			</div>
 			<div class="container__form__help col s12 m8 l8">
 			    <div class="row">
