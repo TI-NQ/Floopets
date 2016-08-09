@@ -23,7 +23,7 @@
 		<div class="row">
 
 				<div class="container__perros col s12 m6 l6">
-					<div class="">
+					
 						<span>sfjhsdfh</span>
 						<button class="boton btn waves-effect waves-light btn-large">Perros</button>
 					</div>				
