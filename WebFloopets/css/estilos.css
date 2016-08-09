@@ -1,6 +1,9 @@
 video{
 	width: 100%;
 }
+body{
+	background-color: #00b3ae;
+}
 /*-----------------------------------------------estilos seccion 1-----------------------------------------------*/
 .container__perros{
 	width: 100%;
@@ -30,9 +33,7 @@ video{
 /*----------------------------------------------estilos seccion 2----------------------------------------------*/
 .container__img{
 	width: 100%;
-	background-color: #00b3ae;
 }
 .container__form__help{
 	width: 100%;
-	background-color: #00b3ae;
 }
