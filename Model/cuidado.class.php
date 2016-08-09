@@ -4,13 +4,13 @@ class Gestion_cuidado{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
-	function Create($cu_nombre,$cu_descripcion){
+	function Create($cu_nombre,$cu_descripcion,$galeria,$video){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO cuidado (cu_nombre,cu_descripcion) VALUES (?,?)";
+		$consulta = "INSERT INTO cuidado (cu_nombre,cu_descripcion,galeria,video) VALUES (?,?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($cu_nombre,$cu_descripcion));

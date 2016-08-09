@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 26-07-2016 a las 17:58:54
+-- Tiempo de generación: 09-08-2016 a las 15:05:13
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -34,7 +34,8 @@ CREATE TABLE `adopcion` (
   `ani_cod_animal` int(11) NOT NULL,
   `usu_cod_usuario` int(11) NOT NULL,
   `ado_fecha` date NOT NULL,
-  `ado_hora` time NOT NULL
+  `ado_hora` time NOT NULL,
+  `ado_imagen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -64,7 +65,9 @@ DROP TABLE IF EXISTS `cuidado`;
 CREATE TABLE `cuidado` (
   `cu_cod_cuidado` int(11) NOT NULL,
   `cu_nombre` varchar(50) NOT NULL,
-  `cu_descripcion` varchar(50) NOT NULL
+  `cu_descripcion` varchar(50) NOT NULL,
+  `galeria` longtext NOT NULL,
+  `video` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -79,7 +82,8 @@ CREATE TABLE `denuncia` (
   `usu_cod_usuario` int(11) NOT NULL,
   `td_cod_tipo_denuncia` int(11) NOT NULL,
   `de_descripcion` varchar(50) NOT NULL,
-  `de_fecha` date NOT NULL
+  `de_fecha` date NOT NULL,
+  `de_imagen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -108,7 +112,8 @@ CREATE TABLE `donacion` (
   `don_fecha` date NOT NULL,
   `don_descripcion` varchar(50) NOT NULL,
   `org_cod_organizacion` int(11) NOT NULL,
-  `usu_cod_usuario` int(11) NOT NULL
+  `usu_cod_usuario` int(11) NOT NULL,
+  `don_imagen` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -125,7 +130,8 @@ CREATE TABLE `evento` (
   `eve_direccion` varchar(30) NOT NULL,
   `eve_fecha` date NOT NULL,
   `eve_hora` time NOT NULL,
-  `eve_descripcion` varchar(100) NOT NULL
+  `eve_descripcion` varchar(100) NOT NULL,
+  `imagen` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -154,7 +160,8 @@ CREATE TABLE `organizacion` (
   `org_nit` int(11) NOT NULL,
   `org_email` varchar(50) NOT NULL,
   `org_telefono` varchar(30) NOT NULL,
-  `org_direccion` varchar(30) NOT NULL
+  `org_direccion` varchar(30) NOT NULL,
+  `vo_cod_voluntario` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -217,9 +224,7 @@ CREATE TABLE `tipo_animal` (
   `ta_cod_tipo_animal` int(11) NOT NULL,
   `ta_nombre` varchar(50) NOT NULL,
   `cu_cod_cuidado` int(11) NOT NULL,
-  `tamano` varchar(100) NOT NULL,
-  `galeria` longtext NOT NULL,
-  `video` longtext NOT NULL
+  `tamano` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -315,6 +320,21 @@ CREATE TABLE `vacuna_animal` (
   `vac_cod_vacuna` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `voluntarios`
+--
+
+DROP TABLE IF EXISTS `voluntarios`;
+CREATE TABLE `voluntarios` (
+  `vo_cod_voluntario` int(11) NOT NULL,
+  `vo_nombre` varchar(100) NOT NULL,
+  `vo_telefono` int(11) NOT NULL,
+  `vo_direccion` varchar(50) NOT NULL,
+  `vo_imagen` longtext NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
 --
 -- Índices para tablas volcadas
 --
@@ -386,7 +406,8 @@ ALTER TABLE `evento_organizacion`
 --
 ALTER TABLE `organizacion`
   ADD PRIMARY KEY (`org_cod_organizacion`),
-  ADD KEY `to_cod_tipo_empresa` (`to_cod_tipo_organizacion`);
+  ADD KEY `to_cod_tipo_empresa` (`to_cod_tipo_organizacion`),
+  ADD KEY `vo_cod_voluntario` (`vo_cod_voluntario`);
 
 --
 -- Indices de la tabla `permiso`
@@ -466,6 +487,12 @@ ALTER TABLE `vacuna_animal`
   ADD PRIMARY KEY (`ani_cod_animal`,`vac_cod_vacuna`),
   ADD KEY `ani_cod_animal` (`ani_cod_animal`),
   ADD KEY `vac_cod_vacuna` (`vac_cod_vacuna`);
+
+--
+-- Indices de la tabla `voluntarios`
+--
+ALTER TABLE `voluntarios`
+  ADD PRIMARY KEY (`vo_cod_voluntario`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -602,7 +629,8 @@ ALTER TABLE `evento_organizacion`
 -- Filtros para la tabla `organizacion`
 --
 ALTER TABLE `organizacion`
-  ADD CONSTRAINT `organizacion_ibfk_1` FOREIGN KEY (`to_cod_tipo_organizacion`) REFERENCES `tipo_organizacion` (`to_cod_tipo_organizacion`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `organizacion_ibfk_1` FOREIGN KEY (`to_cod_tipo_organizacion`) REFERENCES `tipo_organizacion` (`to_cod_tipo_organizacion`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `organizacion_ibfk_2` FOREIGN KEY (`vo_cod_voluntario`) REFERENCES `voluntarios` (`vo_cod_voluntario`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `permiso_rol`
