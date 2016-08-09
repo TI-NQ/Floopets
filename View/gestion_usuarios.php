@@ -22,18 +22,14 @@ $user=gestion_usuarios::ReadAll();
 			echo @$mensaje;
 
 			foreach ($user as $row) {
-        if ($row["cod_rol"]==3) {
-          $cod_rol="lely";
-        }elseif ($row["cod_rol"]==4) {
-          $cod_rol = "criss";
-        }
+    
 				echo"<tr>
 						<td>".$row["usu_cod_usuario"]."</td>
 						<td>".$row["usu_nombre"]."</td>
             <td>".$row["usu_apellido"]."</td>
             <td>".$row["usu_telefono"]."</td>
             <td>".$row["usu_email"]."</td>
-            <td>".$cod_rol."</td>
+            <td>".$row["rol_nombre"]."</td>
 						<td>
                     		<a href='../View/actualizar_usuario.php?us=".base64_encode($row["usu_cod_usuario"])."'>actualizar</a>
 
