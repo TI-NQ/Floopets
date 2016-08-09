@@ -22,7 +22,9 @@
 		<!-- Andrea Guzman-Adopciones -->
 		<div class="row">
 
-				<div class="container__perros col s12 m6 l6">				
+				<div class="container__perros col s12 m6 l6">
+				
+					<button class="boton">Perros</button>				
 					<img src="WebFloopets/images/1.jpg">					
 				</div>
 				<div class="container__gatos col s12 m6 l6">

@@ -8,20 +8,25 @@ video{
 .container__perros{
 	width: 100%;
 	height: 768px;
-	
+	padding: 0 !important;	
 }
-.container__perros img{
-	margin-left: -100px;
-	width: 120%;
-	height: 768px;
+.container__perros img{	
+	width: 100%; 
+	z-index: 1;
+}
+.boton{
+	position: absolute;
+	z-index: 2; 
+	margin-top: 50vh;
+
 }
 .container__gatos img{
 	width: 100%;
-	height: 768px;
 }
 .container__gatos{
 	width: 100%;
 	height: 768px;
+	padding: 0 !important;
 	
 }
 .container__img{
