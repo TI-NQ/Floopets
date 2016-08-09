@@ -38,7 +38,7 @@
 
 		case 'd':
 			try {
-          $animal = gestion_voluntarios::Delete(base64_decode($_REQUEST["vo"]));
+          $voluntarios = gestion_voluntarios::Delete(base64_decode($_REQUEST["vo"]));
           $mensaje = "Se elimino correctamente";
           header("Location: ../View/gestion_voluntarios.php?m=".$mensaje);
         } catch (Exception $e) {

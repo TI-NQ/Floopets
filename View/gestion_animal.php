@@ -20,11 +20,10 @@
 		<tbody>
 			<?php
 			@$mensaje = $_REQUEST["m"];
-      $ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_cod_animal
 
 			echo @$mensaje;
 
-			foreach ($cuidado as $row) {
+			foreach ($animal as $row) {
 				echo"<tr>
 						<td>".$row["ani_cod_animal"]."</td>
 						<td>".$row["ra_cod_raza"]."</td>
@@ -34,9 +33,9 @@
             <td>".$row["ani_descripcion"]."</td>
             <td>".$row["ani_numero_microchip"]."</td>
 						<td>
-                    		<a href='../View/actualizar_evento.php?an=".base64_encode($row["cu_cod_cuidado"])."'>actualizar</a>
+                    		<a href='../View/actualizar_animal.php?an=".base64_encode($row["ani_cod_animal"])."'>actualizar</a>
 
-                    		<a href='../Controller/evento.controller.php?an=".base64_encode($row["cu_cod_cuidado"])."&accion=d'>eliminar</a>
+                    		<a href='../Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=d'>eliminar</a>
 
 					</tr>";
 			}

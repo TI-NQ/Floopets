@@ -1,29 +1,29 @@
+
 <form action="../Controller/animal.controller.php" method="POST">
+	<label class="form-label">Raza:</label>
 	<?php
-						 $raza=gestion_raza::ReadAll();
+	require_once("../Model/conexion.php");
+	require_once("../Model/raza.class.php");
+						 $raza=Gestion_raza::ReadAll();
 						 ?>
 							 <select name="ra_cod_raza">
 							 <option disabled selected>Seleccione una raza:</option><?php
 						 foreach ($raza as $row) {
 						 ?>
 
-								 <option value="<?php echo $row["Nombre"] ?>" ><?php echo $row["Nombre"] ?></option>
+								 <option value="<?php echo $row["ra_cod_raza"] ?>" ><?php echo $row["ra_nombre"] ?></option>
 									 <?php } ?>
 							 </select>
 	<div class="form-group">
-		<label class="form-label">Raza:</label>
-		<input class="form-control" type="text" name="ani_nombre" required>
-	</div>
-	<div class="form-group">
-		<label class="form-label">Nombre</label>
+		<label class="form-label">Nombre:</label>
 		<input class="form-control" type="text" name="ani_nombre" required>
 	</div>
 	<div class="form-group">
 		<label class="form-label">Esterilizacion:</label>
 		<!-- <input class="form-control" type="date" name="ani_esterilizado" required> -->
 		<select name="ani_esterilizado">
-		   <option value="Si">Si</option>
-		   <option value="No">No</option>
+		   <option value="0">Si</option>
+		   <option value="1">No</option>
 		</select>
 	</div>
   <div class="form-group">
