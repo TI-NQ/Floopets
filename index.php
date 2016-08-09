@@ -21,12 +21,15 @@
 		</div>
 		<!-- Andrea Guzman-Adopciones -->
 		<div class="row">
-				
+
 				<div class="container__perros col s12 m6 l6">
+				<button>Perros</button>
 					<img src="WebFloopets/images/1.jpg">
+					
 				</div>
 				<div class="container__gatos col s12 m6 l6">
-					<img src="WebFloopets/images/5.jpg">
+					<img src="WebFloopets/images/2.jpg">
+					<button>Gatos</button>
 				</div>
 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png">
 		</div>
