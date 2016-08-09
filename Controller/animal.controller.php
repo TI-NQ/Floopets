@@ -6,9 +6,9 @@
 	switch ($accion) {
 		case 'c':
 			$ra_cod_raza						=$_POST["ra_cod_raza"];
-			$ani_nombre             = $_POST["ani_nombre  "];
+			$ani_nombre             = $_POST["ani_nombre"];
       $ani_esterilizado     = $_POST["ani_esterilizado"];
-      $ani_edad             = $_POST["ani_edad "];
+      $ani_edad             = $_POST["ani_edad"];
       $ani_descripcion      = $_POST["ani_descripcion"];
       $ani_numero_microchip	= $_POST["ani_numero_microchip"];
 
@@ -24,9 +24,9 @@
 			break;
 			case 'u':
 			$ra_cod_raza						=$_POST["ra_cod_raza"];
-      $ani_nombre             = $_POST["ani_nombre  "];
+      $ani_nombre             = $_POST["ani_nombre"];
       $ani_esterilizado     = $_POST["ani_esterilizado"];
-      $ani_edad             = $_POST["ani_edad "];
+      $ani_edad             = $_POST["ani_edad"];
       $ani_descripcion      = $_POST["ani_descripcion"];
       $ani_numero_microchip	= $_POST["ani_numero_microchip"];
 
