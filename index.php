@@ -16,6 +16,7 @@
 			<video src="WebFloopets/video/563398388.mp4" autoplay loop>
 			</video>
 		</div>
+		<!-- Andrea Guzman-Adopciones -->
 		<div class="row">
 				<div class="container__perros col s12 m6 l6">
 					<img src="WebFloopets/images/1.jpg">
@@ -25,6 +26,7 @@
 				</div>
 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png">
 		</div>
+		<!-- Andrea Guzman -->
 		<div class="row">
 			<div class="container__img col s12 m4 l4" >
 				<img src="WebFloopets/recursos/images/nube-1.png">
