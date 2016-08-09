@@ -74,6 +74,20 @@ Contenido titulos:  font-family: 'Roboto Condensed', sans-serif;
 .select-wrapper input.select-dropdown{
 	border-bottom: 1px solid #fff;
 }
+textarea.materialize-textarea {
+	border-bottom: 1px solid #fff;
+}
+.textarea label{
+	color: #fff;
+}
 input {
     color: white;
+}
+textarea.materialize-textarea:focus:not([readonly]) {
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 1px 0 0 #fff;
+}
+
+textarea.materialize-textarea:focus:not([readonly]) + label {
+  color: #fff;
 }
