@@ -84,6 +84,19 @@
 		<div class="parallax-container">
       		<div class="parallax"><img class="mon" src="WebFloopets/recursos/images/montañas.png"></div>
     	</div>
+    	<!-- Cuidados David Pabon -->
+		<div class="class container">
+				<div class="section" id="Cuidados">
+					<div class="carousel carousel-slider">
+					    <a class="carousel-item" href="#one!"><img src="WebFloopets/images/Cuidado1.jpg"></a>
+					    <a class="carousel-item" href="#two!"><img src="WebFloopets/images/Cuidado2.jpg"></a>
+					    <a class="carousel-item" href="#three!"><img src="WebFloopets/images/Cuidado3.jpg"></a>
+					    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Vacuna1.jpg"></a>
+					  </div>
+				  </div>
+		 </div>
+
+    	
 
 		
 	</body>
@@ -95,6 +108,8 @@
       	<script type="text/javascript">
       		 $(document).ready(function(){
      			 $('.parallax').parallax();
+
     		});
+      		 $('.carousel.carousel-slider').carousel({full_width: true});
       	</script>
 </html>

@@ -42,3 +42,7 @@ font-family: 'Roboto Condensed', sans-serif;
 .container__form__help{
 	width: 100%;
 }
+/*----------------------------------------------estilos seccion Cuidados----------------------------------------------*/
+#Cuidados img{
+	width: 60%;
+}
