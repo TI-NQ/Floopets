@@ -77,11 +77,21 @@
 				    </form>
   				</div>
 			</div>
-			<img class="mon" src="WebFloopets/recursos/images/montañas.png">
 		</div>
+		<div class="parallax-container">
+      		<div class="parallax"><img class="mon" src="WebFloopets/recursos/images/montañas.png"></div>
+    	</div>
+
+		
 	</body>
 		<!--Import jQuery before materialize.js-->
-      	<script type="text/javascript" src="WebFloopets/js/jquery-3.1.0.js">
+      	<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js">
       	</script>
       	<script type="text/javascript" src="WebFloopets/materialize/js/materialize.js"></script>
+      	<!-- scripts -->
+      	<script type="text/javascript">
+      		 $(document).ready(function(){
+     			 $('.parallax').parallax();
+    		});
+      	</script>
 </html>
