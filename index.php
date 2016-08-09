@@ -23,11 +23,14 @@
 		<div class="row">
 
 				<div class="container__perros col s12 m6 l6">
-
-					<button class="boton waves-effect waves-light btn btn-large">Perros</button>				
+					<div class="">
+						<span>sfjhsdfh</span>
+						<button class="boton btn waves-effect waves-light btn-large">Perros</button>
+					</div>				
 					<img src="WebFloopets/images/1.jpg">					
 				</div>
 				<div class="container__gatos col s12 m6 l6">
+					<button class="boton1 btn  waves-effect waves-light btn-large">Gatos</button>	
 					<img src="WebFloopets/images/2.jpg">
 					
 				</div>
@@ -44,6 +47,7 @@
 			<div class="container__img col s12 m4 l4" >
 			<center><h2>Ayuda una Mascota</h2></center>
 			<center><img class="bran" src="WebFloopets/images/ayuda.png"></img></center>
+			<a href=""><center><img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img"></center></a>
 			</div>
 			<div class="container__form__help col s12 m8 l8">
 			    <div class="row">
@@ -67,39 +71,35 @@
     						<label>Selecciona un tipo de denuncia</label>
   						</div>
 				      </div>
-				        <div class="input-field col s6">
+        			  <div class="input-field col s12 textarea">
+          			      <textarea id="textarea1" class="materialize-textarea"></textarea>
+          				  <label for="textarea1">Descripcion</label>
+        			  </div>
+				      <div class="input-field col s6">
 				          <input id="last_name" type="text" class="validate">
-				          <label for="last_name">Last Name</label>
-				        </div>
+				          <label for="last_name">Nombre mascota(Opcional)</label>
 				      </div>
-				      <div class="row">
-				        <div class="input-field col s12">
-				          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-				          <label for="disabled">Disabled</label>
-				        </div>
+				      <div class="input-field col s6">
+				          <input id="last_name" type="text" class="validate">
+				          <label for="last_name">Nombre contacto</label>
 				      </div>
-				      <div class="row">
-				        <div class="input-field col s12">
-				          <input id="password" type="password" class="validate">
-				          <label for="password">Password</label>
-				        </div>
+				      <div class="input-field col s6">
+				          <input id="last_name" type="text" class="validate">
+				          <label for="last_name">Correo electronico</label>
 				      </div>
-				      <div class="row">
-				        <div class="input-field col s12">
-				          <input id="email" type="email" class="validate">
-				          <label for="email">Email</label>
-				        </div>
+				      <div class="input-field col s6">
+				          <input id="last_name" type="text" class="validate">
+				          <label for="last_name">Telefono(Celular)</label>
 				      </div>
-				    </form>
+				</div>
+				</form>
   				</div>
 			</div>
 			
 		</div>
 		<div class="parallax-container">
       		<div class="parallax"><img class="mon" src="WebFloopets/recursos/images/montañas.png"></div>
-    	</div>
-
-		
+    	</div>		
 	</body>
 		<!--Import jQuery before materialize.js-->
       	<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js">
