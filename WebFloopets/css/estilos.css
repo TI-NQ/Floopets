@@ -29,7 +29,7 @@ Contenido titulos:  font-family: 'Roboto Condensed', sans-serif;
 	text-transform: inherit;
 	font-size: 30px;
 	font-family: 'Roboto', sans-serif;
-	background-color: #e4a509;
+	background-color: rgba(255,179,0,0.8) !important;
 }
 .container__gatos img{
 	width: 100%;
@@ -50,6 +50,7 @@ Contenido titulos:  font-family: 'Roboto Condensed', sans-serif;
 	text-transform: inherit;
 	font-size: 30px;
 	font-family: 'Roboto', sans-serif;
+	background-color: rgba(255,179,0,0.8) !important;
 }
 
 /*----------------------------------------------estilos seccion 2----------------------------------------------*/
