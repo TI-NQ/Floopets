@@ -19,7 +19,7 @@
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "SELECT * FROM usuario";
+				$consulta = "SELECT usuario.*, rol.* FROM usuario INNER JOIN rol ON usuario.cod_rol = rol.cod_rol";
 				$query = $Conexion->prepare($consulta);
 				$query->execute();
 				//Devolvemos el resultado en un arreglo
