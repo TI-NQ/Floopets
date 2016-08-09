@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
+		<!-- google.fonts import -->
+		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<!--Import Google Icon Font-->
 	    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	    <!--Import materialize.css-->
@@ -25,41 +28,47 @@
 				</div>
 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png">
 		</div>
+		<!-- Contenedor ayuda una mascota
+		Ricardo_ochoa -->
 		<div class="row">
 			<div class="container__img col s12 m4 l4" >
-				<img src="WebFloopets/recursos/images/nube-1.png">
+			<h2>Ayuda una Mascota</h2>
+			<img class="bran" src=""></img>
 			</div>
+		</div>
 			<div class="container__form__help col s12 m8 l8">
-			    <!--<form class="col s12">
-			      <div class="row">
-			        <div class="input-field col s6">
-			          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
-			          <label for="first_name">First Name</label>
-			        </div>
-			        <div class="input-field col s6">
-			          <input id="last_name" type="text" class="validate">
-			          <label for="last_name">Last Name</label>
-			        </div>
-			      </div>
-			      <div class="row">
-			        <div class="input-field col s12">
-			          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-			          <label for="disabled">Disabled</label>
-			        </div>
-			      </div>
-			      <div class="row">
-			        <div class="input-field col s12">
-			          <input id="password" type="password" class="validate">
-			          <label for="password">Password</label>
-			        </div>
-			      </div>
-			      <div class="row">
-			        <div class="input-field col s12">
-			          <input id="email" type="email" class="validate">
-			          <label for="email">Email</label>
-			        </div>
-			      </div>
-			    </form>-->
+			    <div class="row">
+				    <form class="col s12">
+				      <div class="row">
+				        <div class="input-field col s6">
+				          <input placeholder="Placeholder" id="first_name" type="text" class="validate">
+				          <label for="first_name">First Name</label>
+				        </div>
+				        <div class="input-field col s6">
+				          <input id="last_name" type="text" class="validate">
+				          <label for="last_name">Last Name</label>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="input-field col s12">
+				          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+				          <label for="disabled">Disabled</label>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="input-field col s12">
+				          <input id="password" type="password" class="validate">
+				          <label for="password">Password</label>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="input-field col s12">
+				          <input id="email" type="email" class="validate">
+				          <label for="email">Email</label>
+				        </div>
+				      </div>
+				    </form>
+  				</div>
 			</div>
 			<img class="mon" src="WebFloopets/recursos/images/montañas.png">
 		</div>
