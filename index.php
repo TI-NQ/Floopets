@@ -24,10 +24,11 @@
 
 				<div class="container__perros col s12 m6 l6">
 
-					<button class="boton waves-effect waves-light btn btn-large">Perros</button>				
+					<button class="boton btn  amber darken-1 waves-effect waves-light btn-large">Perros</button>				
 					<img src="WebFloopets/images/1.jpg">					
 				</div>
 				<div class="container__gatos col s12 m6 l6">
+					<button class="boton1 btn  amber darken-1 waves-effect waves-light btn-large">Gatos</button>	
 					<img src="WebFloopets/images/2.jpg">
 					
 				</div>
