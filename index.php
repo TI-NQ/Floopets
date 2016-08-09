@@ -99,6 +99,7 @@
     	</div>
     	<!-- Cuidados David Pabon -->
 		<div class="class container">
+		<h1 class="text-black center">Cuidados</h1>
 				<div class="section" id="Cuidados">
 					<div class="carousel carousel-slider">
 					    <a class="carousel-item" href="#one!"><img src="WebFloopets/images/Cuidado1.jpg"></a>
