@@ -45,7 +45,6 @@
 			<h2>Ayuda una Mascota</h2>
 			<img class="bran" src=""></img>
 			</div>
-		</div>
 			<div class="container__form__help col s12 m8 l8">
 			    <div class="row">
 				    <form class="col s12">
@@ -80,6 +79,7 @@
 				    </form>
   				</div>
 			</div>
+			
 		</div>
 		<div class="parallax-container">
       		<div class="parallax"><img class="mon" src="WebFloopets/recursos/images/montañas.png"></div>
