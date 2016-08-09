@@ -91,6 +91,7 @@
 				          <input id="last_name" type="text" class="validate">
 				          <label for="last_name">Telefono(Celular)</label>
 				      </div>
+				      <a class="waves-effect waves-light btn right">button</a>
 				</div>
 				</form>
   				</div>
