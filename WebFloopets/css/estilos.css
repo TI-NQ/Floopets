@@ -15,6 +15,7 @@ video{
 	position: absolute;
 	z-index: 2; 
 	margin-top: 50vh;
+	left: 50px;
 
 }
 .container__gatos img{
