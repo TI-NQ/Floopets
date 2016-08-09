@@ -21,6 +21,7 @@
 		</div>
 		<!-- Andrea Guzman-Adopciones -->
 		<div class="row">
+				
 				<div class="container__perros col s12 m6 l6">
 					<img src="WebFloopets/images/1.jpg">
 				</div>
@@ -31,7 +32,7 @@
 		</div>
 		<!-- Andrea Guzman -->
 
-		
+
 		<!-- Contenedor ayuda una mascota
 		Ricardo_ochoa -->
 		
