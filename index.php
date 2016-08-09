@@ -29,12 +29,13 @@
 				</div>
 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png">
 		</div>
-<<<<<<< HEAD
+		<!-- Andrea Guzman -->
+
+		
 		<!-- Contenedor ayuda una mascota
 		Ricardo_ochoa -->
-=======
-		<!-- Andrea Guzman -->
->>>>>>> origin/master
+		
+
 		<div class="row">
 			<div class="container__img col s12 m4 l4" >
 			<h2>Ayuda una Mascota</h2>
