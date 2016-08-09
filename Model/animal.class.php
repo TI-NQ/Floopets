@@ -2,15 +2,15 @@
 	class gestion_animal
 	{
 		// Metodo Create()
-		function Create($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip)
+		function Create($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip)
 		{
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			//Crear el query que vamos a realizar.
-			$consulta ="INSERT INTO animal (ani_cod_animal,ra_cod_raza,ani_nombre,ani_esterilizado,ani_edad,ani_descripcion,ani_numero_microchip) VALUES (?,?,?,?,?,?,?)";
+			$consulta ="INSERT INTO animal (ra_cod_raza,ani_nombre,ani_esterilizado,ani_edad,ani_descripcion,ani_numero_microchip) VALUES (?,?,?,?,?,?)";
 			$query = $conexion->prepare($consulta);
-			$query->execute(array($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip));
+			$query->execute(array($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip));
 			floopets_BD::Disconnect();
 		}
 		function ReadAll()
@@ -30,7 +30,7 @@
 				floopets::Disconnect();
 		}
 
-		function Update($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip)
+		function Update($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_cod_animal)
 		{
 			//Instanciamos y nos conectamos a la bd
 			$Conexion = floopets::Connect();
@@ -38,10 +38,10 @@
 			//Crear el query que vamos a realizar
 			$consulta = "UPDATE animal SET ra_cod_raza,ani_nombre,ani_esterilizado,ani_edad,ani_descripcion,ani_numero_microchip WHERE ani_cod_animal = ?" ;
 			$query = $Conexion->prepare($consulta);
-			$query->execute(array($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_cod_animal));
+			$query->execute(array($ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_cod_animal,$ra_cod_raza));
 			floopets::Disconnect();
 		}
-			function Delete($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip)
+			function Delete($ani_cod_animal)
 			{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets::Connect();
