@@ -19,6 +19,7 @@
 			<video src="WebFloopets/video/563398388.mp4" autoplay loop>
 			</video>
 		</div>
+		<!-- Andrea Guzman-Adopciones -->
 		<div class="row">
 				<div class="container__perros col s12 m6 l6">
 					<img src="WebFloopets/images/1.jpg">
@@ -28,8 +29,12 @@
 				</div>
 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png">
 		</div>
+<<<<<<< HEAD
 		<!-- Contenedor ayuda una mascota
 		Ricardo_ochoa -->
+=======
+		<!-- Andrea Guzman -->
+>>>>>>> origin/master
 		<div class="row">
 			<div class="container__img col s12 m4 l4" >
 			<h2>Ayuda una Mascota</h2>
