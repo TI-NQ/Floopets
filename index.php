@@ -39,13 +39,11 @@
 
 		<!-- Contenedor ayuda una mascota
 		Ricardo_ochoa -->
-		
-
-		<div class="row">
+		<div class="row seccion2">
 			<div class="container__img col s12 m4 l4" >
-			<center><h2>Ayuda una Mascota</h2></center>
-			<center><img class="bran" src="WebFloopets/images/ayuda.png"></img></center>
-			<a href=""><center><img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img"></center></a>
+				<center><h2>Ayuda una Mascota</h2></center>
+				<center><img class="bran" src="WebFloopets/images/ayuda.png"></img></center>
+				<a href=""><center><img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img"></center></a>
 			</div>
 			<div class="container__form__help col s12 m8 l8">
 			    <div class="row">
@@ -88,15 +86,27 @@
 				          <label for="last_name">Telefono(Celular)</label>
 				      </div>
 				      <button class="boton__form btn waves-effect waves-light btn-large right">Enviar</button>
+					</form>
 				</div>
-				</form>
-  				</div>
-			</div>
-			
+  			</div>			
 		</div>
 		<div class="parallax-container">
       		<div class="parallax"><img class="mon" src="WebFloopets/recursos/images/montañas.png"></div>
-    	</div>		
+    	</div>	
+    	<div class="row seccion3">
+				<div class="container__perros col s12 m6 l6">
+					<div class="">
+						<button class="boton btn waves-effect waves-light btn-large">Perros</button>
+					</div>				
+					<img src="WebFloopets/images/1.jpg">					
+				</div>
+				<div class="container__gatos col s12 m6 l6">
+					<button class="boton1 btn  waves-effect waves-light btn-large">Gatos</button>	
+					<img src="WebFloopets/images/2.jpg">
+					
+				</div>
+<!-- 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png"> -->
+		</div>	
 	</body>
 		<!--Import jQuery before materialize.js-->
       	<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js">

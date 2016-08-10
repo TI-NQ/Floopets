@@ -120,3 +120,14 @@ input[type=text]:focus:not([readonly]) + label{
 	color: #fff;
 }
 /*-----------------------------------------------estilos parallax-----------------------------------------------*/
+.parallax-container{
+	position: relative;
+	z-index: 100;
+}
+.parallax-container {
+      height: 900px;
+    }
+/*----------------------------------------------estilos seccion 3----------------------------------------------*/
+.seccion3{
+	margin-top: -60px;
+}
