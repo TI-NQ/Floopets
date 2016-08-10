@@ -27,7 +27,23 @@
 				//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
 				$resultado = $query->fetchALL(PDO::FETCH_BOTH);
 				return $resultado;
-				floopets::Disconnect();
+				floopets_BD::Disconnect();
+		}
+		function ReadbyID($ado_cod_adopcion)
+			{
+			//Instanciamos y nos conectamos a la bd
+			$Conexion = floopets_BD::Connect();
+			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			//Crear el query que vamos a realizar
+			$consulta = "SELECT * FROM adopcion WHERE ado_cod_adopcion=?";
+			$query = $Conexion->prepare($consulta);
+			$query->execute(array($ado_cod_adopcion));
+			//Devolvemos el resultado en un arreglo
+			//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+			//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+			$resultado = $query->fetch(PDO::FETCH_BOTH);
+			return $resultado;
+			floopets_BD::Disconnect();
 		}
 
 		function Update($ado_cod_adopcion,$ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora)
@@ -39,7 +55,7 @@
 			$consulta = "UPDATE adopcion SET to_nombre=?,ani_cod_animal=?,usu_cod_usuario=?,ado_fecha=?,ado_hora=? WHERE ado_cod_adopcion = ?" ;
 			$query = $Conexion->prepare($consulta);
 			$query->execute(array($ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_cod_adopcion));
-			floopets::Disconnect();
+			floopets_BD::Disconnect();
 		}
 			function Delete($ado_cod_adopcion,$ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora)
 			{
@@ -50,7 +66,7 @@
 				$consulta = "DELETE FROM adopcion WHERE ado_cod_adopcion = ?" ;
 				$query = $Conexion->prepare($consulta);
 				$query->execute(array($ado_cod_adopcion));
-				floopets::Disconnect();
+				floopets_BD::Disconnect();
 		}
 
 	}

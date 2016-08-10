@@ -27,7 +27,7 @@
 				//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
 				$resultado = $query->fetchALL(PDO::FETCH_BOTH);
 				return $resultado;
-				floopets::Disconnect();
+				floopets_BD::Disconnect();
 		}
 
 		function ReadById($vo_cod_voluntario)
@@ -44,7 +44,7 @@
 				//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
 				$resultado = $query->fetch(PDO::FETCH_BOTH);
 				return $resultado;
-				floopets::Disconnect();
+				floopets_BD::Disconnect();
 		}
 		function Update($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$vo_imagen)
 		{
@@ -55,7 +55,7 @@
 			$consulta = "UPDATE voluntarios SET vo_nombre= ?,vo_telefono=?,vo_direccion=?,vo_imagen=? WHERE vo_cod_voluntario = ?" ;
 			$query = $Conexion->prepare($consulta);
 			$query->execute(array($vo_nombre,$vo_telefono,$vo_direccion,$vo_imagen,$vo_cod_voluntario));
-			floopets::Disconnect();
+			floopets_BD::Disconnect();
 		}
 			function Delete($vo_cod_voluntario)
 			{
@@ -66,7 +66,7 @@
 				$consulta = "DELETE FROM voluntarios WHERE vo_cod_voluntario = ?" ;
 				$query = $Conexion->prepare($consulta);
 				$query->execute(array($vo_cod_voluntario));
-				floopets::Disconnect();
+				floopets_BD::Disconnect();
 		}
 
 
