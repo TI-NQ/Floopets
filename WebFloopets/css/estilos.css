@@ -120,13 +120,40 @@ input[type=text]:focus:not([readonly]) + label{
 	color: #fff;
 }
 /*-----------------------------------------------estilos parallax-----------------------------------------------*/
+.nubes{
+	position: absolute;
+}
+.nubes img{
+	max-height: 400px;
+	max-width: 350px;
+}
 .parallax-container{
 	position: relative;
-	z-index: 100;
+	z-index: 1;
 }
 .parallax-container {
       height: 900px;
-    }
+}
+.nube1{
+	position: relative;
+	margin-top: 200px;
+	left: 100px;
+}
+.nube2{
+	position: relative;
+	margin-top: -300px;
+	left: 350px;
+}
+.nube3{
+	position: relative;
+	left: 550px;
+	margin-top: -50px;
+}
+.nube4{
+	position: relative;
+	left: 900px;
+	margin-top: -400px;
+}
 /*----------------------------------------------estilos seccion 3----------------------------------------------*/
 .seccion3{
 	margin-top: -60px;

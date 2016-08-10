@@ -88,10 +88,20 @@
 				      <button class="boton__form btn waves-effect waves-light btn-large right">Enviar</button>
 					</form>
 				</div>
-  			</div>			
+  			</div>		
 		</div>
 		<div class="parallax-container">
-      		<div class="parallax"><img class="mon" src="WebFloopets/recursos/images/montañas.png"></div>
+			<div class="nubes">
+				<div class="nube1"><img src="WebFloopets/recursos/images/nube-3.png"></div>
+  				<div class="nube2"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube3"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube4"><img src="WebFloopets/recursos/images/nube-2.png"></div>
+  				<div class="nube5"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube6"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  			</div>	
+      		<div class="parallax">
+      			<img src="WebFloopets/recursos/images/montañas.png">
+      		</div>
     	</div>	
     	<div class="row seccion3">
 				<div class="container__perros col s12 m6 l6">
