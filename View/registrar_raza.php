@@ -6,7 +6,7 @@
 		<input name="ra_nombre"></input>
 		
 		</div>
-		<div class="input-field col s12">
+		<div class="form-group">
                         <select  Required name="ta_cod_tipo_animal">
                             <option value="" disabled selected>tipo animal</option>
                             <?php
@@ -15,10 +15,10 @@
                                 // Cargo la clase tipo empresa
                                 require_once("../Model/tipo_animal.class.php");
 
-                                 $tipo = Gestion_raza::ReadAll();
+                                 $tipo_animal = Gestion_tipo_animal::ReadAll();
 
-                                foreach ($tipo as $row){
-                                    echo "<option value='".$row["ta_cod_tipo_animal"]."'>".$row["Nombre"]."</option>";
+                                foreach ($tipo_animal as $row){
+                                    echo "<option value='".$row["ta_cod_tipo_animal"]."'>".$row["nombre"]."</option>";
                                 }
                              ?>
                         </select>

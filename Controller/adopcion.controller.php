@@ -1,0 +1,56 @@
+<?php
+	require_once("../Model/conexion.php");
+	require_once("../Model/adopcion.class.php");
+
+	$accion = $_REQUEST["accion"];
+	switch ($accion) {
+		case 'c':
+
+			// $cod_permiso		= $_POST["cod_permiso"];
+			$ado_fecha = $_POST["ado_fecha"];
+			$ado_hora = $_POST["ado_hora"];
+			$ado_imagen = $_POST["ado_imagen"];
+			$ani_cod_animal = $_POST["ani_cod_animal"];
+			$usu_cod_usuario = $_POST["usu_cod_usuario"];
+
+			try {
+				Gestion_adopcion::Create($ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_imagen);
+				$mensaje = "Se registro exitosamente";
+			} catch (Exception $e) {
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
+			}
+			header("Location: ../View/gestion_adopcion.php?m=$mensaje");
+
+			break;
+
+		case 'u':
+			$ado_cod_adopcion = $_POST["ado_cod_adopcion"];
+			$ado_fecha = $_POST["ado_fecha"];
+			$ado_hora = $_POST["ado_hora"];
+			$ado_imagen = $_POST["ado_imagen"];
+			$ani_cod_animal = $_POST["ani_cod_animal"];
+			$usu_cod_usuario = $_POST["usu_cod_usuario"];
+
+				try{
+					Gestion_adopcion::Update($ado_cod_adopcion,$ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_imagen);
+					$mensaje = "Se actualizo correctamente";
+				}catch(Exception $e){
+					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
+				}
+				header("Location: ../View/gestion_adopcion.php?m= ".$mensaje );
+				break;
+
+		case 'd':
+					try {
+		          $adopcion = Gestion_adopcion::Delete(base64_decode($_REQUEST["ad"]));
+		          $mensaje = "Se eliminó correctamente";
+		          header("Location: ../View/gestion_adopcion.php?m=".$mensaje);
+		        } catch (Exception $e) {
+		          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
+		          header("Location: ../View/gestion_adopcion.php?m=".$mensaje);
+		        }
+		      break;
+
+	}
+
+ ?>
