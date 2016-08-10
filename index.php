@@ -54,7 +54,6 @@
 				      <div class="row">
 				        <div class="input-field col s6 mascota">
     						<select>
-						      <option value="" disabled selected>Elige una opcion</option>
 						      <option value="1">Gato</option>
 						      <option value="2">Perro</option>
     						</select>
@@ -62,7 +61,6 @@
   						</div>
 				        <div class="input-field col s6 mascota">
     						<select>
-						      <option value="" disabled selected>Elige una opcion</option>
 						      <option value="1">Perdida</option>
 						      <option value="2">Maltrato</option>
     						</select>
@@ -89,7 +87,7 @@
 				          <input id="last_name" type="text" class="validate">
 				          <label for="last_name">Telefono(Celular)</label>
 				      </div>
-				      <a class="waves-effect waves-light btn right">button</a>
+				      <button class="boton__form btn waves-effect waves-light btn-large right">Enviar</button>
 				</div>
 				</form>
   				</div>
