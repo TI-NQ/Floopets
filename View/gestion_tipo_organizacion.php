@@ -1,4 +1,7 @@
-<?php 
+<button type="button" name="button">
+  <a href="registrar_tipo_organizacion.php">Nuevo</a>
+</button>
+<?php
 
 require_once("../Model/conexion.php");
 require_once("../Model/tipo_organizacion.class.php");
@@ -13,7 +16,7 @@ $organizacion=Gestion_tipo_organizacion::ReadAll();
 			<td>acciones</td>
 		</tr>
 		<tbody>
-			<?php 
+			<?php
 			@$mensaje = $_REQUEST["m"];
 
 			echo @$mensaje;
@@ -26,7 +29,7 @@ $organizacion=Gestion_tipo_organizacion::ReadAll();
                     		<a href='../View/actualizar_tipo_organizacion.php?tp=".base64_encode($row["to_cod_tipo_organizacion"])."'>actualizar</a>
 
                     		<a href='../Controller/tipo_organizacion.controller.php?tp=".base64_encode($row["to_cod_tipo_organizacion"])."&accion=d'>eliminar</a>
-                 		
+
 					</tr>";
 			}
 

@@ -1,5 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<button type="button" name="button">
+  <a href="registrar_raza.php">Nuevo</a>
+</button>
 <?php
 
 require_once("../Model/conexion.php");
@@ -13,7 +15,7 @@ $raza=Gestion_raza::ReadAll();
 			<td>Codigo </td>
 			<td>nombre</td>
 			<td>acciones</td>
-			
+
 
 		</tr>
 		<tbody>

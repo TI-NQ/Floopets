@@ -7,12 +7,13 @@
 		case 'c':
 
 			$usu_cod_usuario		= $_POST["usu_cod_usuario"];
-			$td_cod_denuncia		= $_POST["td_cod_denuncia"];
+			// $td_cod_denuncia		= $_POST["td_cod_denuncia"];
 			$de_descripcion			= $_POST["de_descripcion"];
 			$de_fecha				= $_POST["de_fecha"];
+			$de_imagen			=$_POST["de_imagen"];
 
 			try {
-				Gestion_denuncia::Create($usu_cod_usuario,$td_cod_denuncia,$de_descripcion,$de_fecha);
+				Gestion_denuncia::Create($usu_cod_usuario,$de_descripcion,$de_fecha,$de_imagen);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
@@ -26,9 +27,10 @@
 				$td_cod_denuncia		= $_POST["td_cod_denuncia"];
 				$de_descripcion			= $_POST["de_descripcion"];
 				$de_fecha				= $_POST["de_fecha"];
+				$de_imagen			=$_POST["de_imagen"];
 
 			try {
-				Gestion_denuncia::Update($de_cod_denuncia,$usu_cod_usuario,$td_cod_denuncia,$de_descripcion,$de_fecha);
+				Gestion_denuncia::Update($de_cod_denuncia,$usu_cod_usuario,$td_cod_denuncia,$de_descripcion,$de_fecha,$de_imagen);
 				$mensaje = "Se actualizo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
@@ -47,7 +49,7 @@
           header("Location: ../View/Gestion_denuncia.php?m=".$mensaje);
         }
       break;
-			
+
 	}
 
  ?>

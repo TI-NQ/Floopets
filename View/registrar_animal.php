@@ -1,5 +1,6 @@
 
 <form action="../Controller/animal.controller.php" method="POST">
+	
 	<label class="form-label">Raza:</label>
 	<?php
 	require_once("../Model/conexion.php");

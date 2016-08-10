@@ -1,3 +1,6 @@
+<button type="button" name="button">
+  <a href="registrar_tipo_evento.php">Nuevo</a>
+</button>
 <?php
 
 require_once("../Model/conexion.php");

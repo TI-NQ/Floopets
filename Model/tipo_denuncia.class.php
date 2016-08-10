@@ -1,16 +1,16 @@
 <?php
-	class gestion_tipo_denuncia
+	class Gestion_tipo_denuncia
 	{
 		// Metodo Create()
-		function Create($td_tipo_denuncia,$td_nombre,$td_estado)
+		function Create($td_nombre,$td_estado)
 		{
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			//Crear el query que vamos a realizar.
-			$consulta ="INSERT INTO tipo_denuncia (td_tipo_denuncia,td_nombre,td_estado) VALUES (?,?,?)";
+			$consulta ="INSERT INTO tipo_denuncia (td_nombre,td_estado) VALUES (?,?)";
 			$query = $conexion->prepare($consulta);
-			$query->execute(array($td_tipo_denuncia,$td_nombre,$td_estado));
+			$query->execute(array($td_nombre,$td_estado));
 			floopets_BD::Disconnect();
 		}
 		function ReadAll()
@@ -45,15 +45,15 @@
 			return $resultado;
 			floopets_BD::Disconnect();
 		}
-		function Update($td_tipo_denuncia,$td_nombre,$td_estado,$td_cod_tipo_denuncia)
+		function Update($td_nombre,$td_estado,$td_cod_tipo_denuncia)
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "UPDATE tipo_denuncia SET td_tipo_denuncia = ?,td_nombre=?,td_estado=? WHERE td_cod_tipo_denuncia = ?" ;
+				$consulta = "UPDATE tipo_denuncia SET td_nombre=?,td_estado=? WHERE td_cod_tipo_denuncia = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($td_tipo_denuncia,$td_nombre,$td_estado,$td_cod_tipo_denuncia));
+				$query->execute(array($td_nombre,$td_estado,$td_cod_tipo_denuncia));
 				floopets_BD::Disconnect();
 
 		}

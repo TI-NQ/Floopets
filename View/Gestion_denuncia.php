@@ -1,9 +1,12 @@
-<?php 
+<?php
 
 require_once("../Model/conexion.php");
 require_once("../Model/denuncia.class.php");
 $denuncia = Gestion_denuncia::ReadAll();
  ?>
+ <button type="button" name="button">
+   <a href="registrar_denuncia.php">Nuevo</a>
+ </button>
 
 <table>
 	<thead>
@@ -16,7 +19,7 @@ $denuncia = Gestion_denuncia::ReadAll();
 			<td>acciones</td>
 		</tr>
 		<tbody>
-			<?php 
+			<?php
 			@$mensaje = $_REQUEST["m"];
 
 			echo @$mensaje;
@@ -31,7 +34,7 @@ $denuncia = Gestion_denuncia::ReadAll();
                     		<a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>actualizar</a>
 
                     		<a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'>eliminar</a>
-                 		
+
 					</tr>";
 			}
 

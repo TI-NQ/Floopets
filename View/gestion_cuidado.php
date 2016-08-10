@@ -1,5 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<button type="button" name="button" >
+  <a href="registrar_cuidado.php">Nuevo</a>
+</button>
 <?php
 
 require_once("../Model/conexion.php");
@@ -12,7 +14,9 @@ $cuidado=gestion_cuidado::ReadAll();
 		<tr>
 			<td>Codigo </td>
 			<td>Nombre</td>
-			<td>-Descripcion</td>
+			<td>Descripcion</td>
+      <td>Imagen</td>
+      <td>Video</td>
 		</tr>
 		<tbody>
 			<?php
@@ -25,10 +29,13 @@ $cuidado=gestion_cuidado::ReadAll();
 						<td>".$row["cu_cod_cuidado"]."</td>
 						<td>".$row["cu_nombre"]."</td>
 						<td>".$row["cu_descripcion"]."</td>
-						<td>
-                    		<a href='../View/actualizar_evento.php?cu=".base64_encode($row["cu_cod_cuidado"])."'>actualizar</a>
+            <td>".$row["galeria"]."</td>
+            <td>".$row["video"]."</td>
 
-                    		<a href='../Controller/evento.controller.php?cu=".base64_encode($row["cu_cod_cuidado"])."&accion=d'>eliminar</a>
+						<td>
+                    		<a href='../View/actualizar_cuidado.php?cu=".base64_encode($row["cu_cod_cuidado"])."'>actualizar</a>
+
+                    		<a href='../Controller/cuidado.controller.php?cu=".base64_encode($row["cu_cod_cuidado"])."&accion=d'>eliminar</a>
 
 					</tr>";
 			}

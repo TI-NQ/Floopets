@@ -1,16 +1,16 @@
 <?php
 	class Gestion_evento{
 
-		function Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_hora,$eve_descripcion){
+		function Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_hora,$eve_descripcion,$imagen){
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 			//Creamos el query de la consulta a la BD
-			$consulta="INSERT INTO evento (te_cod_tipo_evento,eve_nombre,eve_direccion,eve_fecha,eve_hora,eve_descripcion) VALUES (?,?,?,?,?,?)";
+			$consulta="INSERT INTO evento (te_cod_tipo_evento,eve_nombre,eve_direccion,eve_fecha,eve_hora,eve_descripcion,imagen) VALUES (?,?,?,?,?,?,?)";
 
 			$query=$conexion->prepare($consulta);
-			$query->execute(array($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_hora,$eve_descripcion));
+			$query->execute(array($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_hora,$eve_descripcion,$imagen));
 
 			floopets_BD::Disconnect();
 		}
@@ -33,7 +33,7 @@
 			return $resultado;
 		}
 
-		
+
 
 		function ReadbyID($eve_cod_evento){
 			//Intanciamos y nos conectamos a la bd
@@ -53,15 +53,15 @@
 			return $resultado;
 		}
 
-		function Update($eve_cod_evento,$te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_hora,$eve_descripcion)
+		function Update($eve_cod_evento,$te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_hora,$eve_descripcion,$imagen)
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "UPDATE evento SET te_cod_tipo_evento = ?, eve_nombre=?, eve_direccion=?, eve_fecha=?, eve_hora=?, eve_descripcion=? WHERE eve_cod_evento = ?" ;
+				$consulta = "UPDATE evento SET te_cod_tipo_evento = ?, eve_nombre=?, eve_direccion=?, eve_fecha=?, eve_hora=?, eve_descripcion=?, imagen=? WHERE eve_cod_evento = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_hora,$eve_descripcion,$eve_cod_evento));
+				$query->execute(array($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_hora,$eve_descripcion,$imagen,$eve_cod_evento));
 				floopets_BD::Disconnect();
 		}
 
@@ -70,17 +70,17 @@
 			$Conexion = floopets_BD::Connect();
 			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 			//Crear el query que vamos a realizar
 			$consulta = "DELETE FROM evento WHERE eve_cod_evento = ?" ;
 
 			$query = $Conexion->prepare($consulta);
-			$query->execute(array($eve_cod_evento));		
+			$query->execute(array($eve_cod_evento));
 
 			floopets_BD::Disconnect();
-			
-		}	
+
+		}
 
 
 	}

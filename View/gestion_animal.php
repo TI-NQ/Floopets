@@ -1,5 +1,9 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
+<button type="button" name="button">
+  <a href="registrar_animal.php">Nuevo</a>
+</button>
+
 <?php
     require_once("../Model/conexion.php");
     require_once("../Model/animal.class.php");

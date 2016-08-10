@@ -1,3 +1,6 @@
+<button type="button" name="button">
+  <a href="registrar_usuario.php">Nuevo</a>
+</button>
 <?php
 
 require_once("../Model/conexion.php");
@@ -22,7 +25,7 @@ $user=gestion_usuarios::ReadAll();
 			echo @$mensaje;
 
 			foreach ($user as $row) {
-    
+
 				echo"<tr>
 						<td>".$row["usu_cod_usuario"]."</td>
 						<td>".$row["usu_nombre"]."</td>

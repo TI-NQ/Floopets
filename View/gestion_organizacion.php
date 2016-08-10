@@ -1,5 +1,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-
+<button type="button" name="button">
+  <a href="registrar_organizacion.php">Nuevo</a>
+</button>
 <?php
 
 require_once("../Model/conexion.php");
@@ -17,7 +19,7 @@ $organizacion=Gestion_organizacion::ReadAll();
 			<td>Email</td>
 			<td>Telefono</td>
 			<td>Direccion</td>
-			
+
 
 		</tr>
 		<tbody>
