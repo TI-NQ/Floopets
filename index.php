@@ -34,7 +34,11 @@
 					<img src="WebFloopets/images/2.jpg">
 					
 				</div>
-<!-- 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png"> -->
+			<!-- <div class="parallax-container">
+	      		<div class="parallax">
+	      			<img src="WebFloopets/recursos/images/linea-azul.png">
+	      		</div>
+    		</div> -->
 		</div>
 		<!-- Andrea Guzman -->
 
@@ -94,12 +98,12 @@
 		</div>
 		<div class="parallax-container">
 			<div class="nubes">
-				<div class="nube1 animated bounceInUp infinite"><img src="WebFloopets/recursos/images/nube-3.png"></div>
-  				<div class="nube2 animated bounceInRight infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube3 animated bounceInLeft infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube4 animated bounceInRight infinite"><img src="WebFloopets/recursos/images/nube-2.png"></div>
-  				<div class="nube5 animated bounceInUp infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube6 animated bounceInUp infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+				<div class="nube1 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-3.png"></div>
+  				<div class="nube2 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube3 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube4 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-2.png"></div>
+  				<div class="nube5 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube6 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
   			</div>	
       		<div class="parallax">
       			<img src="WebFloopets/recursos/images/montañas.png">
@@ -188,7 +192,11 @@
 		 </div>	
   </div>
 </div>
-			
+			<div class="parallax-container">
+	      		<div class="parallax">
+	      			<img src="WebFloopets/recursos/images/edificios.png">
+	      		</div>
+    		</div>
 	</body>
 		<!--Import jQuery before materialize.js-->
       	<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js">
