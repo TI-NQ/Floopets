@@ -116,7 +116,66 @@
 					
 				</div>
 <!-- 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png"> -->
-		</div>	
+		</div>
+<!-- David Pabon-Adopciones -->
+<div class="row">
+
+	<div class="class col s12">
+		
+		<div class="col s12 m12 l8">
+			<div class="carousel carousel-slider ">
+			    <a class="carousel-item" href="#one!"><img src="WebFloopets/images/Cuidado1.jpg"></a>
+			    <a class="carousel-item" href="#two!"><img src="WebFloopets/images/Cuidado2.jpg"></a>
+			    <a class="carousel-item" href="#three!"><img src="WebFloopets/images/Cuidado3.jpg"></a>
+			    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuidado4.jpg"></a>
+			    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuidado5.jpg"></a>
+		  </div>
+		  </div>
+
+
+		  <div class="col s12 m12 l4">
+		  	<h4 class="white-text center" style="font-family: 'Roboto Condensed', sans-serif;">Búsqueda Avanzada</h4>
+
+			  <form class="col s12">
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <div class="input-field col s12">
+					    <select multiple>
+					      <option value="" disabled selected>Choose your option</option>
+					      <option value="1">Option 1</option>
+					      <option value="2">Option 2</option>
+					      <option value="3">Option 3</option>
+					    </select>
+					    <label>Materialize Multiple Select</label>
+					  </div>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
+			          <label for="disabled">Disabled</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <input id="password" type="password" class="validate">
+			          <label for="password">Password</label>
+			        </div>
+			      </div>
+			      <div class="row">
+			        <div class="input-field col s12">
+			          <input id="email" type="email" class="validate">
+			          <label for="email">Email</label>
+			        </div>
+			      </div>
+	    	</form>
+
+		  </div>
+
+  		
+  </div>
+</div>
+			
 	</body>
 		<!--Import jQuery before materialize.js-->
       	<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js">
@@ -127,6 +186,7 @@
       		 $(document).ready(function(){
      			 $('.parallax').parallax();
      			 $('select').material_select();
+     			 $('.carousel.carousel-slider').carousel({full_width: true});
     		});
       	</script>
 </html>
