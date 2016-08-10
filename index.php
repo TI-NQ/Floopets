@@ -126,11 +126,13 @@
 		
 		<div class="col s12 m12 l8">
 			<div class="carousel carousel-slider ">
-			    <a class="carousel-item" href="#one!"><img src="WebFloopets/images/Cuidado1.jpg"></a>
-			    <a class="carousel-item" href="#two!"><img src="WebFloopets/images/Cuidado2.jpg"></a>
-			    <a class="carousel-item" href="#three!"><img src="WebFloopets/images/Cuidado3.jpg"></a>
-			    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuidado4.jpg"></a>
-			    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuidado5.jpg"></a>
+			
+					
+			    <a class="carousel-item" href="#one!"><img src="WebFloopets/images/Cuid1.jpg"></a>
+			    <a class="carousel-item" href="#two!"><img src="WebFloopets/images/Cuid2.jpg"></a>
+			    <a class="carousel-item" href="#three!"><img src="WebFloopets/images/Cuid3.jpg"></a>
+			    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuid4.jpg"></a>
+			    
 		  </div>
 		</div>
 
@@ -176,7 +178,7 @@
 
 			      </div>
 
-			 <button class="btn waves-effect waves-light btn-large right">Buscar</button>
+			<button class="boton__form btn waves-effect waves-light btn-large right">Buscar</button>
 	    	</form>
 
 			</div>

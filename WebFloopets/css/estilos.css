@@ -174,4 +174,5 @@ input[type=text]:focus:not([readonly]) + label{
 /*----------------------------------------------estilos seccion Cuidados----------------------------------------------*/
 .carousel-item img{
 	max-height: 600px;
+	border-radius: 20px;
 }
