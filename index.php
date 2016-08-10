@@ -132,7 +132,7 @@
 			    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuidado4.jpg"></a>
 			    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuidado5.jpg"></a>
 		  </div>
-		  </div>
+		</div>
 
 
 		  <div class="col s12 m12 l4">
@@ -140,41 +140,50 @@
 
 			  <form class="col s12">
 			      <div class="row">
-			        <div class="input-field col s12">
-			          <div class="input-field col s12">
-					    <select multiple>
-					      <option value="" disabled selected>Choose your option</option>
-					      <option value="1">Option 1</option>
-					      <option value="2">Option 2</option>
-					      <option value="3">Option 3</option>
-					    </select>
-					    <label>Materialize Multiple Select</label>
+			        	<div class="input-field col s12">
+			         
+						    <select>
+						   
+						      <option value="1">Perro</option>
+						      <option value="2">Gato</option>
+						      
+						    </select>
+						    <label>Elija el Tipo de Mascota</label>
+						  </div>
 					  </div>
+					  <div class="row">
+			        <div class="input-field col s12">
+			          <select>
+						   
+						      <option value="1">Raza 1</option>
+						      <option value="2">Raza 2</option>
+						      
+						    </select>
+						    <label>Raza</label>
 			        </div>
 			      </div>
 			      <div class="row">
 			        <div class="input-field col s12">
-			          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-			          <label for="disabled">Disabled</label>
+			          <select>
+						   
+						      <option value="1">0-6 Meses</option>
+						      <option value="2">6 Meses - 1 Año</option>
+						      <option value="2">1 Año - 3 Años</option>
+						      
+						    </select>
+						    <label>Edad</label>
 			        </div>
+
 			      </div>
-			      <div class="row">
-			        <div class="input-field col s12">
-			          <input id="password" type="password" class="validate">
-			          <label for="password">Password</label>
-			        </div>
-			      </div>
-			      <div class="row">
-			        <div class="input-field col s12">
-			          <input id="email" type="email" class="validate">
-			          <label for="email">Email</label>
-			        </div>
-			      </div>
+
+			 <button class="btn waves-effect waves-light btn-large right">Buscar</button>
 	    	</form>
 
-		  </div>
+			</div>
+			    
+			      
 
-  		
+		 </div>	
   </div>
 </div>
 			
