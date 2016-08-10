@@ -52,9 +52,9 @@
 			$Conexion = floopets_BD::Connect();
 			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			//Crear el query que vamos a realizar
-			$consulta = "UPDATE adopcion SET ani_cod_animal=?,usu_cod_usuario=?,ado_fecha=?,ado_hora=? WHERE ado_cod_adopcion = ?" ;
+			$consulta = "UPDATE adopcion SET ani_cod_animal=?,usu_cod_usuario=?,ado_fecha=?,ado_hora=?,ado_imagen WHERE ado_cod_adopcion = ?" ;
 			$query = $Conexion->prepare($consulta);
-			$query->execute(array($ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_cod_adopcion));
+			$query->execute(array($ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_imagen,$ado_cod_adopcion));
 			floopets_BD::Disconnect();
 		}
 			function Delete($ado_cod_adopcion)
