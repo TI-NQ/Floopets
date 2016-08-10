@@ -137,6 +137,11 @@ input[type=text]:focus:not([readonly]) + label{
 .parallax-container {
       height: 900px;
 }
+.edificios{
+	position: relative;
+	z-index: 1;
+	height: 800px;
+}
 .nube1{
 	position: relative;
 	margin-top: 200px;

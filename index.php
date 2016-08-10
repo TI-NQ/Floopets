@@ -13,7 +13,7 @@
 		<!-- import animate.css -->
 		<link rel="stylesheet" type="text/css" href="WebFloopets/css/animate.css">
 		<title>Floopets-Cambiando vidas</title>
-		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale?1.0, minimum-scale=1.0">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link rel="stylesheet" type="text/css" href="WebFloopets/css/estilos.css">
 	</head>
 	<body>
@@ -114,11 +114,11 @@
 					<div class="">
 						<button class="boton btn waves-effect waves-light btn-large">Perros</button>
 					</div>				
-					<img src="WebFloopets/images/1.jpg">					
+					<img src="WebFloopets/images/beagle,-perro-triste,-muro-236194.jpg">					
 				</div>
 				<div class="container__gatos col s12 m6 l6">
 					<button class="boton1 btn  waves-effect waves-light btn-large">Gatos</button>	
-					<img src="WebFloopets/images/2.jpg">
+					<img src="WebFloopets/images/ojos-azules.jpg">
 					
 				</div>
 <!-- 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png"> -->
@@ -192,12 +192,37 @@
 		 </div>	
   </div>
 </div>
-			<div class="parallax-container">
+			<div class="parallax-container edificios">
 	      		<div class="parallax">
 	      			<img src="WebFloopets/recursos/images/edificios.png">
 	      		</div>
     		</div>
 	</body>
+	<footer class="page-footer brown darken-1">
+          <div class="container">
+            <div class="row">
+              <div class="col l6 s12">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col l4 offset-l2 s12">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright brown lighten-1">
+            <div class="container">
+            © 2014 Copyright Text
+            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+            </div>
+          </div>
+        </footer>
 		<!--Import jQuery before materialize.js-->
       	<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js">
       	</script>
