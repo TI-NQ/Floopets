@@ -10,6 +10,8 @@
 	    <link type="text/css" rel="stylesheet" href="WebFloopets/materialize/css/materialize.css"  media="screen,projection"/>
 		<link rel="shortcut icon" type="image/x-icon" href="WebFloopets/images/title-web.ico">
 		<meta charset="UTF-8">
+		<!-- import animate.css -->
+		<link rel="stylesheet" type="text/css" href="WebFloopets/css/animate.css">
 		<title>Floopets-Cambiando vidas</title>
 		<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale?1.0, minimum-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="WebFloopets/css/estilos.css">
@@ -50,14 +52,14 @@
 				    <form class="col s12">
 				    <center><h2>Seleccione una opcion</h2></center>
 				      <div class="row">
-				        <div class="input-field col s6 mascota">
+				        <div class="input-field col s12 m6 l6 mascota">
     						<select>
 						      <option value="1">Gato</option>
 						      <option value="2">Perro</option>
     						</select>
     						<label>Selecciona un tipo de mascota</label>
   						</div>
-				        <div class="input-field col s6 mascota">
+				        <div class="input-field col s12 m6 l6 mascota">
     						<select>
 						      <option value="1">Perdida</option>
 						      <option value="2">Maltrato</option>
@@ -66,22 +68,22 @@
   						</div>
 				      </div>
         			  <div class="input-field col s12 textarea">
-          			      <textarea id="textarea1" class="materialize-textarea"></textarea>
+          			      <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
           				  <label for="textarea1">Descripcion</label>
         			  </div>
-				      <div class="input-field col s6">
+				      <div class="input-field col s12 m6 l6">
 				          <input id="last_name" type="text" class="validate">
 				          <label for="last_name">Nombre mascota(Opcional)</label>
 				      </div>
-				      <div class="input-field col s6">
+				      <div class="input-field col s12 m6 l6">
 				          <input id="last_name" type="text" class="validate">
 				          <label for="last_name">Nombre contacto</label>
 				      </div>
-				      <div class="input-field col s6">
+				      <div class="input-field col s12 m6 l6">
 				          <input id="last_name" type="text" class="validate">
 				          <label for="last_name">Correo electronico</label>
 				      </div>
-				      <div class="input-field col s6">
+				      <div class="input-field col s12 m6 l6">
 				          <input id="last_name" type="text" class="validate">
 				          <label for="last_name">Telefono(Celular)</label>
 				      </div>
@@ -92,12 +94,12 @@
 		</div>
 		<div class="parallax-container">
 			<div class="nubes">
-				<div class="nube1"><img src="WebFloopets/recursos/images/nube-3.png"></div>
-  				<div class="nube2"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube3"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube4"><img src="WebFloopets/recursos/images/nube-2.png"></div>
-  				<div class="nube5"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube6"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+				<div class="nube1 animated bounceInUp infinite"><img src="WebFloopets/recursos/images/nube-3.png"></div>
+  				<div class="nube2 animated bounceInRight infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube3 animated bounceInLeft infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube4 animated bounceInRight infinite"><img src="WebFloopets/recursos/images/nube-2.png"></div>
+  				<div class="nube5 animated bounceInUp infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube6 animated bounceInUp infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
   			</div>	
       		<div class="parallax">
       			<img src="WebFloopets/recursos/images/montañas.png">
