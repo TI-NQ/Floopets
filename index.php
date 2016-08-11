@@ -10,6 +10,8 @@
 	    <link type="text/css" rel="stylesheet" href="WebFloopets/materialize/css/materialize.css"  media="screen,projection"/>
 		<link rel="shortcut icon" type="image/x-icon" href="WebFloopets/images/title-web.ico">
 		<meta charset="UTF-8">
+		<!-- import font-awesome -->
+		<link rel="stylesheet" type="text/css" href="WebFloopets/font-awesome-4.6.3/css/font-awesome.css">
 		<!-- import animate.css -->
 		<link rel="stylesheet" type="text/css" href="WebFloopets/css/animate.css">
 		<title>Floopets-Cambiando vidas</title>
@@ -34,12 +36,12 @@
 					<img src="WebFloopets/images/2.jpg">
 					
 				</div>
-			<!-- <div class="parallax-container">
-	      		<div class="parallax">
-	      			<img src="WebFloopets/recursos/images/linea-azul.png">
-	      		</div>
-    		</div> -->
 		</div>
+		<div class="parallax-container azul">
+	      	<div class="parallax">
+	      		<img src="WebFloopets/recursos/images/linea-azul.png">
+	  		</div>
+    	</div>
 		<!-- Andrea Guzman -->
 
 
@@ -47,14 +49,14 @@
 		Ricardo_ochoa -->
 		<div class="row seccion2">
 			<div class="container__img col s12 m4 l4" >
-				<center><h2>Ayuda una Mascota</h2></center>
+				<center><h3 class="animate-in" data-anim-type="fade-in-up" data-anim-delay="60">Ayuda una Mascota</h3></center>
 				<center><img class="bran" src="WebFloopets/images/ayuda.png"></img></center>
 				<a href=""><center><img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img"></center></a>
 			</div>
 			<div class="container__form__help col s12 m8 l8">
 			    <div class="row">
 				    <form class="col s12">
-				    <center><h2>Seleccione una opcion</h2></center>
+				    <center><h3>Seleccione una opcion</h3></center>
 				      <div class="row">
 				        <div class="input-field col s12 m6 l6 mascota">
     						<select>
@@ -98,12 +100,12 @@
 		</div>
 		<div class="parallax-container">
 			<div class="nubes">
-				<div class="nube1 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-3.png"></div>
-  				<div class="nube2 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube3 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube4 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-2.png"></div>
-  				<div class="nube5 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube6 animated rubberBand infinite"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+				<div class="nube1"><img src="WebFloopets/recursos/images/nube-3.png"></div>
+  				<div class="nube2"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube3"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube4"><img src="WebFloopets/recursos/images/nube-2.png"></div>
+  				<div class="nube5"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube6"><img src="WebFloopets/recursos/images/nube-1.png"></div>
   			</div>	
       		<div class="parallax">
       			<img src="WebFloopets/recursos/images/montañas.png">
@@ -194,19 +196,28 @@
 </div>
 			<div class="parallax-container edificios">
 	      		<div class="parallax">
-	      			<img src="WebFloopets/recursos/images/edificios.png">
+	      			<img src="WebFloopets/recursos/images/edificios2.png">
 	      		</div>
     		</div>
 	</body>
 	<footer class="page-footer brown darken-1">
           <div class="container">
             <div class="row">
-              <div class="col l6 s12">
+              <div class="col s12 m6 l6">
                 <h5 class="white-text">Footer Content</h5>
                 <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
               </div>
-              <div class="col l4 offset-l2 s12">
+              <div class="col s12 m3 l3">
                 <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+              <div class="col s12 m3 l3">
+                <a href="logo-footer"><img class="logo__footer" src="WebFloopets/images/logo-blanco.png"></a>
                 <ul>
                   <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
                   <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
@@ -218,8 +229,11 @@
           </div>
           <div class="footer-copyright brown lighten-1">
             <div class="container">
-            © 2014 Copyright Text
-            <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
+	            © 2016 Centro de Diseño y Manufactura del Cuero | Analisis y Desarrollo de Sistemas de Informacion 
+	            <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+	            <a class="white-text right" href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+	            <a class="white-text right" href="#!"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+	            <a class="white-text right" href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
             </div>
           </div>
         </footer>
