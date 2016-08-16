@@ -5,7 +5,7 @@
 
 require_once("../Model/conexion.php");
 require_once("../Model/usuarios.class.php");
-$user=gestion_usuarios::ReadAll();
+$user=Gestion_usuarios::ReadAll();
  ?>
 
 <table>
@@ -48,3 +48,13 @@ $user=gestion_usuarios::ReadAll();
 	</thead>
 </table>
 </table>
+<script type="text/javascript">
+	
+        <?php
+
+      if(isset($_GET["m"])){
+        echo "alert( '".$_GET["m"]."');";
+      }
+    ?>
+
+</script>

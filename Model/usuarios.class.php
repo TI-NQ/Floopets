@@ -1,6 +1,6 @@
 <?php
 
-	class gestion_usuarios
+	class Gestion_usuarios
 	{
 			function Create($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave)
 			{
@@ -68,6 +68,25 @@
 				$query->execute(array($usu_cod_usuario));
 				floopets_BD::Disconnect();
 		}
+
+
+		function ValidaUsuario($usu_email, $usu_clave){
+		      $Conexion=floopets_BD::Connect();
+		      $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		      $consulta = "SELECT * FROM usuario WHERE usu_email = ? AND usu_clave = ?";
+
+		      $query = $Conexion->prepare($consulta);
+
+		      $query->execute(array($usu_email, $usu_clave));
+		      // fetch cuando voy a mostrar un solo registro
+		      // fetchALL cuando voy a mostrar mas de un registro
+
+		      $results = $query->fetch(PDO::FETCH_BOTH);
+		      floopets_BD::Disconnect();
+
+		      return $results;
+    	}
 
 
 	}

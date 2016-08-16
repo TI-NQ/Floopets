@@ -3,7 +3,7 @@
   require_once("../Model/conexion.php");
   require_once("../Model/usuarios.class.php");
 
-  $user =  gestion_usuarios::ReadbyID(base64_decode($_REQUEST["us"]));
+  $user =  Gestion_usuarios::ReadbyID(base64_decode($_REQUEST["us"]));
 ?>
 <form action="../Controller/usuarios.controller.php" method="POST">
 		<input class="form-control"  type="hidden" name="usu_cod_usuario" required readonly value="<?php echo $user[0]?>">
