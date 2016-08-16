@@ -215,3 +215,19 @@ input[type=text]:focus:not([readonly]) + label{
 	max-width: 204px;
 	max-height: 81.693px;
 }
+/*----------------------------------------------estilos seccion Eventos----------------------------------------------*/
+#owl-demo .item{
+
+  margin: 0px;
+}
+#owl-demo .item img{
+  display: block;
+  width: 100%;
+  
+}
+.text-event{
+	position:relative;
+	margin-top: -95px;
+	color: #fff;
+	background-color: rgba(0,179,174,0.5);
+}
