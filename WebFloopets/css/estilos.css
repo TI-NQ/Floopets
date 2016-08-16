@@ -9,6 +9,28 @@ body{
 /*----------------------------------------------diseño sobre video----------------------------------------------*/
 video{
 	width: 100%;
+	position: relative;
+}
+.ingresa{
+	background-color: rgba(0, 179, 174,0.8) !important;
+	position: absolute;
+	margin-top: 80vh;
+	left: 750px;
+	border-radius: 0;
+	font-family:'Roboto Condensed', sans-serif;
+	font-size: 30px;
+	text-transform: inherit;
+}
+.unete{
+	background-color: transparent !important;
+	position: absolute;
+	margin-top: 80vh;
+	left: 1000px;
+	border-radius: 0;
+	border: solid 2px;
+	font-family:'Roboto Condensed', sans-serif;
+	font-size: 30px;
+	text-transform: inherit;
 }
 /*-----------------------------------------------estilos seccion 1-----------------------------------------------*/
 .seccion1{

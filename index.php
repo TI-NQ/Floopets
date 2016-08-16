@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
+	 	<!-- import jquery ui -->
+	 	<script type="text/javascript" src="WebFloopets/js/jquery-ui-1.11.4/jquery-ui.js"></script>
+		<link rel="stylesheet" type="text/css" href="WebFloopets/js/jquery-ui-1.11.4/jquery-ui.css">
+		<link rel="stylesheet" type="text/css" href="WebFloopets/js/jquery-ui-1.11.4/jquery-ui.structure.css">
+		<link rel="stylesheet" type="text/css" href="WebFloopets/js/jquery-ui-1.11.4/jquery-ui.theme.css">
 		<!-- google.fonts import -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -20,8 +25,9 @@
 	</head>
 	<body>
 		<div class="banner-video">
-			<video src="WebFloopets/video/563398388.mp4" autoplay loop>
-			</video>
+			<button class="ingresa btn waves-effect waves-light btn-large">Ingresa</button>
+			<button class="unete btn waves-effect waves-light btn-large">Unete</button>
+			<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
 		</div>
 		<!-- Andrea Guzman-Adopciones -->
 		<div class="row seccion1">
