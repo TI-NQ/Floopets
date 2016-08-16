@@ -272,7 +272,7 @@
 	    </div>
     </div>
 
-	<footer class="page-footer brown darken-1">
+	<footer class="page-footer grey darken-4">
       <div class="container">
         <div class="row">
           <div class="col s12 m6 l6">
@@ -299,7 +299,7 @@
           </div>
         </div>
       </div>
-      <div class="footer-copyright brown lighten-1">
+      <div class="footer-copyright grey darken-2">
         <div class="container">
            <a >© 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información</a>  
             <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
