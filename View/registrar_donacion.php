@@ -1,5 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<form action="../Controller/donacion.controller.php" method="POST">
+<form action="../Controller/donacion.controller.php" method="POST" enctype="multipart/form-data">
 	<h1>Registrar donacion</h1>
 	<div class="form-group">
 		<label>descripcion</label>
