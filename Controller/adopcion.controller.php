@@ -9,11 +9,17 @@
 			// $cod_permiso		= $_POST["cod_permiso"];
 			$ado_fecha = $_POST["ado_fecha"];
 			$ado_hora = $_POST["ado_hora"];
+			$nombre_cod_animal 	= strtolower(str_replace('ñ', 'n', $ani_cod_animal));
+			$nombre_cod_animal 	= strtolower(str_replace(' ', '', $nombre_cod_animal));
 			$ado_imagen = $_POST["ado_imagen"];
+			$count_galeria			= count($_FILES['ado_imagen']['name']);
 			$ani_cod_animal = $_POST["ani_cod_animal"];
 			$usu_cod_usuario = $_POST["usu_cod_usuario"];
 
 			try {
+				if($count_galeria >= 1){ 
+					include("Upload_ado_image.php");
+				} 
 				Gestion_adopcion::Create($ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_imagen);
 				$mensaje = "Se registro exitosamente";
 			} catch (Exception $e) {

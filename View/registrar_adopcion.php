@@ -1,4 +1,4 @@
-<form action="../Controller/adopcion.controller.php" method="POST">
+<form action="../Controller/adopcion.controller.php" method="POST" enctype="multipart/form-data">
 	<div class="form-group">
 		<label class="form-label">fecha</label>
 		<input class="form-control" type="date" name="ado_fecha" required>

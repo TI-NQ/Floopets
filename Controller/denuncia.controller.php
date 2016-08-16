@@ -8,11 +8,17 @@
 
 			$usu_cod_usuario		= $_POST["usu_cod_usuario"];
 			// $td_cod_denuncia		= $_POST["td_cod_denuncia"];
+			$nombre_cod_usuario 	= strtolower(str_replace('ñ', 'n', $usu_cod_usuario));
+			$nombre_cod_usuario 	= strtolower(str_replace(' ', '', $nombre_cod_usuario));
 			$de_descripcion			= $_POST["de_descripcion"];
 			$de_fecha				= $_POST["de_fecha"];
 			$de_imagen			=$_POST["de_imagen"];
+			$count_galeria			= count($_FILES['ado_imagen']['name']);
 
 			try {
+				if($count_galeria >= 1){ 
+					include("Upload_de_image.php");
+				} 
 				Gestion_denuncia::Create($usu_cod_usuario,$de_descripcion,$de_fecha,$de_imagen);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {

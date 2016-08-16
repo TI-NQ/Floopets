@@ -1,7 +1,7 @@
 <?php
 require_once("../Model/usuarios.class.php");
 ?>
-<form action="../Controller/tipo_denuncia.controller.php" method="POST">
+<form action="../Controller/tipo_denuncia.controller.php" method="POST" enctype="multipart/form-data">
 	<div class="form-group">
 		 <input type="hidden" name="usu_cod_usuario" value="<?php echo $_SESSION["usu_cod_usuario"]; ?>"/>
 	</div>
