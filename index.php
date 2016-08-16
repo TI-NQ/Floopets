@@ -22,30 +22,6 @@
 		<title>Floopets-Cambiando vidas</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 		<link rel="stylesheet" type="text/css" href="WebFloopets/css/estilos.css">
-		<link rel="stylesheet" type="text/css" href="WebFloopets/css/owl.carousel.css">
-		<link rel="stylesheet" type="text/css" href="WebFloopets/css/owl.theme.css">
-
-				<!--Import jQuery before materialize.js-->
-      	<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js">
-      	</script>
-      	<script type="text/javascript" src="WebFloopets/materialize/js/materialize.js"></script>
-      	<script type="text/javascript" src ="WebFloopets/js/owl.carousel.min.js"></script>
-      	<!-- scripts -->
-      	<script type="text/javascript">
-      		 $(document).ready(function(){
-     			 $('.parallax').parallax();
-     			 $('select').material_select();
-     			 $('.carousel.carousel-slider').carousel({full_width: true});
-     			 $("#owl-demo").owlCarousel({
-				      autoPlay: 3000, //Set AutoPlay to 3 seconds
-				      items : 4,
-				      itemsDesktop : [1199,3],
-				      itemsDesktopSmall : [979,3]
-				 
-  
-    			});
-     		 });
-      	</script>
 	</head>
 	<body>
 		<div class="banner-video">
@@ -62,7 +38,7 @@
 					<img src="WebFloopets/images/1.jpg">					
 				</div>
 				<div class="container__gatos col s12 m6 l6">
-					<button class="boton1 btn waves-effect waves-light btn-large">Gatos</button>	
+					<button class="boton1 btn  waves-effect waves-light btn-large">Gatos</button>	
 					<img src="WebFloopets/images/2.jpg">
 					
 				</div>
@@ -79,14 +55,14 @@
 		Ricardo_ochoa -->
 		<div class="row seccion2">
 			<div class="container__img col s12 m4 l4" >
-				<h3 class="animate-in" data-anim-type="fade-in-up" data-anim-delay="60">Ayuda una Mascota</h3>
-				<img class="bran" src="WebFloopets/images/ayuda.png">
-				<a href=""><img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img"></a>
+				<center><h3 class="animate-in" data-anim-type="fade-in-up" data-anim-delay="60">Ayuda una Mascota</h3></center>
+				<center><img class="bran" src="WebFloopets/images/ayuda.png"></img></center>
+				<a href=""><center><img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img"></center></a>
 			</div>
 			<div class="container__form__help col s12 m8 l8">
 			    <div class="row">
 				    <form class="col s12">
-				    <center><h3>Seleccione una opción</h3></center>
+				    <center><h3>Seleccione una opcion</h3></center>
 				      <div class="row">
 				        <div class="input-field col s12 m6 l6 mascota">
     						<select>
@@ -97,7 +73,7 @@
   						</div>
 				        <div class="input-field col s12 m6 l6 mascota">
     						<select>
-						      <option value="1">Pérdida</option>
+						      <option value="1">Perdida</option>
 						      <option value="2">Maltrato</option>
     						</select>
     						<label>Selecciona un tipo de denuncia</label>
@@ -105,7 +81,7 @@
 				      </div>
         			  <div class="input-field col s12 textarea">
           			      <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
-          				  <label for="textarea1">Descripción</label>
+          				  <label for="textarea1">Descripcion</label>
         			  </div>
 				      <div class="input-field col s12 m6 l6">
 				          <input id="last_name" type="text" class="validate">
@@ -117,11 +93,11 @@
 				      </div>
 				      <div class="input-field col s12 m6 l6">
 				          <input id="last_name" type="text" class="validate">
-				          <label for="last_name">Correo electrónico</label>
+				          <label for="last_name">Correo electronico</label>
 				      </div>
 				      <div class="input-field col s12 m6 l6">
 				          <input id="last_name" type="text" class="validate">
-				          <label for="last_name">Teléfono (Celular)</label>
+				          <label for="last_name">Telefono(Celular)</label>
 				      </div>
 				      <button class="boton__form btn waves-effect waves-light btn-large right">Enviar</button>
 					</form>
@@ -155,7 +131,7 @@
 				</div>
 <!-- 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png"> -->
 		</div>
-<!-- David Pabon-Cuidados -->
+<!-- David Pabon-Adopciones -->
 <div class="row">
 
 	<div class="class col s12">
@@ -222,101 +198,61 @@
 			      
 
 		 </div>	
+  </div>
 </div>
-
 			<div class="parallax-container edificios">
 	      		<div class="parallax">
 	      			<img src="WebFloopets/recursos/images/edificios2.png">
 	      		</div>
     		</div>
-
-    <!-- David Pabon-Eventos -->
-    <div class="row">
-	    
-	    <h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
-	    	<div id="owl-demo">
-          
-			  <div class="item">
-			  <img src="WebFloopets/images/evento1.jpg" alt="Owl Image">
-					<div class="text-event">
-						
-							<h4>Ensayo</h4>
-							<h6>Fecha</h6>
-							
-					</div>
-				  	
-			  </div>
-			  <div class="item"><img src="WebFloopets/images/evento2.jpg" alt="Owl Image">
-			  <div class="text-event">
-						
-							<h4>Ensayo</h4>
-							<h6>Fecha</h6>
-							
-						
-					</div>
-			  </div>
-			  <div class="item"><img src="WebFloopets/images/evento3.jpg" alt="Owl Image">
-			  <div class="text-event">
-						
-							<h4>Ensayo</h4>
-							<h6>Fecha</h6>
-							
-					</div>
-			  </div>
-			  <div class="item"><img src="WebFloopets/images/evento4.jpg" alt="Owl Image">
-			  		<div class="text-event">
-						
-							<h4>Ensayo</h4>
-							<h6>Fecha</h6>
-							
-					</div>
-			  </div>
-			  </div>
-			  	  
-			
-			
-	    </div>
-    </div>
-
-	<footer class="page-footer brown darken-1">
-      <div class="container">
-        <div class="row">
-          <div class="col s12 m6 l6">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
-          </div>
-          <div class="col s12 m3 l3">
-            <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-          <div class="col s12 m3 l3">
-            <a href="logo-footer"><img class="logo__footer" src="WebFloopets/images/logo-blanco.png"></a>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="footer-copyright brown lighten-1">
-        <div class="container">
-           <a >© 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información</a>  
-            <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a class="white-text right" href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="white-text right" href="#!"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a class="white-text right" href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
-        </div>
-      </div>
-    </footer>
 	</body>
-
-
-
+	<footer class="page-footer brown darken-1">
+          <div class="container">
+            <div class="row">
+              <div class="col s12 m6 l6">
+                <h5 class="white-text">Footer Content</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+              </div>
+              <div class="col s12 m3 l3">
+                <h5 class="white-text">Links</h5>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+              <div class="col s12 m3 l3">
+                <a href="logo-footer"><img class="logo__footer" src="WebFloopets/images/logo-blanco.png"></a>
+                <ul>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+                  <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="footer-copyright brown lighten-1">
+            <div class="container">
+	            © 2016 Centro de Diseño y Manufactura del Cuero | Analisis y Desarrollo de Sistemas de Informacion 
+	            <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+	            <a class="white-text right" href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+	            <a class="white-text right" href="#!"><i class="fa fa-instagram" aria-hidden="true"></i></a>
+	            <a class="white-text right" href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            </div>
+          </div>
+        </footer>
+		<!--Import jQuery before materialize.js-->
+      	<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js">
+      	</script>
+      	<script type="text/javascript" src="WebFloopets/materialize/js/materialize.js"></script>
+      	<!-- scripts -->
+      	<script type="text/javascript">
+      		 $(document).ready(function(){
+     			 $('.parallax').parallax();
+     			 $('select').material_select();
+     			 $('.carousel.carousel-slider').carousel({full_width: true});
+    		});
+      	</script>
 </html>
