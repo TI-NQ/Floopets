@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
+		<!-- import Waypoints -->
+		<script type="text/javascript" src="WebFloopets/imakewebthings-waypoints-0944e15/lib/noframework.waypoints.min.js"></script>
 		<!-- google.fonts import -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -41,10 +43,22 @@
     			});
      		 });
       	</script>
+      	<script type="text/javascript">
+      		$(document).ready(function(){
+				$('button').waypoint(function() {
+				$(this).toggleClass( 'bounceIn animated' );
+				},
+				{
+				offset: '70%',
+				triggerOnce: true
+				});
+
+			});
+      	</script>
 	</head>
 	<body>
 		<div class="banner-video">
-			<button class="ingresa btn waves-effect waves-light btn-large">Ingresa</button>
+			<button class="ingresa btn waves-effect waves-light btn-large animated bounceIn">Ingresa</button>
 			<button class="unete btn waves-effect waves-light btn-large">Unete</button>
 			<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
 		</div>
@@ -301,7 +315,7 @@
       </div>
       <div class="footer-copyright grey darken-2">
         <div class="container">
-           <a >© 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información</a>  
+           © 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información 
             <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a class="white-text right" href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             <a class="white-text right" href="#!"><i class="fa fa-instagram" aria-hidden="true"></i></a>
