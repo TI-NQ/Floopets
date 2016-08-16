@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-08-2016 a las 16:14:30
+-- Tiempo de generación: 16-08-2016 a las 16:58:55
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -155,6 +155,13 @@ CREATE TABLE `organizacion` (
   `org_clave` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `organizacion`
+--
+
+INSERT INTO `organizacion` (`org_cod_organizacion`, `to_cod_tipo_organizacion`, `org_nombre`, `org_nit`, `org_email`, `org_telefono`, `org_direccion`, `org_clave`) VALUES
+(1, 1, 'Los Yesid''s', 16516, 'dnvo@svv', '3216589', 'csvdvdv', '1234');
+
 -- --------------------------------------------------------
 
 --
@@ -267,6 +274,13 @@ CREATE TABLE `tipo_organizacion` (
   `to_cod_tipo_organizacion` int(11) NOT NULL,
   `to_nombre` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tipo_organizacion`
+--
+
+INSERT INTO `tipo_organizacion` (`to_cod_tipo_organizacion`, `to_nombre`) VALUES
+(1, 'Fundacion');
 
 -- --------------------------------------------------------
 
@@ -524,6 +538,11 @@ ALTER TABLE `donacion`
 ALTER TABLE `evento`
   MODIFY `eve_cod_evento` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `organizacion`
+--
+ALTER TABLE `organizacion`
+  MODIFY `org_cod_organizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT de la tabla `permiso`
 --
 ALTER TABLE `permiso`
@@ -562,7 +581,7 @@ ALTER TABLE `tipo_evento`
 -- AUTO_INCREMENT de la tabla `tipo_organizacion`
 --
 ALTER TABLE `tipo_organizacion`
-  MODIFY `to_cod_tipo_organizacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `to_cod_tipo_organizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `vacunas`
 --
@@ -596,16 +615,16 @@ ALTER TABLE `denuncia`
 -- Filtros para la tabla `denuncias_organizacion`
 --
 ALTER TABLE `denuncias_organizacion`
-  ADD CONSTRAINT `denuncias_organizacion_ibfk_1` FOREIGN KEY (`org_cod_orgnizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `denuncias_organizacion_ibfk_2` FOREIGN KEY (`de_cod_denuncia`) REFERENCES `denuncia` (`de_cod_denuncia`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `denuncias_organizacion_ibfk_2` FOREIGN KEY (`de_cod_denuncia`) REFERENCES `denuncia` (`de_cod_denuncia`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `denuncias_organizacion_ibfk_3` FOREIGN KEY (`org_cod_orgnizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `donacion`
 --
 ALTER TABLE `donacion`
-  ADD CONSTRAINT `donacion_ibfk_2` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE,
   ADD CONSTRAINT `donacion_ibfk_3` FOREIGN KEY (`usu_cod_usuario`) REFERENCES `usuario` (`usu_cod_usuario`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `donacion_ibfk_4` FOREIGN KEY (`td_cod_tipo_donacion`) REFERENCES `tipo_donacion` (`td_cod_tipo_donacion`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `donacion_ibfk_4` FOREIGN KEY (`td_cod_tipo_donacion`) REFERENCES `tipo_donacion` (`td_cod_tipo_donacion`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `donacion_ibfk_5` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `evento`
@@ -617,8 +636,8 @@ ALTER TABLE `evento`
 -- Filtros para la tabla `evento_organizacion`
 --
 ALTER TABLE `evento_organizacion`
-  ADD CONSTRAINT `evento_organizacion_ibfk_1` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `evento_organizacion_ibfk_2` FOREIGN KEY (`eve_cod_evento`) REFERENCES `evento` (`eve_cod_evento`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `evento_organizacion_ibfk_2` FOREIGN KEY (`eve_cod_evento`) REFERENCES `evento` (`eve_cod_evento`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `evento_organizacion_ibfk_3` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `organizacion`
