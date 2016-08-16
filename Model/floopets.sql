@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-08-2016 a las 13:42:07
+-- Tiempo de generación: 16-08-2016 a las 16:14:30
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -28,7 +28,6 @@ USE `floopets`;
 -- Estructura de tabla para la tabla `adopcion`
 --
 
-DROP TABLE IF EXISTS `adopcion`;
 CREATE TABLE `adopcion` (
   `ado_cod_adopcion` int(11) NOT NULL,
   `ani_cod_animal` int(11) NOT NULL,
@@ -44,7 +43,6 @@ CREATE TABLE `adopcion` (
 -- Estructura de tabla para la tabla `animal`
 --
 
-DROP TABLE IF EXISTS `animal`;
 CREATE TABLE `animal` (
   `ani_cod_animal` int(11) NOT NULL,
   `ra_cod_raza` int(11) NOT NULL,
@@ -61,7 +59,6 @@ CREATE TABLE `animal` (
 -- Estructura de tabla para la tabla `cuidado`
 --
 
-DROP TABLE IF EXISTS `cuidado`;
 CREATE TABLE `cuidado` (
   `cu_cod_cuidado` int(11) NOT NULL,
   `cu_nombre` varchar(50) NOT NULL,
@@ -76,7 +73,6 @@ CREATE TABLE `cuidado` (
 -- Estructura de tabla para la tabla `denuncia`
 --
 
-DROP TABLE IF EXISTS `denuncia`;
 CREATE TABLE `denuncia` (
   `de_cod_denuncia` int(11) NOT NULL,
   `usu_cod_usuario` int(11) NOT NULL,
@@ -92,7 +88,6 @@ CREATE TABLE `denuncia` (
 -- Estructura de tabla para la tabla `denuncias_organizacion`
 --
 
-DROP TABLE IF EXISTS `denuncias_organizacion`;
 CREATE TABLE `denuncias_organizacion` (
   `de_cod_denuncia` int(11) NOT NULL,
   `org_cod_orgnizacion` int(11) NOT NULL,
@@ -105,7 +100,6 @@ CREATE TABLE `denuncias_organizacion` (
 -- Estructura de tabla para la tabla `donacion`
 --
 
-DROP TABLE IF EXISTS `donacion`;
 CREATE TABLE `donacion` (
   `don_cod_donacion` int(11) NOT NULL,
   `td_cod_tipo_donacion` int(11) NOT NULL,
@@ -122,7 +116,6 @@ CREATE TABLE `donacion` (
 -- Estructura de tabla para la tabla `evento`
 --
 
-DROP TABLE IF EXISTS `evento`;
 CREATE TABLE `evento` (
   `eve_cod_evento` int(11) NOT NULL,
   `te_cod_tipo_evento` int(11) NOT NULL,
@@ -140,7 +133,6 @@ CREATE TABLE `evento` (
 -- Estructura de tabla para la tabla `evento_organizacion`
 --
 
-DROP TABLE IF EXISTS `evento_organizacion`;
 CREATE TABLE `evento_organizacion` (
   `eve_cod_evento` int(11) NOT NULL,
   `org_cod_organizacion` int(11) NOT NULL
@@ -152,7 +144,6 @@ CREATE TABLE `evento_organizacion` (
 -- Estructura de tabla para la tabla `organizacion`
 --
 
-DROP TABLE IF EXISTS `organizacion`;
 CREATE TABLE `organizacion` (
   `org_cod_organizacion` int(11) NOT NULL,
   `to_cod_tipo_organizacion` int(11) NOT NULL,
@@ -161,7 +152,6 @@ CREATE TABLE `organizacion` (
   `org_email` varchar(50) NOT NULL,
   `org_telefono` varchar(30) NOT NULL,
   `org_direccion` varchar(30) NOT NULL,
-  `vo_cod_voluntario` int(11) NOT NULL,
   `org_clave` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -171,7 +161,6 @@ CREATE TABLE `organizacion` (
 -- Estructura de tabla para la tabla `permiso`
 --
 
-DROP TABLE IF EXISTS `permiso`;
 CREATE TABLE `permiso` (
   `cod_permiso` int(11) NOT NULL,
   `permiso_nombre` varchar(50) NOT NULL
@@ -183,7 +172,6 @@ CREATE TABLE `permiso` (
 -- Estructura de tabla para la tabla `permiso_rol`
 --
 
-DROP TABLE IF EXISTS `permiso_rol`;
 CREATE TABLE `permiso_rol` (
   `cod_permiso` int(11) NOT NULL,
   `cod_rol` int(11) NOT NULL
@@ -195,7 +183,6 @@ CREATE TABLE `permiso_rol` (
 -- Estructura de tabla para la tabla `raza`
 --
 
-DROP TABLE IF EXISTS `raza`;
 CREATE TABLE `raza` (
   `ra_cod_raza` int(11) NOT NULL,
   `ra_nombre` varchar(50) NOT NULL,
@@ -208,11 +195,18 @@ CREATE TABLE `raza` (
 -- Estructura de tabla para la tabla `rol`
 --
 
-DROP TABLE IF EXISTS `rol`;
 CREATE TABLE `rol` (
   `cod_rol` int(11) NOT NULL,
   `rol_nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `rol`
+--
+
+INSERT INTO `rol` (`cod_rol`, `rol_nombre`) VALUES
+(1, 'Usuario'),
+(2, 'Administrador');
 
 -- --------------------------------------------------------
 
@@ -220,7 +214,6 @@ CREATE TABLE `rol` (
 -- Estructura de tabla para la tabla `tipo_animal`
 --
 
-DROP TABLE IF EXISTS `tipo_animal`;
 CREATE TABLE `tipo_animal` (
   `ta_cod_tipo_animal` int(11) NOT NULL,
   `ta_nombre` varchar(50) NOT NULL,
@@ -234,7 +227,6 @@ CREATE TABLE `tipo_animal` (
 -- Estructura de tabla para la tabla `tipo_denuncia`
 --
 
-DROP TABLE IF EXISTS `tipo_denuncia`;
 CREATE TABLE `tipo_denuncia` (
   `td_cod_tipo_denuncia` int(11) NOT NULL,
   `td_nombre` varchar(50) NOT NULL,
@@ -247,7 +239,6 @@ CREATE TABLE `tipo_denuncia` (
 -- Estructura de tabla para la tabla `tipo_donacion`
 --
 
-DROP TABLE IF EXISTS `tipo_donacion`;
 CREATE TABLE `tipo_donacion` (
   `td_cod_tipo_donacion` int(11) NOT NULL,
   `td_nombre` varchar(50) NOT NULL,
@@ -260,7 +251,6 @@ CREATE TABLE `tipo_donacion` (
 -- Estructura de tabla para la tabla `tipo_evento`
 --
 
-DROP TABLE IF EXISTS `tipo_evento`;
 CREATE TABLE `tipo_evento` (
   `te_cod_tipo_evento` int(11) NOT NULL,
   `te_nombre` varchar(50) NOT NULL,
@@ -273,7 +263,6 @@ CREATE TABLE `tipo_evento` (
 -- Estructura de tabla para la tabla `tipo_organizacion`
 --
 
-DROP TABLE IF EXISTS `tipo_organizacion`;
 CREATE TABLE `tipo_organizacion` (
   `to_cod_tipo_organizacion` int(11) NOT NULL,
   `to_nombre` varchar(100) NOT NULL
@@ -285,7 +274,6 @@ CREATE TABLE `tipo_organizacion` (
 -- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `usu_cod_usuario` int(11) NOT NULL,
   `usu_nombre` varchar(50) NOT NULL,
@@ -297,13 +285,19 @@ CREATE TABLE `usuario` (
   `usu_clave` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`usu_cod_usuario`, `usu_nombre`, `usu_apellido`, `usu_telefono`, `usu_cedula`, `usu_email`, `cod_rol`, `usu_clave`) VALUES
+(1, 'Michael', 'Gonzalez', '2811731', 1152684915, 'maicol_0114@hotmail.com', 1, '1152684915');
+
 -- --------------------------------------------------------
 
 --
 -- Estructura de tabla para la tabla `vacunas`
 --
 
-DROP TABLE IF EXISTS `vacunas`;
 CREATE TABLE `vacunas` (
   `vac_cod_vacuna` int(11) NOT NULL,
   `vac_nombre` varchar(100) NOT NULL,
@@ -316,7 +310,6 @@ CREATE TABLE `vacunas` (
 -- Estructura de tabla para la tabla `vacuna_animal`
 --
 
-DROP TABLE IF EXISTS `vacuna_animal`;
 CREATE TABLE `vacuna_animal` (
   `ani_cod_animal` int(11) NOT NULL,
   `vac_cod_vacuna` int(11) NOT NULL
@@ -328,13 +321,13 @@ CREATE TABLE `vacuna_animal` (
 -- Estructura de tabla para la tabla `voluntarios`
 --
 
-DROP TABLE IF EXISTS `voluntarios`;
 CREATE TABLE `voluntarios` (
   `vo_cod_voluntario` int(11) NOT NULL,
   `vo_nombre` varchar(100) NOT NULL,
   `vo_telefono` int(11) NOT NULL,
   `vo_direccion` varchar(50) NOT NULL,
-  `vo_imagen` longtext NOT NULL
+  `vo_imagen` longtext NOT NULL,
+  `org_cod_organizacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -408,8 +401,7 @@ ALTER TABLE `evento_organizacion`
 --
 ALTER TABLE `organizacion`
   ADD PRIMARY KEY (`org_cod_organizacion`),
-  ADD KEY `to_cod_tipo_empresa` (`to_cod_tipo_organizacion`),
-  ADD KEY `vo_cod_voluntario` (`vo_cod_voluntario`);
+  ADD KEY `to_cod_tipo_empresa` (`to_cod_tipo_organizacion`);
 
 --
 -- Indices de la tabla `permiso`
@@ -494,7 +486,8 @@ ALTER TABLE `vacuna_animal`
 -- Indices de la tabla `voluntarios`
 --
 ALTER TABLE `voluntarios`
-  ADD PRIMARY KEY (`vo_cod_voluntario`);
+  ADD PRIMARY KEY (`vo_cod_voluntario`),
+  ADD KEY `org_cod_organizacion` (`org_cod_organizacion`);
 
 --
 -- AUTO_INCREMENT de las tablas volcadas
@@ -544,7 +537,7 @@ ALTER TABLE `raza`
 -- AUTO_INCREMENT de la tabla `rol`
 --
 ALTER TABLE `rol`
-  MODIFY `cod_rol` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cod_rol` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `tipo_animal`
 --
@@ -631,8 +624,7 @@ ALTER TABLE `evento_organizacion`
 -- Filtros para la tabla `organizacion`
 --
 ALTER TABLE `organizacion`
-  ADD CONSTRAINT `organizacion_ibfk_1` FOREIGN KEY (`to_cod_tipo_organizacion`) REFERENCES `tipo_organizacion` (`to_cod_tipo_organizacion`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `organizacion_ibfk_2` FOREIGN KEY (`vo_cod_voluntario`) REFERENCES `voluntarios` (`vo_cod_voluntario`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `organizacion_ibfk_1` FOREIGN KEY (`to_cod_tipo_organizacion`) REFERENCES `tipo_organizacion` (`to_cod_tipo_organizacion`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `permiso_rol`
@@ -665,6 +657,12 @@ ALTER TABLE `usuario`
 ALTER TABLE `vacuna_animal`
   ADD CONSTRAINT `vacuna_animal_ibfk_1` FOREIGN KEY (`vac_cod_vacuna`) REFERENCES `vacunas` (`vac_cod_vacuna`) ON UPDATE CASCADE,
   ADD CONSTRAINT `vacuna_animal_ibfk_2` FOREIGN KEY (`ani_cod_animal`) REFERENCES `animal` (`ani_cod_animal`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `voluntarios`
+--
+ALTER TABLE `voluntarios`
+  ADD CONSTRAINT `voluntarios_ibfk_1` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
