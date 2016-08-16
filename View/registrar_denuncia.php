@@ -37,6 +37,18 @@ require_once("../Model/usuarios.class.php");
 				 <input class="file-path validate" readonly type="text" placeholder="subir imagen" name="de_imagen"  >
 			 </div>
 		</div>
+		<div class="form-group">
+			<label class="form-label">Nombre de mascota(opcional)</label>
+			<input class="form-control" type="text" name="de_nombre">
+		</div>
+		<div class="form-group">
+			<label class="form-label">Nombre de Contacto</label>
+			<input class="form-control" type="text" name="de_contacto" required>
+		</div>
+		<div class="form-group">
+			<label class="form-label">Telefono</label>
+			<input class="form-control" type="text" name="de_telefono" required>
+		</div>
 	<div class="form-group">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
 	</div>
