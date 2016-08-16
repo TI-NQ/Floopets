@@ -13,7 +13,7 @@ $organizacion=Gestion_organizacion::ReadAll();
 	<thead>
 		<tr>
 			<td>Codigo organización</td>
-			<td>Codigo tipo organización</td>
+			<td>Tipo organizacion</td>
 			<td>Nombre</td>
 			<td>Nit</td>
 			<td>Email</td>
@@ -31,7 +31,7 @@ $organizacion=Gestion_organizacion::ReadAll();
 			foreach ($organizacion as $row) {
 				echo"<tr>
 						<td>".$row["org_cod_organizacion"]."</td>
-						<td>".$row["to_cod_tipo_organizacion"]."</td>
+						<td>".$row["to_nombre"]."</td>
 						<td>".$row["org_nombre"]."</td>
             <td>".$row["org_nit"]."</td>
 						<td>".$row["org_email"]."</td>

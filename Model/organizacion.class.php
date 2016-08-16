@@ -23,7 +23,7 @@
 
 
 			//Creamos el query de la consulta a la BD
-			$consulta="SELECT * FROM organizacion";
+			$consulta="SELECT organizacion.*,tipo_organizacion.* FROM organizacion INNER JOIN tipo_organizacion ON organizacion.org_cod_organizacion=tipo_organizacion.to_cod_tipo_organizacion";
 
 			$query=$conexion->prepare($consulta);
 			$query->execute();
