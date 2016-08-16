@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once("../Model/conexion.php");
     require_once("../Model/organizacion.class.php");
 	$organizacion=Gestion_organizacion::ReadbyID(base64_decode($_REQUEST["ui"]));
@@ -25,6 +25,9 @@
 		<br>
 		<label>Dirección:</label>
 		<input name="org_direccion" value="<?php echo $organizacion[6]?>"></input>
+		<br>
+		<label>Contraseña:</label>
+		<input name="org_clave" type"password" value="<?php echo $organizacion[7]?>"></input>
 		<br>
 
 	</div>

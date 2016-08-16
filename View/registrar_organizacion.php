@@ -2,8 +2,20 @@
 <form action="../Controller/organizacion.controller.php" method="POST">
 	<h1>Registrar Organización</h1>
 	<div class="form-group">
-		<label>Codigo tipo organizacion:</label>
-		<input name="to_cod_tipo_organizacion"></input>
+		<label>Tipo organizacion:</label>
+		<?php
+		require_once("../Model/conexion.php");
+		require_once("../Model/tipo_organizacion.class.php");
+							 $tp=Gestion_tipo_organizacion::ReadAll();
+							 ?>
+								 <select name="to_cod_tipo_organizacion">
+								 <option disabled selected>Tipo organizacion:</option><?php
+							 foreach ($tp as $row) {
+							 ?>
+
+									 <option value="<?php echo $row["to_cod_tipo_organizacion"] ?>" ><?php echo $row["to_nombre"] ?></option>
+										 <?php } ?>
+								 </select>
 		<br>
 		<label>Nombre organización:</label>
 		<input name="org_nombre"></input>
@@ -19,6 +31,9 @@
 		<br>
 		<label>Dirección:</label>
 		<input name="org_direccion"></input>
+		<br>
+		<label>Contraseña:</label>
+		<input name="org_clave" type="password"></input>
 		<br>
 
 	</div>

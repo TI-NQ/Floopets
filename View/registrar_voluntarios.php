@@ -24,7 +24,6 @@
          <input class="file-path validate"  type="text" placeholder="" name="vo_imagen"  >
        </div>
     </div>
-
 	<div class="form-group">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
 	</div>

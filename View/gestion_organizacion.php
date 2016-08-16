@@ -19,9 +19,9 @@ $organizacion=Gestion_organizacion::ReadAll();
 			<td>Email</td>
 			<td>Telefono</td>
 			<td>Direccion</td>
+      <td>Contraseña</td>
 
-
-		</tr>
+    </tr>
 		<tbody>
 			<?php
 			@$mensaje = $_REQUEST["m"];
@@ -33,10 +33,11 @@ $organizacion=Gestion_organizacion::ReadAll();
 						<td>".$row["org_cod_organizacion"]."</td>
 						<td>".$row["to_cod_tipo_organizacion"]."</td>
 						<td>".$row["org_nombre"]."</td>
-            			<td>".$row["org_nit"]."</td>
+            <td>".$row["org_nit"]."</td>
 						<td>".$row["org_email"]."</td>
 						<td>".$row["org_telefono"]."</td>
 						<td>".$row["org_direccion"]."</td>
+            <td>".$row["org_clave"]."</td>
 						<td>
                     		<a href='../View/actualizar_organizacion.php?ui=".base64_encode($row["org_cod_organizacion"])."'>actualizar</a>
 

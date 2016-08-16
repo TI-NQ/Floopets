@@ -1,7 +1,7 @@
-<?php 
+<?php
 	//Llamamos la conexion a la base de datos
 	require_once("../Model/conexion.php");
-	
+
 
 	//Llamamos la clase que necesitamos del model
 	require_once("../Model/organizacion.class.php");
@@ -19,12 +19,13 @@
 		$org_email=$_POST["org_email"];
 		$org_telefono=$_POST["org_telefono"];
 		$org_direccion=$_POST["org_direccion"];
-		
- 		
+		$org_clave=$_POST["org_clave"];
+
+
  		try {
- 			Gestion_organizacion::Create($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion);
+ 			Gestion_organizacion::Create($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion,$org_clave);
  			$mensaje="Registro exitoso";
- 			
+
  			header("Location:../View/registrar_organizacion.php?m=".$mensaje);
  		} catch (Exception $e) {
  			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
@@ -41,10 +42,11 @@
 			$org_email=$_POST["org_email"];
 			$org_telefono=$_POST["org_telefono"];
 			$org_direccion=$_POST["org_direccion"];
-      
+			$org_clave=$_POST["org_clave"];
+
 
 				try{
-					Gestion_organizacion::Update($org_cod_organizacion,$to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion);
+					Gestion_organizacion::Update($org_cod_organizacion,$to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion,$org_clave);
 					$mensaje = "Se actualizo correctamente";
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
@@ -63,6 +65,6 @@
 		        }
 		      break;
  	}
- 		
- 		
+
+
  ?>

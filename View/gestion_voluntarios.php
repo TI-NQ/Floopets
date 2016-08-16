@@ -16,6 +16,7 @@ $voluntarios=gestion_voluntarios::ReadAll();
       <td>Telefono</td>
       <td>Direccion</td>
       <td>Foto</td>
+      <td>Contraseña</td>
 		</tr>
 		<tbody>
 			<?php
