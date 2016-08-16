@@ -7,17 +7,22 @@
 		case 'c':
 				
 			$cu_nombre			= $_POST["cu_nombre"];
+			$nombre_cuidado 	= strtolower(str_replace('ñ', 'n', $cu_nombre));
+			$nombre_cuidado 	= strtolower(str_replace(' ', '', $nombre_cuidado));
 			$cu_descripcion 	= $_POST["cu_descripcion"];
-			$galeria 			= $_POST["galeria"];
-			$video 				= $_POST["video"];
-
+			$galeria   			= $_POST["galeria"];
+			$count_galeria		= count($_FILES['Imagen_Upload']['name']);
 			try {
-				Gestion_cuidado::Create($cu_nombre,$cu_descripcion,$galeria,$video);
+				
+				if($count_galeria >= 1){ 
+					include("Upload_image.php");
+				} 
+				Gestion_cuidado::Create($cu_nombre,$cu_descripcion,$galeria);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/gestion_cuidado.php?m=$mensaje");
+			//header("Location: ../View/gestion_cuidado.php?m=$mensaje");
 
 			break;
 			case 'u':

@@ -1,4 +1,4 @@
-<form action="../Controller/cuidado.controller.php" method="POST">
+<form action="../Controller/cuidado.controller.php" method="POST" enctype="multipart/form-data">
 	<div class="form-group">
 		<label class="form-label">nombre</label>
 		<input class="form-control" type="text" name="cu_nombre" required>
@@ -16,15 +16,6 @@
          <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="galeria"  >
        </div>
     </div>
-		<div class="file-field input-field col s12 m6">
-	       <div class="btn">
-	         <span>Video</span>
-	         <input type="file" multiple name="Imagen_Upload[]">
-	       </div>
-	       <div class="file-path-wrapper">
-	         <input class="file-path validate"  type="text" placeholder="Video" name="video"  >
-	       </div>
-	    </div>
 	<div class="form-group">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
 	</div>
