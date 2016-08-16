@@ -1,7 +1,7 @@
 <?php
 require_once("../Model/usuarios.class.php");
 ?>
-<form action="../Controller/tipo_denuncia.controller.php" method="POST" enctype="multipart/form-data">
+<form action="../Controller/denuncia.controller.php" method="POST" enctype="multipart/form-data">
 	<div class="form-group">
 		 <input type="hidden" name="usu_cod_usuario" value="<?php echo $_SESSION["usu_cod_usuario"]; ?>"/>
 	</div>
@@ -24,10 +24,10 @@ require_once("../Model/usuarios.class.php");
 		<label class="form-label">descripcion</label>
 		<input class="form-control" type="text" name="de_descripcion" required>
 	</div>
-	<div class="form-group">
+	<!-- <div class="form-group">
 		<label class="form-label">fecha</label>
-		<input class="form-control" type="date" name="de_fecha" required>
-	</div>
+		<input class="form-control" type="date" name="de_fecha" value=""required>
+	</div> -->
 	<div class="file-field input-field col s12 m6">
 			 <div class="btn">
 				 <span>Galeria</span>

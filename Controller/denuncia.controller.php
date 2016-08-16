@@ -12,6 +12,7 @@
 			$nombre_cod_usuario 	= strtolower(str_replace(' ', '', $nombre_cod_usuario));
 			$de_descripcion			= $_POST["de_descripcion"];
 			$de_fecha				= $_POST["de_fecha"];
+			$de_fecha =   getdate();
 			$de_imagen			=$_POST["de_imagen"];
 			$count_galeria			= count($_FILES['ado_imagen']['name']);
 			$de_nombre = $_POST["de_nombre"];
