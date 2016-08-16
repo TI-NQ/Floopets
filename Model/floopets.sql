@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 09-08-2016 a las 15:05:13
+-- Tiempo de generación: 16-08-2016 a las 13:42:07
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -161,7 +161,8 @@ CREATE TABLE `organizacion` (
   `org_email` varchar(50) NOT NULL,
   `org_telefono` varchar(30) NOT NULL,
   `org_direccion` varchar(30) NOT NULL,
-  `vo_cod_voluntario` int(11) NOT NULL
+  `vo_cod_voluntario` int(11) NOT NULL,
+  `org_clave` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -292,7 +293,8 @@ CREATE TABLE `usuario` (
   `usu_telefono` varchar(20) NOT NULL,
   `usu_cedula` int(20) NOT NULL,
   `usu_email` varchar(50) NOT NULL,
-  `cod_rol` int(11) NOT NULL
+  `cod_rol` int(11) NOT NULL,
+  `usu_clave` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
