@@ -5,13 +5,20 @@
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
 		case 'c':
-      $vo_cod_voluntario      =$_POST["vo_cod_voluntario"];
-			$vo_nombre              =$_POST["vo_nombre"];
-      $vo_telefono            =$_POST["vo_telefono"];
-      $vo_direccion           =$_POST["vo_direccion"];
-      $vo_imagen              =$_POST["vo_imagen"];
+      	$vo_cod_voluntario      =$_POST["vo_cod_voluntario"];
+
+		$vo_nombre              =$_POST["vo_nombre"];
+		$nombre_voluntario 	= strtolower(str_replace('ñ', 'n', $vo_nombre));
+		$nombre_voluntario 	= strtolower(str_replace(' ', '', $nombre_voluntario));
+      	$vo_telefono            =$_POST["vo_telefono"];
+      	$vo_direccion           =$_POST["vo_direccion"];
+      	$vo_imagen 				=$_POST["vo_imagen"];
+     	$count_galeria			= count($_FILES['vo_imagen']['name']);
 
 			try {
+				if($count_galeria >= 1){ 
+					include("Upload_vo_image.php");
+				} 
 				gestion_voluntarios::Create($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$vo_imagen);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {

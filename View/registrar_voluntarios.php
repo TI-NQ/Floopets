@@ -1,4 +1,4 @@
-<form action="../Controller/voluntarios.controller.php" method="POST">
+<form action="../Controller/voluntarios.controller.php" method="POST" enctype="multipart/form-data">
 	<div class="form-group">
 		<label class="form-label">Cedula:</label>
 		<input class="form-control" type="text" name="vo_cod_voluntario" required>
@@ -18,10 +18,10 @@
 	<div class="file-field input-field col s12 m6">
        <div class="btn">
          <span>Galeria</span>
-         <input type="file" multiple name="Imagen_Upload[]">
+         <input type="file" multiple name="vo_imagen[]">
        </div>
        <div class="file-path-wrapper">
-         <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="vo_imagen"  >
+         <input class="file-path validate"  type="text" placeholder="" name="vo_imagen"  >
        </div>
     </div>
 
