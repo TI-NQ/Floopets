@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-	 	<!-- import jquery ui -->
+	 	<!-- import jquery ui
 	 	<script type="text/javascript" src="WebFloopets/js/jquery-ui-1.11.4/jquery-ui.js"></script>
 		<link rel="stylesheet" type="text/css" href="WebFloopets/js/jquery-ui-1.11.4/jquery-ui.css">
 		<link rel="stylesheet" type="text/css" href="WebFloopets/js/jquery-ui-1.11.4/jquery-ui.structure.css">
 		<link rel="stylesheet" type="text/css" href="WebFloopets/js/jquery-ui-1.11.4/jquery-ui.theme.css">
+		import assets animacion
+		<script type="text/javascript" src="WebFloopets/js/assets/js/animations.js"></script>
+		<script type="text/javascript" src="WebFloopets/js/assets/js/appear.min.js"></script>
+		<script type="text/javascript" src="WebFloopets/js/assets/js/backbone.js"></script>
+		<script type="text/javascript" src="WebFloopets/js/assets/js/smoothscroll.min.js"></script>
+		<link rel="stylesheet" type="text/css" href=""> -->
 		<!-- google.fonts import -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -79,9 +85,15 @@
 		Ricardo_ochoa -->
 		<div class="row seccion2">
 			<div class="container__img col s12 m4 l4" >
+<<<<<<< HEAD
 				<h3 class="animate-in" data-anim-type="fade-in-up" data-anim-delay="60">Ayuda una Mascota</h3>
 				<img class="bran" src="WebFloopets/images/ayuda.png">
 				<a href=""><img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img"></a>
+=======
+				<center><h3>Ayuda una Mascota</h3></center>
+				<center><img class="bran" src="WebFloopets/images/ayuda.png"></img></center>
+				<a href=""><center><img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img"></center></a>
+>>>>>>> origin/master
 			</div>
 			<div class="container__form__help col s12 m8 l8">
 			    <div class="row">
@@ -153,7 +165,6 @@
 					<img src="WebFloopets/images/ojos-azules.jpg">
 					
 				</div>
-<!-- 				<img class="nub" src="WebFloopets/recursos/images/linea-azul.png"> -->
 		</div>
 <!-- David Pabon-Cuidados -->
 <div class="row">
