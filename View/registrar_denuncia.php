@@ -1,7 +1,9 @@
+<?php
+require_once("../Model/usuarios.class.php");
+?>
 <form action="../Controller/tipo_denuncia.controller.php" method="POST">
 	<div class="form-group">
-		<label class="form-label">Cedula usuario</label>
-		<input class="form-control" type="text" name="usu_cod_usuario" required>
+		 <input type="hidden" name="usu_cod_usuario" value="<?php echo $_SESSION["usu_cod_usuario"]; ?>"/>
 	</div>
 	<div class="form-group">
 		<label>Tipo denuncia:</label>

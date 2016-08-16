@@ -17,6 +17,7 @@ $user=gestion_usuarios::ReadAll();
       <td>Telefono</td>
       <td>Email</td>
       <td>Rol</td>
+      <td>Contraseña</td>
 		</tr>
 		<tbody>
 			<?php
@@ -33,6 +34,7 @@ $user=gestion_usuarios::ReadAll();
             <td>".$row["usu_telefono"]."</td>
             <td>".$row["usu_email"]."</td>
             <td>".$row["rol_nombre"]."</td>
+            <td>".$row["usu_clave"]."</td>
 						<td>
                     		<a href='../View/actualizar_usuario.php?us=".base64_encode($row["usu_cod_usuario"])."'>actualizar</a>
 

@@ -2,15 +2,15 @@
 
 	class gestion_usuarios
 	{
-			function Create($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol)
+			function Create($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave)
 			{
 				//Instanciamos y nos conectamos a la bd
 				$conexion=floopets_BD::Connect();
 				$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 				//Creamos el query de la consulta a la BD
-				$consulta ="INSERT INTO usuario (usu_cod_usuario,usu_nombre,usu_apellido,usu_telefono,usu_email,cod_rol) VALUES (?,?,?,?,?,?)";
+				$consulta ="INSERT INTO usuario (usu_cod_usuario,usu_nombre,usu_apellido,usu_telefono,usu_email,cod_rol,usu_clave) VALUES (?,?,?,?,?,?,?)";
 				$query = $conexion->prepare($consulta);
-				$query->execute(array($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol));
+				$query->execute(array($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave));
 				floopets_BD::Disconnect();
 		}
 		function ReadAll()
@@ -45,15 +45,15 @@
 			return $resultado;
 			floopets_BD::Disconnect();
 		}
-		function Update($usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_cod_usuario)
+		function Update($usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave,$usu_cod_usuario)
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "UPDATE usuario SET usu_nombre=?,usu_apellido=?,usu_telefono=?,usu_email=?,cod_rol=? WHERE usu_cod_usuario = ?" ;
+				$consulta = "UPDATE usuario SET usu_nombre=?,usu_apellido=?,usu_telefono=?,usu_email=?,cod_rol=?,usu_clave=? WHERE usu_cod_usuario = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_cod_usuario));
+				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave,$usu_cod_usuario));
 				floopets_BD::Disconnect();
 
 		}

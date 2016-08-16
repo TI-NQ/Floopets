@@ -11,12 +11,12 @@
 			$usu_nombre 			= $_POST["usu_nombre"];
 			$usu_apellido 		=$_POST["usu_apellido"];
 			$usu_telefono			=$_POST["usu_telefono"];
-
 			$usu_email				=$_POST["usu_email"];
 			$cod_rol					=$_POST["cod_rol"];
+			$usu_clave				=$_POST["usu_clave"];
 
 			try {
-				gestion_usuarios::Create($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol);
+				Gestion_usuarios::Create($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave);
 				$mensaje = "Se registro exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
@@ -32,9 +32,10 @@
 				$usu_telefono			=$_POST["usu_telefono"];
 				$usu_email				=$_POST["usu_email"];
 				$cod_rol					=$_POST["cod_rol"];
+				$usu_clave				=$_POST["usu_clave"];
 
 				try{
-					gestion_usuarios::Update($usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_cod_usuario);
+					Gestion_usuarios::Update($usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave,$usu_cod_usuario);
 					$mensaje = "Se actualizo correctamente";
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
@@ -44,7 +45,7 @@
 
 		case 'd':
 					try {
-		          $user = gestion_usuarios::Delete(base64_decode($_REQUEST["us"]));
+		          $user = Gestion_usuarios::Delete(base64_decode($_REQUEST["us"]));
 		          $mensaje = "Se eliminó correctamente";
 		          header("Location: ../View/gestion_usuarios.php?m=".$mensaje);
 		        } catch (Exception $e) {

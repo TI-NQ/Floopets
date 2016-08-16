@@ -25,9 +25,14 @@
 	</div>
 	<div class="form-group">
     <select name="cod_rol" required value="<?php echo $user[5] ?>">
-        <option value="3" <?php if($user["cod_rol"]==3){echo "selected"; } ?>>lely</option>
-				  <option value="4" <?php if($user["cod_rol"]==4){echo "selected"; } ?>>criss</option>
+        <option value="3" <?php if($user["cod_rol"]==1){echo "selected"; } ?>>Usuario</option>
+				  <option value="4" <?php if($user["cod_rol"]==2){echo "selected"; } ?>>Administrador</option>
     </select>
+	</div>
+	<div class="form-group">
+			<label>Contraseña :</label>
+			<input class="form-control" type="number" name="usu_clave" required value="<?php echo $user[6]?>">
+	</div>
 	<div class="form-group">
 		<button name="accion" value="u" class="btn btn-primary">Actualizar</button>
 	</div>

@@ -36,6 +36,10 @@
 		<!-- <input  class="form-control" type="hidden" name="cod_rol" value="1" required> -->
 	</div>
 	<div class="form-group">
+		<label>Contraseña:</label>
+		<input name="usu_clave" type="password" required>
+	</div>
+	<div class="form-group">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
 	</div>
 </form>
