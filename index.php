@@ -2,6 +2,7 @@
 <html lang="es">
 	<head>
 		<!-- import Waypoints -->
+
 		<script type="text/javascript" src="WebFloopets/imakewebthings-waypoints-0944e15/lib/noframework.waypoints.min.js"></script>
 		<!-- google.fonts import -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
@@ -27,6 +28,10 @@
       	</script>
       	<script type="text/javascript" src="WebFloopets/materialize/js/materialize.js"></script>
       	<script type="text/javascript" src ="WebFloopets/js/owl.carousel.min.js"></script>
+      	<!-- link del menu -->
+      	<script src="WebFloopets/js/efecto_menu.js"></script>
+      	<!--  -->
+
       	<!-- scripts -->
       	<script type="text/javascript">
       		 $(document).ready(function(){
@@ -57,7 +62,38 @@
       	</script>
 	</head>
 	<body>
+		
+		<!-- menu -->
+		<!-- <nav > -->
+			<img id="menu" onclick= "desplegar()" src="WebFloopets/recursos/images/IconoMenu.png" >
+			<img id="logo" onclick="ver_menu()" src="WebFloopets/recursos/images/logotipo.png">
+		
+		<div class="contenedor_menu">
+	<ul id="items">
+		<li> <i class="fa fa-paw"></i>¿Quieres ser voluntario?</li>
+		<li> <i class="fa fa-paw"></i>Inicio</li>
+		<li> <i class="fa fa-paw"></i>Adopciones</li>
+		<li><i class="fa fa-paw"></i>Ayuda una mascota</a>
+
+		<ul id="items_ayuda">
+			<li><a href="#"> <i class="fa fa-paw"></i>Perdida</a></li>
+			<li> <i class="fa fa-paw"></i>Maltrato</li>
+		</ul>
+		</li>
+
+		<li> <i class="fa fa-paw"></i>Eventos</li>
+		<li> <i class="fa fa-paw"></i>Donaciones</li>
+		<li> <i class="fa fa-paw"></i>Cuidados</li>
+	</ul>
+	</div>
+
+	<!-- </nav> -->
+		<!--  -->
+		
+		
 		<div class="banner-video">
+
+			
 			<button class="ingresa btn waves-effect waves-light btn-large animated bounceIn">Ingresa</button>
 			<button class="unete btn waves-effect waves-light btn-large">Unete</button>
 			<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
@@ -239,7 +275,7 @@
     		</div>
 
     <!-- David Pabon-Eventos -->
-    <div class="row">
+    <!-- <div class="row">
 	    
 	    <h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
 	    	<div id="owl-demo">
@@ -283,9 +319,35 @@
 			  	  
 			
 			
-	    </div>
+	    </div> -->
+
+
+    </div>
+	
+	<!-- eventos -->
+    <hr>
+    <div class="row">
+
+      <div class="col s12 m6 l6 seccion_eventos">
+        <img class="img_eventos" src="WebFloopets/images/imagenes_eventos/imagen1.jpeg" alt="">
+      	 
+      </div>
+
+      <div class="col s12 m6 l6 seccion_eventos">
+        <img class="img_eventos" src="WebFloopets/images/imagenes_eventos/imagen3.jpg" alt="">
+      </div>
+
+      <div class="col s12 m6 l6 seccion_eventos">
+        <img class="img_eventos abajo" src="WebFloopets/images/imagenes_eventos/imagen6.jpeg" alt="">
+      </div>
+
+      <div class="col s12 m6 l6 seccion_eventos">
+        <img class="img_eventos abajo" src="WebFloopets/images/imagenes_eventos/imagen5.jpeg" alt="">
+      </div>
+
     </div>
 
+	<!-- fin eventos -->
 	<footer class="page-footer grey darken-4">
       <div class="container">
         <div class="row">
@@ -323,6 +385,7 @@
         </div>
       </div>
     </footer>
+
 	</body>
 
 
