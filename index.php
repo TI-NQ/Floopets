@@ -2,8 +2,9 @@
 <html lang="es">
 	<head>
 		<!-- import Waypoints -->
-
 		<script type="text/javascript" src="WebFloopets/imakewebthings-waypoints-0944e15/lib/noframework.waypoints.min.js"></script>
+		<!-- <script type="text/javascript" src="WebFloopets/imakewebthings-waypoints-0944e15/src/waypoint.js"></script> -->
+		<!-- <script type="text/javascript" src="WebFloopets/js/waypoint.js"></script> -->
 		<!-- google.fonts import -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
@@ -48,43 +49,56 @@
     			});
      		 });
       	</script>
+  		<script type="text/javascript">
+  //     		var waypoint = new Waypoint({
+  // 			element: document.getElementById('waypoint'),
+  // 			handler: function(direction) {
+  //   		console.log('Scrolled to waypoint!')
+  // 			}
+		// })
+  //     	</script>
       	<script type="text/javascript">
-      		$(document).ready(function(){
-				$('button').waypoint(function() {
-				$(this).toggleClass( 'bounceIn animated' );
-				},
-				{
-				offset: '70%',
-				triggerOnce: true
-				});
+   //    		$(document).ready(function(){
+			// 	$('button').waypoint(function() {
+			// 	$(this).toggleClass( 'bounceIn animated' );
+			// 	},
+			// 	{
+			// 	offset: '5%',
+			// 	triggerOnce: true
+			// 	});
 
-			});
+			// });
       	</script>
 	</head>
 	<body>
 		
 		<!-- menu -->
 		<!-- <nav > -->
-			<img id="menu" onclick= "desplegar()" src="WebFloopets/recursos/images/IconoMenu.png" >
-			<img id="logo" onclick="ver_menu()" src="WebFloopets/recursos/images/logotipo.png">
+			<img id="menu" onclick= "desplegar()" src="WebFloopets/images/prueba-logo.png" >
+			<!-- <img id="menu" onclick= "desplegar()" src="WebFloopets/recursos/images/IconoMenu.png" > -->
+			<!--<img id="logo" onclick="ver_menu()" src="WebFloopets/recursos/images/logotipo.png"> -->
 		
-		<div class="contenedor_menu">
-	<ul id="items">
-		<li> <i class="fa fa-paw"></i>¿Quieres ser voluntario?</li>
-		<li> <i class="fa fa-paw"></i>Inicio</li>
-		<li> <i class="fa fa-paw"></i>Adopciones</li>
-		<li><i class="fa fa-paw"></i>Ayuda una mascota</a>
+	<div class="contenedor_menu">
+		<!-- <img id="menu" onclick= "desplegar()" src="WebFloopets/recursos/images/IconoMenu.png" >-->
+		<!-- <img id="logo" onclick="ver_menu()" src="WebFloopets/recursos/images/logotipo.png"> -->	
+		<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
+		
+		<ul id="items">
+			<li> <i class="fa fa-paw"></i>¿Quieres ser voluntario?</li>
+			<li> <i class="fa fa-paw"></i>Inicio</li>
+			<li> <i class="fa fa-paw"></i>Adopciones</li>
+			<li><i class="fa fa-paw"></i>Ayuda una mascota</a>
 
-		<ul id="items_ayuda">
-			<li><a href="#"> <i class="fa fa-paw"></i>Perdida</a></li>
-			<li> <i class="fa fa-paw"></i>Maltrato</li>
+			<ul id="items_ayuda">
+				<li><a href="#"> <i class="fa fa-paw"></i>Perdida</a></li>
+				<li> <i class="fa fa-paw"></i>Maltrato</li>
+			</ul>
+			</li>
+
+			<li> <i class="fa fa-paw"></i>Eventos</li>
+			<li> <i class="fa fa-paw"></i>Donaciones</li>
+			<li> <i class="fa fa-paw"></i>Cuidados</li>
 		</ul>
-		</li>
-
-		<li> <i class="fa fa-paw"></i>Eventos</li>
-		<li> <i class="fa fa-paw"></i>Donaciones</li>
-		<li> <i class="fa fa-paw"></i>Cuidados</li>
-	</ul>
 	</div>
 
 	<!-- </nav> -->
@@ -187,15 +201,19 @@
       		</div>
     	</div>	
     	<div class="row seccion3">
-				<div class="container__perros col s12 m6 l6">
-					<div class="">
-						<button class="boton btn waves-effect waves-light btn-large">Perros</button>
-					</div>				
+				<div class="container__perdida col s12 m6 l6">
+					<div id="perdida">
+						<p>Mascotas Perdidas</p>
+					</div>	
+					<button class="boton btn waves-effect waves-light btn-large">Ver mas...</button>			
 					<img src="WebFloopets/images/beagle,-perro-triste,-muro-236194.jpg">					
 				</div>
-				<div class="container__gatos col s12 m6 l6">
-					<button class="boton1 btn  waves-effect waves-light btn-large">Gatos</button>	
-					<img src="WebFloopets/images/ojos-azules.jpg">
+				<div class="container__historias col s12 m6 l6">
+					<div id="historias">
+						<p>Historias</p>
+					</div>
+					<button class="boton1 btn  waves-effect waves-light btn-large">Ver mas...</button>	
+					<img src="WebFloopets/images/5.jpg">
 					
 				</div>
 		</div>
@@ -267,13 +285,6 @@
 
 		 </div>	
 </div>
-
-			<div class="parallax-container edificios">
-	      		<div class="parallax">
-	      			<img src="WebFloopets/recursos/images/edificios2.png">
-	      		</div>
-    		</div>
-
     <!-- David Pabon-Eventos -->
     <!-- <div class="row">
 	    
@@ -325,7 +336,6 @@
     </div>
 	
 	<!-- eventos -->
-    <hr>
     <div class="row">
 
       <div class="col s12 m6 l6 seccion_eventos">
