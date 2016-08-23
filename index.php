@@ -108,8 +108,8 @@
 		<div class="banner-video">
 
 			
-			<button class="ingresa btn waves-effect waves-light btn-large animated bounceIn">Ingresa</button>
-			<button class="unete btn waves-effect waves-light btn-large">Unete</button>
+			<a class="ingresa btn waves-effect waves-light btn-large animated bounceIn" href="View/login1.php">Ingresa</a>
+			<a class="unete btn waves-effect waves-light btn-large" href="View/login1.php">Unete</a>
 			<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
 		</div>
 		<!-- Andrea Guzman-Adopciones -->
