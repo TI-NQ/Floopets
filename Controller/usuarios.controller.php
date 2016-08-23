@@ -32,10 +32,11 @@
 				$usu_telefono			=$_POST["usu_telefono"];
 				$usu_email				=$_POST["usu_email"];
 				$cod_rol					=$_POST["cod_rol"];
+				$usu_cedula= $_POST["usu_cedula"];
 				$usu_clave				=$_POST["usu_clave"];
 
 				try{
-					Gestion_usuarios::Update($usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave,$usu_cod_usuario);
+					Gestion_usuarios::Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave);
 					$mensaje = "Se actualizo correctamente";
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();

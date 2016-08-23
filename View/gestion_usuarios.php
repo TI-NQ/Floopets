@@ -11,10 +11,11 @@ $user=Gestion_usuarios::ReadAll();
 <table>
 	<thead>
 		<tr>
-			<td>Cedula</td>
+			<td>Codigo de usuario</td>
 			<td>Nombre</td>
       <td>Apellido</td>
       <td>Telefono</td>
+      <td>Cedula</td>
       <td>Email</td>
       <td>Rol</td>
       <td>Contraseña</td>
@@ -32,6 +33,7 @@ $user=Gestion_usuarios::ReadAll();
 						<td>".$row["usu_nombre"]."</td>
             <td>".$row["usu_apellido"]."</td>
             <td>".$row["usu_telefono"]."</td>
+            <td>".$row["usu_cedula"]."</td>
             <td>".$row["usu_email"]."</td>
             <td>".$row["rol_nombre"]."</td>
             <td>".$row["usu_clave"]."</td>

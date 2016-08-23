@@ -1,5 +1,5 @@
 <?php
-	class gestion_rol
+	class Gestion_rol
 	{
 		// Metodo Create()
 		function Create($rol_nombre)

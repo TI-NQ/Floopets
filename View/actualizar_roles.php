@@ -3,7 +3,7 @@
   require_once("../Model/conexion.php");
   require_once("../Model/rol.class.php");
 
-  $rol =  gestion_rol::ReadbyID(base64_decode($_REQUEST["ro"]));
+  $rol =  Gestion_rol::ReadbyID(base64_decode($_REQUEST["ro"]));
 ?>
 <form action="../Controller/rol.controller.php" method="POST">
 		<input class="form-control"  type="hidden" name="cod_rol" required readonly value="<?php echo $rol[0]?>">

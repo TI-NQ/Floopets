@@ -5,7 +5,7 @@
 
 require_once("../Model/conexion.php");
 require_once("../Model/rol.class.php");
-$rol=gestion_rol::ReadAll();
+$rol=Gestion_rol::ReadAll();
  ?>
 
 <table>
