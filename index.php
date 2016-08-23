@@ -1,17 +1,13 @@
 <!DOCTYPE html>
 <html lang="es">
 	<head>
-		<!-- import Waypoints -->
-		<script type="text/javascript" src="WebFloopets/imakewebthings-waypoints-0944e15/lib/noframework.waypoints.min.js"></script>
-		<!-- <script type="text/javascript" src="WebFloopets/imakewebthings-waypoints-0944e15/src/waypoint.js"></script> -->
-		<!-- <script type="text/javascript" src="WebFloopets/js/waypoint.js"></script> -->
 		<!-- google.fonts import -->
 		<link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300" rel="stylesheet">
 		<link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
 		<!--Import Google Icon Font-->
-	    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-	    <!--Import materialize.css-->
-	    <link type="text/css" rel="stylesheet" href="WebFloopets/materialize/css/materialize.css"  media="screen,projection"/>
+	  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	  <!--Import materialize.css-->
+	  <link type="text/css" rel="stylesheet" href="WebFloopets/materialize/css/materialize.css"  media="screen,projection"/>
 		<link rel="shortcut icon" type="image/x-icon" href="WebFloopets/images/title-web.ico">
 		<meta charset="UTF-8">
 		<!-- import font-awesome -->
@@ -45,8 +41,8 @@
 				      items : 4,
 				      itemsDesktop : [1199,3],
 				      itemsDesktopSmall : [979,3]
-				 
-  
+
+
     			});
      		 });
       	</script>
@@ -72,16 +68,16 @@
       	</script>
 	</head>
 	<body>
-		
+
 		<!-- menu -->
 		<!-- <nav > -->
 			<img id="menu" onclick= "desplegar()" src="WebFloopets/images/prueba-logo.png" >
-			
-		
+
+
 	<div class="contenedor-menu">
 
 		<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
-	
+
 		<ul class="menu_floopets">
 			<li><a href=""><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
 			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
@@ -103,11 +99,11 @@
 
 	<!-- </nav> -->
 		<!--  -->
-		
-		
+
+
 		<div class="banner-video">
 
-			
+
 			<a class="ingresa btn waves-effect waves-light btn-large animated bounceIn" href="View/login1.php">Ingresa</a>
 			<a class="unete btn waves-effect waves-light btn-large" href="View/login1.php">Unete</a>
 			<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
@@ -119,16 +115,16 @@
 						<p>Adopta un</p>
 					</div>
 					<button class="boton btn waves-effect waves-light btn-large">Perro</button>
-								
-					<img src="WebFloopets/images/1.jpg">					
+
+					<img src="WebFloopets/images/1.jpg">
 				</div>
 				<div class="container__gatos col s12 m6 l6">
 					<div id="adoptagato">
 						<p>Adopta un</p>
 					</div>
-					<button class="boton1 btn waves-effect waves-light btn-large">Gato</button>	
+					<button class="boton1 btn waves-effect waves-light btn-large">Gato</button>
 					<img src="WebFloopets/images/2.jpg">
-					
+
 				</div>
 		</div>
 		<div class="parallax-container azul">
@@ -190,7 +186,7 @@
 				      <button class="boton__form btn waves-effect waves-light btn-large right">Enviar</button>
 					</form>
 				</div>
-  			</div>		
+  			</div>
 		</div>
 		<div class="parallax-container">
 			<div class="nubes">
@@ -200,42 +196,42 @@
   				<div class="nube4"><img src="WebFloopets/recursos/images/nube-2.png"></div>
   				<div class="nube5"><img src="WebFloopets/recursos/images/nube-1.png"></div>
   				<div class="nube6"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  			</div>	
+  			</div>
       		<div class="parallax">
       			<img src="WebFloopets/recursos/images/montañas.png">
       		</div>
-    	</div>	
+    	</div>
     	<div class="row seccion3">
 				<div class="container__perdida col s12 m6 l6">
 					<div id="perdida">
 						<p>Mascotas Perdidas</p>
-					</div>	
-					<button class="boton btn waves-effect waves-light btn-large">Ver mas...</button>			
-					<img src="WebFloopets/images/beagle,-perro-triste,-muro-236194.jpg">					
+					</div>
+					<button class="boton btn waves-effect waves-light btn-large">Ver mas...</button>
+					<img src="WebFloopets/images/beagle,-perro-triste,-muro-236194.jpg">
 				</div>
 				<div class="container__historias col s12 m6 l6">
 					<div id="historias">
 						<p>Historias</p>
 					</div>
-					<button class="boton1 btn  waves-effect waves-light btn-large">Ver mas...</button>	
+					<button class="boton1 btn  waves-effect waves-light btn-large">Ver mas...</button>
 					<img src="WebFloopets/images/5.jpg">
-					
+
 				</div>
 		</div>
 <!-- David Pabon-Cuidados -->
 <div class="row">
 
 	<div class="class col s12">
-		
+
 		<div class="col s12 m12 l8">
 			<div class="carousel carousel-slider ">
-			
-					
+
+
 			    <a class="carousel-item" href="#one!"><img src="WebFloopets/images/Cuid1.jpg"></a>
 			    <a class="carousel-item" href="#two!"><img src="WebFloopets/images/Cuid2.jpg"></a>
 			    <a class="carousel-item" href="#three!"><img src="WebFloopets/images/Cuid3.jpg"></a>
 			    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuid4.jpg"></a>
-			    
+
 		  </div>
 		</div>
 
@@ -246,12 +242,12 @@
 			  <form class="col s12">
 			      <div class="row">
 			        	<div class="input-field col s12">
-			         
+
 						    <select>
-						   
+
 						      <option value="1">Perro</option>
 						      <option value="2">Gato</option>
-						      
+
 						    </select>
 						    <label>Elija el Tipo de Mascota</label>
 						  </div>
@@ -259,10 +255,10 @@
 					  <div class="row">
 			        <div class="input-field col s12">
 			          <select>
-						   
+
 						      <option value="1">Raza 1</option>
 						      <option value="2">Raza 2</option>
-						      
+
 						    </select>
 						    <label>Raza</label>
 			        </div>
@@ -270,11 +266,11 @@
 			      <div class="row">
 			        <div class="input-field col s12">
 			          <select>
-						   
+
 						      <option value="1">0-6 Meses</option>
 						      <option value="2">6 Meses - 1 Año</option>
 						      <option value="2">1 Año - 3 Años</option>
-						      
+
 						    </select>
 						    <label>Edad</label>
 			        </div>
@@ -285,67 +281,67 @@
 	    	</form>
 
 			</div>
-			    
-			      
 
-		 </div>	
+
+
+		 </div>
 </div>
     <!-- David Pabon-Eventos -->
     <!-- <div class="row">
-	    
+
 	    <h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
 	    	<div id="owl-demo">
-          
+
 			  <div class="item">
 			  <img src="WebFloopets/images/evento1.jpg" alt="Owl Image">
 					<div class="text-event">
-						
+
 							<h4>Ensayo</h4>
 							<h6>Fecha</h6>
-							
+
 					</div>
-				  	
+
 			  </div>
 			  <div class="item"><img src="WebFloopets/images/evento2.jpg" alt="Owl Image">
 			  <div class="text-event">
-						
+
 							<h4>Ensayo</h4>
 							<h6>Fecha</h6>
-							
-						
+
+
 					</div>
 			  </div>
 			  <div class="item"><img src="WebFloopets/images/evento3.jpg" alt="Owl Image">
 			  <div class="text-event">
-						
+
 							<h4>Ensayo</h4>
 							<h6>Fecha</h6>
-							
+
 					</div>
 			  </div>
 			  <div class="item"><img src="WebFloopets/images/evento4.jpg" alt="Owl Image">
 			  		<div class="text-event">
-						
+
 							<h4>Ensayo</h4>
 							<h6>Fecha</h6>
-							
+
 					</div>
 			  </div>
 			  </div>
-			  	  
-			
-			
+
+
+
 	    </div> -->
 
 
     </div>
-	
+
 	<!-- eventos -->
     <div class="row">
 
       <div class="col s12 m6 l6 seccion_eventos">
         <img class="img_eventos" src="WebFloopets/images/imagenes_eventos/imagen1.jpeg" alt="">
-      	 
+
       </div>
 
       <div class="col s12 m6 l6 seccion_eventos">
@@ -392,7 +388,7 @@
       </div>
       <div class="footer-copyright grey darken-2">
         <div class="container">
-           © 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información 
+           © 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información
             <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a class="white-text right" href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             <a class="white-text right" href="#!"><i class="fa fa-instagram" aria-hidden="true"></i></a>
@@ -400,7 +396,7 @@
         </div>
       </div>
     </footer>
-	
+
 	<!-- script submenu -->
 	<script src="WebFloopets/js/desplegar_ayuda.js"></script>
 	</body>
