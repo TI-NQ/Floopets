@@ -11,20 +11,20 @@ body {
 }
 
 
- 
+
 p {
   font-feature-settings: "kern" 1; /* 5 */
   font-kerning: normal; /* 5 */
   hyphens: auto; /* 6 */
 }
- 
+
 .fullwidth,
 body#bp-default #wp-admin-bar .padder {
 	width: 100% !important;
 	max-width: 10000px !important;
 	min-width: 960px;
 	margin: 0 auto;
-	clear:both; 
+	clear:both;
     float: left;
 }
 
@@ -63,7 +63,39 @@ h2 { font-size: 30px; font-weight: 300; color: #03A9F4; }
     transform: scale(0.75);
     color: #03A9F4 !important;
 }
-
+/*------------------------------------estilos boton----------------------------------------*/
+#btnlogin{
+	width: auto;
+	  float: right;
+	  background: #03A9F4;
+	  padding: 10px 16px;
+	  cursor: pointer;
+	  font-size: 14px;
+	  font-weight: 600;
+	  color: #fff;
+	  margin: 0 !important;
+	  line-height: 16px;
+	  font-family: Roboto;
+	  text-transform: uppercase;
+	  max-height: 36px;
+	  height: 36px;
+	  letter-spacing: 0.5px;
+	  -webkit-border-radius: 2px;
+	  -moz-border-radius: 2px;
+	  border-radius: 2px;
+	  -webkit-box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+	  -moz-box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+	  box-shadow: 0 2px 6px rgba(0,0,0,0.1), 0 3px 6px rgba(0,0,0,0.1);
+	  -webkit-transition-duration: 0.25s;
+	  transition-duration: 0.25s;
+	  -webkit-transition-property: background-color,-webkit-box-shadow;
+	  transition-property: background-color,box-shadow;
+	  border: 0;
+}
+#logo{
+	max-width: 204px;
+	max-height: 81.693px;
+}
 .form-control {
     align-self: flex-end;
 }
@@ -89,7 +121,7 @@ h2 { font-size: 30px; font-weight: 300; color: #03A9F4; }
 .toplam { width: 200%; height: 100%; position: relative; left: 0;   left: -100%;}
 .left { width: 50%; height: 100%; background: #2C3034;  left: 0; position: absolute;}
 .right { width: 50%; height: 100%; background: #F9F9F9; right: 0; position: absolute;}
-#ic { width: 250px; margin: 0 auto; top: 50%; margin-top: -162px; position: absolute; left: 50%; margin-left: -125px; }
+#ic { width: 70%; top: 50%; margin-top: -162px; position: absolute; left: 50%; margin-left: -125px; }
 .left #ic { margin-top: -232px;}
 #ic p {  font-size: 15px; font-weight: 400; line-height: 26px; color: #757575; margin-bottom: 30px;}
 
@@ -172,7 +204,7 @@ form#girisyap .girisbtn:hover{ background: #0288D1;  -webkit-box-shadow: 0 4px 7
   transition-duration: 0.25s;
   -webkit-transition-property: background-color;
   transition-property: background-color;
-  border: 0; 
+  border: 0;
   outline: 0;}
 
 #moveleft:hover { background: #eee; }
@@ -181,4 +213,3 @@ form#girisyap .girisbtn:hover{ background: #0288D1;  -webkit-box-shadow: 0 4px 7
 #fback { width: 100%; height: 100%; position: absolute; z-index: -9999; }
 .girisback { position: absolute; right: 0; width: 50%; height: 100%; background: #03A9F4 url(../images/signup.jpg); background-size: cover; background-position: 50% 50%;}
 .kayitback { position: absolute; left: 0; width: 50%; height: 100%; background: #03A9F4 url(../images/login.png); background-size: cover; background-position: 50% 50%;}
-
