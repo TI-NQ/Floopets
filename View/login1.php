@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="shortcut icon" type="image/x-icon" href="../WebFloopets/images/title-web.ico">
+  <meta charset="utf-8">
+  <link rel="shortcut icon" type="image/x-icon" href="../WebFloopets/images/title-web.ico">
   <title>Iniciar Sesion</title>
   <link rel="stylesheet" type="text/css" href="../WebFloopets/css/style.css" media="all">
   <link rel="stylesheet" type="text/css" href="../WebFloopets/css/normalize.css" media="all">
@@ -71,6 +72,6 @@
 
 </div>
 </div>
-<script type="text/javascript" src="../WebFloopets/js/kayitgiris.js"></script> 
+<script type="text/javascript" src="../WebFloopets/js/kayitgiris.js"></script>
 </body>
 </html>
