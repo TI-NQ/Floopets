@@ -31,6 +31,7 @@
       	<script type="text/javascript" src ="WebFloopets/js/owl.carousel.min.js"></script>
       	<!-- link del menu -->
       	<script src="WebFloopets/js/efecto_menu.js"></script>
+      	<script src="WebFloopets/js/desplegar_ayuda.js"></script>
       	<!--  -->
 
       	<!-- scripts -->
@@ -75,30 +76,29 @@
 		<!-- menu -->
 		<!-- <nav > -->
 			<img id="menu" onclick= "desplegar()" src="WebFloopets/images/prueba-logo.png" >
-			<!-- <img id="menu" onclick= "desplegar()" src="WebFloopets/recursos/images/IconoMenu.png" > -->
-			<!--<img id="logo" onclick="ver_menu()" src="WebFloopets/recursos/images/logotipo.png"> -->
+			
 		
-	<div class="contenedor_menu">
-		<!-- <img id="menu" onclick= "desplegar()" src="WebFloopets/recursos/images/IconoMenu.png" >-->
-		<!-- <img id="logo" onclick="ver_menu()" src="WebFloopets/recursos/images/logotipo.png"> -->	
-		<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
-		
-		<ul id="items">
-			<li> <i class="fa fa-paw"></i>¿Quieres ser voluntario?</li>
-			<li> <i class="fa fa-paw"></i>Inicio</li>
-			<li> <i class="fa fa-paw"></i>Adopciones</li>
-			<li><i class="fa fa-paw"></i>Ayuda una mascota</a>
+	<div class="contenedor-menu">
 
-			<ul id="items_ayuda">
-				<li><a href="#"> <i class="fa fa-paw"></i>Perdida</a></li>
-				<li> <i class="fa fa-paw"></i>Maltrato</li>
-			</ul>
+		<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
+	
+		<ul class="menu_floopets">
+			<li><a href=""><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
+			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
+			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
+			<li ><a href=""><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota<i class="icono derecha fa fa-chevron-down"></i> </a>
+				<ul>
+					<li><a href=""><i class="sub_menu icono izquierda fa fa-paw"></i> Perdida</a></li>
+					<li><a href=""><i class="sub_menu icono izquierda fa fa-paw"></i> Maltrato</a></li>
+				</ul>
 			</li>
 
-			<li> <i class="fa fa-paw"></i>Eventos</li>
-			<li> <i class="fa fa-paw"></i>Donaciones</li>
-			<li> <i class="fa fa-paw"></i>Cuidados</li>
+			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
+			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
+			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li>
 		</ul>
+
+
 	</div>
 
 	<!-- </nav> -->
@@ -395,7 +395,9 @@
         </div>
       </div>
     </footer>
-
+	
+	<!-- script submenu -->
+	<script src="WebFloopets/js/desplegar_ayuda.js"></script>
 	</body>
 
 

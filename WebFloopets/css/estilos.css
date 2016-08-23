@@ -11,7 +11,7 @@ video{
 	width: 100%;
 	position: relative;
 }
-.contenedor_menu{
+.contenedor-menu{
 	position: fixed;
 	z-index: 100;
 	background-color: rgba(255, 255, 255, 0.5);
@@ -316,21 +316,72 @@ input[type=text]:focus:not([readonly]) + label{
 /*------estilos del menu----*/
 
 
-#items,#logo{
+.menu_floopets,#logo{
 	display: none;
 }
 
-#items>li,#items_ayuda>li{
-	list-style: none;
-	color:#000;
-	padding: 15px 40px 15px 15px;
-    font-size: 20px;
-}
-#items>li>i,#items_ayuda>li>i{
-	margin-right: 15px;
+a{
+	text-decoration: none;
 }
 
-#items_ayuda{
-	margin-top: 10px;
-	display:none;
+.contenedor-menu{
+	width: 30%;
+	min-width: 300px;
+	font-size: 18px;
+	display: inline-block;
+	font-family: 'Roboto', sans-serif;
+	line-height: 18px;
+
+}
+
+.contenedor-menu .menu_floopets{
+	width: 100%;
+	margin-top: 50px;
+}
+
+.contenedor-menu ul{
+	list-style: none;
+}
+
+.contenedor-menu .menu_floopets li a{
+	color: #000;
+	display: block;
+	padding: 15px 20px;
+	
+}
+
+.contenedor-menu .menu_floopets li a:hover{
+	background: #00b3ae;
+	color:#fff;
+}
+
+.contenedor-menu .menu_floopets .icono{
+	font-size: 15px;
+	
+}
+
+.contenedor-menu .menu_floopets .icono.izquierda {
+	float:left;
+	margin-right: 10px;
+}  
+.contenedor-menu .menu_floopets .icono.derecha{
+	float: right;
+	margin-left:10px; 
+}
+
+.contenedor-menu .menu_floopets ul{  
+	display: none;
+}
+
+.contenedor-menu .menu_floopets ul li a{
+	
+	color:#000;
+}
+
+.contenedor-menu .menu_floopets .activado > a { 
+	background: #00b3ae;
+	color:#fff;
+}
+.sub_menu{
+	margin-left: 25px;
 }
