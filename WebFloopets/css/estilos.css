@@ -104,6 +104,26 @@ video{
 	background-color: rgba(255,179,0,0.8) !important;
 	border-radius: 5px;
 }
+#adoptaperro{
+	position: absolute;
+	margin-top: 70vh;
+	left: 250px;
+}
+#adoptaperro p{
+	color: #fff;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 40px;
+}
+#adoptagato{
+	position: absolute;
+	margin-top: 70vh;
+	left: 970px;
+}
+#adoptagato p{
+	color: #fff;
+	font-family: 'Roboto Condensed', sans-serif;
+	font-size: 40px;
+}
 
 /*----------------------------------------------estilos seccion 2----------------------------------------------*/
 .container__img{

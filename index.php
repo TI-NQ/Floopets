@@ -115,13 +115,18 @@
 		<!-- Andrea Guzman-Adopciones -->
 		<div class="row seccion1">
 				<div class="container__perros col s12 m6 l6">
-					<div class="">
-						<button class="boton btn waves-effect waves-light btn-large">Perros</button>
-					</div>				
+					<div id="adoptaperro">
+						<p>Adopta un</p>
+					</div>
+					<button class="boton btn waves-effect waves-light btn-large">Perro</button>
+								
 					<img src="WebFloopets/images/1.jpg">					
 				</div>
 				<div class="container__gatos col s12 m6 l6">
-					<button class="boton1 btn waves-effect waves-light btn-large">Gatos</button>	
+					<div id="adoptagato">
+						<p>Adopta un</p>
+					</div>
+					<button class="boton1 btn waves-effect waves-light btn-large">Gato</button>	
 					<img src="WebFloopets/images/2.jpg">
 					
 				</div>
