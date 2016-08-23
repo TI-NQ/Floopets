@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 16-08-2016 a las 16:58:55
+-- Tiempo de generación: 23-08-2016 a las 18:04:00
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -78,9 +78,19 @@ CREATE TABLE `denuncia` (
   `usu_cod_usuario` int(11) NOT NULL,
   `td_cod_tipo_denuncia` int(11) NOT NULL,
   `de_descripcion` varchar(50) NOT NULL,
-  `de_fecha` date NOT NULL,
+  `de_contacto` varchar(100) NOT NULL,
+  `de_telefono` varchar(10) NOT NULL,
+  `de_nombre` varchar(100) NOT NULL,
+  `de_fecha` datetime NOT NULL,
   `de_imagen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `denuncia`
+--
+
+INSERT INTO `denuncia` (`de_cod_denuncia`, `usu_cod_usuario`, `td_cod_tipo_denuncia`, `de_descripcion`, `de_contacto`, `de_telefono`, `de_nombre`, `de_fecha`, `de_imagen`) VALUES
+(2, 0, 1, 'le pega', 'yesid', '3769878', 'lolo', '2016-08-23 11:03:12', 0);
 
 -- --------------------------------------------------------
 
@@ -239,6 +249,13 @@ CREATE TABLE `tipo_denuncia` (
   `td_nombre` varchar(50) NOT NULL,
   `td_estado` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tipo_denuncia`
+--
+
+INSERT INTO `tipo_denuncia` (`td_cod_tipo_denuncia`, `td_nombre`, `td_estado`) VALUES
+(1, 'Maltrato', 'activo');
 
 -- --------------------------------------------------------
 
@@ -526,7 +543,7 @@ ALTER TABLE `cuidado`
 -- AUTO_INCREMENT de la tabla `denuncia`
 --
 ALTER TABLE `denuncia`
-  MODIFY `de_cod_denuncia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `de_cod_denuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `donacion`
 --
@@ -566,7 +583,7 @@ ALTER TABLE `tipo_animal`
 -- AUTO_INCREMENT de la tabla `tipo_denuncia`
 --
 ALTER TABLE `tipo_denuncia`
-  MODIFY `td_cod_tipo_denuncia` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `td_cod_tipo_denuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `tipo_donacion`
 --
@@ -608,7 +625,6 @@ ALTER TABLE `animal`
 -- Filtros para la tabla `denuncia`
 --
 ALTER TABLE `denuncia`
-  ADD CONSTRAINT `denuncia_ibfk_3` FOREIGN KEY (`usu_cod_usuario`) REFERENCES `usuario` (`usu_cod_usuario`) ON UPDATE CASCADE,
   ADD CONSTRAINT `denuncia_ibfk_4` FOREIGN KEY (`td_cod_tipo_denuncia`) REFERENCES `tipo_denuncia` (`td_cod_tipo_denuncia`) ON UPDATE CASCADE;
 
 --

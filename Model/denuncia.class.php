@@ -4,16 +4,16 @@ class Gestion_denuncia{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
-	function Create($usu_cod_usuario,$td_cod_tipo_denuncia,$de_descripcion,$de_fecha,$de_imagen,$de_nombre,$de_contacto,$de_telefono){
+	function Create($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO denuncia (usu_cod_usuario,td_cod_tipo_denuncia,de_descripcion,de_fecha,de_imagen,de_nombre,de_contacto,de_telefono) VALUES (?,?,?,?,?,?,?,?)";
+		$consulta = "INSERT INTO denuncia (td_cod_tipo_denuncia,de_descripcion,de_contacto,de_telefono,de_nombre,de_fecha,de_imagen) VALUES (?,?,?,?,?,now(),?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($usu_cod_usuario,$td_cod_tipo_denuncia,$de_descripcion,$de_fecha,$de_imagen,$de_nombre,$de_contacto,$de_telefono));
+		$query->execute(array($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen));
 
 		floopets_BD::Disconnect();
 	}
@@ -70,7 +70,7 @@ class Gestion_denuncia{
 		floopets_BD::Disconnect();
 	}
 
-	function Update($de_cod_denuncia,$usu_cod_usuario,$td_cod_tipo_denuncia,$de_descripcion,$de_fecha,$de_imagen,$de_nombre,$de_contacto,$de_telefono){
+	function Update($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen,$de_cod_denuncia){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -78,10 +78,10 @@ class Gestion_denuncia{
 
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE denuncia SET usu_cod_usuario = ?,td_cod_tipo_denuncia=?,de_descripcion=?,de_fecha=?,de_imagen=?,de_nombre=?,de_contacto=?,de_telefono=? WHERE de_cod_denuncia = ?" ;
+		$consulta = "UPDATE denuncia SET td_cod_tipo_denuncia=?,de_descripcion=?,de_contacto=?,de_telefono=?,de_nombre=?,de_imagen=? WHERE de_cod_denuncia =?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($usu_cod_usuario,$td_cod_tipo_denuncia,$de_descripcion,$de_fecha,$de_imagen,$de_cod_denuncia,$de_nombre,$de_contacto,$de_telefono));
+		$query->execute(array($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen,$de_cod_denuncia));
 
 		floopets_BD::Disconnect();
 
@@ -96,7 +96,7 @@ class Gestion_denuncia{
 
 
 		//Crear el query que vamos a realizar
-		$consulta = "DELETE FROM denuncia WHERE de_cod_denuncia = ?" ;
+		$consulta = "DELETE FROM denuncia WHERE de_cod_denuncia =?" ;
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($de_cod_denuncia));
