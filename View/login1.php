@@ -45,13 +45,13 @@
 <input type="submit" name="signup_submit" id="signup_submit" value="Registrarse" class="girisbtn"  />
 </form>
 
-<button id="moveright">Login</button>
+<button id="moveright">Iniciar</button>
 </div>
 </div>
 
 <div class="right">
   <div id="ic">
-    <h2>Login</h2>
+    <h2>Iniciar sesion</h2>
     <!-- <p></p> -->
     <form name="login-form" id="girisyap" id="sidebar-user-login" method="post" onsubmit="return false;">
 
@@ -63,7 +63,7 @@
       <label class="control-label" for="inputNormal">Contraseña</label>
       <input type="password" name="pwd" class="bp-suggestions form-control" cols="50" rows="10"></input>
   </div>
-  <input type="submit" value="Login" class="girisbtn" tabindex="100" />
+  <input type="submit" value="Iniciar" class="girisbtn" tabindex="100" />
   </form>
 
 <button id="moveleft">Registrarse</button>
