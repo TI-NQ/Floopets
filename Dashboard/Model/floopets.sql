@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 24-08-2016 a las 13:28:33
+-- Tiempo de generación: 24-08-2016 a las 15:02:53
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -140,7 +140,9 @@ CREATE TABLE `evento` (
   `eve_fecha` date NOT NULL,
   `eve_hora` time NOT NULL,
   `eve_descripcion` varchar(100) NOT NULL,
-  `imagen` longtext NOT NULL
+  `imagen` longtext NOT NULL,
+  `geo_x` longtext NOT NULL,
+  `geo_y` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -153,6 +155,24 @@ DROP TABLE IF EXISTS `evento_organizacion`;
 CREATE TABLE `evento_organizacion` (
   `eve_cod_evento` int(11) NOT NULL,
   `org_cod_organizacion` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `noticias`
+--
+
+DROP TABLE IF EXISTS `noticias`;
+CREATE TABLE `noticias` (
+  `cod_noticia` int(11) NOT NULL,
+  `usu_cod_usuario` int(11) NOT NULL,
+  `not_titulo` varchar(100) NOT NULL,
+  `not_contenido` varchar(500) NOT NULL,
+  `not_fecha_publicacion` date NOT NULL,
+  `not_galeria` longtext NOT NULL,
+  `not_portada` longtext NOT NULL,
+  `not_palabras_clave` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -214,7 +234,9 @@ DROP TABLE IF EXISTS `raza`;
 CREATE TABLE `raza` (
   `ra_cod_raza` int(11) NOT NULL,
   `ra_nombre` varchar(50) NOT NULL,
-  `ta_cod_tipo_animal` int(11) NOT NULL
+  `ta_cod_tipo_animal` int(11) NOT NULL,
+  `ra_historia` varchar(1000) NOT NULL,
+  `ra_imagen` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -448,6 +470,13 @@ ALTER TABLE `evento_organizacion`
   ADD KEY `org_cod_organizacion` (`org_cod_organizacion`);
 
 --
+-- Indices de la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  ADD PRIMARY KEY (`cod_noticia`),
+  ADD UNIQUE KEY `usu_cod_usuario` (`usu_cod_usuario`);
+
+--
 -- Indices de la tabla `organizacion`
 --
 ALTER TABLE `organizacion`
@@ -575,6 +604,11 @@ ALTER TABLE `donacion`
 ALTER TABLE `evento`
   MODIFY `eve_cod_evento` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT de la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  MODIFY `cod_noticia` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT de la tabla `organizacion`
 --
 ALTER TABLE `organizacion`
@@ -674,6 +708,12 @@ ALTER TABLE `evento`
 ALTER TABLE `evento_organizacion`
   ADD CONSTRAINT `evento_organizacion_ibfk_2` FOREIGN KEY (`eve_cod_evento`) REFERENCES `evento` (`eve_cod_evento`) ON UPDATE CASCADE,
   ADD CONSTRAINT `evento_organizacion_ibfk_3` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `noticias`
+--
+ALTER TABLE `noticias`
+  ADD CONSTRAINT `noticias_ibfk_1` FOREIGN KEY (`usu_cod_usuario`) REFERENCES `usuario` (`usu_cod_usuario`) ON DELETE CASCADE;
 
 --
 -- Filtros para la tabla `organizacion`
