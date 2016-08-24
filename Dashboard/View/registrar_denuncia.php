@@ -1,4 +1,3 @@
-
 <form action="../Controller/denuncia.controller.php" method="POST" enctype="multipart/form-data">
 		<div class="form-group">
 		<label>Tipo denuncia:</label>
@@ -7,7 +6,6 @@
 				<?php
 					require_once("../Model/conexion.php");
 					require_once("../Model/tipo_denuncia.class.php");
-
 					$den = Gestion_tipo_denuncia::ReadAll();
 					foreach ($den as $row) {
 						echo "<option value = '".$row["td_cod_tipo_denuncia"]."'>".$row["td_nombre"]."</option>";

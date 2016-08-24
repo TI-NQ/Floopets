@@ -8,8 +8,8 @@
 
 
 			$td_cod_tipo_denuncia		= $_POST["td_cod_tipo_denuncia"];
-			$nombre_cod_usuario 	= strtolower(str_replace('ñ', 'n', $usu_cod_usuario));
-			$nombre_cod_usuario 	= strtolower(str_replace(' ', '', $nombre_cod_usuario));
+			$nombre_cod_tipo_denuncia 	= strtolower(str_replace('ñ', 'n', $td_cod_tipo_denuncia));
+			$nombre_cod_tipo_denuncia 	= strtolower(str_replace(' ', '', $nombre_cod_tipo_denuncia));
 			$count_galeria			= count($_FILES['ado_imagen']['name']);
 			$de_descripcion			= $_POST["de_descripcion"];
 			$de_contacto  =$_POST["de_contacto"];
