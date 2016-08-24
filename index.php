@@ -71,32 +71,32 @@
 
 		<!-- menu -->
 		<!-- <nav > -->
-			<img id="menu" onclick= "desplegar()" src="WebFloopets/images/prueba-logo.png" >
+			<!-- <img id="menu" onclick= "desplegar()" src="WebFloopets/images/prueba-logo.png" > -->
+			<i class="fa fa-bars" aria-hidden="true" id="menu" onclick= "desplegar()"></i>
 
 
-	<div class="contenedor-menu">
+		<div class="contenedor-menu">
 
-		<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
+			<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
 
-		<ul class="menu_floopets">
-			<li><a href=""><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
-			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
-			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
-			<li ><a href=""><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota<i class="icono derecha fa fa-chevron-down"></i> </a>
-				<ul>
-					<li><a href=""><i class="sub_menu icono izquierda fa fa-paw"></i> Perdida</a></li>
-					<li><a href=""><i class="sub_menu icono izquierda fa fa-paw"></i> Maltrato</a></li>
-				</ul>
-			</li>
+			<ul class="menu_floopets">
+				<li><a href=""><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
+				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
+				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
+				<li ><a href=""><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota<i class="icono derecha fa fa-chevron-down"></i> </a>
+					<ul>
+						<li><a href=""><i class="sub_menu icono izquierda fa fa-paw"></i> Perdida</a></li>
+						<li><a href=""><i class="sub_menu icono izquierda fa fa-paw"></i> Maltrato</a></li>
+					</ul>
+				</li>
 
-			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
-			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
-			<li><a href=""><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li>
-		</ul>
+				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
+				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
+				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li>
+			</ul>
 
 
-	</div>
-
+		</div>
 	<!-- </nav> -->
 		<!--  -->
 

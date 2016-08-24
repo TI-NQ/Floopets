@@ -11,11 +11,11 @@ video{
 	width: 100%;
 	position: relative;
 }
-.contenedor-menu{
+/*.contenedor-menu{
 	position: fixed;
 	z-index: 100;
 	background-color: rgba(255, 255, 255, 0.5);
-}
+}*/
 .ingresa{
 	background-color: rgba(0, 179, 174,0.8) !important;
 	position: absolute;
@@ -38,19 +38,20 @@ video{
 	text-transform: inherit;
 }
 /*-----------------------------------------------------estilos menu-----------------------------------------------------*/
-.contenedor_menu{
+/*.contenedor_menu{
+	width: 40%;
 	position: fixed;
 	z-index: 100;
-	background-color: rgba(255, 255, 255, 0.5);
 	height: 100vh;
-}
+}*/
 #menu{
 	position: fixed;
 	z-index: 10;
-	max-height: 80px;
-	max-width: 80px;
-	background-color: rgba(255, 255, 255, 0.5);
-	border-radius: 0px 0px 10px 0px;
+	/*background-color: rgba(255, 255, 255, 0.8);*/
+	font-size: 45px;
+	/*border-radius: 0px 0px 10px 0px;*/
+	color: #fff;
+	margin: 20px;
 }
 #logo{
 	max-width: 365px;
@@ -63,16 +64,16 @@ video{
 .container__perros{
 	width: 100%;
 	height: 768px;
-	padding: 0 !important;	
+	padding: 0 !important;
 
 }
-.container__perros img{	
-	width: 100%; 
+.container__perros img{
+	width: 100%;
 	z-index: 1;
 }
 .boton{
 	position: absolute;
-	z-index: 2; 
+	z-index: 2;
 	margin-top: 85vh;
 	left: 240px;
 	width: 200px;
@@ -90,11 +91,11 @@ video{
 	width: 100%;
 	height: 768px;
 	padding: 0 !important;
-	
+
 }
 .boton1{
 	position: absolute;
-	z-index: 4; 
+	z-index: 4;
 	margin-top: 85vh;
 	left: 945px;
 	width: 200px;
@@ -292,7 +293,7 @@ input[type=text]:focus:not([readonly]) + label{
 #owl-demo .item img{
   display: block;
   width: 100%;
-  
+
 }
 .text-event{
 	position:relative;
@@ -313,14 +314,14 @@ input[type=text]:focus:not([readonly]) + label{
 	height: 400px;
 	width: 100%;
 	height: 100%;
-	
+
 
 
 }
 .img_eventos{
 	width: 100%;
-	
-	
+
+
 }
 .abajo{
 	margin-top:-6px;
@@ -330,33 +331,34 @@ input[type=text]:focus:not([readonly]) + label{
 .seccion_eventos > img:hover{
 
     opacity: 0.4;
-    
+
 }
 
 /*------estilos del menu----*/
 
-
-.menu_floopets,#logo{
+/*.menu_floopets,#logo{
 	display: none;
-}
+}*/
 
 a{
 	text-decoration: none;
 }
 
 .contenedor-menu{
-	width: 30%;
+	width: 45%;
+	height: 100vh;
 	min-width: 300px;
 	font-size: 18px;
-	display: inline-block;
 	font-family: 'Roboto', sans-serif;
 	line-height: 18px;
-
+	position: fixed;
+	z-index: 3;
+	display: none;
+	background-image: url(../recursos/images/menu.png);
 }
-
-.contenedor-menu .menu_floopets{
-	width: 100%;
-	margin-top: 50px;
+.menu_floopets, #logo{
+	margin: 20px;
+	max-width: 65%;
 }
 
 .contenedor-menu ul{
@@ -367,7 +369,7 @@ a{
 	color: #000;
 	display: block;
 	padding: 15px 20px;
-	
+
 }
 
 .contenedor-menu .menu_floopets li a:hover{
@@ -377,28 +379,28 @@ a{
 
 .contenedor-menu .menu_floopets .icono{
 	font-size: 15px;
-	
+
 }
 
 .contenedor-menu .menu_floopets .icono.izquierda {
 	float:left;
 	margin-right: 10px;
-}  
+}
 .contenedor-menu .menu_floopets .icono.derecha{
 	float: right;
-	margin-left:10px; 
+	margin-left:10px;
 }
 
-.contenedor-menu .menu_floopets ul{  
+.contenedor-menu .menu_floopets ul{
 	display: none;
 }
 
 .contenedor-menu .menu_floopets ul li a{
-	
+
 	color:#000;
 }
 
-.contenedor-menu .menu_floopets .activado > a { 
+.contenedor-menu .menu_floopets .activado > a {
 	background: #00b3ae;
 	color:#fff;
 }
