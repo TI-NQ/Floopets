@@ -23,3 +23,7 @@ body{
 	background: #eee;
 	text-align: left;
 }
+
+form button {
+	width: 100%
+}
