@@ -4297,7 +4297,7 @@ html {
   line-height: 1.5;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
-  color: rgba(0, 0, 0, 0.87);
+  color: #9e9e9e;
 }
 
 @media only screen and (min-width: 0) {
@@ -5642,7 +5642,7 @@ textarea.materialize-textarea {
   height: 3rem;
   width: 100%;
   font-size: 1rem;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   padding: 0;
   box-shadow: none;
   box-sizing: content-box;

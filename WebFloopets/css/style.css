@@ -93,8 +93,10 @@ h2 { font-size: 30px; font-weight: 300; color: #03A9F4; }
 	  border: 0;
 }
 #logo{
+	display: block;
 	max-width: 204px;
 	max-height: 81.693px;
+	margin: auto;
 }
 .form-control {
     align-self: flex-end;
@@ -121,8 +123,8 @@ h2 { font-size: 30px; font-weight: 300; color: #03A9F4; }
 .toplam { width: 200%; height: 100%; position: relative; left: 0;   left: -100%;}
 .left { width: 50%; height: 100%; background: #2C3034;  left: 0; position: absolute;}
 .right { width: 50%; height: 100%; background: #F9F9F9; right: 0; position: absolute;}
-#ic { width: 70%; top: 50%; margin-top: -162px; position: absolute; left: 50%; margin-left: -125px; }
-.left #ic { margin-top: -232px;}
+#ic { width: 70%; top: 50%; margin-top: -162px; position: absolute; left: 50%;  margin-left: -250px; }
+.left #ic { margin-top: -300px;}
 #ic p {  font-size: 15px; font-weight: 400; line-height: 26px; color: #757575; margin-bottom: 30px;}
 
 form#girisyap input {
