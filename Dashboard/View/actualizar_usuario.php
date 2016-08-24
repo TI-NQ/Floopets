@@ -31,11 +31,16 @@
 	<div class="form-group">
 	<label>Roles</label>
     <select name="cod_rol" required>
-    <option value="<?php echo $user[6]?>"selected><?php echo $user[9] ?></option>
     <?php 
     	$roles=Gestion_rol::ReadAll();
     	foreach ($roles as $row ) {
-    		echo '<option  value = "'.$row[0].'">'.$row[1].'</option>';
+    		echo '<option  value = "'.$row[0].'"';
+    		if ($row[1]==$user[9]) {
+    				echo "selected";
+    			}
+
+
+    		echo '>'.$row[1].'</option>';
     	}
      ?>
     </select>
