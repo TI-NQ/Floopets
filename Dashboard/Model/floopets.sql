@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 23-08-2016 a las 18:04:00
+-- Tiempo de generación: 24-08-2016 a las 13:28:33
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -28,6 +28,7 @@ USE `floopets`;
 -- Estructura de tabla para la tabla `adopcion`
 --
 
+DROP TABLE IF EXISTS `adopcion`;
 CREATE TABLE `adopcion` (
   `ado_cod_adopcion` int(11) NOT NULL,
   `ani_cod_animal` int(11) NOT NULL,
@@ -43,6 +44,7 @@ CREATE TABLE `adopcion` (
 -- Estructura de tabla para la tabla `animal`
 --
 
+DROP TABLE IF EXISTS `animal`;
 CREATE TABLE `animal` (
   `ani_cod_animal` int(11) NOT NULL,
   `ra_cod_raza` int(11) NOT NULL,
@@ -59,6 +61,7 @@ CREATE TABLE `animal` (
 -- Estructura de tabla para la tabla `cuidado`
 --
 
+DROP TABLE IF EXISTS `cuidado`;
 CREATE TABLE `cuidado` (
   `cu_cod_cuidado` int(11) NOT NULL,
   `cu_nombre` varchar(50) NOT NULL,
@@ -73,14 +76,14 @@ CREATE TABLE `cuidado` (
 -- Estructura de tabla para la tabla `denuncia`
 --
 
+DROP TABLE IF EXISTS `denuncia`;
 CREATE TABLE `denuncia` (
   `de_cod_denuncia` int(11) NOT NULL,
-  `usu_cod_usuario` int(11) NOT NULL,
   `td_cod_tipo_denuncia` int(11) NOT NULL,
   `de_descripcion` varchar(50) NOT NULL,
   `de_contacto` varchar(100) NOT NULL,
   `de_telefono` varchar(10) NOT NULL,
-  `de_nombre` varchar(100) NOT NULL,
+  `de_nombre` varchar(100) DEFAULT NULL,
   `de_fecha` datetime NOT NULL,
   `de_imagen` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
@@ -89,8 +92,8 @@ CREATE TABLE `denuncia` (
 -- Volcado de datos para la tabla `denuncia`
 --
 
-INSERT INTO `denuncia` (`de_cod_denuncia`, `usu_cod_usuario`, `td_cod_tipo_denuncia`, `de_descripcion`, `de_contacto`, `de_telefono`, `de_nombre`, `de_fecha`, `de_imagen`) VALUES
-(2, 0, 1, 'le pega', 'yesid', '3769878', 'lolo', '2016-08-23 11:03:12', 0);
+INSERT INTO `denuncia` (`de_cod_denuncia`, `td_cod_tipo_denuncia`, `de_descripcion`, `de_contacto`, `de_telefono`, `de_nombre`, `de_fecha`, `de_imagen`) VALUES
+(2, 1, 'le pega', 'yesid', '3769878', 'lolo', '2016-08-23 11:03:12', 0);
 
 -- --------------------------------------------------------
 
@@ -98,6 +101,7 @@ INSERT INTO `denuncia` (`de_cod_denuncia`, `usu_cod_usuario`, `td_cod_tipo_denun
 -- Estructura de tabla para la tabla `denuncias_organizacion`
 --
 
+DROP TABLE IF EXISTS `denuncias_organizacion`;
 CREATE TABLE `denuncias_organizacion` (
   `de_cod_denuncia` int(11) NOT NULL,
   `org_cod_orgnizacion` int(11) NOT NULL,
@@ -110,6 +114,7 @@ CREATE TABLE `denuncias_organizacion` (
 -- Estructura de tabla para la tabla `donacion`
 --
 
+DROP TABLE IF EXISTS `donacion`;
 CREATE TABLE `donacion` (
   `don_cod_donacion` int(11) NOT NULL,
   `td_cod_tipo_donacion` int(11) NOT NULL,
@@ -126,6 +131,7 @@ CREATE TABLE `donacion` (
 -- Estructura de tabla para la tabla `evento`
 --
 
+DROP TABLE IF EXISTS `evento`;
 CREATE TABLE `evento` (
   `eve_cod_evento` int(11) NOT NULL,
   `te_cod_tipo_evento` int(11) NOT NULL,
@@ -143,6 +149,7 @@ CREATE TABLE `evento` (
 -- Estructura de tabla para la tabla `evento_organizacion`
 --
 
+DROP TABLE IF EXISTS `evento_organizacion`;
 CREATE TABLE `evento_organizacion` (
   `eve_cod_evento` int(11) NOT NULL,
   `org_cod_organizacion` int(11) NOT NULL
@@ -154,6 +161,7 @@ CREATE TABLE `evento_organizacion` (
 -- Estructura de tabla para la tabla `organizacion`
 --
 
+DROP TABLE IF EXISTS `organizacion`;
 CREATE TABLE `organizacion` (
   `org_cod_organizacion` int(11) NOT NULL,
   `to_cod_tipo_organizacion` int(11) NOT NULL,
@@ -178,6 +186,7 @@ INSERT INTO `organizacion` (`org_cod_organizacion`, `to_cod_tipo_organizacion`, 
 -- Estructura de tabla para la tabla `permiso`
 --
 
+DROP TABLE IF EXISTS `permiso`;
 CREATE TABLE `permiso` (
   `cod_permiso` int(11) NOT NULL,
   `permiso_nombre` varchar(50) NOT NULL
@@ -189,6 +198,7 @@ CREATE TABLE `permiso` (
 -- Estructura de tabla para la tabla `permiso_rol`
 --
 
+DROP TABLE IF EXISTS `permiso_rol`;
 CREATE TABLE `permiso_rol` (
   `cod_permiso` int(11) NOT NULL,
   `cod_rol` int(11) NOT NULL
@@ -200,6 +210,7 @@ CREATE TABLE `permiso_rol` (
 -- Estructura de tabla para la tabla `raza`
 --
 
+DROP TABLE IF EXISTS `raza`;
 CREATE TABLE `raza` (
   `ra_cod_raza` int(11) NOT NULL,
   `ra_nombre` varchar(50) NOT NULL,
@@ -212,6 +223,7 @@ CREATE TABLE `raza` (
 -- Estructura de tabla para la tabla `rol`
 --
 
+DROP TABLE IF EXISTS `rol`;
 CREATE TABLE `rol` (
   `cod_rol` int(11) NOT NULL,
   `rol_nombre` varchar(50) NOT NULL
@@ -231,6 +243,7 @@ INSERT INTO `rol` (`cod_rol`, `rol_nombre`) VALUES
 -- Estructura de tabla para la tabla `tipo_animal`
 --
 
+DROP TABLE IF EXISTS `tipo_animal`;
 CREATE TABLE `tipo_animal` (
   `ta_cod_tipo_animal` int(11) NOT NULL,
   `ta_nombre` varchar(50) NOT NULL,
@@ -244,6 +257,7 @@ CREATE TABLE `tipo_animal` (
 -- Estructura de tabla para la tabla `tipo_denuncia`
 --
 
+DROP TABLE IF EXISTS `tipo_denuncia`;
 CREATE TABLE `tipo_denuncia` (
   `td_cod_tipo_denuncia` int(11) NOT NULL,
   `td_nombre` varchar(50) NOT NULL,
@@ -263,6 +277,7 @@ INSERT INTO `tipo_denuncia` (`td_cod_tipo_denuncia`, `td_nombre`, `td_estado`) V
 -- Estructura de tabla para la tabla `tipo_donacion`
 --
 
+DROP TABLE IF EXISTS `tipo_donacion`;
 CREATE TABLE `tipo_donacion` (
   `td_cod_tipo_donacion` int(11) NOT NULL,
   `td_nombre` varchar(50) NOT NULL,
@@ -275,6 +290,7 @@ CREATE TABLE `tipo_donacion` (
 -- Estructura de tabla para la tabla `tipo_evento`
 --
 
+DROP TABLE IF EXISTS `tipo_evento`;
 CREATE TABLE `tipo_evento` (
   `te_cod_tipo_evento` int(11) NOT NULL,
   `te_nombre` varchar(50) NOT NULL,
@@ -287,6 +303,7 @@ CREATE TABLE `tipo_evento` (
 -- Estructura de tabla para la tabla `tipo_organizacion`
 --
 
+DROP TABLE IF EXISTS `tipo_organizacion`;
 CREATE TABLE `tipo_organizacion` (
   `to_cod_tipo_organizacion` int(11) NOT NULL,
   `to_nombre` varchar(100) NOT NULL
@@ -305,6 +322,7 @@ INSERT INTO `tipo_organizacion` (`to_cod_tipo_organizacion`, `to_nombre`) VALUES
 -- Estructura de tabla para la tabla `usuario`
 --
 
+DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `usu_cod_usuario` int(11) NOT NULL,
   `usu_nombre` varchar(50) NOT NULL,
@@ -329,6 +347,7 @@ INSERT INTO `usuario` (`usu_cod_usuario`, `usu_nombre`, `usu_apellido`, `usu_tel
 -- Estructura de tabla para la tabla `vacunas`
 --
 
+DROP TABLE IF EXISTS `vacunas`;
 CREATE TABLE `vacunas` (
   `vac_cod_vacuna` int(11) NOT NULL,
   `vac_nombre` varchar(100) NOT NULL,
@@ -341,6 +360,7 @@ CREATE TABLE `vacunas` (
 -- Estructura de tabla para la tabla `vacuna_animal`
 --
 
+DROP TABLE IF EXISTS `vacuna_animal`;
 CREATE TABLE `vacuna_animal` (
   `ani_cod_animal` int(11) NOT NULL,
   `vac_cod_vacuna` int(11) NOT NULL
@@ -352,6 +372,7 @@ CREATE TABLE `vacuna_animal` (
 -- Estructura de tabla para la tabla `voluntarios`
 --
 
+DROP TABLE IF EXISTS `voluntarios`;
 CREATE TABLE `voluntarios` (
   `vo_cod_voluntario` int(11) NOT NULL,
   `vo_nombre` varchar(100) NOT NULL,
@@ -391,7 +412,6 @@ ALTER TABLE `cuidado`
 --
 ALTER TABLE `denuncia`
   ADD PRIMARY KEY (`de_cod_denuncia`),
-  ADD KEY `usu_cod_usuario` (`usu_cod_usuario`),
   ADD KEY `rd_cod_tipo_denuncia` (`td_cod_tipo_denuncia`);
 
 --
