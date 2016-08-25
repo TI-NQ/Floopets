@@ -56,9 +56,10 @@
 			<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
 
 			<ul class="menu_floopets">
-				<li><a href=""><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
 				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
+				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Quienes Somos</a></li>
 				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
+				<li><a href=""><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
 				<li ><a href=""><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota<i class="icono derecha fa fa-chevron-down"></i> </a>
 					<ul>
 						<li><a href=""><i class="sub_menu icono izquierda fa fa-paw"></i> Perdida</a></li>
@@ -103,8 +104,7 @@
     	</div>
 		<!-- Andrea Guzman -->
 
-
-		<!-- Contenedor ayuda una mascota
+<!--Contenedor ayuda una mascota
 		Ricardo_ochoa -->
 		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:-20px 0 50px 0;" class="center">Denuncias</h2>
 		<div class="row seccion2">
@@ -153,7 +153,10 @@
 				          <input id="last_name" type="text" class="validate">
 				          <label for="last_name">Teléfono (Celular)</label>
 				      </div>
-				      <button class="boton__form btn waves-effect waves-light btn-large right">Enviar</button>
+							<div class="input-field col s12">
+								<button class="boton__form btn waves-effect waves-light btn-large right" style="width:50%;">Enviar</button>
+							</div>
+
 					</form>
 				</div>
   			</div>
@@ -177,7 +180,7 @@
 						<p>Mascotas Perdidas</p>
 					</div>
 					<button class="boton btn waves-effect waves-light btn-large">Ver mas...</button>
-					<img src="WebFloopets/images/beagle,-perro-triste,-muro-236194.jpg">
+					<img src="WebFloopets/images/7.jpg">
 				</div>
 				<div class="container__historias col s12 m6 l6">
 					<div id="historias">
@@ -335,8 +338,8 @@
       <div class="container">
         <div class="row">
           <div class="col s12 m6 l6">
-            <h5 class="white-text">Footer Content</h5>
-            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            <h5 class="white-text">Quienes Somos</h5>
+            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
           </div>
           <div class="col s12 m3 l3">
             <h5 class="white-text">Links</h5>
@@ -360,11 +363,11 @@
       </div>
       <div class="footer-copyright grey darken-2">
         <div class="container">
-           © 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información
-            <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+          SENA © 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información
+            <!-- <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a class="white-text right" href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a>
             <a class="white-text right" href="#!"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a class="white-text right" href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+            <a class="white-text right" href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a> -->
         </div>
       </div>
     </footer>
