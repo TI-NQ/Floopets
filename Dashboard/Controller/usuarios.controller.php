@@ -14,14 +14,15 @@
 			$usu_email				=$_POST["usu_email"];
 			$cod_rol					=$_POST["cod_rol"];
 			$usu_clave				=$_POST["usu_clave"];
+			$usu_cedula				=$_POST["usu_cedula"];
 
 			try {
-				Gestion_usuarios::Create($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave);
+				Gestion_usuarios::Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave);
 				$mensaje = "Se registro exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/gestion_usuarios.php?m=$mensaje");
+			header("Location: ../../login.php?m=$mensaje");
 
 			break;
 

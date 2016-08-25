@@ -2,15 +2,15 @@
 
 	class Gestion_usuarios
 	{
-			function Create($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave)
+			function Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave)
 			{
 				//Instanciamos y nos conectamos a la bd
 				$conexion=floopets_BD::Connect();
 				$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 				//Creamos el query de la consulta a la BD
-				$consulta ="INSERT INTO usuario (usu_cod_usuario,usu_nombre,usu_apellido,usu_telefono,usu_email,cod_rol,usu_clave) VALUES (?,?,?,?,?,?,?)";
+				$consulta ="INSERT INTO usuario (usu_nombre,usu_apellido,usu_telefono,usu_cedula,usu_email,cod_rol,usu_clave) VALUES (?,?,?,?,?,?,?)";
 				$query = $conexion->prepare($consulta);
-				$query->execute(array($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_email,$cod_rol,$usu_clave));
+				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave));
 				floopets_BD::Disconnect();
 		}
 		function ReadAll()

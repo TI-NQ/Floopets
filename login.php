@@ -39,7 +39,7 @@
                   <label for="telefono">Telefono</label>
                 </div>
                 <div class="input-field col s12">
-                  <input class="col s12" id="cedula" type="number" name="usu_cod_usuario" class="validate" required>
+                  <input class="col s12" id="cedula" type="number" name="usu_cedula" class="validate" required>
                   <label for="cedula">Cedula</label>
                 </div>
                 <div class="input-field col s12">
@@ -78,18 +78,18 @@
           <img src="WebFloopets/images/logo-negro.png" id="logo" />
           <h2>Iniciar sesion</h2>
           <div class="row">
-            <form class="col s12" action="index.html" method="post">
+            <form class="col s12" action="Dashboard/Controller/validarusuario.controller.php" method="post">
               <div class="row">
                 <div class="input-field col s12">
-                  <input id="usuario" type="text" class="validate">
-                  <label for="usuario">Usuario</label>
+                  <input id="usuario" type="email" name="usu_email" class="validate">
+                  <label for="usuario">Email</label>
                 </div>
                 <div class="input-field col s12">
-                  <input id="contraseña" type="text" class="validate">
+                  <input id="contraseña" type="password" name="usu_clave" class="validate">
                   <label for="contraseña">Contraseña</label>
                 </div>
                 <div class="">
-                  <a class="waves-effect waves-light btn" id="btnlogin" >Iniciar sesion</a>
+                  <button class="waves-effect waves-light btn" id="btnlogin" >Iniciar sesion</button>
                   <a class="waves-effect waves-light btn" id="moveleft">Registrarse</a>
                 </div>
               </div>
