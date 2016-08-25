@@ -19,22 +19,11 @@ video{
 .ingresa{
 	background-color: rgba(0, 179, 174,0.8) !important;
 	position: absolute;
-	margin-top: 80vh;
-	left: 750px;
-	border-radius: 0;
+	margin-top: 75vh;
+	margin-left: 35%;
+	border-radius: 4px;
 	font-family:'Roboto Condensed', sans-serif;
-	font-size: 30px;
-	text-transform: inherit;
-}
-.unete{
-	background-color: transparent !important;
-	position: absolute;
-	margin-top: 80vh;
-	left: 1000px;
-	border-radius: 0;
-	border: solid 2px;
-	font-family:'Roboto Condensed', sans-serif;
-	font-size: 30px;
+	font-size: 40px;
 	text-transform: inherit;
 }
 /*-----------------------------------------------------estilos menu-----------------------------------------------------*/
