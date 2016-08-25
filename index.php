@@ -46,32 +46,8 @@
     			});
      		 });
       	</script>
-  		<script type="text/javascript">
-  //     		var waypoint = new Waypoint({
-  // 			element: document.getElementById('waypoint'),
-  // 			handler: function(direction) {
-  //   		console.log('Scrolled to waypoint!')
-  // 			}
-		// })
-  //     	</script>
-      	<script type="text/javascript">
-   //    		$(document).ready(function(){
-			// 	$('button').waypoint(function() {
-			// 	$(this).toggleClass( 'bounceIn animated' );
-			// 	},
-			// 	{
-			// 	offset: '5%',
-			// 	triggerOnce: true
-			// 	});
-
-			// });
-      	</script>
 	</head>
 	<body>
-
-		<!-- menu -->
-		<!-- <nav > -->
-			<!-- <img id="menu" onclick= "desplegar()" src="WebFloopets/images/prueba-logo.png" > -->
 			<i class="fa fa-bars" aria-hidden="true" id="menu" onclick= "desplegar()"></i>
 
 
@@ -97,15 +73,8 @@
 
 
 		</div>
-	<!-- </nav> -->
-		<!--  -->
-
-
 		<div class="banner-video">
-
-
-			<a class="ingresa btn waves-effect waves-light btn-large animated bounceIn" href="View/login1.php">Ingresa</a>
-			<a class="unete btn waves-effect waves-light btn-large" href="View/login1.php">Unete</a>
+			<a class="ingresa btn waves-effect waves-light btn-large" href="login.php">Ingresar a Floopets</a>
 			<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
 		</div>
 		<!-- Andrea Guzman-Adopciones -->
@@ -137,6 +106,7 @@
 
 		<!-- Contenedor ayuda una mascota
 		Ricardo_ochoa -->
+		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:-20px 0 50px 0;" class="center">Denuncias</h2>
 		<div class="row seccion2">
 			<div class="container__img col s12 m4 l4" >
 				<h3 class="center">Ayuda una Mascota</h3>
@@ -219,6 +189,7 @@
 				</div>
 		</div>
 <!-- David Pabon-Cuidados -->
+<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Cuidados</h2>
 <div class="row">
 
 	<div class="class col s12">
@@ -337,6 +308,7 @@
     </div>
 
 	<!-- eventos -->
+	<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Eventos</h2>
     <div class="row">
 
       <div class="col s12 m6 l6 seccion_eventos">
