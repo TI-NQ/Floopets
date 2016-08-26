@@ -54,7 +54,7 @@
 		<div class="contenedor-menu">
 
 			<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
-
+			<i class="fa fa-times" aria-hidden="true" id="salir" onclick= "ver_menu()"></i>
 			<ul class="menu_floopets">
 				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
 				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Quienes Somos</a></li>

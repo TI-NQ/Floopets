@@ -1,14 +1,14 @@
 function desplegar(){
 	$("#logo").show();
 	$(".menu_floopets").show();
-	$("#menu").hide();
 	$(".contenedor-menu").show();
+	$("#menu").hide();
 }
 
 function ver_menu(){
-	$("#menu").show();
 	$("#logo").hide();
 	$(".menu_floopets").hide();
 	$(".contenedor-menu").hide();
+	$("#menu").show();
 	// $(".contenedor-menu").hide();
 }
