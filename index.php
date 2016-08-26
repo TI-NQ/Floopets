@@ -106,7 +106,7 @@
 
 <!--Contenedor ayuda una mascota
 		Ricardo_ochoa -->
-		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:-20px 0 50px 0;" class="center">Denuncias</h2>
+		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin-top:50px;" class="center">Denuncias</h2>
 		<div class="row seccion2">
 			<div class="container__img col s12 m4 l4" >
 				<h3 class="center">Ayuda una Mascota</h3>
@@ -192,74 +192,75 @@
 				</div>
 		</div>
 <!-- David Pabon-Cuidados -->
-<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Cuidados</h2>
-<div class="row">
 
-	<div class="class col s12">
+	<div class="row">
+		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Cuidados</h2>
+		<div class="class col s12">
 
-		<div class="col s12 m12 l8">
-			<div class="carousel carousel-slider ">
-
-
-			    <a class="carousel-item" href="#one!"><img src="WebFloopets/images/Cuid1.jpg"></a>
-			    <a class="carousel-item" href="#two!"><img src="WebFloopets/images/Cuid2.jpg"></a>
-			    <a class="carousel-item" href="#three!"><img src="WebFloopets/images/Cuid3.jpg"></a>
-			    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuid4.jpg"></a>
-
-		  </div>
-		</div>
+			<div class="col s12 m12 l8">
+				<div class="carousel carousel-slider ">
 
 
-		  <div class="col s12 m12 l4">
-		  	<h4 class="white-text center" style="font-family: 'Roboto Condensed', sans-serif;">Búsqueda Avanzada</h4>
+				    <a class="carousel-item" href="#one!"><img src="WebFloopets/images/Cuid1.jpg"></a>
+				    <a class="carousel-item" href="#two!"><img src="WebFloopets/images/Cuid2.jpg"></a>
+				    <a class="carousel-item" href="#three!"><img src="WebFloopets/images/Cuid3.jpg"></a>
+				    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuid4.jpg"></a>
 
-			  <form class="col s12">
-			      <div class="row">
-			        	<div class="input-field col s12">
-
-						    <select>
-
-						      <option value="1">Perro</option>
-						      <option value="2">Gato</option>
-
-						    </select>
-						    <label>Elija el Tipo de Mascota</label>
-						  </div>
-					  </div>
-					  <div class="row">
-			        <div class="input-field col s12">
-			          <select>
-
-						      <option value="1">Raza 1</option>
-						      <option value="2">Raza 2</option>
-
-						    </select>
-						    <label>Raza</label>
-			        </div>
-			      </div>
-			      <div class="row">
-			        <div class="input-field col s12">
-			          <select>
-
-						      <option value="1">0-6 Meses</option>
-						      <option value="2">6 Meses - 1 Año</option>
-						      <option value="2">1 Año - 3 Años</option>
-
-						    </select>
-						    <label>Edad</label>
-			        </div>
-
-			      </div>
-
-			<button class="boton__form btn waves-effect waves-light btn-large right">Buscar</button>
-	    	</form>
-
+			  </div>
 			</div>
 
 
+			  <div class="col s12 m12 l4">
+			  	<h4 class="white-text center" style="font-family: 'Roboto Condensed', sans-serif;">Búsqueda Avanzada</h4>
 
-		 </div>
-</div>
+				  <form class="col s12">
+				      <div class="row">
+				        	<div class="input-field col s12">
+
+							    <select>
+
+							      <option value="1">Perro</option>
+							      <option value="2">Gato</option>
+
+							    </select>
+							    <label>Elija el Tipo de Mascota</label>
+							  </div>
+						  </div>
+						  <div class="row">
+				        <div class="input-field col s12">
+				          <select>
+
+							      <option value="1">Raza 1</option>
+							      <option value="2">Raza 2</option>
+
+							    </select>
+							    <label>Raza</label>
+				        </div>
+				      </div>
+				      <div class="row">
+				        <div class="input-field col s12">
+				          <select>
+
+							      <option value="1">0-6 Meses</option>
+							      <option value="2">6 Meses - 1 Año</option>
+							      <option value="2">1 Año - 3 Años</option>
+
+							    </select>
+							    <label>Edad</label>
+				        </div>
+
+				      </div>
+
+				<button class="boton__form btn waves-effect waves-light btn-large right">Buscar</button>
+		    	</form>
+
+				</div>
+
+
+
+			 </div>
+	</div>
+
     <!-- David Pabon-Eventos -->
     <!-- <div class="row">
 
