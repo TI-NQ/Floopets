@@ -7,6 +7,7 @@ body{
 	/*padding: 0 25px 15px 25px;*/
 	background: #fff;
 	height: 110px;
+	width: 70%;
 	/*text-align: left;*/
 }
 
@@ -20,10 +21,19 @@ body{
 
 .formulario {
 	padding: 25px 25px 30px 25px;
-	background: #eee;
+	background: rgba(238,238,238,0.5) !important; 
 	text-align: left;
 }
 
 form button {
 	width: 100%
 }
+
+.formulario1 {
+	padding: 25px 25px 30px 25px;
+	text-align: left;
+	width: 70%;
+	background: #eee;
+	align-content: center;
+}
+

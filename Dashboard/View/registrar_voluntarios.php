@@ -9,14 +9,14 @@
 	<title></title>
 </head>
 <body>
-<div class="container">
+<center><div class="container">
 		<div class="row">
 		                        
-		    <div class="col-lg-5">
+		    <div class="col-lg-12">
 		    	<div class="titulo_formulario">
 		           <h1 id="titulo">Registro voluntarios</h1>
 		        </div>
-				<div class="formulario ">
+				<div class="formulario1 ">
 					<form action="../Controller/voluntarios.controller.php" method="POST" enctype="multipart/form-data">
 					<div class="form-group">
 						<label class="form-label">Cedula:</label>
@@ -34,13 +34,13 @@
 						<label class="form-label">Direccion</label>
 						<input class="form-control" type="text" name="vo_direccion" required>
 					</div>
-					<div class="file-field input-field col s12 m6">
+					<div class=" form-group file-field input-field col s12 m6">
 				       <div class="btn">
-				         <span>Galeria</span>
+				         <label class="form-label">Galeria</label>
 				         <input type="file" multiple name="vo_imagen[]" class="form-control">
 				       </div>
-				       <div class="file-path-wrapper">
-				         <input class="file-path validate"  type="text" placeholder="" name="vo_imagen" >
+				       <div class="file-path-wrapper form-group">
+				         <input class="form-control file-path validate"  type="text" placeholder="" name="vo_imagen" >
 				       </div>
 				    </div>
 					<div class="form-group">
@@ -50,7 +50,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+</div></center>
 </body>
 </html>
 
