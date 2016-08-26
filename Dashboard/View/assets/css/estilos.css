@@ -1,6 +1,6 @@
 /*estilos del formulario*/
 body{
-	background: #456bda;
+	background: #4dd0e1 ;
 }
 
 .titulo_formulario {
@@ -21,7 +21,7 @@ body{
 
 .formulario {
 	padding: 25px 25px 30px 25px;
-	background: rgba(238,238,238,0.5) !important; 
+	background: rgba(238,238,238,0.8) !important; 
 	text-align: left;
 }
 
@@ -33,7 +33,7 @@ form button {
 	padding: 25px 25px 30px 25px;
 	text-align: left;
 	width: 70%;
-	background: #eee;
+	background: rgba(238,238,238,0.8) !important; 
 	align-content: center;
 }
 
