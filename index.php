@@ -1,3 +1,6 @@
+<?php
+	session_start();
+?>
 <!DOCTYPE html>
 <html lang="es">
 	<head>
@@ -230,7 +233,7 @@
 			</div>
 
 
-			  <div class="col s12 m12 l4">
+			  <div class="col s12 m12 l4" style="margin-top: 40px">
 			  	<h4 class="white-text center" style="font-family: 'Roboto Condensed', sans-serif;">Búsqueda Avanzada</h4>
 
 				  <form class="col s12">
@@ -332,27 +335,29 @@
     </div>
 
 	<!-- eventos -->
-	<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Eventos</h2>
-    <div class="row">
+	<div class="" style="margin-top: 57px">
+		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Eventos</h2>
+	    <div class="row">
 
-      <div class="col s12 m6 l6 seccion_eventos">
-        <img class="img_eventos" src="WebFloopets/images/imagenes_eventos/imagen1.jpeg" alt="">
+	      <div class="col s12 m6 l6 seccion_eventos">
+	        <img class="img_eventos" src="WebFloopets/images/imagenes_eventos/imagen1.jpeg" alt="">
 
-      </div>
+	      </div>
 
-      <div class="col s12 m6 l6 seccion_eventos">
-        <img class="img_eventos" src="WebFloopets/images/imagenes_eventos/imagen3.jpg" alt="">
-      </div>
+	      <div class="col s12 m6 l6 seccion_eventos">
+	        <img class="img_eventos" src="WebFloopets/images/imagenes_eventos/imagen3.jpg" alt="">
+	      </div>
 
-      <div class="col s12 m6 l6 seccion_eventos">
-        <img class="img_eventos abajo" src="WebFloopets/images/imagenes_eventos/imagen6.jpeg" alt="">
-      </div>
+	      <div class="col s12 m6 l6 seccion_eventos">
+	        <img class="img_eventos abajo" src="WebFloopets/images/imagenes_eventos/imagen6.jpeg" alt="">
+	      </div>
 
-      <div class="col s12 m6 l6 seccion_eventos">
-        <img class="img_eventos abajo" src="WebFloopets/images/imagenes_eventos/imagen5.jpeg" alt="">
-      </div>
+	      <div class="col s12 m6 l6 seccion_eventos">
+	        <img class="img_eventos abajo" src="WebFloopets/images/imagenes_eventos/imagen5.jpeg" alt="">
+	      </div>
 
-    </div>
+	    </div>
+	</div>
 
 	<!-- fin eventos -->
 	<footer class="page-footer grey darken-4">
@@ -383,7 +388,7 @@
         </div>
       </div>
       <div class="footer-copyright grey darken-2">
-        <div class="container">
+        <div class="container center">
           SENA © 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información
             <!-- <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a class="white-text right" href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a>

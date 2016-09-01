@@ -2,9 +2,9 @@
   session_start();
   require_once("../Model/conexion.php");
   require_once("../Model/usuarios.class.php");
-  
 
-  $usu_email = $_POST["usu_email"];
+
+  $usu_email      = $_POST["usu_email"];
   $usu_clave      = $_POST["usu_clave"];
 
   try {
@@ -22,13 +22,13 @@
        $msn = "Usuario o clave invalidos!";
        $tipo_msn = base64_encode("advertencia");
 
-       header("Location:../View/login.php?m=".$msn."&tm=".$tipo_msn);
+       header("Location:../../login.php?m=".$msn."&tm=".$tipo_msn);
     }else{
 
       // Creamos variables de SESSION
       $msn="Bienvenido ".$usuario[1]." ".$usuario[2];
 
-            
+
 
       $_SESSION["usu_cod_usuario"]     = $usuario[0];
       $_SESSION["usu_nombre"]         = $usuario[1];

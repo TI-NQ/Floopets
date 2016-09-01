@@ -8,13 +8,13 @@
 
 			// $usu_cod_usuario		= $_POST["usu_cod_usuario"];
 			$usu_cod_usuario				=$_POST["usu_cod_usuario"];
-			$usu_nombre 			= $_POST["usu_nombre"];
-			$usu_apellido 		=$_POST["usu_apellido"];
-			$usu_telefono			=$_POST["usu_telefono"];
-			$usu_email				=$_POST["usu_email"];
-			$cod_rol					=$_POST["cod_rol"];
-			$usu_clave				=$_POST["usu_clave"];
-			$usu_cedula				=$_POST["usu_cedula"];
+			$usu_nombre 						= $_POST["usu_nombre"];
+			$usu_apellido 					=$_POST["usu_apellido"];
+			$usu_telefono						=$_POST["usu_telefono"];
+			$usu_email							=$_POST["usu_email"];
+			$cod_rol								=$_POST["cod_rol"];
+			$usu_clave							=$_POST["usu_clave"];
+			$usu_cedula							=$_POST["usu_cedula"];
 
 			try {
 				Gestion_usuarios::Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave);
