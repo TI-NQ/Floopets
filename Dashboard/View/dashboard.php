@@ -2,22 +2,22 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<link rel="shortcut icon" type="image/x-icon" href="../../WebFloopets/images/title-web.ico">
 	<link rel="stylesheet" href="../../WebFloopets/font-awesome-4.6.3/css/font-awesome.css">
 	<link rel="stylesheet" href="recursos/css/estilos.css">
 	<link rel="stylesheet" type="text/css" href="recursos/css/jquery.dataTables.css">
-  <link rel="stylesheet" href="recursos/plugins/font-awesome/css/font-awesome.min.css">
-  <link type="text/css" rel="stylesheet" href="recursos/plugins/materialize/css/materialize.css">
+  <link type="text/css" rel="stylesheet" href="../../WebFloopets/materialize/css/materialize.css">
   <link rel="stylesheet" type="text/css" href="recursos/plugins/sweetalert/dist/sweetalert.css">
-	<title>Style+</title>
+	<title>Floopets-Cambiando vidas</title>
 
 
 
-    <script type="text/javascript" src="recursos/plugins/jquery/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../../WebFloopets/js/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" charset="utf8" src="recursos/plugins/datatable/jquery.dataTables.min.js"></script>
 
 
 
-    <script type="text/javascript" src="recursos/plugins/materialize/js/materialize.min.js">
+    <script type="text/javascript" src="../../WebFloopets/materialize/js/materialize.min.js">
     </script>
     <script type="text/javascript" src="recursos/plugins/sweetalert/dist/sweetalert.min.js"></script>
 
@@ -35,6 +35,8 @@
       $('select').material_select();
       $('.tooltipped').tooltip({delay: 50});
       $('.carousel.carousel-slider').carousel({full_width: true});
+
+
       $('.datepicker').pickadate({
       selectMonths: true,
       selectYears: 1,
@@ -52,19 +54,20 @@
     </script>
 
 </head>
-<body background="recursos/img/fondo3.jpg " style="width=100% ; height=100%" >
+<body>
 <div class="container-fluid">
 	<div class="row">
-		<div class="col l12" id="menu_up" style="background-color:#00b3ae">
-			<img src="../../WebFloopets/images/logo-negro.png">
-				<a  id="ajustes" href="cerrarsesion.php">Cerrar Sesion<i class="fa fa-power-off" aria-hidden="true" style="margin-left: 10px; font-size: 25px; position: relative;"></i></a>
-		</div>
-			<div class="col l2" id="menu_icono" style="background-color:#00b3ae; height:100%;">
-				<?php include_once("componentes/comp_menu.php"); ?>
+			<div class="col l2" id="menu_icono">
+				<!-- <img src="../../WebFloopets/images/logo-negro.png"><p>FLOOPETS</p> -->
+				<img src="../../WebFloopets/images/Logo1.png"><p>FLOOPETS</p>
+					<?php include_once("componentes/comp_menu.php"); ?>
+			</div>
+			<div class="col l12 grey lighten-1" id="menu_up">
+					<a  id="ajustes" href="cerrarsesion.php">Cerrar Sesion<i class="fa fa-power-off" aria-hidden="true" style="margin-left: 10px; font-size: 25px; position: relative;"></i></a>
 			</div>
 			<div class="col l10 center">
 				<div class="row">
-					<div class="col l12" >
+					<div class="col l12">
 						<!-- <?php include_once("componentes/comp_pages.php");?> -->
 					</div>
 				</div>

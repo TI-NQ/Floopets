@@ -3463,7 +3463,6 @@ input[type=range] + .thumb {
 .row .col {
   float: left;
   box-sizing: border-box;
-  padding: 0 0.75rem;
   min-height: 1px;
 }
 
@@ -5381,7 +5380,7 @@ button.btn-floating {
   cursor: pointer;
   min-height: 3rem;
   line-height: 3rem;
-  padding: 0 1rem;
+  padding: 1px;
   background-color: #fff;
   border-bottom: 1px solid #ddd;
 }
@@ -5404,7 +5403,8 @@ button.btn-floating {
 
 .collapsible-body p {
   margin: 0;
-  padding: 2rem;
+  padding: 10px;
+  background-color: red;
 }
 
 .side-nav .collapsible,
