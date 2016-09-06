@@ -86,7 +86,7 @@
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Eventos </a></li>            
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Vacunas </a></li>
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Voluntarios </a></li>
-            <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Animal </a></li>
+            <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar permisos </a></li>
         </ul>
 
 
