@@ -17,12 +17,15 @@
 		<label class="form-label">descripcion</label>
 		<input class="form-control" type="text" name="de_descripcion" required>
 	</div>
-	<div class="file-field input-field col s12 m6">
-			 <div class="btn">
-				 <input class="file-path validate" readonly type="text" placeholder="subir imagen" name="de_imagen">
-				 <input type="file" multiple name="Imagen_Upload[]">
-			 </div>
-		</div>
+	<div class=" form-group file-field input-field col s12 m6">
+				       <div class="btn">
+				         <label class="form-label">Galeria</label>
+				         <input type="file" multiple name="de_imagen[]" class="form-control">
+				       </div>
+				       <div class="file-path-wrapper form-group">
+				         <input class="form-control file-path validate"  type="text" placeholder="" name="de_imagen" >
+				       </div>
+				    </div>
 		<div class="form-group">
 			<label class="form-label">Nombre de mascota(opcional)</label>
 			<input class="form-control" type="text" name="de_nombre">
