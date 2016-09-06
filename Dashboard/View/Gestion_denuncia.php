@@ -17,20 +17,9 @@
 
     <!-- Animation library for notifications   -->
     <link href="assets/css/animate.min.css" rel="stylesheet"/>
-
-    <!--  Light Bootstrap Table core CSS    -->
-    <link href="assets/css/light-bootstrap-dashboard.css" rel="stylesheet"/>
-
-
-    <!--  CSS for Demo Purpose, don't include it in your project     -->
-    <link href="assets/css/demo.css" rel="stylesheet" />
-
-
     <!--     Fonts and icons     -->
     <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <link href="assets/css/pe-icon-7-stroke.css" rel="stylesheet" />
-
     <!-- estilos formularios y dashboard-->
     <link rel="stylesheet" href="assets/css/estilos.css">
 </head>
@@ -55,9 +44,20 @@
                       </div>
                       <div class='imagenmascota'>
                           <img class='img-circle' src=img/imagen_denuncia/".$row["de_imagen"].">                          
+                      </div>
+                      <div class='col-md-6'>
+                        <button type='button' class='btn btn-primary btn-sm'>
+                          <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>Editar</a>
+                        </button>
+                      </div>
+                      <div class='col-md-6'>
+                        <button type='button' class='btn btn-danger btn-sm'>
+                          <a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'>Eliminar</a>
+                        </button>
+                        
                       </div>                                            
                   </div>
-                  <div class='col-md-4 '>
+                  <div class='col-md-4'>
                     <ul class='descrip'>
                       <label>Codigo</label>
                           <li>".$row["de_cod_denuncia"]."</li>
@@ -72,16 +72,12 @@
                       <label>Fecha de denuncia</label>
                             <li>".$row["de_fecha"]."</li>
                     </ul>
+                    
                   </div>
                 </div>
-              </div>
-
-            <td>
-                        <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>actualizar</a>
-
-                        <a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'>eliminar</a>
-
-          </tr>";
+              </div>                
+                      
+          ";
       }
 
 ?>
