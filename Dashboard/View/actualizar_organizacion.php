@@ -4,7 +4,7 @@
 	$organizacion=Gestion_organizacion::ReadbyID(base64_decode($_REQUEST["ui"]));
  ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<form action="../Controller/organizacion.controller.php" method="POST">
+<form class="act_org" action="../Controller/organizacion.controller.php" method="POST">
 	<h1>Actualizar Organización</h1>
 	<div class="form-group">
 		<input name="org_cod_organizacion" hidden="" value="<?php echo $organizacion[0]?>"></input>

@@ -1,3 +1,4 @@
+
 <form action="../Controller/cuidado.controller.php" method="POST" enctype="multipart/form-data">
 	<div class="form-group">
 		<label class="form-label">nombre</label>

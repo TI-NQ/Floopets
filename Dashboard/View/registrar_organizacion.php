@@ -45,7 +45,7 @@
 
 <!-- ------------------------------------------ -->
 
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -66,8 +66,8 @@
                         			<h1 id="titulo">Registro Organización</h1>
                             </div>
 
-                            <div class="formulario">
-			                    <form role="form" action="../Controller/organizacion.controller.php" method="POST">
+                            <div class="formulario"> -->
+			                    <form class="reg_org" role="form" action="../Controller/organizacion.controller.php" method="POST">
 			                    	
 			                    	<div class="form-group">
 			                    		
@@ -123,9 +123,9 @@
 			                        
 			                        <button type="submit" name="accion" value="c"  class="btn btn-primary">Registrar</button>
 			                    </form>
-		                    </div>
+		                    <!-- </div>
                         </div>
                     </div>
                 </div>	
 </body>
-</html>
+</html> -->

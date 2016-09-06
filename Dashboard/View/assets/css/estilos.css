@@ -1,14 +1,14 @@
 /*estilos del formulario*/
-body{
+/*body{
 	background: #4dd0e1 ;
 }
 
 .titulo_formulario {
-	/*padding: 0 25px 15px 25px;*/
+	
 	background: #fff;
 	height: 110px;
 	width: 70%;
-	/*text-align: left;*/
+	
 }
 
 #titulo{
@@ -36,4 +36,120 @@ form button {
 	background: rgba(238,238,238,0.8) !important; 
 	align-content: center;
 }
+*/
+/*body{
+	background: #456bda;
+}*/
 
+
+
+
+/*-------formularios-------*/
+.titulo_formulario {
+	background: #cfd8dc;
+	height: 110px;
+	
+}
+
+#titulo{
+	padding-top: 40px;
+	text-align: center;
+	font-size: 30px;
+	
+
+}
+
+.formulario {
+	padding: 25px 25px 30px 25px;
+	background: #eee;
+	text-align: left;
+}
+
+.reg_org{
+	display:none;
+}
+
+.act_org{
+	display:none;
+}
+
+/*--------------estilo submenu del dashboard-------*/
+*{
+	margin:0;
+	padding: 0;
+
+}
+
+
+a{
+	text-decoration: none !important;
+	color: #fff;
+}
+
+.btn-menu{
+	display: none;
+	padding: 20px;
+	background: #0d2c44;
+	color: #fff;
+}
+
+.btn-menu >.icono{
+	float: right;
+
+}
+
+.contenedor-menu{
+	width: 30%;
+	min-width: 300px;
+	display: inline-block;
+	font-family: 'Roboto', sans-serif;
+	line-height: 18px;
+}
+
+.contenedor-menu .menu_dashboard{
+	width: 100%;
+}
+
+.contenedor-menu ul{
+	list-style: none;
+}
+
+.contenedor-menu .menu_dashboard li a{
+	color: #494949;
+	display: block;
+	padding: 15px 20px;
+	background: #cfd8dc;
+}
+
+.contenedor-menu .menu_dashboard li a:hover{
+	background: #1a95d5;
+	color:#fff;
+}
+
+.contenedor-menu .menu_dashboard .icono{
+	font-size: 15px;
+	line-height: 18px;
+}
+
+.contenedor-menu .menu_dashboard .icono.izquierda {
+	float:left;
+	margin-right: 10px;
+}  
+.contenedor-menu .menu_dashboard .icono.derecha{
+	float: right;
+	margin-left:10px; 
+}
+
+.contenedor-menu .menu_dashboard ul{  
+	display: none;
+}
+
+.contenedor-menu .menu_dashboard ul li a{
+	background: #424242;
+	color:#e9e9e9;
+}
+
+.contenedor-menu .menu_dashboard .activado > a { 
+	background: #1a95d5;
+	color:#fff;
+}
