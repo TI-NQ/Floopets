@@ -39,6 +39,7 @@ h4{
 	font-size: 20px;
 	margin:20px;
 	display: block;
+	border-bottom: solid 1px white;
 }
 #menu_up{
 	position: absolute;
