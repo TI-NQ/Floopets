@@ -388,7 +388,7 @@
         </div>
       </div>
       <div class="footer-copyright grey darken-2">
-        <div class="container center">
+        <div class="container">
           SENA © 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información
             <!-- <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
             <a class="white-text right" href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a>
