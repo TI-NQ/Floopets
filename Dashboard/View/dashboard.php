@@ -57,13 +57,10 @@
 
           <div class="contenedor-menu">
         <!-- <a href="" class="btn-menu">menu<i class="icono fa fa-bars"></i></a> -->
-<<<<<<< HEAD
 
 			        <ul class="menu_dashboard">
 								<?php include_once("componentes/comp_menu.php"); ?>
 			        </ul>
-=======
-
         <ul class="menu_dashboard">
             <li><a href=""><i class="icono izquierda fa fa-home"></i> Inicio</a></li>
             <li ><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Organizacion<i class="icono derecha fa fa-chevron-down"></i> </a>
@@ -91,7 +88,6 @@
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Voluntarios </a></li>
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar permisos </a></li>
         </ul>
->>>>>>> origin/master
 
 
     </div>
