@@ -10,23 +10,18 @@
   <title></title>
     <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
     <meta name="viewport" content="width=device-width" />
-
-    <link rel="shortcut icon" type="image/x-icon" href="../WebFloopets/images/title-web.ico">
-    <!-- Bootstrap core CSS     -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet" />
-
-    <!-- Animation library for notifications   -->
-    <link href="assets/css/animate.min.css" rel="stylesheet"/>
-    <!--     Fonts and icons     -->
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-    <link href='http://fonts.googleapis.com/css?family=Roboto:400,700,300' rel='stylesheet' type='text/css'>
-    <!-- estilos formularios y dashboard-->
-    <link rel="stylesheet" href="assets/css/estilos.css">
+    <link type="text/css" rel="stylesheet" href="../../WebFloopets/materialize/css/materialize.css"  media="screen,projection"/>
+    <meta charset="UTF-8">       
+    <link rel="stylesheet" type="text/css" href="../../WebFloopets/font-awesome-4.6.3/css/font-awesome.css">
+    <script type="text/javascript" src="../../WebFloopets/js/jquery-1.12.1.min.js"></script>
+    <script type="text/javascript" src="../../WebFloopets/materialize/js/materialize.js"></script>
+    <link type="text/css" rel="stylesheet" href="recursos/css/estilos.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 <body>
   <button type="button" name="button">
    <a href="registrar_denuncia.php">Nuevo</a>
- </button>
+  </button>
 <div>
 <?php
       @$mensaje = $_REQUEST["m"];
@@ -37,27 +32,30 @@
       {
         echo"<div class='container descrip'>
                 <div class='row'>
-                  <div class='fto col-md-offset-3 col-md-4'>
-                      <div>
+                  <div class='col l4 offset-l2 col m6'>
+                      <div class='col l6'>
                         <label>Nombre de mascota</label>
                           <li>".$row["de_nombre"]."</li>
                       </div>
                       <div class='imagenmascota'>
                           <img class='img-circle' src=img/imagen_denuncia/".$row["de_imagen"].">                          
                       </div>
-                      <div class='col-md-6'>
-                        <button type='button' class='btn btn-primary btn-sm'>
-                          <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>Editar</a>
-                        </button>
+                      <div class='col l6'>
+                        
+                          <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>
+                          <i class='small material-icons'>mode_edit</i>
+                          </a>
+                        
                       </div>
-                      <div class='col-md-6'>
-                        <button type='button' class='btn btn-danger btn-sm'>
-                          <a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'>Eliminar</a>
-                        </button>
+                      <div class='col l6'>
+                        
+                          <a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'>
+                          <i class='small material-icons'>delete</i>
+                          </a>                        
                         
                       </div>                                            
                   </div>
-                  <div class='col-md-4'>
+                  <div class='col l4'>
                     <ul class='descrip'>
                       <label>Codigo</label>
                           <li>".$row["de_cod_denuncia"]."</li>

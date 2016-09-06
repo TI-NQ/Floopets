@@ -399,3 +399,11 @@ a{
 .sub_menu{
 	margin-left: 25px;
 }
+
+.imagenmascota{
+	width: 200px;
+	height: 200px;
+}
+.descrip{
+	list-style: none;
+}
