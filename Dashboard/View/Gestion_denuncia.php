@@ -50,10 +50,10 @@
               <div class='row'>
                 <div class='fto col-md-4'>
                 <label>Foto</label>
-                <div><img src=img/imagen_denuncia/".$row["de_imagen"]."></div>
+                <div class='imagenmascota'><img src=img/imagen_denuncia/".$row["de_imagen"]."></div>
                 </div>
-                <div class='col-md-8'>
-                  <ul>
+                <div class='col-md-8 '>
+                  <ul class='descrip'>
                     <label>Codigo</label>
                         <li>".$row["de_cod_denuncia"]."</li>
                     <label>Tipo de denuncia</label>
