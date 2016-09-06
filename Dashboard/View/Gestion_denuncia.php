@@ -46,13 +46,16 @@
 
       foreach ($denuncia as $row)
       {
-        echo"<div class='container'>
+        echo"<div class='container descrip'>
               <div class='row'>
-                <div class='fto col-md-4'>
-                <label>Foto</label>
-                <div class='imagenmascota'><img src=img/imagen_denuncia/".$row["de_imagen"]."></div>
+                <div class='fto col-md-offset-3 col-md-4'>
+                  <label>Foto</label>
+                    <div class='imagenmascota'><img src=img/imagen_denuncia/".$row["de_imagen"].">
+                        <label>Nombre de mascota</label>
+                        <li>".$row["de_nombre"]."</li>
+                    </div>                      
                 </div>
-                <div class='col-md-8 '>
+                <div class='col-md-4 '>
                   <ul class='descrip'>
                     <label>Codigo</label>
                         <li>".$row["de_cod_denuncia"]."</li>
@@ -64,8 +67,7 @@
                           <li>".$row["de_contacto"]."</li>
                     <label>Telefono</label>
                           <li>".$row["de_telefono"]."</li>
-                    <label>Nombre de mascota</label>
-                          <li>".$row["de_nombre"]."</li>
+                    
                     <label>Fecha de denuncia</label>
                           <li>".$row["de_fecha"]."</li>
                   </ul>
