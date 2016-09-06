@@ -1,6 +1,3 @@
-<php
-	session_start()
-?>
 <!doctype html>
 <html lang="es">
 <head>
@@ -57,10 +54,16 @@
             </div>
 
             <!-- menu dashboard -->
-                
-                <div class="contenedor-menu">
+
+          <div class="contenedor-menu">
         <!-- <a href="" class="btn-menu">menu<i class="icono fa fa-bars"></i></a> -->
-    
+<<<<<<< HEAD
+
+			        <ul class="menu_dashboard">
+								<?php include_once("componentes/comp_menu.php"); ?>
+			        </ul>
+=======
+
         <ul class="menu_dashboard">
             <li><a href=""><i class="icono izquierda fa fa-home"></i> Inicio</a></li>
             <li ><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Organizacion<i class="icono derecha fa fa-chevron-down"></i> </a>
@@ -68,7 +71,7 @@
                     <li onclick="mostrar_Reg_Organizacion()"><a href="">Registrar Organizacion</a></li>
                     <li onclick="mostrar_act_Organizacion()"><a href="">Actualizar Organizacion</a></li>
                     <li><a href="">Gestionar Organizacion</a></li>
-                    
+
                 </ul>
             </li>
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestion Adopcion<i class="icono derecha fa fa-chevron-down"></i> </a>
@@ -76,27 +79,27 @@
                     <li><a href="">Registrar Adopcion</a></li>
                     <li><a href="">Actualizar Adopcion</a></li>
                     <li><a href="">Gestion Adopcion</a></li>
-                    
+
                 </ul>
             </li>
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Donacion </a></li>
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Animal </a></li>
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Cuidados </a></li>
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Denuncias </a></li>
-            <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Eventos </a></li>            
+            <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Eventos </a></li>
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Vacunas </a></li>
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar Voluntarios </a></li>
             <li><a href=""><i class="icono izquierda fa fa-star"></i> Gestionar permisos </a></li>
         </ul>
+>>>>>>> origin/master
 
 
     </div>
-            <!--  -->
     	</div>
     </div>
 
     <div class="main-panel">
-        <nav class="navbar navbar-default navbar-fixed">
+        <!-- <nav class="navbar navbar-default navbar-fixed">
             <div class="container-fluid">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navigation-example-2">
@@ -164,17 +167,15 @@
                     </ul>
                 </div>
             </div>
-        </nav>
+        </nav> -->
 
 
         <div class="content">
             <div class="container-fluid">
                 <div class="row">
-                   
-
                 <!-- include del formulario -->
                 <?php
-                require("formulario.php");
+                include("componentes/comp_page.php");
 
                 ?>
                 <!--  -->
@@ -261,6 +262,6 @@
 	</script>
 
     <!-- script funciones del dashboard -->
-    <script src="assets/js/funciones_dashboard.js"></script>
+    <!-- <script src="assets/js/funciones_dashboard.js"></script> -->
 
 </html>
