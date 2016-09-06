@@ -30,6 +30,7 @@
              },
              "iDisplayLength": 3
     })
+		$(".dropdown-button").dropdown();
           $('.modal-trigger').leanModal();
       $('select').material_select();
       $('.tooltipped').tooltip({delay: 50});
@@ -54,19 +55,17 @@
 <body background="recursos/img/fondo3.jpg " style="width=100% ; height=100%" >
 <div class="container-fluid">
 	<div class="row">
-		<div class="col l12 black" id="menu_up">
-			<img src="recursos/img/logo_web.png">
+		<div class="col l12" id="menu_up" style="background-color:#00b3ae">
+			<img src="../../WebFloopets/images/logo-negro.png">
 				<a  id="ajustes" href="cerrarsesion.php">Cerrar Sesion<i class="fa fa-power-off" aria-hidden="true" style="margin-left: 10px; font-size: 25px; position: relative;"></i></a>
-        <label id="ajustes" ><?php echo "Bienvenido ".($_SESSION["nombre"])." ".($_SESSION["apellido"]);?></label>
 		</div>
-			<div class="col l1 black" id="menu_icono">
-				<?php include_once("components/comp.menu.php"); ?>
+			<div class="col l2" id="menu_icono" style="background-color:#00b3ae; height:100%;">
+				<?php include_once("componentes/comp_menu.php"); ?>
 			</div>
-			<div class="col l8 center">
+			<div class="col l10 center">
 				<div class="row">
-					<div class="col l12">
-						<?php include_once("components/comp.pages.php");
-            ?>
+					<div class="col l12" >
+						<!-- <?php include_once("componentes/comp_pages.php");?> -->
 					</div>
 				</div>
 		</div>

@@ -33,8 +33,12 @@ h4{
 	position: absolute;
 	height: 90.5%;
 	margin-top: 4.4%;
-
-
+}
+#menu_icono a{
+	color: #fff;
+	font-size: 20px;
+	margin:20px;
+	display: block;
 }
 #menu_up{
 	position: absolute;
