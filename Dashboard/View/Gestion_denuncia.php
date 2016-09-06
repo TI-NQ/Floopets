@@ -47,33 +47,34 @@
       foreach ($denuncia as $row)
       {
         echo"<div class='container descrip'>
-              <div class='row'>
-                <div class='fto col-md-offset-3 col-md-4'>
-                  <label>Foto</label>
-                    <div class='imagenmascota'><img src=img/imagen_denuncia/".$row["de_imagen"].">
+                <div class='row'>
+                  <div class='fto col-md-offset-3 col-md-4'>
+                      <div>
                         <label>Nombre de mascota</label>
-                        <li>".$row["de_nombre"]."</li>
-                    </div>                      
-                </div>
-                <div class='col-md-4 '>
-                  <ul class='descrip'>
-                    <label>Codigo</label>
-                        <li>".$row["de_cod_denuncia"]."</li>
-                    <label>Tipo de denuncia</label>
-                        <li>".$row["td_nombre"]."</li>
-                    <label>Descripcion</label>
-                          <li>".$row["de_descripcion"]."</li>
-                    <label>Contacto</label>
-                          <li>".$row["de_contacto"]."</li>
-                    <label>Telefono</label>
-                          <li>".$row["de_telefono"]."</li>
-                    
-                    <label>Fecha de denuncia</label>
-                          <li>".$row["de_fecha"]."</li>
-                  </ul>
+                          <li>".$row["de_nombre"]."</li>
+                      </div>
+                      <div class='imagenmascota'>
+                          <img class='img-circle' src=img/imagen_denuncia/".$row["de_imagen"].">                          
+                      </div>                                            
+                  </div>
+                  <div class='col-md-4 '>
+                    <ul class='descrip'>
+                      <label>Codigo</label>
+                          <li>".$row["de_cod_denuncia"]."</li>
+                      <label>Tipo de denuncia</label>
+                          <li>".$row["td_nombre"]."</li>
+                      <label>Descripcion</label>
+                            <li>".$row["de_descripcion"]."</li>
+                      <label>Contacto</label>
+                            <li>".$row["de_contacto"]."</li>
+                      <label>Telefono</label>
+                            <li>".$row["de_telefono"]."</li>                      
+                      <label>Fecha de denuncia</label>
+                            <li>".$row["de_fecha"]."</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-            </div>
 
             <td>
                         <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>actualizar</a>
