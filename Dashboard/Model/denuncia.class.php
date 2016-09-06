@@ -51,22 +51,15 @@ class Gestion_denuncia{
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-
-
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM denuncia";
-
+		$consulta = "SELECT tipo_denuncia.*,denuncia.* FROM denuncia INNER JOIN tipo_denuncia ON denuncia.td_cod_tipo_denuncia=tipo_denuncia.td_cod_tipo_denuncia";
 		$query = $Conexion->prepare($consulta);
 		$query->execute();
-
 		//Devolvemos el resultado en un arreglo
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
 		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
-
 		$resultado = $query->fetchALL(PDO::FETCH_BOTH);
 		return $resultado;
-
 		floopets_BD::Disconnect();
 	}
 

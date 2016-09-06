@@ -57,7 +57,7 @@
                     <label>Codigo</label>
                         <li>".$row["de_cod_denuncia"]."</li>
                     <label>Tipo de denuncia</label>
-                        <li>".$row["td_cod_tipo_denuncia"]."</li>
+                        <li>".$row["td_nombre"]."</li>
                     <label>Descripcion</label>
                           <li>".$row["de_descripcion"]."</li>
                     <label>Contacto</label>
@@ -71,7 +71,7 @@
                   </ul>
                 </div>
               </div>
-            </div> 
+            </div>
 
             <td>
                         <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>actualizar</a>
@@ -86,5 +86,3 @@
 
 </body>
 </html>
-
- 
