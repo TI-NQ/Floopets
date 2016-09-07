@@ -58,20 +58,16 @@
 <div class="container-fluid">
 	<div class="row">
 			<div class="col l2" id="menu_icono">
-				<!-- <img src="../../WebFloopets/images/logo-negro.png"><p>FLOOPETS</p> -->
-				<img src="../../WebFloopets/images/Logo1.png"><p>FLOOPETS</p>
+				<img src="../../WebFloopets/images/logo-negro.png"><p>FLOOPETS</p>
+				<!-- <img src="../../WebFloopets/images/logo1.png"><p>FLOOPETS</p> -->
 					<?php include_once("componentes/comp_menu.php"); ?>
 			</div>
 			<div class="col l12 grey lighten-1" id="menu_up">
 					<a  id="ajustes" href="cerrarsesion.php">Cerrar Sesion<i class="fa fa-power-off" aria-hidden="true" style="margin-left: 10px; font-size: 25px; position: relative;"></i></a>
 			</div>
-			<div class="col l10 center">
-				<div class="row">
-					<div class="col l12">
-						<!-- <?php include_once("componentes/comp_pages.php");?> -->
-					</div>
-				</div>
-		</div>
+				<div class="col l10 center">
+							<?php include_once("componentes/comp_page.php");?>
+			</div>
 	</div>
 </div>
 
