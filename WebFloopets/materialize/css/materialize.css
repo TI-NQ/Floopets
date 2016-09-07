@@ -5404,7 +5404,10 @@ button.btn-floating {
 .collapsible-body p {
   margin: 0;
   padding: 10px;
-  background-color: red;
+  background-color: #00b3ae;
+}
+.item_menu{
+  color: #fff !important;
 }
 
 .side-nav .collapsible,
