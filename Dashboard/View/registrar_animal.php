@@ -14,7 +14,7 @@
 			<li><a href="dashboard.php?p=<?php echo base64_encode('gestion_animal')?>" class="btn-floating blue tooltipped" data-tooltip="Gestionar"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
 		</ul>
 	</div>
-	<form class="col s12" action="../Controller/tipo_animal.controller.php" method="POST">
+	<form id="form" class="col s12" action="../Controller/tipo_animal.controller.php" method="POST">
 		<div class="row">
 			<div class="input-field col s12">
 				<input type="text" name="ta_nombre" required>
