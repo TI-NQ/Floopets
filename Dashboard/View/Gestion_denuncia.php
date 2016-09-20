@@ -6,10 +6,12 @@
 
 ?>
 
-  <button type="button" name="button">
-   <a href="registrar_denuncia.php">Nuevo</a>
-  </button>
-<div>
+<div class="col l8 offset-l4">
+  <h4>Gestion Denuncia</h4>
+</div>
+
+<div class="row">
+<div class="col l12">
 <?php
       @$mensaje = $_REQUEST["m"];
 
@@ -18,9 +20,9 @@
       foreach ($denuncia as $row)
       {
 
-        echo"<div class='container descrip'>
+        echo"<div class='col l6 descrip'>
                 <div class='row'>
-                  <div class='col l4 offset-l2 col m6'>
+                  <div class='col l4 col m6'>
                       <div class='col l6'>
                         <label>Nombre de mascota</label>
                         <li>".$row["de_nombre"]."</li>
@@ -28,20 +30,20 @@
                       <div class='imagenmascota col l12'>
                           <img class='img-circle' style='width:200px;height:200px;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
                       </div>
-                      <div class='col l5'style='margin-top:10px;margin bottom:10px;'>
+                      <div class='col l6'>
                           <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>
                           <i class='small material-icons'>mode_edit</i>
                           </a>
                       </div>
-                      <div class='col l5'>
+                      <div class='col l6'>
                           <a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'>
                           <i class='small material-icons'>delete</i>
                           </a>
                       </div>
                   </div>
-                  <div class='col l4'>
+                  <div class='col l2'>
                     <ul class='descrip'>
-                      <label>Codigo</label>
+                      <h6>Codigo</h6>
                           <li>".$row["de_cod_denuncia"]."</li>
                       <label>Tipo de denuncia</label>
                           <li>".$row["td_nombre"]."</li>
@@ -53,8 +55,7 @@
                             <li>".$row["de_telefono"]."</li>
                       <label>Fecha de denuncia</label>
                             <li>".$row["de_fecha"]."</li>
-                    </ul>
-                    <br><br>
+                    </ul>                    
                   </div>
                 </div>
               </div>
@@ -64,5 +65,6 @@
 
 ?>
 </div>
-
+</div>
+</div>
 
