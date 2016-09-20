@@ -28,14 +28,20 @@ echo @$mensaje;
 		echo"<div class='container descrip'>
                 <div class='row'>
                   <div class='col l4 offset-l2 col m6'>
-	                   <div class='col l6'>                                        
-	                          <i class='small material-icons'>mode_edit</i>
-	                          </a>                        
-	                    </div>
-                      	<div class='col l6'>                              
+                   <div class='col l6'>
+                        
+                          <a href='../View/actualizar_adopcion.php?dn=".base64_encode($row["ado_cod_adopcion"])."'>
+                          <i class='small material-icons'>mode_edit</i>
+                          </a>
+                        
+                      </div>
+                      <div class='col l6'>
+                        
+                          <a href='../Controller/adopcion.controller.php?dn=".base64_encode($row["ado_cod_adopcion"])."&accion=d'>
                           <i class='small material-icons'>delete</i>
-                          </a>                 
-                      	</div>
+                          </a>                        
+                        
+                      </div>
 						<div class='col l4'>
 		                 	<ul class='descrip'>
 		                   	<label>Codigo</label>
