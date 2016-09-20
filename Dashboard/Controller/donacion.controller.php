@@ -43,7 +43,7 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/gestion_donacion.php?m=$mensaje");
+			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_donacion"));
 
 				break;
 
@@ -51,10 +51,10 @@
 			try {
           $donacion = Gestion_donacion::Delete(base64_decode($_REQUEST["do"]));
           $mensaje = "se elimino correctamente";
-          header("Location: ../View/gestion_donacion.php?m=".$mensaje);
+          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_donacion"));
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-          header("Location: ../View/gestion_donacion.php?m=".$mensaje);
+          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_donacion"));
         }
       break;
 			

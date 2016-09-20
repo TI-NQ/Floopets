@@ -46,7 +46,7 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/Gestion_denuncia.php?m=$mensaje");
+			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_cuidado"));
 
 				break;
 
@@ -54,10 +54,10 @@
 			try {
           $denuncia = Gestion_denuncia::Delete(base64_decode($_REQUEST["dn"]));
           $mensaje = "se elimino correctamente";
-          header("Location: ../View/Gestion_denuncia.php?m=".$mensaje);
+          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_cuidado"));
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-          header("Location: ../View/Gestion_denuncia.php?m=".$mensaje);
+          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_cuidado"));
         }
       break;
 
