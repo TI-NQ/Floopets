@@ -37,25 +37,20 @@
                   <div class='col l4 offset-l2 col m6'>
                       <div class='col l6'>
                         <label>Nombre de mascota</label>
-                          <li>".$row["de_nombre"]."</li>
+                        <li>".$row["de_nombre"]."</li>
                       </div>
-                      <div class='imagenmascota'>
-
-                          <img class='img-circle' style='width:250px;height:200px;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
+                      <div class='imagenmascota col l12'>
+                          <img class='img-circle' style='width:200px;height:200px;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
                       </div>
-                      <div class='col l6'>
-
+                      <div class='col l5'style='margin-top:10px;margin bottom:10px;'>
                           <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>
                           <i class='small material-icons'>mode_edit</i>
                           </a>
-
                       </div>
-                      <div class='col l6'>
-
+                      <div class='col l5'>
                           <a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'>
                           <i class='small material-icons'>delete</i>
                           </a>
-
                       </div>
                   </div>
                   <div class='col l4'>
