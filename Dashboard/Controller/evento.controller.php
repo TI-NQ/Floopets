@@ -25,11 +25,11 @@
  			Gestion_evento::Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_hora,$eve_descripcion,$imagen);
  			$mensaje="Registro exitoso";
 
- 			header("Location:../View/registrar_evento.php?m=".$mensaje);
+ 			header("Location:../View/dashboard.php?p=".base64_encode("gestion_evento"));
  		} catch (Exception $e) {
  			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			$tipomensaje = "error";
-			header("Location:../View/registrar_evento.php?m=".$mensaje);
+			header("Location:../View/dashboard.php?p=".base64_encode("gestion_evento"));
  		}
  		break;
 
@@ -50,17 +50,17 @@
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				}
-				header("Location: ../View/gestion_evento.php?m= ".$mensaje );
+				header("Location: ../View/dashboard.php?p=".base64_encode("gestion_evento"));
 				break;
 
 		case 'd':
 					try {
 		          $evento = Gestion_evento::Delete(base64_decode($_REQUEST["ui"]));
 		          $mensaje = "Se eliminó correctamente";
-		          header("Location: ../View/gestion_evento.php?m=".$mensaje);
+		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_evento"));
 		        } catch (Exception $e) {
 		          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-		          header("Location: ../View/gestion_evento.php?m=".$mensaje);
+		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_evento"));
 		        }
 		      break;
  	}

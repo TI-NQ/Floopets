@@ -30,7 +30,7 @@
  		} catch (Exception $e) {
  			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			$tipomensaje = "error";
-			header("Location:../View/registrar_organizacion.php?m=".$mensaje);
+			header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
  		}
  		break;
 
