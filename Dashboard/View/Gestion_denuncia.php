@@ -4,7 +4,7 @@
   require_once("../Model/denuncia.class.php");
   $denuncia = Gestion_denuncia::ReadAll();
 ?>
-<!DOCTYPE html>
+<!-- <!DOCTYPE html>
 <html>
 <head>
   <title></title>
@@ -15,12 +15,12 @@
     <link rel="stylesheet" type="text/css" href="../../WebFloopets/font-awesome-4.6.3/css/font-awesome.css">
     <script type="text/javascript" src="../../WebFloopets/js/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="../../WebFloopets/materialize/js/materialize.js"></script>
-    <link type="text/css" rel="stylesheet" href="recursos/css/estilos.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
+    <link type="text/css" rel="stylesheet" href="recursos/css/estilos.css"> -->
+    
+<!-- </head>
+<body -->
   <button type="button" name="button">
-   <a href="registrar_denuncia.php">Nuevo</a>
+   <a href="registrar_denuncia.php" class="waves-light btn">Nuevo</a>
   </button>
 <div>
 <?php
@@ -81,5 +81,5 @@
 ?>
 </div>
 
-</body>
-</html>
+<!-- </body>
+</html> -->

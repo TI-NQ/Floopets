@@ -17,6 +17,7 @@
 	  <script type="text/javascript" charset="utf8" src="recursos/plugins/datatable/jquery.dataTables.min.js"></script>
 	  <script type="text/javascript" src="../../WebFloopets/materialize/js/materialize.min.js"></script>
 	  <script type="text/javascript" src="recursos/plugins/sweetalert/dist/sweetalert.min.js"></script>
+	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	  <script>
 	    $(document).ready( function () {
 	  		$('#datatable').DataTable({
