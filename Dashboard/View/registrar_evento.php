@@ -1,10 +1,21 @@
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<?php
+	require_once("../Model/conexion.php");
+	require_once("../Model/tipo_evento.class.php");
+	$eve = Gestion_tipo_evento::ReadAll();
+?>
+
 <form action="../Controller/evento.controller.php" method="POST">
 	<h1>Registrar Evento</h1>
 	<div class="form-group">
 
 		<label>Tipo evento:</label>
-		<input name="te_cod_tipo_evento"></input>
+		<select name="te_cod_tipo_evento" required>
+				<?php
+					foreach ($eve as $row) {
+						echo "<option value = '".$row["te_cod_tipo_evento"]."'>".$row["te_nombre"]."</option>";
+					}
+				 ?>
+		</select>
 		<br>
 		<label>Nombre:</label>
 		<input name="eve_nombre"></input>
