@@ -43,6 +43,14 @@
 	      ?>
 			});
 		</script>
+		<script type="text/javascript">
+		        <?php
+		      if(isset($_GET["m"])){
+		        echo "alert( '".$_GET["m"]."');";
+		      }
+		    ?>
+
+		</script>
 	</head>
 	<body>
 		<a  id="ajustes" href="../Model/cerrar.php">Cerrar Sesion<i class="fa fa-power-off" aria-hidden="true" style="margin-left: 10px; font-size: 25px; position: relative;"></i></a>

@@ -10,11 +10,20 @@
   <script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js"></script>
   <title>Iniciar Sesion</title>
   <link rel="stylesheet" type="text/css" href="WebFloopets/css/style.css" media="all">
+  <link href='http://fonts.googleapis.com/css?family=Roboto:900,900italic,500,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
+  <div id="fback">
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 </head>
 <body>
-  <link href='http://fonts.googleapis.com/css?family=Roboto:900,900italic,500,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
-  <div id="fback">
+  <script type="text/javascript">
+          <?php
+        if(isset($_GET["m"])){
+          echo "alert( '".$_GET["m"]."');";
+        }
+      ?>
+
+  </script>
+
     <div class="girisback"></div>
     <div class="kayitback"></div>
   </div>
