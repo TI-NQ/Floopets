@@ -3,7 +3,7 @@
 	<h1>Registrar Evento</h1>
 	<div class="form-group">
 
-		<label>Codigo tipo evento:</label>
+		<label>Tipo evento:</label>
 		<input name="te_cod_tipo_evento"></input>
 		<br>
 		<label>Nombre:</label>
@@ -13,7 +13,7 @@
 		<input name="eve_direccion"></input>
 		<br>
 		<label>Fecha:</label>
-		<input type="date" name="eve_fecha"></input>
+		<input type="date" name="eve_fecha" min="<?php echo date("Y-m-d"); ?>"></input>
 		<br>
 		<label>Hora:</label>
 		<input type="time" name="eve_hora"></input>
