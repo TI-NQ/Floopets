@@ -1,23 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/estilos.css">
-	<script src="assets/js/jquery-1.10.2.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	<title></title>
-</head>
-<body>
-<center><div class="container">
-		<div class="row">
-		                        
-		    <div class="col-lg-12">
-		    	<div class="titulo_formulario">
-		           <h1 id="titulo">Registro voluntarios</h1>
-		        </div>
-				<div class="formulario1 ">
-					<form action="../Controller/voluntarios.controller.php" method="POST" enctype="multipart/form-data">
+<h1 class="center">Registro voluntarios</h1>
+					<form id="form"action="../Controller/voluntarios.controller.php" method="POST" enctype="multipart/form-data">
 					<div class="form-group">
 						<label class="form-label">Cedula:</label>
 						<input class="form-control" type="text" name="vo_cod_voluntario" required>
@@ -53,4 +35,3 @@
 </div></center>
 </body>
 </html>
-

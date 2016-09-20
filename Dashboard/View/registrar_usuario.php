@@ -1,24 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-	<title>formulario</title>
-	<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/css/estilos.css">
-	<script src="assets/js/jquery-1.10.2.js"></script>
-	<script src="assets/js/bootstrap.min.js"></script>
-	
-</head>
-<body>
-<div class="container">
-	<div class="row">
-	                        
-	    <div class="col-lg-5">
-	    	<div class="titulo_formulario">
-	           <h1 id="titulo">Registro Usuario</h1>
-	        </div>
-			<div class="formulario ">
-				<form action="../Controller/usuarios.controller.php" method="POST">
+<h2 class="center">Registro usuarios</h2>
+				<form id="form"action="../Controller/usuarios.controller.php" method="POST">
 					<div class="form-group">
 						<label class="form-label">Nombre :</label>
 						<input class="form-control" type="text" name="usu_nombre" required>
@@ -65,8 +46,7 @@
 				</form>
 			</div>
 		</div>
-	</div>	
+	</div>
 </div>
 </body>
 </html>
-

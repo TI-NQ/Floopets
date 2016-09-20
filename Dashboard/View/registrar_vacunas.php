@@ -1,4 +1,5 @@
-<form action="../Controller/vacunas.controller.php" method="POST">
+<h2 class="center">Registrar Vacuna</h2>
+<form id="form"action="../Controller/vacunas.controller.php" method="POST">
 	<div class="form-group">
 		<label class="form-label">Nombre</label>
 		<input class="form-control" type="text" name="vac_nombre" required>

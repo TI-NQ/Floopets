@@ -5,7 +5,7 @@
 	$tipo_donacion = Gestion_tipo_donacion::ReadAll();
 	$organizacion = Gestion_organizacion::ReadAll();
 ?>
-<h2 class="center">Registrar Donacion</h2>
+<h2 class="center">Registrar Donación</h2>
 <div class="row">
 	<div class="fixed-action-btn horizontal click-to-toggle" style="position:relative;">
 		<a class="btn-floating btn-large red darken-1 tooltipped" data-tooltip="Acciones" style="left:95%;">
@@ -16,11 +16,8 @@
 			<li><a href="dashboard.php?p=<?php echo base64_encode('gestion_donacion')?>" class="btn-floating blue tooltipped" data-tooltip="Gestionar"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
 		</ul>
 	</div>
-	<form  action="../Controller/donacion.controller.php" method="POST" enctype="multipart/form-data">
 </div>
-<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<form action="../Controller/donacion.controller.php" method="POST" enctype="multipart/form-data">
-	<h1>Registrar donacion</h1>
+<form id="form" action="../Controller/donacion.controller.php" method="POST" enctype="multipart/form-data">
 	<div class="form-group">
 		<label>descripcion</label>
 		<input type="text" name="don_descripcion"></input>
