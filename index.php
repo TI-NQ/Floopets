@@ -24,8 +24,8 @@
 		<link rel="stylesheet" type="text/css" href="WebFloopets/css/owl.theme.css">
 
 				<!--Import jQuery before materialize.js-->
-      	<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js">
-      	</script>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+      	<!-- <script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js"></script> -->
       	<script type="text/javascript" src="WebFloopets/materialize/js/materialize.js"></script>
       	<script type="text/javascript" src ="WebFloopets/js/owl.carousel.min.js"></script>
       	<!-- link del menu -->
@@ -37,6 +37,13 @@
       	<script type="text/javascript">
       		 $(document).ready(function(){
      			 $('.parallax').parallax();
+           $('a.ancla').click(function(e){
+           e.preventDefault();
+             enlace  = $(this).attr('href');
+             $('html, body').animate({
+                 scrollTop: $(enlace).offset().top
+             }, 1000);
+           });
      			 $('select').material_select();
      			 $('.carousel.carousel-slider').carousel({full_width: true});
      			 $("#owl-demo").owlCarousel({
@@ -49,6 +56,12 @@
     			});
      		 });
       	</script>
+        <script type="text/javascript">
+      		$(document).ready(function(){
+      			//nos desplazamos entre todos los divs
+
+      		});
+		</script>
 	</head>
 	<body>
 			<i class="fa fa-bars" aria-hidden="true" id="menu" onclick= "desplegar()"></i>
@@ -59,31 +72,27 @@
 			<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
 			<i class="fa fa-times" aria-hidden="true" id="salir" onclick= "ver_menu()"></i>
 			<ul class="menu_floopets">
-				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
-				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Quienes Somos</a></li>
-				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
-				<li><a href=""><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
-				<li ><a href=""><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota<i class="icono derecha fa fa-chevron-down"></i> </a>
-					<ul>
-						<li><a href=""><i class="sub_menu icono izquierda fa fa-paw"></i> Perdida</a></li>
-						<li><a href=""><i class="sub_menu icono izquierda fa fa-paw"></i> Maltrato</a></li>
-					</ul>
+				<li><a href="#Inicio" class="ancla"><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
+				<li><a href="#Quienessomos" class="ancla"><i class="icono izquierda fa fa-paw"></i> Quienes Somos</a></li>
+				<li><a href="#adopciones" class="ancla"><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
+				<li><a href="#"><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
+				<li ><a href="#denuncias" class="ancla"><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota</a>
 				</li>
 
-				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
-				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
-				<li><a href=""><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li>
+				<li><a href="#eventos" class="ancla"><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
+				<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
+				<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li>
 			</ul>
 
 
 		</div>
-		<div class="banner-video">
+		<div class="banner-video" id="Inicio">
 			<a class="ingresa btn waves-effect waves-light btn-large" href="login.php">Ingresar a Floopets</a>
 			<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
 		</div>
 		<!-- David Pabón-Quienes Somos? -->
 
-		<div class="row">
+		<div class="row" id="Quienessomos">
 			<div class="col s12">
 				<div class="col s3" >
 					<h3 class="center" style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;">¿Quienes Somos?</h3>
@@ -102,7 +111,7 @@
 		</div>
 
 		<!-- Andrea Guzman-Adopciones -->
-		<div class="row seccion1">
+		<div class="row seccion1" id="adopciones">
 				<div class="container__perros col s12 m6 l6">
 					<div id="adoptaperro">
 						<p>Adopta un</p>
@@ -129,7 +138,7 @@
 
 <!--Contenedor ayuda una mascota
 		Ricardo_ochoa -->
-		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin-top:50px;" class="center">Denuncias</h2>
+		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin-top:50px;" class="center" id="denuncias">Denuncias</h2>
 		<div class="row seccion2">
 			<div class="container__img col s12 m4 l4" >
 				<h3 class="center">Ayuda una Mascota</h3>
@@ -197,7 +206,7 @@
       			<img src="WebFloopets/recursos/images/montañas.png">
       		</div>
     	</div>
-    	<div class="row seccion3">
+    	<div class="row seccion3" id="perdidas">
 				<div class="container__perdida col s12 m6 l6">
 					<div id="perdida">
 						<p>Mascotas Perdidas</p>
@@ -216,7 +225,7 @@
 		</div>
 <!-- David Pabon-Cuidados -->
 
-	<div class="row">
+	<div class="row" id="cuidados">
 		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Cuidados</h2>
 		<div class="class col s12">
 
@@ -335,7 +344,7 @@
     </div>
 
 	<!-- eventos -->
-	<div class="" style="margin-top: 57px">
+	<div class="" style="margin-top: 57px" id="eventos">
 		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Eventos</h2>
 	    <div class="row">
 

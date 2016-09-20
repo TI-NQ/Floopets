@@ -29,6 +29,7 @@ video{
 	color: #fff;
 	margin: 20px;
 	cursor: pointer;
+	transition: 10s;
 }
 #salir{
 	position: fixed;
