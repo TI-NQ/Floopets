@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 20-09-2016 a las 14:29:49
+-- Tiempo de generación: 20-09-2016 a las 16:46:06
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -82,7 +82,7 @@ CREATE TABLE `denuncia` (
   `de_telefono` varchar(10) NOT NULL,
   `de_nombre` varchar(100) DEFAULT NULL,
   `de_fecha` datetime NOT NULL,
-  `de_imagen` int(11) NOT NULL
+  `de_imagen` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -90,7 +90,7 @@ CREATE TABLE `denuncia` (
 --
 
 INSERT INTO `denuncia` (`de_cod_denuncia`, `td_cod_tipo_denuncia`, `de_descripcion`, `de_contacto`, `de_telefono`, `de_nombre`, `de_fecha`, `de_imagen`) VALUES
-(2, 1, 'le pega', 'yesid', '3769878', 'lolo', '2016-08-23 11:03:12', 0);
+(2, 1, 'le pega', 'yesid', '3769878', 'lolo', '2016-08-23 11:03:12', '0');
 
 -- --------------------------------------------------------
 
