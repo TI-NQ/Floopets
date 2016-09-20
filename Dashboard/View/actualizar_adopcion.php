@@ -1,9 +1,8 @@
-<?php 
+<?php
 require_once("../Model/conexion.php");
  require_once("../Model/adopcion.class.php");
- $adopcion =  Gestion_adopcion::ReadbyID(base64_decode($_REQUEST["ad"]));
+ $adopcion =  Gestion_adopcion::ReadbyID(base64_decode($_REQUEST["dn"]));
 
-// echo $cu[0];
  ?>
 <form action="../Controller/adopcion.controller.php" method="POST">
 <input type="hidden" readonly name="ado_cod_adopcion" required value="<?php echo $adopcion[0] ?>">
