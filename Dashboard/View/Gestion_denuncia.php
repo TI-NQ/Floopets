@@ -5,21 +5,7 @@
   $denuncia = Gestion_denuncia::ReadAll();
 
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-  <title></title>
-    <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0' name='viewport' />
-    <meta name="viewport" content="width=device-width" />
-    <link type="text/css" rel="stylesheet" href="../../WebFloopets/materialize/css/materialize.css"  media="screen,projection"/>
-    <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../../WebFloopets/font-awesome-4.6.3/css/font-awesome.css">
-    <script type="text/javascript" src="../../WebFloopets/js/jquery-1.12.1.min.js"></script>
-    <script type="text/javascript" src="../../WebFloopets/materialize/js/materialize.js"></script>
-    <link type="text/css" rel="stylesheet" href="recursos/css/estilos.css">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
+
   <button type="button" name="button">
    <a href="registrar_denuncia.php">Nuevo</a>
   </button>
@@ -68,7 +54,7 @@
                       <label>Fecha de denuncia</label>
                             <li>".$row["de_fecha"]."</li>
                     </ul>
-
+                    <br><br>
                   </div>
                 </div>
               </div>
@@ -79,5 +65,4 @@
 ?>
 </div>
 
-</body>
-</html>
+

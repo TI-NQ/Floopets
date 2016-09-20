@@ -35,8 +35,8 @@ require_once("../Model/conexion.php");
 		<input class="form-control" type="text" name="de_nombre" required  value="<?php echo $denuncia[5] ?>">
 	</div>
 	<div class="form-group">
-		<label class="form-label">Fecha</label>
-		<input class="form-control" type="date" name="de_fecha" required  value="<?php echo $denuncia[6]?>" min="<?php echo date("Y-m-d"); ?>">
+		<!-- <label class="form-label">Fecha</label> -->
+		<input class="form-control" type="hidden" name="de_fecha" required  value="<?php echo date("Y-m-d"); ?>" min="<?php echo date("Y-m-d"); ?>">
 	</div>
 	<div class="form-group">
     <div class="file-field input-field col s12 m6">
@@ -45,7 +45,7 @@ require_once("../Model/conexion.php");
                       <input type="file" multiple name="Imagen_Upload[]">
                     </div>
                     <div class="file-path-wrapper">
-                      <input class="file-path validate"  type="text" placeholder="" name="de_imagen" value="<?php echo $denuncia[7] ?>" >
+                      <input class="file-path validate"  type="text" placeholder="" name="de_imagen" value="<?php echo $denuncia[7] ?>" readonly>
                     </div>
                   </div>
     	<div class="form-group">

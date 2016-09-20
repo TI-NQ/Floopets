@@ -14,7 +14,7 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/vacunas.php?m=$mensaje");
+			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_vacuna"));
 
 			break;
 
@@ -29,17 +29,17 @@
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				}
-				header("Location: ../View/gestion_vacunas.php?m= ".$mensaje );
+				header("Location: ../View/dashboard.php?p=".base64_encode("gestion_vacuna") );
 				break;
 
 		case 'd':
 					try {
 		          $vacunas = gestion_vacuna::Delete(base64_decode($_REQUEST["ui"]));
 		          $mensaje = "Se eliminó correctamente";
-		          header("Location: ../View/gestion_vacunas.php?m=".$mensaje);
+		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_vacuna"));
 		        } catch (Exception $e) {
 		          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-		          header("Location: ../View/gestion_vacunas.php?m=".$mensaje);
+		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_vacuna"));
 		        }
 		      break;
 

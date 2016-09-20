@@ -71,7 +71,7 @@ class Gestion_denuncia{
 
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE denuncia SET td_cod_tipo_denuncia=?,de_descripcion=?,de_contacto=?,de_telefono=?,de_nombre=?,de_imagen=? WHERE de_cod_denuncia =?" ;
+		$consulta = "UPDATE denuncia SET td_cod_tipo_denuncia=?,de_descripcion=?,de_contacto=?,de_telefono=?,de_nombre=?,de_imagen=?,de_fecha=? WHERE de_cod_denuncia =?" ;
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen,$de_cod_denuncia));
