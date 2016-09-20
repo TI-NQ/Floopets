@@ -35,7 +35,7 @@
 			<div class="file-field input-field col s12">
 				<div class="btn">
 					<span>Imagenes</span>
-					<input type="file" multiple name="de_imagen[]" class="form-control">
+					<input type="file" name="de_imagen[]" class="form-control">
 				</div>
 				<div class="file-path-wrapper form-group">
 					<input class="form-control file-path validate"  type="text" placeholder="Puede ingresas mas de una imagen" name="de_imagen" >

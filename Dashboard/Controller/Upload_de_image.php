@@ -1,20 +1,20 @@
 <?php
 $total = count($_FILES['de_imagen']['name']);
 
-$directorio = "../View/img/imagen_denuncia/".$nombre_denuncia."/";
+$directorio = "../View/img/imagen_denuncia/".$nombre_de_contacto."/";
 
 
-if (!file_exists($directorio)) { 
+if (!file_exists($directorio)) {
   echo "El archivo no existe";
   mkdir($directorio, 0777, true);
 }
 
-for($i=0; $i<$total; $i++) { 
+for($i=0; $i<$total; $i++) {
 
   $archivo     = $directorio.basename(str_replace(" ", "",$_FILES["de_imagen"]["name"][$i]));
   $uploadOk    = 0;
   $extension_archivo = pathinfo($archivo,PATHINFO_EXTENSION);
-  
+
   $check = getimagesize($_FILES["de_imagen"]["tmp_name"][$i]);
       if($check !== false) {
           echo "El archivo si es una imagen <br>";
@@ -40,7 +40,7 @@ for($i=0; $i<$total; $i++) {
     echo "Lo siento, el archivo ya existe en nuestra aplicación!  <br>";
     $uploadOk = 0;
   }
- 
+
 // VALIDAMOS SI $UPLOADOK ESTA EN 1 DE ESA FORMA SE PUEDE SUBIR
 
 

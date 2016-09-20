@@ -6,22 +6,24 @@
 	switch ($accion) {
 		case 'c':
 
-			
+
 			$td_cod_tipo_denuncia		= $_POST["td_cod_tipo_denuncia"];
+			$de_contacto  =$_POST["de_contacto"];
 			$nombre_de_contacto 	= strtolower(str_replace('ñ', 'n', $de_contacto));
 			$nombre_de_contacto 	= strtolower(str_replace(' ', '', $nombre_de_contacto));
 			$de_descripcion			= $_POST["de_descripcion"];
-			$de_contacto  =$_POST["de_contacto"];
 			$de_telefono  =$_POST["de_telefono"];
-			$de_nombre = $_POST["de_nombre"];
-			$de_imagen			=$_POST["de_imagen"];
+			$de_nombre    = $_POST["de_nombre"];
+			//$de_imagen			=$_POST["de_imagen"];
+			$de_imagen	= $_FILES['de_imagen']['name'];
+
 			$count_galeria			= count($_FILES['de_imagen']['name']);
 
 			try {
 				if($count_galeria >= 1){
 					include("Upload_de_image.php");
 				}
-				Gestion_denuncia::Create($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen);
+				Gestion_denuncia::Create($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,	$de_imagen[0]);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();

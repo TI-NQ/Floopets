@@ -50,13 +50,3 @@ $user=Gestion_usuarios::ReadAll();
 	</thead>
 </table>
 </table>
-<script type="text/javascript">
-	
-        <?php
-
-      if(isset($_GET["m"])){
-        echo "alert( '".$_GET["m"]."');";
-      }
-    ?>
-
-</script>
