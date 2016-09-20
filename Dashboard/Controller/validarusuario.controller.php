@@ -39,7 +39,7 @@
       $_SESSION["cod_rol"]         = $usuario[6];
 
 
-     header("Location:../View/gestion_usuarios.php?m=".$msn);
+     header("Location:../View/dashboard.php?m=".$msn);
 
     }
   } catch (Exception $e) {

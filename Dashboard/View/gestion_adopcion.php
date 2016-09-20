@@ -5,7 +5,10 @@ require_once("../Model/adopcion.class.php");
 $adopcion=Gestion_adopcion::ReadAll();
  ?>
 
-<table>
+<button type="button" name="button">
+   <a href="registrar_adopcion.php" class="waves-light btn">Nuevo</a>
+  </button>
+<!-- <table>
 	<thead>
 		<tr>
 			<td>codigo </td>
@@ -15,28 +18,48 @@ $adopcion=Gestion_adopcion::ReadAll();
 			<td>codigo usuario</td>
       		<td>acciones</td>
 		</tr>
-		<tbody>
-			<?php
-			@$mensaje = $_REQUEST["m"];
+		<tbody> -->
+<?php
+@$mensaje = $_REQUEST["m"];
 
-			echo @$mensaje;
+echo @$mensaje;
 
-			foreach ($adopcion as $row) {
-				echo"<tr>
-						<td>".$row["ado_cod_adopcion"]."</td>
-						<td>".$row["ado_fecha"]."</td>
-						<td>".$row["ado_hora"]."</td>
-            			<td>".$row["ani_cod_animal"]."</td>
-            			<td>".$row["usu_cod_usuario"]."</td>
-						<td>
-                    		<a href='../View/actualizar_adopcion.php?ui=".base64_encode($row["ado_cod_adopcion"])."'>actualizar</a>
+	foreach ($adopcion as $row) {
+		echo"<div class='container descrip'>
+                <div class='row'>
+                  <div class='col l4 offset-l2 col m6'>
+	                   <div class='col l6'>                                        
+	                          <i class='small material-icons'>mode_edit</i>
+	                          </a>                        
+	                    </div>
+                      	<div class='col l6'>                              
+                          <i class='small material-icons'>delete</i>
+                          </a>                 
+                      	</div>
+						<div class='col l4'>
+		                 	<ul class='descrip'>
+		                   	<label>Codigo</label>
+		                     	  <li>".$row["ado_cod_adopcion"]."</li>
+		                   	<label>Fecha</label>
+		                     	  <li>".$row["ado_fecha"]."</li>
+		                   	<label>hora</label>
+		                     	    <li>".$row["ado_hora"]."</li>
+		                   	<label>Codigo animal</label>
+		                     	    <li>".$row["ani_cod_animal"]."</li>
+		                  	 <label>Codigo usuario</label>
+		                     	    <li>".$row["usu_cod_usuario"]."</li>                    
+		                 	</ul>
+		                    
+		             	</div>
+		           </div>
+		        </div>
+		    </div>      	
 
-                    		<a href='../Controller/adopcion.controller.php?ui=".base64_encode($row["ado_cod_adopcion"])."&accion=d'>eliminar</a>
+		
+        ";            
 
-					</tr>";
-			}
+					
+	}
 
-			 ?>
-		</tbody>
-	</thead>
-</table>
+?>
+	

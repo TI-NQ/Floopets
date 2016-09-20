@@ -140,8 +140,8 @@ switch ($page) {
 		require_once("gestion_tipo_organizacion.php");
 	break;
 
-	case 'gestion_usuario':
-		require_once("gestion_usuario.php");
+	case 'gestion_usuarios':
+		require_once("gestion_usuarios.php");
 	break;
 
 	case 'gestion_vacunas':
