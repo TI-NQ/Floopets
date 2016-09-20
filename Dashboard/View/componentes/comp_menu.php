@@ -1,5 +1,9 @@
 <li class="divider" style="margin:30px;"></li>
 <ul class="collapsible" data-collapsible="accordion">
+  <style media="screen">
+  .collapsible-header {
+      border-bottom: 1px solid #bbb;}
+  </style>
     <li>
       <div class="collapsible-header grey lighten-2"><a><i class="fa fa-building-o" aria-hidden="true"></i>Organizacion</a></div>
       <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('registrar_organizacion')?>">Crear</a></p></div>

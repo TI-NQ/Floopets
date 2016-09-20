@@ -2,6 +2,9 @@
 require_once("../Model/conexion.php");
  require_once("../Model/animal.class.php");
  $animal =  gestion_animal::ReadbyID(base64_decode($_REQUEST["an"]));
+ if ($animal == "") {
+   header("Location: dashboard.php");
+ }
 
 // echo $cu[0];
  ?>
