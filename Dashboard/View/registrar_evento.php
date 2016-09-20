@@ -41,7 +41,6 @@
 					 <input class="file-path validate" readonly type="text" placeholder="Subir imagen" name="imagen"  >
 				 </div>
 			</div>
-
 	</div>
 	<div class="form-group">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
