@@ -5,9 +5,7 @@ require_once("../Model/adopcion.class.php");
 $adopcion=Gestion_adopcion::ReadAll();
  ?>
 
-<button type="button" name="button">
-   <a href="registrar_adopcion.php" class="waves-light btn">Nuevo</a>
-  </button>
+
 <!-- <table>
 	<thead>
 		<tr>

@@ -1,7 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<button type="button" name="button">
-  <a href="registrar_evento.php">Nuevo</a>
-</button>
+
 <?php
 
 require_once("../Model/conexion.php");
@@ -9,7 +7,7 @@ require_once("../Model/evento.class.php");
 $evento=Gestion_evento::ReadAll();
  ?>
 
-<table>
+<!-- <table>
 	<thead>
 		<tr>
 			<td>Codigo vento</td>
@@ -21,30 +19,58 @@ $evento=Gestion_evento::ReadAll();
 			<td>Descripcion</td>
 
 		</tr>
-		<tbody>
-			<?php
-			@$mensaje = $_REQUEST["m"];
+		<tbody> -->
+<?php
+	@$mensaje = $_REQUEST["m"];
 
-			echo @$mensaje;
+	echo @$mensaje;
 
-			foreach ($evento as $row) {
-				echo"<tr>
-						<td>".$row["eve_cod_evento"]."</td>
-						<td>".$row["te_cod_tipo_evento"]."</td>
-						<td>".$row["eve_nombre"]."</td>
-            			<td>".$row["eve_direccion"]."</td>
-						<td>".$row["eve_fecha"]."</td>
-						<td>".$row["eve_hora"]."</td>
-						<td>".$row["eve_descripcion"]."</td>
-						<td>
-                    		<a href='../View/actualizar_evento.php?ui=".base64_encode($row["eve_cod_evento"])."'>actualizar</a>
+	foreach ($evento as $row) {
+				echo"<div class='container descrip'>
+                <div class='row'>
+                  <div class='col l4 offset-l2 col m6'>
+                   <div class='col l6'>
+                        
+                          <a href='../View/actualizar_evento.php?ui=".base64_encode($row["eve_cod_evento"])."'>
+                          <i class='small material-icons'>mode_edit</i>
+                          </a>
+                        
+                      </div>
+                      <div class='col l6'>
+                        
+                          <a href='../Controller/evento.controller.php?ui=".base64_encode($row["eve_cod_evento"])."&accion=d'>
+                          <i class='small material-icons'>delete</i>
+                          </a>                        
+                        
+                      </div>
+						<div class='col l4'>
+		                 	<ul class='descrip'>
+		                   	<label>Codigo</label>
+		                     	  <li>".$row["eve_cod_evento"]."</li>
+		                   	<label>Tipo de evento</label>
+		                     	  <li>".$row["te_cod_tipo_evento"]."</li>
+		                   	<label>Nombre</label>
+		                     	    <li>".$row["eve_nombre"]."</li>
+		                   	<label>Dirección</label>
+		                     	    <li>".$row["eve_direccion"]."</li>
+		                  	 <label>Fecha</label>
+		                     	    <li>".$row["eve_fecha"]."</li>
+		                     <label>Hora</label>
+		                     	    <li>".$row["eve_hora"]."</li>
+		                     <label>Descripcion</label>
+		                     	    <li>".$row["eve_descripcion"]."</li>                      
+		                 	</ul>
+		                    
+		             	</div>
+		           </div>
+		        </div>
+		    </div>      	
 
-                    		<a href='../Controller/evento.controller.php?ui=".base64_encode($row["eve_cod_evento"])."&accion=d'>eliminar</a>
+		
+        "; 
 
-					</tr>";
-			}
-
-			 ?>
+	}		
+?>
 		</tbody>
 	</thead>
 </table>

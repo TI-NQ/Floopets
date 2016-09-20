@@ -29,7 +29,7 @@
 			break;
 			case 'u':
       $vo_cod_voluntario      =$_POST["vo_cod_voluntario"];
-			$vo_nombre              =$_POST["vo_nombre"];
+		$vo_nombre          =$_POST["vo_nombre"];
       $vo_telefono            =$_POST["vo_telefono"];
       $vo_direccion           =$_POST["vo_direccion"];
       $vo_imagen              =$_POST["vo_imagen"];
