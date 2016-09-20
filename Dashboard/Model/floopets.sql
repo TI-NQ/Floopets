@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-08-2016 a las 16:04:39
+-- Tiempo de generación: 20-09-2016 a las 14:29:49
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -50,7 +50,8 @@ CREATE TABLE `animal` (
   `ani_esterilizado` tinyint(1) NOT NULL,
   `ani_edad` int(11) NOT NULL,
   `ani_descripcion` varchar(100) NOT NULL,
-  `ani_numero_microchip` varchar(50) NOT NULL
+  `ani_numero_microchip` varchar(50) NOT NULL,
+  `ani_sexo` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
