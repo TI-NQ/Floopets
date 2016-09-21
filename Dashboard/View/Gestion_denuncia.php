@@ -6,12 +6,14 @@
 
 ?>
 <script type="text/javascript">
+
+$(document).ready(function() {
 $("a#btntrash").click(function(){
        var codigo = $("#de_cod_denuncia").val();
-       var accion = "dl";
+       var accion = "d";
       sweetAlert({
-              title: 'Mensaje de SOFTMAR',
-              text: 'Esta seguro que desea eliminar el producto?',
+              title: 'Mensaje de FLOOPETS',
+              text: 'Esta seguro que desea eliminar?',
               type: 'warning',
               showCancelButton: true,
               confirmButtonColor: '#4db6ac',
@@ -28,6 +30,7 @@ $("a#btntrash").click(function(){
                  swal("Cancelado", "se cancelo","error");
                }
    });
+   };
 
 </script>
 
