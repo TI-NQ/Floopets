@@ -7,19 +7,6 @@ require_once("../Model/evento.class.php");
 $evento=Gestion_evento::ReadAll();
  ?>
 
-<!-- <table>
-	<thead>
-		<tr>
-			<td>Codigo vento</td>
-			<td>Codigo tipo evento</td>
-			<td>Nombre</td>
-			<td>Dirección</td>
-			<td>Fecha</td>
-			<td>Hora</td>
-			<td>Descripcion</td>
-
-		</tr>
-		<tbody> -->
 <?php
 	@$mensaje = $_REQUEST["m"];
 
@@ -28,7 +15,7 @@ $evento=Gestion_evento::ReadAll();
 	foreach ($evento as $row) {
 				echo"<div class='container descrip'>
                 <div class='row'>
-                  <div class='col l4 offset-l2 col m6'>
+                  <div class='col l6 offset-l2 col m6'>
                    <div class='col l6'>
                         
                           <a href='../View/actualizar_evento.php?ui=".base64_encode($row["eve_cod_evento"])."'>
@@ -43,7 +30,7 @@ $evento=Gestion_evento::ReadAll();
                           </a>                        
                         
                       </div>
-						<div class='col l4'>
+						<div class='col l6'>
 		                 	<ul class='descrip'>
 		                   	<label>Codigo</label>
 		                     	  <li>".$row["eve_cod_evento"]."</li>

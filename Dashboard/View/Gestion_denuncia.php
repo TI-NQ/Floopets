@@ -50,12 +50,12 @@ $(document).ready(function()
 
         echo"<div class='col l6 descrip'>
                 <div class='row'>
-                  <div class='col l5 col m6'>
+                  <div class='col l6 col m6'>
                       <div class='col l7'>
                         <span><b>Nombre de mascota</b></span>
                         <li>".$row["de_nombre"]."</li>
                       </div>
-                      <div class='imagenmascota col l7'>
+                      <div class='imagenmascota col l12'>
                           <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
                       </div>
                       <div class='col l6'>
@@ -70,7 +70,7 @@ $(document).ready(function()
                       </a>
                       </div>
                   </div>
-                  <div class='col l2'>
+                  <div class='col l6'>
                     <ul class='descrip'>
                       <span>Codigo :</span>
                           <li>".$row["de_cod_denuncia"]."</li>

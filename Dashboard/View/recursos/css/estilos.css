@@ -105,5 +105,6 @@ ul .icon a {
 }
 .descrip{
 	list-style: none;
-	
+	/*margin-left: 20%;*/
+	padding: 8%;
 }
