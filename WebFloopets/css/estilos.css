@@ -14,7 +14,8 @@ video{
 .ingresa{
 	background-color: rgba(0, 179, 174,0.8) !important;
 	position: absolute;
-	margin-top: 75vh;
+	/*margin-top: 75vh;*/
+	margin-top: 35%;
 	margin-left: 35%;
 	border-radius: 4px;
 	font-family:'Roboto Condensed', sans-serif;
@@ -61,14 +62,17 @@ video{
 .boton{
 	position: absolute;
 	z-index: 2;
-	margin-top: 85vh;
-	left: 240px;
+	/*margin-top: 85vh;*/
+	/*left: 240px;*/
+	margin-top: 37%;
+	margin-left: 15%;
 	width: 200px;
 	text-transform: inherit;
 	font-size: 30px;
 	font-family: 'Roboto', sans-serif;
 	background-color: rgba(255,179,0,0.8) !important;
 	border-radius: 5px;
+	
 }
 .container__gatos img{
 	width: 100%;
@@ -82,8 +86,10 @@ video{
 .boton1{
 	position: absolute;
 	z-index: 4;
-	margin-top: 85vh;
-	left: 945px;
+	/*margin-top: 85vh;
+	left: 945px;*/
+	margin-top: 37%;
+	margin-left: 15%;
 	width: 200px;
 	text-transform: inherit;
 	font-size: 30px;
@@ -93,18 +99,28 @@ video{
 }
 #adoptaperro{
 	position: absolute;
-	margin-top: 70vh;
-	left: 253px;
+	margin-top: 25%;
+	margin-left: 15%;
+	/*margin-top: 70vh;*/
+	/*left: 253px;*/
 }
 #adoptaperro p{
 	color: #fff;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 40px;
 }
+
+/*.perro{
+	margin-top: 35%;
+	
+}
+*/
 #adoptagato{
 	position: absolute;
-	margin-top: 70vh;
-	left: 963px;
+	margin-top: 25%;
+	margin-left: 15%;
+	/*margin-top: 70vh;*/
+	/*left: 963px;*/
 }
 #adoptagato p{
 	color: #fff;
@@ -245,8 +261,10 @@ input[type=text]:focus:not([readonly]) + label{
 }
 #perdida{
 	position: absolute;
-	margin-top: 70vh;
-	left: 190px;
+	/*margin-top: 70vh;*/
+	margin-top: 3%;
+	/*left: 190px;*/
+	margin-left: 12%;
 }
 #perdida p{
 	color: #fff;
@@ -255,8 +273,10 @@ input[type=text]:focus:not([readonly]) + label{
 }
 #historias{
 	position: absolute;
-	margin-top: 70vh;
-	left: 950px;
+	/*margin-top: 70vh;*/
+	margin-top: 3%;
+	/*left: 950px;*/
+	margin-left: 20%;
 }
 #historias p{
 	color: #fff;
@@ -407,4 +427,57 @@ a{
 }
 .descrip{
 	list-style: none;
+}
+
+
+
+/*responsive design index floopets*/
+
+@media screen and (max-width: 450px){
+
+.ingresa{
+	width: 150px;
+	height: 40px;
+	font-size: 15px;
+	padding-left:0px;
+	padding-right: 0px;
+	margin-left: 30%;
+
+}
+
+#menu{
+font-size: 20px;
+}
+
+
+.boton{
+	margin-top: 70%;
+	margin-left: 20%;
+}
+
+#adoptaperro{
+	margin-top: 40%;
+	margin-left: 20%;
+}
+
+#adoptagato{
+	margin-top: 35%;
+	margin-left: 20%;
+}
+
+.boton1{
+	margin-top: 63%;
+	margin-left: 20%;
+}
+
+
+
+}​/*este cierra el del responsive movil*/
+
+
+/*responsive design de las tabletas*/
+@media screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation:portrait){
+ .ingresa{
+		margin-left: 25%;
+	}
 }

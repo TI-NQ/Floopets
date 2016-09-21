@@ -113,10 +113,11 @@
 		<!-- Andrea Guzman-Adopciones -->
 		<div class="row seccion1" id="adopciones">
 				<div class="container__perros col s12 m6 l6">
+					<button class="boton btn waves-effect waves-light btn-large">Perro</button>
+					
 					<div id="adoptaperro">
 						<p>Adopta un</p>
 					</div>
-					<button class="boton btn waves-effect waves-light btn-large">Perro</button>
 
 					<img src="WebFloopets/images/1.jpg">
 				</div>
