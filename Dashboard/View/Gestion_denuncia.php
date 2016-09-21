@@ -14,8 +14,8 @@ $(document).ready(function()
       ?>
       sweetAlert({
              title: 'Mensaje de FLOOPETS',
-             text: <?php echo base64_decode($_GET["m"]); ?>,
-             type: <?php echo base64_decode($_GET["tm"]); ?>,
+             text: '<?php echo base64_decode($_GET["m"]); ?>',
+             type: '<?php echo base64_decode($_GET["tm"]); ?>',
              showCancelButton: false,
              confirmButtonColor: '#4db6ac',
              confirmButtonText: 'Aceptar',
