@@ -11,10 +11,11 @@
       $ani_edad             = $_POST["ani_edad"];
       $ani_descripcion      = $_POST["ani_descripcion"];
       $ani_numero_microchip	= $_POST["ani_numero_microchip"];
+      $sexo		= implode(",", $_POST["sexo"]);
 
 
 			try {
-				gestion_animal::Create($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip);
+				gestion_animal::Create($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$sexo);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
