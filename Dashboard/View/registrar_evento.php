@@ -1,8 +1,7 @@
-<<<<<<< HEAD
-<h2>Registrar Evento</h2>
+
 <form id="form" action="../Controller/evento.controller.php" method="POST">
 
-=======
+
 <?php
 	require_once("../Model/conexion.php");
 	require_once("../Model/tipo_evento.class.php");
@@ -11,7 +10,7 @@
 
 <form action="../Controller/evento.controller.php" method="POST">
 	<h1>Registrar Evento</h1>
->>>>>>> origin/master
+
 	<div class="form-group">
 
 		<label>Tipo evento:</label>

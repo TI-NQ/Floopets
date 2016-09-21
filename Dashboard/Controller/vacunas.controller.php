@@ -21,7 +21,7 @@
 		case 'u':
 			$vac_cod_vacuna = $_POST["vac_cod_vacuna"];
 			$vac_nombre			= $_POST["vac_nombre"];
-      $fecha          = $_POST["fecha"];
+      		$fecha          = $_POST["fecha"];
 
 				try{
 					gestion_vacuna::Update($vac_cod_vacuna,$vac_nombre,$fecha);
