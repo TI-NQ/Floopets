@@ -5,6 +5,31 @@
   $denuncia = Gestion_denuncia::ReadAll();
 
 ?>
+<script type="text/javascript">
+$("a#btntrash").click(function(){
+       var codigo = $("#de_cod_denuncia").val();
+       var accion = "dl";
+      sweetAlert({
+              title: 'Mensaje de SOFTMAR',
+              text: 'Esta seguro que desea eliminar el producto?',
+              type: 'warning',
+              showCancelButton: true,
+              confirmButtonColor: '#4db6ac',
+              confirmButtonText: 'Aceptar',
+              cancelButtonText: 'No, cancel!',
+              closeOnConfirm: false,
+              closeOnCancel: false,
+              },
+           function(isConfirm){
+             if (isConfirm) {
+                 swal("Eliminado!", "se ha eliminado", "success");
+                 document.location.href = "href='../Controller/denuncia.controller.php?dn="+de_cod_denuncia+"&accion="+accion;
+             }else{
+                 swal("Cancelado", "se cancelo","error");
+               }
+   });
+
+</script>
 
 <div class="col l8 offset-l4">
   <h4>Gestion Denuncia</h4>
@@ -22,13 +47,13 @@
 
         echo"<div class='col l6 descrip'>
                 <div class='row'>
-                  <div class='col l4 col m6'>
-                      <div class='col l6'>
-                        <label>Nombre de mascota</label>
+                  <div class='col l5 col m6'>
+                      <div class='col l7'>
+                        <span><b>Nombre de mascota</b></span>
                         <li>".$row["de_nombre"]."</li>
                       </div>
-                      <div class='imagenmascota col l12'>
-                          <img class='img-circle' style='width:200px;height:200px;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
+                      <div class='imagenmascota col l7'>
+                          <img class='img-circle' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
                       </div>
                       <div class='col l6'>
                           <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>
@@ -36,26 +61,27 @@
                           </a>
                       </div>
                       <div class='col l6'>
-                          <a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'>
-                          <i class='small material-icons'>delete</i>
-                          </a>
+                      <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>
+                      <a href='#' id='btntrash' >
+                        <i class='small material-icons'>delete</i>
+                      </a>
                       </div>
                   </div>
                   <div class='col l2'>
                     <ul class='descrip'>
-                      <h6>Codigo</h6>
+                      <span>Codigo :</span>
                           <li>".$row["de_cod_denuncia"]."</li>
-                      <label>Tipo de denuncia</label>
+                      <span>Tipo de denuncia :</span>
                           <li>".$row["td_nombre"]."</li>
-                      <label>Descripcion</label>
+                      <span>Descripcion :</span>
                             <li>".$row["de_descripcion"]."</li>
-                      <label>Contacto</label>
+                      <span>Contacto :</span>
                             <li>".$row["de_contacto"]."</li>
-                      <label>Telefono</label>
+                      <span>Telefono :</span>
                             <li>".$row["de_telefono"]."</li>
-                      <label>Fecha de denuncia</label>
+                      <span>Fecha de denuncia :</span>
                             <li>".$row["de_fecha"]."</li>
-                    </ul>                    
+                    </ul>
                   </div>
                 </div>
               </div>
@@ -67,4 +93,3 @@
 </div>
 </div>
 </div>
-
