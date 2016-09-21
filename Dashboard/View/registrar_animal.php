@@ -1,7 +1,8 @@
 <?php
 		 require_once("../Model/conexion.php");
 		require_once("../Model/cuidado.class.php");
-		$tipo = Gestion_cuidado::ReadAll();
+		require_once("../Model/tipo_animal.class.php");
+		$tipo = Gestion_tipo_animal::ReadAll();
  ?>
 <h2 class="center">Registrar Mascota</h2>
 <div class="row">
@@ -31,7 +32,8 @@
 		    </select>
 			</div>	
 		        <div class="input-field col s12">
-		          <select id="first_name" type="text" class="validate" required name="Categoria"><option value="">Categoría</option>
+
+		          <select id="first_name" type="text" class="validate" required name="Categoria"><option value="">esterilizado</option>
 		            <option value="si">si</option>
 		            <option value="no">no</option>
 		          </select>
@@ -39,8 +41,8 @@
 
 
 			<div class="input-field col s12">
-				<h6>Edad:</h6>
-				<input type="date" name="ani_edad" required>
+				<input type="text" name="ani_edad" required>
+				<label >edad</label>
 			</div>
 			<div class="input-field col s12">
 				<input type="text" name="ani_descripcion" required>

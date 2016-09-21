@@ -24,7 +24,7 @@
 			<div class="file-field input-field col s12">
 		    <div class="btn">
 		      <span>Imagenes</span>
-		      <input type="file" multiple name="Imagen_Upload[]">
+		      <input type="file" name="Imagen_Upload[]">
 		    </div>
 		    <div class="file-path-wrapper">
 		      <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="galeria"  >

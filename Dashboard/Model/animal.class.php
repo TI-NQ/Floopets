@@ -2,15 +2,15 @@
 	class gestion_animal
 	{
 		// Metodo Create()
-		function Create($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$sexo)
+		function Create($ta_cod_tipo_animal,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$sexo,$org_cod_organizacion)
 		{
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			//Crear el query que vamos a realizar.
-			$consulta ="INSERT INTO animal (ra_cod_raza,ani_nombre,ani_esterilizado,ani_edad,ani_descripcion,ani_numero_microchip,sexo) VALUES (?,?,?,?,?,?,?)";
+			$consulta ="INSERT INTO animal (ra_cod_raza,ani_nombre,ani_esterilizado,ani_edad,ani_descripcion,ani_numero_microchip,sexo) VALUES (?,?,?,?,?,?,?,?)";
 			$query = $conexion->prepare($consulta);
-			$query->execute(array($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$sexo));
+			$query->execute(array($ta_cod_tipo_animal,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$sexo,$org_cod_organizacion));
 			floopets_BD::Disconnect();
 		}
 		function ReadAll()

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2016 a las 16:36:30
+-- Tiempo de generación: 21-09-2016 a las 18:53:39
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -47,13 +47,14 @@ CREATE TABLE `adopcion` (
 DROP TABLE IF EXISTS `animal`;
 CREATE TABLE `animal` (
   `ani_cod_animal` int(11) NOT NULL,
-  `ta_cod_tipo_animal` int(11) NOT NULL,
+  `ra_cod_raza` int(11) NOT NULL,
   `ani_nombre` varchar(50) NOT NULL,
   `ani_esterilizado` tinyint(1) NOT NULL,
   `ani_edad` int(11) NOT NULL,
   `ani_descripcion` varchar(100) NOT NULL,
   `ani_numero_microchip` varchar(50) NOT NULL,
-  `ani_sexo` varchar(30) NOT NULL
+  `ani_sexo` varchar(30) NOT NULL,
+  `org_cod_organizacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -70,6 +71,13 @@ CREATE TABLE `cuidado` (
   `galeria` longtext NOT NULL,
   `video` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `cuidado`
+--
+
+INSERT INTO `cuidado` (`cu_cod_cuidado`, `cu_nombre`, `cu_descripcion`, `galeria`, `video`) VALUES
+(2, 'wsdasd', 'asdfsadfwasdf', '4K-Wallpaper-36.jpg', '');
 
 -- --------------------------------------------------------
 
@@ -233,6 +241,7 @@ DROP TABLE IF EXISTS `raza`;
 CREATE TABLE `raza` (
   `ra_cod_raza` int(11) NOT NULL,
   `ra_nombre` varchar(50) NOT NULL,
+  `ta_cod_tipo_animal` int(11) NOT NULL,
   `cu_cod_cuidado` int(11) NOT NULL,
   `ra_historia` varchar(1000) NOT NULL,
   `ra_imagen` longtext NOT NULL
@@ -357,6 +366,18 @@ CREATE TABLE `usuario` (
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `usuario_animal`
+--
+
+DROP TABLE IF EXISTS `usuario_animal`;
+CREATE TABLE `usuario_animal` (
+  `usu_cod_usuario` int(11) NOT NULL,
+  `ani_cod_animal` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `vacunas`
 --
 
@@ -364,7 +385,8 @@ DROP TABLE IF EXISTS `vacunas`;
 CREATE TABLE `vacunas` (
   `vac_cod_vacuna` int(11) NOT NULL,
   `vac_nombre` varchar(100) NOT NULL,
-  `fecha` date NOT NULL
+  `vac_fecha` date NOT NULL,
+  `vac_serial` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -412,7 +434,8 @@ ALTER TABLE `adopcion`
 --
 ALTER TABLE `animal`
   ADD PRIMARY KEY (`ani_cod_animal`),
-  ADD KEY `ra_cod_raza` (`ta_cod_tipo_animal`);
+  ADD UNIQUE KEY `org_cod_organizacion` (`org_cod_organizacion`),
+  ADD KEY `ra_cod_raza` (`ra_cod_raza`);
 
 --
 -- Indices de la tabla `cuidado`
@@ -493,7 +516,8 @@ ALTER TABLE `permiso_rol`
 --
 ALTER TABLE `raza`
   ADD PRIMARY KEY (`ra_cod_raza`),
-  ADD KEY `ta_cod_tipo_animal` (`cu_cod_cuidado`);
+  ADD UNIQUE KEY `cu_cod_cuidado` (`cu_cod_cuidado`),
+  ADD KEY `ta_cod_tipo_animal` (`ta_cod_tipo_animal`);
 
 --
 -- Indices de la tabla `rol`
@@ -505,8 +529,7 @@ ALTER TABLE `rol`
 -- Indices de la tabla `tipo_animal`
 --
 ALTER TABLE `tipo_animal`
-  ADD PRIMARY KEY (`ta_cod_tipo_animal`),
-  ADD UNIQUE KEY `ra_cod_raza` (`ra_cod_raza`);
+  ADD PRIMARY KEY (`ta_cod_tipo_animal`);
 
 --
 -- Indices de la tabla `tipo_denuncia`
@@ -538,6 +561,13 @@ ALTER TABLE `tipo_organizacion`
 ALTER TABLE `usuario`
   ADD PRIMARY KEY (`usu_cod_usuario`),
   ADD KEY `cod_rol` (`cod_rol`);
+
+--
+-- Indices de la tabla `usuario_animal`
+--
+ALTER TABLE `usuario_animal`
+  ADD PRIMARY KEY (`usu_cod_usuario`,`ani_cod_animal`),
+  ADD KEY `ani_cod_animal` (`ani_cod_animal`);
 
 --
 -- Indices de la tabla `vacunas`
@@ -578,7 +608,7 @@ ALTER TABLE `animal`
 -- AUTO_INCREMENT de la tabla `cuidado`
 --
 ALTER TABLE `cuidado`
-  MODIFY `cu_cod_cuidado` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cu_cod_cuidado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `denuncia`
 --
@@ -613,7 +643,7 @@ ALTER TABLE `permiso`
 -- AUTO_INCREMENT de la tabla `raza`
 --
 ALTER TABLE `raza`
-  MODIFY `ra_cod_raza` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ra_cod_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
@@ -623,7 +653,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `tipo_animal`
 --
 ALTER TABLE `tipo_animal`
-  MODIFY `ta_cod_tipo_animal` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ta_cod_tipo_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `tipo_denuncia`
 --
@@ -669,7 +699,8 @@ ALTER TABLE `adopcion`
 -- Filtros para la tabla `animal`
 --
 ALTER TABLE `animal`
-  ADD CONSTRAINT `animal_ibfk_1` FOREIGN KEY (`ta_cod_tipo_animal`) REFERENCES `tipo_animal` (`ta_cod_tipo_animal`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `animal_ibfk_2` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `animal_ibfk_3` FOREIGN KEY (`ra_cod_raza`) REFERENCES `raza` (`ra_cod_raza`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `denuncia`
@@ -689,7 +720,8 @@ ALTER TABLE `denuncias_organizacion`
 --
 ALTER TABLE `donacion`
   ADD CONSTRAINT `donacion_ibfk_4` FOREIGN KEY (`td_cod_tipo_donacion`) REFERENCES `tipo_donacion` (`td_cod_tipo_donacion`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `donacion_ibfk_5` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `donacion_ibfk_5` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `donacion_ibfk_6` FOREIGN KEY (`usu_cod_usuario`) REFERENCES `usuario` (`usu_cod_usuario`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `evento`
@@ -727,19 +759,21 @@ ALTER TABLE `permiso_rol`
 -- Filtros para la tabla `raza`
 --
 ALTER TABLE `raza`
-  ADD CONSTRAINT `raza_ibfk_1` FOREIGN KEY (`cu_cod_cuidado`) REFERENCES `cuidado` (`cu_cod_cuidado`) ON UPDATE CASCADE;
-
---
--- Filtros para la tabla `tipo_animal`
---
-ALTER TABLE `tipo_animal`
-  ADD CONSTRAINT `tipo_animal_ibfk_1` FOREIGN KEY (`ra_cod_raza`) REFERENCES `raza` (`ra_cod_raza`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `raza_ibfk_1` FOREIGN KEY (`ta_cod_tipo_animal`) REFERENCES `tipo_animal` (`ta_cod_tipo_animal`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `raza_ibfk_2` FOREIGN KEY (`cu_cod_cuidado`) REFERENCES `cuidado` (`cu_cod_cuidado`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `usuario`
 --
 ALTER TABLE `usuario`
   ADD CONSTRAINT `usuario_ibfk_1` FOREIGN KEY (`cod_rol`) REFERENCES `rol` (`cod_rol`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `usuario_animal`
+--
+ALTER TABLE `usuario_animal`
+  ADD CONSTRAINT `usuario_animal_ibfk_1` FOREIGN KEY (`usu_cod_usuario`) REFERENCES `usuario` (`usu_cod_usuario`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `usuario_animal_ibfk_2` FOREIGN KEY (`ani_cod_animal`) REFERENCES `animal` (`ani_cod_animal`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `vacuna_animal`
