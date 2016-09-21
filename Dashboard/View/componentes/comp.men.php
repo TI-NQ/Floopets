@@ -9,6 +9,11 @@
 if($_SESSION["cod_rol"]==1){
 ?>
 <li>
+  <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Mi perfil</a></div>
+  <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('registrar_animal')?>">Crear</a></p></div>
+  <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('gestion_animal')?>">Gestionar</a></p></div>
+</li>
+<li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Animales</a></div>
   <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('registrar_animal')?>">Crear</a></p></div>
   <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('gestion_animal')?>">Gestionar</a></p></div>
