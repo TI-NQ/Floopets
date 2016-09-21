@@ -1,5 +1,4 @@
 <?php
-	session_start();
   require_once("../Model/conexion.php");
   require_once("../Model/usuarios.class.php");
   require_once("../Model/rol.class.php");
@@ -31,7 +30,7 @@
 	<div class="form-group">
 	<label>Roles</label>
     <select name="cod_rol" required>
-    <?php 
+    <?php
     	$roles=Gestion_rol::ReadAll();
     	foreach ($roles as $row ) {
     		echo '<option  value = "'.$row[0].'"';

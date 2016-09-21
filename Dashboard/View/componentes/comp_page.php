@@ -223,5 +223,9 @@ switch ($page) {
 	case 'actualizar_voluntarios':
 		require_once("actualizar_voluntarios.php");
 	break;
+
+	case 'actualizar_perfil':
+		require_once("actualizar_usuario.php");
+	break;
 }
 ?>

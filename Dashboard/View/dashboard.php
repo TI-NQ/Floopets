@@ -1,4 +1,5 @@
 <?php
+session_start();
 date_default_timezone_set("America/Bogota");
 ?>
 <!DOCTYPE html>
@@ -25,7 +26,7 @@ date_default_timezone_set("America/Bogota");
 	    $(document).ready( function () {
 	  		$('#datatable').DataTable(
 	  		{
-	      	"language": 
+	      	"language":
 	      	{
 	        	"url": "https://cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"
 	      	},
@@ -48,7 +49,7 @@ date_default_timezone_set("America/Bogota");
 	  //       echo 'swal({title: "STYLE +", text: "'.base64_decode($_GET["m"]).'", type: "'.base64_decode($_GET["tm"]).'"})';
 	  //     }
 	  //     ?>
-		 
+
 	  	});
 		</script>
 	<!-- 	<script type="text/javascript">

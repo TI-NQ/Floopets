@@ -29,7 +29,7 @@ margin-top: 20px;
 	margin-top: 70px;
 }
 #menu_icono{
-	height: 100%;
+	height: 100vh;
 	background-color:#00b3ae;
 }
 #menu_icono a{
