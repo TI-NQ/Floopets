@@ -7,11 +7,12 @@
 ?>
 <script type="text/javascript">
 
-$(document).ready(function() {
-$("a#btntrash").click(function(){
+$(document).ready(function()
+{
+      $("a#btntrash").click(function(){
        var codigo = $("#de_cod_denuncia").val();
        var accion = "d";
-      sweetAlert({
+       sweetAlert({
               title: 'Mensaje de FLOOPETS',
               text: 'Esta seguro que desea eliminar?',
               type: 'warning',
@@ -25,12 +26,14 @@ $("a#btntrash").click(function(){
            function(isConfirm){
              if (isConfirm) {
                  swal("Eliminado!", "se ha eliminado", "success");
-                 document.location.href = "href='../Controller/denuncia.controller.php?dn="+de_cod_denuncia+"&accion="+accion;
+                 document.location.href = "../Controller/denuncia.controller.php?dn="+de_cod_denuncia+"&accion="+accion;
+
              }else{
                  swal("Cancelado", "se cancelo","error");
                }
    });
-   };
+   });
+});
 
 </script>
 
@@ -41,9 +44,6 @@ $("a#btntrash").click(function(){
 <div class="row">
 <div class="col l12">
 <?php
-      @$mensaje = $_REQUEST["m"];
-
-      echo @$mensaje;
 
       foreach ($denuncia as $row)
       {
