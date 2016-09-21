@@ -10,7 +10,7 @@ class Gestion_denuncia{
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO denuncia (td_cod_tipo_denuncia,de_descripcion,de_contacto,de_telefono,de_nombre,de_fecha,de_imagen) VALUES (?,?,?,?,?,now(),?)";
+		$consulta = "INSERT INTO denuncia (td_cod_tipo_denuncia,de_descripcion,de_contacto,de_telefono,de_nombre,de_fecha,de_imagen,de_estado) VALUES (?,?,?,?,?,now(),?,'Pendiente')";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen));

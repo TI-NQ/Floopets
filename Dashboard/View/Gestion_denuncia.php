@@ -67,7 +67,7 @@ $(document).ready(function()
                 <div class='row'>
                   <div class='col l6 col m6'>
                       <div class='col l7'>
-                        <span><b>Nombre de mascota</b></span>
+                        <span><b>Mascota :</b></span>
                         <li>".$row["de_nombre"]."</li>
                       </div>
                       <div class='imagenmascota col l12'>
@@ -87,8 +87,7 @@ $(document).ready(function()
                   </div>
                   <div class='col l6'>
                     <ul class='descrip'>
-                      <span>Codigo :</span>
-                          <li>".$row["de_cod_denuncia"]."</li>
+                          <input type='hidden' value='".$row["de_cod_denuncia"]."'></input>
                       <span>Tipo de denuncia :</span>
                           <li>".$row["td_nombre"]."</li>
                       <span>Descripcion :</span>
@@ -99,6 +98,8 @@ $(document).ready(function()
                             <li>".$row["de_telefono"]."</li>
                       <span>Fecha de denuncia :</span>
                             <li>".$row["de_fecha"]."</li>
+                      <span>Estado :</span>
+                            <li>".$row["de_estado"]."</li>
                     </ul>
                   </div>
                 </div>
