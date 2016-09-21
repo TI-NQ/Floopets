@@ -23,6 +23,7 @@
 
 			break;
 			case 'u':
+			$ani_cod_animal						=$_POST["ani_cod_animal"];
 			$ra_cod_raza						=$_POST["ra_cod_raza"];
       $ani_nombre             = $_POST["ani_nombre"];
       $ani_esterilizado     = $_POST["ani_esterilizado"];
@@ -31,7 +32,7 @@
       $ani_numero_microchip	= $_POST["ani_numero_microchip"];
 
 			try {
-				gestion_animal::Update($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip);
+				gestion_animal::Update($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_cod_animal);
 				$mensaje = "Se actializo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();

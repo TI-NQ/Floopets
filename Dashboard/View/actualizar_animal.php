@@ -33,7 +33,10 @@ require_once("../Model/conexion.php");
 		<label class="form-label">Microchip</label>
 		<input class="form-control" type="text" name="ani_numero_microchip" required  value="<?php echo $animal[6] ?>">
 	</div>
-
+<div class="form-group">
+		<label class="form-label">Sexo</label>
+		<input class="form-control" type="text" name="ani_sexo" required  value="<?php echo $animal[7] ?>">
+	</div>
 
 	<div class="form-group">
 		<button name="accion" value="u" class="btn btn-primary">Actualizar</button>
