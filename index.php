@@ -51,7 +51,7 @@
      			 $('.carousel.carousel-slider').carousel({full_width: true});
      			 $("#owl-demo").owlCarousel({
 				      autoPlay: 3000, //Set AutoPlay to 3 seconds
-				      items : 4,
+				      items : 3,
 				      itemsDesktop : [1199,3],
 				      itemsDesktopSmall : [979,3]
 
@@ -295,7 +295,7 @@
 	</div>
 
     <!-- David Pabon-Eventos -->
-    <!-- <div class="row">
+    <div class="row">
 
 	    <h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
 	    	<div id="owl-demo">
@@ -339,13 +339,13 @@
 
 
 
-	    </div> -->
+	    </div>
 
 
     </div>
 
 	<!-- eventos -->
-	<div class="" style="margin-top: 57px" id="eventos">
+	<!-- <div class="" style="margin-top: 57px" id="eventos">
 		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Eventos</h2>
 	    <div class="row">
 
@@ -367,7 +367,7 @@
 	      </div>
 
 	    </div>
-	</div>
+	</div> -->
 
 	<!-- fin eventos -->
 	<footer class="page-footer grey darken-4">
