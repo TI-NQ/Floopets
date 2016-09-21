@@ -1,5 +1,8 @@
 <?php
 	session_start();
+  require_once("Dashboard/Model/conexion.php");
+  require_once("Dashboard/Model/tipo_denuncia.class.php");
+  $tipod = Gestion_tipo_denuncia::ReadAll();
 ?>
 <!DOCTYPE html>
 <html lang="es">
@@ -114,7 +117,7 @@
 		<div class="row seccion1" id="adopciones">
 				<div class="container__perros col s12 m6 l6">
 					<button class="boton btn waves-effect waves-light btn-large">Perro</button>
-					
+
 					<div id="adoptaperro">
 						<p>Adopta un</p>
 					</div>
@@ -148,20 +151,17 @@
 			</div>
 			<div class="container__form__help col s12 m8 l8">
 			    <div class="row">
-				    <form class="col s12">
+				    <form class="col s12" action="Dashboard/Controller/denuncia.controller.php" method="POST" enctype="multipart/form-data">
 				    <h3 class="center">Seleccione una opción</h3>
 				      <div class="row">
 				        <div class="input-field col s12 m6 l6 mascota">
     						<select>
-						      <option value="1">Gato</option>
-						      <option value="2">Perro</option>
-    						</select>
-    						<label>Selecciona un tipo de mascota</label>
-  						</div>
-				        <div class="input-field col s12 m6 l6 mascota">
-    						<select>
-						      <option value="1">Pérdida</option>
-						      <option value="2">Maltrato</option>
+						      <option value="" disabled selected>Seleccione un tipo de denuncia</option>
+                  <?php
+      							foreach ($den as $row) {
+      								echo "<option value = '".$row["td_cod_tipo_denuncia"]."'>".$row["td_nombre"]."</option>";
+      							}
+      						 ?>
     						</select>
     						<label>Selecciona un tipo de denuncia</label>
   						</div>
