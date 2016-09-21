@@ -55,13 +55,13 @@
     <li>
       <div class="collapsible-header grey lighten-2"><a><i class="fa fa-users" aria-hidden="true"></i>Usuarios</a></div>
       <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('registrar_usuario')?>">Crear</a></p></div>
-      <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('actualizar_usuario')?>">Actualizar</a></p></div>
+      <!-- <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('actualizar_usuario')?>">Actualizar</a></p></div> -->
       <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('gestion_usuario')?>">Gestionar</a></p></div>
     </li>
     <li>
       <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Cuidados</a></div>
       <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('registrar_cuidado')?>">Crear</a></p></div>
-      <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('actualizar_cuidado')?>">Actualizar</a></p></div>
+      <!-- <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('actualizar_cuidado')?>">Actualizar</a></p></div> -->
       <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('gestion_cuidado')?>">Gestionar</a></p></div>
     </li>
   </ul>

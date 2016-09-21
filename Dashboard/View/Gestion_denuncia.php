@@ -49,6 +49,8 @@ $(document).ready(function()
 });
 
 </script>
+  <link rel="stylesheet" type="text/css" href="Jquery/jquery.dataTables.css">
+  <script type="text/javascript" charset="utf8" src="Jquery/jquery.dataTables.js"></script>
 
 <div class="col l8 offset-l4">
   <h4>Gestion Denuncia</h4>
