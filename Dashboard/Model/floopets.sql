@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2016 a las 16:21:22
+-- Tiempo de generación: 21-09-2016 a las 16:36:30
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -86,15 +86,16 @@ CREATE TABLE `denuncia` (
   `de_telefono` varchar(10) NOT NULL,
   `de_nombre` varchar(100) DEFAULT NULL,
   `de_fecha` datetime NOT NULL,
-  `de_imagen` longtext NOT NULL
+  `de_imagen` longtext NOT NULL,
+  `de_estado` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `denuncia`
 --
 
-INSERT INTO `denuncia` (`de_cod_denuncia`, `td_cod_tipo_denuncia`, `de_descripcion`, `de_contacto`, `de_telefono`, `de_nombre`, `de_fecha`, `de_imagen`) VALUES
-(2, 1, 'le pega', 'yesid', '3769878', 'lolo', '2016-08-23 11:03:12', '0');
+INSERT INTO `denuncia` (`de_cod_denuncia`, `td_cod_tipo_denuncia`, `de_descripcion`, `de_contacto`, `de_telefono`, `de_nombre`, `de_fecha`, `de_imagen`, `de_estado`) VALUES
+(2, 1, 'le pega', 'yesid', '3769878', 'lolo', '2016-08-23 11:03:12', '0', '0');
 
 -- --------------------------------------------------------
 
@@ -146,7 +147,8 @@ CREATE TABLE `evento` (
   `eve_descripcion` varchar(100) NOT NULL,
   `imagen` longtext NOT NULL,
   `geo_x` longtext NOT NULL,
-  `geo_y` longtext NOT NULL
+  `geo_y` longtext NOT NULL,
+  `eve_estado` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
@@ -196,13 +198,6 @@ CREATE TABLE `organizacion` (
   `org_direccion` varchar(30) NOT NULL,
   `org_clave` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Volcado de datos para la tabla `organizacion`
---
-
-INSERT INTO `organizacion` (`org_cod_organizacion`, `to_cod_tipo_organizacion`, `org_nombre`, `org_nit`, `org_email`, `org_telefono`, `org_direccion`, `org_clave`) VALUES
-(1, 1, 'Los Yesid''s', 16516, 'dnvo@svv', '3216589', 'csvdvdv', '1234');
 
 -- --------------------------------------------------------
 
@@ -287,16 +282,15 @@ CREATE TABLE `tipo_animal` (
 DROP TABLE IF EXISTS `tipo_denuncia`;
 CREATE TABLE `tipo_denuncia` (
   `td_cod_tipo_denuncia` int(11) NOT NULL,
-  `td_nombre` varchar(50) NOT NULL,
-  `td_estado` varchar(20) NOT NULL
+  `td_nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `tipo_denuncia`
 --
 
-INSERT INTO `tipo_denuncia` (`td_cod_tipo_denuncia`, `td_nombre`, `td_estado`) VALUES
-(1, 'Maltrato', 'activo');
+INSERT INTO `tipo_denuncia` (`td_cod_tipo_denuncia`, `td_nombre`) VALUES
+(1, 'Maltrato');
 
 -- --------------------------------------------------------
 
@@ -320,8 +314,7 @@ CREATE TABLE `tipo_donacion` (
 DROP TABLE IF EXISTS `tipo_evento`;
 CREATE TABLE `tipo_evento` (
   `te_cod_tipo_evento` int(11) NOT NULL,
-  `te_nombre` varchar(50) NOT NULL,
-  `te_estado` varchar(20) NOT NULL
+  `te_nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
