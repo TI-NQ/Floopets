@@ -23,28 +23,33 @@ date_default_timezone_set("America/Bogota");
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	  <script>
 	    $(document).ready( function () {
-	  		$('#datatable').DataTable({
-	      	"language": {
-	        "url": "https://cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"
-	      },
-	      "iDisplayLength": 3
+	  		$('#datatable').DataTable(
+	  		{
+	      	"language": 
+	      	{
+	        	"url": "https://cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"
+	      	},
+	      	"iDisplayLength": 3
 	    	})
-				$(".dropdown-button").dropdown();
-	      $('.modal-trigger').leanModal();
-	      $('select').material_select();
-	      $('.tooltipped').tooltip({delay: 50});
-	      $('.carousel.carousel-slider').carousel({full_width: true});
-	      $('.datepicker').pickadate({
+			$(".dropdown-button").dropdown();
+	      	$('.modal-trigger').leanModal();
+	      	$('select').material_select();
+	      	$('.tooltipped').tooltip({delay: 50});
+	      	$('.carousel.carousel-slider').carousel({full_width: true});
+	      	$('.datepicker').pickadate(
+	      	{
 		      selectMonths: true,
 		      selectYears: 1,
-		      min: new Date("<?php date_default_timezone_set("America/Bogota"); echo date('Y-n-j') ?>"),
+		      min: new Date("<?php date_default_timezone_set("America/Bogota"); echo date('Y-n-j') ?>")
 	    	});
+
 	  //     <?php
 	  //     if(isset($_GET["m"],$_GET["tm"])){
 	  //       echo 'swal({title: "STYLE +", text: "'.base64_decode($_GET["m"]).'", type: "'.base64_decode($_GET["tm"]).'"})';
 	  //     }
 	  //     ?>
-			// });
+		 
+	  	});
 		</script>
 	<!-- 	<script type="text/javascript">
 		        <?php
