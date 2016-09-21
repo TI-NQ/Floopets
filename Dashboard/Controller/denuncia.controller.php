@@ -52,12 +52,14 @@
 
 		case 'd':
 			try {
-          $denuncia = Gestion_denuncia::Delete(base64_decode($_REQUEST["dn"]));
-          $mensaje = "se elimino correctamente";
-          header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia")."&m=".$mensaje);
+          $denuncia = Gestion_denuncia::Delete($_REQUEST["dn"]);
+          $msn  = "se elimino correctamente";
+					$tmsn = "success";
+          header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia")."&m=".base64_encode($msn)."&tm=".base64_encode($tmsn));
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-          header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia")."&m=".$mensaje);
+					$tmsn = "error";
+          header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia")."&m=".base64_encode($msn)."&tm=".base64_encode($tmsn));
         }
       break;
 

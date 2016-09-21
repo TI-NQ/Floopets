@@ -9,6 +9,23 @@
 
 $(document).ready(function()
 {
+      <?php
+        if(isset($_GET["m"])){
+      ?>
+      sweetAlert({
+             title: 'Mensaje de FLOOPETS',
+             text: <?php echo base64_decode($_GET["m"]); ?>,
+             type: <?php echo base64_decode($_GET["tm"]); ?>,
+             showCancelButton: false,
+             confirmButtonColor: '#4db6ac',
+             confirmButtonText: 'Aceptar',
+             cancelButtonText: 'No, cancel!',
+             closeOnConfirm: false,
+             closeOnCancel: false,
+           });
+      <?php
+        }
+       ?>
       $("a#btntrash").click(function(){
        var codigo = $("#de_cod_denuncia").val();
        var accion = "d";
@@ -25,13 +42,9 @@ $(document).ready(function()
               },
            function(isConfirm){
              if (isConfirm) {
-                 swal("Eliminado!", "se ha eliminado", "success");
-                 document.location.href = "../Controller/denuncia.controller.php?dn="+de_cod_denuncia+"&accion="+accion;
-
-             }else{
-                 swal("Cancelado", "se cancelo","error");
-               }
-   });
+                document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
+             }
+        });
    });
 });
 
@@ -64,7 +77,7 @@ $(document).ready(function()
                           </a>
                       </div>
                       <div class='col l6'>
-                      <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>
+                      <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>
                       <a href='#' id='btntrash' >
                         <i class='small material-icons'>delete</i>
                       </a>
