@@ -28,7 +28,7 @@
                         <li>".$row["de_nombre"]."</li>
                       </div>
                       <div class='imagenmascota col l12'>
-                          <img class='img-circle' style='width:200px;height:200px;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
+                          <img class='circle responsive-img' style='width:200px;height:200px;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
                       </div>
                       <div class='col l6'>
                           <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>
