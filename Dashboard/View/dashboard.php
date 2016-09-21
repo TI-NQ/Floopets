@@ -39,21 +39,21 @@ date_default_timezone_set("America/Bogota");
 		      selectYears: 1,
 		      min: new Date("<?php date_default_timezone_set("America/Bogota"); echo date('Y-n-j') ?>"),
 	    	});
-	      <?php
-	      if(isset($_GET["m"],$_GET["tm"])){
-	        echo 'swal({title: "STYLE +", text: "'.base64_decode($_GET["m"]).'", type: "'.base64_decode($_GET["tm"]).'"})';
-	      }
-	      ?>
-			});
+	  //     <?php
+	  //     if(isset($_GET["m"],$_GET["tm"])){
+	  //       echo 'swal({title: "STYLE +", text: "'.base64_decode($_GET["m"]).'", type: "'.base64_decode($_GET["tm"]).'"})';
+	  //     }
+	  //     ?>
+			// });
 		</script>
-		<script type="text/javascript">
+	<!-- 	<script type="text/javascript">
 		        <?php
 		      if(isset($_GET["m"])){
 		        echo "alert( '".$_GET["m"]."');";
 		      }
 		    ?>
 
-		</script>
+		</script> -->
 	</head>
 	<body>
 		<a  id="ajustes" href="../Model/cerrar.php">Cerrar Sesion<i class="fa fa-power-off" aria-hidden="true" style="margin-left: 10px; font-size: 25px; position: relative;"></i></a>
