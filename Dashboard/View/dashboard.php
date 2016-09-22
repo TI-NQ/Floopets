@@ -70,7 +70,7 @@ date_default_timezone_set("America/Bogota");
 					<div class="col s2" id="menu_icono">
 						<a href="dashboard.php"><img src="../../WebFloopets/images/logo-negro.png"></a><p>FLOOPETS</p>
 						<!-- <img src="../../WebFloopets/images/logo1.png"><p>FLOOPETS</p> -->
-						<?php include_once("componentes/comp_menu.php"); ?>
+						<?php include_once("componentes/comp.men.php"); ?>
 					</div>
 					<div class="col s10 formularios">
 						<?php include_once("componentes/comp_page.php");?>
