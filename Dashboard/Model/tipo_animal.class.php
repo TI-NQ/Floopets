@@ -4,16 +4,16 @@ class Gestion_tipo_animal{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
-	function Create($ta_nombre,$cu_cod_cuidado,$tamano){
+	function Create($ta_nombre,$tamano){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO tipo_animal (ta_nombre,cu_cod_cuidado,tamano) VALUES (?,?,?)";
+		$consulta = "INSERT INTO tipo_animal (ta_nombre,tamano) VALUES (?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($ta_nombre,$cu_cod_cuidado,$tamano,$galeria,$video));
+		$query->execute(array($ta_nombre,$tamano));
 
 		floopets_BD::Disconnect();
 	}
@@ -70,7 +70,7 @@ class Gestion_tipo_animal{
 		floopets_BD::Disconnect();
 	}
 	
-	function Update($ta_cod_tipo_animal,$ta_nombre,$cu_cod_cuidado,$tamano){
+	function Update($ta_cod_tipo_animal,$ta_nombre,$tamano){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -78,10 +78,10 @@ class Gestion_tipo_animal{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE tipo_animal SET ta_nombre = ?, cu_cod_cuidado= ?, tamano=?  WHERE ta_cod_tipo_animal = ?" ;
+		$consulta = "UPDATE tipo_animal SET ta_nombre = ?, tamano = ?  WHERE ta_cod_tipo_animal = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($ta_nombre,$cu_cod_cuidado,$tamano,$ta_cod_tipo_animal));		
+		$query->execute(array($ta_nombre,$tamano,$ta_cod_tipo_animal));		
 
 		floopets_BD::Disconnect();
 	
@@ -96,7 +96,7 @@ class Gestion_tipo_animal{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "DELETE FROM cuidado WHERE ta_cod_tipo_animal = ?" ;
+		$consulta = "DELETE FROM tipo_animal WHERE ta_cod_tipo_animal = ?" ;
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($ta_cod_tipo_animal));		

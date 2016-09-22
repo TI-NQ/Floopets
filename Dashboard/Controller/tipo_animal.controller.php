@@ -7,12 +7,11 @@
 		case 'c':
 
 			$ta_nombre	= $_POST["ta_nombre"];
-			$cu_cod_cuidado	= $_POST["cu_cod_cuidado"];
 			$tamano	= $_POST["tamano"];
 
 
 			try {
-				Gestion_tipo_animal::Create($ta_nombre,$cu_cod_cuidado,$tamano);
+				Gestion_tipo_animal::Create($ta_nombre,$tamano);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
@@ -21,17 +20,19 @@
 
 			break;
 			case 'u':
-				$ta_cod_tipo_animal =["ta_cod_tipo_animal"];
-				$ta_nombre			= $_POST["ta_nombre"];
-				$cu_cod_cuidado		= $_POST["cu_cod_cuidado"];
-				$tamano				= $_POST["tamano"];
+     		$ta_cod_tipo_animal			= $_POST["ta_cod_tipo_animal"];
+      		$ta_nombre 	    			= $_POST["ta_nombre"];
+      		$tamano 	    			= $_POST["tamano"];
+
+
 
 			try {
-				Gestion_tipo_animal::Update($ta_cod_tipo_animal,$ta_nombre,$cu_cod_cuidado,$tamano);
-				$mensaje = "Se actualizo exitosamente";
+				Gestion_tipo_animal::Update($ta_cod_tipo_animal,$ta_nombre,$tamano);
+				$mensaje = "Se actializo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
+	
 			header("Location: ../View/gestion_tipo_animal.php?m=$mensaje");
 			break;
 
