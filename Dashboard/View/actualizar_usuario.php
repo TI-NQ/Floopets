@@ -2,8 +2,9 @@
   require_once("../Model/conexion.php");
   require_once("../Model/usuarios.class.php");
   require_once("../Model/rol.class.php");
-
-  $user =  Gestion_usuarios::ReadbyID(base64_decode($_REQUEST["us"]));
+  //Traemos la variable de Session usu_cod_usuario
+  $usuario=$_SESSION["usu_cod_usuario"];
+  $user =  Gestion_usuarios::ReadbyID($usuario);
 ?>
 <form action="../Controller/usuarios.controller.php" method="POST">
 		<input class="form-control"  hidden name="usu_cod_usuario" required readonly value="<?php echo $user[0]?>">
@@ -28,21 +29,8 @@
 		<input class="form-control" type="email" name="usu_email" required value="<?php echo $user[5]?>">
 	</div>
 	<div class="form-group">
-	<label>Roles</label>
-    <select name="cod_rol" required>
-    <?php
-    	$roles=Gestion_rol::ReadAll();
-    	foreach ($roles as $row ) {
-    		echo '<option  value = "'.$row[0].'"';
-    		if ($row[1]==$user[9]) {
-    				echo "selected";
-    			}
+    <input name="cod_rol" value="Usuario"hidden>
 
-
-    		echo '>'.$row[1].'</option>';
-    	}
-     ?>
-    </select>
 	</div>
 	<div class="form-group">
 			<label>Contraseña :</label>

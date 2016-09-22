@@ -1,6 +1,13 @@
 <?php
 session_start();
 date_default_timezone_set("America/Bogota");
+//Validacion inicio de session
+if(!isset($_SESSION["usu_email"])){
+    $msn = base64_encode("Debe iniciar sesion primero!");
+		$tm=base64_encode("Advertencia");
+
+    header("Location: ../../index.php?ms=".$msn."tm=".$tm);
+	};
 ?>
 <!DOCTYPE html>
 <html>
