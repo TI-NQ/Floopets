@@ -5,7 +5,7 @@
       border-bottom: 1px solid #bbb;}
   </style>
 <?php
-// 1=usuario
+// Menú de usuario publico id_rol 1
 if($_SESSION["cod_rol"]==1){
 ?>
 <li>
@@ -21,15 +21,22 @@ if($_SESSION["cod_rol"]==1){
   <div class="collapsible-header grey lighten-2"><a href=""><i class="fa fa-building-o" aria-hidden="true"></i>Fundaciones</a></div>
 </li>
 <li>
-  <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('gestion_evento')?>"><i class="fa fa-calendar" aria-hidden="true"></i>Eventos</a></div>
+  <div class="collapsible-header grey lighten-2"><a><i class="fa fa-calendar" aria-hidden="true"></i>Eventos</a></div>
+  <div class="collapsible-body"><p><a class="item_menu" >Proximos Eventos</a></p></div>
+  <div class="collapsible-body"><p><a class="item_menu">Historial Eventos</a></p></div>
+</li>
+<li>
+  <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Cuidados</a></div>
+  <div class="collapsible-body"><p><a class="item_menu" >Gatos</a></p></div>
+  <div class="collapsible-body"><p><a class="item_menu" >Perros</a></p></div>
 </li>
 <?php
-// 2=administrador
+// Menú de Administrador publico id_rol 1
 }elseif($_SESSION["cod_rol"]==2){
 ?>
 <!-- aqui metan el menu -->
 <?php
-// 3=organizacion
+// Menú de Organización publico id_rol 1
 }elseif ($_SESSION["cod_rol"]==3) {
 ?>
 <!-- <li>
