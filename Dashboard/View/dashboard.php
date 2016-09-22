@@ -19,15 +19,15 @@ if(!isset($_SESSION["usu_email"])){
 		<link rel="stylesheet" href="recursos/css/estilos.css">
 		<link rel="stylesheet" type="text/css" href="recursos/css/jquery.dataTables.css">
 	  <link type="text/css" rel="stylesheet" href="../../WebFloopets/materialize/css/materialize.css">
-	  <link rel="stylesheet" type="text/css" href="recursos/plugins/sweetalert/dist/sweetalert.css">
+	  <link rel="stylesheet" type="text/css" href="../../WebFloopets/sweetalert/dist/sweetalert.css">
 
 		<title>Floopets-Cambiando vidas</title>
 
 		<!-- scripts -->
     <script type="text/javascript" src="../../WebFloopets/js/jquery-1.12.1.min.js"></script>
-	  <script type="text/javascript" charset="utf8" src="recursos/plugins/datatable/jquery.dataTables.min.js"></script>
+	  <script type="text/javascript" charset="utf8" src="../../WebFloopets/js/jquery.dataTables.min.js"></script>
 	  <script type="text/javascript" src="../../WebFloopets/materialize/js/materialize.min.js"></script>
-	  <script type="text/javascript" src="recursos/plugins/sweetalert/dist/sweetalert.min.js"></script>
+	  <script type="text/javascript" src="../../WebFloopets/sweetalert/dist/sweetalert.min.js"></script>
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 	  <script>
 	    $(document).ready( function () {

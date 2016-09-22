@@ -15,10 +15,13 @@ if($_SESSION["cod_rol"]==1){
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Mis mascotas</a></div>
   <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('registrar_animal')?>">Crear Nueva</a></p></div>
-  <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('gestion_animal')?>">Ver Todas</a></p></div>
+  <div class="collapsible-body"><p><a class="item_menu" href="dashboard.php?p=<?php echo base64_encode('gestion_animal')?>">Ver mis Mascotas</a></p></div>
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a href=""><i class="fa fa-building-o" aria-hidden="true"></i>Fundaciones</a></div>
+</li>
+<li>
+  <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('gestion_evento')?>"><i class="fa fa-calendar" aria-hidden="true"></i>Eventos</a></div>
 </li>
 <?php
 // 2=administrador
