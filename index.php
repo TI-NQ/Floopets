@@ -77,13 +77,13 @@
 			<i class="fa fa-times" aria-hidden="true" id="salir" onclick= "ver_menu()"></i>
 			<ul class="menu_floopets">
 				<li><a href="#Inicio" class="ancla"><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
-				<li><a href="#Quienessomos" class="ancla"><i class="icono izquierda fa fa-paw"></i> Quienes Somos</a></li>
+				<li><a href="#Quienessomos" class="ancla"><i class="icono izquierda fa fa-paw"></i> Equipo De Trabajo</a></li>
 				<li><a href="#adopciones" class="ancla"><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
-				<li><a href="#"><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
+				<li><a href="Quiere-Ser-Voluntario.php"><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
 				<li ><a href="#denuncias" class="ancla"><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota</a>
 				</li>
 
-				<li><a href="#eventos" class="ancla"><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
+				<li><a href="Eventos.php" ><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
 				<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
 				<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li>
 			</ul>
