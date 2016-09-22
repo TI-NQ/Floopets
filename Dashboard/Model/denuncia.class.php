@@ -63,7 +63,7 @@ class Gestion_denuncia{
 		floopets_BD::Disconnect();
 	}
 
-	function Update($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen,$de_cod_denuncia){
+	function Update($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen,$de_estado,$de_cod_denuncia){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -71,10 +71,10 @@ class Gestion_denuncia{
 
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE denuncia SET td_cod_tipo_denuncia=?,de_descripcion=?,de_contacto=?,de_telefono=?,de_nombre=?,de_imagen=?,de_fecha=? WHERE de_cod_denuncia =?" ;
+		$consulta = "UPDATE denuncia SET td_cod_tipo_denuncia=?,de_descripcion=?,de_contacto=?,de_telefono=?,de_nombre=?,de_imagen=?,de_fecha=? de_estado=? WHERE de_cod_denuncia =?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen,$de_cod_denuncia));
+		$query->execute(array($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen,$de_estado,$de_cod_denuncia));
 
 		floopets_BD::Disconnect();
 

@@ -49,6 +49,9 @@ $(document).ready(function()
 });
 
 </script>
+
+
+
 <div class="col l8 offset-l4">
   <h4>Gestion Denuncia</h4>
 </div>
