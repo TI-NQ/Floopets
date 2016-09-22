@@ -33,13 +33,15 @@ $organizacion = Gestion_organizacion::ReadAll();
 		<label class="form-label">Nombre</label>
 		<input class="form-control" type="text" name="ani_nombre" required>
 	</div>
-  <div class="form-group">
-		<label class="form-label">Esterilizado</label>
-		<input class="form-control" type="text" name="ani_esterilizado" required>
-	</div>
+  <div class="input-field col s12">
+          <select id="first_name" type="text" class="validate" required name="ani_esterilizado"required><option value="">esterilizado</option>
+            <option value="si">si</option>
+            <option value="no">No</option>
+          </select>
+        </div>
   <div class="form-group">
 		<label class="form-label">Edad</label>
-		<input class="form-control" type="text" name="ani_edad" required>
+		<input class="form-control" type="number" name="ani_edad" required>
 	</div>
   <div class="form-group">
 		<label class="form-label">Descripcion</label>
@@ -52,11 +54,11 @@ $organizacion = Gestion_organizacion::ReadAll();
 <div class="form-group">
 <h4>sexo</h4>
 		 <p>
-      <input name="ani_sexo[]" type="radio" id="Macho" />
+      <input name="ani_sexo[]" type="radio" id="Macho" value="M" />
       <label for="Macho">Macho</label>
     </p>
     <p>
-      <input name="ani_sexo[]" type="radio" id="Hembra" />
+      <input name="ani_sexo[]" type="radio" id="Hembra" value="H" />
       <label for="Hembra">Hembra</label>
     </p>
 	</div>

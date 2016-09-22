@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2016 a las 13:40:25
+-- Tiempo de generación: 22-09-2016 a las 15:44:24
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -49,7 +49,7 @@ CREATE TABLE `animal` (
   `ani_cod_animal` int(11) NOT NULL,
   `ra_cod_raza` int(11) NOT NULL,
   `ani_nombre` varchar(50) NOT NULL,
-  `ani_esterilizado` varchar(1) NOT NULL,
+  `ani_esterilizado` varchar(10) NOT NULL,
   `ani_edad` int(11) NOT NULL,
   `ani_descripcion` varchar(100) NOT NULL,
   `ani_numero_microchip` varchar(50) NOT NULL,
@@ -62,7 +62,7 @@ CREATE TABLE `animal` (
 --
 
 INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`) VALUES
-(5, 6, 'apoloa', 's', 11, 'asjfajsdj', '654554', 'on', 2);
+(11, 6, 'apoloa', 'si', 11, 'asjfajsdj', '654554', 'H', 2);
 
 -- --------------------------------------------------------
 
@@ -266,7 +266,7 @@ CREATE TABLE `raza` (
 --
 
 INSERT INTO `raza` (`ra_cod_raza`, `ra_nombre`, `ta_cod_tipo_animal`, `cu_cod_cuidado`, `ra_historia`, `ra_imagen`) VALUES
-(6, 'golden', 4, 3, 'gfgtgf', 'Array');
+(6, 'golden', 5, 3, 'gfgtgf', 'Array');
 
 -- --------------------------------------------------------
 
@@ -307,7 +307,7 @@ CREATE TABLE `tipo_animal` (
 --
 
 INSERT INTO `tipo_animal` (`ta_cod_tipo_animal`, `ta_nombre`, `tamano`) VALUES
-(4, 'perro', 'grande');
+(5, 'perro', 'grande');
 
 -- --------------------------------------------------------
 
@@ -630,7 +630,7 @@ ALTER TABLE `adopcion`
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `cuidado`
 --
@@ -680,7 +680,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `tipo_animal`
 --
 ALTER TABLE `tipo_animal`
-  MODIFY `ta_cod_tipo_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ta_cod_tipo_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `tipo_denuncia`
 --
