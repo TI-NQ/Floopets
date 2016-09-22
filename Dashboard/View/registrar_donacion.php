@@ -18,6 +18,10 @@
 	</div>
 </div>
 <form id="form" action="../Controller/donacion.controller.php" method="POST" enctype="multipart/form-data">
+<div class="form-group">
+        <label>asunto</label>
+        <input type="text" name="don_nombre"></input>
+    </div>
 	<div class="form-group">
 		<label>descripcion</label>
 		<input type="text" name="don_descripcion"></input>
@@ -29,7 +33,7 @@
     <div class="file-field input-field col s12 m6">
        <div class="btn">
          <span>imagen</span>
-         <input type="file" multiple name="Imagen_Upload[]">
+         <input type="file" multiple name="don_imagen[]">
        </div>
        <div class="file-path-wrapper">
          <input class="file-path validate"  type="text" placeholder="" name="don_imagen">

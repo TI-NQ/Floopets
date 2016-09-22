@@ -1,5 +1,4 @@
 
-<form id="form" action="../Controller/evento.controller.php" method="POST">
 
 
 <?php
@@ -8,7 +7,7 @@
 	$eve = Gestion_tipo_evento::ReadAll();
 ?>
 
-<form action="../Controller/evento.controller.php" method="POST">
+<form action="../Controller/evento.controller.php" method="POST" enctype="multipart/form-data">
 	<h1>Registrar Evento</h1>
 
 	<div class="form-group">

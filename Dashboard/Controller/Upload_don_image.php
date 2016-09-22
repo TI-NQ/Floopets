@@ -1,7 +1,7 @@
 <?php
 $total = count($_FILES['don_imagen']['name']);
 
-$directorio = "../View/img/imagen_donacion/".$nombre_donacion."/";
+$directorio = "../View/img/imagen_donacion/".$nombre_don_nombre."/";
 
 
 if (!file_exists($directorio)) { 

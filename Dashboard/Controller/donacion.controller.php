@@ -1,16 +1,16 @@
 <?php
 	require_once("../Model/conexion.php");
-	require_once("../Model/donacion.class.php");
+	require_once("../Model/donacion.php");
 
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
 		case 'c':
-
+			$don_nombre						= $_POST["don_nombre"];
 			$don_fecha						= $_POST["don_fecha"];
 			$don_descripcion				= $_POST["don_descripcion"];
 			$don_imagen						= $_POST["don_imagen"];
-			$nombre_cod_donacion 	= strtolower(str_replace('ñ', 'n', $td_cod_tipo_donacion));
-			$nombre_cod_donacion 	= strtolower(str_replace(' ', '', $nombre_cod_donacion));
+			$nombre_don_imagen 	= strtolower(str_replace('ñ', 'n', $don_nombre));
+			$nombre_don_imagen 	= strtolower(str_replace(' ', '', $nombre_don_imagen));
 			$org_cod_organizacion			= $_POST["org_cod_organizacion"];
 			$td_cod_tipo_donacion			= $_POST["td_cod_tipo_donacion"];
 			$usu_cod_usuario				= $_POST["usu_cod_usuario"];
@@ -20,12 +20,12 @@
 				if($count_galeria >= 1){ 
 					include("Upload_don_image.php");
 				} 
-				Gestion_donacion::Create($don_descripcion,$don_fecha,$don_imagen,$org_cod_organizacion,$td_cod_tipo_donacion,$usu_cod_usuario);
+				Gestion_donacion::Create($don_nombre,$don_descripcion,$don_fecha,$don_imagen,$org_cod_organizacion,$td_cod_tipo_donacion,$usu_cod_usuario);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_donacion"));
+			 header("Location: ../View/gestion_donacion.php?m=".$mensaje);
 
 			break;
 			case 'u':
