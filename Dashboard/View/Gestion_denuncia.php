@@ -49,8 +49,8 @@ $(document).ready(function()
 });
 
 </script>
-  <link rel="stylesheet" type="text/css" href="Jquery/jquery.dataTables.css">
-  <script type="text/javascript" charset="utf8" src="Jquery/jquery.dataTables.js"></script>
+
+
 
 <div class="col l8 offset-l4">
   <h4>Gestion Denuncia</h4>
@@ -74,13 +74,13 @@ $(document).ready(function()
                           <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
                       </div>
                       <div class='col l6'>
-                          <a href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>
+                          <a class='btn-floating waves-effect' href=../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>
                           <i class='small material-icons'>mode_edit</i>
                           </a>
                       </div>
                       <div class='col l6'>
                       <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>
-                      <a href='#' id='btntrash' >
+                      <a href='#' id='btntrash' class='btn-floating waves-light red waves-effect' >
                         <i class='small material-icons'>delete</i>
                       </a>
                       </div>
