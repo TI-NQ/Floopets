@@ -89,7 +89,7 @@ video{
 	/*margin-top: 85vh;
 	left: 945px;*/
 	margin-top: 37%;
-	margin-left: 15%;
+	margin-left: 18%;
 	width: 200px;
 	text-transform: inherit;
 	font-size: 30px;
@@ -118,7 +118,7 @@ video{
 #adoptagato{
 	position: absolute;
 	margin-top: 25%;
-	margin-left: 15%;
+	margin-left: 18%;
 	/*margin-top: 70vh;*/
 	/*left: 963px;*/
 }
@@ -429,11 +429,86 @@ a{
 	list-style: none;
 }
 
+/*responsive design de las tabletas*/
+@media screen and (max-device-width : 768px) and  (orientation : portrait){
+ .ingresa{
+ 	margin-left: 25%;
+ }
 
 
-/*responsive design index floopets*/
+ #adoptaperro{
+		margin-top:18%; 
+	}
 
-@media screen and (max-width: 450px){
+	.boton{
+	margin-top: 32%;
+	margin-left: 12%;
+	
+}
+	#adoptagato{
+	margin-top: 18%;
+	margin-left: 12%;
+	
+}
+
+	.boton1{
+	margin-top: 32%;
+	margin-left: 12%;
+	
+}
+
+	#perdida{
+		margin-left: 7%;
+	}
+
+	#historias{
+		margin-left: 15%
+	}
+}
+
+/*responsive design del movil horizontal*/
+@media screen and (max-width: 640px) and (orientation:landscape){
+
+.ingresa{
+
+	margin-left: 22%;
+	
+}
+#adoptaperro{
+		margin-top:14%; 
+		margin-left: 12%;
+	}
+
+.boton{
+	margin-top: 30%;
+	margin-left: 10%;
+	
+}
+
+#adoptagato{
+	margin-top: 14%;
+	margin-left: 12%;
+}
+
+.boton1{
+	margin-top: 30%;
+	margin-left: 10%;
+}
+
+#perdida{
+		margin-left: 2%;
+	}
+
+#historias{
+	margin-left: 13%;
+}
+}
+
+
+
+/*responsive design movil*/
+
+@media screen and (max-width: 480px){
 
 .ingresa{
 	width: 150px;
@@ -470,14 +545,14 @@ font-size: 20px;
 	margin-left: 20%;
 }
 
+#historias{
+	margin-left: 28%;
+}
 
 
 }​/*este cierra el del responsive movil*/
 
 
-/*responsive design de las tabletas*/
-@media screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation:portrait){
- .ingresa{
-		margin-left: 25%;
-	}
-}
+
+
+
