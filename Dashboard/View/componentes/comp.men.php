@@ -31,7 +31,7 @@ if($_SESSION["cod_rol"]==1){
   <div class="collapsible-body"><p><a class="item_menu" >Perros</a></p></div>
 </li>
 <?php
-// Menú de Administrador publico id_rol 1
+// Menú de Administrador publico id_rol 2
 }elseif($_SESSION["cod_rol"]==2){
 ?>
 <li>
@@ -51,16 +51,16 @@ if($_SESSION["cod_rol"]==1){
 </li>
 <!-- aqui metan el menu -->
 <?php
-// Menú de Organización publico id_rol 1
+// Menú de Organización publico id_rol 3
 }elseif ($_SESSION["cod_rol"]==3) {
 ?>
 <li>
-  <div class="collapsible-header grey lighten-2"><a><i class="fa fa-building-o" aria-hidden="true"></i>Organizacion</a></div>
+  <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('mi_organizacion')?>"><i class="fa fa-building-o" aria-hidden="true"></i>Organizacion</a></div>
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Mascotas</a></div>
-  <div class="collapsible-body"><p><a class="item_menu">Nueva</a></p></div>
-  <div class="collapsible-body"><p><a class="item_menu">Gestionar</a></p></div>
+  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('nueva_mascota')?>" class="item_menu">Nueva</a></p></div>
+  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('or_gestion_mascotas')?>" class="item_menu">Gestionar</a></p></div>
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Adopciones</a></div>
