@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2016 a las 17:04:20
+-- Tiempo de generación: 22-09-2016 a las 17:22:29
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -159,7 +159,7 @@ CREATE TABLE `evento` (
   `eve_fecha` date NOT NULL,
   `eve_fecha_hasta` date NOT NULL,
   `eve_hora` time NOT NULL,
-  `eve_hora_hasta` date NOT NULL,
+  `eve_hora_hasta` time NOT NULL,
   `eve_descripcion` varchar(100) NOT NULL,
   `eve_imagen` longtext NOT NULL,
   `geo_x` longtext NOT NULL,

@@ -48,7 +48,7 @@
                                  $organizacion = Gestion_organizacion::ReadAll();
 
                                 foreach ($organizacion as $row){
-                                    echo "<option value='".$row["org_cod_organizacion"]."'>".$row["nombre"]."</option>";
+                                    echo "<option value='".$row["org_cod_organizacion"]."'>".$row["org_nombre"]."</option>";
                                 }
                              ?>
                         </select>
@@ -66,14 +66,14 @@
                                  $tipo_donacion = Gestion_tipo_donacion::ReadAll();
 
                                 foreach ($tipo_donacion as $row){
-                                    echo "<option value='".$row["td_cod_tipo_donacion"]."'>".$row["nombre"]."</option>";
+                                    echo "<option value='".$row["td_cod_tipo_donacion"]."'>".$row["td_nombre"]."</option>";
                                 }
                              ?>
                         </select>
                         <label></label>
                     </div>
                     <div class="form-group">
-                        <select  Required name="usu_cod_usuario">
+                        <select   name="usu_cod_usuario">
                             <option value="" disabled selected>usuario</option>
                             <?php
                                  // Cargo la bd
@@ -84,7 +84,7 @@
                                  $usuarios = gestion_usuarios::ReadAll();
 
                                 foreach ($usuarios as $row){
-                                    echo "<option value='".$row["usu_cod_usuario"]."'>".$row["nombre"]."</option>";
+                                    echo "<option value='".$row["usu_cod_usuario"]."'>".$row["usu_nombre"]."</option>";
                                 }
                              ?>
                         </select>
@@ -93,4 +93,4 @@
 	<div class="form-group">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
 	</div>
-</form> -->
+</form> 

@@ -1,7 +1,7 @@
 <?php 
 	require_once("../Model/conexion.php");
     require_once("../Model/evento.class.php");
-	$evento=Gestion_evento::ReadbyID(base64_decode($_REQUEST["ui"]));
+	$evento=Gestion_evento::ReadbyID(base64_decode($_REQUEST["eve"]));
  ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <form action="../Controller/evento.controller.php" method="POST">
