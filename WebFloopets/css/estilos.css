@@ -72,7 +72,7 @@ video{
 	font-family: 'Roboto', sans-serif;
 	background-color: rgba(255,179,0,0.8) !important;
 	border-radius: 5px;
-	
+
 }
 .container__gatos img{
 	width: 100%;
@@ -112,7 +112,7 @@ video{
 
 /*.perro{
 	margin-top: 35%;
-	
+
 }
 */
 #adoptagato{
@@ -285,13 +285,14 @@ input[type=text]:focus:not([readonly]) + label{
 }
 /*----------------------------------------------estilos seccion Cuidados----------------------------------------------*/
 .cuidados{
-	height: 700px;
+	height: 500px;
 	margin-top: -28px;
 	background-color: #ffff00;
 }
 .carousel-item img{
 	max-height: 600px;
 	border-radius: 20px;
+	margin-left: 30px;
 }
 
 .logo__footer{
@@ -437,24 +438,24 @@ a{
 
 
  #adoptaperro{
-		margin-top:18%; 
+		margin-top:18%;
 	}
 
 	.boton{
 	margin-top: 32%;
 	margin-left: 12%;
-	
+
 }
 	#adoptagato{
 	margin-top: 18%;
 	margin-left: 12%;
-	
+
 }
 
 	.boton1{
 	margin-top: 32%;
 	margin-left: 12%;
-	
+
 }
 
 	#perdida{
@@ -472,17 +473,17 @@ a{
 .ingresa{
 
 	margin-left: 22%;
-	
+
 }
 #adoptaperro{
-		margin-top:14%; 
+		margin-top:14%;
 		margin-left: 12%;
 	}
 
 .boton{
 	margin-top: 30%;
 	margin-left: 10%;
-	
+
 }
 
 #adoptagato{
@@ -551,8 +552,3 @@ font-size: 20px;
 
 
 }​/*este cierra el del responsive movil*/
-
-
-
-
-

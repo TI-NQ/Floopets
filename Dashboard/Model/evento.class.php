@@ -81,6 +81,22 @@
 			floopets_BD::Disconnect();
 
 		}
+		function ReadEvento(){
+			//Instanciamos y nos conectamos a la bd
+			$conexion=floopets_BD::Connect();
+			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+
+			//Creamos el query de la consulta a la BD
+			$consulta="SELECT * FROM evento LIMIT 4";
+
+			$query=$conexion->prepare($consulta);
+			$query->execute();
+			$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+			floopets_BD::Disconnect();
+
+			return $resultado;
+		}
 
 
 	}

@@ -2,6 +2,7 @@
 	session_start();
   require_once("Dashboard/Model/conexion.php");
   require_once("Dashboard/Model/tipo_denuncia.class.php");
+	require_once("Dashboard/Model/evento.class.php");
   $tipod = Gestion_tipo_denuncia::ReadAll();
 ?>
 <!DOCTYPE html>
@@ -93,25 +94,7 @@
 			<a class="ingresa btn waves-effect waves-light btn-large" href="login.php">Ingresar a Floopets</a>
 			<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
 		</div>
-		<!-- David Pabón-Quienes Somos? -->
 
-		<div class="row" id="Quienessomos">
-			<div class="col s12">
-				<div class="col s3" >
-					<h3 class="center" style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;">¿Quienes Somos?</h3>
-					<p align = "justify" style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0; font-size: 18px;" >
-						Floopets es un aplicativo web sin ánimo de  lucro , proporciona la
-						oportunidad de adoptar una mascota y obtener así una reducción de
-						animales desprotegidos en la ciudad,también permite ejecutar una
-						denuncia o reporte de maltrato animal.
-					</p>
-				</div>
-				<div class="col s9">
-					<h3 class="center" style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;">Equipo de Trabajo</h3>
-				</div>
-			</div>
-
-		</div>
 
 		<!-- Andrea Guzman-Adopciones -->
 		<div class="row seccion1" id="adopciones">
@@ -295,9 +278,20 @@
 	</div>
 
     <!-- David Pabon-Eventos -->
-    <div class="row">
+		<?php
 
-	    <h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
+		$validar = Gestion_evento::ReadEvento();
+		if (count($validar)<3){
+			?>
+			<h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
+			<a class="waves-effect btn" href="../Dashboard/View/gestion_evento.php">Ver Eventos</a>
+			<?php
+		}
+		else {
+		?>
+		<div class="row">
+
+
 	    	<div id="owl-demo">
 
 			  <div class="item">
@@ -343,6 +337,11 @@
 
 
     </div>
+		<?php
+		}
+		 ?>
+
+
 
 	<!-- eventos -->
 	<!-- <div class="" style="margin-top: 57px" id="eventos">
