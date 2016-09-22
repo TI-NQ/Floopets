@@ -12,6 +12,7 @@
 		$nombre_voluntario 	= strtolower(str_replace(' ', '', $nombre_voluntario));
       	$vo_telefono            =$_POST["vo_telefono"];
       	$vo_direccion           =$_POST["vo_direccion"];
+      	$org_cod_organizacion           =$_POST["org_cod_organizacion"];
       	$vo_imagen 				=$_POST["vo_imagen"];
      	$count_galeria			= count($_FILES['vo_imagen']['name']);
 
@@ -19,12 +20,12 @@
 				if($count_galeria >= 1){ 
 					include("Upload_vo_image.php");
 				} 
-				gestion_voluntarios::Create($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$vo_imagen);
+				Gestion_voluntarios::Create($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$org_cod_organizacion,$vo_imagen);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_voluntarios"));
+			// header("Location: ../View/dashboard.php?p=".base64_encode("gestion_voluntarios"));
 
 			break;
 			case 'u':
@@ -35,7 +36,7 @@
       $vo_imagen              =$_POST["vo_imagen"];
 
 			try {
-				gestion_voluntarios::Update($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$vo_imagen);
+				Gestion_voluntarios::Update($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$vo_imagen);
 				$mensaje = "Se actializo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2016 a las 17:22:29
+-- Tiempo de generación: 22-09-2016 a las 19:05:05
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -111,7 +111,9 @@ CREATE TABLE `denuncia` (
 --
 
 INSERT INTO `denuncia` (`de_cod_denuncia`, `td_cod_tipo_denuncia`, `de_descripcion`, `de_contacto`, `de_telefono`, `de_nombre`, `de_fecha`, `de_imagen`, `de_estado`) VALUES
-(2, 1, 'le pega', 'yesid', '3769878', 'lolo', '2016-08-23 11:03:12', '0', '0');
+(2, 1, 'le pega', 'yesid', '3769878', 'lolo', '2016-08-23 11:03:12', '0', '0'),
+(3, 1, 'le pega', 'shanda', '5522', 'coqui', '2016-09-22 11:53:38', 'HD-Wallpapers1.jpeg', 'Pendiente'),
+(4, 1, 'le pega', 'shanda', '5522', 'coqui', '2016-09-22 11:55:50', 'HD-Wallpapers1.jpeg', 'Pendiente');
 
 -- --------------------------------------------------------
 
@@ -136,6 +138,7 @@ CREATE TABLE `denuncias_organizacion` (
 DROP TABLE IF EXISTS `donacion`;
 CREATE TABLE `donacion` (
   `don_cod_donacion` int(11) NOT NULL,
+  `don_nombre` varchar(2000) NOT NULL,
   `td_cod_tipo_donacion` int(11) NOT NULL,
   `don_fecha` date NOT NULL,
   `don_descripcion` varchar(50) NOT NULL,
@@ -143,6 +146,19 @@ CREATE TABLE `donacion` (
   `usu_cod_usuario` int(11) NOT NULL,
   `don_imagen` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `donacion`
+--
+
+INSERT INTO `donacion` (`don_cod_donacion`, `don_nombre`, `td_cod_tipo_donacion`, `don_fecha`, `don_descripcion`, `org_cod_organizacion`, `usu_cod_usuario`, `don_imagen`) VALUES
+(4, '2016-09-22', 1, '0000-00-00', 'donacion', 2, 3, ''),
+(5, '2016-09-22', 1, '0000-00-00', 'donacion', 2, 3, ''),
+(6, '2016-09-22', 1, '0000-00-00', 'wsfrwsdf', 2, 3, ''),
+(7, '2016-09-22', 1, '0000-00-00', 'sdfsd', 2, 3, ''),
+(8, '2016-09-22', 1, '0000-00-00', 'sdfg', 2, 3, ''),
+(9, '2016-09-22', 1, '0000-00-00', 'asdf', 2, 3, ''),
+(10, '2016-09-22', 1, '0000-00-00', 'asdas', 2, 3, '');
 
 -- --------------------------------------------------------
 
@@ -166,6 +182,26 @@ CREATE TABLE `evento` (
   `geo_y` longtext NOT NULL,
   `eve_estado` varchar(1000) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `evento`
+--
+
+INSERT INTO `evento` (`eve_cod_evento`, `te_cod_tipo_evento`, `eve_nombre`, `eve_direccion`, `eve_fecha`, `eve_fecha_hasta`, `eve_hora`, `eve_hora_hasta`, `eve_descripcion`, `eve_imagen`, `geo_x`, `geo_y`, `eve_estado`) VALUES
+(20, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '03:20:00', '14:00:00', 'wesfsdf', '', '', '', 'pendiente'),
+(21, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '03:20:00', '14:00:00', 'wesfsdf', '', '', '', 'pendiente'),
+(22, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '03:20:00', '14:00:00', 'wesfsdf', '', '', '', 'pendiente'),
+(23, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
+(24, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
+(25, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
+(26, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
+(27, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
+(28, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
+(29, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
+(30, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
+(31, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
+(32, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asda', '', '', '', 'pendiente'),
+(33, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asda', '', '', '', 'pendiente');
 
 -- --------------------------------------------------------
 
@@ -342,6 +378,13 @@ CREATE TABLE `tipo_donacion` (
   `td_estado` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `tipo_donacion`
+--
+
+INSERT INTO `tipo_donacion` (`td_cod_tipo_donacion`, `td_nombre`, `td_estado`) VALUES
+(1, 'dfgsdf', 'sdfsdf');
+
 -- --------------------------------------------------------
 
 --
@@ -397,6 +440,13 @@ CREATE TABLE `usuario` (
   `cod_rol` int(11) NOT NULL,
   `usu_clave` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `usuario`
+--
+
+INSERT INTO `usuario` (`usu_cod_usuario`, `usu_nombre`, `usu_apellido`, `usu_telefono`, `usu_cedula`, `usu_email`, `cod_rol`, `usu_clave`) VALUES
+(3, 'ertgedf', 'wsdfsdf', '545154', 25145, 'sa@sdfasd', 1, '1234');
 
 -- --------------------------------------------------------
 
@@ -456,7 +506,8 @@ CREATE TABLE `voluntarios` (
   `vo_telefono` int(11) NOT NULL,
   `vo_direccion` varchar(50) NOT NULL,
   `vo_imagen` longtext NOT NULL,
-  `org_cod_organizacion` int(11) NOT NULL
+  `org_cod_organizacion` int(11) NOT NULL,
+  `vo_estado` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -655,17 +706,17 @@ ALTER TABLE `cuidado`
 -- AUTO_INCREMENT de la tabla `denuncia`
 --
 ALTER TABLE `denuncia`
-  MODIFY `de_cod_denuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `de_cod_denuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `donacion`
 --
 ALTER TABLE `donacion`
-  MODIFY `don_cod_donacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `don_cod_donacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `eve_cod_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `eve_cod_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 --
 -- AUTO_INCREMENT de la tabla `noticias`
 --
@@ -705,7 +756,7 @@ ALTER TABLE `tipo_denuncia`
 -- AUTO_INCREMENT de la tabla `tipo_donacion`
 --
 ALTER TABLE `tipo_donacion`
-  MODIFY `td_cod_tipo_donacion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `td_cod_tipo_donacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT de la tabla `tipo_evento`
 --
@@ -720,7 +771,7 @@ ALTER TABLE `tipo_organizacion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `usu_cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT de la tabla `vacunas`
 --
