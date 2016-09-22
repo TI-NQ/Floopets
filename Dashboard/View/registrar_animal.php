@@ -1,72 +1,67 @@
 <?php
-		 require_once("../Model/conexion.php");
-		require_once("../Model/cuidado.class.php");
-		require_once("../Model/tipo_animal.class.php");
-		$tipo = Gestion_tipo_animal::ReadAll();
+require_once("../Model/conexion.php");
+ require_once("../Model/raza.class.php");
+ require_once("../Model/organizacion.class.php");
+$raza = Gestion_raza::ReadAll();
+$organizacion = Gestion_organizacion::ReadAll();
+
+
+// echo $cu[0];
  ?>
-<h2 class="center">Registrar Mascota</h2>
-<div class="row">
-	<div class="fixed-action-btn horizontal click-to-toggle" style="position:relative;">
-		<a class="btn-floating btn-large red darken-1 tooltipped" data-tooltip="Acciones" style="left:95%;">
-			<i class="fa fa-plus" aria-hidden="true"></i>
-		</a>
-		<ul>
-			<li><a href="dashboard.php?p=<?php echo base64_encode('actualizar_animal')?>" class="btn-floating green tooltipped" data-tooltip="Actualizar"><i class="fa fa-pencil" aria-hidden="true"></i></a></li>
-			<li><a href="dashboard.php?p=<?php echo base64_encode('gestion_animal')?>" class="btn-floating blue tooltipped" data-tooltip="Gestionar"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
-		</ul>
+<form action="../Controller/animal.controller.php" method="POST">
+	<div class="input-field col s12 m6 l6" style="z-index:1;">
+				<select name="ra_cod_raza">
+					<option value="" disabled selected>raza</option>
+					<?php
+							foreach ($raza as $row){
+									echo "<option value='".$row["ra_cod_raza"]."'>".$row["ra_nombre"]."</option>";
+							}
+					 ?>
+				</select>
+			</div>
+			<div class="input-field col s12 m6 l6" style="z-index:1;">
+				<select name="org_cod_organizacion">
+					<option value="" disabled selected>organizacion</option>
+					<?php
+							foreach ($organizacion as $row){
+									echo "<option value='".$row["org_cod_organizacion"]."'>".$row["org_nombre"]."</option>";
+							}
+					 ?>
+				</select>
+			</div>
+	<div class="form-group">
+		<label class="form-label">Nombre</label>
+		<input class="form-control" type="text" name="ani_nombre" required>
 	</div>
-	<form id="form" class="col s12" action="../Controller/animal.controller.php" method="POST">
-		<div class="row">
-			<div class="input-field col s12">
-				<input type="text" name="ani_nombre" required>
-				<label>Nombre</label>
-			</div>
-			<div class="input-field col s12">
-			<select  Required name="ta_cod_tipo_animal">
-		  		<option value="" disabled selected>cuidado</option>
-		        <?php
-		          foreach ($tipo as $row){
-		            echo "<option value='".$row["ta_cod_tipo_animal"]."'>".$row["ta_nombre"]."</option>";
-		            }
-		        ?>
-		    </select>
-			</div>	
-		        <div class="input-field col s12">
+  <div class="form-group">
+		<label class="form-label">Esterilizado</label>
+		<input class="form-control" type="text" name="ani_esterilizado" required>
+	</div>
+  <div class="form-group">
+		<label class="form-label">Edad</label>
+		<input class="form-control" type="text" name="ani_edad" required>
+	</div>
+  <div class="form-group">
+		<label class="form-label">Descripcion</label>
+		<input class="form-control" type="text" name="ani_descripcion" required>
+	</div>
+  <div class="form-group">
+		<label class="form-label">Microchip</label>
+		<input class="form-control" type="text" name="ani_numero_microchip" required>
+	</div>
+<div class="form-group">
+<h4>sexo</h4>
+		 <p>
+      <input name="ani_sexo[]" type="radio" id="Macho" />
+      <label for="Macho">Macho</label>
+    </p>
+    <p>
+      <input name="ani_sexo[]" type="radio" id="Hembra" />
+      <label for="Hembra">Hembra</label>
+    </p>
+	</div>
 
-		          <select id="first_name" type="text" class="validate" required name="Categoria"><option value="">esterilizado</option>
-		            <option value="si">si</option>
-		            <option value="no">no</option>
-		          </select>
-		        </div>
-
-
-			<div class="input-field col s12">
-				<input type="text" name="ani_edad" required>
-				<label >edad</label>
-			</div>
-			<div class="input-field col s12">
-				<input type="text" name="ani_descripcion" required>
-				<label >descripcion</label>
-			</div>
-			<div class="input-field col s12">
-				<input type="text" name="ani_numero_microchip" required>
-				<label >numero de microchip</label>
-			</div>
-			<div class="col s12 m12">
-                <h6>Sexo</h6>
-                <div class="col s6 m6">
-                    <p>
-				      <input name="sexo" type="radio" id="Hembra" />
-				      <label for="Hembra">Hembra</label>
-				    </p>
-				    <p>
-				      <input name="sexo" type="radio" id="Macho" />
-				      <label for="Macho">Macho</label>
-				    </p>
-                  </div>
-            </div>
-			<a href="<?=$_SERVER['HTTP_REFERER'] ?>" class="waves-effect waves-light btn red darken-1 left">Cancelar</a>
-			<button class="waves-effect waves-light  btn right cyan darken-1" name="accion" value="c">Registrar</button>
-		</div>
-	</form>
-</div>
+	<div class="form-group">
+		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
+	</div>
+</form>

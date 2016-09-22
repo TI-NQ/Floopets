@@ -3,7 +3,7 @@
 	require_once("../Model/conexion.php");
 	require_once("../Model/usuarios.class.php");
 	require_once("../Model/animal.class.php");
-	$animal = gestion_animal::ReadAll();
+	$animal = Gestion_animal::ReadAll();
 	$usuarios = gestion_usuarios::ReadAll();
 ?>
 <h2 class="center">Registrar Adopcion</h2>

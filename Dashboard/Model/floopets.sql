@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 21-09-2016 a las 18:53:39
--- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.5.30
+-- Tiempo de generación: 22-09-2016 a las 05:04:17
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -49,13 +49,20 @@ CREATE TABLE `animal` (
   `ani_cod_animal` int(11) NOT NULL,
   `ra_cod_raza` int(11) NOT NULL,
   `ani_nombre` varchar(50) NOT NULL,
-  `ani_esterilizado` tinyint(1) NOT NULL,
+  `ani_esterilizado` varchar(1) NOT NULL,
   `ani_edad` int(11) NOT NULL,
   `ani_descripcion` varchar(100) NOT NULL,
   `ani_numero_microchip` varchar(50) NOT NULL,
   `ani_sexo` varchar(30) NOT NULL,
   `org_cod_organizacion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `animal`
+--
+
+INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`) VALUES
+(2, 6, 'ñoo', '1', 11, 'sdfsdf', '545544s', 'Macho', 2);
 
 -- --------------------------------------------------------
 
@@ -77,7 +84,7 @@ CREATE TABLE `cuidado` (
 --
 
 INSERT INTO `cuidado` (`cu_cod_cuidado`, `cu_nombre`, `cu_descripcion`, `galeria`, `video`) VALUES
-(2, 'wsdasd', 'asdfsadfwasdf', '4K-Wallpaper-36.jpg', '');
+(3, 'cuidado para perro', 'afasfas', '', '');
 
 -- --------------------------------------------------------
 
@@ -207,6 +214,13 @@ CREATE TABLE `organizacion` (
   `org_clave` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `organizacion`
+--
+
+INSERT INTO `organizacion` (`org_cod_organizacion`, `to_cod_tipo_organizacion`, `org_nombre`, `org_nit`, `org_email`, `org_telefono`, `org_direccion`, `org_clave`) VALUES
+(2, 1, 'peeeee', 5545521, 'ssada@jsdhf', '541545', 'cll 44', '1025');
+
 -- --------------------------------------------------------
 
 --
@@ -247,6 +261,13 @@ CREATE TABLE `raza` (
   `ra_imagen` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `raza`
+--
+
+INSERT INTO `raza` (`ra_cod_raza`, `ra_nombre`, `ta_cod_tipo_animal`, `cu_cod_cuidado`, `ra_historia`, `ra_imagen`) VALUES
+(6, 'golden', 4, 3, 'gfgtgf', 'Array');
+
 -- --------------------------------------------------------
 
 --
@@ -278,9 +299,15 @@ DROP TABLE IF EXISTS `tipo_animal`;
 CREATE TABLE `tipo_animal` (
   `ta_cod_tipo_animal` int(11) NOT NULL,
   `ta_nombre` varchar(50) NOT NULL,
-  `tamano` varchar(100) NOT NULL,
-  `ra_cod_raza` int(11) NOT NULL
+  `tamano` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `tipo_animal`
+--
+
+INSERT INTO `tipo_animal` (`ta_cod_tipo_animal`, `ta_nombre`, `tamano`) VALUES
+(4, 'perro', 'grande');
 
 -- --------------------------------------------------------
 
@@ -516,8 +543,8 @@ ALTER TABLE `permiso_rol`
 --
 ALTER TABLE `raza`
   ADD PRIMARY KEY (`ra_cod_raza`),
-  ADD UNIQUE KEY `cu_cod_cuidado` (`cu_cod_cuidado`),
-  ADD KEY `ta_cod_tipo_animal` (`ta_cod_tipo_animal`);
+  ADD KEY `ta_cod_tipo_animal` (`ta_cod_tipo_animal`),
+  ADD KEY `cu_cod_cuidado` (`cu_cod_cuidado`);
 
 --
 -- Indices de la tabla `rol`
@@ -603,12 +630,12 @@ ALTER TABLE `adopcion`
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `cuidado`
 --
 ALTER TABLE `cuidado`
-  MODIFY `cu_cod_cuidado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `cu_cod_cuidado` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `denuncia`
 --
@@ -633,7 +660,7 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `organizacion`
 --
 ALTER TABLE `organizacion`
-  MODIFY `org_cod_organizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `org_cod_organizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT de la tabla `permiso`
 --
@@ -643,7 +670,7 @@ ALTER TABLE `permiso`
 -- AUTO_INCREMENT de la tabla `raza`
 --
 ALTER TABLE `raza`
-  MODIFY `ra_cod_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `ra_cod_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
@@ -653,7 +680,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `tipo_animal`
 --
 ALTER TABLE `tipo_animal`
-  MODIFY `ta_cod_tipo_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `ta_cod_tipo_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `tipo_denuncia`
 --

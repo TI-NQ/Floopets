@@ -14,23 +14,21 @@
 
 			floopets_BD::Disconnect();
 		}
-
-
-		function ReadALL(){
-			//Instanciamos y nos conectamos a la bd
-			$conexion=floopets_BD::Connect();
-			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-
-
-			//Creamos el query de la consulta a la BD
-			$consulta="SELECT organizacion.*,tipo_organizacion.* FROM tipo_organizacion INNER JOIN organizacion  ON tipo_organizacion.to_cod_tipo_organizacion=organizacion.to_cod_tipo_organizacion";
-
-			$query=$conexion->prepare($consulta);
-			$query->execute();
-			$resultado = $query->fetchALL(PDO::FETCH_BOTH);
-			floopets_BD::Disconnect();
-
-			return $resultado;
+function ReadAll()
+		{
+				//Instanciamos y nos conectamos a la bd
+				$Conexion = floopets_BD::Connect();
+				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				//Crear el query que vamos a realizar
+				$consulta = "SELECT * FROM organizacion";
+				$query = $Conexion->prepare($consulta);
+				$query->execute();
+				//Devolvemos el resultado en un arreglo
+				//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+				//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+				$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+				return $resultado;
+				floopets_BD::Disconnect();
 		}
 
 

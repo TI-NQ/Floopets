@@ -5,22 +5,22 @@
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
 		case 'c':
-			$ra_cod_raza						=$_POST["ra_cod_raza"];
-			$ani_nombre             = $_POST["ani_nombre"];
-      $ani_esterilizado     = $_POST["ani_esterilizado"];
-      $ani_edad             = $_POST["ani_edad"];
-      $ani_descripcion      = $_POST["ani_descripcion"];
-      $ani_numero_microchip	= $_POST["ani_numero_microchip"];
-      $sexo		= implode(",", $_POST["sexo"]);
-
-
+				$ra_cod_raza			=$_POST["ra_cod_raza"];
+				$org_cod_organizacion	=$_POST["org_cod_organizacion"];
+				$ani_nombre             = $_POST["ani_nombre"];
+		      	$ani_esterilizado     	= $_POST["ani_esterilizado"];
+		     	$ani_edad             	= $_POST["ani_edad"];
+		      	$ani_descripcion      	= $_POST["ani_descripcion"];
+		     	$ani_numero_microchip	= $_POST["ani_numero_microchip"];
+		      	$ani_sexo				= implode(",", $_POST["ani_sexo"]);
 			try {
-				gestion_animal::Create($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$sexo);
+				Gestion_animal::Create($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_animal"));
+			header("Location: ../View/gestion_animal.php?m=$mensaje");
+
 
 			break;
 			case 'u':
@@ -33,7 +33,7 @@
       $ani_numero_microchip	= $_POST["ani_numero_microchip"];
 
 			try {
-				gestion_animal::Update($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_cod_animal);
+				Gestion_animal::Update($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_cod_animal);
 				$mensaje = "Se actializo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
@@ -43,7 +43,7 @@
 
 		case 'd':
 			try {
-          $animal = gestion_animal::Delete(base64_decode($_REQUEST["an"]));
+          $animal = Gestion_animal::Delete(base64_decode($_REQUEST["an"]));
           $mensaje = "Se elimino correctamente";
           header("Location: ../View/gestion_animal.php?m=".$mensaje);
         } catch (Exception $e) {
