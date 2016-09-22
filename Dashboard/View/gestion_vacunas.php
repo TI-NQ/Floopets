@@ -14,6 +14,7 @@ $vacunas=gestion_vacuna::ReadAll();
 			<td>codigo</td>
 			<td>nombre vacuna</td>
 			<td>fecha</td>
+			<td>serial</td>
       <td>acciones</td>
 		</tr>
 		<tbody>
@@ -26,11 +27,12 @@ $vacunas=gestion_vacuna::ReadAll();
 				echo"<tr>
 						<td>".$row["vac_cod_vacuna"]."</td>
 						<td>".$row["vac_nombre"]."</td>
-            <td>".$row["fecha"]."</td>
+            			<td>".$row["vac_fecha"]."</td>
+            			<td>".$row["vac_serial"]."</td>
 						<td>
-                    		<a href='../View/actualizar_vacuna.php?ui=".base64_encode($row["vac_cod_vacuna"])."'>actualizar</a>
+                    		<a href='../View/actualizar_vacuna.php?va=".base64_encode($row["vac_cod_vacuna"])."'>actualizar</a>
 
-                    		<a href='../Controller/vacunas.controller.php?ui=".base64_encode($row["vac_cod_vacuna"])."&accion=d'>eliminar</a>
+                    		<a href='../Controller/vacunas.controller.php?va=".base64_encode($row["vac_cod_vacuna"])."&accion=d'>eliminar</a>
 
 					</tr>";
 			}

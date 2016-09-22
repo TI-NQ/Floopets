@@ -6,7 +6,11 @@
 	</div>
 	<div class="form-group">
 		<label class="form-label">Fecha</label>
-		<input class="form-control" type="date" name="fecha" min="<?php echo date("Y-m-d"); ?>" required>
+		<input class="form-control" type="date" name="vac_fecha" min="<?php echo date("Y-m-d"); ?>" required>
+	</div>
+	<div class="form-group">
+		<label class="form-label">serial</label>
+		<input class="form-control" type="number" name="vac_serial" required>
 	</div>
 	<div class="form-group">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>

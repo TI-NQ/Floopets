@@ -1,17 +1,17 @@
 <?php
-	class gestion_vacuna
+	class Gestion_vacuna
 	{
 		// Metodo Create()
 		// El metodo guarda los datos en la tabla contactos, captura todos los parametros desde el formulario.
-		function Create($vac_nombre,$fecha)
+		function Create($vac_nombre,$vac_fecha,$vac_serial)
 		{
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			//Crear el query que vamos a realizar.
-			$consulta ="INSERT INTO vacunas (vac_nombre,fecha) VALUES (?,?)";
+			$consulta ="INSERT INTO vacunas (vac_nombre,vac_fecha,vac_serial) VALUES (?,?,?)";
 			$query = $conexion->prepare($consulta);
-			$query->execute(array($vac_nombre,$fecha));
+			$query->execute(array($vac_nombre,$vac_fecha,$vac_serial));
 			floopets_BD::Disconnect();
 		}
 		function ReadAll()
@@ -48,15 +48,15 @@
 			floopets_BD::Disconnect();
 		}
 
-		function Update($vac_cod_vacuna,$vac_nombre,$fecha)
+		function Update($vac_cod_vacuna,$vac_nombre,$vac_fecha,$vac_serial)
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "UPDATE vacunas SET vac_nombre = ?, fecha=? WHERE vac_cod_vacuna = ?" ;
+				$consulta = "UPDATE vacunas SET vac_nombre = ?, vac_fecha = ?, vac_serial = ? WHERE vac_cod_vacuna = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($vac_nombre,$fecha,$vac_cod_vacuna));
+				$query->execute(array($vac_nombre,$vac_fecha,$vac_serial,$vac_cod_vacuna));
 				floopets_BD::Disconnect();
 
 		}
