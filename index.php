@@ -281,6 +281,7 @@
 		<?php
 
 		$validar = Gestion_evento::ReadEvento();
+
 		if (count($validar)<3){
 			?>
 			<h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
@@ -290,11 +291,28 @@
 		else {
 		?>
 		<div class="row">
-
+			<h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
 
 	    	<div id="owl-demo">
+<?php
+foreach ($validar as $row) {
+	?>
+	<div class="item">
+	<!-- <img src="../Dashboard/View/img/imagen_evento/<?php echo $row["imagen"];?>" alt="Owl Image"> -->
+	<img src="WebFloopets/images/evento1.jpg" alt="Owl Image">
+		<div class="text-event">
 
-			  <div class="item">
+				<h4><?php echo $row["eve_nombre"];?></h4>
+				<h6><?php echo $row["eve_fecha"];?></h6>
+
+		</div>
+
+	</div>
+
+	<?php
+}
+ ?>
+			  <!-- <div class="item">
 			  <img src="WebFloopets/images/evento1.jpg" alt="Owl Image">
 					<div class="text-event">
 
@@ -329,7 +347,7 @@
 
 					</div>
 			  </div>
-			  </div>
+			  </div> -->
 
 
 
