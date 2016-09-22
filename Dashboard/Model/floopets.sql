@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2016 a las 05:04:17
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.20
+-- Tiempo de generación: 22-09-2016 a las 13:40:25
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -62,7 +62,7 @@ CREATE TABLE `animal` (
 --
 
 INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`) VALUES
-(2, 6, 'ñoo', '1', 11, 'sdfsdf', '545544s', 'Macho', 2);
+(5, 6, 'apoloa', 's', 11, 'asjfajsdj', '654554', 'on', 2);
 
 -- --------------------------------------------------------
 
@@ -461,8 +461,8 @@ ALTER TABLE `adopcion`
 --
 ALTER TABLE `animal`
   ADD PRIMARY KEY (`ani_cod_animal`),
-  ADD UNIQUE KEY `org_cod_organizacion` (`org_cod_organizacion`),
-  ADD KEY `ra_cod_raza` (`ra_cod_raza`);
+  ADD KEY `ra_cod_raza` (`ra_cod_raza`),
+  ADD KEY `org_cod_organizacion` (`org_cod_organizacion`);
 
 --
 -- Indices de la tabla `cuidado`
@@ -630,7 +630,7 @@ ALTER TABLE `adopcion`
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `cuidado`
 --
@@ -726,8 +726,8 @@ ALTER TABLE `adopcion`
 -- Filtros para la tabla `animal`
 --
 ALTER TABLE `animal`
-  ADD CONSTRAINT `animal_ibfk_2` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE,
-  ADD CONSTRAINT `animal_ibfk_3` FOREIGN KEY (`ra_cod_raza`) REFERENCES `raza` (`ra_cod_raza`) ON UPDATE CASCADE;
+  ADD CONSTRAINT `animal_ibfk_3` FOREIGN KEY (`ra_cod_raza`) REFERENCES `raza` (`ra_cod_raza`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `animal_ibfk_4` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `denuncia`
