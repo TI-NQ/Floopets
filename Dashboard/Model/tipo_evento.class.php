@@ -1,16 +1,16 @@
 <?php
 	class Gestion_tipo_evento{
 
-		function Create($te_nombre,$te_estado){
+		function Create($te_nombre){
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 			//Creamos el query de la consulta a la BD
-			$consulta="INSERT INTO tipo_evento (te_nombre,te_estado) VALUES (?,?)";
+			$consulta="INSERT INTO tipo_evento (te_nombre) VALUES (?)";
 
 			$query=$conexion->prepare($consulta);
-			$query->execute(array($te_nombre,$te_estado));
+			$query->execute(array($te_nombre));
 
 			floopets_BD::Disconnect();
 		}
@@ -51,15 +51,15 @@
 			return $resultado;
 		}
 
-		function Update($te_cod_tipo_evento,$te_nombre,$te_estado)
+		function Update($te_cod_tipo_evento,$te_nombre)
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "UPDATE tipo_evento SET te_nombre = ?, te_estado=? WHERE te_cod_tipo_evento = ?" ;
+				$consulta = "UPDATE tipo_evento SET te_nombre = ? WHERE te_cod_tipo_evento = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($te_nombre,$te_estado,$te_cod_tipo_evento));
+				$query->execute(array($te_nombre,$te_cod_tipo_evento));
 				floopets_BD::Disconnect();
 		}
 

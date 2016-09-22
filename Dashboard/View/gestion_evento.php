@@ -18,14 +18,14 @@ $evento=Gestion_evento::ReadAll();
                   <div class='col l6 offset-l2 col m6'>
                    <div class='col l6'>
                         
-                          <a href='../View/actualizar_evento.php?ui=".base64_encode($row["eve_cod_evento"])."'>
+                          <a href='../View/actualizar_evento.php?eve=".base64_encode($row["eve_cod_evento"])."'>
                           <i class='small material-icons'>mode_edit</i>
                           </a>
                         
                       </div>
                       <div class='col l6'>
                         
-                          <a href='../Controller/evento.controller.php?ui=".base64_encode($row["eve_cod_evento"])."&accion=d'>
+                          <a href='../Controller/evento.controller.php?eve=".base64_encode($row["eve_cod_evento"])."&accion=d'>
                           <i class='small material-icons'>delete</i>
                           </a>                        
                         
@@ -42,10 +42,14 @@ $evento=Gestion_evento::ReadAll();
 		                     	    <li>".$row["eve_direccion"]."</li>
 		                  	 <label>Fecha</label>
 		                     	    <li>".$row["eve_fecha"]."</li>
+		                     	    <li>".$row["eve_fecha_hasta"]."</li>
 		                     <label>Hora</label>
 		                     	    <li>".$row["eve_hora"]."</li>
+		                     	    <li>".$row["eve_hora_hasta"]."</li>
 		                     <label>Descripcion</label>
-		                     	    <li>".$row["eve_descripcion"]."</li>                      
+		                     	    <li>".$row["eve_descripcion"]."</li> 
+		                     <label>Estado</label>
+		                     	    <li>".$row["eve_estado"]."</li>	                         
 		                 	</ul>
 		                    
 		             	</div>

@@ -21,32 +21,57 @@
 					}
 				 ?>
 		</select>
+		</div>
 		<br>
-		<label>Nombre:</label>
-		<input name="eve_nombre"></input>
-		<br>
-		<label>Dirección:</label>
-		<input name="eve_direccion"></input>
-		<br>
-		<label>Fecha:</label>
-		<input type="date" name="eve_fecha" min="<?php echo date("Y-m-d"); ?>"></input>
-		<br>
-		<label>Hora:</label>
-		<input type="time" name="eve_hora"></input>
-		<br>
-		<label>Descripcion:</label>
-		<input name="eve_descripcion"></input>
-		<br>
-		<div class="file-field input-field col s12 m6">
-				 <div class="btn">
-					 <span>Galeria</span>
-					 <input type="file" multiple name="Imagen_Upload[]">
-				 </div>
-				 <div class="file-path-wrapper">
-					 <input class="file-path validate" readonly type="text" placeholder="Subir imagen" name="imagen"  >
-				 </div>
-			</div>
+		<div class="form-group">
+		<label class="form-label">nombre</label>
+		<input class="form-control" type="text" name="eve_nombre" required>
 	</div>
+		<br>
+		<div class="form-group">
+		<label class="form-label">direccion</label>
+		<input class="form-control" type="text" name="eve_direccion" required>
+	</div>
+		<br>
+		<div class="col s12 m12">
+              <p class="center">fecha</p>
+               <label>desde</label>
+                  <input type="date" id="demo" name="eve_fecha" required>
+                  <label>Hasta</label>
+                  <input type="date" id="demo" name="eve_fecha_hasta" required>                 
+            </div>
+		<br>
+		<div class="col s12 m12">
+              <p class="center">Horario</p>
+               <label>desde</label>
+                  <input type="time" id="demo" name="eve_hora" required>
+                  <label>Hasta</label>
+                  <input type="time" id="demo" name="eve_hora_hasta" required>                 
+            </div>
+		<br>
+		<div class="form-group">
+		<label class="form-label">descripcion</label>
+		<input class="form-control" type="text" name="eve_descripcion" required>
+	</div>
+		<br>
+			<!-- <input type="hidden" value="" name="Geo_x" id="ltn"> 
+            <input type="hidden" value="" name="Geo_y" id="lng"> -->
+            <div class="input-field col s12">
+          <select id="first_name" type="text" class="validate" required name="eve_estado"required><option value="">estado</option>
+            <option value="pendiente">pendiente</option>
+            <option value="publicado">publicado</option>
+            <option value="terminado">terminado</option>
+          </select>
+        </div>
+		<div class="file-field input-field col s12">
+		    <div class="btn">
+		      <span>imagen</span>
+		      <input type="file" name="eve_imagen[]">
+		    </div>
+		    <div class="file-path-wrapper">
+		      <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="eve_imagen"  >
+		    </div>
+		  </div>
 	<div class="form-group">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
 	</div>

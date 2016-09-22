@@ -12,24 +12,34 @@
 		# crear
 		#iniciamos las variables   que se envian desde el  formulario  y las  que necesito  para  almacenar la tabla.
 		case 'c':
-		$te_cod_tipo_evento				=$_POST["te_cod_tipo_evento"];
-		$eve_nombre								=$_POST["eve_nombre"];
-		$eve_direccion						=$_POST["eve_direccion"];
-		$eve_fecha								=$_POST["eve_fecha"];
+		$te_cod_tipo_evento							=$_POST["te_cod_tipo_evento"];
+		$eve_nombre									=$_POST["eve_nombre"];
+		$nombre_eve_imagen 							= strtolower(str_replace('ñ', 'n', $eve_nombre));
+		$nombre_eve_imagen 							= strtolower(str_replace(' ', '', $nombre_eve_imagen));
+		$eve_direccion								=$_POST["eve_direccion"];
+		$eve_fecha									=$_POST["eve_fecha"];
+		$eve_fecha_hasta							=$_POST["eve_fecha_hasta"];
 		$eve_hora									=$_POST["eve_hora"];
-		$eve_descripcion					=$_POST["eve_descripcion"];
-		$imagen										=$_POST["imagen"];
-
+		$eve_hora_hasta								=$_POST["eve_hora_hasta"];
+		$eve_descripcion							=$_POST["eve_descripcion"];
+		$eve_estado									=$_POST["eve_estado"];
+		$eve_imagen									= $_FILES['eve_imagen']['name'];			
+		$count_galeria								= count($_FILES['eve_imagen']['name']);
+		// $geo_x									=$_POST["geo_x"];
+		// $geo_y									=$_POST["geo_y"];
 
  		try {
- 			Gestion_evento::Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_hora,$eve_descripcion,$imagen);
+ 			if($count_galeria >= 1){ 
+					include("Upload_eve_imagen.php");
+				} 
+ 			Gestion_evento::Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen[0],$eve_estado);
  			$mensaje="Registro exitoso";
 
- 			header("Location:../View/dashboard.php?p=".base64_encode("gestion_evento"));
+ 			//header("Location:../View/dashboard.php?p=".base64_encode("gestion_evento"));
  		} catch (Exception $e) {
  			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			$tipomensaje = "error";
-			header("Location:../View/dashboard.php?p=".base64_encode("gestion_evento"));
+			//header("Location:../View/dashboard.php?p=".base64_encode("gestion_evento"));
  		}
  		break;
 

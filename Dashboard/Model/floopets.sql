@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2016 a las 15:44:24
+-- Tiempo de generación: 22-09-2016 a las 17:04:20
 -- Versión del servidor: 10.1.9-MariaDB
 -- Versión de PHP: 5.5.30
 
@@ -62,7 +62,8 @@ CREATE TABLE `animal` (
 --
 
 INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`) VALUES
-(11, 6, 'apoloa', 'si', 11, 'asjfajsdj', '654554', 'H', 2);
+(14, 6, 'apoloa', 'no', 12, 'asjfajsdj', '5451', 'M', 2),
+(15, 6, 'apoloa', 'si', 11, 'qwerty', '654554', 'H', 2);
 
 -- --------------------------------------------------------
 
@@ -160,7 +161,7 @@ CREATE TABLE `evento` (
   `eve_hora` time NOT NULL,
   `eve_hora_hasta` date NOT NULL,
   `eve_descripcion` varchar(100) NOT NULL,
-  `imagen` longtext NOT NULL,
+  `eve_imagen` longtext NOT NULL,
   `geo_x` longtext NOT NULL,
   `geo_y` longtext NOT NULL,
   `eve_estado` varchar(1000) NOT NULL
@@ -219,7 +220,7 @@ CREATE TABLE `organizacion` (
 --
 
 INSERT INTO `organizacion` (`org_cod_organizacion`, `to_cod_tipo_organizacion`, `org_nombre`, `org_nit`, `org_email`, `org_telefono`, `org_direccion`, `org_clave`) VALUES
-(2, 1, 'peeeee', 5545521, 'ssada@jsdhf', '541545', 'cll 44', '1025');
+(2, 1, 'peeeee', 5545521, 'pendie@hotmail', '541545', 'cll 44', '1025');
 
 -- --------------------------------------------------------
 
@@ -353,6 +354,13 @@ CREATE TABLE `tipo_evento` (
   `te_nombre` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Volcado de datos para la tabla `tipo_evento`
+--
+
+INSERT INTO `tipo_evento` (`te_cod_tipo_evento`, `te_nombre`) VALUES
+(1, 'recreativa');
+
 -- --------------------------------------------------------
 
 --
@@ -415,6 +423,13 @@ CREATE TABLE `vacunas` (
   `vac_fecha` date NOT NULL,
   `vac_serial` int(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `vacunas`
+--
+
+INSERT INTO `vacunas` (`vac_cod_vacuna`, `vac_nombre`, `vac_fecha`, `vac_serial`) VALUES
+(3, 'papilo', '2016-09-23', 2514);
 
 -- --------------------------------------------------------
 
@@ -630,7 +645,7 @@ ALTER TABLE `adopcion`
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT de la tabla `cuidado`
 --
@@ -650,7 +665,7 @@ ALTER TABLE `donacion`
 -- AUTO_INCREMENT de la tabla `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `eve_cod_evento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `eve_cod_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT de la tabla `noticias`
 --
@@ -695,7 +710,7 @@ ALTER TABLE `tipo_donacion`
 -- AUTO_INCREMENT de la tabla `tipo_evento`
 --
 ALTER TABLE `tipo_evento`
-  MODIFY `te_cod_tipo_evento` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `te_cod_tipo_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT de la tabla `tipo_organizacion`
 --
@@ -710,7 +725,7 @@ ALTER TABLE `usuario`
 -- AUTO_INCREMENT de la tabla `vacunas`
 --
 ALTER TABLE `vacunas`
-  MODIFY `vac_cod_vacuna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `vac_cod_vacuna` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- Restricciones para tablas volcadas
 --
