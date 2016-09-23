@@ -92,7 +92,8 @@
 		</div>
 		<div class="banner-video" id="Inicio">
 			<a class="ingresa btn waves-effect waves-light btn-large" href="login.php">Ingresar a Floopets</a>
-			<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
+			<video src="WebFloopets/video/563398388.mp4" autoplay></video>
+			<!-- <img src="WebFloopets/images/inicio.jpeg" alt="" style="width:100%;height:100vh;"/> -->
 		</div>
 
 
@@ -391,25 +392,25 @@ foreach ($validar as $row) {
       <div class="container">
         <div class="row">
           <div class="col s12 m6 l6">
-            <h5 class="white-text">Quienes Somos</h5>
-            <p class="grey-text text-lighten-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h5 class="white-text">¿Que es FlooPets?</h5>
+            <p class="grey-text text-lighten-4">FlooPets es un sistema de información que servirá  para dar apoyo a los procesos de gestión a fundaciones protectoras de animales, específicamente para ayudar a conglomerar más gente, que pueda navegar en los perfiles de estas fundaciones y de esta manera los usuarios puedan entender un poco más a fondo las labores de estos entes y así les sea más fácil contribuir con estas sociedades ya sea por medio de reportes, ayudas monetarias, dando acogida a animales sin hogar temporal o permanentemente, entre otras contribuciones que estos pueden aportar .</p>
           </div>
           <div class="col s12 m3 l3">
-            <h5 class="white-text">Links</h5>
+            <!-- <h5 class="white-text">Links</h5>
             <ul>
               <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
               <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
               <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
               <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-            </ul>
+            </ul> -->
           </div>
           <div class="col s12 m3 l3">
             <a href="logo-footer"><img class="logo__footer" src="WebFloopets/images/logo-blanco.png"></a>
             <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-facebook-square" aria-hidden="true" style="font-size:30px; color:	#3b5998;"></i> Síguenos en Facebook </a></li>
+              <li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-twitter-square" aria-hidden="true" style="font-size:30px; color:	 #00aced;"></i> Twitter</a></li>
+              <!-- <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li> -->
+              <!-- <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li> -->
             </ul>
           </div>
         </div>
