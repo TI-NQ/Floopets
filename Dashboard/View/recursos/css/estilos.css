@@ -1,6 +1,9 @@
-*{
+/**{
 	margin: 0;
 	padding: 0;
+}*/
+body{
+	background-image: url("../../WebFloopets/images/evento4.jpg");
 }
 h1,h2,h3,h4,h5,h6{
 	font-family: 'Roboto Condensed', sans-serif;
@@ -61,6 +64,12 @@ margin-top: 20px;
 }
 /*.botones{
 	margin-top: 150px;
+}*/
+/*.usuario{
+	text-decoration: none;
+	color: #000;
+	display: inline-block;
+	margin: auto;
 }*/
 #form{
 	font-family: Arial;

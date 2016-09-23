@@ -129,7 +129,7 @@
 		<div class="row seccion2">
 			<div class="container__img col s12 m4 l4" >
 				<h3 class="center">Ayuda una Mascota</h3>
-				<img class="bran" src="WebFloopets/images/ayuda.png">
+				<p class="center"><img class="bran" src="WebFloopets/images/ayuda.png"></p>
 				<a href=""><img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img"></a>
 			</div>
 			<div class="container__form__help col s12 m8 l8">

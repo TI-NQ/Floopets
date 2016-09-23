@@ -7,239 +7,105 @@ if(isset($_GET["p"])){
 }
 
 switch ($page) {
-	//Componentes de pagina encargados de vincular datos de la fundacion que tiene la sesion activa
+	//Componente de pagina encargado de vincular datos de la fundacion que tiene la sesion activa
 	case'mi_organizacion':
-	require_once("organizacion.php");
+		require_once("organizacion.php");
 	break;
-	//Componentes de pagina encargados de vincular formulario para el registro de una nueva mascota
+	//Componente de pagina encargado de vincular formulario para el registro de una nueva mascota
 	case'nueva_mascota':
-	require_once("registrar_animal.php");
+		require_once("registrar_animal.php");
 	break;
-	//Componentes de pagina encargados de vincular informacion de mascotas segun fundacion que se encuentra con la sesion activa
-	case'or_gestion_mascotas':
-	require_once("animales_fundacion.php");
+	//Componente de pagina encargado de vincular informacion de mascotas segun fundacion o usuario que se encuentra con la sesion activa
+	case'mis_mascotas':
+		require_once("gestion_animal.php");
 	break;
-
-
-	// // componente de pagina para importar los formularios encargados del registro
-	// case 'registrar_adopcion':
-	// 	require_once("registrar_adopcion.php");
-	// break;
-	//
-	// case 'registrar_animal':
-	// 	require_once("registrar_animal.php");
-	// break;
-	//
-	// case 'registrar_cuidado':
-	// 	require_once("registrar_cuidado.php");
-	// break;
-	//
-	// case 'registrar_denuncia':
-	// 	require_once("registrar_denuncia.php");
-	// break;
-	//
-	// case 'registrar_donacion':
-	// 	require_once("registrar_donacion.php");
-	// break;
-	//
-	// case 'registrar_evento':
-	// 	require_once("registrar_evento.php");
-	// break;
-	//
-	// case 'registrar_organizacion':
-	// 	require_once("registrar_organizacion.php");
-	// break;
-	//
-	// case 'registrar_permisos':
-	// 	require_once("registrar_permisos.php");
-	// break;
-	//
-	// case 'registrar_raza':
-	// 	require_once("registrar_raza.php");
-	// break;
-	//
-	// case 'registrar_roles':
-	// 	require_once("registrar_roles.php");
-	// break;
-	//
-	// case 'registrar_tipo_animal':
-	// 	require_once("registrar_tipo_animal.php");
-	// break;
-	//
-	// case 'registrar_tipo_denuncia':
-	// 	require_once("registrar_tipo_denuncia.php");
-	// break;
-	//
-	// case 'registrar_tipo_donacion':
-	// 	require_once("registrar_tipo_donacion.php");
-	// break;
-	//
-	// case 'registrar_tipo_evento':
-	// 	require_once("registrar_tipo_evento.php");
-	// break;
-	//
-	// case 'registrar_tipo_organizacion':
-	// 	require_once("registrar_tipo_organizacion.php");
-	// break;
-	//
-	// case 'registrar_usuario':
-	// 	require_once("registrar_usuario.php");
-	// break;
-	//
-	// case 'registrar_vacunas':
-	// 	require_once("registrar_vacunas.php");
-	// break;
-	//
-	// case 'registrar_voluntarios':
-	// 	require_once("registrar_voluntarios.php");
-	// break;
-	// // componente de pagina para importar los formularios encargados de la gestion
-	// case 'gestion_adopcion':
-	// 	require_once("gestion_adopcion.php");
-	// break;
-	//
-	// case 'gestion_animal':
-	// 	require_once("gestion_animal.php");
-	// break;
-	//
-	// case 'gestion_cuidado':
-	// 	require_once("gestion_cuidado.php");
-	// break;
-	//
-	// case 'Gestion_denuncia':
-	// 	require_once("Gestion_denuncia.php");
-	// break;
-	//
-	// case 'gestion_donacion':
-	// 	require_once("gestion_donacion.php");
-	// break;
-	//
-	// case 'gestion_evento':
-	// 	require_once("gestion_evento.php");
-	// break;
-	//
-	// case 'gestion_organizacion':
-	// 	require_once("gestion_organizacion.php");
-	// break;
-	//
-	// case 'gestion_permisos':
-	// 	require_once("gestion_permisos.php");
-	// break;
-	//
-	// case 'Gestion_raza':
-	// 	require_once("Gestion_raza.php");
-	// break;
-	//
-	// case 'gestion_roles':
-	// 	require_once("gestion_roles.php");
-	// break;
-	//
-	// case 'gestion_tipo_animal':
-	// 	require_once("gestion_tipo_animal.php");
-	// break;
-	//
-	// case 'gestion_tipo_denuncia':
-	// 	require_once("gestion_tipo_denuncia.php");
-	// break;
-	//
-	// case 'gestion_tipo_donacion':
-	// 	require_once("gestion_tipo_donacion.php");
-	// break;
-	//
-	// case 'gestion_tipo_evento':
-	// 	require_once("gestion_tipo_evento.php");
-	// break;
-	//
-	// case 'gestion_tipo_organizacion':
-	// 	require_once("gestion_tipo_organizacion.php");
-	// break;
-	//
-	// case 'gestion_usuarios':
-	// 	require_once("gestion_usuarios.php");
-	// break;
-	//
-	// case 'gestion_vacunas':
-	// 	require_once("gestion_vacunas.php");
-	// break;
-	//
-	// case 'gestion_voluntarios':
-	// 	require_once("gestion_voluntarios.php");
-	// break;
-	// // componente de pagina para importar los formularios encargados de actualizar
-	// case 'actualizar_adopcion':
-	// 	require_once("actualizar_adopcion.php");
-	// break;
-	//
-	// case 'actualizar_animal':
-	// 	require_once("actualizar_animal.php");
-	// break;
-	//
-	// case 'actualizar_cuidado':
-	// 	require_once("actualizar_cuidado.php");
-	// break;
-	//
-	// case 'actualizar_denuncia':
-	// 	require_once("actualizar_denuncia.php");
-	// break;
-	//
-	// case 'actualizar_donacion':
-	// 	require_once("actualizar_donacion.php");
-	// break;
-	//
-	// case 'actualizar_evento':
-	// 	require_once("actualizar_evento.php");
-	// break;
-	//
-	// case 'actualizar_organizacion':
-	// 	require_once("actualizar_organizacion.php");
-	// break;
-	//
-	// case 'actualizar_permisos':
-	// 	require_once("actualizar_permisos.php");
-	// break;
-	//
-	// case 'actualizar_raza':
-	// 	require_once("actualizar_raza.php");
-	// break;
-	//
-	// case 'actualizar_roles':
-	// 	require_once("actualizar_roles.php");
-	// break;
-	//
-	// case 'actualizar_tipo_animal':
-	// 	require_once("actualizar_tipo_animal.php");
-	// break;
-	//
-	// case 'actualizar_tipo_denuncia':
-	// 	require_once("actualizar_tipo_denuncia.php");
-	// break;
-	//
-	// case 'actualizar_tipo_donacion':
-	// 	require_once("actualizar_tipo_donacion.php");
-	// break;
-	//
-	// case 'actualizar_tipo_evento':
-	// 	require_once("actualizar_tipo_evento.php");
-	// break;
-	//
-	// case 'actualizar_tipo_organizacion':
-	// 	require_once("actualizar_tipo_organizacion.php");
-	// break;
-	//
-	// case 'actualizar_usuario':
-	// 	require_once("actualizar_usuario.php");
-	// break;
-	//
-	// case 'actualizar_vacunas':
-	// 	require_once("actualizar_vacunas.php");
-	// break;
-	//
-	// case 'actualizar_voluntarios':
-	// 	require_once("actualizar_voluntarios.php");
-	// break;
-	//
-	// case 'actualizar_perfil':
-	// 	require_once("actualizar_usuario.php");
-	// break;
+	//Componente de pagina encargado de vincular formulario para registro de nueva adopcion
+	case 'nueva_adopcion':
+		require_once("registrar_adopcion.php");
+	break;
+	//Componente de pagina encargado de vincular todas las adopciones creadas por la fundacion que tiene la sesion activa
+	case 'historial_adopciones':
+		require_once ("gestion_adopcion.php");
+	break;
+	//Componente de pagina encargado de vincular formulario de nuevo evento
+	case 'nuevo_evento':
+			require_once("registrar_evento.php");
+	break;
+	//Componente de pagina encargado de vincular informacion de eventos creados por la fundacion que tiene la sesion activa
+	case 'mis_eventos':
+			require_once("gestion_evento.php");
+	break;
+	//Componente de pagina encargado de vincular la informacion sobre las donaciones que los usuarios realizaron a la fundacion que tiene la sesion activa
+	case 'gestion_donaciones':
+		require_once ("gestion_donaciones.php");
+	break;
+	//Componente de pagina que vinculara informacion sobre todas las denuncias realizadas y en esta las fundaciones podran escoger si dan seguimiento a la denuncia
+	case 'denuncias':
+		require_once("Gestion_denuncia.php");
+	break;
+	//Componente de pagina que vinculara el formulario para crear una nueva vacuna
+	case 'nueva_vacuna':
+		require_once("registrar_vacunas.php");
+	break;
+	//Componente de pagina que vinculara la informacion de las vacunas que tiene registradas la fundacion
+	case 'vacunas_fundacion':
+		require_once("gestion_vacunas.php");
+	break;
+	//Componente de pagina que vinculara la informacion de los usuarios que desean ser voluntarios
+	case 'voluntarios':
+		require_once("gestion_voluntarios.php");
+	break;
+	//Componente de pagina ue vinculara el formulario para registrar nuevo cuidado
+	case 'registro_cuidados':
+		require_once("registrar_cuidado.php");
+	break;
+	//Componente de pagina que vinculara la informacion de los cuidados
+	case 'ver_cuidados':
+		require_once("gestion_cuidado");
+	break;
+	//Componente de pagina que vinculara formulario para crear nueva organizacion
+	case 'registrar_organizacion':
+		require_once("registrar_organizacion.php");
+	break;
+	//Componente de pagina que vinculara la informacion de todas las fundaciones
+	case 'gestionar_organizacion':
+		require_once("gestion_organizacion.php");
+	break;
+	//Componente de pagina que cargara la informacion de los eventos para cambiar el estado
+	case 'gestion_evento':
+		require_once("gestion_evento.php");
+	break;
+	//componente de pagina que cargara la informacion de todos los eventos
+	case 'historial_eventos':
+		require_once("historial_eventos.php");
+	break;
+	//Componente de pagina que cargara la informacion de las denuncias para cambiar el estado
+	case 'gestion_denuncia_estado':
+		require_once("Gestion_denuncia_estado.php");
+	break;
+	//componente de pagina que cargara la informacion de todas las denuncias
+	case 'historial_denuncias':
+		require_once("historial_denuncias.php");
+	break;
+	//Componente de pagina que cargara la informacion del usuario(perfil) para poder editarlo
+	case 'mi_perfil':
+		require_once("mi_perfil.php");
+	break;
+	//Componente de pagina que cargara toda la informacion de las fundaciones, pero sin ninguna accion(editar, eliminar, etc...)
+	case 'fundaciones_usuario':
+		require_once("info_fundaciones.php");
+	break;
+	//Componente de pagina que cargara la informacion de los eventos PROXIMOS al usuario
+	case 'proximos_eventos':
+		require_once("eventos_proximos.php");
+	break;
+	//Componente que cargara las informacion sobre los cuidados para perros
+	case 'cuidados_perros':
+		require_once("cuidados_perros.php");
+	break;
+	//Componente que cargara las informacion sobre los cuidados para gatos
+	case 'cuidados_gatos':
+		require_once("cuidados_gatos.php");
+	break;
 }
 ?>
