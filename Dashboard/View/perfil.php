@@ -37,7 +37,7 @@
         <label for="Cedula">Cedula</label>
       </div>
       <div class="input-field col s6">
-        <input type="email" name="Tipo" value="<?php echo $user_data[9]?>" readonly>
+        <input type="text" name="Tipo" value="<?php echo $user_data[9]?>" readonly>
         <label for="Tipo">Tipo Usuario</label>
       </div>
     </div>

@@ -39,7 +39,7 @@
       $_SESSION["cod_rol"]         = $usuario[6];
 
 
-     header("Location:../View/dashboard.php?m=".$msn);
+     header("Location:../View/dashboard.php?p=".base64_encode("mi_perfil")."&m=".$msn);
 
     }
   } catch (Exception $e) {
