@@ -35,6 +35,7 @@
       	<!-- link del menu -->
       	<script src="WebFloopets/js/efecto_menu.js"></script>
       	<script src="WebFloopets/js/desplegar_ayuda.js"></script>
+				<script src="WebFloopets/js/desplegar_ayuda.js"></script>
       	<!--  -->
 
       	<!-- scripts -->
@@ -128,21 +129,28 @@
 		Ricardo_ochoa -->
 		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin-top:50px;" class="center" id="denuncias">Denuncias</h2>
 		<div class="row seccion2">
+			<form class="col s12" action="Dashboard/Controller/denuncia.controller.php" method="POST" enctype="multipart/form-data">
 			<div class="container__img col s12 m4 l4" >
 				<h3 class="center">Ayuda una Mascota</h3>
 				<p class="center"><img class="bran" src="WebFloopets/images/ayuda.png"></p>
-				<a href=""><img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img"></a>
+				<section>
+  <div class="inputFile">
+    <input type="file" name="de_imagen[]" class="file" />
+    <div class="fakeFile">
+      <img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img">
+    </div>
+  </div>
+</section>
 			</div>
 			<div class="container__form__help col s12 m8 l8">
 			    <div class="row">
-				    <form class="col s12" action="Dashboard/Controller/denuncia.controller.php" method="POST" enctype="multipart/form-data">
 				    <h3 class="center">Seleccione una opción</h3>
 				      <div class="row">
-				        <div class="input-field col s12 m6 l6 mascota">
-    						<select>
+				        <div class="input-field col s12 mascota">
+    						<select name="td_cod_tipo_denuncia">
 						      <option value="" disabled selected>Seleccione un tipo de denuncia</option>
                   <?php
-      							foreach ($den as $row) {
+      							foreach ($tipod as $row) {
       								echo "<option value = '".$row["td_cod_tipo_denuncia"]."'>".$row["td_nombre"]."</option>";
       							}
       						 ?>
@@ -151,27 +159,23 @@
   						</div>
 				      </div>
         			  <div class="input-field col s12 textarea">
-          			      <textarea id="textarea1" class="materialize-textarea" length="120"></textarea>
+          			      <textarea id="textarea1" class="materialize-textarea" name="de_descripcion" length="120"></textarea>
           				  <label for="textarea1">Descripción</label>
         			  </div>
-				      <div class="input-field col s12 m6 l6">
-				          <input id="last_name" type="text" class="validate">
-				          <label for="last_name">Nombre mascota(Opcional)</label>
-				      </div>
-				      <div class="input-field col s12 m6 l6">
-				          <input id="last_name" type="text" class="validate">
-				          <label for="last_name">Nombre contacto</label>
-				      </div>
-				      <div class="input-field col s12 m6 l6">
-				          <input id="last_name" type="text" class="validate">
-				          <label for="last_name">Correo electrónico</label>
-				      </div>
-				      <div class="input-field col s12 m6 l6">
-				          <input id="last_name" type="text" class="validate">
-				          <label for="last_name">Teléfono (Celular)</label>
-				      </div>
+								<div class="input-field col s12 m6 l6">
+									<input type="text" name="de_nombre" id="de_nombre" required>
+											<label for="de_nombre">Nombre de mascota (Opcional)</label>
+								</div>
+								<div class="input-field col s12 m6 l6">
+									<input type="text" name="de_contacto" id="de_contacto" required>
+											<label for="de_contacto">Nombre de contacto</label>
+								</div>
+								<div class="input-field col s12">
+									<input type="text" name="de_telefono" id="de_telefono" required>
+											<label for="de_telefono">Telefono</label>
+								</div>
 							<div class="input-field col s12">
-								<button class="boton__form btn waves-effect waves-light btn-large right" style="width:50%;">Enviar</button>
+								<button class="boton__form btn waves-effect waves-light btn-large right" name="accion" value="c" style="width:50%;">Enviar</button>
 							</div>
 
 					</form>
@@ -392,17 +396,10 @@ foreach ($validar as $row) {
       <div class="container">
         <div class="row">
           <div class="col s12 m6 l6">
-            <h5 class="white-text">¿Que es FlooPets?</h5>
-            <p class="grey-text text-lighten-4">FlooPets es un sistema de información que servirá  para dar apoyo a los procesos de gestión a fundaciones protectoras de animales, específicamente para ayudar a conglomerar más gente, que pueda navegar en los perfiles de estas fundaciones y de esta manera los usuarios puedan entender un poco más a fondo las labores de estos entes y así les sea más fácil contribuir con estas sociedades ya sea por medio de reportes, ayudas monetarias, dando acogida a animales sin hogar temporal o permanentemente, entre otras contribuciones que estos pueden aportar .</p>
+            <h5 class="white-text center">¿Que es FlooPets?</h5>
+            <p class="grey-text text-lighten-4" align="justify">FlooPets es un sistema de información que servirá  para dar apoyo a los procesos de gestión a fundaciones protectoras de animales, específicamente para ayudar a conglomerar más gente, que pueda navegar en los perfiles de estas fundaciones y de esta manera los usuarios puedan entender un poco más a fondo las labores de estos entes y así les sea más fácil contribuir con estas sociedades ya sea por medio de reportes, ayudas monetarias, dando acogida a animales sin hogar temporal o permanentemente, entre otras contribuciones que estos pueden aportar .</p>
           </div>
           <div class="col s12 m3 l3">
-            <!-- <h5 class="white-text">Links</h5>
-            <ul>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
-              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
-            </ul> -->
           </div>
           <div class="col s12 m3 l3">
             <a href="logo-footer"><img class="logo__footer" src="WebFloopets/images/logo-blanco.png"></a>
@@ -417,17 +414,10 @@ foreach ($validar as $row) {
       </div>
       <div class="footer-copyright grey darken-2">
         <div class="container">
-          SENA © 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información
-            <!-- <a class="white-text right" href="#!"><i class="fa fa-facebook" aria-hidden="true"></i></a>
-            <a class="white-text right" href="#!"><i class="fa fa-twitter" aria-hidden="true"></i></a>
-            <a class="white-text right" href="#!"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-            <a class="white-text right" href="#!"><i class="fa fa-google-plus" aria-hidden="true"></i></a> -->
+          <div align="center">SENA © 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información</div>
         </div>
       </div>
     </footer>
-
-	<!-- script submenu -->
-	<script src="WebFloopets/js/desplegar_ayuda.js"></script>
 	</body>
 
 
