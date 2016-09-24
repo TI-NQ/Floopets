@@ -19,7 +19,7 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/gestion_animal.php?m=$mensaje");
+			header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
 
 
 			break;
@@ -38,17 +38,17 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/gestion_animal.php?m=$mensaje");
+			header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
 			break;
 
 		case 'd':
 			try {
           $animal = Gestion_animal::Delete(base64_decode($_REQUEST["an"]));
           $mensaje = "Se elimino correctamente";
-          header("Location: ../View/gestion_animal.php?m=".$mensaje);
+          header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-          header("Location: ../View/gestion_animal.php?m=".$mensaje);
+          header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
         }
 
 			break;

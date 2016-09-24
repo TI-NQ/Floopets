@@ -55,10 +55,10 @@ if(!isset($_SESSION["usu_email"])){
 	</head>
 	<!-- <body style="background-image: url('../../WebFloopets/images/fondo-huellas.jpg');"> -->
   <body>
-    <a  id="ajustes" href="../Model/cerrar.php">Cerrar Sesion<i class="fa fa-power-off" aria-hidden="true" style="margin-left: 10px; font-size: 25px; position: relative;"></i></a>
+    <a  id="ajustes" href="../Model/cerrar.php">Cerrar Sesion<i class="fa fa-power-off" aria-hidden="true" style="margin-left: 10px; font-size: 25px; position: relative; color:#000;"></i></a>
     <div class="container-fluid">
       <div class="row">
-        <div class="col s12 grey lighten-1" id="menu_up" >
+        <div class="col s12 grey lighten-1" id="menu_up" style="background-image: url('../../WebFloopets/images/fondo-huellas.jpg');">
           <!-- <a href="#" class="usuario"><?php echo $_SESSION["usu_nombre"];?></a> -->
           <div class="row">
             <div class="col s2" id="menu_icono">
