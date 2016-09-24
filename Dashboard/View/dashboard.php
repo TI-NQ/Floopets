@@ -15,6 +15,7 @@ if(!isset($_SESSION["usu_email"])){
 		<meta charset="utf-8">
 		<!--- links --->
 		<link rel="shortcut icon" type="image/x-icon" href="../../WebFloopets/images/title-web.ico">
+    <link rel="stylesheet" href="../../WebFloopets/css/animate.css" media="screen" title="no title" charset="utf-8">
 		<link rel="stylesheet" href="../../WebFloopets/font-awesome-4.6.3/css/font-awesome.css">
 		<link rel="stylesheet" href="recursos/css/estilos.css">
 		<link rel="stylesheet" type="text/css" href="recursos/css/jquery.dataTables.css">

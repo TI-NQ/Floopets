@@ -8,8 +8,8 @@ $organizacion = Gestion_organizacion::ReadAll();
 
 // echo $cu[0];
  ?>
- <h4 class="center">Nueva Mascota</h4>
-<form id="form" action="../Controller/animal.controller.php" method="POST">
+ <h4 class="center animated zoomIn">Nueva Mascota</h4>
+<form id="form" class="animated zoomIn" action="../Controller/animal.controller.php" method="POST">
 	<div class="input-field col s12 m6 l6" style="z-index:1;">
 				<select name="ra_cod_raza">
 					<option disabled selected>Seleccione una Opcion</option>

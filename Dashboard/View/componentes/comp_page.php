@@ -93,7 +93,7 @@ switch ($page) {
 	break;
 	//Componente de pagina que cargara toda la informacion de las fundaciones, pero sin ninguna accion(editar, eliminar, etc...)
 	case 'fundaciones_usuario':
-		require_once("info_fundaciones.php");
+		require_once("fundaciones.php");
 	break;
 	//Componente de pagina que cargara la informacion de los eventos PROXIMOS al usuario
 	case 'proximos_eventos':

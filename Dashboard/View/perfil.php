@@ -4,7 +4,7 @@
   require_once ("../Model/usuarios.class.php");
   $user_data=Gestion_usuarios::ReadbyID($_SESSION["usu_cod_usuario"]);
 ?>
-<div class="row">
+<div class="row animated zoomIn">
   <h4 class="center">Mi Perfil</h4>
   <div class="col s5">
     <!-- imagen de prueba -->
