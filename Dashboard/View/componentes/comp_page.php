@@ -89,7 +89,7 @@ switch ($page) {
 	break;
 	//Componente de pagina que cargara la informacion del usuario(perfil) para poder editarlo
 	case 'mi_perfil':
-		require_once("mi_perfil.php");
+		require_once("perfil.php");
 	break;
 	//Componente de pagina que cargara toda la informacion de las fundaciones, pero sin ninguna accion(editar, eliminar, etc...)
 	case 'fundaciones_usuario':
