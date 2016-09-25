@@ -52,7 +52,7 @@
      			 $('select').material_select();
      			 $('.carousel.carousel-slider').carousel({full_width: true});
      			 $("#owl-demo").owlCarousel({
-				      autoPlay: 3000, //Set AutoPlay to 3 seconds
+				      autoPlay: 7000, //Set AutoPlay to 3 seconds
 				      items : 3,
 				      itemsDesktop : [1199,3],
 				      itemsDesktopSmall : [979,3]
@@ -69,7 +69,7 @@
 		</script>
 	</head>
 	<body>
-			<i class="fa fa-bars" aria-hidden="true" id="menu" onclick= "desplegar()"></i>
+			<i class="fa fa-bars animated zoomIn" aria-hidden="true" id="menu" onclick= "desplegar()"></i>
 
 
 		<div class="contenedor-menu">
@@ -92,7 +92,7 @@
 
 		</div>
 		<div class="banner-video" id="Inicio">
-			<a class="ingresa btn waves-effect waves-light btn-large" href="login.php">Ingresar a Floopets</a>
+			<a class="ingresa btn waves-effect waves-light btn-large animated zoomIn" href="login.php">Ingresar a Floopets</a>
 			<video src="WebFloopets/video/563398388.mp4" autoplay></video>
 			<!-- <img src="WebFloopets/images/inicio.jpeg" alt="" style="width:100%;height:100vh;"/> -->
 		</div>
@@ -303,14 +303,20 @@
 foreach ($validar as $row) {
 	?>
 	<div class="item">
+    <div id="info">
+      <h4><?php echo $row["eve_nombre"];?></h4>
+      <p><?php echo $row["eve_descripcion"];?></p>
+      <p>Direccion: <?php echo $row["eve_direccion"]?></p>
+      <p>Fecha: <?php echo $row["eve_fecha"]?>, <?php echo $row["eve_hora"]?></p>
+      <a href="#" class="waves-effect btn">Ver Mas</a>
+    </div>
 	<!-- <img src="../Dashboard/View/img/imagen_evento/<?php echo $row["imagen"];?>" alt="Owl Image"> -->
 	<img src="WebFloopets/images/evento1.jpg" alt="Owl Image">
 		<div class="text-event">
-
 				<h4><?php echo $row["eve_nombre"];?></h4>
 				<h6><?php echo $row["eve_fecha"];?></h6>
-
 		</div>
+
 
 	</div>
 

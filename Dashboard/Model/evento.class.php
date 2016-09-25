@@ -88,7 +88,7 @@
 
 
 			//Creamos el query de la consulta a la BD
-			$consulta="SELECT * FROM evento LIMIT 4";
+			$consulta="SELECT * FROM evento LIMIT 6";
 
 			$query=$conexion->prepare($consulta);
 			$query->execute();
