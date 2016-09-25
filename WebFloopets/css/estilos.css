@@ -167,6 +167,9 @@ textarea.materialize-textarea {
 input {
     color: white;
 }
+.input-field{
+	padding-right: 50px;
+}
 textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #fff;
   box-shadow: 0 1px 0 0 #fff;
@@ -182,10 +185,20 @@ input[type=text]:focus:not([readonly]){
   border-bottom: 1px solid #fff;
   box-shadow: 0 1px 0 0 #fff;
 }
+input[type=email]{
+	border-bottom: 1px solid #fff;
+}
+input[type=email]:focus:not([readonly]){
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 1px 0 0 #fff;
+}
 .input-field label{
 	color: #fff;
 }
 input[type=text]:focus:not([readonly]) + label{
+	color: #fff;
+}
+input[type=email]:focus:not([readonly]) + label{
 	color: #fff;
 }
 .character-counter{
@@ -222,7 +235,7 @@ div.fakeFile {
 .nubes img{
 	max-height: 350px;
 	max-width: 300px;
-} 
+}
 .parallax-container{
 	position: relative;
 	z-index: 1;
@@ -243,7 +256,7 @@ div.fakeFile {
 }
 .nube1{
 	position: relative;
-	margin-top: 200px;
+	margin-top: 250px;
 	left: 100px;
 }
 .nube2{
@@ -254,12 +267,12 @@ div.fakeFile {
 .nube3{
 	position: relative;
 	left: 550px;
-	margin-top: -50px;
+
 }
 .nube4{
 	position: relative;
 	left: 900px;
-	margin-top: -400px;
+	margin-top: -320px;
 }
 .nube5{
  	position: relative;
@@ -307,6 +320,9 @@ div.fakeFile {
 	font-family: 'Roboto Condensed', sans-serif;
 	font-size: 40px;
 }
+html{
+  color: #fff;
+}
 /*----------------------------------------------estilos seccion Cuidados----------------------------------------------*/
 .cuidados{
 	height: 500px;
@@ -331,6 +347,7 @@ div.fakeFile {
 #owl-demo .item img{
   display: block;
   width: 100%;
+
 }
 .text-event{
 	position:relative;

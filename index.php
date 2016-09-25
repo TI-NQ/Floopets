@@ -32,14 +32,23 @@
       	<!-- <script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js"></script> -->
       	<script type="text/javascript" src="WebFloopets/materialize/js/materialize.js"></script>
       	<script type="text/javascript" src ="WebFloopets/js/owl.carousel.min.js"></script>
+				<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js"></script>
+				<script type="text/javascript">
+				wow = new WOW(
+													{
+													boxClass:     'wow',
+													animateClass: 'animated',
+													offset:       0,
+												})
+												wow.init();
+				</script>
       	<!-- link del menu -->
       	<script src="WebFloopets/js/efecto_menu.js"></script>
       	<script src="WebFloopets/js/desplegar_ayuda.js"></script>
-				<script src="WebFloopets/js/desplegar_ayuda.js"></script>
-      	<!--  -->
 
       	<!-- scripts -->
       	<script type="text/javascript">
+
       		 $(document).ready(function(){
      			 $('.parallax').parallax();
            $('a.ancla').click(function(e){
@@ -72,13 +81,13 @@
 			<i class="fa fa-bars animated zoomIn" aria-hidden="true" id="menu" onclick= "desplegar()"></i>
 
 
-		<div class="contenedor-menu">
+		<div class="contenedor-menu animated fadeInLeft">
 
 			<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
 			<i class="fa fa-times" aria-hidden="true" id="salir" onclick= "ver_menu()"></i>
 			<ul class="menu_floopets">
 				<li><a href="#Inicio" class="ancla"><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
-				<li><a href="#Quienessomos" class="ancla"><i class="icono izquierda fa fa-paw"></i> Equipo De Trabajo</a></li>
+				<li><a href="#Quienessomos" class="ancla"><i class="icono izquierda fa fa-paw "></i> Equipo De Trabajo</a></li>
 				<li><a href="#adopciones" class="ancla"><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
 				<li><a href="Quiere-Ser-Voluntario.php"><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
 				<li ><a href="#denuncias" class="ancla"><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota</a>
@@ -92,7 +101,7 @@
 
 		</div>
 		<div class="banner-video" id="Inicio">
-			<a class="ingresa btn waves-effect waves-light btn-large animated zoomIn" href="login.php">Ingresar a Floopets</a>
+			<a class="ingresa btn waves-effect waves-light btn-large wow zoomIn" href="login.php">Ingresar a Floopets</a>
 			<video src="WebFloopets/video/563398388.mp4" autoplay></video>
 			<!-- <img src="WebFloopets/images/inicio.jpeg" alt="" style="width:100%;height:100vh;"/> -->
 		</div>
@@ -101,20 +110,20 @@
 		<!-- Andrea Guzman-Adopciones -->
 		<div class="row seccion1" id="adopciones">
 				<div class="container__perros col s12 m6 l6">
-					<button class="boton btn waves-effect waves-light btn-large">Perro</button>
+					<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Perro</button>
 
 					<div id="adoptaperro">
-						<p>Adopta un</p>
+						<p class="wow fadeInDown">Adopta un</p>
 					</div>
 
-					<img src="WebFloopets/images/1.jpg">
+					<img src="WebFloopets/images/1.jpg" class="wow fadeInLeft">
 				</div>
 				<div class="container__gatos col s12 m6 l6">
 					<div id="adoptagato">
-						<p>Adopta un</p>
+						<p class="wow fadeInDown">Adopta un</p>
 					</div>
-					<button class="boton1 btn waves-effect waves-light btn-large">Gato</button>
-					<img src="WebFloopets/images/2.jpg">
+					<button class="boton1 btn waves-effect waves-light btn-large wow fadeInDown">Gato</button>
+					<img src="WebFloopets/images/2.jpg" class="wow fadeInRight">
 
 				</div>
 		</div>
@@ -127,28 +136,27 @@
 
 <!--Contenedor ayuda una mascota
 		Ricardo_ochoa -->
-		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin-top:50px;" class="center" id="denuncias">Denuncias</h2>
+		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin-top:50px;" class="center wow zoomIn" id="denuncias">Denuncias</h2>
 		<div class="row seccion2">
 			<form class="col s12" action="Dashboard/Controller/denuncia.controller.php" method="POST" enctype="multipart/form-data">
 			<div class="container__img col s12 m4 l4" >
-				<h3 class="center">Ayuda una Mascota</h3>
-				<p class="center"><img class="bran" src="WebFloopets/images/ayuda.png"></p>
+				<h3 class="center wow zoomIn">Ayuda una Mascota</h3>
+				<p class="center"><img class="bran wow zoomIn" src="WebFloopets/images/ayuda.png"></p>
 				<section>
   <div class="inputFile">
     <input type="file" name="de_imagen[]" class="file" />
     <div class="fakeFile">
-      <img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img">
+      <img src="WebFloopets/images/1 copia.png" alt="" class="circle responsive-img wow zoomIn">
     </div>
   </div>
 </section>
 			</div>
-			<div class="container__form__help col s12 m8 l8">
+			<div class="container__form__help col s12 m8 l8 wow fadeInRight">
 			    <div class="row">
 				    <h3 class="center">Seleccione una opción</h3>
 				      <div class="row">
-				        <div class="input-field col s12 mascota">
+				        <div class="input-field col s12 m6 l6 mascota">
     						<select name="td_cod_tipo_denuncia">
-						      <option value="" disabled selected>Seleccione un tipo de denuncia</option>
                   <?php
       							foreach ($tipod as $row) {
       								echo "<option value = '".$row["td_cod_tipo_denuncia"]."'>".$row["td_nombre"]."</option>";
@@ -157,23 +165,26 @@
     						</select>
     						<label>Selecciona un tipo de denuncia</label>
   						</div>
+							<div class="input-field col s12 m6 l6">
+								<input type="text" name="de_telefono" id="de_telefono" required>
+										<label for="de_telefono">Telefono</label>
+							</div>
 				      </div>
-        			  <div class="input-field col s12 textarea">
-          			      <textarea id="textarea1" class="materialize-textarea" name="de_descripcion" length="120"></textarea>
-          				  <label for="textarea1">Descripción</label>
-        			  </div>
+							<div class="row">
+								<div class="input-field col s12 textarea">
+									<textarea id="textarea1" class="materialize-textarea" name="de_descripcion" length="120"></textarea>
+									<label for="textarea1">Descripción</label>
+								</div>
+							</div>
 								<div class="input-field col s12 m6 l6">
 									<input type="text" name="de_nombre" id="de_nombre" required>
 											<label for="de_nombre">Nombre de mascota (Opcional)</label>
 								</div>
 								<div class="input-field col s12 m6 l6">
-									<input type="text" name="de_contacto" id="de_contacto" required>
-											<label for="de_contacto">Nombre de contacto</label>
+									<input type="email" name="de_contacto" id="de_contacto" required>
+											<label for="de_contacto">Correo Electronico</label>
 								</div>
-								<div class="input-field col s12">
-									<input type="text" name="de_telefono" id="de_telefono" required>
-											<label for="de_telefono">Telefono</label>
-								</div>
+
 							<div class="input-field col s12">
 								<button class="boton__form btn waves-effect waves-light btn-large right" name="accion" value="c" style="width:50%;">Enviar</button>
 							</div>
@@ -184,12 +195,12 @@
 		</div>
 		<div class="parallax-container">
 			<div class="nubes">
-				<div class="nube1"><img src="WebFloopets/recursos/images/nube-3.png"></div>
-  				<div class="nube2"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube3"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube4"><img src="WebFloopets/recursos/images/nube-2.png"></div>
-  				<div class="nube5"><img src="WebFloopets/recursos/images/nube-1.png"></div>
-  				<div class="nube6"><img src="WebFloopets/recursos/images/nube-1.png"></div>
+				<div class="nube1 "><img class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay="0.3s" src="WebFloopets/recursos/images/nube-3.png"></div>
+  				<div class="nube2"><img class="wow fadeInRight" data-wow-duration="3s" data-wow-delay="0.4s" src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube3"><img class="wow fadeInRight" data-wow-duration="3s" data-wow-delay="0.5s" src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube4"><img class="wow fadeInRight" data-wow-duration="3s" data-wow-delay="0.6s" src="WebFloopets/recursos/images/nube-2.png"></div>
+  				<div class="nube5"><img class="wow fadeInLeft" data-wow-duration="3s" data-wow-delay="0.7s" src="WebFloopets/recursos/images/nube-1.png"></div>
+  				<div class="nube6"><img class="wow fadeInRight" data-wow-duration="3s" data-wow-delay="0.8s" src="WebFloopets/recursos/images/nube-1.png"></div>
   			</div>
       		<div class="parallax">
       			<img src="WebFloopets/recursos/images/montañas.png">
@@ -198,17 +209,17 @@
     	<div class="row seccion3" id="perdidas">
 				<div class="container__perdida col s12 m6 l6">
 					<div id="perdida">
-						<p>Mascotas Perdidas</p>
+						<p class="wow fadeInDown">Mascotas Perdidas</p>
 					</div>
-					<button class="boton btn waves-effect waves-light btn-large">Ver mas...</button>
-					<img src="WebFloopets/images/7.jpg">
+					<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Ver mas...</button>
+					<img src="WebFloopets/images/7.jpg" class="wow fadeInLeft">
 				</div>
 				<div class="container__historias col s12 m6 l6">
 					<div id="historias">
-						<p>Historias</p>
+						<p class="wow fadeInDown">Historias</p>
 					</div>
-					<button class="boton1 btn  waves-effect waves-light btn-large">Ver mas...</button>
-					<img src="WebFloopets/images/5.jpg">
+					<button class="boton1 btn  waves-effect waves-light btn-large wow fadeInDown">Ver mas...</button>
+					<img src="WebFloopets/images/5.jpg" class="wow fadeInRight">
 
 				</div>
 		</div>
