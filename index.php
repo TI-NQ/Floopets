@@ -310,8 +310,8 @@ foreach ($validar as $row) {
       <p>Fecha: <?php echo $row["eve_fecha"]?>, <?php echo $row["eve_hora"]?></p>
       <a href="#" class="waves-effect btn">Ver Mas</a>
     </div>
-	<!-- <img src="../Dashboard/View/img/imagen_evento/<?php echo $row["imagen"];?>" alt="Owl Image"> -->
-	<img src="WebFloopets/images/evento1.jpg" alt="Owl Image">
+	<img src="Dashboard/View/img/imagen_evento/<?php echo (str_replace(" ", "",$row["eve_nombre"]));?>/<?php echo $row["eve_imagen"];?>" alt="Owl Image">
+	<!-- <img src="WebFloopets/images/evento1.jpg" alt="Owl Image"> -->
 		<div class="text-event">
 				<h4><?php echo $row["eve_nombre"];?></h4>
 				<h6><?php echo $row["eve_fecha"];?></h6>

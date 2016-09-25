@@ -20,7 +20,7 @@
      	$count_galeria			= count($_FILES['eve_imagen']['name']);
 
 			try {
-				if($count_galeria >= 1){ 
+				if($count_galeria >= 1){
 					include("Upload_eve_imagen.php");
 				} 
 				Gestion_evento::Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado);

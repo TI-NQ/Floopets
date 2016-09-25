@@ -331,11 +331,10 @@ div.fakeFile {
 #owl-demo .item img{
   display: block;
   width: 100%;
-
 }
 .text-event{
 	position:relative;
-	margin-top: -95px;
+	margin-top: -150px;
 	color: #fff;
 	background-color: rgba(0,179,174,0.5);
 }
@@ -351,6 +350,7 @@ div.fakeFile {
 #info p{
 	margin-left: 50px;
 	text-align: justify;
+	max-width: 70%;
 }
 #info a{
 	margin-left: 50px;
