@@ -10,14 +10,21 @@
 			$usu_cod_usuario				=$_POST["usu_cod_usuario"];
 			$usu_nombre 						= $_POST["usu_nombre"];
 			$usu_apellido 					=$_POST["usu_apellido"];
+			$nombre_usu_imagen 	= strtolower(str_replace('ñ', 'n', $usu_nombre));
+			$nombre_usu_imagen 	= strtolower(str_replace(' ', '', $nombre_usu_imagen));
 			$usu_telefono						=$_POST["usu_telefono"];
 			$usu_email							=$_POST["usu_email"];
 			$cod_rol								=$_POST["cod_rol"];
 			$usu_clave							=$_POST["usu_clave"];
 			$usu_cedula							=$_POST["usu_cedula"];
+			$usu_imagen   			= $_POST["usu_imagen"];
+			$count_galeria		= count($_FILES['usu_imagen']['name']);
 
 			try {
-				Gestion_usuarios::Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave);
+				if($count_galeria >= 1){ 
+					include("Upload_usu_image.php");
+				} 
+				Gestion_usuarios::Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen);
 				$mensaje = "Se registro exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
@@ -55,6 +62,26 @@
 		          header("Location: ../View/gestion_usuarios.php?m=".$mensaje);
 		        }
 		      break;
+
+		      case 'existe_usuario':
+			  	$usu_cedula = $_POST["usu_cedula"]; 
+			  	try{
+			  		$usuario = Gestion_usuarios::ReadbyCC($usu_cedula);
+
+			  		if(count($usuario[0]) > 0){
+			  			$existe = true;	
+			  			$message = "El usuario ya existe en nuestra aplicación";
+			  		}else{
+			  			$existe = false;
+			  			$message = "";
+			  		} 
+			  	}catch(Exception $e){
+			  		echo $e->getMessage();
+			  	}
+
+			  	echo json_encode(array('ue' => $existe, 'msn' => $message));
+
+			  break;
 
 	}
 

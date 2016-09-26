@@ -1,5 +1,6 @@
 <h2 class="center">Registro usuarios</h2>
 				<form id="form"action="../Controller/usuarios.controller.php" method="POST">
+				 <input type="hidden" value="1" name="cod_rol"/>
 					<div class="form-group">
 						<label class="form-label">Nombre :</label>
 						<input class="form-control" type="text" name="usu_nombre" required>
@@ -12,41 +13,27 @@
 						<label class="form-label">Telefono :</label>
 						<input class="form-control" type="number" name="usu_telefono" required>
 					</div>
-				  <div class="form-group">
-						<label class="form-label">Cedula :</label>
-						<input class="form-control" type="number" name="usu_cod_usuario" required>
-					</div>
+				  <div class="input-field col s12 m12">
+	                <input id="Cc" type="number" class="validate" name="cedula" required>
+	                <label for="Cc">Documento de identidad*</label>
+	                <span id="resultadobusqueda" class="red-text accent-3 left"> </span>
+              </div>
 				  <div class="form-group">
 						<label class="form-label">Email :</label>
 						<input class="form-control" type="email" name="usu_email" required>
-					</div>
-				  <div class="form-group">
-				  	<label>Rol:</label>
-				    <select name="cod_rol" required class="form-control">
-				        <option value="" selected></option>
-				        <?php
-				          require_once("../Model/conexion.php");
-				          require_once("../Model/rol.class.php");
-
-				          $rol = gestion_rol::ReadAll();
-				          foreach ($rol as $row) {
-				            echo "<option value = '".$row["cod_rol"]."'>".$row["rol_nombre"]."</option>";
-				          }
-				         ?>
-				    </select>
-						<!-- <input  class="form-control" type="hidden" name="cod_rol" value="1" required> -->
 					</div>
 					<div class="form-group">
 						<label>Contraseña:</label>
 						<input name="usu_clave" type="password" required class="form-control">
 					</div>
+					<div class="file-field input-field col s12">
+		    
+		    <div class="file-path-wrapper">
+		      <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="usu_imagen"  >
+		    </div>
+		  </div>
 					<div class="form-group">
 						<button name="accion" value="c" class="btn btn-primary" style="width: 100%">Registrar</button>
 					</div>
 				</form>
-			</div>
-		</div>
-	</div>
-</div>
-</body>
-</html>
+

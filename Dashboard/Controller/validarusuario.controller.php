@@ -8,7 +8,7 @@
   $usu_clave      = $_POST["usu_clave"];
 
   try {
-    $usuario = Gestion_Usuarios::ValidaUsuario($usu_email, $usu_clave);
+    $usuario = Gestion_usuarios::ValidaUsuario($usu_email, $usu_clave);
 
     // El metodo count nos sirve para contar el numero de registros que retorno de la consulta
     $usuario_existe = count($usuario[0]);
@@ -38,8 +38,21 @@
       $_SESSION["usu_email"]        = $usuario[5];
       $_SESSION["cod_rol"]         = $usuario[6];
 
+      $page = "../View/dashboard.php?p=".base64_encode("mi_perfil")."&m=".$msn;
 
-     header("Location:../View/dashboard.php?p=".base64_encode("mi_perfil")."&m=".$msn);
+      if($_SESSION["cod_rol"] == "3"){ 
+            $organizacion = Gestion_usuarios::tieneorganizacion($_SESSION["usu_cod_usuario"]);
+
+            if(($organizacion[0] == "")OR($organizacion[0] == null)){
+              $page = "../View/registrar_organizacion.php";
+            }else{
+              $_SESSION["org_cod_organizacion"] = $organizacion[1];
+            }
+
+          }
+
+        header("Location: ".$page);
+
 
     }
   } catch (Exception $e) {

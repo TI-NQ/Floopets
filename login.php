@@ -34,8 +34,9 @@
         <div id="ic">
           <h2>Registrarse</h2>
           <div class="row">
-            <form class="col s12" action="Dashboard/Controller/usuarios.controller.php" method="POST">
+            <form class="col s12" action="Dashboard/Controller/usuarios.controller.php" method="POST" enctype="multipart/form-data">
               <div class="row">
+               <input type="hidden" value="1" name="cod_rol"/>
                 <div class="input-field col s6">
                   <input id="nombre" name="usu_nombre" type="text" class="validate" required>
                   <label for="nombre">Nombre</label>
@@ -48,32 +49,29 @@
                   <input class="col s12" id="telefono" type="number" name="usu_telefono" class="validate" required>
                   <label for="telefono">Telefono</label>
                 </div>
-                <div class="input-field col s12">
-                  <input class="col s12" id="cedula" type="number" name="usu_cedula" class="validate" required>
-                  <label for="cedula">Cedula</label>
-                </div>
+                <div class="input-field col s12 m12">
+                  <input id="usu_cedula" type="number" class="validate" name="usu_cedula" required>
+                  <label for="usu_cedula">Documento de identidad</label>
+                  <span id="resultadobusqueda" class="red-text accent-3 left"></span>
+              </div>
                 <div class="input-field col s12">
                   <input id="email" type="email" name="usu_email" class="validate" required>
                   <label for="email">Correo Electronico</label>
                 </div>
-                <div class="input-field col s12">
-                  <select name="cod_rol" required>
-                    <option value="" disabled selected>Selecciona un rol</option>
-                    <?php
-                      require_once("Dashboard/Model/conexion.php");
-                      require_once("Dashboard/Model/rol.class.php");
-
-                      $rol = gestion_rol::ReadAll();
-                      foreach ($rol as $row) {
-                        echo "<option value = '".$row["cod_rol"]."'>".$row["rol_nombre"]."</option>";
-                      }
-                     ?>
-                  </select>
-                </div>
+               
                 <div class="input-field col s12">
                   <input id="contraseña" type="password" name="usu_clave" class="validate" required>
                   <label for="contraseña">Contraseña</label>
                 </div>
+                <div class=" form-group file-field input-field col s12 m12">
+               <div class="btn">
+                 <label class="form-label">imagen</label>
+                 <input type="file" multiple name="usu_imagen[]" class="form-control">
+               </div>
+               <div class="file-path-wrapper form-group">
+                 <input class="form-control file-path validate"  type="text" placeholder="" name="usu_imagen" >
+               </div>
+            </div>
                 <div class="">
                   <button class="waves-effect waves-light btn" id="btnlogin" name="accion" value="c">Registrarse</button>
                   <a class="waves-effect waves-light btn" id="moveright">Iniciar sesion</a>
@@ -99,7 +97,7 @@
                   <label for="contraseña">Contraseña</label>
                 </div>
                 <div class="">
-                  <button class="waves-effect waves-light btn" id="btnlogin" >Iniciar sesion</button>
+                  <button class="waves-effect waves-light btn" id="btnlogin" name="accion" value="r">Iniciar sesion</button>
                   <a class="waves-effect waves-light btn" id="moveleft">Registrarse</a>
                 </div>
               </div>
@@ -114,6 +112,27 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $('select').material_select();
+
+      $("#usu_cedula").keyup(function(){
+          var usu_cedula = $("#usu_cedula").val();
+          var accion = "existe_usuario";
+
+          $.post("Dashboard/Controller/usuario.controller.php", {usu_cedula: usu_cedula, accion: accion}, function(result){
+
+              $("#resultadobusqueda").html(result.msn); 
+
+              if(result.ue == true){ 
+                $("button").prop("disabled",true);
+                $("#last").addClass("hide");
+              }
+
+              if(result.ue == false){ 
+                $("button").prop("disabled",false);
+                $("#last").removeClass("hide");
+              }
+          }, "json");
+      });
+      
     });
   </script>
 </body>

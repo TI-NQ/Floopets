@@ -36,10 +36,9 @@
         <input type="number" name="Cedula" value="<?php echo $user_data[4]?>" readonly>
         <label for="Cedula">Cedula</label>
       </div>
-      <div class="input-field col s6">
-        <input type="text" name="Tipo" value="<?php echo $user_data[9]?>" readonly>
-        <label for="Tipo">Tipo Usuario</label>
-      </div>
+
+        <input type="hidden" name="Tipo" value="<?php echo $user_data[9]?>" readonly>
+        
     </div>
     <div class="row">
       <div class="input-field col s12">

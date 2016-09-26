@@ -19,12 +19,19 @@
 		$org_email=$_POST["org_email"];
 		$org_telefono=$_POST["org_telefono"];
 		$org_direccion=$_POST["org_direccion"];
-		$org_clave=$_POST["org_clave"];
 
 
  		try {
- 			Gestion_organizacion::Create($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion,$org_clave);
- 			$mensaje="Registro exitoso";
+ 			Gestion_organizacion::Create($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion);
+ 			$organizacion = Gestion_organizacion::ReadbyNIT($org_nit);
+
+				$org_cod_organizacion = $organizacion[0];
+				$usu_cod_usuario = $_SESSION["usu_cod_usuario"];
+
+				Gestion_organizacion::Createorganizacion($org_cod_organizacion, $usu_cod_usuario);
+				$_SESSION["org_cod_organizacion"] = $org_cod_organizacion;
+				
+ 				$mensaje="Registro exitoso";
 
  			header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
  		} catch (Exception $e) {
@@ -64,6 +71,13 @@
 		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
 		        }
 		      break;
+		      case 'r':
+			$empresa = Gestion_organizacion::ReadbyID($org_cod_organizacion);
+    		
+		break;
+		case 'buscar':
+          	Gestion_organizacion::ReadbyNombre($org_nombre);
+          	 break;
  	}
 
 

@@ -1,16 +1,16 @@
 <?php
 	class Gestion_organizacion{
 
-		function Create($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion,$org_clave){
+		function Create($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion){
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 			//Creamos el query de la consulta a la BD
-			$consulta="INSERT INTO organizacion (to_cod_tipo_organizacion,org_nombre,org_nit,org_email,org_telefono,org_direccion,org_clave) VALUES (?,?,?,?,?,?,?)";
+			$consulta="INSERT INTO organizacion (to_cod_tipo_organizacion,org_nombre,org_nit,org_email,org_telefono,org_direccion) VALUES (?,?,?,?,?,?)";
 
 			$query=$conexion->prepare($consulta);
-			$query->execute(array($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion,$org_clave));
+			$query->execute(array($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion));
 
 			floopets_BD::Disconnect();
 		}
@@ -51,15 +51,15 @@ function ReadAll()
 			return $resultado;
 		}
 
-		function Update($org_cod_organizacion,$to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion,$org_clave)
+		function Update($org_cod_organizacion,$to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion)
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "UPDATE organizacion SET to_cod_tipo_organizacion = ?, org_nombre=?, org_nit=?, org_email=?, org_telefono=?, org_direccion=? ,org_clave=? WHERE org_cod_organizacion = ?" ;
+				$consulta = "UPDATE organizacion SET to_cod_tipo_organizacion = ?, org_nombre=?, org_nit=?, org_email=?, org_telefono=?, org_direccion=?  WHERE org_cod_organizacion = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion,$org_cod_organizacion,$org_clve));
+				$query->execute(array($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion,$org_cod_organizacion));
 				floopets_BD::Disconnect();
 		}
 
@@ -79,5 +79,41 @@ function ReadAll()
 			floopets_BD::Disconnect();
 
 		}
+		function Createorganizacion($org_cod_organizacion, $usu_cod_usuario){
+
+		//Instanciamos y nos conectamos a la bd
+		$Conexion = floopets_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//Crear el query que vamos a realizar
+		$consulta = "INSERT INTO organizacion_usuario (org_cod_organizacion, usu_cod_usuario) VALUES (?,?)";
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($org_cod_organizacion, $usu_cod_usuario));
+
+		floopets_BD::Disconnect();
+	}
+	function ReadbyNIT($org_nit){
+
+		//Instanciamos y nos conectamos a la bd
+		$Conexion = floopets_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		
+
+		//Crear el query que vamos a realizar
+		$consulta = "SELECT * FROM organizacion WHERE org_nit=?";
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($org_nit));
+
+		//Devolvemos el resultado en un arreglo
+		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+
+		$resultado = $query->fetch(PDO::FETCH_BOTH);
+		return $resultado;
+
+		floopets_BD::Disconnect();
+	}
 	}
  ?>

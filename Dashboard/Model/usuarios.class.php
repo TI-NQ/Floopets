@@ -2,15 +2,15 @@
 
 	class Gestion_usuarios
 	{
-			function Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave)
+			function Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen)
 			{
 				//Instanciamos y nos conectamos a la bd
 				$conexion=floopets_BD::Connect();
 				$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 				//Creamos el query de la consulta a la BD
-				$consulta ="INSERT INTO usuario (usu_nombre,usu_apellido,usu_telefono,usu_cedula,usu_email,cod_rol,usu_clave) VALUES (?,?,?,?,?,?,?)";
+				$consulta ="INSERT INTO usuario (usu_nombre,usu_apellido,usu_telefono,usu_cedula,usu_email,cod_rol,usu_clave,usu_imagen) VALUES (?,?,?,?,?,?,?,?)";
 				$query = $conexion->prepare($consulta);
-				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave));
+				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen));
 				floopets_BD::Disconnect();
 		}
 		function ReadAll()
@@ -45,15 +45,15 @@
 			return $resultado;
 			floopets_BD::Disconnect();
 		}
-		function Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave)
+		function Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen)
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "UPDATE usuario SET usu_nombre=?,usu_apellido=?,usu_telefono=?,usu_cedula=?,usu_email=?,cod_rol=?,usu_clave=? WHERE usu_cod_usuario = ?" ;
+				$consulta = "UPDATE usuario SET usu_nombre=?,usu_apellido=?,usu_telefono=?,usu_cedula=?,usu_email=?,cod_rol=?,usu_clave=?,usu_imagen=? WHERE usu_cod_usuario = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_cod_usuario));
+				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen,$usu_cod_usuario));
 				floopets_BD::Disconnect();
 
 		}
@@ -88,6 +88,46 @@
 
 		      return $results;
     	}
+    	function ReadbyCC($usu_cedula){
+
+		//Instanciamos y nos conectamos a la bd
+		$Conexion = floopets_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+		
+
+		//Crear el query que vamos a realizar
+		$consulta = "SELECT * FROM usuario WHERE usu_cedula=?";
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($usu_cedula));
+
+		//Devolvemos el resultado en un arreglo
+		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+
+		$resultado = $query->fetch(PDO::FETCH_BOTH);
+		return $resultado;
+
+		floopets_BD::Disconnect();
+	}
+	function tieneorganizacion($usu_cod_usuario){
+      $Conexion = floopets_BD::Connect();
+      $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+      $consulta = "SELECT * FROM organizacion_usuario WHERE usu_cod_usuario = ?";
+
+      $query = $Conexion->prepare($consulta);
+
+      $query->execute(array($usu_cod_usuario));
+      // fetch cuando voy a mostrar un solo registro
+      // fetchALL cuando voy a mostrar mas de un registro
+
+      $results = $query->fetch(PDO::FETCH_BOTH);
+      floopets_BD::Disconnect();
+
+      return $results;
+    }
 
 
 	}

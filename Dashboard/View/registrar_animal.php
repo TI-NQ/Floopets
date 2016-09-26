@@ -38,7 +38,7 @@ $organizacion = Gestion_organizacion::ReadAll();
 	</div>
   <div class="input-field col s6">
 		<label class="form-label">Edad</label>
-		<input class="form-control" type="text" name="ani_edad" required>
+		<input class="form-control" type="number" name="ani_edad" required>
 	</div>
   <div class="input-field col s6">
     <select class="form-control" name="ani_esterilizado">

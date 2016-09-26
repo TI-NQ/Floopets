@@ -51,10 +51,7 @@
 						<input type="text" name="org_direccion" id="org_direccion" required>
 								<label for="org_direccion">Direccion</label>
 	        </div>
-					<div class="input-field col s12 m4 l4">
-						<input type="password" name="org_clave" id="org_clave" required>
-								<label for="org_clave">Contraseña</label>
-	        </div>
+					
 				</div>
 				<a href="<?=$_SERVER['HTTP_REFERER'] ?>" class="waves-effect waves-light btn red darken-1 left">Cancelar</a>
 				<button class="waves-effect waves-light  btn right cyan darken-1" name="accion" value="c" style="margin-right: 50px;">Registrar</button>
