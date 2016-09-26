@@ -26,26 +26,27 @@ $(document).ready(function()
       <?php
         }
        ?>
-      $("a#btntrash").click(function(){
-       var codigo = $("#de_cod_denuncia").val();
-       var accion = "d";
-       sweetAlert({
-              title: 'Mensaje de FLOOPETS',
-              text: 'Esta seguro que desea eliminar?',
-              type: 'warning',
-              showCancelButton: true,
-              confirmButtonColor: '#4db6ac',
-              confirmButtonText: 'Aceptar',
-              cancelButtonText: 'No, cancel!',
-              closeOnConfirm: false,
-              closeOnCancel: false,
-              },
-           function(isConfirm){
-             if (isConfirm) {
-                document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
-             }
-        });
-   });
+         $("a#btntrash").click(function(){
+          var codigo = $("#de_cod_denuncia").val();
+          var accion = "d";
+          sweetAlert({
+                 title: 'Mensaje de FLOOPETS',
+                 text: 'Esta seguro que desea eliminar?',
+                 type: 'warning',
+                 showCancelButton: true,
+                 confirmButtonColor: '#4db6ac',
+                 confirmButtonText: 'Aceptar',
+                 cancelButtonText: 'Cancelar',
+                 closeOnConfirm: true,
+                 closeOnCancel: true,
+                 },
+              function(isConfirm){
+                if (isConfirm) {
+                   document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
+                }
+           });
+      });
+
 });
 
 </script>
@@ -58,9 +59,9 @@ $(document).ready(function()
 
 <div class="row">
 <div class="col l12">
-  <a class="btn-floating waves-effect" href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>
+  <!-- <a class="btn-floating waves-effect" href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>
      <i class="small material-icons">mode_edit</i>
-  </a>
+  </a> -->
 <?php
 
       foreach ($denuncia as $row)

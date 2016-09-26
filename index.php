@@ -122,7 +122,7 @@
 					<div id="adoptagato">
 						<p class="wow fadeInDown">Adopta un</p>
 					</div>
-					<button class="boton1 btn waves-effect waves-light btn-large wow fadeInDown">Gato</button>
+						<button class="boton1 btn waves-effect waves-light btn-large wow fadeInDown">Gato</button>
 					<img src="WebFloopets/images/2.jpg" class="wow fadeInRight">
 
 				</div>
@@ -300,8 +300,8 @@
 
 		if (count($validar)<3){
 			?>
-			<h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
-			<a class="waves-effect btn" href="../Dashboard/View/gestion_evento.php">Ver Eventos</a>
+			<!-- <h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
+			<a class="waves-effect btn" href="../Dashboard/View/gestion_evento.php">Ver Eventos</a> -->
 			<?php
 		}
 		else {
@@ -419,7 +419,7 @@ foreach ($validar as $row) {
           <div class="col s12 m3 l3">
           </div>
           <div class="col s12 m3 l3">
-            <a href="logo-footer"><img class="logo__footer" src="WebFloopets/images/logo-blanco.png"></a>
+            <a href="#"><img class="logo__footer" src="WebFloopets/images/logo-blanco.png"></a>
             <ul>
               <li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-facebook-square" aria-hidden="true" style="font-size:30px; color:	#3b5998;"></i> Síguenos en Facebook </a></li>
               <li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-twitter-square" aria-hidden="true" style="font-size:30px; color:	 #00aced;"></i> Twitter</a></li>

@@ -47,7 +47,7 @@ require_once("../Model/conexion.php");
                     <div class="file-path-wrapper">
                       <input class="file-path validate"  type="text" placeholder="" name="de_imagen" value="<?php echo $denuncia[7] ?>" readonly>
                     </div>
-      </div>    	
+      </div>
     <div class="form-group col m6">
       <label class="form-label">Estado :</label>
       <input class="form-control" type="text" name="de_estado" required  value="<?php echo $denuncia[8] ?>">
