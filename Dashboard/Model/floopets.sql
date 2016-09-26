@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 22-09-2016 a las 19:05:05
--- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.5.30
+-- Tiempo de generación: 27-09-2016 a las 00:36:11
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -111,9 +111,7 @@ CREATE TABLE `denuncia` (
 --
 
 INSERT INTO `denuncia` (`de_cod_denuncia`, `td_cod_tipo_denuncia`, `de_descripcion`, `de_contacto`, `de_telefono`, `de_nombre`, `de_fecha`, `de_imagen`, `de_estado`) VALUES
-(2, 1, 'le pega', 'yesid', '3769878', 'lolo', '2016-08-23 11:03:12', '0', '0'),
-(3, 1, 'le pega', 'shanda', '5522', 'coqui', '2016-09-22 11:53:38', 'HD-Wallpapers1.jpeg', 'Pendiente'),
-(4, 1, 'le pega', 'shanda', '5522', 'coqui', '2016-09-22 11:55:50', 'HD-Wallpapers1.jpeg', 'Pendiente');
+(6, 1, 'mal trato', 'saorozco16@misena', '201444', 'Fliper', '2016-09-26 14:05:16', '2fc2a69a1a40f0852b1fd22721d41102.png', 'Pendiente');
 
 -- --------------------------------------------------------
 
@@ -247,16 +245,31 @@ CREATE TABLE `organizacion` (
   `org_nit` int(11) NOT NULL,
   `org_email` varchar(50) NOT NULL,
   `org_telefono` varchar(30) NOT NULL,
-  `org_direccion` varchar(30) NOT NULL,
-  `org_clave` varchar(50) NOT NULL
+  `org_direccion` varchar(30) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `organizacion`
 --
 
-INSERT INTO `organizacion` (`org_cod_organizacion`, `to_cod_tipo_organizacion`, `org_nombre`, `org_nit`, `org_email`, `org_telefono`, `org_direccion`, `org_clave`) VALUES
-(2, 1, 'peeeee', 5545521, 'pendie@hotmail', '541545', 'cll 44', '1025');
+INSERT INTO `organizacion` (`org_cod_organizacion`, `to_cod_tipo_organizacion`, `org_nombre`, `org_nit`, `org_email`, `org_telefono`, `org_direccion`) VALUES
+(2, 1, 'peeeee', 5545521, 'pendie@hotmail', '541545', 'cll 44'),
+(6, 1, 'Probando', 1783481, 'probando@probando', '2222', 'cll 442'),
+(7, 1, 'Probando', 1783481, 'probando@probando', '2555', 'cll 442'),
+(8, 1, 'Probando', 1783481, 'probando@probando', '22552', 'cll 442');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `organizacion_usuario`
+--
+
+DROP TABLE IF EXISTS `organizacion_usuario`;
+CREATE TABLE `organizacion_usuario` (
+  `cod_org_usu` int(11) NOT NULL,
+  `org_cod_organizacion` int(11) NOT NULL,
+  `usu_cod_usuario` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
@@ -438,15 +451,18 @@ CREATE TABLE `usuario` (
   `usu_cedula` int(20) NOT NULL,
   `usu_email` varchar(50) NOT NULL,
   `cod_rol` int(11) NOT NULL,
-  `usu_clave` varchar(50) NOT NULL
+  `usu_clave` varchar(50) NOT NULL,
+  `usu_imagen` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `usuario`
 --
 
-INSERT INTO `usuario` (`usu_cod_usuario`, `usu_nombre`, `usu_apellido`, `usu_telefono`, `usu_cedula`, `usu_email`, `cod_rol`, `usu_clave`) VALUES
-(3, 'ertgedf', 'wsdfsdf', '545154', 25145, 'sa@sdfasd', 1, '1234');
+INSERT INTO `usuario` (`usu_cod_usuario`, `usu_nombre`, `usu_apellido`, `usu_telefono`, `usu_cedula`, `usu_email`, `cod_rol`, `usu_clave`, `usu_imagen`) VALUES
+(3, 'ertgedf', 'wsdfsdf', '545154', 25145, 'sa@sdfasd', 1, '1234', ''),
+(4, 'Andrea ', 'Orozco', '2774121', 24575, 'Andrea@orozco.com', 1, '1234', '2f5d5fbd01c25c5016cb2059f534d06e.jpg'),
+(7, 'Andrea', 'Garces', '2771217', 2844, 'Andrea@garces.com', 3, '123', '');
 
 -- --------------------------------------------------------
 
@@ -591,6 +607,14 @@ ALTER TABLE `organizacion`
   ADD KEY `to_cod_tipo_empresa` (`to_cod_tipo_organizacion`);
 
 --
+-- Indices de la tabla `organizacion_usuario`
+--
+ALTER TABLE `organizacion_usuario`
+  ADD PRIMARY KEY (`cod_org_usu`),
+  ADD KEY `org_cod_organizacion` (`org_cod_organizacion`,`usu_cod_usuario`),
+  ADD KEY `usu_cod_usuario` (`usu_cod_usuario`);
+
+--
 -- Indices de la tabla `permiso`
 --
 ALTER TABLE `permiso`
@@ -706,7 +730,7 @@ ALTER TABLE `cuidado`
 -- AUTO_INCREMENT de la tabla `denuncia`
 --
 ALTER TABLE `denuncia`
-  MODIFY `de_cod_denuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `de_cod_denuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT de la tabla `donacion`
 --
@@ -726,7 +750,12 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `organizacion`
 --
 ALTER TABLE `organizacion`
-  MODIFY `org_cod_organizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `org_cod_organizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+--
+-- AUTO_INCREMENT de la tabla `organizacion_usuario`
+--
+ALTER TABLE `organizacion_usuario`
+  MODIFY `cod_org_usu` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `permiso`
 --
@@ -771,7 +800,7 @@ ALTER TABLE `tipo_organizacion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `usu_cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT de la tabla `vacunas`
 --
@@ -840,6 +869,13 @@ ALTER TABLE `noticias`
 --
 ALTER TABLE `organizacion`
   ADD CONSTRAINT `organizacion_ibfk_1` FOREIGN KEY (`to_cod_tipo_organizacion`) REFERENCES `tipo_organizacion` (`to_cod_tipo_organizacion`) ON UPDATE CASCADE;
+
+--
+-- Filtros para la tabla `organizacion_usuario`
+--
+ALTER TABLE `organizacion_usuario`
+  ADD CONSTRAINT `organizacion_usuario_ibfk_1` FOREIGN KEY (`usu_cod_usuario`) REFERENCES `usuario` (`usu_cod_usuario`) ON UPDATE CASCADE,
+  ADD CONSTRAINT `organizacion_usuario_ibfk_2` FOREIGN KEY (`org_cod_organizacion`) REFERENCES `organizacion` (`org_cod_organizacion`) ON UPDATE CASCADE;
 
 --
 -- Filtros para la tabla `permiso_rol`
