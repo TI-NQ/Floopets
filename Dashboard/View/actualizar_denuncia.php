@@ -2,7 +2,9 @@
 require_once("../Model/conexion.php");
  require_once("../Model/denuncia.class.php");
  $denuncia =  Gestion_denuncia::ReadbyID(base64_decode($_REQUEST["dn"]));
+ date_default_timezone_set("America/Bogota");
  ?>
+  
 <form action="../Controller/denuncia.controller.php" method="POST">
   <input type="hidden" readonly name="de_cod_denuncia" required value="<?php echo $denuncia[0] ?>">
   <div class="form-group">
@@ -36,7 +38,7 @@ require_once("../Model/conexion.php");
 	</div>
 	<div class="form-group">
 		<!-- <label class="form-label">Fecha</label> -->
-		<input class="form-control" type="hidden" name="de_fecha" required  value="<?php echo date("Y-m-d"); ?>" min="<?php echo date("Y-m-d"); ?>">
+		<input class="form-control" type="hidden" name="de_fecha" required  value="<?php echo date("Y-m-d"); ?>">
 	</div>
 	<div class="form-group">
     <div class="file-field input-field col s12 m6">
@@ -53,6 +55,13 @@ require_once("../Model/conexion.php");
       <input class="form-control" type="text" name="de_estado" required  value="<?php echo $denuncia[8] ?>">
     </div>
   <div class="form-group">
-		<button name="accion" value="u" class="btn btn-primary">Actualizar</button>
+		<button  name="accion" value="u" class="btn btn-primary">Actualizar</button>
 	</div>
 </form>
+
+  <?php
+
+      if(isset($_GET["m"])){
+        echo "alert( '".$_GET["m"]."');";
+      }
+    ?>

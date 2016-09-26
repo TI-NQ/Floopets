@@ -32,23 +32,26 @@
 
 			break;
 			case 'u':
+			
 			$de_cod_denuncia =$_POST["de_cod_denuncia"];
 			$td_cod_tipo_denuncia		= $_POST["td_cod_tipo_denuncia"];
 			$de_descripcion			= $_POST["de_descripcion"];
 			$de_contacto  =$_POST["de_contacto"];
 			$de_telefono  =$_POST["de_telefono"];
 			$de_nombre = $_POST["de_nombre"];
+			$de_fecha = $_POST["de_fecha"];
 			$de_imagen			=$_POST["de_imagen"];
 			$de_estado =$_POST["de_estado"];
+			$de_cod_denuncia =$_POST["de_cod_denuncia"];
 
 			try {
-				Gestion_denuncia::Update($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen,$de_estado,$de_cod_denuncia);
+				Gestion_denuncia::Update($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_fecha,$de_imagen,$de_estado,$de_cod_denuncia);
 				$mensaje = "Se actualizo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia"));
-
+			// header("Location: ../View/dashboard.php?p=".base64_encode("denuncias"));
+				header("Location: ../View/Gestion_denuncia.php?m= ".$mensaje );
 				break;
 
 		case 'd':

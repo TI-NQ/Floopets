@@ -9,23 +9,7 @@
 
 $(document).ready(function()
 {
-      <?php
-        if(isset($_GET["m"])){
-      ?>
-      sweetAlert({
-             title: 'Mensaje de FLOOPETS',
-             text: '<?php echo base64_decode($_GET["m"]); ?>',
-             type: '<?php echo base64_decode($_GET["tm"]); ?>',
-             showCancelButton: false,
-             confirmButtonColor: '#4db6ac',
-             confirmButtonText: 'Aceptar',
-             cancelButtonText: 'No, cancel!',
-             closeOnConfirm: false,
-             closeOnCancel: false,
-           });
-      <?php
-        }
-       ?>
+      
          $("a#btntrash").click(function(){
           var codigo = $("#de_cod_denuncia").val();
           var accion = "d";
@@ -50,6 +34,12 @@ $(document).ready(function()
 });
 
 </script>
+  <?php
+
+      if(isset($_GET["m"])){
+        echo "( '".$_GET["m"]."');";
+      }
+    ?>
 
 
 
@@ -78,7 +68,7 @@ $(document).ready(function()
                           <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
                       </div>
                       <div class='col l6'>
-                          <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'>
+                          <a class='btn-floating waves-effect' href='../View/actualizar_denuncia.php?dn=".base64_encode($row['de_cod_denuncia'])."'>
 
                           <i class='small material-icons'>mode_edit</i>
                           </a>
@@ -92,7 +82,7 @@ $(document).ready(function()
                   </div>
                   <div class='col l6'>
                     <ul class='descrip'>
-                          <input type='hidden' value='".$row["de_cod_denuncia"]."'></input>
+                          
                       <span>Tipo de denuncia :</span>
                           <li>".$row["td_nombre"]."</li>
                       <span>Descripcion :</span>
