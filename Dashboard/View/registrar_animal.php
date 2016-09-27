@@ -80,12 +80,7 @@
     <input name="ani_sexo[]" type="radio" id="Hembra" />
     <label for="Hembra">Hembra</label>
   </p>
-<<<<<<< HEAD
   	<input name="org_cod_organizacion" value="<?php echo $mi_organizacion[1]?>" hidden></input>
-
-
-=======
->>>>>>> origin/master
 	</div>
 	<div class="file-field input-field col s12">
 				<div class="btn">
