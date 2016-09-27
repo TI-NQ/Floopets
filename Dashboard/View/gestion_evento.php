@@ -40,7 +40,7 @@ $evento=Gestion_evento::Nombres();
 	                          <i class='small material-icons'>delete</i>
 	                          </a>                        	                        
 	                      	</div>
-	                    </div>
+	                     </div>
 							<div class='col l6'>
 			                 	<ul class='descrip'>
 			                   	<label>Codigo</label>

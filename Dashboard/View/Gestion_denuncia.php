@@ -48,7 +48,7 @@ $(document).ready(function()
 </div>
 
 <div class="row">
-<div class="col l12">
+<div class="col l11 offset-l1">
   <!-- <a class="btn-floating waves-effect" href='../View/actualizar_denuncia.php?dn=".base64_encode($row["de_cod_denuncia"])."'>
      <i class="small material-icons">mode_edit</i>
   </a> -->
