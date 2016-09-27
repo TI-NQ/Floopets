@@ -45,6 +45,24 @@
 			return $resultado;
 			floopets_BD::Disconnect();
 		}
+
+		function Mi_Organizacion($usu_cod_usuario)
+		{
+			$conexion=floopets_BD::Connect();
+			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+			$consulta="SELECT organizacion_usuario.*,organizacion.* FROM usuario INNER JOIN organizacion_usuario ON usuario.usu_cod_usuario=organizacion_usuario.usu_cod_usuario INNER JOIN organizacion ON organizacion_usuario.org_cod_organizacion=organizacion.org_cod_organizacion WHERE usuario.usu_cod_usuario=?";
+
+			$query=$conexion->prepare($consulta);
+			$query->execute(array($usu_cod_usuario));
+
+			$resultado=$query->fetch(PDO::FETCH_BOTH);
+
+			return $resultado;
+			floopets_BD::Disconnect();
+
+		}
+
 		function Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen)
 		{
 				//Instanciamos y nos conectamos a la bd

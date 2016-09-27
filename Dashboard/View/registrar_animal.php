@@ -1,9 +1,20 @@
 <?php
-require_once("../Model/conexion.php");
- require_once("../Model/raza.class.php");
- require_once("../Model/organizacion.class.php");
-$raza = Gestion_raza::ReadAll();
-$organizacion = Gestion_organizacion::ReadAll();
+
+	//Validacion inicio de session
+	if(!isset($_SESSION["usu_cod_usuario"])){
+    	$msn = base64_encode("Debe iniciar sesion primero!");
+		$tm=base64_encode("Advertencia");
+
+    	header("Location: ../../index.php?ms=".$msn."tm=".$tm);
+	};
+	require_once("../Model/conexion.php");
+ 	require_once("../Model/raza.class.php");
+ 	require_once("../Model/organizacion.class.php");
+ 	require_once("../Model/usuarios.class.php");
+	$raza = Gestion_raza::ReadAll();
+	$mi_organizacion=Gestion_usuarios::Mi_Organizacion($_SESSION["usu_cod_usuario"]);
+
+	
 
 
 // echo $cu[0];
@@ -56,6 +67,8 @@ $organizacion = Gestion_organizacion::ReadAll();
 		<label class="form-label">Descripcion</label>
 		<input class="form-control" type="text" name="ani_descripcion" required>
 	</div>
+    
+    
 
 <div class="input-field col s6">
 <h4>sexo</h4>
@@ -67,7 +80,7 @@ $organizacion = Gestion_organizacion::ReadAll();
     <input name="ani_sexo[]" type="radio" id="Hembra" />
     <label for="Hembra">Hembra</label>
   </p>
-
+  	<input name="org_cod_organizacion" value="<?php echo $mi_organizacion[1]?>" hidden></input>
 
 
 	</div>
