@@ -13,7 +13,7 @@
     <div class="row">
       <div class="col s12">
         <div class="col s4">
-          <img src="../../WebFloopets/images/7.jpg" style="max-height:250px; border-radius:5px; margin:0 -10px 20px 100px;" />
+          <!-- <img src="../../WebFloopets/images/7.jpg" style="max-height:250px; border-radius:5px; margin:0 -10px 20px 100px;" /> -->
         </div>
         <div class="col s2">
           <h5><?php echo $row[2];?></h5>
