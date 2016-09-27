@@ -10,10 +10,10 @@
 			$usu_cod_usuario				=$_POST["usu_cod_usuario"];
 			$usu_nombre 						= $_POST["usu_nombre"];
 			$usu_apellido 					=$_POST["usu_apellido"];
-			$nombre_usu_imagen 	= strtolower(str_replace('ñ', 'n', $usu_nombre));
+			$usu_email							=$_POST["usu_email"];
+			$nombre_usu_imagen 	= strtolower(str_replace('ñ', 'n', $usu_email));
 			$nombre_usu_imagen 	= strtolower(str_replace(' ', '', $nombre_usu_imagen));
 			$usu_telefono						=$_POST["usu_telefono"];
-			$usu_email							=$_POST["usu_email"];
 			$cod_rol								=$_POST["cod_rol"];
 			$usu_clave							=$_POST["usu_clave"];
 			$usu_cedula							=$_POST["usu_cedula"];

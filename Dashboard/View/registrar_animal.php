@@ -20,7 +20,7 @@
 // echo $cu[0];
  ?>
  <h4 class="center animated zoomIn">Nueva Mascota</h4>
-<form id="form" class="animated zoomIn" action="../Controller/animal.controller.php" method="POST">
+<form id="form" class="animated zoomIn" action="../Controller/animal.controller.php" method="POST" enctype="multipart/form-data">
 	<div class="input-field col s12 m6 l6" style="z-index:1;">
 				<select name="ra_cod_raza">
 					<option disabled selected>Seleccione una Opcion</option>
@@ -32,7 +32,7 @@
 				</select>
         <label>Raza</label>
 			</div>
-			<!-- <div class="input-field col s12 m6 l6" style="z-index:1;">
+			 <div class="input-field col s12 m6 l6" style="z-index:1;">
 				<select name="org_cod_organizacion">
 					<option disabled selected>Seleccione una Opcion</option>
 					<?php
@@ -42,7 +42,7 @@
 					 ?>
 				</select>
         <label>Fundacion</label>
-			</div> -->
+			</div> 
 	<div class="input-field col s6">
 		<label class="form-label">Nombre</label>
 		<input class="form-control" type="text" name="ani_nombre" required>
@@ -80,10 +80,22 @@
     <input name="ani_sexo[]" type="radio" id="Hembra" />
     <label for="Hembra">Hembra</label>
   </p>
+<<<<<<< HEAD
   	<input name="org_cod_organizacion" value="<?php echo $mi_organizacion[1]?>" hidden></input>
 
 
+=======
+>>>>>>> origin/master
 	</div>
+	<div class="file-field input-field col s12">
+				<div class="btn">
+					<span>Imagenes</span>
+					<input type="file" name="ani_imagen[]" class="form-control">
+				</div>
+				<div class="file-path-wrapper form-group">
+					<input class="form-control file-path validate"  type="text" placeholder="Puede ingresas mas de una imagen" name="ani_imagen" >
+				</div>
+			</div>
 
 <div class="input-field col s12">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>

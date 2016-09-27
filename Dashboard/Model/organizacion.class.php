@@ -1,16 +1,16 @@
 <?php
 	class Gestion_organizacion{
 
-		function Create($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion){
+		function Create($to_cod_tipo_organizacion,$org_nombre,$org_descripcion,$org_nit,$org_email,$org_telefono,$org_direccion){
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 			//Creamos el query de la consulta a la BD
-			$consulta="INSERT INTO organizacion (to_cod_tipo_organizacion,org_nombre,org_nit,org_email,org_telefono,org_direccion) VALUES (?,?,?,?,?,?)";
+			$consulta="INSERT INTO organizacion (to_cod_tipo_organizacion,org_nombre,org_descripcion,org_nit,org_email,org_telefono,org_direccion) VALUES (?,?,?,?,?,?,?)";
 
 			$query=$conexion->prepare($consulta);
-			$query->execute(array($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion));
+			$query->execute(array($to_cod_tipo_organizacion,$org_nombre,$org_descripcion,$org_nit,$org_email,$org_telefono,$org_direccion));
 
 			floopets_BD::Disconnect();
 		}
@@ -115,6 +115,6 @@ function ReadAll()
 
 		floopets_BD::Disconnect();
 	}
-	
+
 	}
  ?>
