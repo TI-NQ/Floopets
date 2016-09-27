@@ -1,22 +1,18 @@
+<?php 
+    session_start();
+    //Validacion inicio de session
+    if(!isset($_SESSION["usu_cod_usuario"])){
+        $msn = base64_encode("Debe iniciar sesion primero!");
+        $tm=base64_encode("Advertencia");
+
+        header("Location: ../../index.php?ms=".$msn."tm=".$tm);
+    };
+ ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <form action="../Controller/noticias.controller.php" method="POST" enctype="multipart/form-data">
-	<h1>Registrar Organización</h1>
+	<h1>Registrar Noticia</h1>
 		 <div class="form-group">
-                        <select   name="usu_cod_usuario">
-                            <option value="" disabled selected>usuario</option>
-                            <?php
-                                 // Cargo la bd
-                                 require_once("../Model/conexion.php");
-                                // Cargo la clase tipo empresa
-                                require_once("../Model/usuarios.class.php");
-
-                                 $usuarios = gestion_usuarios::ReadAll();
-
-                                foreach ($usuarios as $row){
-                                    echo "<option value='".$row["usu_cod_usuario"]."'>".$row["usu_nombre"]."</option>";
-                                }
-                             ?>
-                        </select>
+                        <input hidden  value="<?php echo $_SESSION["usu_cod_usuario"];?>" name="usu_cod_usuario">
                         <label></label>
                     </div>
                     <div class="form-group">

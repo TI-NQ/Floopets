@@ -1,3 +1,13 @@
+<?php 
+    session_start();
+    //Validacion inicio de session
+    if(!isset($_SESSION["usu_cod_usuario"])){
+        $msn = base64_encode("Debe iniciar sesion primero!");
+        $tm=base64_encode("Advertencia");
+
+        header("Location: ../../index.php?ms=".$msn."tm=".$tm);
+    };
+ ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
 <button type="button" name="button">
@@ -7,7 +17,10 @@
 <?php
     require_once("../Model/conexion.php");
     require_once("../Model/noticias.class.php");
+    require_once("../Model/usuarios.class.php");
     $noticias=Gestion_noticia::ReadAll();
+    $usuario=Gestion_usuarios::ReadbyID($_SESSION["usu_cod_usuario"]);
+ 	;
  ?>
 
 <table>
@@ -28,7 +41,7 @@
 			foreach ($noticias as $row) {
 				echo"<tr>
 						<td>".$row["cod_noticia"]."</td>
-						<td>".$row["usu_cod_usuario"]."</td>
+						<td>".$row["usu_nombre"]." ".$row["usu_apellido"]."</td>
 						<td>".$row["not_titulo"]."</td>
 						<td>".$row["not_contenido"]."</td>
 						<td>".$row["not_fecha_publicacion"]."</td>

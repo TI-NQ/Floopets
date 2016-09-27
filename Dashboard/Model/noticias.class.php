@@ -21,7 +21,7 @@
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "SELECT * FROM noticias";
+				$consulta = "SELECT noticias.*,usuario.* FROM usuario INNER JOIN noticias ON usuario.usu_cod_usuario=noticias.usu_cod_usuario ";
 				$query = $Conexion->prepare($consulta);
 				$query->execute();
 				//Devolvemos el resultado en un arreglo
@@ -37,7 +37,7 @@
 			$Conexion = floopets_BD::Connect();
 			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			//Crear el query que vamos a realizar
-			$consulta = "SELECT * FROM noticias WHERE cod_noticia=?";
+			$consulta = "SELECT noticias.*,usuario.* FROM usuario INNER JOIN noticias ON usuario.usu_cod_usuario=noticias.usu_cod_usuario WHERE noticias.cod_noticia=?";
 			$query = $Conexion->prepare($consulta);
 			$query->execute(array($cod_noticia));
 			//Devolvemos el resultado en un arreglo
