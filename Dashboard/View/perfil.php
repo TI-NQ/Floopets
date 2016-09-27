@@ -16,7 +16,7 @@
     ";?>
   </div>
   <div class="col s7 l7" style="margin-top:70px;">
-    <div class="row">
+    
       <div class="input-field col s6">
         <input type="text" name="Nombre" value="<?php echo $user_data[1]?>" readonly>
         <label for="Nombre">Nombre</label>
@@ -25,8 +25,8 @@
         <input type="text" name="Apellidos" value="<?php echo $user_data[2]?>" readonly>
         <label for="Apellidos">Apellidos</label>
       </div>
-    </div>
-    <div class="row">
+    
+    
       <div class="input-field col s6">
         <input type="number" name="Telefono" value="<?php echo $user_data[3]?>" readonly>
         <label for="Telefono">Telefono</label>
@@ -35,8 +35,8 @@
         <input type="email" name="Correo" value="<?php echo $user_data[5]?>" readonly>
         <label for="Correo">Correo Electronico</label>
       </div>
-    </div>
-    <div class="row">
+   
+    
       <div class="input-field col s6">
         <input type="number" name="Cedula" value="<?php echo $user_data[4]?>" readonly>
         <label for="Cedula">Cedula</label>
@@ -44,12 +44,11 @@
 
         <input type="hidden" name="Tipo" value="<?php echo $user_data[9]?>" readonly>
         
-    </div>
-    <div class="row">
+   
       <div class="input-field col s12">
-        <a href="#" class="waves-effect btn" style="width:100%;">Editar mi Perfil</a>
+        <a href="#" class="waves-effect btn" style="width:50%;">Editar mi Perfil</a>
       </div>
-    </div>
+    
 
 
   </div>
