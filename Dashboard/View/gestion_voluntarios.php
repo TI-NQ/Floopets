@@ -1,6 +1,4 @@
-<button type="button" name="button">
-  <a href="registrar_voluntarios.php">Nuevo</a>
-</button>
+
 <?php
 
 require_once("../Model/conexion.php");
