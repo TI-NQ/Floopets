@@ -27,8 +27,6 @@ function borrar(cod){
    });
 }
 
-<<<<<<< HEAD
-
 $(document).ready(function()
 {
       
@@ -54,8 +52,7 @@ $(document).ready(function()
       });
 
 });
-=======
->>>>>>> origin/master
+
 
 </script>
   <?php
@@ -94,7 +91,7 @@ $(document).ready(function()
                       <div class='col l6'>
                              <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'>
                             <a class='btn-floating waves-effect' href='#'>
-                            tomar
+                            
                           </a>
                       </div>
 

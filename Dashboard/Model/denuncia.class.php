@@ -122,7 +122,7 @@ class Gestion_denuncia{
 		$consulta = "INSERT INTO denuncias_orgamizacion (de_cod_denuncia, org_cod_organizacion,estado,seg_imagen) VALUES (?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($de_cod_denuncia, $org_cod_organizacion,$estado,$seg_imagen);
+		$query->execute(array($de_cod_denuncia, $org_cod_organizacion,$estado,$seg_imagen));
 
 		floopets_BD::Disconnect();
 	}
