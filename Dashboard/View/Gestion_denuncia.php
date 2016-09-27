@@ -6,6 +6,26 @@
 
 ?>
 <script type="text/javascript">
+function borrar(cod){
+  var codigo = cod;
+  var accion = "d";
+  sweetAlert({
+         title: 'Mensaje de FLOOPETS',
+         text: 'Esta seguro que desea eliminar?',
+         type: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#4db6ac',
+         confirmButtonText: 'Aceptar',
+         cancelButtonText: 'Cancelar',
+         closeOnConfirm: true,
+         closeOnCancel: true,
+         },
+      function(isConfirm){
+        if (isConfirm) {
+           document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
+        }
+   });
+}
 
 $(document).ready(function()
 {
@@ -32,6 +52,7 @@ $(document).ready(function()
       });
 
 });
+
 
 </script>
   <?php
@@ -70,20 +91,23 @@ $(document).ready(function()
                       <div class='col l6'>
                              <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'>
                             <a class='btn-floating waves-effect' href='#'>
-                            tomar
+                            
                           </a>
                       </div>
 
                       <div class='col l6'>
-                      <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>
-                      <a href='#' id='btntrash' class='btn-floating waves-light red waves-effect' >
-                        <i class='small material-icons'>delete</i>
+                      <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>";
+                      ?>
+                      <!-- se reemplaza el href por el onclick que carga el delete -->
+                      <a href='#' id='btntrash' onclick="borrar('<?php echo $row["de_cod_denuncia"];?>')" class='btn-floating waves-light red waves-effect' >
+                    <?php
+                    echo "<i class='small material-icons'>delete</i>
                       </a>
                       </div>
                   </div>
                   <div class='col l6'>
                     <ul class='descrip'>
-                          
+
                       <span>Tipo de denuncia :</span>
                           <li>".$row["td_nombre"]."</li>
                       <span>Descripcion :</span>

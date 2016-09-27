@@ -12,7 +12,7 @@
     <?php
   }else{
     ?><select name="ra_cod_raza" id="ra_cod_raza">
-        <option value="">Seleccione una raza</option>
+        <option value="" disabled selected>Seleccione una raza</option>
         <?php
           foreach ($razas as $fila ) {
             echo '<option value="'.$fila["ra_cod_raza"].'">'.$fila["ra_nombre"].'</option>';

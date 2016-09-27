@@ -15,7 +15,7 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/Gestion_tipo_denuncia.php?m=$mensaje");
+			header("Location: ../View/Gestion_tipo_denuncia.php?m=".$mensaje);
 
 			break;
 			case 'u':
@@ -29,7 +29,7 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/Gestion_tipo_denuncia.php?m=$mensaje");
+			header("Location: ../View/Gestion_tipo_denuncia.php?m=".$mensaje);
 			break;
 
 		case 'd':

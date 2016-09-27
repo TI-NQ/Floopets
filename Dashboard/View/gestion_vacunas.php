@@ -1,6 +1,6 @@
-<button type="button" name="button">
+<!-- <button type="button" name="button">
   <a href="registrar_vacunas.php">Nuevo</a>
-</button>
+</button> -->
 <?php
 
 require_once("../Model/conexion.php");
@@ -8,7 +8,12 @@ require_once("../Model/vacuna.class.php");
 $vacunas=gestion_vacuna::ReadAll();
  ?>
 
-<table>
+<a href="dashboard.php?p=<?php echo base64_encode('nueva_vacuna')?>" class="waves-effect btn animated zoomIn">Nuevo</a>
+
+<div class="container">
+<div class="row">
+<table id="datatable" class="display highlight centered responsive-table bordered">
+	
 	<thead>
 		<tr>
 			<td>codigo</td>
@@ -41,3 +46,5 @@ $vacunas=gestion_vacuna::ReadAll();
 		</tbody>
 	</thead>
 </table>
+</div>
+</div>
