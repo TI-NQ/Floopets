@@ -18,7 +18,7 @@ require_once("../Model/conexion.php");
 <div class="file-field input-field col s12 m6">
                 <div class="btn">
                   <span>Galeria</span>
-                  <input type="file" multiple name="Imagen_Upload[]">
+                  <input type="file"  name="Imagen_Upload[]">
                 </div>
                 <div class="file-path-wrapper">
                   <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="galeria" value="<?php echo $cu[3] ?>" >

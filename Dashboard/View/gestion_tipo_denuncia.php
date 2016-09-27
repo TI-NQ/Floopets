@@ -3,7 +3,7 @@
 <button type="button" name="button">
   <a href="registrar_tipo_denuncia.php">Nuevo</a>
 </button>
-<
+
 <?php
     require_once("../Model/conexion.php");
     require_once("../Model/tipo_denuncia.class.php");

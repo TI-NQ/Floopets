@@ -40,7 +40,6 @@ require_once("../Model/conexion.php");
 		<!-- <label class="form-label">Fecha</label> -->
 		<input class="form-control" type="hidden" name="de_fecha" required  value="<?php echo date("Y-m-d"); ?>">
 	</div>
-	<div class="form-group">
     <div class="file-field input-field col s12 m6">
                     <div class="btn">
                       <span>Imagen</span>
@@ -50,10 +49,9 @@ require_once("../Model/conexion.php");
                       <input class="file-path validate"  type="text" placeholder="" name="de_imagen" value="<?php echo $denuncia[7] ?>" readonly>
                     </div>
       </div>
-    <div class="form-group col m6">
-      <label class="form-label">Estado :</label>
-      <input class="form-control" type="text" name="de_estado" required  value="<?php echo $denuncia[8] ?>">
-    </div>
+
+      <input class="form-control" type="hidden" name="de_estado" required  value="<?php echo $denuncia[8] ?>">
+
   <div class="form-group">
 		<button  name="accion" value="u" class="btn btn-primary">Actualizar</button>
 	</div>
