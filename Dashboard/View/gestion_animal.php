@@ -12,7 +12,7 @@
 
 
 <div class="row">
-<div class="col l11 offset-l1">
+<div class="col l11 offset-l1 animated zoomIn">
 <?php
 	@$mensaje = $_REQUEST["m"];
 	echo @$mensaje;
