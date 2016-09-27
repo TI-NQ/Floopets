@@ -11,42 +11,62 @@
  	require_once("../Model/raza.class.php");
  	require_once("../Model/organizacion.class.php");
  	require_once("../Model/usuarios.class.php");
+	require_once("../Model/tipo_animal.class.php");
+	$tipo_mascota=Gestion_tipo_animal::ReadAll();
 	$raza = Gestion_raza::ReadAll();
 	$mi_organizacion=Gestion_usuarios::Mi_Organizacion($_SESSION["usu_cod_usuario"]);
 
-	
+// print_r($mi_organizacion);
 
 
 // echo $cu[0];
  ?>
+ <script>
+			$(document).ready(function() {
+				$("#tipo_mascota").change(function(){
+						var tipo_mascota = $("#tipo_mascota").val();
+						$.post("con_raza.php", {tm: tipo_mascota}, function(result){
+								$("#raza").html(result);
+
+								$('#ra_cod_raza').material_select();
+						});
+				});
+
+  		});
+			</script>
  <h4 class="center animated zoomIn">Nueva Mascota</h4>
 <form id="form" class="animated zoomIn" action="../Controller/animal.controller.php" method="POST" enctype="multipart/form-data">
-	<div class="input-field col s12 m6 l6" style="z-index:1;">
-				<select name="ra_cod_raza">
+	<div class="input-field col s12" style="z-index:1;">
+		<div class="row">
+			<div class="input-field col s6">
+				<select id="tipo_mascota">
 					<option disabled selected>Seleccione una Opcion</option>
 					<?php
-							foreach ($raza as $row){
-									echo "<option value='".$row["ra_cod_raza"]."'>".$row["ra_nombre"]."</option>";
+							foreach ($tipo_mascota as $row){
+									echo "<option value='".$row[0]."'>".$row[1]."</option>";
 							}
 					 ?>
 				</select>
-        <label>Raza</label>
+        <label>Tipo de mascota</label>
 			</div>
-			 <div class="input-field col s12 m6 l6" style="z-index:1;">
-				<select name="org_cod_organizacion">
-					<option disabled selected>Seleccione una Opcion</option>
-					<?php
-							foreach ($organizacion as $row){
-									echo "<option value='".$row["org_cod_organizacion"]."'>".$row["org_nombre"]."</option>";
-							}
-					 ?>
-				</select>
-        <label>Fundacion</label>
-			</div> 
-	<div class="input-field col s6">
-		<label class="form-label">Nombre</label>
-		<input class="form-control" type="text" name="ani_nombre" required>
-	</div>
+			<div class="input-field col s6" name="ra_cod_raza" id="raza">
+
+			</div>
+		</div>
+
+			</div>
+			<div class="input-field col s6">
+				<label class="form-label">Nombre</label>
+				<input class="form-control" type="text" name="ani_nombre" required>
+			</div>
+			<div class="input-field col s6">
+				<label class="form-label">Color</label>
+				<input class="form-control" type="text" name="ani_color" required>
+			</div>
+			<div class="input-field col s6">
+				<label class="form-label">Tamaño</label>
+				<input class="form-control" type="text" name="ani_tamanio" required>
+			</div>
   <div class="input-field col s6">
 		<label class="form-label">Edad</label>
 		<input class="form-control" type="number" name="ani_edad" required>
@@ -67,8 +87,8 @@
 		<label class="form-label">Descripcion</label>
 		<input class="form-control" type="text" name="ani_descripcion" required>
 	</div>
-    
-    
+
+
 
 <div class="input-field col s6">
 <h4>sexo</h4>

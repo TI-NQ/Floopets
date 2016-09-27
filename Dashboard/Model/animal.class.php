@@ -2,16 +2,16 @@
 	class Gestion_animal
 	{
 		// Metodo Create()
-		function Create($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen)
+		function Create($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen)
 		{
 			//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO animal (ra_cod_raza ,ani_nombre ,ani_esterilizado, ani_edad, ani_descripcion, ani_numero_microchip, ani_sexo, org_cod_organizacion,ani_imagen) VALUES (?,?,?,?,?,?,?,?,?)";
+		$consulta = "INSERT INTO animal (ra_cod_raza ,ani_nombre ,ani_color, ani_tamanio,ani_esterilizado, ani_edad, ani_descripcion, ani_numero_microchip, ani_sexo, org_cod_organizacion,ani_imagen) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($ra_cod_raza,$ani_nombre,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen));
+		$query->execute(array($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen));
 
 		floopets_BD::Disconnect();
 		}
