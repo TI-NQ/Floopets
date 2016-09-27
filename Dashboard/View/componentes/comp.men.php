@@ -14,7 +14,7 @@ if($_SESSION["cod_rol"]==1){
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Mis mascotas</a></div>
-  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('nueva_mascota')?>" class="item_menu">Nueva Mascota</a></p></div>
+  <!-- <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('nueva_mascota')?>" class="item_menu">Nueva Mascota</a></p></div> -->
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('mis_mascotas')?>" class="item_menu">Ver mis Mascotas</a></p></div>
 </li>
 <li>
@@ -53,9 +53,13 @@ if($_SESSION["cod_rol"]==1){
 <?php
 // Menú de Organización publico id_rol 3
 }elseif ($_SESSION["cod_rol"]==3) {
+  // require_once ("../Model/conexion.php");
+  // require_once ("../Model/organizacion.class.php");
+  // $organizacion=Gestion_organizacion::ReadbyID($_SESSION["org_cod_organizacion"]);
+  // // print_r($organizacion);
 ?>
 <li>
-  <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('mi_organizacion')?>"><i class="fa fa-building-o" aria-hidden="true"></i>Fundación</a></div>
+  <div class="collapsible-header grey lighten-2 tooltipped" data-tooltip="Mi fundacion" data-position="right"><a href="dashboard.php?p=<?php echo base64_encode('mi_organizacion')?>"><i class="fa fa-building-o" aria-hidden="true"></i>Fundacion</a></div>
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Mascotas</a></div>

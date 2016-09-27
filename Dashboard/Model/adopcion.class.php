@@ -2,15 +2,15 @@
 	class Gestion_adopcion
 	{
 		// Metodo Create()
-		function Create($ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_imagen)
+		function Create($ani_cod_animal,$usu_cod_usuario,$ado_imagen)
 		{
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 			//Crear el query que vamos a realizar.
-			$consulta ="INSERT INTO adopcion (ani_cod_animal,usu_cod_usuario,ado_fecha,ado_hora,ado_imagen) VALUES (?,?,?,?,?)";
+			$consulta ="INSERT INTO adopcion (ani_cod_animal,usu_cod_usuario,ado_fecha,ado_imagen) VALUES (?,?,now(),?)";
 			$query = $conexion->prepare($consulta);
-			$query->execute(array($ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_imagen));
+			$query->execute(array($ani_cod_animal,$usu_cod_usuario,$ado_imagen));
 			floopets_BD::Disconnect();
 		}
 		function ReadAll()

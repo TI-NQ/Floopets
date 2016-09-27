@@ -19,14 +19,7 @@
 	</div>
 	<form id="form" class="col s12" action="../Controller/adopcion.controller.php" method="POST" enctype="multipart/form-data">
 		<div class="row">
-			<div class="input-field col s12 m6 l6" style="z-index:10;">
-				<input type="date" class="datepicker" id="ado_fecha" name="ado_fecha" value="<?php echo date("j F, Y")?>"required>
-				<label for="ado_fecha">Fecha Adopcion</label>
-			</div>
-			<div class="input-field col s12 m6 l6" style="z-index:10;">
-				<input type="time" id="ado_hora" name="ado_hora" required>
-				<!-- <label>Hora Adopcion</label> -->
-			</div>
+			
 			<div class="input-field col s12 m6 l6" style="z-index:1;">
 				<select name="usu_cod_usuario">
 					<option value="" disabled selected>Usuario</option>
@@ -47,15 +40,15 @@
 					 ?>
 				</select>
 			</div>
-			<div class="file-field input-field">
-	      <div class="btn" multiple name="Imagen_Upload[]">
-	        <span>Imagenes</span>
-	        <input type="file">
-	      </div>
-	      <div class="file-path-wrapper">
-	        <input class="file-path validate" type="text" name="ado_imagen">
-	      </div>
-    	</div>
+			<div class="file-field input-field col s12">
+				<div class="btn">
+					<span>Imagen</span>
+					<input type="file" name="ado_imagen[]" class="form-control">
+				</div>
+				<div class="file-path-wrapper form-group">
+					<input class="form-control file-path validate"  type="text" placeholder="ingrese su imagen" name="ado_imagen" >
+				</div>
+			</div>
 			<a href="<?=$_SERVER['HTTP_REFERER'] ?>" class="waves-effect waves-light btn red darken-1 left">Cancelar</a>
 			<button class="waves-effect waves-light  btn right cyan darken-1" name="accion" value="c">Registrar</button>
 		</div>

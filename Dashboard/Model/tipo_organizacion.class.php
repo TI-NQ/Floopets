@@ -1,5 +1,5 @@
-<?php 
-	
+<?php
+
 class Gestion_tipo_organizacion{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
@@ -17,14 +17,14 @@ class Gestion_tipo_organizacion{
 
 		floopets_BD::Disconnect();
 	}
-	
+
 	function ReadbyID($to_cod_tipo_organizacion){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 		//Crear el query que vamos a realizar
 		$consulta = "SELECT * FROM tipo_organizacion WHERE to_cod_tipo_organizacion=?";
@@ -52,10 +52,10 @@ class Gestion_tipo_organizacion{
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM tipo_organizacion";
+		$consulta = "SELECT * FROM tipo_organizacion LIMIT 1";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute();
@@ -64,27 +64,27 @@ class Gestion_tipo_organizacion{
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
 		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
 
-		$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+		$resultado = $query->fetch(PDO::FETCH_BOTH);
 		return $resultado;
 
 		floopets_BD::Disconnect();
 	}
-	
+
 	function Update($to_cod_tipo_organizacion,$to_nombre){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 		//Crear el query que vamos a realizar
 		$consulta = "UPDATE tipo_organizacion SET to_nombre = ? WHERE to_cod_tipo_organizacion = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($to_nombre,$to_cod_tipo_organizacion));		
+		$query->execute(array($to_nombre,$to_cod_tipo_organizacion));
 
 		floopets_BD::Disconnect();
-	
+
 	}
 
 
@@ -93,13 +93,13 @@ class Gestion_tipo_organizacion{
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 		//Crear el query que vamos a realizar
 		$consulta = "DELETE FROM tipo_organizacion WHERE to_cod_tipo_organizacion = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($to_cod_tipo_organizacion));		
+		$query->execute(array($to_cod_tipo_organizacion));
 
 		floopets_BD::Disconnect();
 	}
