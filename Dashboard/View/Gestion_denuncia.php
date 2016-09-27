@@ -6,26 +6,7 @@
 
 ?>
 <script type="text/javascript">
-function borrar(cod){
-  var codigo = cod;
-  var accion = "d";
-  sweetAlert({
-         title: 'Mensaje de FLOOPETS',
-         text: 'Esta seguro que desea eliminar?',
-         type: 'warning',
-         showCancelButton: true,
-         confirmButtonColor: '#4db6ac',
-         confirmButtonText: 'Aceptar',
-         cancelButtonText: 'Cancelar',
-         closeOnConfirm: true,
-         closeOnCancel: true,
-         },
-      function(isConfirm){
-        if (isConfirm) {
-           document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
-        }
-   });
-}
+
 
 $(document).ready(function()
 {
@@ -50,6 +31,27 @@ $(document).ready(function()
                 }
            });
       });
+          $("a#tomar").click(function(){
+          var codigo = $("#de_cod_denuncia").val();
+          var accion = "tomar";
+          sweetAlert({
+                 title: 'Mensaje de FLOOPETS',
+                 text: 'Esta seguro que desea tomar?',
+                 type: 'warning',
+                 showCancelButton: true,
+                 confirmButtonColor: '#4db6ac',
+                 confirmButtonText: 'Aceptar',
+                 cancelButtonText: 'Cancelar',
+                 closeOnConfirm: true,
+                 closeOnCancel: true,
+                 },
+              function(isConfirm){
+                if (isConfirm) {
+                   document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
+                }
+           });
+      });
+
 
 });
 
@@ -94,10 +96,11 @@ $(document).ready(function()
                             
                           </a>
                       </div>
-
+                      <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>
+                  <a href='#' id='tomar' >
+                  <i class='fa fa-trash'></i></a>
                       <div class='col l6'>
-                      <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>
-                      ";
+                      <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>";
                       ?>
                       <!-- se reemplaza el href por el onclick que carga el delete -->
                       <a href='#' id='btntrash' onclick="borrar('<?php echo $row["de_cod_denuncia"];?>')" class='btn-floating waves-light red waves-effect' >

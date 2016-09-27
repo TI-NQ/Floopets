@@ -79,7 +79,22 @@ class Gestion_denuncia{
 		floopets_BD::Disconnect();
 
 	}
+	function Updateestado($de_estado,$de_cod_denuncia){
+	//Instanciamos y nos conectamos a la bd
+		$Conexion = floopets_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
+
+
+		//Crear el query que vamos a realizar
+		$consulta = "UPDATE denuncia SET  de_estado=? WHERE de_cod_denuncia =?" ;
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($de_estado,$de_cod_denuncia));
+
+		floopets_BD::Disconnect();
+
+	}
 
 		function Delete($de_cod_denuncia){
 	//Instanciamos y nos conectamos a la bd
@@ -113,7 +128,7 @@ class Gestion_denuncia{
 
 	return $resultado;
   }
-  function Tomardenuncia($de_cod_denuncia, $org_cod_organizacion,$estado){
+  function Tomardenuncia($de_cod_denuncia, $org_cod_organizacion){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
@@ -123,7 +138,7 @@ class Gestion_denuncia{
 
 		$query = $Conexion->prepare($consulta);
 
-		$query->execute(array($de_cod_denuncia, $org_cod_organizacion,$estado));
+		$query->execute(array($de_cod_denuncia, $org_cod_organizacion));
 
 		floopets_BD::Disconnect();
 	}
