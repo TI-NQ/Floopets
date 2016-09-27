@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-09-2016 a las 00:36:11
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.20
+-- Tiempo de generación: 27-09-2016 a las 14:48:00
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.5.30
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -33,10 +33,18 @@ CREATE TABLE `adopcion` (
   `ado_cod_adopcion` int(11) NOT NULL,
   `ani_cod_animal` int(11) NOT NULL,
   `usu_cod_usuario` int(11) NOT NULL,
-  `ado_fecha` date NOT NULL,
-  `ado_hora` time NOT NULL,
-  `ado_imagen` int(11) NOT NULL
+  `ado_fecha` datetime NOT NULL,
+  `ado_imagen` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `adopcion`
+--
+
+INSERT INTO `adopcion` (`ado_cod_adopcion`, `ani_cod_animal`, `usu_cod_usuario`, `ado_fecha`, `ado_imagen`) VALUES
+(16, 14, 3, '2016-09-27 07:43:09', ''),
+(17, 14, 10, '2016-09-27 07:43:27', ''),
+(18, 14, 10, '2016-09-27 07:46:18', '');
 
 -- --------------------------------------------------------
 
@@ -54,16 +62,20 @@ CREATE TABLE `animal` (
   `ani_descripcion` varchar(100) NOT NULL,
   `ani_numero_microchip` varchar(50) NOT NULL,
   `ani_sexo` varchar(30) NOT NULL,
-  `org_cod_organizacion` int(11) NOT NULL
+  `org_cod_organizacion` int(11) NOT NULL,
+  `ani_imagen` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `animal`
 --
 
-INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`) VALUES
-(14, 6, 'apoloa', 'no', 12, 'asjfajsdj', '5451', 'M', 2),
-(15, 6, 'apoloa', 'si', 11, 'qwerty', '654554', 'H', 2);
+INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`, `ani_imagen`) VALUES
+(14, 6, 'apoloa', 'no', 12, 'asjfajsdj', '5451', 'M', 2, ''),
+(16, 6, 'cucurucho', 'si', 5, 'es un peroo', '2142054', 'on', 2, 'kartandtinki1_photo-wallpapers_02.jpg'),
+(17, 6, 'cucurucho', 'si', 5, 'es un peroo', '2142054', 'on', 2, 'kartandtinki1_photo-wallpapers_02.jpg'),
+(18, 6, 'cucurucho', 'si', 4, 'es un peroo', '2142054', 'on', 2, '4K-Wallpaper-36.jpg'),
+(19, 6, 'tony', 'si', 3, 'es un perro', '2142054', 'on', 2, 'HD-Wallpapers1.jpeg');
 
 -- --------------------------------------------------------
 
@@ -111,7 +123,17 @@ CREATE TABLE `denuncia` (
 --
 
 INSERT INTO `denuncia` (`de_cod_denuncia`, `td_cod_tipo_denuncia`, `de_descripcion`, `de_contacto`, `de_telefono`, `de_nombre`, `de_fecha`, `de_imagen`, `de_estado`) VALUES
-(6, 1, 'mal trato', 'saorozco16@misena', '201444', 'Fliper', '2016-09-26 14:05:16', '2fc2a69a1a40f0852b1fd22721d41102.png', 'Pendiente');
+(6, 1, 'mal trato', 'saorozco16@misena', '201444', 'Fliper', '2016-09-26 14:05:16', '2fc2a69a1a40f0852b1fd22721d41102.png', 'Pendiente'),
+(7, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:45:01', '4K-Wallpaper-36.jpg', 'Pendiente'),
+(8, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:45:21', '4K-Wallpaper-36.jpg', 'Pendiente'),
+(9, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:45:59', '4K-Wallpaper-36.jpg', 'Pendiente'),
+(10, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:46:13', '4K-Wallpaper-36.jpg', 'Pendiente'),
+(11, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:46:35', '4K-Wallpaper-36.jpg', 'Pendiente'),
+(12, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:47:01', '4K-Wallpaper-36.jpg', 'Pendiente'),
+(13, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:47:16', '4K-Wallpaper-36.jpg', 'Pendiente'),
+(14, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:47:39', '4K-Wallpaper-36.jpg', 'Pendiente'),
+(15, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:47:40', '4K-Wallpaper-36.jpg', 'Pendiente'),
+(16, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:47:52', '4K-Wallpaper-36.jpg', 'Pendiente');
 
 -- --------------------------------------------------------
 
@@ -168,8 +190,8 @@ DROP TABLE IF EXISTS `evento`;
 CREATE TABLE `evento` (
   `eve_cod_evento` int(11) NOT NULL,
   `te_cod_tipo_evento` int(11) NOT NULL,
-  `eve_nombre` varchar(30) NOT NULL,
-  `eve_direccion` varchar(30) NOT NULL,
+  `eve_nombre` varchar(100) NOT NULL,
+  `eve_direccion` varchar(50) NOT NULL,
   `eve_fecha` date NOT NULL,
   `eve_fecha_hasta` date NOT NULL,
   `eve_hora` time NOT NULL,
@@ -462,7 +484,10 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` (`usu_cod_usuario`, `usu_nombre`, `usu_apellido`, `usu_telefono`, `usu_cedula`, `usu_email`, `cod_rol`, `usu_clave`, `usu_imagen`) VALUES
 (3, 'ertgedf', 'wsdfsdf', '545154', 25145, 'sa@sdfasd', 1, '1234', ''),
 (4, 'Andrea ', 'Orozco', '2774121', 24575, 'Andrea@orozco.com', 1, '1234', '2f5d5fbd01c25c5016cb2059f534d06e.jpg'),
-(7, 'Andrea', 'Garces', '2771217', 2844, 'Andrea@garces.com', 3, '123', '');
+(7, 'Andrea', 'Garces', '2771217', 2844, 'Andrea@garces.com', 3, '123', ''),
+(8, 'Andrea', 'Orozco', '5747', 173781, 'saorozco@isena', 1, '123', 'cute-wallpapers-hd-11.jpg'),
+(9, 'Andrea', 'Orozco', '232332', 23452, 'saorozco@cami', 1, '123', 'cute-wallpapers-hd-11.jpg'),
+(10, 'RODRIGO', 'MENA', '2342', 2344, 'Rodrigo@mena.com', 1, '123', 'Mario_SM3DW.png');
 
 -- --------------------------------------------------------
 
@@ -715,12 +740,12 @@ ALTER TABLE `voluntarios`
 -- AUTO_INCREMENT de la tabla `adopcion`
 --
 ALTER TABLE `adopcion`
-  MODIFY `ado_cod_adopcion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `ado_cod_adopcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 --
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT de la tabla `cuidado`
 --
@@ -730,7 +755,7 @@ ALTER TABLE `cuidado`
 -- AUTO_INCREMENT de la tabla `denuncia`
 --
 ALTER TABLE `denuncia`
-  MODIFY `de_cod_denuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `de_cod_denuncia` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 --
 -- AUTO_INCREMENT de la tabla `donacion`
 --
@@ -800,7 +825,7 @@ ALTER TABLE `tipo_organizacion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `usu_cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 --
 -- AUTO_INCREMENT de la tabla `vacunas`
 --
