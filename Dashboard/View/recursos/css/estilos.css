@@ -73,12 +73,17 @@ margin-top: 20px;
 	margin: auto;
 }*/
 #form{
+	margin-top: -40px;
 	font-family: Arial;
 	float: none;
-	margin-left: 20%;
+	margin-left: 18%;
 	width: 70%;
-	height: 500px;
+	height: 600px;
 	overflow: auto;
+}
+#form label{
+	color: black;
+	font-family: "Roboto";
 }
 .mascotas p{
 	color: #000 ;

@@ -63,9 +63,12 @@ if(!isset($_SESSION["usu_cod_usuario"])){
             }
            ?>
         });
+        $('#textarea1').val('New Text');
+        $('#textarea1').trigger('autoresize');
+
     </script>
 	</head>
-	<!-- <body style="background-image: url('../../WebFloopets/images/fondo-huellas.jpg');"> -->
+	 <body style="background-image: url('../../WebFloopets/images/fondo-huellas.jpg');">
   <body>
     <a  id="ajustes" href="../Model/cerrar.php">Cerrar Sesion<i class="fa fa-power-off" aria-hidden="true" style="margin-left: 10px; font-size: 25px; position: relative; color:#000;"></i></a>
     <div class="container-fluid">
