@@ -20,13 +20,34 @@
   <script type="text/javascript">
       $(document).ready(function()
       {
+
         <?php
           if(isset($_GET["m"]) and isset($_GET["tm"]))
           {
             echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
           }
          ?>
-      });
+        <!-- //ajax -->
+         $("#Cc").keyup(function()
+         {
+             var usuario = $("#Cc").val();
+             var accion = "existe_usuario";
+             $.post("Dashboard/Controller/usuarios.controller.php", {Cc: usuario, accion: accion},
+
+             function(result)
+             {
+                 $("#resultadobusqueda").html(result.msn);
+                 if(result.ue == true)
+                 {
+                   $(".boton").prop("disabled",true);
+                 }
+                 else
+                 {
+                     $(".boton").prop("disabled",false);
+                 }
+             }, "json");
+         });
+      })
   </script>
 
     <div class="girisback"></div>
@@ -55,9 +76,12 @@
                   <label for="telefono">Telefono</label>
                 </div>
                 <div class="input-field col s12 m12">
-                  <input id="usu_cedula" type="number" class="validate" name="usu_cedula" required>
+                  <input id="Cc" id="usu_cedula" type="number" class="validate" name="usu_cedula" required>
                   <label for="usu_cedula">Documento de identidad</label>
                   <span id="resultadobusqueda" class="red-text accent-3 left"></span>
+              </div>
+              <div class="input-field col s12 m12" style="height:5px;">
+
               </div>
                 <div class="input-field col s12">
                   <input id="email" type="email" name="usu_email" class="validate" required>
@@ -78,7 +102,7 @@
                </div>
             </div>
                 <div class="">
-                  <button class="waves-effect waves-light btn" id="btnlogin" name="accion" value="c">Registrarse</button>
+                  <button class="waves-effect waves-light btn boton" id="btnlogin" name="accion" value="c">Registrarse</button>
                   <a class="waves-effect waves-light btn" id="moveright">Iniciar sesion</a>
                 </div>
               </div>
@@ -114,31 +138,5 @@
   </div>
   <script type="text/javascript" src="WebFloopets/js/kayitgiris.js"></script>
   <script type="text/javascript" src="WebFloopets/materialize/js/materialize.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $('select').material_select();
-
-      $("#usu_cedula").keyup(function(){
-          var usu_cedula = $("#usu_cedula").val();
-          var accion = "existe_usuario";
-
-          $.post("Dashboard/Controller/usuario.controller.php", {usu_cedula: usu_cedula, accion: accion}, function(result){
-
-              $("#resultadobusqueda").html(result.msn);
-
-              if(result.ue == true){
-                $("button").prop("disabled",true);
-                $("#last").addClass("hide");
-              }
-
-              if(result.ue == false){
-                $("button").prop("disabled",false);
-                $("#last").removeClass("hide");
-              }
-          }, "json");
-      });
-
-    });
-  </script>
-</body>
+  </body>
 </html>
