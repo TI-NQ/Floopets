@@ -10,7 +10,6 @@
 			$usu_cod_usuario = $_POST["usu_cod_usuario"];
 			$not_titulo		=$_POST["not_titulo"];
 			$not_contenido		=$_POST["not_contenido"];
-			$not_fecha_publicacion		=$_POST["not_fecha_publicacion"];
 			$not_galeria		=$_POST["not_galeria"];
 			$nombre_not_galeria 	= strtolower(str_replace('ñ', 'n', $not_titulo));
 			$nombre_not_galeria 	= strtolower(str_replace(' ', '', $nombre_not_galeria));
@@ -21,7 +20,7 @@
 				if($count_galeria >= 1){
 					include("Upload_not_image.php");
 				}
-				Gestion_noticia::Create($usu_cod_usuario,$not_titulo,$not_contenido,$not_fecha_publicacion,$not_galeria,$not_portada,$not_palabras_clave);
+				Gestion_noticia::Create($usu_cod_usuario,$not_titulo,$not_contenido,$not_galeria,$not_portada,$not_palabras_clave);
 				$mensaje = "Se registro exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();

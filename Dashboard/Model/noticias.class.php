@@ -2,16 +2,16 @@
 	class Gestion_noticia
 	{
 		// Metodo Create()
-		function Create($usu_cod_usuario,$not_titulo,$not_contenido,$not_fecha_publicacion,$not_galeria,$not_portada,$not_palabras_clave)
+		function Create($usu_cod_usuario,$not_titulo,$not_contenido,$not_galeria,$not_portada,$not_palabras_clave)
 		{
 			//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO noticias (usu_cod_usuario,not_titulo,not_contenido,not_fecha_publicacion,not_galeria,not_portada,not_palabras_clave) VALUES (?,?,?,?,?,?,?)";
+		$consulta = "INSERT INTO noticias (usu_cod_usuario,not_titulo,not_contenido,not_fecha_publicacion,not_galeria,not_portada,not_palabras_clave) VALUES (?,?,?,now(),?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($usu_cod_usuario,$not_titulo,$not_contenido,$not_fecha_publicacion,$not_galeria,$not_portada,$not_palabras_clave));
+		$query->execute(array($usu_cod_usuario,$not_titulo,$not_contenido,$not_galeria,$not_portada,$not_palabras_clave));
 
 		floopets_BD::Disconnect();
 		}
