@@ -2,7 +2,7 @@
 
   require_once("../Model/conexion.php");
   require_once("../Model/denuncia.class.php");
-  $denuncia = Gestion_denuncia::ReadAll();
+  $denuncia = Gestion_denuncia::Nombres();
 
 ?>
 <script type="text/javascript">

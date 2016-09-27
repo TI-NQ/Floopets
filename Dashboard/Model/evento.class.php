@@ -97,7 +97,23 @@
 
 			return $resultado;
 		}
+			 function Nombres()
+   {
+    //para el modificar por cada usuario usuario
+    $conexion=floopets_BD::Connect();
+    $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
+    $consulta="SELECT tipo_evento.*,evento.* FROM evento INNER JOIN tipo_evento on tipo_evento.te_cod_tipo_evento=evento.te_cod_tipo_evento ";
+    // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
+    $query=$conexion->prepare($consulta);
+    $query->execute(array());
+
+	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
+
+	floopets_BD::Disconnect();
+
+	return $resultado;
+  }
 
 	}
 

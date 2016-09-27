@@ -68,6 +68,7 @@
 				$query->execute(array($vo_cod_voluntario));
 				floopets_BD::Disconnect();
 		}
+	
 
 
 	}

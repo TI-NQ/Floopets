@@ -6,7 +6,7 @@
 
 require_once("../Model/conexion.php");
 require_once("../Model/raza.class.php");
-$raza = Gestion_raza::ReadAll();
+$raza = Gestion_raza::Nombres();
  ?>
 
 <table>
@@ -28,8 +28,8 @@ $raza = Gestion_raza::ReadAll();
 				echo"<tr>
 						<td>".$row["ra_cod_raza"]."</td>
 						<td>".$row["ra_nombre"]."</td>
-						<td>".$row["ta_cod_tipo_animal"]."</td>
-						<td>".$row["cu_cod_cuidado"]."</td>
+						<td>".$row["ta_nombre"]."</td>
+						<td>".$row["cu_nombre"]."</td>
 						<td>".$row["ra_historia"]."</td>
 						<td>
                     		<a href='../View/actualizar_raza.php?rz=".base64_encode($row["ra_cod_raza"])."'>actualizar</a>

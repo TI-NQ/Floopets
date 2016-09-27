@@ -96,6 +96,24 @@ class Gestion_denuncia{
 
 		floopets_BD::Disconnect();
 	}
+			 function Nombres()
+   {
+    //para el modificar por cada usuario usuario
+    $conexion=floopets_BD::Connect();
+    $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+    $consulta="SELECT denuncia.*,tipo_denuncia.* FROM denuncia INNER JOIN tipo_denuncia on tipo_denuncia.td_cod_tipo_denuncia=denuncia.td_cod_tipo_denuncia ";
+    // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
+    $query=$conexion->prepare($consulta);
+    $query->execute(array());
+
+	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
+
+	floopets_BD::Disconnect();
+
+	return $resultado;
+  }
+
 }
 
 ?>

@@ -4,7 +4,7 @@
 
 require_once("../Model/conexion.php");
 require_once("../Model/evento.class.php");
-$evento=Gestion_evento::ReadAll();
+$evento=Gestion_evento::Nombres();
  ?>
 
 <?php
@@ -35,7 +35,7 @@ $evento=Gestion_evento::ReadAll();
 		                   	<label>Codigo</label>
 		                     	  <li>".$row["eve_cod_evento"]."</li>
 		                   	<label>Tipo de evento</label>
-		                     	  <li>".$row["te_cod_tipo_evento"]."</li>
+		                     	  <li>".$row["te_nombre"]."</li>
 		                   	<label>Nombre</label>
 		                     	    <li>".$row["eve_nombre"]."</li>
 		                   	<label>Dirección</label>

@@ -7,7 +7,7 @@
 <?php
     require_once("../Model/conexion.php");
     require_once("../Model/animal.class.php");
-    $animal=Gestion_animal::ReadAll();
+    $animal=Gestion_animal::Nombres();
  ?>
 
 <table>
@@ -33,8 +33,8 @@
 			foreach ($animal as $row) {
 				echo"<tr>
 						<td>".$row["ani_cod_animal"]."</td>
-						<td>".$row["ra_cod_raza"]."</td>
-						<td>".$row["org_cod_organizacion"]."</td>
+						<td>".$row["ra_nombre"]."</td>
+						<td>".$row["org_nombre"]."</td>
 						<td>".$row["ani_nombre"]."</td>
             <td>".$row["ani_esterilizado"]."</td>
             <td>".$row["ani_edad"]."</td>

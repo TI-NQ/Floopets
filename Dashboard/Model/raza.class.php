@@ -103,6 +103,23 @@ class Gestion_raza{
 
 		floopets_BD::Disconnect();
 	}
+			 function Nombres()
+   {
+    //para el modificar por cada usuario usuario
+    $conexion=floopets_BD::Connect();
+    $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+    $consulta="SELECT raza.*,tipo_animal.*,cuidado.* FROM raza INNER JOIN tipo_animal on tipo_animal.ta_cod_tipo_animal=raza.ta_cod_tipo_animal INNER JOIN cuidado on cuidado.cu_cod_cuidado=raza.cu_cod_cuidado ";
+    // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
+    $query=$conexion->prepare($consulta);
+    $query->execute(array());
+
+	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
+
+	floopets_BD::Disconnect();
+
+	return $resultado;
+  }
 }
 
 ?>
