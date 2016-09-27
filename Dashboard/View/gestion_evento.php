@@ -29,13 +29,14 @@ $evento=Gestion_evento::Nombres();
 	                  		<div class='imagenmascota col l12'>
 	                          <img class=' responsive-img' style='width:250px ;height:250px ;' src='img/imagen_evento/".$row["eve_nombre"]."/".$row["eve_imagen"]."'>
 	                     	</div>
-	                   		<div class='col l6'>	                        
-	                          <a href='../View/actualizar_evento.php?eve=".base64_encode($row["eve_cod_evento"])."'>
+	                   		<div class='col l6'>
+	                   			<a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_evento')."&eve=".base64_encode($row['eve_cod_evento'])."'>	                        
+	                          
 	                          <i class='small material-icons'>mode_edit</i>
 	                          </a>	                        
 	                      	</div>
 	                      	<div class='col l6'>	                        
-	                          <a href='../Controller/evento.controller.php?eve=".base64_encode($row["eve_cod_evento"])."&accion=d'>
+	                          <a class='btn-floating waves-effect waves-light red' href='../Controller/evento.controller.php?eve=".base64_encode($row["eve_cod_evento"])."&accion=d'>
 	                          <i class='small material-icons'>delete</i>
 	                          </a>                        	                        
 	                      	</div>
