@@ -113,7 +113,19 @@ class Gestion_denuncia{
 
 	return $resultado;
   }
+  function Tomardenuncia($de_cod_denuncia, $org_cod_organizacion,$estado,$seg_imagen){
 
+		//Instanciamos y nos conectamos a la bd
+		$Conexion = floopets_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//Crear el query que vamos a realizar
+		$consulta = "INSERT INTO denuncias_orgamizacion (de_cod_denuncia, org_cod_organizacion,estado,seg_imagen) VALUES (?,?,?)";
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($de_cod_denuncia, $org_cod_organizacion,$estado,$seg_imagen);
+
+		floopets_BD::Disconnect();
+	}
 }
 
 ?>
