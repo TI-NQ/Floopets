@@ -14,9 +14,9 @@
 			$count_galeria			= count($_FILES['ado_imagen']['name']);
 
 			try {
-				if($count_galeria >= 1){ 
+				if($count_galeria >= 1){
 					include("Upload_ado_image.php");
-				} 
+				}
 				Gestion_adopcion::Create($ani_cod_animal,$usu_cod_usuario,$ado_imagen);
 				$mensaje = "Se registro exitosamente";
 			} catch (Exception $e) {
@@ -38,15 +38,15 @@
 			$usu_cod_usuario = $_POST["usu_cod_usuario"];
 
 				try{
-					if($count_galeria >= 1){ 
+					if($count_galeria >= 1){
 					include("Upload_ado_image.php");
-				} 
+				}
 					Gestion_adopcion::Update($ado_cod_adopcion,$ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_imagen);
 					$mensaje = "Se actualizo correctamente";
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				}
-				header("Location: ../View/dashboard.php?p=".base64_encode("gestion_adopcion"));
+				header("Location: ../View/dashboard.php?p=".base64_encode("gestion_adopcion")."&m=".$mensaje);
 				break;
 
 		case 'd':
@@ -56,7 +56,7 @@
 		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_adopcion"));
 		        } catch (Exception $e) {
 		          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_adopcion"));
+		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_adopcion")."&m".$mensaje);
 		        }
 		      break;
 

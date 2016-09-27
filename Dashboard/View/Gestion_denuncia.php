@@ -96,7 +96,8 @@ $(document).ready(function()
                       </div>
 
                       <div class='col l6'>
-                      <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>";
+                      <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>
+                      ";
                       ?>
                       <!-- se reemplaza el href por el onclick que carga el delete -->
                       <a href='#' id='btntrash' onclick="borrar('<?php echo $row["de_cod_denuncia"];?>')" class='btn-floating waves-light red waves-effect' >

@@ -40,7 +40,7 @@ echo @$mensaje;
 		echo"<div class='container descrip'>
                 <div class='row'>
                   <div class='col l4 offset-l2 col m6'>
-
+                    
                    <div class='col l6'>
 
                           <a href='../View/actualizar_adopcion.php?ad=".base64_encode($row["ado_cod_adopcion"])."'>
@@ -64,8 +64,6 @@ echo @$mensaje;
 		                     	  <li>".$row["ado_cod_adopcion"]."</li>
 		                   	<label>Fecha</label>
 		                     	  <li>".$row["ado_fecha"]."</li>
-		                   	<label>hora</label>
-		                     	    <li>".$row["ado_hora"]."</li>
 		                   	<label>Codigo animal</label>
 		                     	    <li>".$row["ani_cod_animal"]."</li>
 		                  	 <label>Codigo usuario</label>

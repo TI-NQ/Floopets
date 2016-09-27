@@ -79,7 +79,7 @@
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "DELETE FROM adopcion WHERE ado_cod_adopcion = ?" ;
+				$consulta = "DELETE FROM adopcion WHERE ado_cod_adopcion =?" ;
 				$query = $Conexion->prepare($consulta);
 				$query->execute(array($ado_cod_adopcion));
 				floopets_BD::Disconnect();
