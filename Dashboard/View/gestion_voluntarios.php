@@ -10,7 +10,9 @@ $voluntarios=gestion_voluntarios::ReadAll();
 		echo @$mensaje;
  ?>
 
-<!-- <table>
+<div class="container">
+<div class="row">
+<table id="datatable" class="display highlight centered responsive-table bordered">
 	<thead>
 		<tr>
 			<td>Cedula</td>
@@ -20,9 +22,15 @@ $voluntarios=gestion_voluntarios::ReadAll();
       <td>Foto</td>
       <td>Contraseña</td>
 		</tr>
-		<tbody> -->
+
+	</thead>
+
+		<tbody>
+
+		<tbody> 
 <div class="row">
 <div class="col l11 offset-l1">
+
 <?php
 			
 
@@ -77,5 +85,13 @@ $voluntarios=gestion_voluntarios::ReadAll();
 	}
 
 ?>
+
+		</tbody>
+	
+</table>
 </div>
 </div>
+
+</div>
+</div>
+

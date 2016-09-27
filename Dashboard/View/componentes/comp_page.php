@@ -61,7 +61,7 @@ switch ($page) {
 	break;
 	//Componente de pagina que vinculara la informacion de los cuidados
 	case 'ver_cuidados':
-		require_once("gestion_cuidado");
+		require_once("gestion_cuidado.php");
 	break;
 	//Componente de pagina que vinculara formulario para crear nueva organizacion
 	case 'registrar_organizacion':
