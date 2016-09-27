@@ -1,6 +1,7 @@
 <?php
 	require_once("../Model/conexion.php");
 	require_once("../Model/usuarios.class.php");
+	
 
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {

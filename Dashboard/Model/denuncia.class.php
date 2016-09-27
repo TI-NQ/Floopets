@@ -52,7 +52,7 @@ class Gestion_denuncia{
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT tipo_denuncia.*,denuncia.* FROM denuncia INNER JOIN tipo_denuncia ON denuncia.td_cod_tipo_denuncia=tipo_denuncia.td_cod_tipo_denuncia";
+		$consulta = "SELECT tipo_denuncia.*,denuncia.* FROM denuncia INNER JOIN tipo_denuncia ON denuncia.td_cod_tipo_denuncia=tipo_denuncia.td_cod_tipo_denuncia WHERE denuncia.de_estado='Pendiente'";
 		$query = $Conexion->prepare($consulta);
 		$query->execute();
 		//Devolvemos el resultado en un arreglo
@@ -113,16 +113,16 @@ class Gestion_denuncia{
 
 	return $resultado;
   }
-  function Tomardenuncia($de_cod_denuncia, $org_cod_organizacion,$estado,$seg_imagen){
+  function Tomardenuncia($de_cod_denuncia, $org_cod_organizacion,$estado){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO denuncias_orgamizacion (de_cod_denuncia, org_cod_organizacion,estado,seg_imagen) VALUES (?,?,?)";
+		$consulta = "INSERT INTO denuncias_organizacion (de_cod_denuncia, org_cod_organizacion,estado) VALUES (?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($de_cod_denuncia, $org_cod_organizacion,$estado,$seg_imagen);
+		$query->execute(array($de_cod_denuncia, $org_cod_organizacion,$estado));
 
 		floopets_BD::Disconnect();
 	}
