@@ -1,8 +1,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
-<button type="button" name="button">
-  <a href="registrar_animal.php">Nuevo</a>
-</button>
+
+  <a href="dashboard.php?p=<?php echo base64_encode('nueva_mascota')?>" class="waves-effect btn animated zoomIn">Nuevo</a>
+
 
 <?php
     require_once("../Model/conexion.php");
@@ -10,7 +10,7 @@
     $animal=Gestion_animal::Nombres();
  ?>
 
-<table>
+<table id="form" class="animated zoomIn">
 	<thead>
 		<tr>
 			<td>Codigo </td>

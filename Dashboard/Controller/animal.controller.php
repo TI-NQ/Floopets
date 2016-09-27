@@ -1,4 +1,5 @@
 <?php
+	session_start();
 	require_once("../Model/conexion.php");
 	require_once("../Model/animal.class.php");
 
@@ -6,7 +7,7 @@
 	switch ($accion) {
 		case 'c':
 				$ra_cod_raza			=$_POST["ra_cod_raza"];
-				$org_cod_organizacion	=$_POST["org_cod_organizacion"];
+				$org_cod_organizacion	=$_SESSION["org_cod_organizacion"];
 				$ani_nombre             = $_POST["ani_nombre"];
 		      	$ani_esterilizado     	= $_POST["ani_esterilizado"];
 		     	$ani_edad             	= $_POST["ani_edad"];

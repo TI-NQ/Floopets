@@ -114,6 +114,28 @@
 
 	return $resultado;
   }
+	function eventos_proximos(){
+		date_default_timezone_set("America/Bogota");
+		$fechasystem=date("Y-m-d");
+		$conexion=floopets_BD::Connect();
+		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+		$consulta="SELECT * FROM evento WHERE eve_fecha > $fechasystem";
+		$query=$conexion->prepare($consulta);
+		$query->execute(array());
+		$resultado=$query->fetchALL(PDO::FETCH_BOTH);
+		floopets_BD::Disconnect();
+		return $resultado;
+		}
+		function historial_eventos(){
+			$conexion=floopets_BD::Connect();
+			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+			$consulta="SELECT * FROM evento ORDER BY eve_fecha DESC";
+			$query=$conexion->prepare($consulta);
+			$query->execute(array());
+			$resultado=$query->fetchALL(PDO::FETCH_BOTH);
+			floopets_BD::Disconnect();
+			return $resultado;
+			}
 
 	}
 

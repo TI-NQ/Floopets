@@ -21,7 +21,7 @@ $organizacion = Gestion_organizacion::ReadAll();
 				</select>
         <label>Raza</label>
 			</div>
-			<div class="input-field col s12 m6 l6" style="z-index:1;">
+			<!-- <div class="input-field col s12 m6 l6" style="z-index:1;">
 				<select name="org_cod_organizacion">
 					<option disabled selected>Seleccione una Opcion</option>
 					<?php
@@ -31,7 +31,7 @@ $organizacion = Gestion_organizacion::ReadAll();
 					 ?>
 				</select>
         <label>Fundacion</label>
-			</div>
+			</div> -->
 	<div class="input-field col s6">
 		<label class="form-label">Nombre</label>
 		<input class="form-control" type="text" name="ani_nombre" required>

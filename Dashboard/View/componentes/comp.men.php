@@ -14,7 +14,7 @@ if($_SESSION["cod_rol"]==1){
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Mis mascotas</a></div>
-  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('nueva_mascota')?>" class="item_menu">Crear Nueva</a></p></div>
+  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('nueva_mascota')?>" class="item_menu">Nueva Mascota</a></p></div>
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('mis_mascotas')?>" class="item_menu">Ver mis Mascotas</a></p></div>
 </li>
 <li>
