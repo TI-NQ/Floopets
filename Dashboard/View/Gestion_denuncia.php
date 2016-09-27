@@ -26,7 +26,7 @@ function borrar(cod){
         }
    });
 }
- 
+
 
 </script>
   <?php
@@ -72,6 +72,7 @@ function borrar(cod){
                       <div class='col l6'>
                       <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>";
                       ?>
+                      <!-- se reemplaza el href por el onclick que carga el delete -->
                       <a href='#' id='btntrash' onclick="borrar('<?php echo $row["de_cod_denuncia"];?>')" class='btn-floating waves-light red waves-effect' >
                     <?php
                     echo "<i class='small material-icons'>delete</i>
