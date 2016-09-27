@@ -8,7 +8,9 @@ require_once("../Model/voluntarios.class.php");
 $voluntarios=gestion_voluntarios::ReadAll();
  ?>
 
-<!-- <table>
+<div class="container">
+<div class="row">
+<table id="datatable" class="display highlight centered responsive-table bordered">
 	<thead>
 		<tr>
 			<td>Cedula</td>
@@ -18,7 +20,9 @@ $voluntarios=gestion_voluntarios::ReadAll();
       <td>Foto</td>
       <td>Contraseña</td>
 		</tr>
-		<tbody> -->
+	</thead>
+
+		<tbody>
 <?php
 			@$mensaje = $_REQUEST["m"];
 
@@ -70,5 +74,7 @@ $voluntarios=gestion_voluntarios::ReadAll();
 
 ?>
 		</tbody>
-	</thead>
+	
 </table>
+</div>
+</div>

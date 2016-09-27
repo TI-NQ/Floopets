@@ -24,21 +24,31 @@ if(!isset($_SESSION["usu_cod_usuario"])){
 
 		<title>Floopets-Cambiando vidas</title>
 
+
+
 		<!-- scripts -->
     <script type="text/javascript" src="../../WebFloopets/js/jquery-1.12.1.min.js"></script>
 	  <script type="text/javascript" charset="utf8" src="../../WebFloopets/js/jquery.dataTables.min.js"></script>
 	  <script type="text/javascript" src="../../WebFloopets/materialize/js/materialize.min.js"></script>
 	  <script type="text/javascript" src="../../WebFloopets/sweetalert/dist/sweetalert.min.js"></script>
 	  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+	  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+
+	  <script type="text/javascript" src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+
+
+
 	  <script>
 	    $(document).ready( function () {
+
 	  		$('#datatable').DataTable(
 	  		{
 	      	"language":
 	      	{
 	        	"url": "https://cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"
 	      	},
-	      	"iDisplayLength": 3
+	      	"iDisplayLength": 10
 	    	})
 			$(".dropdown-button").dropdown();
 	      	$('.modal-trigger').leanModal();

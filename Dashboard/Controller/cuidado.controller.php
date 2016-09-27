@@ -19,10 +19,11 @@
 				} 
 				Gestion_cuidado::Create($cu_nombre,$cu_descripcion,$galeria);
 				$mensaje = "Se creo exitosamente";
+				
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/gestion_cuidado.php?m=$mensaje");
+			header("Location: ../View/dashboard.php?p=".base64_encode("ver_cuidados")."&m=$mensaje");
 
 			break;
 			case 'u':
@@ -37,17 +38,17 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_cuidado"));
+			header("Location: ../View/dashboard.php?p=".base64_encode("ver_cuidados"));
 			break;
 		
 		case 'd':
 			try {
           $cuidado = Gestion_cuidado::Delete(base64_decode($_REQUEST["cu"]));
           $mensaje = "se elimino correctamente";
-          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_cuidado"));
+          header("Location: ../View/dashboard.php?p=".base64_encode("ver_cuidados"));
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_cuidado"));
+          header("Location: ../View/dashboard.php?p=".base64_encode("ver_cuidados"));
         }
       
 			break;

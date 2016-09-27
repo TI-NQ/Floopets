@@ -1,4 +1,4 @@
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
 <button type="button" name="button" >
   <a href="registrar_cuidado.php">Nuevo</a>
 </button>
@@ -9,15 +9,20 @@ require_once("../Model/cuidado.class.php");
 $cuidado=gestion_cuidado::ReadAll();
  ?>
 
-<table>
+<div class="container">
+<div class="row">
+<table id="datatable" class="display highlight centered responsive-table bordered">
+
 	<thead>
 		<tr>
 			<td>Codigo </td>
 			<td>Nombre</td>
 			<td>Descripcion</td>
-      <td>Imagen</td>
-      <td>Video</td>
+		    <td>Imagen</td>
+		    <td>Video</td>
+		    <td>Acciones</td>
 		</tr>
+	</thead>	
 		<tbody>
 			<?php
 			@$mensaje = $_REQUEST["m"];
@@ -42,5 +47,7 @@ $cuidado=gestion_cuidado::ReadAll();
 
 			 ?>
 		</tbody>
-	</thead>
+	
 </table>
+</div>
+</div>

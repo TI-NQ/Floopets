@@ -90,7 +90,7 @@ if($_SESSION["cod_rol"]==1){
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Cuidados</a></div>
-  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('registrar_cuidado')?>" class="item_menu">Nuevo</a></p></div>
+  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('registro_cuidados')?>" class="item_menu">Nuevo</a></p></div>
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('ver_cuidados')?>" class="item_menu">Ver Todos</a></p></div>
 </li>
 <?php
