@@ -119,7 +119,7 @@ class Gestion_denuncia{
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO denuncias_organizacion (de_cod_denuncia, org_cod_organizacion,estado) VALUES (?,?,?)";
+		$consulta = "INSERT INTO denuncias_organizacion (de_cod_denuncia, org_cod_organizacion) VALUES (?,?)";
 
 		$query = $Conexion->prepare($consulta);
 
