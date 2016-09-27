@@ -1,9 +1,9 @@
-// <?php
-// 	if(isset($_GET["msn"]))
-// 	{
-// 		echo "swal( '".$_GET["msn"]."','', 'success');";
-// 	}
-// ?>
+ <?php
+	if(isset($_GET["msn"]))
+	{
+		echo "swal( '".$_GET["msn"]."','', 'success');";
+	}
+ ?>
 <h2 class="center">Registro usuarios</h2>
 				<form id="form"action="../Controller/usuarios.controller.php" method="POST">
 				 <input type="hidden" value="1" name="cod_rol"/>

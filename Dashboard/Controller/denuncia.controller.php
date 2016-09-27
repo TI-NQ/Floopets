@@ -28,11 +28,11 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia"));
+			header("Location:  ../../index.php?p=".base64_encode("Gestion_denuncia")."&m=".$mensaje);
 
 			break;
 			case 'u':
-			
+
 			$de_cod_denuncia =$_POST["de_cod_denuncia"];
 			$td_cod_tipo_denuncia		= $_POST["td_cod_tipo_denuncia"];
 			$de_descripcion			= $_POST["de_descripcion"];
