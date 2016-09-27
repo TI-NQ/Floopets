@@ -16,6 +16,7 @@
 
 		$to_cod_tipo_organizacion=$_POST["to_cod_tipo_organizacion"];
 		$org_nombre=$_POST["org_nombre"];
+		$org_descripcion=$_POST["org_descripcion"];
 		$org_nit=$_POST["org_nit"];
 		$org_email=$_POST["org_email"];
 		$org_telefono=$_POST["org_telefono"];
@@ -23,7 +24,7 @@
 
 
  		try {
- 			Gestion_organizacion::Create($to_cod_tipo_organizacion,$org_nombre,$org_nit,$org_email,$org_telefono,$org_direccion);
+ 			Gestion_organizacion::Create($to_cod_tipo_organizacion,$org_nombre,$org_descripcion,$org_nit,$org_email,$org_telefono,$org_direccion);
  			$organizacion = Gestion_organizacion::ReadbyNIT($org_nit);
 
 				$org_cod_organizacion = $organizacion[0];
@@ -35,12 +36,12 @@
  				$mensaje=base64_encode("$org_nombre se creo exitosamente");
 				$tipo_msn=base64_encode("success");
 
- 			header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion")."&m=$mensaje&tm=$tipo_msn");
+ 			header("Location:../View/dashboard.php?p=".base64_encode("mi_organizacion")."&m=$mensaje&tm=$tipo_msn");
  		} catch (Exception $e) {
  			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			$tipomensaje = "error";
-			echo $mensaje;
-			// header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
+			// echo $mensaje;
+			header("Location:../View/dashboard.php?p=".base64_encode("registrar_organizacion")."&m=$mensaje&tmsn=$tipomensaje");
  			//header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
  		} catch (Exception $e) {
  			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
