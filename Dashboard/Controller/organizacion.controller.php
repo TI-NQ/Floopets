@@ -32,7 +32,6 @@
 				Gestion_organizacion::Createorganizacion($org_cod_organizacion, $usu_cod_usuario);
 				$_SESSION["org_cod_organizacion"] = $org_cod_organizacion;
 
-<<<<<<< HEAD
  				$mensaje=base64_encode("$org_nombre se creo exitosamente");
 				$tipo_msn=base64_encode("success");
 
@@ -42,13 +41,12 @@
 			$tipomensaje = "error";
 			echo $mensaje;
 			// header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
-=======
  			//header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
  		} catch (Exception $e) {
  			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			$tipomensaje = "error";
 			//header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
->>>>>>> origin/master
+
  		}
  		break;
 
