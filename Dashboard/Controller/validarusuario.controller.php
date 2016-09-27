@@ -52,12 +52,6 @@
 
       //$page = "../View/dashboard.php?p=".base64_encode("mi_perfil")."&m=".$msn;
 
-      if($_SESSION["cod_rol"] == "3"){
-            $organizacion = Gestion_usuarios::tieneorganizacion($_SESSION["usu_cod_usuario"]);
-
-            if(($organizacion[0] == "")OR($organizacion[0] == null)){
-              //$page = "../View/registrar_organizacion.php";
-
             }else{
               $_SESSION["org_cod_organizacion"] = $organizacion[1];
               header("Location: ../View/dashboard.php?p=".base64_encode('mi_organizacion')."");
@@ -71,7 +65,7 @@
 
 
     }
-  } }}catch (Exception $e) {
+  } catch (Exception $e) {
 
    $msn = base64_encode("A ocurrido un error ".$e->getMessage());
    $tipo_msn = base64_encode("error");
