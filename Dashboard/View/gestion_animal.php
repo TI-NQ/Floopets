@@ -29,25 +29,25 @@ foreach ($animal as $row) {
 		                          <img class=' responsive-img' style='width:250px ;height:250px ;' src='img/imagen_animal/".$row["ani_nombre"]."/".$row["ani_imagen"]."'>
 		                     	</div>
 	                   		<div class='col l6'>
-	                   			
-	                        	<a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_animal')."&an=".base64_encode($row['ani_cod_animal'])."'>	
-	                          
+
+	                        	<a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_animal')."&an=".base64_encode($row['ani_cod_animal'])."'>
+
 	                          <i class='small material-icons'>mode_edit</i>
 	                          </a>
-	                        
+
 	                      	</div>
 	                      	<div class='col l6'>
-	                        	
+
 	                          <a class='btn-floating waves-effect waves-light red' href='../Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=d'>
 	                          <i class='small material-icons'>delete</i>
-	                          </a>                        
-	                        
+	                          </a>
+
 	                      	</div>
 	                     </div>
 						<div class='col l6'>
 		                 	<ul class='descrip'>
 		                   	<label>Codigo</label>
-		                     	  <li>".$row["ani_cod_animal"]."</li>		         
+		                     	  <li>".$row["ani_cod_animal"]."</li>
 		                   	<label>raza</label>
 		                     	    <li>".$row["ra_nombre"]."</li>
 		                   	<label>organizacion</label>
@@ -55,29 +55,27 @@ foreach ($animal as $row) {
 		                	<label>Nombre</label>
 		                     	    <li>".$row["ani_nombre"]."</li>
 		                     <label>Esterilizacion</label>
-		                     	    <li>".$row["ani_esterilizado"]."</li>	
+		                     	    <li>".$row["ani_esterilizado"]."</li>
 		                     <label>Edad</label>
-		                     	    <li>".$row["ani_edad"]."</li>	
+		                     	    <li>".$row["ani_edad"]."</li>
 		                     <label>Descripcion</label>
-		                     	    <li>".$row["ani_descripcion"]."</li>	
+		                     	    <li>".$row["ani_descripcion"]."</li>
 		                     <label>N° Microchip</label>
-		                     	    <li>".$row["ani_numero_microchip"]."</li>	
+		                     	    <li>".$row["ani_numero_microchip"]."</li>
 		                     <label>sexo</label>
-		                     	    <li>".$row["ani_sexo"]."</li>		                                          
+		                     	    <li>".$row["ani_sexo"]."</li>
 		                 	</ul>
-		                    
+
 		             	</div>
 		           </div>
 		        </div>
-		    </div>      	
+		    </div>
 
-		
-        "; 
 
-			
+        ";
+
+
 	}
 ?>
 </div>
 </div>
-
-		

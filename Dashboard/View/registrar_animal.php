@@ -31,15 +31,19 @@
 								$('#ra_cod_raza').material_select();
 						});
 				});
-				var raza = $("#ra_cod_raza").val();
-				if (raza == "") {
-					$('#boton_enviar').attr('disabled', true);
-				}
+				$("#raza").keyup(function()
+				{
+						var raza = $("#raza").val();
+						if (raza == "") {
+							$("#btn-envio").prop("disabled",true);
+						}
+					});
   		});
 
 			</script>
- <h4 class="center animated zoomIn">Nueva Mascota</h4>
+
 <form id="form" class="animated zoomIn" action="../Controller/animal.controller.php" method="POST" enctype="multipart/form-data">
+ <h4 class="center animated zoomIn">Nueva Mascota</h4>
 	<div class="input-field col s12" style="z-index:1;">
 		<div class="row">
 			<div class="input-field col s6">
@@ -61,7 +65,7 @@
 			</div>
 			<div class="input-field col s6">
 				<label class="form-label">Nombre</label>
-				<input class="form-control" type="text" name="ani_nombre" required>
+				<input class="form-control" type="text" name="ani_nombre" id="nombre" required>
 			</div>
 			<div class="input-field col s6">
 				<label class="form-label">Color</label>
