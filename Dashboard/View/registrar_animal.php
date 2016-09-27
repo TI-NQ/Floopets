@@ -31,8 +31,12 @@
 								$('#ra_cod_raza').material_select();
 						});
 				});
-
+				var raza = $("#ra_cod_raza").val();
+				if (raza == "") {
+					$('#boton_enviar').attr('disabled', true);
+				}
   		});
+
 			</script>
  <h4 class="center animated zoomIn">Nueva Mascota</h4>
 <form id="form" class="animated zoomIn" action="../Controller/animal.controller.php" method="POST" enctype="multipart/form-data">
@@ -113,6 +117,7 @@
 			</div>
 
 <div class="input-field col s12">
-		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
+		<button name="accion" value="c" class="btn btn-primary" id="btn-envio">Registrar</button>
 	</div>
+
 </form>
