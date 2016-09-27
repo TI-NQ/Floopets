@@ -47,6 +47,7 @@
 			try {
 				Gestion_denuncia::Update($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_fecha,$de_imagen,$de_estado,$de_cod_denuncia);
 				$mensaje = "Se actualizo exitosamente";
+				header("Location: ../View/dashboard.php?p=".base64_encode("denuncias").$mensaje);
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}

@@ -6,11 +6,16 @@
 ?>
 <div class="row animated zoomIn">
   <h4 class="center">Mi Perfil</h4>
-  <div class="col s5">
+  <div class="col l4 s5 offset-l1">
     <!-- imagen de prueba -->
-    <img src="img/imagen_evento/vacunatuchanda/5.jpg" style="max-height:400px; border-radius:5px; margin-left:30px;" />
+    <!-- <img src="img/imagen_evento/vacunatuchanda/5.jpg" style="max-height:400px; border-radius:5px; margin-left:30px;" /> -->
+    <?php
+    echo"
+    <img class='responsive-img' style='width:300px ;height:300px ;' 
+    src='img/imagen_usuario/".$user_data[1]."/".$user_data[8]."'>
+    ";?>
   </div>
-  <div class="col s7" style="margin-top:70px;">
+  <div class="col s7 l7" style="margin-top:70px;">
     <div class="row">
       <div class="input-field col s6">
         <input type="text" name="Nombre" value="<?php echo $user_data[1]?>" readonly>
