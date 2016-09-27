@@ -73,16 +73,32 @@
       	</script>
         <script type="text/javascript">
       		$(document).ready(function(){
-      			//nos desplazamos entre todos los divs
+      			 $(".button-collapse").sideNav();
 
       		});
 		</script>
 	</head>
 	<body>
-			<i class="fa fa-bars animated zoomIn" aria-hidden="true" id="menu" onclick= "desplegar()"></i>
+		<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars animated zoomIn" aria-hidden="true" id="menu" ></i></a>
+		
+		<nav id="slide-out" class="side-nav">
+		<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
+		<ul class="menu_floopets">
+				<li><a href="#Inicio" class="ancla"><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
+				<li><a href="#Quienessomos" class="ancla"><i class="icono izquierda fa fa-paw "></i> Equipo De Trabajo</a></li>
+				<li><a href="#adopciones" class="ancla"><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
+				<li><a href="Quiere-Ser-Voluntario.php"><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
+				<li ><a href="#denuncias" class="ancla"><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota</a></li>
+
+				<li><a href="Eventos.php" ><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
+				<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
+				<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li>
+			</ul>
+	 	</nav>
+        
 
 
-		<div class="contenedor-menu animated fadeInLeft">
+<!-- 		<div class="contenedor-menu animated fadeInLeft">
 
 			<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
 			<i class="fa fa-times" aria-hidden="true" id="salir" onclick= "ver_menu()"></i>
@@ -100,10 +116,11 @@
 			</ul>
 
 
-		</div>
+		</div> -->
 		<div class="banner-video" id="Inicio">
+			<div class="frase"><img src="WebFloopets/images/fraseindex.png"></div>
 			<a class="ingresa btn waves-effect waves-light btn-large wow zoomIn" href="login.php">Ingresar a Floopets</a>
-			<video src="WebFloopets/video/563398388.mp4" autoplay></video>
+			<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
 			<!-- <img src="WebFloopets/images/inicio.jpeg" alt="" style="width:100%;height:100vh;"/> -->
 		</div>
 
