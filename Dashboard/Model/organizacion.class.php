@@ -79,6 +79,29 @@ function ReadAll()
 			floopets_BD::Disconnect();
 
 		}
+		function ReadbyNIT($org_nit){
+
+			//Instanciamos y nos conectamos a la bd
+			$Conexion = floopets_BD::Connect();
+			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+
+			//Crear el query que vamos a realizar
+			$consulta = "SELECT * FROM organizacion WHERE org_nit=?";
+
+			$query = $Conexion->prepare($consulta);
+			$query->execute(array($org_nit));
+
+			//Devolvemos el resultado en un arreglo
+			//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+			//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+
+			$resultado = $query->fetch(PDO::FETCH_BOTH);
+			return $resultado;
+
+			floopets_BD::Disconnect();
+		}
 		function Createorganizacion($org_cod_organizacion, $usu_cod_usuario){
 
 		//Instanciamos y nos conectamos a la bd
@@ -92,28 +115,6 @@ function ReadAll()
 
 		floopets_BD::Disconnect();
 	}
-	function ReadbyNIT($org_nit){
 
-		//Instanciamos y nos conectamos a la bd
-		$Conexion = floopets_BD::Connect();
-		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-
-		
-
-		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM organizacion WHERE org_nit=?";
-
-		$query = $Conexion->prepare($consulta);
-		$query->execute(array($org_nit));
-
-		//Devolvemos el resultado en un arreglo
-		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
-		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
-
-		$resultado = $query->fetch(PDO::FETCH_BOTH);
-		return $resultado;
-
-		floopets_BD::Disconnect();
-	}
 	}
  ?>

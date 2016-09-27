@@ -1,5 +1,6 @@
 <?php
 	//Llamamos la conexion a la base de datos
+	session_start();
 	require_once("../Model/conexion.php");
 
 
@@ -30,14 +31,16 @@
 
 				Gestion_organizacion::Createorganizacion($org_cod_organizacion, $usu_cod_usuario);
 				$_SESSION["org_cod_organizacion"] = $org_cod_organizacion;
-				
- 				$mensaje="Registro exitoso";
 
- 			header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
+ 				$mensaje=base64_encode("$org_nombre se creo exitosamente");
+				$tipo_msn=base64_encode("success");
+
+ 			header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion")."&m=$mensaje&tm=$tipo_msn");
  		} catch (Exception $e) {
  			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			$tipomensaje = "error";
-			header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
+			echo $mensaje;
+			// header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
  		}
  		break;
 
@@ -73,7 +76,7 @@
 		      break;
 		      case 'r':
 			$empresa = Gestion_organizacion::ReadbyID($org_cod_organizacion);
-    		
+
 		break;
 		case 'buscar':
           	Gestion_organizacion::ReadbyNombre($org_nombre);

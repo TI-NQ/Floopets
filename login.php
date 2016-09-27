@@ -7,21 +7,26 @@
   <!--Import materialize.css-->
   <link type="text/css" rel="stylesheet" href="WebFloopets/materialize/css/materialize.css"  media="screen,projection"/>
   <link rel="shortcut icon" type="image/x-icon" href="WebFloopets/images/title-web.ico">
+  <link rel="stylesheet" type="text/css" href="WebFloopets/sweetalert/dist/sweetalert.css">
   <script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js"></script>
   <title>Iniciar Sesion</title>
   <link rel="stylesheet" type="text/css" href="WebFloopets/css/style.css" media="all">
   <link href='http://fonts.googleapis.com/css?family=Roboto:900,900italic,500,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
-  <div id="fback">
+  <!-- <div id="fback"> -->
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <script type="text/javascript" src="WebFloopets/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 <body>
   <script type="text/javascript">
-          <?php
-        if(isset($_GET["m"])){
-          echo "alert( '".$_GET["m"]."');";
-        }
-      ?>
-
+      $(document).ready(function()
+      {
+        <?php
+          if(isset($_GET["m"]) and isset($_GET["tm"]))
+          {
+            echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
+          }
+         ?>
+      });
   </script>
 
     <div class="girisback"></div>
@@ -58,7 +63,7 @@
                   <input id="email" type="email" name="usu_email" class="validate" required>
                   <label for="email">Correo Electronico</label>
                 </div>
-               
+
                 <div class="input-field col s12">
                   <input id="contraseña" type="password" name="usu_clave" class="validate" required>
                   <label for="contraseña">Contraseña</label>
@@ -119,20 +124,20 @@
 
           $.post("Dashboard/Controller/usuario.controller.php", {usu_cedula: usu_cedula, accion: accion}, function(result){
 
-              $("#resultadobusqueda").html(result.msn); 
+              $("#resultadobusqueda").html(result.msn);
 
-              if(result.ue == true){ 
+              if(result.ue == true){
                 $("button").prop("disabled",true);
                 $("#last").addClass("hide");
               }
 
-              if(result.ue == false){ 
+              if(result.ue == false){
                 $("button").prop("disabled",false);
                 $("#last").removeClass("hide");
               }
           }, "json");
       });
-      
+
     });
   </script>
 </body>

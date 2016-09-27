@@ -53,6 +53,17 @@ if(!isset($_SESSION["usu_cod_usuario"])){
 	    	});
 	  	});
 		</script>
+    <script type="text/javascript">
+        $(document).ready(function()
+        {
+          <?php
+            if(isset($_GET["m"]) and isset($_GET["tm"]))
+            {
+              echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
+            }
+           ?>
+        });
+    </script>
 	</head>
 	<!-- <body style="background-image: url('../../WebFloopets/images/fondo-huellas.jpg');"> -->
   <body>
@@ -67,7 +78,7 @@ if(!isset($_SESSION["usu_cod_usuario"])){
               <!-- <img src="../../WebFloopets/images/logo1.png"><p>FLOOPETS</p> -->
               <?php include_once("componentes/comp.men.php"); ?>
             </div>
-            <div class="col s10 formularios" style="float: right;">
+            <div class="col s10 formularios" >
               <?php include_once("componentes/comp_page.php");?>
             </div>
           </div>
