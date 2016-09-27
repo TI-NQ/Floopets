@@ -50,8 +50,8 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			// header("Location: ../View/dashboard.php?p=".base64_encode("denuncias"));
-				header("Location: ../View/Gestion_denuncia.php?m= ".$mensaje );
+			header("Location: ../View/dashboard.php?p=".base64_encode("denuncias").$mensaje);
+				// header("Location: ../View/Gestion_denuncia.php?m= ".$mensaje );
 				break;
 
 		case 'd':

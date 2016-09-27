@@ -107,5 +107,80 @@ switch ($page) {
 	case 'cuidados_gatos':
 		require_once("cuidados_gatos.php");
 	break;
+	case 'actualizar_adopcion':
+		require_once("actualizar_adopcion.php");
+	 break;
+	
+	 case 'actualizar_animal':
+	 	require_once("actualizar_animal.php");
+	 break;
+	
+	 case 'actualizar_cuidado':
+	 	require_once("actualizar_cuidado.php");
+	 break;
+	
+	 case 'actualizar_denuncia':
+	 	require_once("actualizar_denuncia.php");
+	 break;
+	
+	 case 'actualizar_donacion':
+	 	require_once("actualizar_donacion.php");
+	 break;
+	
+	 case 'actualizar_evento':
+	 	require_once("actualizar_evento.php");
+	 break;
+	
+	 case 'actualizar_organizacion':
+	 	require_once("actualizar_organizacion.php");
+	 break;
+	
+	 case 'actualizar_permisos':
+	 	require_once("actualizar_permisos.php");
+	 break;
+	
+	 case 'actualizar_raza':
+	 	require_once("actualizar_raza.php");
+	 break;
+	
+	 case 'actualizar_roles':
+	 	require_once("actualizar_roles.php");
+	 break;
+	
+	 case 'actualizar_tipo_animal':
+	 	require_once("actualizar_tipo_animal.php");
+	 break;
+	
+	 case 'actualizar_tipo_denuncia':
+	 	require_once("actualizar_tipo_denuncia.php");
+	 break;
+	
+	 case 'actualizar_tipo_donacion':
+	 	require_once("actualizar_tipo_donacion.php");
+	 break;
+	
+	 case 'actualizar_tipo_evento':
+	 	require_once("actualizar_tipo_evento.php");
+	 break;
+	
+	 case 'actualizar_tipo_organizacion':
+	 	require_once("actualizar_tipo_organizacion.php");
+	 break;
+	
+	 case 'actualizar_usuario':
+	 	require_once("actualizar_usuario.php");
+	 break;
+	
+	 case 'actualizar_vacunas':
+	 	require_once("actualizar_vacunas.php");
+	 break;
+	
+	 case 'actualizar_voluntarios':
+	 	require_once("actualizar_voluntarios.php");
+	 break;
+	
+	 case 'actualizar_perfil':
+	 	require_once("actualizar_usuario.php");
+	 break;
 }
 ?>
