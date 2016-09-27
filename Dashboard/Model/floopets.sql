@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 27-09-2016 a las 15:04:07
+-- Tiempo de generación: 27-09-2016 a las 17:47:00
 -- Versión del servidor: 10.1.10-MariaDB
 -- Versión de PHP: 5.6.15
 
@@ -54,7 +54,7 @@ CREATE TABLE `animal` (
   `ra_cod_raza` int(11) NOT NULL,
   `ani_nombre` varchar(50) NOT NULL,
   `ani_color` varchar(30) NOT NULL,
-  `ani_tamaño` varchar(15) NOT NULL,
+  `ani_tamanio` varchar(15) NOT NULL,
   `ani_esterilizado` varchar(10) NOT NULL,
   `ani_edad` int(11) NOT NULL,
   `ani_descripcion` varchar(100) NOT NULL,
@@ -68,12 +68,11 @@ CREATE TABLE `animal` (
 -- Volcado de datos para la tabla `animal`
 --
 
-INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_color`, `ani_tamaño`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`, `ani_imagen`) VALUES
+INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_color`, `ani_tamanio`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`, `ani_imagen`) VALUES
 (14, 6, 'apoloa', '', '', 'no', 12, 'asjfajsdj', '5451', 'M', 2, ''),
 (16, 6, 'cucurucho', '', '', 'si', 5, 'es un peroo', '2142054', 'on', 2, 'kartandtinki1_photo-wallpapers_02.jpg'),
-(17, 6, 'cucurucho', '', '', 'si', 5, 'es un peroo', '2142054', 'on', 2, 'kartandtinki1_photo-wallpapers_02.jpg'),
-(18, 6, 'cucurucho', '', '', 'si', 4, 'es un peroo', '2142054', 'on', 2, '4K-Wallpaper-36.jpg'),
-(19, 6, 'tony', '', '', 'si', 3, 'es un perro', '2142054', 'on', 2, 'HD-Wallpapers1.jpeg');
+(19, 6, 'tony', '', '', 'si', 3, 'es un perro', '2142054', 'on', 2, 'HD-Wallpapers1.jpeg'),
+(20, 6, 'ewe', '', '', 'no', 4354, 'werjhgfbkbdkahzj bn bmn  m  kjhkjbsdfmn n bkskbn   kksdv   sdhv', 'sdsdfgh', 'on', 9, '');
 
 -- --------------------------------------------------------
 
@@ -119,7 +118,6 @@ CREATE TABLE `denuncia` (
 --
 
 INSERT INTO `denuncia` (`de_cod_denuncia`, `td_cod_tipo_denuncia`, `de_descripcion`, `de_contacto`, `de_telefono`, `de_nombre`, `de_fecha`, `de_imagen`, `de_estado`) VALUES
-(6, 1, 'mal trato', 'saorozco16@misena', '201444', 'Fliper', '2016-09-26 14:05:16', '2fc2a69a1a40f0852b1fd22721d41102.png', 'Pendiente'),
 (7, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:45:01', '4K-Wallpaper-36.jpg', 'Pendiente'),
 (8, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:45:21', '4K-Wallpaper-36.jpg', 'Pendiente'),
 (9, 1, 'dfsd', 'yooo', '219291', 'lola', '2016-09-27 06:45:59', '4K-Wallpaper-36.jpg', 'Pendiente'),
@@ -373,7 +371,8 @@ CREATE TABLE `tipo_animal` (
 --
 
 INSERT INTO `tipo_animal` (`ta_cod_tipo_animal`, `ta_nombre`) VALUES
-(5, 'perro');
+(5, 'Perro'),
+(8, 'Gato');
 
 -- --------------------------------------------------------
 
@@ -730,7 +729,7 @@ ALTER TABLE `adopcion`
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 --
 -- AUTO_INCREMENT de la tabla `cuidado`
 --
@@ -775,7 +774,7 @@ ALTER TABLE `permiso`
 -- AUTO_INCREMENT de la tabla `raza`
 --
 ALTER TABLE `raza`
-  MODIFY `ra_cod_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ra_cod_raza` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `rol`
 --
@@ -785,7 +784,7 @@ ALTER TABLE `rol`
 -- AUTO_INCREMENT de la tabla `tipo_animal`
 --
 ALTER TABLE `tipo_animal`
-  MODIFY `ta_cod_tipo_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `ta_cod_tipo_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT de la tabla `tipo_denuncia`
 --

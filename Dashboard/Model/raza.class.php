@@ -24,7 +24,7 @@ class Gestion_raza{
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 		//Crear el query que vamos a realizar
 		$consulta = "SELECT * FROM raza WHERE ra_cod_raza=?";
@@ -41,7 +41,16 @@ class Gestion_raza{
 
 		floopets_BD::Disconnect();
 	}
-
+	function readbycodtipo($tipo_mascota){
+		$Conexion = floopets_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		$consulta = "SELECT * FROM raza WHERE ta_cod_tipo_animal=?";
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($tipo_mascota));
+		$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+		return $resultado;
+		floopets_BD::Disconnect();
+	}
 
 	//Metodo ReadAll()
 	//Busca todos los registros de la tabla
