@@ -7,7 +7,7 @@
 	$eve = Gestion_tipo_evento::ReadAll();
 ?>
 <div class="row">
-<form class="col s12" action="../Controller/evento.controller.php" method="POST" enctype="multipart/form-data" id="form">
+<form class="col s12 animated zoomIn" action="../Controller/evento.controller.php" method="POST" enctype="multipart/form-data" id="form">
 	<h3>Registrar Evento</h3>
 
 	<div class="row">

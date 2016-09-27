@@ -37,7 +37,7 @@ switch ($page) {
 	break;
 	//Componente de pagina encargado de vincular la informacion sobre las donaciones que los usuarios realizaron a la fundacion que tiene la sesion activa
 	case 'gestion_donaciones':
-		require_once ("gestion_donaciones.php");
+		require_once ("gestion_donacion.php");
 	break;
 	//Componente de pagina que vinculara informacion sobre todas las denuncias realizadas y en esta las fundaciones podran escoger si dan seguimiento a la denuncia
 	case 'denuncias':
@@ -110,75 +110,75 @@ switch ($page) {
 	case 'actualizar_adopcion':
 		require_once("actualizar_adopcion.php");
 	 break;
-	
+
 	 case 'actualizar_animal':
 	 	require_once("actualizar_animal.php");
 	 break;
-	
+
 	 case 'actualizar_cuidado':
 	 	require_once("actualizar_cuidado.php");
 	 break;
-	
+
 	 case 'actualizar_denuncia':
 	 	require_once("actualizar_denuncia.php");
 	 break;
-	
+
 	 case 'actualizar_donacion':
 	 	require_once("actualizar_donacion.php");
 	 break;
-	
+
 	 case 'actualizar_evento':
 	 	require_once("actualizar_evento.php");
 	 break;
-	
+
 	 case 'actualizar_organizacion':
 	 	require_once("actualizar_organizacion.php");
 	 break;
-	
+
 	 case 'actualizar_permisos':
 	 	require_once("actualizar_permisos.php");
 	 break;
-	
+
 	 case 'actualizar_raza':
 	 	require_once("actualizar_raza.php");
 	 break;
-	
+
 	 case 'actualizar_roles':
 	 	require_once("actualizar_roles.php");
 	 break;
-	
+
 	 case 'actualizar_tipo_animal':
 	 	require_once("actualizar_tipo_animal.php");
 	 break;
-	
+
 	 case 'actualizar_tipo_denuncia':
 	 	require_once("actualizar_tipo_denuncia.php");
 	 break;
-	
+
 	 case 'actualizar_tipo_donacion':
 	 	require_once("actualizar_tipo_donacion.php");
 	 break;
-	
+
 	 case 'actualizar_tipo_evento':
 	 	require_once("actualizar_tipo_evento.php");
 	 break;
-	
+
 	 case 'actualizar_tipo_organizacion':
 	 	require_once("actualizar_tipo_organizacion.php");
 	 break;
-	
+
 	 case 'actualizar_usuario':
 	 	require_once("actualizar_usuario.php");
 	 break;
-	
+
 	 case 'actualizar_vacunas':
 	 	require_once("actualizar_vacunas.php");
 	 break;
-	
+
 	 case 'actualizar_voluntarios':
 	 	require_once("actualizar_voluntarios.php");
 	 break;
-	
+
 	 case 'actualizar_perfil':
 	 	require_once("actualizar_usuario.php");
 	 break;
