@@ -15,7 +15,7 @@
       	$eve_hora           =$_POST["eve_hora"];
       	$eve_hora_hasta           =$_POST["eve_hora_hasta"];
       	$eve_descripcion           =$_POST["eve_descripcion"];
-      	$eve_imagen 				="../View/img/imagen_evento/".$nombre_eve_imagen."/".$_POST["eve_imagen"];
+      	$eve_imagen 				=$nombre_eve_imagen."/".$_POST["eve_imagen"];
       	$eve_estado 				=$_POST["eve_estado"];
      	$count_galeria			= count($_FILES['eve_imagen']['name']);
 
