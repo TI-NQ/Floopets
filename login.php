@@ -8,6 +8,7 @@
   <link type="text/css" rel="stylesheet" href="WebFloopets/materialize/css/materialize.css"  media="screen,projection"/>
   <link rel="shortcut icon" type="image/x-icon" href="WebFloopets/images/title-web.ico">
   <link rel="stylesheet" type="text/css" href="WebFloopets/sweetalert/dist/sweetalert.css">
+  <link rel="stylesheet" type="text/css" href="WebFloopets/font-awesome-4.6.3/css/font-awesome.css">
   <script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js"></script>
   <title>Iniciar Sesion</title>
   <link rel="stylesheet" type="text/css" href="WebFloopets/css/style.css" media="all">
@@ -20,7 +21,7 @@
   <script type="text/javascript">
       $(document).ready(function()
       {
-
+        $('.modal-trigger').leanModal();
         <?php
           if(isset($_GET["m"]) and isset($_GET["tm"]))
           {
@@ -101,7 +102,137 @@
                  <input class="form-control file-path validate"  type="text" placeholder="" name="usu_imagen" >
                </div>
             </div>
-                <div class="">
+            <div class="row">
+              <p>
+      <input type="checkbox" id="test5" />
+      <label for="test5">Aceptar <a href="#terminos" class="modal-trigger">terminos y condiciones</a></label>
+    </p>
+  <div id="terminos" class="modal modal-fixed-footer">
+    <div class="modal-content">
+      <img src="WebFloopets/images/logo-negro.png" class="img-terminos">
+      <h4 class="center">TÉRMINOS Y CONDICIONES</h4>
+      <div class="col s12">
+        <p>
+          La presente declaración de derechos y responsabilidades contiene la declaración
+          del servicio que rigen nuestra relación con los usuarios y con todos aquellos que
+          interactúan con FLOOPETS, Así como al usarlo o al acceder al aplicativo, muestras tu
+          conformidad con esta declaración.
+        </p>
+          <div class="row">
+            <div class="col s12">
+              <h6>1. Privacidad</h6><p>
+                Tu privacidad es muy importante para nosotros. Por esta razón nos
+                aseguramos de que ninguna persona externa tenga acceso a tu información,
+                solo podrás compartir tu información con las fundaciones registradas solo
+                si decides llenar alguno de sus formularios para aplicar en alguna de sus opciones.
+              </p>
+
+            </div>
+          </div>
+<div class="row">
+
+            <h6>2. Compartir el contenido y la información</h6>
+            <div class="col s10 offset-s1">
+              <li><p>
+                Cuando eliminas contenido, este se borra por completo del aplicativo,
+                 no obstante, entiendes que es posible que el contenido eliminado pertenezca
+                  en copias de seguridad durante un plazo de tiempo razonable, pero
+                  (No estará disponible para terceros).
+
+              </p></li>
+
+            </div>
+            <div class="col s10 offset-s1">
+              <li><p>
+                Cuando envías información a las fundaciones, estas pueden
+                tener sus propios términos y condiciones de privacidad y al
+                enviarlos aceptas condiciones externas, que se salen de nuestra
+                jurisdicción.
+              </p></li>
+
+            </div>
+            <div class="col s10 offset-s1">
+              <li><p>
+                Al publicar denuncias te comprometes a que tu contenido
+                es verídico, y de no ser así podría conllevar a consecuencias jurídicas.
+
+              </p></li>
+
+            </div>
+
+          </div>
+          <div class="row">
+            <h6>Seguridad</h6>
+            <p>
+              Hacemos todo lo posible para que Floopets sea un sitio seguro,
+              pero no podemos garantizarlo completamente, por esta razón necesitamos
+              de tu ayuda para que así sea, lo que implica los siguientes compromisos
+              de tu parte.
+            </p>
+            <div class="col s10 offset-s1">
+              <li><p>No publicaras denuncias falsas estas serán catalogadas como (spam).</p></li>
+              <li><p>No recopilarás información o contenido de otros usuarios ni accederás
+                 utilizando medios automáticos (como bots de recolección, robots o
+                 software de pruebas carga) sin nuestro permiso previo.</p></li>
+              <li><p>No publicaras virus ni código malicioso de ningún tipo.</p></li>
+              <li><p>No pedirás información de inicio de sesión ni accederás a una cuenta perteneciente a otro usuario.</p></li>
+              <li><p>No utilizarás Floopets para actos ilícitos, engañosos, malintencionados o discriminatorios.</p></li>
+              <li><p>Mantendrás la información de contacto exacta y actualizada.</p></li>
+              <li><p>No compartirás tu contraseña, no dejarás que otra persona acceda a tu cuenta, ni harás
+                nada que pueda poner en peligro la seguridad de tu cuenta.</p></li>
+            </div>
+          </div>
+          <div class="row">
+            <h6> Protección de los derechos de otras personas.</h6>
+            <div class="col s10 offset-s1">
+              <li><p>
+                Podemos retirar cualquier contenido o información que publiques en Floopets si consideramos que infringe esta Declaración o nuestras políticas.
+
+              </p></li>
+              <li><p>
+                No publicarás contenido ni realizarás ninguna acción en Floopets que infrinja o vulnere los derechos de terceros o que vulnere la ley de algún modo.
+
+              </p></li>
+            </div>
+          </div>
+          <div class="row">
+            <h6>Dispositivos móviles y otros dispositivos.
+</h6>
+<div class="col s10 offset-s1">
+  <li><p>
+    Actualmente ofrecemos nuestros servicios para dispositivos móviles de forma gratuita, pero ten en cuenta que se aplicarán las tarifas normales de tu operador.
+
+  </p></li>
+  <li><p>
+    No publicarás contenido ni realizarás ninguna acción en Floopets que infrinja o vulnere los derechos de terceros o que vulnere la ley de algún modo.
+
+  </p></li>
+  <li><p>
+    No modificarás nuestro código fuente ni llevarás a cabo con él trabajos derivados, como descompilar o intentar de algún otro modo extraer dicho código fuente.
+
+  </p></li>
+</div>
+          </div>
+          <div class="row">
+            <h6>Terminación</h6>
+            <div class="col s10 offset-s1">
+              <li><p>
+                Si infringes los términos y condiciones podríamos impedirte el acceso a Floopets total o parcialmente.
+
+              </p></li>
+            </div>
+          </div>
+          <div class="col s10 offset-s1 fin">
+<h5>Al acceder a Floopets, nos permites recopilar y usar tu contenido e información de acuerdo con nuestras políticas.</h5>
+          </div>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <a href="#!" class="modal-action modal-close waves-effect waves-green btn-flat ">Salir</a>
+    </div>
+  </div>
+            </div>
+                <div >
                   <button class="waves-effect waves-light btn boton" id="btnlogin" name="accion" value="c">Registrarse</button>
                   <a class="waves-effect waves-light btn" id="moveright">Iniciar sesion</a>
                 </div>

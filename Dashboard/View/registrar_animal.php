@@ -27,22 +27,17 @@
 						var tipo_mascota = $("#tipo_mascota").val();
 						$.post("con_raza.php", {tm: tipo_mascota}, function(result){
 								$("#raza").html(result);
-
 								$('#ra_cod_raza').material_select();
 						});
 				});
-        $(function valida() {
-          $("#fotos").each(function(){
-            var files = $(this).val();
-
-            if(files=='')
-            {
-              alert("No document file selected");
-              return false;
-            }
-          });
-        });
-
+        $('.valida').click(function() {
+                if ($('#fotos').val() == ''){
+                  swal("MENSAJE DE FLOOPETS", "Selecciona una imagen", "info");
+                  return false
+                } else {
+                    return true
+                }
+            });
   		});
 
 			</script>
@@ -70,6 +65,7 @@
 			</div>
 			<div class="input-field col s6">
 				<label class="form-label">Nombre</label>
+        <label id="campo1"></label>
 				<input class="form-control" type="text" name="ani_nombre" id="nombre" required>
 			</div>
 			<div class="input-field col s6">
