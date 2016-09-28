@@ -32,8 +32,8 @@
 
 			break;
 			case 'u':
-			$eve_cod_evento      =$_POST["eve_cod_evento"];
-      $te_cod_tipo_evento      =$_POST["te_cod_tipo_evento"];
+		$eve_cod_evento      =$_POST["eve_cod_evento"];
+      	$te_cod_tipo_evento      =$_POST["te_cod_tipo_evento"];
 		$eve_nombre              =$_POST["eve_nombre"];
 		$nombre_eve_imagen 	= strtolower(str_replace('ñ', 'n', $eve_nombre));
 		$nombre_eve_imagen 	= strtolower(str_replace(' ', '', $nombre_eve_imagen));
