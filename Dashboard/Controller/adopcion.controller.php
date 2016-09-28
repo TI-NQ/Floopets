@@ -51,12 +51,12 @@
 
 		case 'd':
 					try {
-		          $adopcion = Gestion_adopcion::Delete(base64_decode($_REQUEST["ad"]));
+		          $adopcion = Gestion_adopcion::Delete($_REQUEST["ad"]);
 		          $mensaje = "Se eliminó correctamente";
-		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_adopcion"));
+		          header("Location: ../View/dashboard.php?p=".base64_encode("historial_adopciones"));
 		        } catch (Exception $e) {
 		          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_adopcion")."&m".$mensaje);
+		          header("Location: ../View/dashboard.php?p=".base64_encode("historial_adopciones")."&m".$mensaje);
 		        }
 		      break;
 

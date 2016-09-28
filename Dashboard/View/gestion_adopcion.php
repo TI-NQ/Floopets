@@ -26,57 +26,58 @@ $adopcion=Gestion_adopcion::ReadAll();
          }
     });
  }
-
-
  </script>
-
-
+ <!-- esto va en el div de la imagen
+ <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_adopcion/".$row["de_contacto"]."/".$row["ado_imagen"]."'> -->
 <?php
 @$mensaje = $_REQUEST["m"];
-
 echo @$mensaje;
-
 	foreach ($adopcion as $row) {
-		echo"<div class='container descrip'>
-                <div class='row'>
-                  <div class='col l4 offset-l2 col m6'>
-                    
-                   <div class='col l6'>
-
-                          <a href='../View/actualizar_adopcion.php?ad=".base64_encode($row["ado_cod_adopcion"])."'>
-                          <i class='small material-icons'>mode_edit</i>
-                          </a>
-
+    echo"<div class='col l6 descrip'>
+            <div class='row'>
+              <div class='col l6 col m6'>
+                  <div class='col l7'>
+                  <label>Codigo</label>
+                    <span>".$row["ado_cod_adopcion"]."</span>
+                  </div>
+                  <div class='imagenmascota col l12'>
+                      <div style='width:180px ;height:180px ;'>
                       </div>
-                      <div class='col l6'>
-                      ";
-                      ?>
-                          <a href='#' id='btntrash' onclick="borrar('<?php echo $row["ado_cod_adopcion"];?>')">
-                      <?php
-                      echo"
-                          <i class='small material-icons'>delete</i>
-                          </a>
-
-                      </div>
-						<div class='col l4'>
-		                 	<ul class='descrip'>
-		                   	<label>Codigo</label>
-		                     	  <li>".$row["ado_cod_adopcion"]."</li>
-		                   	<label>Fecha</label>
-		                     	  <li>".$row["ado_fecha"]."</li>
-		                   	<label>Codigo animal</label>
-		                     	    <li>".$row["ani_cod_animal"]."</li>
-		                  	 <label>Codigo usuario</label>
-		                     	    <li>".$row["usu_cod_usuario"]."</li>
-		                 	</ul>
-
-		             	</div>
-		           </div>
-		        </div>
-		    </div>
+                  </div>
+                  <div class='col l6'>
+                         <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode("actualizar_adopcion")."&ad=".base64_encode($row["ado_cod_adopcion"])."'>
+                         <i class='small material-icons'>edit</i>
+                      </a>
+                  </div>
 
 
-        ";
+                  <div class='col l6'>
+                  ";
+                  ?>
+                  <!-- se reemplaza el href por el onclick que carga el delete -->
+                  <a href='#' id='btntrash' onclick="borrar('<?php echo $row["ado_cod_adopcion"];?>')" class='btn-floating waves-light red waves-effect' >
+                <?php
+                echo "<i class='small material-icons'>delete</i>
+                  </a>
+                  </div>
+              </div>
+              <div class='col l6'>
+                <ul class='descrip'>
+
+                  <span>Fecha :</span>
+                      <li>".$row["ado_fecha"]."</li>
+                  <span>Codigo animal :</span>
+                        <li>".$row["ani_cod_animal"]."</li>
+                  <span>Codigo usuario :</span>
+                        <li>".$row["usu_cod_usuario"]."</li>
+
+                </ul>
+              </div>
+            </div>
+          </div>
+
+      ";
+
 
 
 	}
