@@ -62,16 +62,29 @@
 					itemsDesktopSmall : [979,3]
 				});
 				$('.modal-trigger').leanModal();
-			});
-			</script>
-			<script type="text/javascript">
-				$(document).ready(function(){
-					$(".button-collapse").sideNav();
+
+				$(".button-collapse").sideNav();
+				
+				var menu = document.getElementsByClassName("hamburger-menu");
+
+				[].forEach.call(menu, function(m){
+				  m.addEventListener('click', function(){
+				    m.classList.toggle('open');
+				  });
 				});
-			</script>
+
+				$(".drag-target").click(function(){
+					$("#hamburger-menu").removeClass("open");
+				})
+			});
+			</script> 
 		</head>
 		<body>
-			<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars animated zoomIn" aria-hidden="true" id="menu" ></i></a>
+			<a href="#" data-activates="slide-out" class="button-collapse"><div id="hamburger-menu" class="hamburger-menu">
+			  <div class="first"></div>
+			  <div class="second"></div>
+			  <div class="third"></div>
+			</div></a>
 			<nav id="slide-out" class="side-nav">
 				<img id="logo" src="WebFloopets/images/logo-negro.png">
 				<ul class="menu_floopets">
