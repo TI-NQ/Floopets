@@ -19,9 +19,40 @@
 </head>
 <body>
   <script type="text/javascript">
+  function correo() {
+    email = document.getElementById('email').value;
+    expresion = /\w+@\w+\.+[a-z]/;
+    if (!expresion.test(email)){
+      swal({
+        title: "Mensaje de FLOOPETS",
+        text:"Por favor ingrese un correo valido. Ejemplo (floopets@mascotas.com) ",
+        type: "info",
+      });
+      document.getElementById('email').focus();
+      return false;
+    }
+  }
+  function validar(e) {
+  tecla = (document.all) ? e.keyCode : e.which;
+  if (tecla==8) return true;
+  patron =/[A-Za-z\s]/;
+  te = String.fromCharCode(tecla);
+  return patron.test(te);
+  }
+  function justNumbers(e)
+    {
+    var keynum = window.event ? window.event.keyCode : e.which;
+    if ((keynum == 8) || (keynum == 46))
+    return true;
+
+    return /\d/.test(String.fromCharCode(keynum));
+    }
+  </script>
+  <script type="text/javascript">
       $(document).ready(function()
       {
         $('.modal-trigger').leanModal();
+        $('.boton').prop('disabled', true);
         <?php
           if(isset($_GET["m"]) and isset($_GET["tm"]))
           {
@@ -42,12 +73,13 @@
                  {
                    $(".boton").prop("disabled",true);
                  }
-                 else
-                 {
-                     $(".boton").prop("disabled",false);
-                 }
              }, "json");
          });
+         $( '#terminoscheck' ).on( 'click', function() {
+           if( $(this).is(':checked') ){
+             $('.boton').prop('disabled', false);
+           }
+ });
       })
   </script>
 
@@ -65,19 +97,19 @@
               <div class="row">
                <input type="hidden" value="1" name="cod_rol"/>
                 <div class="input-field col s6">
-                  <input id="nombre" name="usu_nombre" type="text" class="validate" required>
+                  <input id="nombre" name="usu_nombre" type="text" class="validate" required onkeypress="return validar(event)">
                   <label for="nombre">Nombre</label>
                 </div>
                 <div class="input-field col s6">
-                  <input id="apellido" type="text" name="usu_apellido" class="validate" required>
+                  <input id="apellido" type="text" name="usu_apellido" class="validate" required onkeypress="return validar(event)">
                   <label for="apellido">Apellido</label>
                 </div>
-                <div class="input-field col s12">
-                  <input class="col s12" id="telefono" type="number" name="usu_telefono" class="validate" required>
+                <div class="input-field col s6">
+                  <input class="col s12" id="telefono" type="text" name="usu_telefono" class="validate" required onkeypress="return justNumbers(event);">
                   <label for="telefono">Telefono</label>
                 </div>
-                <div class="input-field col s12 m12">
-                  <input id="Cc" id="usu_cedula" type="number" class="validate" name="usu_cedula" required>
+                <div class="input-field col s6">
+                  <input id="Cc" id="usu_cedula" type="text" class="validate" name="usu_cedula" required onkeypress="return justNumbers(event);">
                   <label for="usu_cedula">Documento de identidad</label>
                   <span id="resultadobusqueda" class="red-text accent-3 left"></span>
               </div>
@@ -93,7 +125,7 @@
                   <input id="contraseña" type="password" name="usu_clave" class="validate" required>
                   <label for="contraseña">Contraseña</label>
                 </div>
-                <div class="file-field input-field col s12 m12 form-group">
+                <div class="file-field input-field col s12 m12 form-group" style="margin-top:10px;">
                <div class="btn" id="btnlogin" >
                  <span>imagen</span>
                  <input type="file" multiple name="usu_imagen[]" class="form-control">
@@ -104,8 +136,8 @@
             </div>
             <div class="row">
               <p>
-      <input type="checkbox" id="test5" />
-      <label for="test5">Aceptar <a href="#terminos" class="modal-trigger">terminos y condiciones</a></label>
+      <input type="checkbox" id="terminoscheck" />
+      <label for="terminoscheck">Aceptar <a href="#terminos" class="modal-trigger">terminos y condiciones</a></label>
     </p>
   <div id="terminos" class="modal modal-fixed-footer">
     <div class="modal-content">
@@ -233,7 +265,7 @@
   </div>
             </div>
                 <div >
-                  <button class="waves-effect waves-light btn boton" id="btnlogin" name="accion" value="c">Registrarse</button>
+                  <button class="waves-effect waves-light btn boton" id="btnlogin" name="accion" value="c" onclick="return correo()">Registrarse</button>
                   <a class="waves-effect waves-light btn" id="moveright">Iniciar sesion</a>
                 </div>
               </div>
