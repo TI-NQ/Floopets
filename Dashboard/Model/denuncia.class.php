@@ -111,16 +111,21 @@ class Gestion_denuncia{
 
 		floopets_BD::Disconnect();
 	}
-			 function Nombres()
+	// $consulta="SELECT denuncia.*,tipo_denuncia.* FROM tipo_denuncia INNER JOIN denuncia on tipo_denuncia.td_cod_tipo_denuncia=denuncia.td_cod_tipo_denuncia INNER JOIN denuncias_organizacion ON denuncia.de_cod_denuncia=denuncias_organizacion.de_cod_denuncia INNER JOIN organizacion ON denuncias_organizacion.org_cod_organizacion=organizacion.org_cod_organizacion WHERE organizacion.org_cod_organizacion=?"
+
+
+
+
+			 function Nombres($org_cod_organizacion)
    {
     //para el modificar por cada usuario usuario
     $conexion=floopets_BD::Connect();
     $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    $consulta="SELECT denuncia.*,tipo_denuncia.* FROM denuncia INNER JOIN tipo_denuncia on tipo_denuncia.td_cod_tipo_denuncia=denuncia.td_cod_tipo_denuncia ";
+    $consulta="SELECT denuncia.*,tipo_denuncia.* FROM tipo_denuncia INNER JOIN denuncia on tipo_denuncia.td_cod_tipo_denuncia=denuncia.td_cod_tipo_denuncia INNER JOIN denuncias_organizacion ON denuncia.de_cod_denuncia=denuncias_organizacion.de_cod_denuncia INNER JOIN organizacion ON denuncias_organizacion.org_cod_organizacion=organizacion.org_cod_organizacion WHERE organizacion.org_cod_organizacion=?";
     // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
     $query=$conexion->prepare($consulta);
-    $query->execute(array());
+    $query->execute(array($org_cod_organizacion));
 
 	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
 
@@ -128,7 +133,8 @@ class Gestion_denuncia{
 
 	return $resultado;
   }
-  function Tomardenuncia($de_cod_denuncia, $org_cod_organizacion){
+  function Tomardenuncia($de_cod_denuncia, $org_cod_organizacion)
+  {
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
@@ -142,6 +148,24 @@ class Gestion_denuncia{
 
 		floopets_BD::Disconnect();
 	}
+
+	function Denuncias_tomadas($org_cod_organizacion)
+   {
+    //para el modificar por cada usuario usuario
+    $conexion=floopets_BD::Connect();
+    $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+    $consulta="SELECT * FROM denuncia WHERE org_cod_organizacion=?";
+    // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
+    $query=$conexion->prepare($consulta);
+    $query->execute(array($org_cod_organizacion));
+
+	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
+
+	floopets_BD::Disconnect();
+
+	return $resultado;	
+}
 }
 
 ?>

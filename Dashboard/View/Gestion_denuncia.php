@@ -2,7 +2,7 @@
 
   require_once("../Model/conexion.php");
   require_once("../Model/denuncia.class.php");
-  $denuncia = Gestion_denuncia::Nombres();
+  $denuncia = Gestion_denuncia::ReadAll();
 
 ?>
 <script type="text/javascript">
@@ -31,26 +31,26 @@ $(document).ready(function()
                 }
            });
       });
-          $("a#tomar").click(function(){
-          var codigo = $("#de_cod_denuncia").val();
-          var accion = "tomar";
-          sweetAlert({
-                 title: 'Mensaje de FLOOPETS',
-                 text: 'Esta seguro que desea tomar?',
-                 type: 'warning',
-                 showCancelButton: true,
-                 confirmButtonColor: '#4db6ac',
-                 confirmButtonText: 'Aceptar',
-                 cancelButtonText: 'Cancelar',
-                 closeOnConfirm: true,
-                 closeOnCancel: true,
-                 },
-              function(isConfirm){
-                if (isConfirm) {
-                   document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
-                }
-           });
-      });
+      //     $("a#tomar").click(function(){
+      //     var codigo = $("#de_cod_denuncia").val();
+      //     var accion = "tomar";
+      //     sweetAlert({
+      //            title: 'Mensaje de FLOOPETS',
+      //            text: 'Esta seguro que desea tomar?',
+      //            type: 'warning',
+      //            showCancelButton: true,
+      //            confirmButtonColor: '#4db6ac',
+      //            confirmButtonText: 'Aceptar',
+      //            cancelButtonText: 'Cancelar',
+      //            closeOnConfirm: true,
+      //            closeOnCancel: true,
+      //            },
+      //         function(isConfirm){
+      //           if (isConfirm) {
+      //              document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
+      //           }
+      //      });
+      // });
 
 
 });
@@ -76,7 +76,9 @@ $(document).ready(function()
      <i class="small material-icons">mode_edit</i>
   </a> -->
 <?php
+@$mensaje = $_REQUEST["m"];
 
+  echo @$mensaje;
       foreach ($denuncia as $row)
       {
 
@@ -91,14 +93,11 @@ $(document).ready(function()
                           <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
                       </div>
                       <div class='col l6'>
-                             <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'>
-                            
-                            
+                             <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'> 
                           </a>
                       </div>
+                      <a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=tomar'>tomar</a>
                       <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>
-                  <a href='#' id='tomar' >
-                  <i class='fa fa-trash'></i></a>
                       <div class='col l6'>
                       <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>";
                       ?>

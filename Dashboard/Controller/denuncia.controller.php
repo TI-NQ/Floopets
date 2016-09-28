@@ -71,24 +71,24 @@
       break;
 
 	case 'tomar':
+			$denuncia =  Gestion_denuncia::ReadbyID(base64_decode($_REQUEST["dn"]));
+			 $gs = Gestion_usuarios::Mi_Organizacion($_SESSION["usu_cod_usuario"]);
+			 $org_cod_organizacion	= $gs[1];
+			 // $de_cod_denuncia 			=$_POST["de_cod_denuncia"];
 
-			$gs = Gestion_usuarios::Mi_Organizacion($_SESSION["usu_cod_usuario"]);
-			$org_cod_organizacion	= $gs[1];
-			$de_cod_denuncia 			=$_POST["de_cod_denuncia"];
-
-			$de_estado = "tomado";
+			 $de_estado = "tomado";
  			
 
 			try {
 				
-				Gestion_denuncia::Tomardenuncia($de_cod_denuncia, $org_cod_organizacion);
-				Gestion_denuncia::Updateestado($de_estado,$de_cod_denuncia);
+				Gestion_denuncia::Tomardenuncia($denuncia[0], $org_cod_organizacion);
+			 Gestion_denuncia::Updateestado($de_estado,$denuncia[0]);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			//header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia"));
-
+			 header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia"));
+ 
 			break;
 	}
 
