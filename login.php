@@ -94,7 +94,7 @@
                   <label for="contraseña">Contraseña</label>
                 </div>
                 <div class="file-field input-field col s12 m12 form-group">
-               <div class="btn " id="btnlogin" >
+               <div class="btn" id="btnlogin" >
                  <span>imagen</span>
                  <input type="file" multiple name="usu_imagen[]" class="form-control">
                </div>
