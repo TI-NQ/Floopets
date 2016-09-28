@@ -5,25 +5,27 @@
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
 		case 'c':
-      	$te_cod_tipo_evento      =$_POST["te_cod_tipo_evento"];
-		$eve_nombre              =$_POST["eve_nombre"];
-		$nombre_eve_imagen 	= strtolower(str_replace('ñ', 'n', $eve_nombre));
-		$nombre_eve_imagen 	= strtolower(str_replace(' ', '', $nombre_eve_imagen));
-      	$eve_direccion            =$_POST["eve_direccion"];
-      	$eve_fecha           =$_POST["eve_fecha"];
-      	$eve_fecha_hasta           =$_POST["eve_fecha_hasta"];
-      	$eve_hora           =$_POST["eve_hora"];
-      	$eve_hora_hasta           =$_POST["eve_hora_hasta"];
-      	$eve_descripcion           =$_POST["eve_descripcion"];
-      	$eve_imagen 				=$nombre_eve_imagen."/".$_POST["eve_imagen"];
+      	$te_cod_tipo_evento     	=$_POST["te_cod_tipo_evento"];
+		$eve_nombre              	=$_POST["eve_nombre"];
+		$nombre_eve_imagen 			= strtolower(str_replace('ñ', 'n', $eve_nombre.rand(0,3000)));
+		$nombre_eve_imagen 			= strtolower(str_replace(' ', '', $nombre_eve_imagen));
+      	$eve_direccion            	=$_POST["eve_direccion"];
+      	$eve_fecha           		=$_POST["eve_fecha"];
+      	$eve_fecha_hasta           	=$_POST["eve_fecha_hasta"];
+      	$eve_hora           		=$_POST["eve_hora"];
+      	$eve_hora_hasta           	=$_POST["eve_hora_hasta"];
+      	$eve_descripcion           	=$_POST["eve_descripcion"];
+      	$eve_imagen 				=$_POST["eve_imagen"];
       	$eve_estado 				=$_POST["eve_estado"];
-     	$count_galeria			= count($_FILES['eve_imagen']['name']);
+      		$eve_carpeta   			= $nombre_eve_imagen;
+     	$count_galeria				= count($_FILES['eve_imagen']['name']);
+
 
 			try {
-				if($count_galeria >= 1){
+				if($count_galeria != ""){
 					include("Upload_eve_imagen.php");
 				} 
-				Gestion_evento::Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado);
+				Gestion_evento::Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
@@ -35,23 +37,23 @@
 		$eve_cod_evento      =$_POST["eve_cod_evento"];
       	$te_cod_tipo_evento      =$_POST["te_cod_tipo_evento"];
 		$eve_nombre              =$_POST["eve_nombre"];
-		$nombre_eve_imagen 	= strtolower(str_replace('ñ', 'n', $eve_nombre));
+		$nombre_eve_imagen 	= strtolower(str_replace('ñ', 'n', $eve_nombre.rand(0,3000)));
 		$nombre_eve_imagen 	= strtolower(str_replace(' ', '', $nombre_eve_imagen));
       	$eve_direccion            =$_POST["eve_direccion"];
       	$eve_fecha           =$_POST["eve_fecha"];
       	$eve_fecha_hasta           =$_POST["eve_fecha_hasta"];
-      	$eve_hora           =$_POST["eve_hora"];
+      	$eve_hora           		=$_POST["eve_hora"];
       	$eve_hora_hasta           =$_POST["eve_hora_hasta"];
       	$eve_descripcion           =$_POST["eve_descripcion"];
       	$eve_imagen 				=$_POST["eve_imagen"];
+      	$eve_carpeta   			= $nombre_eve_imagen;
       	$eve_estado 				=$_POST["eve_estado"];
-     	$count_galeria			= count($_FILES['eve_imagen']['name']);
 
 			try {
-				if($count_galeria >= 1){
+				if($eve_imagen != ""){
 					include("Upload_eve_imagen.php");
 				} 
-				Gestion_evento::Update($eve_cod_evento,$te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado);
+				Gestion_evento::Update($eve_cod_evento,$te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta);
 				$mensaje = "Se actializo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();

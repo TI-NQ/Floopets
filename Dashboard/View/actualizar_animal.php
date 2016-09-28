@@ -10,6 +10,7 @@ require_once("../Model/conexion.php");
  ?>
 <form action="../Controller/animal.controller.php" method="POST" enctype="multipart/form-data">
   <input type="hidden" readonly name="ani_cod_animal" required value="<?php echo $animal[0] ?>">
+  <input name="org_cod_organizacion" value="<?php  $mi_organizacion[1]?>" hidden>
 	<div class="form-group">
 		<input class="form-control" type="hidden" name="ra_cod_raza" required  value="<?php echo $animal[1] ?>">
 		<input class="form-control" type="hidden" name="org_cod_organizacion" required  value="<?php echo $animal[10] ?>">
@@ -59,7 +60,7 @@ require_once("../Model/conexion.php");
     <input name="ani_sexo[]" value="<?php echo $animal[9] ?>"type="radio" id="Hembra" />
     <label for="Hembra">Hembra</label>
   </p>
-  	<input name="org_cod_organizacion" value="<?php echo $mi_organizacion[1]?>" hidden></input>
+  	
 	</div>
 	<div class="file-field input-field col s12">
 				<div class="btn">

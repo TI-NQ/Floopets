@@ -109,8 +109,9 @@
     <input name="ani_sexo[]" type="radio" id="Hembra" />
     <label for="Hembra">Hembra</label>
   </p>
-  	<input name="org_cod_organizacion" value="<?php echo $mi_organizacion[1]?>" hidden></input>
-	</div>
+  </div>
+  	<input name="org_cod_organizacion" value="<?php echo $mi_organizacion[1]?>" hidden>
+
 	<div class="file-field input-field col s12">
 				<div class="btn">
 					<span>Imagenes</span>

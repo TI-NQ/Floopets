@@ -27,7 +27,7 @@ $evento=Gestion_evento::Nombres();
 		                        <li>".$row["eve_nombre"]."</li>
 	                      	</div>
 	                  		<div class='imagenmascota col l12'>
-	                          <img class=' responsive-img' style='width:250px ;height:250px ;' src='img/imagen_evento/".$row["eve_nombre"]."/".$row["eve_imagen"]."'>
+	                          <img class=' responsive-img' style='width:250px ;height:250px ;' src='img/imagen_evento/".$row["eve_carpeta"]."/".$row["eve_imagen"]."'>
 	                     	</div>
 	                   		<div class='col l6'>
 	                   			<a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_evento')."&eve=".base64_encode($row['eve_cod_evento'])."'>	                        

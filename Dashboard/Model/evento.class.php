@@ -1,16 +1,16 @@
 <?php
 	class Gestion_evento{
 
-		function Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado){
+		function Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta){
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 			//Creamos el query de la consulta a la BD
-			$consulta="INSERT INTO evento (te_cod_tipo_evento, eve_nombre, eve_direccion,eve_fecha, eve_fecha_hasta,eve_hora ,eve_hora_hasta, eve_descripcion , eve_imagen , eve_estado) VALUES (?,?,?,?,?,?,?,?,?,?)";
+			$consulta="INSERT INTO evento (te_cod_tipo_evento, eve_nombre, eve_direccion,eve_fecha, eve_fecha_hasta,eve_hora ,eve_hora_hasta, eve_descripcion , eve_imagen , eve_estado , eve_carpeta) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
 
 			$query=$conexion->prepare($consulta);
-			$query->execute(array($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado));
+			$query->execute(array($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta));
 
 			floopets_BD::Disconnect();
 		}
@@ -53,15 +53,15 @@
 			return $resultado;
 		}
 
-		function Update($eve_cod_evento,$te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado)
+		function Update($eve_cod_evento,$te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta)
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "UPDATE evento SET te_cod_tipo_evento = ?, eve_nombre=?, eve_direccion=?, eve_fecha=?,eve_fecha_hasta=?, eve_hora=?,eve_hora_hasta=?, eve_descripcion=?, eve_imagen=?,eve_estado=? WHERE eve_cod_evento = ?" ;
+				$consulta = "UPDATE evento SET te_cod_tipo_evento = ?, eve_nombre=?, eve_direccion=?, eve_fecha=?,eve_fecha_hasta=?, eve_hora=?,eve_hora_hasta=?, eve_descripcion=?, eve_imagen=?,eve_estado=?,eve_carpeta=? WHERE eve_cod_evento = ?" ;
 				$query = $Conexion->prepare($consulta);
-				$query->execute(array($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_cod_evento));
+				$query->execute(array($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta,$eve_cod_evento));
 				floopets_BD::Disconnect();
 		}
 

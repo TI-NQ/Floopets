@@ -2,16 +2,16 @@
 	class Gestion_animal
 	{
 		// Metodo Create()
-		function Create($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen)
+		function Create($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta)
 		{
 			//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO animal (ra_cod_raza ,ani_nombre ,ani_color, ani_tamanio,ani_esterilizado, ani_edad, ani_descripcion, ani_numero_microchip, ani_sexo, org_cod_organizacion,ani_imagen) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+		$consulta = "INSERT INTO animal (ra_cod_raza ,ani_nombre ,ani_color, ani_tamanio,ani_esterilizado, ani_edad, ani_descripcion, ani_numero_microchip, ani_sexo, org_cod_organizacion,ani_imagen,ani_carpeta) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen));
+		$query->execute(array($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta));
 
 		floopets_BD::Disconnect();
 		}
@@ -47,15 +47,15 @@
 			return $resultado;
 			floopets_BD::Disconnect();
 		}
-		function ReadImg($ani_imagen)
+		function Readcarpeta($ani_carpeta)
 			{
 			//Instanciamos y nos conectamos a la bd
 			$Conexion = floopets_BD::Connect();
 			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			//Crear el query que vamos a realizar
-			$consulta = "SELECT * FROM animal WHERE ani_imagen=?";
+			$consulta = "SELECT * FROM animal WHERE ani_carpeta=?";
 			$query = $Conexion->prepare($consulta);
-			$query->execute(array($ani_imagen));
+			$query->execute(array($ani_carpeta));
 			//Devolvemos el resultado en un arreglo
 			//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
 			//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
@@ -64,15 +64,15 @@
 			floopets_BD::Disconnect();
 		}
 
-		function Update($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen)
+		function Update($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta)
 		{
 			//Instanciamos y nos conectamos a la bd
 			$Conexion = floopets_BD::Connect();
 			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			//Crear el query que vamos a realizar
-			$consulta = "UPDATE animal SET ra_cod_raza=?,ani_nombre=?,ani_color=?,ani_tamanio=?,ani_esterilizado=?,ani_edad=?,ani_descripcion=?,ani_numero_microchip=?,ani_sexo=?, org_cod_organizacion=? ,ani_imagen=? WHERE ani_cod_animal = ?" ;
+			$consulta = "UPDATE animal SET ra_cod_raza=?,ani_nombre=?,ani_color=?,ani_tamanio=?,ani_esterilizado=?,ani_edad=?,ani_descripcion=?,ani_numero_microchip=?,ani_sexo=?, org_cod_organizacion=? ,ani_imagen=?, ani_carpeta=? WHERE ani_cod_animal = ?" ;
 			$query = $Conexion->prepare($consulta);
-			$query->execute(array($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_cod_animal));
+			$query->execute(array($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta,$ani_cod_animal));
 			floopets_BD::Disconnect();
 		}
 			function Delete($ani_cod_animal)

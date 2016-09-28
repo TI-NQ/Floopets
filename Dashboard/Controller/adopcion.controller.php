@@ -5,16 +5,15 @@
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
 		case 'c':
-
-			$nombre_adopcion 		= strtolower(str_replace('ñ', 'n', rand(0,2000)));
+			$usu_cod_usuario 		= $_POST["usu_cod_usuario"];
+			$nombre_adopcion 		= strtolower(str_replace('ñ', 'n', $usu_cod_usuario));
 			$nombre_adopcion 		= strtolower(str_replace(' ', '', $nombre_adopcion));
 			$ani_cod_animal 		= $_POST["ani_cod_animal"];
-			$usu_cod_usuario 		= $_POST["usu_cod_usuario"];
 			$ado_imagen 			= $_POST["ado_imagen"];
 			$count_galeria			= count($_FILES['ado_imagen']['name']);
 
 			try {
-				if($count_galeria >= 1){
+				if($count_galeria != ""){
 					include("Upload_ado_image.php");
 				}
 				Gestion_adopcion::Create($ani_cod_animal,$usu_cod_usuario,$ado_imagen);
@@ -22,7 +21,7 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_adopcion"));
+			//header("Location: ../View/dashboard.php?p=".base64_encode("gestion_adopcion"));
 
 			break;
 

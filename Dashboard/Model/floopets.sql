@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 28-09-2016 a las 14:50:54
--- Versión del servidor: 10.1.9-MariaDB
--- Versión de PHP: 5.5.30
+-- Tiempo de generación: 29-09-2016 a las 00:34:57
+-- Versión del servidor: 10.1.13-MariaDB
+-- Versión de PHP: 5.6.20
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -42,9 +42,7 @@ CREATE TABLE `adopcion` (
 --
 
 INSERT INTO `adopcion` (`ado_cod_adopcion`, `ani_cod_animal`, `usu_cod_usuario`, `ado_fecha`, `ado_imagen`) VALUES
-(16, 14, 3, '2016-09-27 07:43:09', ''),
-(17, 14, 10, '2016-09-27 07:43:27', ''),
-(18, 14, 10, '2016-09-27 07:46:18', '');
+(22, 23, 10, '2016-09-28 15:59:42', '3a4716dd62be21aaa181720c8a4cb93e.jpg');
 
 -- --------------------------------------------------------
 
@@ -65,18 +63,18 @@ CREATE TABLE `animal` (
   `ani_numero_microchip` varchar(50) NOT NULL,
   `ani_sexo` varchar(30) NOT NULL,
   `org_cod_organizacion` int(11) NOT NULL,
-  `ani_imagen` longtext NOT NULL
+  `ani_imagen` longtext NOT NULL,
+  `ani_carpeta` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `animal`
 --
 
-INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_color`, `ani_tamanio`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`, `ani_imagen`) VALUES
-(14, 6, 'apoloa', '', '', 'no', 12, 'asjfajsdj', '5451', 'M', 2, ''),
-(16, 6, 'cucurucho', '', '', 'si', 5, 'es un peroo', '2142054', 'on', 2, 'kartandtinki1_photo-wallpapers_02.jpg'),
-(19, 6, 'tony', '', '', 'si', 3, 'es un perro', '2142054', 'on', 2, 'HD-Wallpapers1.jpeg'),
-(20, 6, 'ewe', '', '', 'no', 4354, 'werjhgfbkbdkahzj bn bmn  m  kjhkjbsdfmn n bkskbn   kksdv   sdhv', 'sdsdfgh', 'on', 9, '');
+INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_color`, `ani_tamanio`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`, `ani_imagen`, `ani_carpeta`) VALUES
+(14, 6, 'apoloa', '', '', 'no', 12, 'asjfajsdj', '5451', 'M', 2, '', ''),
+(23, 6, 'apoloñaa', 'morado', 'grande', 'si', 18, 'asfasdf', '285545', 'on', 11, '__until_the_bitter_end_fukuwa_render___by_akizayasdynamite-d4tu1yd.png', 'apolonaa1789'),
+(27, 6, 'gojan', 'blanco', 'grande', '', 18, 'asfasdf', '285545', 'on', 11, '3490f9fa8cf0a9131f19e7a8f390e2e0.jpg', 'gojan1014');
 
 -- --------------------------------------------------------
 
@@ -196,28 +194,16 @@ CREATE TABLE `evento` (
   `eve_imagen` longtext NOT NULL,
   `geo_x` longtext NOT NULL,
   `geo_y` longtext NOT NULL,
-  `eve_estado` varchar(1000) NOT NULL
+  `eve_estado` varchar(1000) NOT NULL,
+  `eve_carpeta` varchar(80) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `evento`
 --
 
-INSERT INTO `evento` (`eve_cod_evento`, `te_cod_tipo_evento`, `eve_nombre`, `eve_direccion`, `eve_fecha`, `eve_fecha_hasta`, `eve_hora`, `eve_hora_hasta`, `eve_descripcion`, `eve_imagen`, `geo_x`, `geo_y`, `eve_estado`) VALUES
-(20, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '03:20:00', '14:00:00', 'wesfsdf', '', '', '', 'pendiente'),
-(21, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '03:20:00', '14:00:00', 'wesfsdf', '', '', '', 'pendiente'),
-(22, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '03:20:00', '14:00:00', 'wesfsdf', '', '', '', 'pendiente'),
-(23, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
-(24, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
-(25, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
-(26, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
-(27, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
-(28, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
-(29, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
-(30, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
-(31, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asfasd', '', '', '', 'pendiente'),
-(32, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asda', '', '', '', 'pendiente'),
-(33, 1, 'saca tus perros a cagar', 'cll 44', '2016-09-22', '2016-09-22', '10:00:00', '22:00:00', 'asda', '', '', '', 'pendiente');
+INSERT INTO `evento` (`eve_cod_evento`, `te_cod_tipo_evento`, `eve_nombre`, `eve_direccion`, `eve_fecha`, `eve_fecha_hasta`, `eve_hora`, `eve_hora_hasta`, `eve_descripcion`, `eve_imagen`, `geo_x`, `geo_y`, `eve_estado`, `eve_carpeta`) VALUES
+(36, 1, 'sacalo', 'cll 44', '2016-09-29', '2016-09-29', '08:00:00', '19:00:00', 'asdaffas', '3e5684df056e21ffdb96b8cf70713560.jpg', '', '', 'pendiente', 'sacalo2386');
 
 -- --------------------------------------------------------
 
@@ -749,12 +735,12 @@ ALTER TABLE `voluntarios`
 -- AUTO_INCREMENT de la tabla `adopcion`
 --
 ALTER TABLE `adopcion`
-  MODIFY `ado_cod_adopcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `ado_cod_adopcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT de la tabla `animal`
 --
 ALTER TABLE `animal`
-  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `ani_cod_animal` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT de la tabla `cuidado`
 --
@@ -774,7 +760,7 @@ ALTER TABLE `donacion`
 -- AUTO_INCREMENT de la tabla `evento`
 --
 ALTER TABLE `evento`
-  MODIFY `eve_cod_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
+  MODIFY `eve_cod_evento` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 --
 -- AUTO_INCREMENT de la tabla `noticias`
 --
