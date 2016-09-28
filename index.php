@@ -261,7 +261,7 @@
 					<h2  class="center wow zoomIn" id="denuncias"><span>¿AMAS A LOS ANIMALES? SE UN</span> VOLUNTARIO</h2>
 					<div class="class col s12">
 						<div id="info-v">
-							<div class="col s12 m12 l7 info">
+							<div class="col s12 m12 l7 info" style="padding-top: 20px">
 								<div class="container">
 									<p>Si te gustan los animales y deseas aportar a mejorar su bienestar, te invitamos a que hagas parte del sistema de voluntarios de las fundaciones amigas de Floopets. </p>
 									<p>Sin embargo, antes de realizar la solicitud debes tener en cuenta algunos aspectos: </p>
@@ -273,6 +273,7 @@
 										<li><i class="icono izquierda fa fa-paw"></i> Tener el carnet de vacunación al día</li>
 										<li><i class="icono izquierda fa fa-paw"></i> Tener una pasión y actitud para ayudar a nuestros animales.</li>
 									</ul>
+									<a class="voluntario btn waves-effect  waves-light btn-large wow zoomIn modal-trigger" href="#formulario_v">¡Quiero ser Voluntario!</a>
 								</div>
 							</div>
 						</div>
@@ -348,11 +349,11 @@
 								</div>
 							</div>
 						</form>
-						<a class="voluntario btn waves-effect  waves-light btn-large wow zoomIn modal-trigger" href="#formulario_v">¡Quiero ser Voluntario!</a>
+						
 					</div>
 				</div>
 			</div>
-			<footer class="page-footer grey darken-4" style="margin-top:100px;">
+			<footer class="page-footer grey darken-4" style="margin-top: 0;">
 				<div class="container">
 					<div class="row">
 						<div class="col s12 m6 l6">

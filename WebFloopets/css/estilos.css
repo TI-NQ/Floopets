@@ -456,7 +456,14 @@ html{
 }
 /*----------------------------------------------estilos seccion Cuidados----------------------------------------------*/
 #voluntarios{
-  margin-top: 50px;
+  padding-top: 50px;
+  background-color: white;
+  margin-top:-10px; 
+  color: #858585; 	
+}
+
+#voluntarios h2{
+	color:#00b3ae;
 }
 .img_von{
   margin-top: 20px !important;
@@ -473,9 +480,7 @@ html{
     bottom: 0;}
 .voluntario{
 	background: rgba(255,179,0,0.8);
-  top: 50px;
- 	left: 30%;
- 	right: 30%;
+ 	margin-bottom: 30px;
  	font-family: "Roboto";
  	font-weight: 600;
  	font-size: 40px;
@@ -695,3 +700,4 @@ font-size: 20px;
 
 
 }​
+ 
