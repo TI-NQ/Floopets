@@ -73,7 +73,7 @@
 		<body>
 			<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars animated zoomIn" aria-hidden="true" id="menu" ></i></a>
 			<nav id="slide-out" class="side-nav">
-				<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
+				<img id="logo" src="WebFloopets/images/logo-negro.png">
 				<ul class="menu_floopets">
 					<li><a href="#Inicio" class="ancla"><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
 					<li><a href="#Quienessomos" class="ancla"><i class="icono izquierda fa fa-paw "></i> Equipo De Trabajo</a></li>

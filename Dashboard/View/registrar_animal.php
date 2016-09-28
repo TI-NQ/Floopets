@@ -31,12 +31,23 @@
 								$('#ra_cod_raza').material_select();
 						});
 				});
-				
+        $(function valida() {
+          $("#fotos").each(function(){
+            var files = $(this).val();
+
+            if(files=='')
+            {
+              alert("No document file selected");
+              return false;
+            }
+          });
+        });
+
   		});
 
 			</script>
 
-<form id="form" class="animated zoomIn" action="../Controller/animal.controller.php" method="POST" enctype="multipart/form-data">
+<form id="form" onsubmit="return valida()" class="animated zoomIn" action="../Controller/animal.controller.php" method="POST" enctype="multipart/form-data">
  <h4 class="center animated zoomIn">Nueva Mascota</h4>
 	<div class="input-field col s12" style="z-index:1;">
 		<div class="row">
@@ -110,12 +121,12 @@
 					<input type="file" name="ani_imagen[]" class="form-control">
 				</div>
 				<div class="file-path-wrapper form-group">
-					<input class="form-control file-path validate"  type="text" placeholder="Puede ingresas mas de una imagen" name="ani_imagen" >
+					<input class="form-control file-path validate" id="fotos" type="text" placeholder="Puede ingresas mas de una imagen" name="ani_imagen" >
 				</div>
 			</div>
 
 <div class="input-field col s12">
-		<button name="accion" value="c" class="btn btn-primary" id="btn-envio">Registrar</button>
+		<button name="accion" value="c" class="btn btn-primary right valida" id="btn-envio">Registrar</button>
 	</div>
 
 </form>
