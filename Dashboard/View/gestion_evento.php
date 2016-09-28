@@ -16,7 +16,7 @@ $evento=Gestion_evento::Nombres();
 <div class="row">
 <div class="col l11 offset-l1">
 <?php
-	
+
 
 	foreach ($evento as $row) {
 				echo"<div class='col l6 descrip'>
@@ -27,18 +27,18 @@ $evento=Gestion_evento::Nombres();
 		                        <li>".$row["eve_nombre"]."</li>
 	                      	</div>
 	                  		<div class='imagenmascota col l12'>
-	                          <img class=' responsive-img' style='width:250px ;height:250px ;' src='img/imagen_evento/".$row["eve_nombre"]."/".$row["eve_imagen"]."'>
+	                          <img class=' responsive-img' style='width:250px ;height:250px ;' src='img/imagen_evento/".str_replace (" ","",$row["eve_nombre"])."/".$row["eve_imagen"]."'>
 	                     	</div>
 	                   		<div class='col l6'>
-	                   			<a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_evento')."&eve=".base64_encode($row['eve_cod_evento'])."'>	                        
-	                          
+	                   			<a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_evento')."&eve=".base64_encode($row['eve_cod_evento'])."'>
+
 	                          <i class='small material-icons'>mode_edit</i>
-	                          </a>	                        
+	                          </a>
 	                      	</div>
-	                      	<div class='col l6'>	                        
+	                      	<div class='col l6'>
 	                          <a class='btn-floating waves-effect waves-light red' href='../Controller/evento.controller.php?eve=".base64_encode($row["eve_cod_evento"])."&accion=d'>
 	                          <i class='small material-icons'>delete</i>
-	                          </a>                        	                        
+	                          </a>
 	                      	</div>
 	                     </div>
 							<div class='col l6'>
@@ -58,20 +58,20 @@ $evento=Gestion_evento::Nombres();
 			                     	    <li>".$row["eve_hora"]."</li>
 			                     	    <li>".$row["eve_hora_hasta"]."</li>
 			                     <label>Descripcion</label>
-			                     	    <li>".$row["eve_descripcion"]."</li> 
+			                     	    <li>".$row["eve_descripcion"]."</li>
 			                     <label>Estado</label>
-			                     	    <li>".$row["eve_estado"]."</li>	                         
+			                     	    <li>".$row["eve_estado"]."</li>
 			                 	</ul>
-			                    
+
 			             	</div>
-			           
+
 			        </div>
-		    </div>      	
+		    </div>
 
-		
-        "; 
 
-	}		
+        ";
+
+	}
 ?>
 </div>
 </div>

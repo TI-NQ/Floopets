@@ -48,7 +48,7 @@ if(!isset($_SESSION["usu_cod_usuario"])){
 	      	{
 	        	"url": "https://cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"
 	      	},
-	      	"iDisplayLength": 10
+	      	"iDisplayLength": 5
 	    	})
 			$(".dropdown-button").dropdown();
 	      	$('.modal-trigger').leanModal();
