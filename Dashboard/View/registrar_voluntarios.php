@@ -1,4 +1,4 @@
-<?php 
+<?php
 require_once("../Model/conexion.php");
 require_once("../Model/organizacion.class.php");
 $organizacion = Gestion_organizacion::ReadAll();
@@ -44,9 +44,3 @@ $organizacion = Gestion_organizacion::ReadAll();
 						<button name="accion" value="c" class="btn btn-primary">Registrar</button>
 					</div>
 				</form>
-			</div>
-		</div>
-	</div>
-</div></center>
-</body>
-</html>
