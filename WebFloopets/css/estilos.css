@@ -157,29 +157,47 @@ a{
 .seccion1{
 	margin-top: -10px;
 }
-.container__perros{
-	width: 100%;
-	padding: 0 !important;
 
-}
-.container__perros img{
-	width: 100%;
-	z-index: 1;
-}
-.boton{
+
+#conteadop{
 	position: absolute;
-	z-index: 2;
-	/*margin-top: 85vh;*/
-	/*left: 240px;*/
-	margin-top: 33%;
-	margin-left: 15%;
+	width: 100%; 
+	margin-top: 50vh;
+	z-index: 3;	
+	font-family: "Roboto";
+	font-weight: lighter;
+	text-align: center;
+} 
+
+#conteadop p{
+	font-size: 30px;
+	margin-bottom: 0;
+	text-transform: uppercase;
+}
+
+#conteadop button{
+
 	width: 200px;
 	text-transform: inherit;
 	font-size: 30px;
 	font-family: 'Roboto', sans-serif;
 	background-color: rgba(255,179,0,0.8) !important;
 	border-radius: 5px;
+	font-weight: bold;
+	text-transform: uppercase;
 }
+.container__perros{
+	width: 100%;
+	padding: 0 !important;
+	position: relative;
+
+}
+.container__perros img{
+	width: 100%;
+	z-index: 1;
+}
+ 
+
 .container__gatos img{
 	width: 100%;
 	z-index: 3;
@@ -187,54 +205,46 @@ a{
 .container__gatos{
 	width: 100%;
 	padding: 0 !important;
+	position: relative;
 
 }
-.boton1{
-	position: absolute;
-	z-index: 4;
-	/*margin-top: 85vh;
-	left: 945px;*/
-	margin-top: 33%;
-	margin-left: 18%;
-	width: 200px;
-	text-transform: inherit;
-	font-size: 30px;
-	font-family: 'Roboto', sans-serif;
-	background-color: rgba(255,179,0,0.8) !important;
-	border-radius: 5px;
-}
-#adoptaperro{
-	position: absolute;
-	margin-top: 25%;
-	margin-left: 15%;
-	/*margin-top: 70vh;*/
-	/*left: 253px;*/
-}
-#adoptaperro p{
-	color: #fff;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 40px;
+
+ 
+ /*-------------------------------------------- TITULOS --------------------------------------------*/
+
+ h1, h2, h3, h4{
+ 	text-transform: uppercase;
+ }
+
+h2{  
+    font-size: 50px;
+    line-height: 34px;
 }
 
-/*.perro{
-	margin-top: 35%;
+h3{  
+    font-size: 30px;
+    font-weight: bold;
+}
+h2 span{
+	display: block;
+	font-size: 20px;
+	font-weight: lighter;
+	padding: 0;
+	margin: 0;
+} 
 
-}
-*/
-#adoptagato{
-	position: absolute;
-	margin-top: 25%;
-	margin-left: 18%;
-	/*margin-top: 70vh;*/
-	/*left: 963px;*/
-}
-#adoptagato p{
-	color: #fff;
-	font-family: 'Roboto Condensed', sans-serif;
-	font-size: 40px;
+.conten_p{
+	width: 80%;
+	position: relative;
+	margin: auto;
 }
 
 /*----------------------------------------------estilos seccion 2----------------------------------------------*/
+
+.seccion2{
+	position: relative;
+    z-index: 1;
+}
 .container__img{
 	width: 100%;
 }
@@ -252,6 +262,10 @@ a{
 	font-family: 'Roboto', sans-serif;
 	background-color: rgba(255,179,0,0.8) !important;
 	border-radius: 5px;
+}
+
+.seccion2 option, .seccion2 input{
+	padding-left: 10px !important;
 }
 .mascota label{
 	color: white;
@@ -407,6 +421,7 @@ div.fakeFile {
 .container__perdida, .container__historias{
 	width: 100%;
 	padding: 0 !important;
+	position: relative;
 }
 .container__perdida img, .container__historias img{
 	width: 100%;

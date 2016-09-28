@@ -106,17 +106,19 @@
 			<!-- Andrea Guzman-Adopciones -->
 			<div class="row seccion1" id="adopciones">
 				<div class="container__perros col s12 m6 l6">
-					<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Perro</button>
-					<div id="adoptaperro">
+					
+					<div id="conteadop">
 						<p class="wow fadeInDown">Adopta un</p>
+						<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Perro</button>
 					</div>
+
 					<img src="WebFloopets/images/1.jpg" class="wow fadeInLeft">
 				</div>
 				<div class="container__gatos col s12 m6 l6">
-					<div id="adoptagato">
-						<p class="wow fadeInDown">Adopta un</p>
+					<div id="conteadop">
+						<p class="wow fadeInDown">Adopta un</p>						
+						<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Gato</button>
 					</div>
-					<button class="boton1 btn waves-effect waves-light btn-large wow fadeInDown">Gato</button>
 					<img src="WebFloopets/images/2.jpg" class="wow fadeInRight">
 				</div>
 			</div>
@@ -127,11 +129,15 @@
 			</div>
 			<!-- Andrea Guzman -->
 			<!--Contenedor ayuda una mascota Ricardo_ochoa -->
-			<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin-top:50px;" class="center wow zoomIn" id="denuncias">Denuncias</h2>
 			<div class="row seccion2">
+
+			<h2  class="center wow zoomIn" id="denuncias"><span>AYUDA A UNA MASCOTA Y</span>REPORTA UNA DENUNCIA</h2>
+			<div class="conten_p">
+				<p>Se ha perdido tu mascota o conoces algún caso de maltrato animal?, realiza una denuncia con nosotros y alguna de las fundaciones inscritas en Floopets podrá atender tu caso.</p>
+			</div>
 				<form class="col s12" action="Dashboard/Controller/denuncia.controller.php" method="POST" enctype="multipart/form-data">
 					<div class="container__img col s12 m4 l4" >
-						<h3 class="center wow zoomIn">Ayuda una Mascota</h3>
+						<h3 class="center wow zoomIn">AGREGA UNA FOTO</h3>
 						<p class="center"><img class="bran wow zoomIn" src="WebFloopets/images/ayuda.png"></p>
 						<section>
 							<div class="inputFile">
@@ -144,10 +150,11 @@
 					</div>
 					<div class="container__form__help col s12 m8 l8 wow fadeInRight">
 						<div class="row">
-							<h3 class="center">Seleccione una opción</h3>
+							<h3 class="center">COMPLETAR EL FORMULARIO</h3>
 							<div class="row">
 								<div class="input-field col s12 m6 l6 mascota">
 									<select name="td_cod_tipo_denuncia">
+										<option>Selecciona una opción</option>
 										<?php
 											foreach ($tipod as $row) {
 												echo "<option value = '".$row["td_cod_tipo_denuncia"]."'>".$row["td_nombre"]."</option>";
@@ -197,17 +204,20 @@
 			</div>
 			<div class="row seccion3" id="perdidas">
 				<div class="container__perdida col s12 m6 l6">
-					<div id="perdida">
+ 
+					<div id="conteadop">						
 						<p class="wow fadeInDown">Mascotas Perdidas</p>
+						<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Ver mas...</button>
 					</div>
-					<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Ver mas...</button>
+
+					
 					<img src="WebFloopets/images/7.jpg" class="wow fadeInLeft">
 				</div>
 				<div class="container__historias col s12 m6 l6">
-					<div id="historias">
-						<p class="wow fadeInDown">Historias</p>
-					</div>
+	      		    <div id="conteadop">
+					    <p class="wow fadeInDown">Historias</p>			 
 					<button class="boton1 btn  waves-effect waves-light btn-large wow fadeInDown">Ver mas...</button>
+					</div>
 					<img src="WebFloopets/images/5.jpg" class="wow fadeInRight">
 				</div>
 			</div>
@@ -218,7 +228,8 @@
 				}else {
 				?>
 				<div class="row" style="margin-top:100px;">
-					<h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
+					
+			<h2  class="center wow zoomIn" id="denuncias"><span>PROXIMOS</span>EVENTOS</h2>
 					<div id="owl-demo">
 						<?php
 							foreach ($validar as $row) {
@@ -247,24 +258,20 @@
 				?>
 				<!-- David Pabon-Cuidados -->
 				<div class="row wow zoomIn" id="voluntarios">
-					<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Voluntarios</h2>
+					<h2  class="center wow zoomIn" id="denuncias"><span>¿AMAS A LOS ANIMALES? SE UN</span> VOLUNTARIO</h2>
 					<div class="class col s12">
 						<div id="info-v">
 							<div class="col s12 m12 l7 info">
 								<div class="container">
-									<h5 class="white-text center">Hola, quieres ser un voluntario!!!</h5>
-									<p class="grey-text text-lighten-4" align="justify">Ser un voluntariado es un trabajo duro,
-										todo es  para las personas que realmente aman a estas sorprendente mascotas adorables
-										que sin duda hacen parte de nuestro núcleo familiar. Sin embargo el trabajo es también único,
-										gratificante y sin lugar a dudas memorable para aquel que tiene ganas de ayudar a las diferentes
-										fundaciones de animales de su ciudad.</p>
-									<h5>Requisitos</h5>
+									<p>Si te gustan los animales y deseas aportar a mejorar su bienestar, te invitamos a que hagas parte del sistema de voluntarios de las fundaciones amigas de Floopets. </p>
+									<p>Sin embargo, antes de realizar la solicitud debes tener en cuenta algunos aspectos: </p>
+									 
 									<ul>
 										<li><i class="icono izquierda fa fa-paw"></i> Ser mayor de edad</li>
-										<li><i class="icono izquierda fa fa-paw"></i> Tener una  buena forma física, adaptable
-											y mantener un actitud tolerante hacia el trabajo.</li>
-										<li><i class="icono izquierda fa fa-paw"></i> Tener la vacunada contra la fiebre amarilla.</li>
-										<li><i class="icono izquierda fa fa-paw"></i> Tener una pasión para ayudar a nuestros animales.</li>
+										<li><i class="icono izquierda fa fa-paw"></i> Tener tolerancia y respeto hacia los animales.</li>
+										<li><i class="icono izquierda fa fa-paw"></i> Tener buena condición fisica.</li>
+										<li><i class="icono izquierda fa fa-paw"></i> Tener el carnet de vacunación al día</li>
+										<li><i class="icono izquierda fa fa-paw"></i> Tener una pasión y actitud para ayudar a nuestros animales.</li>
 									</ul>
 								</div>
 							</div>
