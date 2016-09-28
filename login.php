@@ -92,9 +92,9 @@
                   <input id="contraseña" type="password" name="usu_clave" class="validate" required>
                   <label for="contraseña">Contraseña</label>
                 </div>
-                <div class=" form-group file-field input-field col s12 m12">
-               <div class="btn">
-                 <label class="form-label">imagen</label>
+                <div class="file-field input-field col s12 m12 form-group">
+               <div class="btn " id="btnlogin" >
+                 <span>imagen</span>
                  <input type="file" multiple name="usu_imagen[]" class="form-control">
                </div>
                <div class="file-path-wrapper form-group">
