@@ -241,6 +241,9 @@ input {
 .input-field{
 	padding-right: 50px;
 }
+.campos{
+  padding-right: 50px;
+}
 textarea.materialize-textarea:focus:not([readonly]) {
   border-bottom: 1px solid #fff;
   box-shadow: 0 1px 0 0 #fff;
@@ -259,7 +262,14 @@ input[type=text]:focus:not([readonly]){
 input[type=email]{
 	border-bottom: 1px solid #fff;
 }
+input[type=number]{
+	border-bottom: 1px solid #fff;
+}
 input[type=email]:focus:not([readonly]){
+  border-bottom: 1px solid #fff;
+  box-shadow: 0 1px 0 0 #fff;
+}
+input[type=number]:focus:not([readonly]){
   border-bottom: 1px solid #fff;
   box-shadow: 0 1px 0 0 #fff;
 }
@@ -407,7 +417,10 @@ html{
 #info-v{
   font-size: 18px;
 }
-
+.modal.modal-fixed-footer .modal-footer {
+    border-top: 1px solid #fff;
+    position: absolute;
+    bottom: 0;}
 .voluntario{
 	background: rgba(255,179,0,0.8);
   top: 50px;
@@ -417,6 +430,9 @@ html{
  	font-weight: 600;
  	font-size: 40px;
  	border-radius: 5px;
+}
+.voluntario:hover{
+  background: rgba(255,179,0,0.8);
 }
 
 
