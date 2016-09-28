@@ -35,6 +35,12 @@ if($_SESSION["cod_rol"]==1){
 }elseif($_SESSION["cod_rol"]==2){
 ?>
 <li>
+  <div class="collapsible-header grey lighten-2"><a><i class="fa fa-user" aria-hidden="true"></i>Usuarios</a></div>
+  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('registrar_usuarios')?>" class="item_menu">Nuevos</a></p></div>
+  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('gestionar_usuarios')?>" class="item_menu">Gestionar</a></p></div>
+</li>
+<li>
+<li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-building-o" aria-hidden="true"></i>Organizaciones</a></div>
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('registrar_organizacion')?>" class="item_menu">Nueva</a></p></div>
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('gestionar_organizacion')?>" class="item_menu">Gestionar</a></p></div>

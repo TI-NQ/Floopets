@@ -6,14 +6,17 @@ $organizacion = Gestion_organizacion::ReadAll();
  <link type="text/css" rel="stylesheet" href="WebFloopets/materialize/css/materialize.css"  media="screen,projection"/>
  <meta charset="utf-8">
  <script type="text/javascript" src="WebFloopets/materialize/js/materialize.js"></script>
+ <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
  <div class="container">
+
+
 
 <div class="row">
 		<form class="col s12" id="form" action="Dashboard/Controller/voluntarios.controller.php" method="POST" enctype="multipart/form-data">
         <h3 class="center">Registra tus Datos para Ser Voluntario</h3>
 
-
+      
         <div class="row">
 					<div class="input-field col s4">
             <input type="text" name="vo_cod_voluntario" required>
@@ -26,12 +29,12 @@ $organizacion = Gestion_organizacion::ReadAll();
 				  <div class="input-field col s4">
             <input type="number" name="vo_telefono" required>
 						<label >Teléfono</label>
-
 					</div>
         </div>
-				  <div class=>
+
+				  <div class="input-field col s3">
 						<label class="">Dirección</label>
-						<input class="input-field col s3" type="text" name="vo_direccion" required>
+						<input  type="text" name="vo_direccion" required>
 					</div>
 
 					<div class="input-field col s12 m6 l6" style="z-index:1;">

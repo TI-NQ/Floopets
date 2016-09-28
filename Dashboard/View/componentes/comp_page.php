@@ -182,5 +182,14 @@ switch ($page) {
 	 case 'actualizar_perfil':
 	 	require_once("actualizar_usuario.php");
 	 break;
+
+	 case 'gestionar_usuarios':
+	 	require_once("gestion_usuarios.php");
+	 break;
+
+	 case 'registrar_usuarios':
+	 require_once("registrar_usuario.php");
+	break;
+
 }
 ?>
