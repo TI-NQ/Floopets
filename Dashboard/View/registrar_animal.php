@@ -31,13 +31,7 @@
 								$('#ra_cod_raza').material_select();
 						});
 				});
-				$("#raza").keyup(function()
-				{
-						var raza = $("#raza").val();
-						if (raza == "") {
-							$("#btn-envio").prop("disabled",true);
-						}
-					});
+				
   		});
 
 			</script>

@@ -80,7 +80,7 @@
 	</head>
 	<body>
 		<a href="#" data-activates="slide-out" class="button-collapse"><i class="fa fa-bars animated zoomIn" aria-hidden="true" id="menu" ></i></a>
-		
+
 		<nav id="slide-out" class="side-nav">
 		<img id="logo" onclick="ver_menu()" src="WebFloopets/images/logo-negro.png">
 		<ul class="menu_floopets">
@@ -95,7 +95,7 @@
 				<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li>
 			</ul>
 	 	</nav>
-        
+
 
 
 <!-- 		<div class="contenedor-menu animated fadeInLeft">
@@ -241,77 +241,7 @@
 
 				</div>
 		</div>
-<!-- David Pabon-Cuidados -->
-
-	<div class="row" id="cuidados">
-		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Cuidados</h2>
-		<div class="class col s12">
-
-			<div class="col s12 m12 l8">
-				<div class="carousel carousel-slider ">
-
-
-				    <a class="carousel-item" href="#one!"><img src="WebFloopets/images/Cuid1.jpg"></a>
-				    <a class="carousel-item" href="#two!"><img src="WebFloopets/images/Cuid2.jpg"></a>
-				    <a class="carousel-item" href="#three!"><img src="WebFloopets/images/Cuid3.jpg"></a>
-				    <a class="carousel-item" href="#four!"><img src="WebFloopets/images/Cuid4.jpg"></a>
-
-			  </div>
-			</div>
-
-
-			  <div class="col s12 m12 l4" style="margin-top: 40px">
-			  	<h4 class="white-text center" style="font-family: 'Roboto Condensed', sans-serif;">Búsqueda Avanzada</h4>
-
-				  <form class="col s12">
-				      <div class="row">
-				        	<div class="input-field col s12">
-
-							    <select>
-
-							      <option value="1">Perro</option>
-							      <option value="2">Gato</option>
-
-							    </select>
-							    <label>Elija el Tipo de Mascota</label>
-							  </div>
-						  </div>
-						  <div class="row">
-				        <div class="input-field col s12">
-				          <select>
-
-							      <option value="1">Raza 1</option>
-							      <option value="2">Raza 2</option>
-
-							    </select>
-							    <label>Raza</label>
-				        </div>
-				      </div>
-				      <div class="row">
-				        <div class="input-field col s12">
-				          <select>
-
-							      <option value="1">0-6 Meses</option>
-							      <option value="2">6 Meses - 1 Año</option>
-							      <option value="2">1 Año - 3 Años</option>
-
-							    </select>
-							    <label>Edad</label>
-				        </div>
-
-				      </div>
-
-				<button class="boton__form btn waves-effect waves-light btn-large right">Buscar</button>
-		    	</form>
-
-				</div>
-
-
-
-			 </div>
-	</div>
-
-    <!-- David Pabon-Eventos -->
+		<!-- David Pabon-Eventos -->
 		<?php
 
 		$validar = Gestion_evento::ReadEvento();
@@ -324,21 +254,21 @@
 		}
 		else {
 		?>
-		<div class="row">
+		<div class="row" style="margin-top:100px;">
 			<h3 class="center white-text" style="font-family: 'Roboto Condensed', sans-serif;">Eventos</h3>
 
-	    	<div id="owl-demo">
+				<div id="owl-demo">
 <?php
 foreach ($validar as $row) {
 	?>
 	<div class="item">
-    <div id="info">
-      <h4><?php echo $row["eve_nombre"];?></h4>
-      <p><?php echo $row["eve_descripcion"];?></p>
-      <p>Direccion: <?php echo $row["eve_direccion"]?></p>
-      <p>Fecha: <?php echo $row["eve_fecha"]?>, <?php echo $row["eve_hora"]?></p>
-      <a href="#" class="waves-effect btn">Ver Mas</a>
-    </div>
+		<div id="info">
+			<h4><?php echo $row["eve_nombre"];?></h4>
+			<p><?php echo $row["eve_descripcion"];?></p>
+			<p>Direccion: <?php echo $row["eve_direccion"]?></p>
+			<p>Fecha: <?php echo $row["eve_fecha"]?>, <?php echo $row["eve_hora"]?></p>
+			<a href="#" class="waves-effect btn">Ver Mas</a>
+		</div>
 	<img src="Dashboard/View/img/imagen_evento/<?php echo (str_replace(" ", "",$row["eve_nombre"]));?>/<?php echo $row["eve_imagen"];?>" alt="Owl Image">
 	<!-- <img src="WebFloopets/images/evento1.jpg" alt="Owl Image"> -->
 		<div class="text-event">
@@ -352,8 +282,8 @@ foreach ($validar as $row) {
 	<?php
 }
  ?>
-			  <!-- <div class="item">
-			  <img src="WebFloopets/images/evento1.jpg" alt="Owl Image">
+				<!-- <div class="item">
+				<img src="WebFloopets/images/evento1.jpg" alt="Owl Image">
 					<div class="text-event">
 
 							<h4>Ensayo</h4>
@@ -361,43 +291,89 @@ foreach ($validar as $row) {
 
 					</div>
 
-			  </div>
-			  <div class="item"><img src="WebFloopets/images/evento2.jpg" alt="Owl Image">
-			  <div class="text-event">
+				</div>
+				<div class="item"><img src="WebFloopets/images/evento2.jpg" alt="Owl Image">
+				<div class="text-event">
 
 							<h4>Ensayo</h4>
 							<h6>Fecha</h6>
 
 
 					</div>
-			  </div>
-			  <div class="item"><img src="WebFloopets/images/evento3.jpg" alt="Owl Image">
-			  <div class="text-event">
+				</div>
+				<div class="item"><img src="WebFloopets/images/evento3.jpg" alt="Owl Image">
+				<div class="text-event">
 
 							<h4>Ensayo</h4>
 							<h6>Fecha</h6>
 
 					</div>
-			  </div>
-			  <div class="item"><img src="WebFloopets/images/evento4.jpg" alt="Owl Image">
-			  		<div class="text-event">
+				</div>
+				<div class="item"><img src="WebFloopets/images/evento4.jpg" alt="Owl Image">
+						<div class="text-event">
 
 							<h4>Ensayo</h4>
 							<h6>Fecha</h6>
 
 					</div>
-			  </div>
-			  </div> -->
+				</div>
+				</div> -->
 
 
 
-	    </div>
+			</div>
 
 
-    </div>
+		</div>
 		<?php
 		}
 		 ?>
+<!-- David Pabon-Cuidados -->
+
+	<div class="row" id="cuidados">
+		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Voluntarios</h2>
+		<div class="class col s12">
+
+
+
+			<div class="container" id="info-v">
+
+				<div class="col s12 m12 l6 info">
+					<h4 class="white-text center">Hola quieres ser un voluntario!!!</h4>
+
+					<p class="grey-text text-lighten-4" align="justify">Ser un voluntariado es un trabajo duro,
+						 todo es  para las personas que realmente aman a estas sorprendente mascotas adorables
+						 que sin duda hacen parte de nuestro núcleo familiar. Sin embargo el trabajo es también único,
+						 gratificante y sin lugar a dudas memorable para aquel que tiene ganas de ayudar a las diferentes
+						 fundaciones de animales de su ciudad.</p>
+					<h5>Requisitos</h5>
+					<div class="col s12">
+						<ul>
+							<li><i class="icono izquierda fa fa-paw"></i> Ser mayor de edad</li>
+							<li><i class="icono izquierda fa fa-paw"></i> Tener una  buena forma física, adaptable
+								y mantener un actitud tolerante hacia el trabajo.</li>
+							<li><i class="icono izquierda fa fa-paw"></i> Tener la vacunada contra la fiebre amarilla.</li>
+							<li><i class="icono izquierda fa fa-paw"></i> Tener una pasión para ayudar a nuestros animales.</li>
+
+						</ul>
+					</div>
+
+
+				</div>
+			</div>
+				<div class="col s12 m12 l6">
+						<img src="WebFloopets/images/voluntariado1.png"  class="circle responsive-img wow zoomIn">
+				</div>
+				<div class="col s12">
+					<a class="voluntario btn waves-effect waves-light btn-large wow zoomIn" href="voluntario.php">¡Quiero ser Voluntario!</a>
+				</div>
+
+
+
+			 </div>
+	</div>
+
+
 
 
 
@@ -427,7 +403,7 @@ foreach ($validar as $row) {
 	</div> -->
 
 	<!-- fin eventos -->
-	<footer class="page-footer grey darken-4">
+	<footer class="page-footer grey darken-4" style="margin-top:100px;">
       <div class="container">
         <div class="row">
           <div class="col s12 m6 l6">

@@ -36,7 +36,7 @@ video{
 }
 
 
- 
+
 .frase{
 	position: absolute;
 	text-align: center;
@@ -46,7 +46,7 @@ video{
 }
 /*-----------------------------------------------------estilos menu-----------------------------------------------------*/
 
- 
+
 
 /*.menu_floopets,#logo{
 	display: none;
@@ -57,10 +57,10 @@ a{
 }
 
 .side-nav{
-	width: 426px; 
+	width: 426px;
 	font-size: 18px;
 	font-family: 'Roboto', sans-serif;
-	line-height: 18px;  
+	line-height: 18px;
 	background-color: transparent;
 	background-image: url(../recursos/images/menu.png);
 	background-repeat: no-repeat;
@@ -78,17 +78,17 @@ a{
 .side-nav::-webkit-scrollbar-track{background-color:rgb(237, 237, 237);}
 
 .side-nav ul{
-    width: 315px; 
+    width: 315px;
     direction: ltr;
     float: left;
 }
 
- 
+
 .menu_floopets  li {
 	display: inline-block;
 }
 
-     
+
 #menu{
 	position: fixed;
 	z-index: 10;
@@ -98,7 +98,7 @@ a{
 	cursor: pointer;
 	transition: 10s;
 }
- 
+
 .menu_floopets a:hover{
 	background-color: inherit;
 }
@@ -116,7 +116,7 @@ a{
 
 
 .frase img{
-	width: 70%; 
+	width: 70%;
 }
 
 .seccion1{
@@ -395,16 +395,35 @@ html{
   color: #fff;
 }
 /*----------------------------------------------estilos seccion Cuidados----------------------------------------------*/
-.cuidados{
-	height: 500px;
-	margin-top: -28px;
-	background-color: #ffff00;
+#cuidados{
+  margin-top: 50px;
 }
-.carousel-item img{
+#cuidados img{
+  margin-top: 20px !important;
+  display: block;
+  max-width: 500px;
+  margin: auto;
+}
+#info-v{
+  font-size: 18px;
+}
+.voluntario{
+	background: rgba(255,179,0,0.8);
+  top: 50px;
+ 	left: 30%;
+ 	right: 30%;
+ 	font-family: "Roboto";
+ 	font-weight: 600;
+ 	font-size: 40px;
+ 	border-radius: 5px;
+}
+
+
+/*.carousel-item img{
 	max-height: 600px;
 	border-radius: 20px;
 	margin-left: 30px;
-}
+}*/
 
 .logo__footer{
 	max-width: 204px;
@@ -608,4 +627,4 @@ font-size: 20px;
 }
 
 
-}​ 
+}​
