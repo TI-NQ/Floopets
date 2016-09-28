@@ -12,7 +12,7 @@
     <?php
     echo"
     <img class='responsive-img' style='width:300px ;height:300px ;'
-    src='img/imagen_usuario/".str_replace(" ","",$user_data[1])."/".$user_data[8]."'>
+    src='img/imagen_usuario/".str_replace(" ","",$user_data[5])."/".$user_data[8]."'>
     ";?>
   </div>
   <div class="col s7 l7" style="margin-top:70px;">
