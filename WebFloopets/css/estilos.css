@@ -398,15 +398,16 @@ html{
 #cuidados{
   margin-top: 50px;
 }
-#cuidados img{
+.img_von{
   margin-top: 20px !important;
   display: block;
-  max-width: 500px;
   margin: auto;
+  width: 400px;
 }
 #info-v{
   font-size: 18px;
 }
+
 .voluntario{
 	background: rgba(255,179,0,0.8);
   top: 50px;

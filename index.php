@@ -87,8 +87,8 @@
 				<li><a href="#Inicio" class="ancla"><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
 				<li><a href="#Quienessomos" class="ancla"><i class="icono izquierda fa fa-paw "></i> Equipo De Trabajo</a></li>
 				<li><a href="#adopciones" class="ancla"><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
-				<li><a href="Quiere-Ser-Voluntario.php"><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
-				<li ><a href="#denuncias" class="ancla"><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota</a></li>
+				<li><a href="#voluntarios" class="ancla"><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
+				<li><a href="#denuncias" class="ancla"><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota</a></li>
 
 				<li><a href="Eventos.php" ><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
 				<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
@@ -330,39 +330,40 @@ foreach ($validar as $row) {
 		 ?>
 <!-- David Pabon-Cuidados -->
 
-	<div class="row" id="cuidados">
+	<div class="row" id="voluntarios">
 		<h2 style="color:#fff; font-family:Roboto Condensed, sans-serif; margin:0 0 50px 0;" class="center">Voluntarios</h2>
 		<div class="class col s12">
 
 
 
-			<div class="container" id="info-v">
+			<div class="wow zoomIn" id="info-v">
 
-				<div class="col s12 m12 l6 info">
-					<h4 class="white-text center">Hola quieres ser un voluntario!!!</h4>
+				<div class="col s12 m12 l7 info">
+					<div class="container">
+						<h5 class="white-text center">Hola, quieres ser un voluntario!!!</h5>
 
-					<p class="grey-text text-lighten-4" align="justify">Ser un voluntariado es un trabajo duro,
-						 todo es  para las personas que realmente aman a estas sorprendente mascotas adorables
-						 que sin duda hacen parte de nuestro núcleo familiar. Sin embargo el trabajo es también único,
-						 gratificante y sin lugar a dudas memorable para aquel que tiene ganas de ayudar a las diferentes
-						 fundaciones de animales de su ciudad.</p>
-					<h5>Requisitos</h5>
-					<div class="col s12">
-						<ul>
-							<li><i class="icono izquierda fa fa-paw"></i> Ser mayor de edad</li>
-							<li><i class="icono izquierda fa fa-paw"></i> Tener una  buena forma física, adaptable
-								y mantener un actitud tolerante hacia el trabajo.</li>
-							<li><i class="icono izquierda fa fa-paw"></i> Tener la vacunada contra la fiebre amarilla.</li>
-							<li><i class="icono izquierda fa fa-paw"></i> Tener una pasión para ayudar a nuestros animales.</li>
+						<p class="grey-text text-lighten-4" align="justify">Ser un voluntariado es un trabajo duro,
+							 todo es  para las personas que realmente aman a estas sorprendente mascotas adorables
+							 que sin duda hacen parte de nuestro núcleo familiar. Sin embargo el trabajo es también único,
+							 gratificante y sin lugar a dudas memorable para aquel que tiene ganas de ayudar a las diferentes
+							 fundaciones de animales de su ciudad.</p>
+						<h5>Requisitos</h5>
+							<ul>
+								<li><i class="icono izquierda fa fa-paw"></i> Ser mayor de edad</li>
+								<li><i class="icono izquierda fa fa-paw"></i> Tener una  buena forma física, adaptable
+									y mantener un actitud tolerante hacia el trabajo.</li>
+								<li><i class="icono izquierda fa fa-paw"></i> Tener la vacunada contra la fiebre amarilla.</li>
+								<li><i class="icono izquierda fa fa-paw"></i> Tener una pasión para ayudar a nuestros animales.</li>
 
-						</ul>
+							</ul>
 					</div>
+
 
 
 				</div>
 			</div>
-				<div class="col s12 m12 l6">
-						<img src="WebFloopets/images/voluntariado1.png"  class="circle responsive-img wow zoomIn">
+				<div class="col s12 m12 l5">
+						<img src="WebFloopets/images/voluntariado1.png"  class="circle responsive-img wow zoomIn img_von">
 				</div>
 				<div class="col s12">
 					<a class="voluntario btn waves-effect waves-light btn-large wow zoomIn" href="voluntario.php">¡Quiero ser Voluntario!</a>
