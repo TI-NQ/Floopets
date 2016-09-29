@@ -70,15 +70,15 @@ $evento=Gestion_evento::Nombres();
 			                     	  <li>".$row["eve_cod_evento"]."</li>
 			                   	<label>Tipo de evento</label>
 			                     	  <li>".$row["te_nombre"]."</li>
-			                   	<label>Nombre</label>
-			                     	    <li>".$row["eve_nombre"]."</li>
 			                   	<label>Dirección</label>
 			                     	    <li>".$row["eve_direccion"]."</li>
 			                  	 <label>Fecha</label>
 			                     	    <li>".$row["eve_fecha"]."</li>
+																<label>Hasta</label>
 			                     	    <li>".$row["eve_fecha_hasta"]."</li>
 			                     <label>Hora</label>
 			                     	    <li>".$row["eve_hora"]."</li>
+																<label>Hasta</label>
 			                     	    <li>".$row["eve_hora_hasta"]."</li>
 			                     <label>Descripcion</label>
 			                     	    <li>".$row["eve_descripcion"]."</li>
