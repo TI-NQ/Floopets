@@ -35,7 +35,9 @@ video{
  	border-radius: 8px;
 }
 
-
+.footer-copyright a{
+		color: white;
+}
 
 .frase{
 	position: absolute;

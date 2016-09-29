@@ -375,7 +375,7 @@
 				</div>
 				<div class="footer-copyright grey darken-2">
 					<div class="container">
-						<div align="center">Floopets © 2016 </div>
+						<div align="right">Floopets © 2016 |&nbsp; <a href="https://www.facebook.com/floopets/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a> &nbsp; <a href="https://twitter.com/floopets" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> </div>
 					</div>
 				</div>
 			</footer>
