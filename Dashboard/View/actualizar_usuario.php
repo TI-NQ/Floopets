@@ -2,11 +2,11 @@
 session_start();
   require_once("../Model/conexion.php");
   require_once("../Model/usuarios.class.php");
-  require_once("../Model/rol.class.php");
+
 
 
   //Traemos la variable de Session usu_cod_usuario
-   $rol = Gestion_rol::ReadAll();
+
   $us =  Gestion_usuarios::Readbyusu(base64_decode($_REQUEST["us"]));
 
 ?>
