@@ -30,8 +30,23 @@ function ReadAll()
 				return $resultado;
 				floopets_BD::Disconnect();
 		}
+		function Nombres()
+   {
+    //para el modificar por cada usuario usuario
+    $conexion=floopets_BD::Connect();
+    $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
+    $consulta="SELECT organizacion.*,tipo_organizacion.* FROM tipo_organizacion INNER JOIN organizacion on tipo_organizacion.to_cod_tipo_organizacion=organizacion.to_cod_tipo_organizacion ";
+    // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
+    $query=$conexion->prepare($consulta);
+    $query->execute(array());
 
+	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
+
+	floopets_BD::Disconnect();
+
+	return $resultado;
+  }
 
 		function ReadbyID($org_cod_organizacion){
 			//Intanciamos y nos conectamos a la bd
