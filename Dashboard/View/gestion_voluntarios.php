@@ -44,7 +44,7 @@ $voluntarios=Gestion_voluntarios::ReadAll();
 	                        
 	                      	</div>
 	                      	<div class='col l6'>
-	                        	<a class='btn waves-effect blue lighten-3' href='../Controller/voluntarios.controller.php?vo=".base64_encode($row["vo_cod_voluntario"])."&accion=aceptar'>Aceptar</a>
+	                        	<a class='btn waves-effect blue lighten-3 right' href='../Controller/voluntarios.controller.php?vo=".base64_encode($row["vo_cod_voluntario"])."&accion=aceptar'>Aceptar</a>
 	                                                
 	                        
 	                      	</div>
