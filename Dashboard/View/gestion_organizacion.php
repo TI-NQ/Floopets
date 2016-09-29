@@ -8,7 +8,7 @@ require_once("../Model/conexion.php");
 require_once("../Model/organizacion.class.php");
 $organizacion=Gestion_organizacion::Nombres();
  ?>
- <script type="text/javascript">
+ <!-- <script type="text/javascript">
  function borrar(cod){
    var codigo = cod;
    var accion = "d";
@@ -29,7 +29,7 @@ $organizacion=Gestion_organizacion::Nombres();
          }
     });
  }
- </script>
+ </script> -->
 
 <table>
 	<thead>
@@ -61,11 +61,13 @@ $organizacion=Gestion_organizacion::Nombres();
 						<td>".$row["org_direccion"]."</td>
 						<td>
                     		";?>
-                        <a href='#' id='btntrash' onclick="borrar('<?php echo $row["org_cod_organizacion"];?>')" class='btn-floating waves-light red waves-effect'>
-                      
+                        <!-- <a href='#' id='btntrash' onclick="borrar('<?php echo $row["org_cod_organizacion"];?>')" class='btn-floating waves-light red waves-effect'>
+                          <i class='small material-icons'>delete</i>
+                          </a> -->
+                          <!-- <i class='small material-icons'>delete</i>
+                          </a> -->
                         <?php echo"
-                        <i class='small material-icons'>delete</i>
-                        </a>
+
                         <a class='btn-floating btn-light blue waves-effect' href='../View/actualizar_organizacion.php?org=".base64_encode($row["org_cod_organizacion"])."'>
                         <i class='small material-icons'>mode_edit</i></a>
 
