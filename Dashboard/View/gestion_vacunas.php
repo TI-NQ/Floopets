@@ -35,7 +35,7 @@ $vacunas=gestion_vacuna::ReadAll();
             			<td>".$row["vac_fecha"]."</td>
             			<td>".$row["vac_serial"]."</td>
 						<td>
-                    		<a href='../View/actualizar_vacuna.php?va=".base64_encode($row["vac_cod_vacuna"])."'>actualizar</a>
+                    		<a href='../View/dashboard.php?p=".base64_encode('actualizar_vacunas'). "&va=".base64_encode($row["vac_cod_vacuna"])."'>actualizar</a>
 
                     		<a href='../Controller/vacunas.controller.php?va=".base64_encode($row["vac_cod_vacuna"])."&accion=d'>eliminar</a>
 

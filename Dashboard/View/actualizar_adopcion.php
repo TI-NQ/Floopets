@@ -26,6 +26,6 @@ require_once("../Model/conexion.php");
                 </div>
               </div>
 	<div class="form-group">
-		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
+		<button name="accion" value="u" class="btn btn-primary">Actualizar</button>
 	</div>
 </form>

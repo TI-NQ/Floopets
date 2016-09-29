@@ -1,5 +1,5 @@
 <?php
-	session_start();
+	// session_start();
   require_once("../Model/conexion.php");
   require_once("../Model/vacuna.class.php");
 
