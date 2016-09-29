@@ -8,6 +8,28 @@ require_once("../Model/conexion.php");
 require_once("../Model/organizacion.class.php");
 $organizacion=Gestion_organizacion::Nombres();
  ?>
+ <script type="text/javascript">
+ function borrar(cod){
+   var codigo = cod;
+   var accion = "d";
+   sweetAlert({
+          title: 'Mensaje de FLOOPETS',
+          text: 'Esta seguro que desea eliminar?',
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#4db6ac',
+          confirmButtonText: 'Aceptar',
+          cancelButtonText: 'Cancelar',
+          closeOnConfirm: true,
+          closeOnCancel: true,
+          },
+       function(isConfirm){
+         if (isConfirm) {
+            document.location.href = "../Controller/organizacion.controller.php?org="+codigo+"&accion="+accion;
+         }
+    });
+ }
+ </script>
 
 <table>
 	<thead>
@@ -38,9 +60,17 @@ $organizacion=Gestion_organizacion::Nombres();
 						<td>".$row["org_telefono"]."</td>
 						<td>".$row["org_direccion"]."</td>
 						<td>
-                    		<a href='../View/actualizar_organizacion.php?org=".base64_encode($row["org_cod_organizacion"])."'>actualizar</a>
+                    		";?>
+                        <a href='#' id='btntrash' onclick="borrar('<?php echo $row["org_cod_organizacion"];?>')" class='btn-floating waves-light red waves-effect'>
+                      
+                        <?php echo"
+                        <i class='small material-icons'>delete</i>
+                        </a>
+                        <a class='btn-floating btn-light blue waves-effect' href='../View/actualizar_organizacion.php?org=".base64_encode($row["org_cod_organizacion"])."'>
+                        <i class='small material-icons'>mode_edit</i></a>
 
-                    		<a href='../Controller/organizacion.controller.php?org=".base64_encode($row["org_cod_organizacion"])."&accion=d'>eliminar</a>
+
+
 
 					</tr>";
 			}

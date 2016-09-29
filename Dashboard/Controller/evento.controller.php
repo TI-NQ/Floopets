@@ -23,7 +23,7 @@
      		try {
 				if($count_galeria != ""){
 					include("Upload_eve_imagen.php");
-				} 
+				}
 				Gestion_evento::Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
@@ -35,7 +35,7 @@
      		header("Location: ../View/dashboard.php?p=".base64_encode("nuevo_evento")."&m=".$mensaje);
      	}
 
-			
+
 
 			break;
 			case 'u':
@@ -57,19 +57,19 @@
 			try {
 				if($eve_imagen != ""){
 					include("Upload_eve_imagen.php");
-				} 
+				}
 				Gestion_evento::Update($eve_cod_evento,$te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta);
 				$mensaje = "Se actializo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			
+
 			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_evento"));
 			break;
 
 		case 'd':
 			try {
-          $evento = Gestion_evento::Delete(base64_decode($_REQUEST["eve"]));
+          $evento = Gestion_evento::Delete($_REQUEST["eve"]);
           $mensaje = "Se elimino correctamente";
           header("Location: ../View/dashboard.php?p=".base64_encode("gestion_evento"));
         } catch (Exception $e) {

@@ -25,11 +25,11 @@
 		$org_direccion=$_POST["org_direccion"];
 		$org_logo=$_POST["org_logo"];
  		$count_galeria			= count($_FILES['org_logo']['name']);
-		      	
+
 			try {
 				if($count_galeria != ""){
 					include("Upload_org_logo.php");
-				} 
+				}
  			Gestion_organizacion::Create($to_cod_tipo_organizacion,$org_nombre,$org_descripcion,$org_nit,$org_email,$org_telefono,$org_direccion,$org_logo);
  			$organizacion = Gestion_organizacion::ReadbyNIT($org_nit);
 
@@ -52,7 +52,7 @@
  		} catch (Exception $e) {
  			$mensaje=":( ha  ocurrido un error, el error  fue: ".$e->getMessage()." en ".$e->getFile(). " en la linea".$e->getLine();
 			$tipomensaje = "error";
-			header("Location:../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
+			header("Location:../View/dashboard.php?p=".base64_encode("gestionar_organizacion"));
 
  		}
  		break;
@@ -74,17 +74,17 @@
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				}
-				header("Location: ../View/dashboard.php?p=".base64_encode("gestion_organizacion") );
+				header("Location: ../View/dashboard.php?p=".base64_encode("gestionar_organizacion") );
 				break;
 
 		case 'd':
 					try {
-		          $evento = Gestion_organizacion::Delete(base64_decode($_REQUEST["org"]));
+		          $evento = Gestion_organizacion::Delete($_REQUEST["org"]);
 		          $mensaje = "Se eliminó correctamente";
-		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
+		          header("Location: ../View/dashboard.php?p=".base64_encode("gestionar_organizacion"));
 		        } catch (Exception $e) {
 		          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
+		          header("Location: ../View/dashboard.php?p=".base64_encode("gestionar_organizacion"));
 		        }
 		      break;
 		      case 'r':

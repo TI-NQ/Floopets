@@ -10,9 +10,28 @@ $evento=Gestion_evento::Nombres();
 
 	echo @$mensaje;
  ?>
-
-
-
+ <script type="text/javascript">
+ function borrar(cod){
+	 var codigo = cod;
+	 var accion = "d";
+	 sweetAlert({
+					title: 'Mensaje de FLOOPETS',
+					text: 'Esta seguro que desea eliminar?',
+					type: 'warning',
+					showCancelButton: true,
+					confirmButtonColor: '#4db6ac',
+					confirmButtonText: 'Aceptar',
+					cancelButtonText: 'Cancelar',
+					closeOnConfirm: true,
+					closeOnCancel: true,
+					},
+			 function(isConfirm){
+				 if (isConfirm) {
+						document.location.href = "../Controller/evento.controller.php?eve="+codigo+"&accion="+accion;
+				 }
+		});
+ }
+ </script>
 <div class="row">
 <div class="col l11 offset-l1">
 <?php
@@ -38,9 +57,11 @@ $evento=Gestion_evento::Nombres();
 	                          </a>
 	                      	</div>
 	                      	<div class='col l6'>
-	                          <a class='btn-floating waves-effect waves-light red' href='../Controller/evento.controller.php?eve=".base64_encode($row["eve_cod_evento"])."&accion=d'>
+													";?>
+														<a href='#' id='btntrash' onclick="borrar('<?php echo $row["eve_cod_evento"];?>')" class='btn-floating waves-light red waves-effect'>
 	                          <i class='small material-icons'>delete</i>
 	                          </a>
+														<?php echo"
 	                      	</div>
 	                     </div>
 							<div class='col l6'>
