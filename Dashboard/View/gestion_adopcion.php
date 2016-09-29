@@ -28,7 +28,7 @@ $adopcion=Gestion_adopcion::ReadAll();
  }
  </script>
  <!-- esto va en el div de la imagen
- <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_adopcion/".$row["de_contacto"]."/".$row["ado_imagen"]."'> -->
+  -->
 <?php
 @$mensaje = $_REQUEST["m"];
 echo @$mensaje;
@@ -42,6 +42,7 @@ echo @$mensaje;
                   </div>
                   <div class='imagenmascota col l12'>
                       <div style='width:180px ;height:180px ;'>
+                      <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_adopcion/".$row["usu_cod_usuario"]."/".$row["ado_imagen"]."'>
                       </div>
                   </div>
                   <div class='col l6'>
