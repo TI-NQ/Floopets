@@ -19,7 +19,7 @@
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "SELECT * FROM voluntarios";
+				$consulta = "SELECT * FROM voluntarios WHERE vo_estado='Pendiente'";
 				$query = $Conexion->prepare($consulta);
 				$query->execute();
 				//Devolvemos el resultado en un arreglo
@@ -66,6 +66,42 @@
 				$consulta = "DELETE FROM voluntarios WHERE vo_cod_voluntario = ?" ;
 				$query = $Conexion->prepare($consulta);
 				$query->execute(array($vo_cod_voluntario));
+				floopets_BD::Disconnect();
+		}
+
+
+		function aceptar_voluntario($vo_cod_voluntario)
+		{
+
+		$Conexion = floopets_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+
+
+		//Crear el query que vamos a realizar
+		$consulta = "UPDATE voluntarios SET  vo_estado='Aceptado' WHERE vo_cod_voluntario=? " ;
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($vo_cod_voluntario));
+
+		floopets_BD::Disconnect();
+
+
+		}
+
+		function mis_voluntarios($org_cod_organizacion){
+			//Instanciamos y nos conectamos a la bd
+				$Conexion = floopets_BD::Connect();
+				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				//Crear el query que vamos a realizar
+				$consulta = "SELECT * FROM voluntarios WHERE vo_estado='Activo' WHERE org_cod_organizacion=?";
+				$query = $Conexion->prepare($consulta);
+				$query->execute(array($org_cod_organizacion));
+				//Devolvemos el resultado en un arreglo
+				//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+				//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+				$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+				return $resultado;
 				floopets_BD::Disconnect();
 		}
 	

@@ -3,7 +3,7 @@
 
 require_once("../Model/conexion.php");
 require_once("../Model/voluntarios.class.php");
-$voluntarios=gestion_voluntarios::ReadAll();
+$voluntarios=Gestion_voluntarios::ReadAll();
 
 	@$mensaje = $_REQUEST["m"];
 
@@ -31,7 +31,7 @@ $voluntarios=gestion_voluntarios::ReadAll();
 		                     	</div>
 	                   		<div class='col l6'>
 	                        	<a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_voluntarios')."&vo=".base64_encode($row['vo_cod_voluntario'])."'>	
-	                          
+	                          	
 	                          <i class='small material-icons'>mode_edit</i>
 	                          </a>
 	                        
@@ -43,6 +43,16 @@ $voluntarios=gestion_voluntarios::ReadAll();
 	                          </a>                        
 	                        
 	                      	</div>
+	                      	<div class='col l6'>
+	                        	<a class='btn waves-effect blue lighten-3' href='../Controller/voluntarios.controller.php?vo=".base64_encode($row["vo_cod_voluntario"])."&accion=aceptar'>Aceptar</a>
+	                                                
+	                        
+	                      	</div>
+
+
+
+
+	                      	
 	                     </div>
 						<div class='col l6'>
 		                 	<ul class='descrip'>

@@ -56,6 +56,28 @@
         }
 
 			break;
+
+
+
+		case 'aceptar':
+				
+			 	
+ 				$voluntario =  Gestion_voluntarios::ReadbyID(base64_decode($_REQUEST["vo"]));
+ 				
+
+			try {
+
+				Gestion_voluntarios::aceptar_voluntario($voluntario[0]);
+				
+				
+				$mensaje="Aceptado";
+			} catch (Exception $e) {
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
+			}
+ 				header("Location: ../View/dashboard.php?p=".base64_encode("mi_organizacion"));
+			break;
+
+
 	}
 
  ?>
