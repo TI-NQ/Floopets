@@ -92,15 +92,17 @@ $(document).ready(function()
                       <div class='imagenmascota col l12'>
                           <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
                       </div>
+                      
+                      <a class='btn waves-effect blue lighten-3' href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=tomar'>Tomar</a>
+                      <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>
+                      <div class='col l6'>
+                      <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>
                       <div class='col l6'>
                              <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'> 
                               <i class='small material-icons'>mode_edit</i>
                           </a>
                       </div>
-                      <a class='btn waves-effect blue lighten-3' href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=tomar'>Tomar</a>
-                      <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>
-                      <div class='col l6'>
-                      <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>";
+                      ";
                       ?>
                       <!-- se reemplaza el href por el onclick que carga el delete -->
                       <a href='#' id='btntrash' onclick="borrar('<?php echo $row["de_cod_denuncia"];?>')" class='btn-floating waves-light red waves-effect' >
