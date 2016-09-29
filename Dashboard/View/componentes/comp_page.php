@@ -110,6 +110,9 @@ switch ($page) {
 	case 'actualizar_adopcion':
 		require_once("actualizar_adopcion.php");
 	 break;
+	 case 'denuncias_tomadas':
+	 		require_once("mis_denuncias.php");
+	 	break;
 
 	 case 'actualizar_animal':
 	 	require_once("actualizar_animal.php");

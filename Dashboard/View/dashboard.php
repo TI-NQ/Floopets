@@ -21,6 +21,7 @@ if(!isset($_SESSION["usu_cod_usuario"])){
 		<link rel="stylesheet" type="text/css" href="recursos/css/jquery.dataTables.css">
 	  <link type="text/css" rel="stylesheet" href="../../WebFloopets/materialize/css/materialize.css">
 	  <link rel="stylesheet" type="text/css" href="../../WebFloopets/sweetalert/dist/sweetalert.css">
+    <link rel="stylesheet" href="../../WebFloopets/js/zebra.css" media="screen" title="no title" charset="utf-8">
 
 		<title>Floopets-Cambiando vidas</title>
 

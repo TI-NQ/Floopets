@@ -7,9 +7,8 @@
 <?php
     require_once("../Model/conexion.php");
     require_once("../Model/animal.class.php");
-    require_once("../../WebFloopets/js/zebra.php");
     $animal=Gestion_animal::Nombres();
-    $animal=Gestion_animal::paginacion();
+    // $animal=Gestion_animal::paginacion();
 
 
    // $num_reg = count($animal);
@@ -37,7 +36,7 @@
                       </div>
                   </div>
                   <div class='col l6'>
-                         <a class='btn-floating waves-effect waves-light red' href='../Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=d'>
+                         <a class='btn-floating waves-effect waves-light' href='../View/dashboard.php?p=".base64_encode('actualizar_animal')."&an=".base64_encode($row["ani_cod_animal"])."'>
                                 <i class='small material-icons'>edit</i>
                           </a>
                   </div>
