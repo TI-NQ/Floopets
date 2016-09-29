@@ -5,7 +5,7 @@
   $user_data=Gestion_usuarios::ReadbyID($_SESSION["usu_cod_usuario"]);
 ?>
 
-<form action="../Controller/usuarios.controller.php" method="POST" id="form">
+<form action="../Controller/usuarios.controller.php" method="POST">
 <div class="row animated zoomIn">
   <h4 class="center">Mi Perfil</h4>
   <div class="col l4 s5 offset-l1">
