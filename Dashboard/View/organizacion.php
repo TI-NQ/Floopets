@@ -6,6 +6,8 @@
   require_once ("../Model/animal.class.php");
 
   $organizacion=Gestion_organizacion::ReadbyID($_SESSION["org_cod_organizacion"]);
+  $nombre_org_logo = strtolower(str_replace('ñ', 'n', $organizacion["org_nombre"]));
+  $nombre_org_logo = strtolower(str_replace(' ', '', $nombre_org_logo));
   $adopciones=Gestion_adopcion::Readbyorg_cod($_SESSION["org_cod_organizacion"]);
   $animal=Gestion_animal::Nombresraza($_SESSION["org_cod_organizacion"]);
 
@@ -20,7 +22,7 @@
   <div class="col12">
     <h4 class="center"><?php echo $organizacion[2];?></h4>
 
-    <img class="circle responsive-img" style="width:180px ;height:180px ;" src="img/imagen_organizacion/'.$organizacion['org_nombre'].'/'.$organizacion['org_logo'].">
+    <?php  echo "<img class='responsive-img' style='width:180px ;height:180px ;' src='img/imagen_organizacion/".$nombre_org_logo."/".$organizacion["org_logo"]."'>"?>
 
 
     <div class="col s6 ayuda">
