@@ -5,7 +5,7 @@ require_once("../Model/conexion.php");
 
 // echo $cu[0];
  ?>
-<form action="../Controller/cuidado.controller.php" method="POST">
+<form action="../Controller/cuidado.controller.php" method="POST" id="form">
 <input type="hidden" readonly name="cu_cod_cuidado" required value="<?php echo $cu[0] ?>">
 	<div class="form-group">
 		<label class="form-label">Nombre</label>

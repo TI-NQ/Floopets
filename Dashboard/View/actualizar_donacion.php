@@ -5,7 +5,7 @@ require_once("../Model/conexion.php");
 
 // echo $cu[0];
  ?>
-<form action="../Controller/donacion.controller.php" method="POST">
+<form action="../Controller/donacion.controller.php" method="POST" id="form">
 <input type="hidden" readonly name="don_cod_donacion" required value="<?php echo $donacion[0] ?>">
 <input type="hidden" readonly name="org_cod_tipo_donacion" required value="<?php echo $donacion[4] ?>">
 <input type="hidden" readonly name="td_cod_tipo_donacion" required value="<?php echo $donacion[1] ?>">
