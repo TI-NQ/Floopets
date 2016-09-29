@@ -166,21 +166,22 @@ function historial(){
 
 	function Denuncias_tomadas($org_cod_organizacion)
    {
-    //para el modificar por cada usuario usuario
-    $conexion=floopets_BD::Connect();
-    $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-
-    $consulta="SELECT * FROM denuncia WHERE org_cod_organizacion=?";
-    // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
-    $query=$conexion->prepare($consulta);
-    $query->execute(array($org_cod_organizacion));
-
-	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
-
-	floopets_BD::Disconnect();
-
-	return $resultado;	
+    //Instanciamos y nos conectamos a la bd
+		$Conexion = floopets_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//Crear el query que vamos a realizar
+		$consulta="SELECT denuncia.*,tipo_denuncia.* FROM tipo_denuncia INNER JOIN denuncia on tipo_denuncia.td_cod_tipo_denuncia=denuncia.td_cod_tipo_denuncia INNER JOIN denuncias_organizacion ON denuncia.de_cod_denuncia=denuncias_organizacion.de_cod_denuncia INNER JOIN organizacion ON denuncias_organizacion.org_cod_organizacion=organizacion.org_cod_organizacion WHERE organizacion.org_cod_organizacion=? AND denuncia.de_estado='tomado'";
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($org_cod_organizacion));
+		//Devolvemos el resultado en un arreglo
+		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+		$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+		return $resultado;
+		floopets_BD::Disconnect();
 }
 }
+
+
 
 ?>

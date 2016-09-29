@@ -14,6 +14,11 @@ $voluntarios=Gestion_voluntarios::ReadAll();
 <div class="row">
 <div class="col l11 offset-l1">
 
+<?php 
+	echo $_SESSION["org_cod_organizacion"];
+
+ ?>
+
 <?php
 			
 
