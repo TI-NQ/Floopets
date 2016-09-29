@@ -47,7 +47,7 @@
 	<div class="input-field col s12" style="z-index:1;">
 		<div class="row">
 			<div class="input-field col s6">
-				<select id="tipo_mascota">
+				<select id="tipo_mascota" name="tipo_mascota">
 					<option disabled selected>Seleccione una Opcion</option>
 					<?php
 							foreach ($tipo_mascota as $row){

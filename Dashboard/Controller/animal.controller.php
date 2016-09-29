@@ -6,6 +6,7 @@
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
 		case 'c':
+		$tipo_animal = $_POST["tipo_mascota"];
 				$ra_cod_raza			=$_POST["ra_cod_raza"];
 				$org_cod_organizacion	=$_POST["org_cod_organizacion"];
 				$ani_nombre             = $_POST["ani_nombre"];
@@ -25,6 +26,11 @@
 			try {
 				if($count_galeria != ""){
 					include("Upload_ani_image.php");
+				}
+				if ($tipo_animal==9 && $ra_cod_raza=="") {
+					$ra_cod_raza=2;
+				}elseif ($tipo_animal==10 && $ra_cod_raza=="") {
+					$ra_cod_raza=1;
 				}
 				Gestion_animal::Create($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta);
 				$mensaje = base64_encode("Se creo exitosamente");
