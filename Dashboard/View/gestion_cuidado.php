@@ -44,12 +44,12 @@ $cuidado=Gestion_cuidado::ReadAll();
                 <div class='row'>
                   <div class='col l6 col m6'>
                       <div class='col l7'>
-                      <label>Codigo</label>
-                        <span>".$row["cu_cod_cuidado"]."</span>
+                      <label>Nombre cuidado </label>
+                        <span>".$row["cu_nombre"]."</span>
                       </div>
                       <div class='imagenmascota col l12'>
                           <div style='width:180px ;height:180px ;'>
-                           <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_cuidado/".$nombre_cuidado."/".$row["galeria"]."'>
+                           <img class='responsive-img' style='width:180px ;height:180px ;' src='img/imagen_cuidado/".$nombre_cuidado."/".$row["galeria"]."'>
                           </div>
                       </div>
                       <div class='col l6'>
@@ -70,12 +70,10 @@ $cuidado=Gestion_cuidado::ReadAll();
                       </a>
                       </div>
                   </div>
-                  <div class='col l6'>
+                  <div class='col l4'>
                     <ul class='descrip'>
                       <span>Codigo :</span>
-                      <li>".$row["cu_cod_cuidado"]."</li>
-                      <span>Nombre :</span>
-                          <li>".$row["cu_nombre"]."</li>
+                      <li>".$row["cu_cod_cuidado"]."</li>                      
                       <span>Descripcion:</span>
                             <li>".$row["cu_descripcion"]."</li>
   
