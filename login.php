@@ -72,12 +72,16 @@
                  if(result.ue == true)
                  {
                    $(".boton").prop("disabled",true);
+                 }else{
+                   $(".boton").prop("disabled",false);
                  }
              }, "json");
          });
-         $( '#terminoscheck' ).on( 'click', function() {
+         $( '#terminoscheck' ).on( 'change', function() {
            if( $(this).is(':checked') ){
              $('.boton').prop('disabled', false);
+           }else{
+             $('.boton').prop('disabled', true);
            }
  });
       })
