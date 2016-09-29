@@ -53,7 +53,7 @@ $cuidado=Gestion_cuidado::ReadAll();
                           </div>
                       </div>
                       <div class='col l6'>
-                             <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode("actualizar_cuidado")."&ad=".base64_encode($row["cu_cod_cuidado"])."'>
+                             <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode("actualizar_cuidado")."&cui=".base64_encode($row["cu_cod_cuidado"])."'>
                              <i class='small material-icons'>edit</i>
                           </a>
                       </div>
