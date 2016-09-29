@@ -14,7 +14,7 @@
 			$count_galeria		= count($_FILES['Imagen_Upload']['name']);
 			try {
 
-				if($count_galeria >= 1){
+				if($count_galeria !="" ){
 					include("Upload_image.php");
 				}
 				Gestion_cuidado::Create($cu_nombre,$cu_descripcion,$galeria);
@@ -30,10 +30,17 @@
 				$cu_cod_cuidado		= $_POST["cu_cod_cuidado"];
 				$cu_nombre			= $_POST["cu_nombre"];
 				$cu_descripcion 	= $_POST["cu_descripcion"];
+				
+				$nombre_cuidado 	= strtolower(str_replace('ñ', 'n', $cu_nombre));
+				$nombre_cuidado 	= strtolower(str_replace(' ', '', $nombre_cuidado));
 				$galeria 			= $_POST["galeria"];
 
 			try {
-				Gestion_cuidado::Update($cu_cod_cuidado,$cu_nombre,$cu_descripcion,$galeria,$video);
+
+				if($galeria !="" ){
+					include("Upload_image.php");
+				}
+				Gestion_cuidado::Update($cu_cod_cuidado,$cu_nombre,$cu_descripcion,$galeria);
 				$mensaje = "Se actializo exitosamente";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
@@ -43,7 +50,7 @@
 
 		case 'd':
 			try {
-          $cuidado = Gestion_cuidado::Delete($_REQUEST["cu"]);
+          $cuidado = Gestion_cuidado::Delete($_REQUEST["cui"]);
           $mensaje = "se elimino correctamente";
           header("Location: ../View/dashboard.php?p=".base64_encode("ver_cuidados"));
         } catch (Exception $e) {

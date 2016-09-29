@@ -21,7 +21,7 @@
 				$ani_carpeta   			= $nombre_ani_imagen;
 		      	$ani_imagen   			= $_POST["ani_imagen"];
 		    	 $count_galeria			= count($_FILES['ani_imagen']['name']);
-		      	
+
 			try {
 				if($count_galeria != ""){
 					include("Upload_ani_image.php");
@@ -52,12 +52,12 @@
 				$ani_carpeta   			= $nombre_ani_imagen;
 		      	$ani_imagen   			= $_POST["ani_imagen"];
 
-		      	
+
 
 			try {
-				if($ani_imagen != ""){ 
+				if($ani_imagen != ""){
 					include("Upload_ani_image.php");
-				} 
+				}
 
 				Gestion_animal::Update($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta);
 				$mensaje = "Se actializo exitosamente";
@@ -69,7 +69,7 @@
 
 		case 'd':
 			try {
-          $animal = Gestion_animal::Delete(base64_decode($_REQUEST["an"]));
+          $animal = Gestion_animal::Delete(($_REQUEST["an"]));
           $mensaje = "Se elimino correctamente";
           header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
         } catch (Exception $e) {

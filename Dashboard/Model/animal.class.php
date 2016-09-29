@@ -77,10 +77,8 @@
 		}
 			function Delete($ani_cod_animal)
 			{
-				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				//Crear el query que vamos a realizar
 				$consulta = "DELETE FROM animal WHERE ani_cod_animal = ?" ;
 				$query = $Conexion->prepare($consulta);
 				$query->execute(array($ani_cod_animal));
@@ -97,6 +95,23 @@
     // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
     $query=$conexion->prepare($consulta);
     $query->execute(array());
+
+	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
+
+	floopets_BD::Disconnect();
+
+	return $resultado;
+  }
+   function Nombresraza($org_cod_organizacion)
+   {
+    //para el modificar por cada usuario usuario
+    $conexion=floopets_BD::Connect();
+    $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+    $consulta="SELECT animal.*,raza.* FROM animal INNER JOIN raza on raza.ra_cod_raza=animal.ra_cod_raza WHERE org_cod_organizacion=?";
+    // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
+    $query=$conexion->prepare($consulta);
+    $query->execute(array($org_cod_organizacion));
 
 	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
 

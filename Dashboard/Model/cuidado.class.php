@@ -24,7 +24,7 @@ class Gestion_cuidado{
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-		
+
 
 		//Crear el query que vamos a realizar
 		$consulta = "SELECT * FROM cuidado WHERE cu_cod_cuidado=?";
@@ -70,7 +70,7 @@ class Gestion_cuidado{
 		floopets_BD::Disconnect();
 	}
 	
-	function Update($cu_cod_cuidado,$cu_nombre,$cu_descripcion,$galeria,$video){
+	function Update($cu_cod_cuidado,$cu_nombre,$cu_descripcion,$galeria){
 	//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -78,10 +78,10 @@ class Gestion_cuidado{
 		
 
 		//Crear el query que vamos a realizar
-		$consulta = "UPDATE cuidado SET cu_nombre = ?, cu_descripcion= ? , galeria =?, video= ? WHERE cu_cod_cuidado = ?" ;
+		$consulta = "UPDATE cuidado SET cu_nombre = ?, cu_descripcion= ? , galeria =? WHERE cu_cod_cuidado = ?" ;
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($cu_nombre,$cu_descripcion,$galeria,$video,$cu_cod_cuidado));		
+		$query->execute(array($cu_nombre,$cu_descripcion,$galeria,$cu_cod_cuidado));		
 
 		floopets_BD::Disconnect();
 	

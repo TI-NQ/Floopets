@@ -86,7 +86,9 @@ if($_SESSION["cod_rol"]==1){
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('gestion_donaciones')?>" class="item_menu">Gestionar</a></p></div>
 </li>
 <li>
-  <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('denuncias')?>"><i class="fa fa-shield" aria-hidden="true"></i>Denuncias</a></div>
+  <div class="collapsible-header grey lighten-2"><a href="#"><i class="fa fa-shield" aria-hidden="true"></i>Denuncias</a></div>
+  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('denuncias')?>" class="item_menu">Gestionar</a></p></div>
+  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('denuncias_tomadas')?>" class="item_menu">Mis Denuncias</a></p></div>
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-eyedropper" aria-hidden="true"></i>Vacunas</a></div>

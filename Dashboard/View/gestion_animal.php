@@ -3,13 +3,33 @@
 
  <a href="dashboard.php?p=<?php echo base64_encode('nueva_mascota')?>" class="waves-effect btn animated zoomIn">Nuevo</a>
 
-
+ <script type="text/javascript">
+ function borrar(cod){
+   var codigo = cod;
+   var accion = "d";
+   sweetAlert({
+          title: 'Mensaje de FLOOPETS',
+          text: 'Esta seguro que desea eliminar?',
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#4db6ac',
+          confirmButtonText: 'Aceptar',
+          cancelButtonText: 'Cancelar',
+          closeOnConfirm: true,
+          closeOnCancel: true,
+          },
+       function(isConfirm){
+         if (isConfirm) {
+            document.location.href = "../Controller/animal.controller.php?an="+codigo+"&accion="+accion;
+         }
+    });
+ }
+ </script>
 <?php
     require_once("../Model/conexion.php");
     require_once("../Model/animal.class.php");
-    require_once("../../WebFloopets/js/zebra.php");
     $animal=Gestion_animal::Nombres();
-    $animal=Gestion_animal::paginacion();
+    // $animal=Gestion_animal::paginacion();
 
 
    // $num_reg = count($animal);
@@ -33,11 +53,11 @@
                   </div>
                   <div class='imagenmascota col l12'>
                       <div style='width:180px ;height:180px ;'>
-                      <img class=' responsive-img' style='width:200px ;height:200px ;' src='img/imagen_animal/".$row["ani_nombre"]."/".$row["ani_imagen"]."'>
+                      <img class=' responsive-img' style='width:200px ;height:200px ;' src='img/imagen_animal/".$row["ani_carpeta"]."/".$row["ani_imagen"]."'>
                       </div>
                   </div>
                   <div class='col l6'>
-                         <a class='btn-floating waves-effect waves-light red' href='../Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=d'>
+                         <a class='btn-floating waves-effect waves-light' href='../View/dashboard.php?p=".base64_encode('actualizar_animal')."&an=".base64_encode($row["ani_cod_animal"])."'>
                                 <i class='small material-icons'>edit</i>
                           </a>
                   </div>
