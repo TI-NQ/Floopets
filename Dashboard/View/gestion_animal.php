@@ -22,11 +22,10 @@
 
    $Conexion = floopets_BD::Connect();
    $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-   $consulta = 'SELECT * FROM animal ORDER BY ani_cod_animal DESC LIMIT '.(($paginacion->get_page()));
+   $consulta = 'SELECT * FROM animal ORDER BY ani_cod_animal DESC LIMIT '.(($paginacion->get_page()-1)*$paginas).','.$paginas;
    $query = $Conexion->prepare($consulta);
    $query->execute();
    $resultado = $query->fetchALL(PDO::FETCH_BOTH);
-   return $resultado;
    floopets_BD::Disconnect();
 
 		foreach ($animal as $row) {
