@@ -15,7 +15,7 @@
 			<li><a href="dashboard.php?p=<?php echo base64_encode('gestion_organizacion')?>" class="btn-floating blue tooltipped" data-tooltip="Gestionar"><i class="fa fa-cog" aria-hidden="true"></i></a></li>
 		</ul>
 	</div> -->
-	<form id="form" class="col s12" action="../Controller/organizacion.controller.php" method="POST">
+	<form id="form" class="col s12" action="../Controller/organizacion.controller.php" method="POST" enctype="multipart/form-data">
   		<div class="row">
 				<div class="row">
 					<div class="input-field col s12">
@@ -59,7 +59,16 @@
 						<input type="text" name="org_direccion" id="org_direccion" required>
 								<label for="org_direccion">Direccion</label>
 	        </div>
-
+	        
+   <div class="file-field input-field col s12 m6">
+       <div class="btn">
+         <span>Logo</span>
+         <input type="file"  name="org_logo[]">
+       </div>
+       <div class="file-path-wrapper">
+         <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="org_logo"  >
+       </div>
+       </div>
 				</div>
 				<a href="<?=$_SERVER['HTTP_REFERER'] ?>" class="waves-effect waves-light btn red darken-1 left">Cancelar</a>
 				<button class="waves-effect waves-light  btn right cyan darken-1" name="accion" value="c" style="margin-right: 50px;">Registrar</button>

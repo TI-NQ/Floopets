@@ -40,6 +40,7 @@
        <div class="file-path-wrapper">
          <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="not_galeria"  >
        </div>
+       </div>
 	<div class="form-group">
 		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
 	</div>

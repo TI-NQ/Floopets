@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-09-2016 a las 00:34:57
+-- Tiempo de generación: 29-09-2016 a las 02:31:02
 -- Versión del servidor: 10.1.13-MariaDB
 -- Versión de PHP: 5.6.20
 
@@ -250,21 +250,32 @@ CREATE TABLE `organizacion` (
   `org_nit` varchar(12) NOT NULL,
   `org_email` varchar(50) NOT NULL,
   `org_telefono` varchar(30) NOT NULL,
-  `org_direccion` varchar(30) NOT NULL
+  `org_direccion` varchar(30) NOT NULL,
+  `org_logo` longtext NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `organizacion`
 --
 
-INSERT INTO `organizacion` (`org_cod_organizacion`, `to_cod_tipo_organizacion`, `org_nombre`, `org_descripcion`, `org_nit`, `org_email`, `org_telefono`, `org_direccion`) VALUES
-(2, 1, 'peeeee', '', '5545521', 'pendie@hotmail', '541545', 'cll 44'),
-(6, 1, 'Probando', '', '1783481', 'probando@probando', '2222', 'cll 442'),
-(7, 1, 'Probando', '', '1783481', 'probando@probando', '2555', 'cll 442'),
-(8, 1, 'Probando', '', '1783481', 'probando@probando', '22552', 'cll 442'),
-(9, 1, 'los colores', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n', '900850341', 'golas@asd', '3531325', 'dafdsfdgfg'),
-(10, 1, 'los colores', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n', '900850341-4', 'golas@asd', '3531325', 'dafdsfdgfg'),
-(11, 1, 'CACATUA', 'es una cosa', '582544', 'sa@sfjkajs', '27741', 'cll 44');
+INSERT INTO `organizacion` (`org_cod_organizacion`, `to_cod_tipo_organizacion`, `org_nombre`, `org_descripcion`, `org_nit`, `org_email`, `org_telefono`, `org_direccion`, `org_logo`) VALUES
+(2, 1, 'peeeee', '', '5545521', 'pendie@hotmail', '541545', 'cll 44', ''),
+(6, 1, 'Probando', '', '1783481', 'probando@probando', '2222', 'cll 442', ''),
+(7, 1, 'Probando', '', '1783481', 'probando@probando', '2555', 'cll 442', ''),
+(8, 1, 'Probando', '', '1783481', 'probando@probando', '22552', 'cll 442', ''),
+(9, 1, 'los colores', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n', '900850341', 'golas@asd', '3531325', 'dafdsfdgfg', ''),
+(10, 1, 'los colores', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.\r\n', '900850341-4', 'golas@asd', '3531325', 'dafdsfdgfg', ''),
+(11, 1, 'CACATUA', 'es una cosa', '582544', 'sa@sfjkajs', '27741', 'cll 44', ''),
+(12, 1, 'CON LOGO', 'conasf', '1525225', 'con@logo.cpm', '544541', 'cll 442', ''),
+(13, 1, 'CON LOGO', 'conasf', '1525225', 'con@logo.cpm', '544541', 'cll 442', ''),
+(14, 1, 'CON LOGO', 'conasf', '1525225', 'con@logo.cpm', '544541', 'cll 442', ''),
+(15, 1, 'CON LOGO', 'asfdsadddaf', '54445', 'con@logo.cpm', '5214521', 'cll 442', '2fc2a69a1a40f0852b1fd22721d41102.png'),
+(16, 1, 'CON LOGO', 'asfdsadddaf', '54445', 'con@logo.cpm', '5214521', 'cll 442', '2fc2a69a1a40f0852b1fd22721d41102.png'),
+(17, 1, 'CON LOGO', 'asfdsadddaf', '54445', 'con@logo.cpm', '5214521', 'cll 442', '2fc2a69a1a40f0852b1fd22721d41102.png'),
+(18, 1, 'CON LOGO', 'asfdsadddaf', '54445', 'con@logo.cpm', '5214521', 'cll 442', '2fc2a69a1a40f0852b1fd22721d41102.png'),
+(19, 1, 'Lola', 'asdhbsds', '1525225', 'lola@kajsdn', '1585', 'cll 442', '3e5684df056e21ffdb96b8cf70713560.jpg'),
+(20, 1, 'Lola', 'asdhbsds', '1525225', 'lola@kajsdn', '1585', 'cll 442', '3e5684df056e21ffdb96b8cf70713560.jpg'),
+(21, 1, 'Mary', 'adijasd', '1525225', 'lola@kajsdn', '54654', 'cll 65', '4a8694e47c2032104591be87485aef6d.jpg');
 
 -- --------------------------------------------------------
 
@@ -286,7 +297,17 @@ CREATE TABLE `organizacion_usuario` (
 INSERT INTO `organizacion_usuario` (`cod_org_usu`, `org_cod_organizacion`, `usu_cod_usuario`) VALUES
 (1, 9, 9),
 (2, 10, 9),
-(3, 11, 7);
+(3, 11, 7),
+(4, 12, 8),
+(5, 12, 8),
+(6, 12, 8),
+(11, 12, 10),
+(12, 12, 10),
+(13, 12, 11),
+(7, 15, 8),
+(8, 15, 8),
+(9, 15, 8),
+(10, 15, 8);
 
 -- --------------------------------------------------------
 
@@ -480,9 +501,10 @@ INSERT INTO `usuario` (`usu_cod_usuario`, `usu_nombre`, `usu_apellido`, `usu_tel
 (3, 'ertgedf', 'wsdfsdf', '545154', 25145, 'sa@sdfasd', 1, '1234', ''),
 (4, 'Andrea ', 'Orozco', '2774121', 24575, 'Andrea@orozco.com', 2, '1234', '2f5d5fbd01c25c5016cb2059f534d06e.jpg'),
 (7, 'Andrea', 'Garces', '2771217', 2844, 'Andrea@garces.com', 3, '123', ''),
-(8, 'Andrea', 'Orozco', '5747', 173781, 'saorozco@isena', 1, '123', 'cute-wallpapers-hd-11.jpg'),
-(9, 'Andrea', 'Orozco', '232332', 23452, 'saorozco@cami', 1, '123', 'cute-wallpapers-hd-11.jpg'),
-(10, 'RODRIGO', 'MENA', '2342', 2344, 'Rodrigo@mena.com', 1, '123', 'Mario_SM3DW.png');
+(8, 'Andrea', 'Orozco', '5747', 173781, 'saorozco@isena', 3, '123', 'cute-wallpapers-hd-11.jpg'),
+(9, 'Andrea', 'Orozco', '232332', 23452, 'saorozco@cami', 3, '123', 'cute-wallpapers-hd-11.jpg'),
+(10, 'RODRIGO', 'MENA', '2342', 2344, 'Rodrigo@mena.com', 3, '123', 'Mario_SM3DW.png'),
+(11, 'Mary', 'Garces', '3723832', 43842742, 'mary.com79@hotmail.com', 3, '123', '5d382344fa0e5b52303ee80aaaba1f37.jpg');
 
 -- --------------------------------------------------------
 
@@ -770,12 +792,12 @@ ALTER TABLE `noticias`
 -- AUTO_INCREMENT de la tabla `organizacion`
 --
 ALTER TABLE `organizacion`
-  MODIFY `org_cod_organizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `org_cod_organizacion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT de la tabla `organizacion_usuario`
 --
 ALTER TABLE `organizacion_usuario`
-  MODIFY `cod_org_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `cod_org_usu` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 --
 -- AUTO_INCREMENT de la tabla `permiso`
 --
@@ -820,7 +842,7 @@ ALTER TABLE `tipo_organizacion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `usu_cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT de la tabla `vacunas`
 --
