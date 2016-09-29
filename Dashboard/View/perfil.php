@@ -4,6 +4,8 @@
   require_once ("../Model/usuarios.class.php");
   $user_data=Gestion_usuarios::ReadbyID($_SESSION["usu_cod_usuario"]);
 ?>
+
+<form action="../Controller/usuarios.controller.php" method="POST" id="form">
 <div class="row animated zoomIn">
   <h4 class="center">Mi Perfil</h4>
   <div class="col l4 s5 offset-l1">
@@ -18,38 +20,39 @@
   <div class="col s7 l7" style="margin-top:70px;">
 
       <div class="input-field col s6">
-        <input type="text" name="Nombre" value="<?php echo $user_data[1]?>" readonly>
+        <input type="text" name="Nombre" value="<?php echo $user_data[1]?>">
         <label for="Nombre">Nombre</label>
       </div>
       <div class="input-field col s6">
-        <input type="text" name="Apellidos" value="<?php echo $user_data[2]?>" readonly>
+        <input type="text" name="Apellidos" value="<?php echo $user_data[2]?>">
         <label for="Apellidos">Apellidos</label>
       </div>
 
 
       <div class="input-field col s6">
-        <input type="number" name="Telefono" value="<?php echo $user_data[3]?>" readonly>
+        <input type="number" name="Telefono" value="<?php echo $user_data[3]?>">
         <label for="Telefono">Telefono</label>
       </div>
       <div class="input-field col s6">
-        <input type="email" name="Correo" value="<?php echo $user_data[5]?>" readonly>
+        <input type="email" name="Correo" value="<?php echo $user_data[5]?>">
         <label for="Correo">Correo Electronico</label>
       </div>
 
 
       <div class="input-field col s6">
-        <input type="number" name="Cedula" value="<?php echo $user_data[4]?>" readonly>
+        <input type="number" name="Cedula" value="<?php echo $user_data[4]?>">
         <label for="Cedula">Cedula</label>
       </div>
 
-        <input type="hidden" name="Tipo" value="<?php echo $user_data[9]?>" readonly>
+        <input type="hidden" name="Tipo" value="<?php echo $user_data[9]?>">
 
 
       <div class="input-field col s12">
-        <a href="" class="waves-effect btn" style="width:50%;">Editar mi Perfil</a>
+      <button name="accion" value="u" class="waves-effect btn">Actualizar</button>       
       </div>
 
 
 
   </div>
 </div>
+</form>
