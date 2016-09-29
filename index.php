@@ -64,7 +64,7 @@
 				$('.modal-trigger').leanModal();
 
 				$(".button-collapse").sideNav();
-				
+
 				var menu = document.getElementsByClassName("hamburger-menu");
 
 				[].forEach.call(menu, function(m){
@@ -77,7 +77,7 @@
 					$("#hamburger-menu").removeClass("open");
 				})
 			});
-			</script> 
+			</script>
 		</head>
 		<body>
 			<a href="#" data-activates="slide-out" class="button-collapse"><div id="hamburger-menu" class="hamburger-menu">
@@ -106,7 +106,7 @@
 			<!-- Andrea Guzman-Adopciones -->
 			<div class="row seccion1" id="adopciones">
 				<div class="container__perros col s12 m6 l6">
-					
+
 					<div id="conteadop">
 						<p class="wow fadeInDown">Adopta un</p>
 						<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Perro</button>
@@ -116,7 +116,7 @@
 				</div>
 				<div class="container__gatos col s12 m6 l6">
 					<div id="conteadop">
-						<p class="wow fadeInDown">Adopta un</p>						
+						<p class="wow fadeInDown">Adopta un</p>
 						<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Gato</button>
 					</div>
 					<img src="WebFloopets/images/2.jpg" class="wow fadeInRight">
@@ -204,18 +204,18 @@
 			</div>
 			<div class="row seccion3" id="perdidas">
 				<div class="container__perdida col s12 m6 l6">
- 
-					<div id="conteadop">						
+
+					<div id="conteadop">
 						<p class="wow fadeInDown">Mascotas Perdidas</p>
 						<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Ver mas...</button>
 					</div>
 
-					
+
 					<img src="WebFloopets/images/7.jpg" class="wow fadeInLeft">
 				</div>
 				<div class="container__historias col s12 m6 l6">
 	      		    <div id="conteadop">
-					    <p class="wow fadeInDown">Historias</p>			 
+					    <p class="wow fadeInDown">Historias</p>
 					<button class="boton1 btn  waves-effect waves-light btn-large wow fadeInDown">Ver mas...</button>
 					</div>
 					<img src="WebFloopets/images/5.jpg" class="wow fadeInRight">
@@ -224,28 +224,29 @@
 			<!-- David Pabon-Eventos -->
 			<?php
 				$validar = Gestion_evento::ReadEvento();
-				if (count($validar)<3){
-				}else {
+
+				if(count($validar) >= 3 ){
+
 				?>
-				<div class="row" style="margin-top:100px;">
-					
+				<div id="eventos" class="row"  >
+
 			<h2  class="center wow zoomIn" id="denuncias"><span>PROXIMOS</span>EVENTOS</h2>
 					<div id="owl-demo">
 						<?php
+
 							foreach ($validar as $row) {
 						?>
 						<div class="item">
 							<div id="info">
 								<h4><?php echo $row["eve_nombre"];?></h4>
-								<p><?php echo $row["eve_descripcion"];?></p>
-								<p>Direccion: <?php echo $row["eve_direccion"]?></p>
-								<p>Fecha: <?php echo $row["eve_fecha"]?>, <?php echo $row["eve_hora"]?></p>
+								<p><?php echo substr($row["eve_descripcion"],0,250);?>...</p>
+								<p>Direccion: <?php echo $row["eve_direccion"]?><br>Fecha: <?php echo $row["eve_fecha"]?>, <?php echo $row["eve_hora"]?></p>
+
 								<a href="#" class="waves-effect btn">Ver Mas</a>
 							</div>
-							<img src="Dashboard/View/img/imagen_evento/<?php echo (str_replace(" ", "",$row["eve_nombre"]));?>/<?php echo $row["eve_imagen"];?>" alt="Owl Image">
+							<img src="Dashboard/View/img/imagen_evento/<?php echo $row["eve_carpeta"];?>/<?php echo $row["eve_imagen"];?>" alt="Owl Image">
 							<div class="text-event">
-								<h4><?php echo $row["eve_nombre"];?></h4>
-								<h6><?php echo $row["eve_fecha"];?></h6>
+
 							</div>
 						</div>
 						<?php
@@ -255,7 +256,7 @@
 				</div>
 				<?php
 					}
-				?>
+			  ?>
 				<!-- David Pabon-Cuidados -->
 				<div class="row wow zoomIn" id="voluntarios">
 					<h2  class="center wow zoomIn" id="denuncias"><span>¿AMAS A LOS ANIMALES? SE UN</span> VOLUNTARIO</h2>
@@ -265,7 +266,7 @@
 								<div class="container">
 									<p>Si te gustan los animales y deseas aportar a mejorar su bienestar, te invitamos a que hagas parte del sistema de voluntarios de las fundaciones amigas de Floopets. </p>
 									<p>Sin embargo, antes de realizar la solicitud debes tener en cuenta algunos aspectos: </p>
-									 
+
 									<ul>
 										<li><i class="icono izquierda fa fa-paw"></i> Ser mayor de edad</li>
 										<li><i class="icono izquierda fa fa-paw"></i> Tener tolerancia y respeto hacia los animales.</li>
@@ -334,11 +335,12 @@
 										<div class="row">
 											<div class=" form-group file-field input-field col s12">
 												<div class="btn">
-													<label class="form-label">Galeria</label>
+													<span>Galeria</span>
 													<input type="file" multiple name="vo_imagen[]" >
 												</div>
 												<div class="file-path-wrapper form-group">
-													<input class="file-path validate"  type="text" placeholder="" name="vo_imagen"  >
+
+													<input class="file-path validate"  type="text" placeholder="Elige una imagen" name="vo_imagen"  >
 												</div>
 											</div>
 										</div>
@@ -349,31 +351,33 @@
 								</div>
 							</div>
 						</form>
-						
+
 					</div>
 				</div>
 			</div>
 			<footer class="page-footer grey darken-4" style="margin-top: 0;">
 				<div class="container">
 					<div class="row">
-						<div class="col s12 m6 l6">
-							<h5 class="white-text center">¿Que es FlooPets?</h5>
-							<p class="grey-text text-lighten-4" align="justify">FlooPets es un sistema de información que servirá  para dar apoyo a los procesos de gestión a fundaciones protectoras de animales, específicamente para ayudar a conglomerar más gente, que pueda navegar en los perfiles de estas fundaciones y de esta manera los usuarios puedan entender un poco más a fondo las labores de estos entes y así les sea más fácil contribuir con estas sociedades ya sea por medio de reportes, ayudas monetarias, dando acogida a animales sin hogar temporal o permanentemente, entre otras contribuciones que estos pueden aportar .</p>
+						<div class="col s12 m3 l3">
+ 						 <span>CON EL APOYO DE: </span>
+						 <img src="WebFloopets/images/sponsor.png" usemap="#Map" />
+							<map name="Map" id="Map">
+							    <area alt="Servicio Nacional de Aprendizaje SENA"  target="_blank" title="Servicio Nacional de Aprendizaje SENA" href="http://www.sena.edu.co/Paginas/Portada.aspx" shape="poly" coords="19,10,23,108,118,110,123,12" />
+							    <area alt="Visualizo la Web Creando Ideas"  target="_blank" title="Visualizo la Web Creando Ideas" href="http://visualizolaweb.com/" shape="poly" coords="163,15,161,109,399,111,395,18" />
+							    <area alt="Fundación ORCA" title="Fundación ORCA"  target="_blank"  href="http://www.fundacionorca.org/" shape="poly" coords="444,11,440,110,584,108,574,15" />
+
+							</map>
 						</div>
 						<div class="col s12 m3 l3">
 						</div>
 						<div class="col s12 m3 l3">
-							<a href="#"><img class="logo__footer" src="WebFloopets/images/logo-blanco.png"></a>
-							<ul>
-								<li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-facebook-square" aria-hidden="true" style="font-size:30px; color:	#3b5998;"></i> Síguenos en Facebook </a></li>
-								<li><a class="grey-text text-lighten-3" href="#!"><i class="fa fa-twitter-square" aria-hidden="true" style="font-size:30px; color:	 #00aced;"></i> Twitter</a></li>
-							</ul>
+
 						</div>
 					</div>
 				</div>
 				<div class="footer-copyright grey darken-2">
 					<div class="container">
-						<div align="center">SENA © 2016 Centro de Diseño y Manufactura del Cuero | Análisis y Desarrollo de Sistemas de Información</div>
+						<div align="right">Floopets © 2016 |&nbsp; <a href="https://www.facebook.com/floopets/" target="_blank"><i class="fa fa-facebook-official" aria-hidden="true"></i></a> &nbsp; <a href="https://twitter.com/floopets" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a> </div>
 					</div>
 				</div>
 			</footer>

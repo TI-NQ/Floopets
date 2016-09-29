@@ -19,9 +19,8 @@
       	$eve_estado 				=$_POST["eve_estado"];
       		$eve_carpeta   			= $nombre_eve_imagen;
      	$count_galeria				= count($_FILES['eve_imagen']['name']);
-
-
-			try {
+     	if ($eve_fecha<=$eve_fecha_hasta) {
+     		try {
 				if($count_galeria != ""){
 					include("Upload_eve_imagen.php");
 				} 
@@ -31,6 +30,12 @@
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
 			 header("Location: ../View/dashboard.php?p=".base64_encode("gestion_evento"));
+     	}else{
+     		$mensaje="La fecha inicio es menor a la fecha fin";
+     		header("Location: ../View/dashboard.php?p=".base64_encode("nuevo_evento")."&m=".$mensaje);
+     	}
+
+			
 
 			break;
 			case 'u':

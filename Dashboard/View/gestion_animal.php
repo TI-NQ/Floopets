@@ -21,10 +21,10 @@
    // $paginacion->records_per_page($paginas);
 
    // $consulta = 'SELECT * FROM animal'.(($paginacion->get_page() - 1) * $paginas).','.$paginas;
-   // 		$result = $con->query($consulta);
+   //     $result = $con->query($consulta);
 
-		foreach ($animal as $row) {
-				echo"<div class='col l6 descrip'>
+    foreach ($animal as $row) {
+        echo"<div class='col l6 descrip'>
             <div class='row'>
               <div class='col l6 col m6'>
                   <div class='col l7'>
@@ -38,8 +38,8 @@
                   </div>
                   <div class='col l6'>
                          <a class='btn-floating waves-effect waves-light red' href='../Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=d'>
-			                          <i class='small material-icons'>edit</i>
-			                    </a>
+                                <i class='small material-icons'>edit</i>
+                          </a>
                   </div>
 
 
@@ -55,25 +55,25 @@
               </div>
               <div class='col l6'>
                 <ul class='descrip'>
-				                   	<label>Codigo</label>
-				                     	  <li>".$row["ani_cod_animal"]."</li>
-				                   	<label>raza</label>
-				                     	    <li>".$row["ra_cod_raza"]."</li>
-				                   	<label>organizacion</label>
-				                     	    <li>".$row["org_cod_organizacion"]."</li>
-				                	<label>Nombre</label>
-				                     	    <li>".$row["ani_nombre"]."</li>
-				                     <label>Esterilizacion</label>
-				                     	    <li>".$row["ani_esterilizado"]."</li>
-				                     <label>Edad</label>
-				                     	    <li>".$row["ani_edad"]."</li>
-				                     <label>Descripcion</label>
-				                     	    <li>".$row["ani_descripcion"]."</li>
-				                     <label>N° Microchip</label>
-				                     	    <li>".$row["ani_numero_microchip"]."</li>
-				                     <label>sexo</label>
-				                     	    <li>".$row["ani_sexo"]."</li>
-				                 	</ul>
+                            <label>Codigo</label>
+                                <li>".$row["ani_cod_animal"]."</li>
+                            <label>raza</label>
+                                  <li>".$row["ra_cod_raza"]."</li>
+                            <label>organizacion</label>
+                                  <li>".$row["org_cod_organizacion"]."</li>
+                          <label>Nombre</label>
+                                  <li>".$row["ani_nombre"]."</li>
+                             <label>Esterilizacion</label>
+                                  <li>".$row["ani_esterilizado"]."</li>
+                             <label>Edad</label>
+                                  <li>".$row["ani_edad"]."</li>
+                             <label>Descripcion</label>
+                                  <li>".$row["ani_descripcion"]."</li>
+                             <label>N° Microchip</label>
+                                  <li>".$row["ani_numero_microchip"]."</li>
+                             <label>sexo</label>
+                                  <li>".$row["ani_sexo"]."</li>
+                          </ul>
               </div>
             </div>
           </div>
@@ -81,8 +81,8 @@
       ";
 
 
-			}
-	// $paginacion->render();
+      }
+  // $paginacion->render();
 ?>
 </div>
 </div>

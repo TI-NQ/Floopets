@@ -33,7 +33,7 @@ $organizacion = Gestion_organizacion::ReadAll();
 			</div>
 					<div class=" form-group file-field input-field col s12 m6">
 				       <div class="btn">
-				         <label class="form-label">Galeria</label>
+				         <label class="form-label">imagen</label>
 				         <input type="file" multiple name="vo_imagen[]" class="form-control">
 				       </div>
 				       <div class="file-path-wrapper form-group">

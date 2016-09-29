@@ -94,9 +94,10 @@ $(document).ready(function()
                       </div>
                       <div class='col l6'>
                              <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'> 
+                              <i class='small material-icons'>mode_edit</i>
                           </a>
                       </div>
-                      <a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=tomar'>tomar</a>
+                      <a class='btn waves-effect blue lighten-3' href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=tomar'>Tomar</a>
                       <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>
                       <div class='col l6'>
                       <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>";

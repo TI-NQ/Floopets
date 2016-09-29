@@ -17,9 +17,9 @@
 			$count_galeria			= count($_FILES['don_imagen']['name']);
 
 			try {
-				if($count_galeria >= 1){ 
+				if($count_galeria >= 1){
 					include("Upload_don_image.php");
-				} 
+				}
 				Gestion_donacion::Create($don_nombre,$don_descripcion,$don_fecha,$don_imagen,$org_cod_organizacion,$td_cod_tipo_donacion,$usu_cod_usuario);
 				$mensaje = "Se creo exitosamente";
 			} catch (Exception $e) {
@@ -43,21 +43,21 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_donacion"));
+			header("Location: ../View/dashboard.php?p=".base64_encode("gestion_donaciones"));
 
 				break;
 
 		case 'd':
 			try {
-          $donacion = Gestion_donacion::Delete(base64_decode($_REQUEST["do"]));
+          $donacion = Gestion_donacion::Delete($_REQUEST["do"]);
           $mensaje = "se elimino correctamente";
-          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_donacion"));
+          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_donaciones"));
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_donacion"));
+          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_donaciones"));
         }
       break;
-			
+
 	}
 
  ?>

@@ -18,10 +18,19 @@ $(document).ready(function()
             }
 
          });
+
+ 		
 })
 
-
+	
 </script>
+ <?php
+	if(isset($_GET["m"]))
+	{
+		echo "<script>swal( '".$_GET["m"]."');</script>";
+	}
+ ?>
+
 
 <div class="row">
 <form class="col s12 animated zoomIn" action="../Controller/evento.controller.php" method="POST" enctype="multipart/form-data" id="form">
@@ -43,7 +52,7 @@ $(document).ready(function()
 			<input type="date" name="eve_fecha_hasta" min="<?php echo date('Y-m-d');?>" id="fecha_fin">
 		</div>
 		<div class="input-field col s3">
-				<label>Hora Inicio</label><br>
+				<label>Hora Fin</label><br>
 				<input type="time" name="eve_hora_hasta" >
 		</div>
 

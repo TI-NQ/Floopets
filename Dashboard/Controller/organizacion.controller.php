@@ -79,7 +79,7 @@
 
 		case 'd':
 					try {
-		          $evento = Gestion_organizacion::Delete(base64_decode($_REQUEST["ui"]));
+		          $evento = Gestion_organizacion::Delete(base64_decode($_REQUEST["org"]));
 		          $mensaje = "Se eliminó correctamente";
 		          header("Location: ../View/dashboard.php?p=".base64_encode("gestion_organizacion"));
 		        } catch (Exception $e) {
