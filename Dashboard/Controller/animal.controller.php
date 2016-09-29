@@ -27,11 +27,12 @@
 					include("Upload_ani_image.php");
 				}
 				Gestion_animal::Create($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta);
-				$mensaje = "Se creo exitosamente";
+				$mensaje = base64_encode("Se creo exitosamente");
+				$tipo_mensaje = base64_encode("success");
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
+			header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje&tm=$tipo_mensaje");
 
 
 			break;
@@ -60,18 +61,20 @@
 				}
 
 				Gestion_animal::Update($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta);
-				$mensaje = "Se actializo exitosamente";
+				$mensaje = base64_encode("Se actualizo exitosamente");
+				$tipo_mensaje = base64_encode("success");
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
+			header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje&tm=$tipo_mensaje");
 			break;
 
 		case 'd':
 			try {
           $animal = Gestion_animal::Delete(($_REQUEST["an"]));
-          $mensaje = "Se elimino correctamente";
-          header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
+          $mensaje = base64_encode("Se elimino correctamente");
+					$tipo_mensaje=base64_encode("success");
+          header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje&tm=$tipo_mensaje");
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
           header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");

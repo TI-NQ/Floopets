@@ -53,7 +53,7 @@
                   </div>
                   <div class='imagenmascota col l12'>
                       <div style='width:180px ;height:180px ;'>
-                      <img class=' responsive-img' style='width:200px ;height:200px ;' src='img/imagen_animal/".$row["ani_carpeta"]."/".$row["ani_imagen"]."'>
+                      <img class='circle responsive-img' style='width:200px ;height:200px ;' src='img/imagen_animal/".$row["ani_carpeta"]."/".$row["ani_imagen"]."'>
                       </div>
                   </div>
                   <div class='col l6'>

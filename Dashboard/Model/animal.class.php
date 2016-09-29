@@ -8,7 +8,7 @@
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO animal (ra_cod_raza ,ani_nombre ,ani_color, ani_tamanio,ani_esterilizado, ani_edad, ani_descripcion, ani_numero_microchip, ani_sexo, org_cod_organizacion,ani_imagen,ani_carpeta) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
+		$consulta = "INSERT INTO animal (ra_cod_raza ,ani_nombre ,ani_color, ani_tamanio,ani_esterilizado, ani_edad, ani_descripcion, ani_numero_microchip, ani_sexo, org_cod_organizacion,ani_imagen,ani_carpeta,ani_estado) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,'adoptar')";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute(array($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta));
