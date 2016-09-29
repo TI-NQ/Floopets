@@ -35,17 +35,23 @@
 			break;
 
 		case 'u':
-				$usu_cod_usuario		= $_POST["usu_cod_usuario"];
-				$usu_nombre 			= $_POST["usu_nombre"];
-				$usu_apellido 		=$_POST["usu_apellido"];
-				$usu_telefono			=$_POST["usu_telefono"];
-				$usu_email				=$_POST["usu_email"];
-				$cod_rol					=$_POST["cod_rol"];
-				$usu_cedula= $_POST["usu_cedula"];
-				$usu_clave				=$_POST["usu_clave"];
+				$usu_cod_usuario				=$_POST["usu_cod_usuario"];
+			$usu_nombre 						= $_POST["usu_nombre"];
+			$usu_apellido 					=$_POST["usu_apellido"];
+			$usu_email							=$_POST["usu_email"];
+			$nombre_usu_imagen 	= strtolower(str_replace('ñ', 'n', $usu_email));
+			$nombre_usu_imagen 	= strtolower(str_replace(' ', '', $nombre_usu_imagen));
+			$usu_telefono						=$_POST["usu_telefono"];
+			$cod_rol								=$_POST["cod_rol"];
+			$usu_clave							=$_POST["usu_clave"];
+			$usu_cedula							=$_POST["usu_cedula"];
+			$usu_imagen   			= $_POST["usu_imagen"];
 
 				try{
-					Gestion_usuarios::Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave);
+					if($count_galeria >= 1){
+					include("Upload_usu_image.php");
+				}
+					Gestion_usuarios::Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen);
 					$mensaje = "Se actualizo correctamente";
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
