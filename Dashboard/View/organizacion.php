@@ -2,16 +2,19 @@
   require_once ("../Model/conexion.php");
   require_once ("../Model/organizacion.class.php");
   require_once ("../Model/adopcion.class.php");
-  
+
   $organizacion=Gestion_organizacion::ReadbyID($_SESSION["org_cod_organizacion"]);
   $adopciones=Gestion_adopcion::Readbyorg_cod($_SESSION["org_cod_organizacion"]);
-  
+
   // print_r($organizacion);
   // print_r($adopciones);
 ?>
+
 <div class="row">
   <div class="col12">
     <h4 class="center"><?php echo $organizacion[2];?></h4>
+    <img class="circle responsive-img" style="width:180px ;height:180px ;" src="img/imagen_organizacion/'.$organizacion['ado_nombre'].'/'.$organizacion['de_imagen'].">
+
 
     <div class="col s6 ayuda">
       <h5 class="center">Mascotas para adopcion</h5>

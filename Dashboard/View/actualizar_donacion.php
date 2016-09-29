@@ -1,7 +1,7 @@
-<?php 
+<?php
 require_once("../Model/conexion.php");
  require_once("../Model/donacion.php");
- $donacion =  Gestion_noticia::ReadbyID(base64_decode($_REQUEST["do"]));
+ $donacion =  Gestion_donacion::ReadbyID(base64_decode($_REQUEST["do"]));
 
 // echo $cu[0];
  ?>

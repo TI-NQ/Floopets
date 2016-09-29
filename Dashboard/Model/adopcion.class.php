@@ -62,15 +62,15 @@
 			floopets_BD::Disconnect();
 		}
 
-		function Update($ado_cod_adopcion,$ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_imagen)
+		function Update($ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_imagen,$ado_cod_adopcion)
 		{
 			//Instanciamos y nos conectamos a la bd
 			$Conexion = floopets_BD::Connect();
 			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 			//Crear el query que vamos a realizar
-			$consulta = "UPDATE adopcion SET ani_cod_animal=?,usu_cod_usuario=?,ado_fecha=?,ado_hora=?,ado_imagen WHERE ado_cod_adopcion = ?" ;
+			$consulta = "UPDATE adopcion SET ani_cod_animal=?,usu_cod_usuario=?,ado_fecha=?,ado_imagen=? WHERE ado_cod_adopcion = ?" ;
 			$query = $Conexion->prepare($consulta);
-			$query->execute(array($ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_hora,$ado_imagen,$ado_cod_adopcion));
+			$query->execute(array($ani_cod_animal,$usu_cod_usuario,$ado_fecha,$ado_imagen,$ado_cod_adopcion));
 			floopets_BD::Disconnect();
 		}
 			function Delete($ado_cod_adopcion)

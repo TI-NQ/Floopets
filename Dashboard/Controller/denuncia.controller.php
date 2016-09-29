@@ -34,7 +34,7 @@
 
 			break;
 			case 'u':
-			
+
 			$de_cod_denuncia =$_POST["de_cod_denuncia"];
 			$td_cod_tipo_denuncia		= $_POST["td_cod_tipo_denuncia"];
 			$de_descripcion			= $_POST["de_descripcion"];
@@ -62,11 +62,11 @@
           $denuncia = Gestion_denuncia::Delete($_REQUEST["dn"]);
           $msn  = "se elimino correctamente";
 					$tmsn = "success";
-          header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia")."&m=".base64_encode($msn)."&tm=".base64_encode($tmsn));
+          header("Location: ../View/dashboard.php?p=".base64_encode("denuncias")."&m=".base64_encode($msn)."&tm=".base64_encode($tmsn));
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 					$tmsn = "error";
-          header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia")."&m=".base64_encode($msn)."&tm=".base64_encode($tmsn));
+          header("Location: ../View/dashboard.php?p=".base64_encode("denuncias")."&m=".base64_encode($msn)."&tm=".base64_encode($tmsn));
         }
       break;
 
@@ -77,10 +77,10 @@
 			 // $de_cod_denuncia 			=$_POST["de_cod_denuncia"];
 
 			 $de_estado = "tomado";
- 			
+
 
 			try {
-				
+
 				Gestion_denuncia::Tomardenuncia($denuncia[0], $org_cod_organizacion);
 			 Gestion_denuncia::Updateestado($de_estado,$denuncia[0]);
 				$mensaje = "Se creo exitosamente";
@@ -88,7 +88,7 @@
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
 			 header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia"));
- 
+
 			break;
 	}
 

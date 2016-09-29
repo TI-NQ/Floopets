@@ -5,63 +5,34 @@
   $denuncia = Gestion_denuncia::ReadAll();
 
 ?>
+
 <script type="text/javascript">
-
-
-$(document).ready(function()
-{
-      
-         $("a#btntrash").click(function(){
-          var codigo = $("#de_cod_denuncia").val();
-          var accion = "d";
-          sweetAlert({
-                 title: 'Mensaje de FLOOPETS',
-                 text: 'Esta seguro que desea eliminar?',
-                 type: 'warning',
-                 showCancelButton: true,
-                 confirmButtonColor: '#4db6ac',
-                 confirmButtonText: 'Aceptar',
-                 cancelButtonText: 'Cancelar',
-                 closeOnConfirm: true,
-                 closeOnCancel: true,
-                 },
-              function(isConfirm){
-                if (isConfirm) {
-                   document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
-                }
-           });
-      });
-      //     $("a#tomar").click(function(){
-      //     var codigo = $("#de_cod_denuncia").val();
-      //     var accion = "tomar";
-      //     sweetAlert({
-      //            title: 'Mensaje de FLOOPETS',
-      //            text: 'Esta seguro que desea tomar?',
-      //            type: 'warning',
-      //            showCancelButton: true,
-      //            confirmButtonColor: '#4db6ac',
-      //            confirmButtonText: 'Aceptar',
-      //            cancelButtonText: 'Cancelar',
-      //            closeOnConfirm: true,
-      //            closeOnCancel: true,
-      //            },
-      //         function(isConfirm){
-      //           if (isConfirm) {
-      //              document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
-      //           }
-      //      });
-      // });
-
-
-});
-
-
+function borrar(cod){
+  var codigo = cod;
+  var accion = "d";
+  sweetAlert({
+         title: 'Mensaje de FLOOPETS',
+         text: 'Esta seguro que desea eliminar?',
+         type: 'warning',
+         showCancelButton: true,
+         confirmButtonColor: '#4db6ac',
+         confirmButtonText: 'Aceptar',
+         cancelButtonText: 'Cancelar',
+         closeOnConfirm: true,
+         closeOnCancel: true,
+         },
+      function(isConfirm){
+        if (isConfirm) {
+           document.location.href = "../Controller/denuncia.controller.php?dn="+codigo+"&accion="+accion;
+        }
+   });
+}
 </script>
   <?php
 
-      if(isset($_GET["m"])){
-        echo "( '".$_GET["m"]."');";
-      }
+      // if(isset($_GET["m"])){
+      //   echo "( '".$_GET["m"]."');";
+      // }
     ?>
 
 
@@ -76,9 +47,9 @@ $(document).ready(function()
      <i class="small material-icons">mode_edit</i>
   </a> -->
 <?php
-@$mensaje = $_REQUEST["m"];
-
-  echo @$mensaje;
+// @$mensaje = $_REQUEST["m"];
+//
+//   echo @$mensaje;
       foreach ($denuncia as $row)
       {
 
@@ -92,13 +63,13 @@ $(document).ready(function()
                       <div class='imagenmascota col l12'>
                           <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
                       </div>
-                      
+
                       <a class='btn waves-effect blue lighten-3' href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=tomar'>Tomar</a>
                       <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>
                       <div class='col l6'>
                       <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>
                       <div class='col l6'>
-                             <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'> 
+                             <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'>
                               <i class='small material-icons'>mode_edit</i>
                           </a>
                       </div>
