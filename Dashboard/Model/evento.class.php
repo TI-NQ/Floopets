@@ -88,7 +88,7 @@
 
 
 			//Creamos el query de la consulta a la BD
-			$consulta="SELECT * FROM evento LIMIT 6";
+			$consulta="SELECT * FROM evento WHERE (eve_estado = 'Publicado' OR eve_estado = 'publicado') AND  eve_fecha >= CURDATE()   LIMIT 6";
 
 			$query=$conexion->prepare($consulta);
 			$query->execute();
@@ -104,7 +104,7 @@
     $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
     $consulta="SELECT tipo_evento.*,evento.* FROM evento INNER JOIN tipo_evento on tipo_evento.te_cod_tipo_evento=evento.te_cod_tipo_evento ";
-    
+
     $query=$conexion->prepare($consulta);
     $query->execute(array());
 

@@ -506,13 +506,11 @@ html{
 }
 /*----------------------------------------------estilos seccion Eventos----------------------------------------------*/
 #owl-demo .item{
-
   margin: 0px;
 }
 #owl-demo .item img{
   display: block;
   width: 100%;
-
 }
 .text-event{
 	position:relative;
@@ -545,9 +543,7 @@ div.item:hover div#info{
 	background-color: rgba(0,0,0,0.7);
 
 }
-div.item:hover div.text-event{
-	display: none;
-}
+
 
 
 /*-------estilos eventos----------*/
@@ -579,8 +575,26 @@ div.item:hover div.text-event{
 
 }
 
+#eventos{
+	height: 382px;
+	    padding-top: 35px;
+	    margin-top: -8px;
+	    background: url("../images/backgroundhuellas.png");
+}
+
+#eventos h2{
+	margin-top: 0;
+}
+
+#eventos .owl-item{
+	height: 250px !important;
+}
 
 
+#eventos #info h4{
+	font-weight: bold;
+	font-size: 20px;
+}
 /*responsive design de las tabletas*/
 @media screen and (max-device-width : 768px) and  (orientation : portrait){
  .ingresa{

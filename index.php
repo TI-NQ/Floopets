@@ -224,28 +224,29 @@
 			<!-- David Pabon-Eventos -->
 			<?php
 				$validar = Gestion_evento::ReadEvento();
-				if (count($validar)<3){
-				}else {
+
+				if(count($validar) >= 3 ){
+
 				?>
-				<div class="row" style="margin-top:100px;">
+				<div id="eventos" class="row"  >
 
 			<h2  class="center wow zoomIn" id="denuncias"><span>PROXIMOS</span>EVENTOS</h2>
 					<div id="owl-demo">
 						<?php
+
 							foreach ($validar as $row) {
 						?>
 						<div class="item">
 							<div id="info">
 								<h4><?php echo $row["eve_nombre"];?></h4>
-								<p><?php echo $row["eve_descripcion"];?></p>
-								<p>Direccion: <?php echo $row["eve_direccion"]?></p>
-								<p>Fecha: <?php echo $row["eve_fecha"]?>, <?php echo $row["eve_hora"]?></p>
+								<p><?php echo substr($row["eve_descripcion"],0,250);?>...</p>
+								<p>Direccion: <?php echo $row["eve_direccion"]?><br>Fecha: <?php echo $row["eve_fecha"]?>, <?php echo $row["eve_hora"]?></p>
+
 								<a href="#" class="waves-effect btn">Ver Mas</a>
 							</div>
-							<img src="Dashboard/View/img/imagen_evento/<?php echo (str_replace(" ", "",$row["eve_nombre"]));?>/<?php echo $row["eve_imagen"];?>" alt="Owl Image">
+							<img src="Dashboard/View/img/imagen_evento/<?php echo $row["eve_carpeta"];?>/<?php echo $row["eve_imagen"];?>" alt="Owl Image">
 							<div class="text-event">
-								<h4><?php echo $row["eve_nombre"];?></h4>
-								<h6><?php echo $row["eve_fecha"];?></h6>
+
 							</div>
 						</div>
 						<?php
@@ -255,7 +256,7 @@
 				</div>
 				<?php
 					}
-				?>
+			  ?>
 				<!-- David Pabon-Cuidados -->
 				<div class="row wow zoomIn" id="voluntarios">
 					<h2  class="center wow zoomIn" id="denuncias"><span>¿AMAS A LOS ANIMALES? SE UN</span> VOLUNTARIO</h2>
@@ -338,7 +339,7 @@
 													<input type="file" multiple name="vo_imagen[]" >
 												</div>
 												<div class="file-path-wrapper form-group">
-														
+
 													<input class="file-path validate"  type="text" placeholder="Elige una imagen" name="vo_imagen"  >
 												</div>
 											</div>
