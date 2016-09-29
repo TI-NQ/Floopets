@@ -334,11 +334,12 @@
 										<div class="row">
 											<div class=" form-group file-field input-field col s12">
 												<div class="btn">
-													<label class="form-label">Galeria</label>
+													<span>Galeria</span>
 													<input type="file" multiple name="vo_imagen[]" >
 												</div>
 												<div class="file-path-wrapper form-group">
-													<input class="file-path validate"  type="text" placeholder="" name="vo_imagen"  >
+														
+													<input class="file-path validate"  type="text" placeholder="Elige una imagen" name="vo_imagen"  >
 												</div>
 											</div>
 										</div>
