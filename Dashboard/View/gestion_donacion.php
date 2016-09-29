@@ -54,8 +54,7 @@ foreach ($donacion as $row) {
                         ?>
                         <a href='#' id='btntrash' onclick="borrar('<?php echo $row["don_cod_donacion"];?>')" class='btn-floating waves-light red waves-effect'>
                         <?php echo"
-
-                        <i class='small material-icons'>delete</i>
+                          <i class='small material-icons'>delete</i>
                           </a>
 
                    </div>
@@ -66,7 +65,7 @@ foreach ($donacion as $row) {
 		                 <label>Codigo</label>
 		                     <li>".$row["don_cod_donacion"]."</li>
                       <label>Tipo donacion</label>
-                          <li>".$row["don_cod_tipo_donacion"]."</li>
+                          <li>".$row["td_cod_tipo_donacion"]."</li>
 		                 <label>descripcion</label>
 		                     <li>".$row["don_descripcion"]."</li>
 		                 <label>fecha</label>
