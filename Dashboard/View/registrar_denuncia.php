@@ -34,7 +34,7 @@
 				</div>
 			</div>
 			<div class="input-field col s12 m6 l6">
-				<input type="text" name="de_nombre" id="de_nombre" required>
+				<input type="text" name="de_nombre" id="de_nombre" >
 						<label for="de_nombre">Nombre de mascota (Opcional)</label>
 			</div>
 			<div class="input-field col s12 m6 l6">
