@@ -10,24 +10,7 @@ $voluntarios=gestion_voluntarios::ReadAll();
 		echo @$mensaje;
  ?>
 
-<div class="container">
-<div class="row">
-<table id="datatable" class="display highlight centered responsive-table bordered">
-	<thead>
-		<tr>
-			<td>Cedula</td>
-			<td>Nombre</td>
-      <td>Telefono</td>
-      <td>Direccion</td>
-      <td>Foto</td>
-      <td>Contraseña</td>
-		</tr>
 
-	</thead>
-
-		<tbody>
-
-		<tbody> 
 <div class="row">
 <div class="col l11 offset-l1">
 
@@ -44,7 +27,7 @@ $voluntarios=gestion_voluntarios::ReadAll();
 		                        <li>".$row["vo_nombre"]."</li>
 	                      	</div>
 	                  		<div class='imagenmascota col l12'>
-		                          <img class=' responsive-img' style='width:250px ;height:250px ;' src='img/imagen_voluntario/".$row["vo_nombre"]."/".$row["vo_imagen"]."'>
+		                          <img class=' responsive-img' style='width:250px ;height:250px ;' src='img/imagen_voluntario/".$row["vo_cod_voluntario"]."/".$row["vo_imagen"]."'>
 		                     	</div>
 	                   		<div class='col l6'>
 	                        	<a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_voluntarios')."&vo=".base64_encode($row['vo_cod_voluntario'])."'>	

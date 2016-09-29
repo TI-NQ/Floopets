@@ -4,7 +4,8 @@ require_once("../Model/conexion.php");
  $adopcion =  Gestion_adopcion::ReadbyID(base64_decode($_REQUEST["ad"]));
 
  ?>
-<form action="../Controller/adopcion.controller.php" method="POST">
+<form action="../Controller/adopcion.controller.php" method="POST" id="form">
+<h3 class="center">Modificar Adopción</h3>
 <input type="hidden" readonly name="ado_cod_adopcion" required value="<?php echo $adopcion[0] ?>">
 <input type="hidden" readonly name="ani_cod_animal" required value="<?php echo $adopcion[1] ?>">
 <input type="hidden" readonly name="usu_cod_usuario" required value="<?php echo $adopcion[2] ?>">
@@ -16,7 +17,7 @@ require_once("../Model/conexion.php");
 		<label class="form-label">hora</label>
 		<input class="form-control" type="time" name="ad_descripcion" required  value="<?php echo $adopcion[2] ?>">
 	</div> -->
-<div class="file-field input-field col s12 m6">
+<div class="file-field input-field col s12 m6 ">
                 <div class="btn">
                   <span>imagen</span>
                   <input type="file" multiple name="Imagen_Upload[]">
