@@ -7,8 +7,9 @@ require_once("../Model/conexion.php");
 require_once("../Model/usuarios.class.php");
 $user=Gestion_usuarios::ReadAll();
  ?>
+<div class="container">
 
-<table>
+<table id="datatable" class="display highlight centered responsive-table bordered">
 	<thead>
 		<tr>
 			<td>Codigo de usuario</td>
@@ -49,4 +50,5 @@ $user=Gestion_usuarios::ReadAll();
 		</tbody>
 	</thead>
 </table>
-</table>
+
+</div>

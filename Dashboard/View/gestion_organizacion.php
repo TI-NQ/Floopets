@@ -30,8 +30,10 @@ $organizacion=Gestion_organizacion::Nombres();
     });
  }
  </script> -->
+<div class="container">
 
-<table>
+
+<table id="datatable" class="display highlight centered responsive-table bordered">
 	<thead>
 		<tr>
 			<td>Codigo organización</td>
@@ -81,3 +83,4 @@ $organizacion=Gestion_organizacion::Nombres();
 		</tbody>
 	</thead>
 </table>
+</div>
