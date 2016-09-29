@@ -7,7 +7,7 @@
   </style>
 <?php
 // Menú de usuario publico id_rol 1
-if($_SESSION["cod_rol"]==1){
+if($_SESSION["cod_rol"]==4){
 ?>
 <li>
   <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('mi_perfil')?>"><i class="fa fa-user" aria-hidden="true"></i>Mi perfil</a></div>
@@ -31,7 +31,7 @@ if($_SESSION["cod_rol"]==1){
 </li>
 <?php
 // Menú de Administrador publico id_rol 2
-}elseif($_SESSION["cod_rol"]==2){
+}elseif($_SESSION["cod_rol"]==6){
 ?>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-user" aria-hidden="true"></i>Usuarios</a></div>
@@ -57,7 +57,7 @@ if($_SESSION["cod_rol"]==1){
 <!-- aqui metan el menu -->
 <?php
 // Menú de Organización publico id_rol 3
-}elseif ($_SESSION["cod_rol"]==3) {
+}elseif ($_SESSION["cod_rol"]==5) {
   // require_once ("../Model/conexion.php");
   // require_once ("../Model/organizacion.class.php");
   // $organizacion=Gestion_organizacion::ReadbyID($_SESSION["org_cod_organizacion"]);
