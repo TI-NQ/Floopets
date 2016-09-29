@@ -14,15 +14,15 @@
 				floopets_BD::Disconnect();
 		}
 		
-		function Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen)
+		function Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen)
 			{
 				//Instanciamos y nos conectamos a la bd
 				$conexion=floopets_BD::Connect();
 				$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 				//Creamos el query de la consulta a la BD
-				$consulta ="UPDATE usuario SET usu_nombre = ?, usu_apellido = ?,usu_telefono=?,usu_cedula=?,usu_email=?,cod_rol=?,usu_clave=?,usu_imagen=? WHERE usu_cod_usuario = ?";
+				$consulta ="UPDATE usuario SET usu_nombre = ?, usu_apellido = ?,usu_telefono=?,usu_cedula=?,usu_email=?,usu_clave=?,usu_imagen=? WHERE usu_cod_usuario = ?";
 				$query = $conexion->prepare($consulta);
-				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen,$usu_cod_usuario));
+				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen,$usu_cod_usuario));
 				floopets_BD::Disconnect();
 		}
 		function ReadAll()
@@ -31,7 +31,7 @@
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "SELECT usuario.*, rol.* FROM usuario INNER JOIN rol ON usuario.cod_rol = rol.cod_rol";
+				$consulta = "SELECT usuario.*, rol.* FROM rol INNER JOIN usuario ON rol.cod_rol = usuario.cod_rol";
 				$query = $Conexion->prepare($consulta);
 				$query->execute();
 				//Devolvemos el resultado en un arreglo

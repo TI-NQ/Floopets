@@ -42,7 +42,7 @@
 			$nombre_usu_imagen 	= strtolower(str_replace('ñ', 'n', $usu_email));
 			$nombre_usu_imagen 	= strtolower(str_replace(' ', '', $nombre_usu_imagen));
 			$usu_telefono						=$_POST["usu_telefono"];
-			 $cod_rol								=$_POST["cod_rol"];
+			// $cod_rol								=$_POST["cod_rol"];
 			$usu_clave							=$_POST["usu_clave"];
 			$usu_cedula							=$_POST["usu_cedula"];
 			$usu_imagen   			= $_POST["usu_imagen"];
@@ -51,12 +51,12 @@
 					if($usu_imagen != ""){
 					include("Upload_usu_image.php");
 				}
-					Gestion_usuarios::Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen);
+					Gestion_usuarios::Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen);
 					$mensaje = "Se actualizo correctamente";
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				}
-				header("Location: ../View/dashboard.php?p=".base64_encode("mi_perfil") );
+				header("Location: ../View/dashboard.php?p=".base64_encode("gestion_usuarios") );
 				break;
 
 		case 'd':

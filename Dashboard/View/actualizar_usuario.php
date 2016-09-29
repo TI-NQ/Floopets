@@ -12,16 +12,7 @@ session_start();
 ?>
 <form action="../Controller/usuarios.controller.php" method="POST" enctype="multipart/form-data">
 		<input class="form-control"  hidden name="usu_cod_usuario" required readonly value="<?php echo $us[0]?>">
-		<div class="input-field col s12">
-				<select name="cod_rol" value="<?php echo $us[6]?>"required>
-						<?php
-							foreach ($rol as $row) {
-								echo "<option value = '".$row["cod_rol"]."'>".$row["cod_rol"]."</option>";
-							}
-						 ?>
-				</select>
-				<label>rol</label>
-			</div>
+		
 
 	<div class="form-group">
 		<label class="form-label">Nombre :</label>
