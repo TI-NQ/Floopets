@@ -110,7 +110,7 @@
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "SELECT * FROM animal" ;
+				$consulta = "SELECT * FROM animal ORDER BY ani_cod_animal DESC" ;
 				$query = $Conexion->prepare($consulta);
 				$query->execute();
 				//Devolvemos el resultado en un arreglo

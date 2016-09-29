@@ -7,21 +7,27 @@
 <?php
     require_once("../Model/conexion.php");
     require_once("../Model/animal.class.php");
-    require_once("../../WebFloopets/js/zebra.php");
+    require_once("../../WebFloopets/js/zebra.css");
     $animal=Gestion_animal::Nombres();
-    $animal=Gestion_animal::paginacion();
+    $animales=Gestion_animal::paginacion();
 
 
-   $num_reg = count($animal);
-
+   $num_reg = count($animales);
+ // echo $num_reg;
    $paginas = 2;
 
    $paginacion = new Zebra_Pagination();
    $paginacion->records($num_reg);
    $paginacion->records_per_page($paginas);
 
-   $consulta = 'SELECT * FROM animal'.(($paginacion->get_page() - 1) * $paginas).','.$paginas;
-   		$result = $con->query($consulta);
+   $Conexion = floopets_BD::Connect();
+   $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+   $consulta = 'SELECT * FROM animal ORDER BY ani_cod_animal DESC LIMIT '.(($paginacion->get_page()));
+   $query = $Conexion->prepare($consulta);
+   $query->execute();
+   $resultado = $query->fetchALL(PDO::FETCH_BOTH);
+   return $resultado;
+   floopets_BD::Disconnect();
 
 		foreach ($animal as $row) {
 				echo"<div class='col l6 descrip'>
@@ -76,7 +82,7 @@
 				             	</div>
 				           </div>
 				        </div>
-				         
+
 				    </div>
 
 
