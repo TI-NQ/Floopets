@@ -3,7 +3,28 @@
 
  <a href="dashboard.php?p=<?php echo base64_encode('nueva_mascota')?>" class="waves-effect btn animated zoomIn">Nuevo</a>
 
-
+ <script type="text/javascript">
+ function borrar(cod){
+   var codigo = cod;
+   var accion = "d";
+   sweetAlert({
+          title: 'Mensaje de FLOOPETS',
+          text: 'Esta seguro que desea eliminar?',
+          type: 'warning',
+          showCancelButton: true,
+          confirmButtonColor: '#4db6ac',
+          confirmButtonText: 'Aceptar',
+          cancelButtonText: 'Cancelar',
+          closeOnConfirm: true,
+          closeOnCancel: true,
+          },
+       function(isConfirm){
+         if (isConfirm) {
+            document.location.href = "../Controller/animal.controller.php?an="+codigo+"&accion="+accion;
+         }
+    });
+ }
+ </script>
 <?php
     require_once("../Model/conexion.php");
     require_once("../Model/animal.class.php");

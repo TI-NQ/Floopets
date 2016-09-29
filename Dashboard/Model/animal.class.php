@@ -77,10 +77,8 @@
 		}
 			function Delete($ani_cod_animal)
 			{
-				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-				//Crear el query que vamos a realizar
 				$consulta = "DELETE FROM animal WHERE ani_cod_animal = ?" ;
 				$query = $Conexion->prepare($consulta);
 				$query->execute(array($ani_cod_animal));
