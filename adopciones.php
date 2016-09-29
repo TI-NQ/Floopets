@@ -1,12 +1,18 @@
 <?php
+require_once("Dashboard/Model/conexion.php");
+require_once("Dashboard/Model/animal-copy.class.php");
 
 if(isset($_GET["pet"])){
   $mascota = $_GET["pet"];
   $titulo = "ADOPTA UN ".$mascota;
+  $animales = Gestion_animal::paraAdoptarbyPet($mascota);
 }else{
   $mascota = "";
   $titulo = "ADOPTA UN ANIMAL SIN HOGAR";
+  $animales = Gestion_animal::paraAdoptar();
 }
+
+
 
 ?>
 
@@ -54,7 +60,17 @@ if(isset($_GET["pet"])){
 
         $(".drag-target").click(function(){
           $("#hamburger-menu").removeClass("open");
-        })
+        });
+
+        $("input[name*='mascota']").change(function(){
+          var tipo_animal = $(this).val();
+          $.post("adopciones_ajax.php", {tipo_animal: tipo_animal}, function(data){
+            $(".listado").html(data);
+          });
+
+        });
+
+
       });
       </script>
     </script>
@@ -88,10 +104,10 @@ if(isset($_GET["pet"])){
           <h5>Selecciona las caracteristicas a buscar</h5>
           <div class="col m2"  >
 
-            <input class="with-gap" name="mascota" type="radio" id="test1" value="Perros"/>
+            <input class="with-gap" name="mascota" type="radio" id="test1" value="Perro" <?php if($mascota == "Perro"){ echo "checked";} ?>/>
             <label for="test1">Perros</label><br>
 
-            <input class="with-gap" name="mascota" type="radio" id="test2" value="Gatos"/>
+            <input class="with-gap" name="mascota" type="radio" id="test2" value="Gato" <?php if($mascota == "Gato"){ echo "checked";} ?>/>
             <label for="test2">Gatos</label>
           </div>
 
@@ -123,6 +139,26 @@ if(isset($_GET["pet"])){
       </div>
     </div>
     <div id="datagrid-pet" class="container">
+        <h4 class="center">ESTOS SON NUESTROS AMIGOS QUE NECESITAN UN HOGAR</h4>
+        <div class="row listado">
+        <?php
+        foreach ($animales  as $row) {
+        ?>
+
+          <div class="item col m4">
+            <div class="mascota">
+              <img src="Dashboard/View/img/imagen_animal/<?php echo $row["ani_carpeta"]."/".$row["ani_imagen"]?>">
+            </div>
+            <div class="detalle">
+              <h5><?php echo $row["ani_nombre"]; ?></h5>
+              <p>Edad: <?php echo $row["ani_edad"]; ?></p>
+              <button class="waves-effect waves-light btn">ADOPTAR</button>
+            </div>
+          </div>
+        <?php
+        }
+        ?>
+      </div>
 
     </div>
   </body>

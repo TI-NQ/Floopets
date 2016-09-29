@@ -109,7 +109,7 @@
 
 					<div id="conteadop">
 						<p class="wow fadeInDown">Adopta un</p>
-						<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Perro</button>
+						<a href="adopciones.php?pet=Perro" class="boton btn waves-effect waves-light btn-large wow fadeInDown">Perro</a>
 					</div>
 
 					<img src="WebFloopets/images/1.jpg" class="wow fadeInLeft">
@@ -117,7 +117,7 @@
 				<div class="container__gatos col s12 m6 l6">
 					<div id="conteadop">
 						<p class="wow fadeInDown">Adopta un</p>
-						<button class="boton btn waves-effect waves-light btn-large wow fadeInDown">Gato</button>
+						<a href="adopciones.php?pet=Gato" class="boton btn waves-effect waves-light btn-large wow fadeInDown">Gato</a>
 					</div>
 					<img src="WebFloopets/images/2.jpg" class="wow fadeInRight">
 				</div>

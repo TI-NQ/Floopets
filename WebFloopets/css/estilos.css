@@ -177,7 +177,7 @@ a{
 	text-transform: uppercase;
 }
 
-#conteadop button{
+#conteadop a.boton{
 
 	width: 200px;
 	text-transform: inherit;

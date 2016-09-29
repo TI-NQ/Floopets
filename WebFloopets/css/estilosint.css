@@ -118,3 +118,43 @@ a{
 #filter-pet .col{
   padding: 0 10px;
 }
+
+
+#datagrid-pet .mascota{
+  height: 250px;
+  overflow: hidden;
+  padding: 5px;
+}
+
+#datagrid-pet .mascota img{
+  width: 100%;
+}
+
+#datagrid-pet .detalle{
+  background-color: #c2185b;
+  max-width: 312px;
+  margin: 0 5px;
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 10px 20px;
+  color: #fff;
+  z-index: 33;
+  position: relative;
+  margin-top: -50px;
+}
+
+#datagrid-pet .detalle h5{
+  text-transform: uppercase;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 0;
+}
+#datagrid-pet .detalle p{
+  margin: 0;
+}
+
+#datagrid-pet .detalle button{
+  border: none;
+  background-color: #880e4f;
+  margin-top: 10px;
+}
