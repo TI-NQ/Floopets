@@ -31,35 +31,17 @@ $cuidado=Gestion_cuidado::ReadAll();
 
 <div class="container">
 <div class="row">
-<<<<<<< HEAD
-<table id="datatable" class="display highlight centered responsive-table bordered">
 
-	<thead>
-		<tr>
-			<td>Codigo </td>
-			<td>Nombre</td>
-			<td>Descripcion</td>
-		    <td>Imagen</td>
-		    <td>Acciones</td>
-		</tr>
-	</thead>	
-		<tbody>
-=======
->>>>>>> origin/master
+
 			<?php
 			@$mensaje = $_REQUEST["m"];
 
 			echo @$mensaje;
 
 			foreach ($cuidado as $row) {
-<<<<<<< HEAD
-				echo"<tr>
-						<td>".$row["cu_cod_cuidado"]."</td>
-						<td>".$row["cu_nombre"]."</td>
-						<td>".$row["cu_descripcion"]."</td>
-            			<td>".$row["galeria"]."</td>
-=======
-        echo"<div class='col l6 descrip'>
+
+				echo"
+        <div class='col l6 descrip'>
                 <div class='row'>
                   <div class='col l6 col m6'>
                       <div class='col l7'>
@@ -76,7 +58,7 @@ $cuidado=Gestion_cuidado::ReadAll();
                              <i class='small material-icons'>edit</i>
                           </a>
                       </div>
->>>>>>> origin/master
+
 
 
                       <div class='col l6'>
@@ -91,13 +73,16 @@ $cuidado=Gestion_cuidado::ReadAll();
                   </div>
                   <div class='col l6'>
                     <ul class='descrip'>
-
+                      <span>Codigo :</span>
+                      <li>".$row["cu_cod_cuidado"]."</li>
                       <span>Nombre :</span>
                           <li>".$row["cu_nombre"]."</li>
                       <span>Descripcion:</span>
                             <li>".$row["cu_descripcion"]."</li>
                       <span>Codigo usuario :</span>
                             <li>".$row["video"]."</li>
+
+
 
                     </ul>
                   </div>
@@ -107,7 +92,7 @@ $cuidado=Gestion_cuidado::ReadAll();
           ";
 			}
 
-			 ?>
+?>
 
 </div>
 </div>
