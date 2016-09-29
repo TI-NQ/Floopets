@@ -1,7 +1,5 @@
 <!-- <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> -->
-<button type="button" name="button" >
-  <a href="registrar_cuidado.php">Nuevo</a>
-</button>
+
 <?php
 
 require_once("../Model/conexion.php");
@@ -19,7 +17,6 @@ $cuidado=gestion_cuidado::ReadAll();
 			<td>Nombre</td>
 			<td>Descripcion</td>
 		    <td>Imagen</td>
-		    <td>Video</td>
 		    <td>Acciones</td>
 		</tr>
 	</thead>	
@@ -34,8 +31,7 @@ $cuidado=gestion_cuidado::ReadAll();
 						<td>".$row["cu_cod_cuidado"]."</td>
 						<td>".$row["cu_nombre"]."</td>
 						<td>".$row["cu_descripcion"]."</td>
-            <td>".$row["galeria"]."</td>
-            <td>".$row["video"]."</td>
+            			<td>".$row["galeria"]."</td>
 
 						<td>
                     		<a href='../View/actualizar_cuidado.php?cu=".base64_encode($row["cu_cod_cuidado"])."'>actualizar</a>

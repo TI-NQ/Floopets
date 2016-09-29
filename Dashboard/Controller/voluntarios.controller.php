@@ -8,7 +8,7 @@
       	$vo_cod_voluntario      =$_POST["vo_cod_voluntario"];
 
 		$vo_nombre              =$_POST["vo_nombre"];
-		$nombre_voluntario 	= strtolower(str_replace('ñ', 'n', $vo_nombre));
+		$nombre_voluntario 	= strtolower(str_replace('ñ', 'n', $vo_cod_voluntario));
 		$nombre_voluntario 	= strtolower(str_replace(' ', '', $nombre_voluntario));
       	$vo_telefono            =$_POST["vo_telefono"];
       	$vo_direccion           =$_POST["vo_direccion"];
@@ -25,7 +25,7 @@
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			// header("Location: ../View/dashboard.php?p=".base64_encode("gestion_voluntarios"));
+			 //header("Location: ../View/dashboard.php?p=".base64_encode("gestion_voluntarios"));
 
 			break;
 			case 'u':
