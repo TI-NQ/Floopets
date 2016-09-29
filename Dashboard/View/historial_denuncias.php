@@ -1,7 +1,7 @@
 <?php
   require_once ("../Model/conexion.php");
   require_once ("../Model/denuncia.class.php");
-  $denuncia=Gestion_denuncia::Readto();
+  $denuncia=Gestion_denuncia::historial();
 
 
 ?>

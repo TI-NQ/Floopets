@@ -20,6 +20,7 @@ $user=Gestion_usuarios::ReadAll();
       <td>Email</td>
       <td>Rol</td>
       <td>Contraseña</td>
+      <td>acciones</td>
 		</tr>
 		<tbody>
 			<?php

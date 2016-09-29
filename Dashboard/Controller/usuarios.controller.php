@@ -22,7 +22,7 @@
 			$count_galeria		= count($_FILES['usu_imagen']['name']);
 
 			try {
-				if($count_galeria >= 1){
+				if($count_galeria != ""){
 					include("Upload_usu_image.php");
 				}
 				Gestion_usuarios::Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen);
@@ -42,13 +42,13 @@
 			$nombre_usu_imagen 	= strtolower(str_replace('ñ', 'n', $usu_email));
 			$nombre_usu_imagen 	= strtolower(str_replace(' ', '', $nombre_usu_imagen));
 			$usu_telefono						=$_POST["usu_telefono"];
-			$cod_rol								=$_POST["cod_rol"];
+			 $cod_rol								=$_POST["cod_rol"];
 			$usu_clave							=$_POST["usu_clave"];
 			$usu_cedula							=$_POST["usu_cedula"];
 			$usu_imagen   			= $_POST["usu_imagen"];
 
 				try{
-					if($count_galeria >= 1){
+					if($usu_imagen != ""){
 					include("Upload_usu_image.php");
 				}
 					Gestion_usuarios::Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen);

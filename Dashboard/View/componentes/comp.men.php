@@ -51,7 +51,7 @@ if($_SESSION["cod_rol"]==1){
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-shield" aria-hidden="true"></i>Denuncias</a></div>
-  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('denuncias')?>" class="item_menu">Gestionar Denuncias</a></p></div>
+  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('denuncias_admin')?>" class="item_menu">Gestionar Denuncias</a></p></div>
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('historial_denuncias')?>" class="item_menu">Historial de Denuncias</a></p></div>
 </li>
 <!-- aqui metan el menu -->
