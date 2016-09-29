@@ -17,7 +17,7 @@ video{
 }
 
 .ingresa{
-		
+
 		background: #9dd53a; /* Old browsers */
 		background: -moz-linear-gradient(top,  #9dd53a 0%, #a1d54f 50%, #80c217 51%, #7cbc0a 100%); /* FF3.6-15 */
 		background: -webkit-linear-gradient(top,  #9dd53a 0%,#a1d54f 50%,#80c217 51%,#7cbc0a 100%); /* Chrome10-25,Safari5.1-6 */
@@ -59,7 +59,7 @@ a{
 .hamburger-menu{
   width: 50px;
   height: 80px;
-  padding: 10px; 
+  padding: 10px;
   cursor: pointer;
   margin: 0 auto;
   position: fixed;
@@ -76,7 +76,7 @@ a{
 
 .hamburger-menu:hover > .first, .open .first {
   transform: translateY(10px) rotate(45deg);
-  
+
 }
 
 .hamburger-menu:hover > .second, .open .second {
@@ -161,13 +161,13 @@ a{
 
 #conteadop{
 	position: absolute;
-	width: 100%; 
+	width: 100%;
 	margin-top: 50vh;
-	z-index: 3;	
+	z-index: 3;
 	font-family: "Roboto";
 	font-weight: lighter;
 	text-align: center;
-} 
+}
 
 #conteadop p{
 	font-size: 30px;
@@ -196,7 +196,7 @@ a{
 	width: 100%;
 	z-index: 1;
 }
- 
+
 
 .container__gatos img{
 	width: 100%;
@@ -209,19 +209,19 @@ a{
 
 }
 
- 
+
  /*-------------------------------------------- TITULOS --------------------------------------------*/
 
  h1, h2, h3, h4{
  	text-transform: uppercase;
  }
 
-h2{  
+h2{
     font-size: 50px;
     line-height: 34px;
 }
 
-h3{  
+h3{
     font-size: 30px;
     font-weight: bold;
 }
@@ -231,7 +231,7 @@ h2 span{
 	font-weight: lighter;
 	padding: 0;
 	margin: 0;
-} 
+}
 
 .conten_p{
 	width: 80%;
@@ -458,8 +458,8 @@ html{
 #voluntarios{
   padding-top: 50px;
   background-color: white;
-  margin-top:-10px; 
-  color: #858585; 	
+  margin-top:-10px;
+  color: #858585;
 }
 
 #voluntarios h2{
@@ -478,12 +478,13 @@ html{
     border-top: 1px solid #fff;
     position: absolute;
     bottom: 0;}
+
 .voluntario{
 	background: rgba(255,179,0,0.8);
  	margin-bottom: 30px;
  	font-family: "Roboto";
  	font-weight: 600;
- 	font-size: 40px;
+ 	font-size: 30px;
  	border-radius: 5px;
 }
 .voluntario:hover{
@@ -700,4 +701,3 @@ font-size: 20px;
 
 
 }​
- 
