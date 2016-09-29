@@ -3,7 +3,7 @@ require_once("../Model/conexion.php");
  require_once("../Model/voluntarios.class.php");
  $voluntarios =  gestion_voluntarios::ReadById(base64_decode($_REQUEST["vo"]));
  ?>
-<form action="../Controller/voluntarios.controller.php" method="POST">
+<form action="../Controller/voluntarios.controller.php" method="POST" id="form">
   <div class="form-group">
   <input type="text" name="vo_cod_voluntario" value="<?php echo $voluntarios[0]?>"hidden/>
   </div>

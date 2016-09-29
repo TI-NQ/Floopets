@@ -5,7 +5,7 @@ require_once("../Model/conexion.php");
  date_default_timezone_set("America/Bogota");
  ?>
   
-<form action="../Controller/denuncia.controller.php" method="POST">
+<form action="../Controller/denuncia.controller.php" method="POST" id="form">
   <input type="hidden" readonly name="de_cod_denuncia" required value="<?php echo $denuncia[0] ?>">
   <div class="form-group">
     <label>Tipo denuncia:</label>

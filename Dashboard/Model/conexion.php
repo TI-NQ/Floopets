@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 class floopets_BD{
 	//Declara las variables que utilizo para cualquiera de mis metodos que se encuentren en la clase Laboratorio_BD.
@@ -28,7 +28,7 @@ class floopets_BD{
 			}catch(PDOException $e){
 				die($e -> getMessage());
 			}
-	
+
 		}
 		return self::$conn;
 	}

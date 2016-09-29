@@ -172,7 +172,7 @@ switch ($page) {
 	 break;
 
 	 case 'actualizar_vacunas':
-	 	require_once("actualizar_vacunas.php");
+	 	require_once("actualizar_vacuna.php");
 	 break;
 
 	 case 'actualizar_voluntarios':

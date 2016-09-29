@@ -46,7 +46,7 @@
 
 
       <div class="input-field col s12">
-        <a href="#" class="waves-effect btn" style="width:50%;">Editar mi Perfil</a>
+        <a href="" class="waves-effect btn" style="width:50%;">Editar mi Perfil</a>
       </div>
 
 

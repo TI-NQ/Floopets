@@ -23,7 +23,6 @@ if($_SESSION["cod_rol"]==1){
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-calendar" aria-hidden="true"></i>Eventos</a></div>
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('proximos_eventos')?>" class="item_menu" >Proximos Eventos</a></p></div>
-  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('historial_eventos')?>" class="item_menu">Historial Eventos</a></p></div>
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Cuidados</a></div>

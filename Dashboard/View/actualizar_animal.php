@@ -8,7 +8,7 @@ require_once("../Model/conexion.php");
 
 // echo $cu[0];
  ?>
-<form action="../Controller/animal.controller.php" method="POST" enctype="multipart/form-data">
+<form action="../Controller/animal.controller.php" method="POST" enctype="multipart/form-data" id="form">
   <input type="hidden" readonly name="ani_cod_animal" required value="<?php echo $animal[0] ?>">
   <input name="org_cod_organizacion" value="<?php  $mi_organizacion[1]?>" hidden>
 	<div class="form-group">

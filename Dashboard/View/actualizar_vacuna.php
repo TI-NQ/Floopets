@@ -1,11 +1,12 @@
 <?php
-	session_start();
+	// session_start();
   require_once("../Model/conexion.php");
   require_once("../Model/vacuna.class.php");
 
   $vacuna =  Gestion_vacuna::ReadbyID(base64_decode($_REQUEST["va"]));
 ?>
-<form action="../Controller/vacunas.controller.php" method="POST">
+<form action="../Controller/vacunas.controller.php" method="POST" id="form">
+<h3 class="center">Modificar Vacuna</h3>
 		<input class="form-control"  type="hidden" name="vac_cod_vacuna" required readonly value="<?php echo $vacuna[0]?>">
 	<div class="form-group">
 		<label class="form-label">Nombre</label>
