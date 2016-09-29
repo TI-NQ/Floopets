@@ -2,7 +2,7 @@
 	class Gestion_voluntarios
 	{
 		// Metodo Create()
-		function Create($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$org_cod_organizacion,$vo_imagen)
+		function Create($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$vo_imagen,$org_cod_organizacion)
 		{
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
@@ -10,7 +10,7 @@
 			//Crear el query que vamos a realizar.
 			$consulta ="INSERT INTO voluntarios (vo_cod_voluntario,vo_nombre,vo_telefono,vo_direccion,vo_imagen,org_cod_organizacion,vo_estado) VALUES (?,?,?,?,?,?,'Pendiente')";
 			$query = $conexion->prepare($consulta);
-			$query->execute(array($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$org_cod_organizacion,$vo_imagen));
+			$query->execute(array($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$vo_imagen,$org_cod_organizacion));
 			floopets_BD::Disconnect();
 		}
 		function ReadAll()
