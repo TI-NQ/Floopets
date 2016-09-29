@@ -104,7 +104,7 @@
     $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
     $consulta="SELECT tipo_evento.*,evento.* FROM evento INNER JOIN tipo_evento on tipo_evento.te_cod_tipo_evento=evento.te_cod_tipo_evento ";
-    // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
+    
     $query=$conexion->prepare($consulta);
     $query->execute(array());
 

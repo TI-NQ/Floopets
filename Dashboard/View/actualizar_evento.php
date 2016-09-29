@@ -1,4 +1,4 @@
-<?php 
+<?php
 	require_once("../Model/conexion.php");
     require_once("../Model/evento.class.php");
 	$evento=Gestion_evento::ReadbyID(base64_decode($_REQUEST["eve"]));
@@ -6,10 +6,10 @@
 	$eve = Gestion_tipo_evento::ReadAll();
  ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<form action="../Controller/evento.controller.php" method="POST" enctype="multipart/form-data">
-	<h1>Registrar Evento</h1>
+<form id="form" action="../Controller/evento.controller.php" method="POST" enctype="multipart/form-data">
+	<h3 class="center">Modificar Evento</h3>
 	<input class="file-path validate"  type="hidden" name="eve_cod_evento" value="<?php echo $evento[0] ?>" >
-	<div class="form-group">	
+	<div class="form-group">
 
 		<label>Tipo evento:</label>
 		<select name="te_cod_tipo_evento"  required>
@@ -36,7 +36,7 @@
                <label>desde</label>
                   <input type="date" id="demo" name="eve_fecha" value="<?php echo $evento[4] ?>"  required>
                   <label>Hasta</label>
-                  <input type="date" id="demo" name="eve_fecha_hasta" value="<?php echo $evento[5] ?>"  required>                 
+                  <input type="date" id="demo" name="eve_fecha_hasta" value="<?php echo $evento[5] ?>"  required>
             </div>
 		<br>
 		<div class="col s12 m12">
@@ -44,7 +44,7 @@
                <label>desde</label>
                   <input type="time" id="demo" name="eve_hora" value="<?php echo $evento[6] ?>"  required>
                   <label>Hasta</label>
-                  <input type="time" id="demo" name="eve_hora_hasta" value="<?php echo $evento[7] ?>"  required>                 
+                  <input type="time" id="demo" name="eve_hora_hasta" value="<?php echo $evento[7] ?>"  required>
             </div>
 		<br>
 		<div class="form-group">
@@ -52,7 +52,7 @@
 		<input class="form-control" type="text" name="eve_descripcion" value="<?php echo $evento[8] ?>"  required>
 	</div>
 		<br>
-			<!-- <input type="hidden" value="" name="Geo_x" id="ltn"> 
+			<!-- <input type="hidden" value="" name="Geo_x" id="ltn">
             <input type="hidden" value="" name="Geo_y" id="lng"> -->
             <div class="input-field col s12">
           <select id="first_name" type="text" class="validate" required name="eve_estado" value="<?php echo $evento[12] ?>"required>
