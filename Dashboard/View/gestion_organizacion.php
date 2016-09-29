@@ -8,28 +8,7 @@ require_once("../Model/conexion.php");
 require_once("../Model/organizacion.class.php");
 $organizacion=Gestion_organizacion::Nombres();
  ?>
- <!-- <script type="text/javascript">
- function borrar(cod){
-   var codigo = cod;
-   var accion = "d";
-   sweetAlert({
-          title: 'Mensaje de FLOOPETS',
-          text: 'Esta seguro que desea eliminar?',
-          type: 'warning',
-          showCancelButton: true,
-          confirmButtonColor: '#4db6ac',
-          confirmButtonText: 'Aceptar',
-          cancelButtonText: 'Cancelar',
-          closeOnConfirm: true,
-          closeOnCancel: true,
-          },
-       function(isConfirm){
-         if (isConfirm) {
-            document.location.href = "../Controller/organizacion.controller.php?org="+codigo+"&accion="+accion;
-         }
-    });
- }
- </script> -->
+
 <div class="container">
 
 
@@ -43,7 +22,7 @@ $organizacion=Gestion_organizacion::Nombres();
 			<td>Email</td>
 			<td>Telefono</td>
 			<td>Direccion</td>
-      <td></td>
+      <td>Acciones</td>
 
     </tr>
 		<tbody>
@@ -69,9 +48,8 @@ $organizacion=Gestion_organizacion::Nombres();
                           <!-- <i class='small material-icons'>delete</i>
                           </a> -->
                         <?php echo"
+                        <a href='dashboard.php?p=".base64_encode('actualizar_organizacion')."&org=".base64_encode($row['org_cod_organizacion'])."'><i class='fa fa-pencil'style='color:black !important ; font-size: 30px'></i></a>
 
-                        <a class='btn-floating btn-light blue waves-effect' href='../View/actualizar_organizacion.php?org=".base64_encode($row["org_cod_organizacion"])."'>
-                        <i class='small material-icons'>mode_edit</i></a>
 
 
 
