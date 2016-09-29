@@ -1,7 +1,7 @@
 <?php
   require_once ("../Model/conexion.php");
   require_once ("../Model/denuncia.class.php");
-  $denuncia=Gestion_denuncia::ReadAll();
+  $denuncia=Gestion_denuncia::Readto();
 
 
 ?>
@@ -36,7 +36,7 @@
 						<td>".$row["de_nombre"]."</td>
             <td>".$row["de_contacto"]."</td>
             <td>".$row["de_telefono"]."</td>
-            <td>".$row["eve_estado"]."</td>
+            <td>".$row["de_estado"]."</td>
 
 
 

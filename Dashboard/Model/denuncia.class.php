@@ -116,16 +116,16 @@ class Gestion_denuncia{
 
 
 
-			 function Nombres($org_cod_organizacion)
+			 function Readto()
    {
     //para el modificar por cada usuario usuario
     $conexion=floopets_BD::Connect();
     $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    $consulta="SELECT denuncia.*,tipo_denuncia.* FROM tipo_denuncia INNER JOIN denuncia on tipo_denuncia.td_cod_tipo_denuncia=denuncia.td_cod_tipo_denuncia INNER JOIN denuncias_organizacion ON denuncia.de_cod_denuncia=denuncias_organizacion.de_cod_denuncia INNER JOIN organizacion ON denuncias_organizacion.org_cod_organizacion=organizacion.org_cod_organizacion WHERE organizacion.org_cod_organizacion=?";
+    $consulta="SELECT denuncia.*,tipo_denuncia.* FROM tipo_denuncia INNER JOIN denuncia on tipo_denuncia.td_cod_tipo_denuncia=denuncia.td_cod_tipo_denuncia ";
     // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
     $query=$conexion->prepare($consulta);
-    $query->execute(array($org_cod_organizacion));
+    $query->execute(array());
 
 	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
 
@@ -164,23 +164,7 @@ class Gestion_denuncia{
 
 	floopets_BD::Disconnect();
 
-	return $resultado;
-}
-function Todas(){
-
-	//Instanciamos y nos conectamos a la bd
-	$Conexion = floopets_BD::Connect();
-	$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-	//Crear el query que vamos a realizar
-	$consulta = "SELECT tipo_denuncia.*,denuncia.* FROM denuncia INNER JOIN tipo_denuncia ON denuncia.td_cod_tipo_denuncia=tipo_denuncia.td_cod_tipo_denuncia WHERE denuncia.de_estado='Pendiente' AND denuncia.de_estado='Tomada' ";
-	$query = $Conexion->prepare($consulta);
-	$query->execute();
-	//Devolvemos el resultado en un arreglo
-	//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
-	//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
-	$resultado = $query->fetchALL(PDO::FETCH_BOTH);
-	return $resultado;
-	floopets_BD::Disconnect();
+	return $resultado;	
 }
 }
 
