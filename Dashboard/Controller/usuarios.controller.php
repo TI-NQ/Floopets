@@ -56,7 +56,7 @@
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				}
-				header("Location: ../View/gestion_usuarios.php?m= ".$mensaje );
+				header("Location: ../View/dashboard.php?p=".base64_encode("mi_perfil") );
 				break;
 
 		case 'd':
@@ -66,7 +66,8 @@
 		          header("Location: ../View/gestion_usuarios.php?m=".$mensaje);
 		        } catch (Exception $e) {
 		          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-		          header("Location: ../View/gestion_usuarios.php?m=".$mensaje);
+		          header("Location: ../View/dashboard.php?p=".base64_encode("mi_perfil") );
+		          
 		        }
 		      break;
 
