@@ -29,6 +29,8 @@ $adopcion=Gestion_adopcion::ReadAll();
  </script>
  <!-- esto va en el div de la imagen
   -->
+  <div class="row">
+<div class="col l11 offset-l1">
 <?php
 @$mensaje = $_REQUEST["m"];
 echo @$mensaje;
@@ -84,3 +86,5 @@ echo @$mensaje;
 	}
 
 ?>
+</div>
+</div>
