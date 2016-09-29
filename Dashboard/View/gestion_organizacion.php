@@ -6,7 +6,7 @@
 
 require_once("../Model/conexion.php");
 require_once("../Model/organizacion.class.php");
-$organizacion=Gestion_organizacion::ReadAll();
+$organizacion=Gestion_organizacion::Nombres();
  ?>
 
 <table>
@@ -19,7 +19,7 @@ $organizacion=Gestion_organizacion::ReadAll();
 			<td>Email</td>
 			<td>Telefono</td>
 			<td>Direccion</td>
-      <td>Contraseña</td>
+      <td></td>
 
     </tr>
 		<tbody>
@@ -37,11 +37,10 @@ $organizacion=Gestion_organizacion::ReadAll();
 						<td>".$row["org_email"]."</td>
 						<td>".$row["org_telefono"]."</td>
 						<td>".$row["org_direccion"]."</td>
-            			<td>".$row["org_clave"]."</td>
 						<td>
-                    		<a href='../View/actualizar_organizacion.php?ui=".base64_encode($row["org_cod_organizacion"])."'>actualizar</a>
+                    		<a href='../View/actualizar_organizacion.php?org=".base64_encode($row["org_cod_organizacion"])."'>actualizar</a>
 
-                    		<a href='../Controller/organizacion.controller.php?ui=".base64_encode($row["org_cod_organizacion"])."&accion=d'>eliminar</a>
+                    		<a href='../Controller/organizacion.controller.php?org=".base64_encode($row["org_cod_organizacion"])."&accion=d'>eliminar</a>
 
 					</tr>";
 			}
