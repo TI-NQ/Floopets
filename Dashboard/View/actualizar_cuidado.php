@@ -1,11 +1,11 @@
 <?php
 require_once("../Model/conexion.php");
  require_once("../Model/cuidado.class.php");
- $cu =  Gestion_cuidado::ReadbyID(base64_decode($_REQUEST["cu"]));
+ $cu =  Gestion_cuidado::ReadbyID(base64_decode($_REQUEST["cui"]));
 
 // echo $cu[0];
  ?>
-<form action="../Controller/cuidado.controller.php" method="POST" id="form">
+<form action="../Controller/cuidado.controller.php" method="POST" id="form" enctype="multipart/form-data">
 <input type="hidden" readonly name="cu_cod_cuidado" required value="<?php echo $cu[0] ?>">
 	<div class="form-group">
 		<label class="form-label">Nombre</label>

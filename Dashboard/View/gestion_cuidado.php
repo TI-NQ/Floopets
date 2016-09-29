@@ -34,12 +34,11 @@ $cuidado=Gestion_cuidado::ReadAll();
 
 
 			<?php
-			@$mensaje = $_REQUEST["m"];
 
-			echo @$mensaje;
 
 			foreach ($cuidado as $row) {
-
+          $nombre_cuidado = strtolower(str_replace('ñ', 'n', $row["cu_nombre"]));
+         $nombre_cuidado = strtolower(str_replace(' ', '', $nombre_cuidado));
 				echo"
         <div class='col l6 descrip'>
                 <div class='row'>
@@ -50,7 +49,7 @@ $cuidado=Gestion_cuidado::ReadAll();
                       </div>
                       <div class='imagenmascota col l12'>
                           <div style='width:180px ;height:180px ;'>
-                          <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_cuidado/".$row["cu_nombre"]."/".$row["galeria"]."'>
+                           <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_cuidado/".$nombre_cuidado."/".$row["galeria"]."'>
                           </div>
                       </div>
                       <div class='col l6'>
@@ -79,8 +78,7 @@ $cuidado=Gestion_cuidado::ReadAll();
                           <li>".$row["cu_nombre"]."</li>
                       <span>Descripcion:</span>
                             <li>".$row["cu_descripcion"]."</li>
-                      <span>Codigo usuario :</span>
-                            <li>".$row["video"]."</li>
+  
 
 
 
