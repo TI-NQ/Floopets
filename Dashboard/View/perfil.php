@@ -3,6 +3,8 @@
   require_once ("../Model/conexion.php");
   require_once ("../Model/usuarios.class.php");
   $user_data=Gestion_usuarios::ReadbyID($_SESSION["usu_cod_usuario"]);
+  $nombre_usu_imagen= strtolower(str_replace('ñ', 'n', $user_data["usu_email"]));
+  $nombre_usu_imagen = strtolower(str_replace(' ', '', $nombre_usu_imagen));
 ?>
 
 <form action="../Controller/usuarios.controller.php" method="POST">
@@ -14,7 +16,7 @@
     <?php
     echo"
     <img class='responsive-img' style='width:300px ;height:300px ;'
-    src='img/imagen_usuario/".str_replace(" ","",$user_data[5])."/".$user_data[8]."'>
+    src='img/imagen_usuario/".$nombre_usu_imagen."/".$user_data[8]."'>
     ";?>
   </div>
   <div class="col s7 l7" style="margin-top:70px;">

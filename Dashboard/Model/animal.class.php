@@ -135,6 +135,31 @@
 				return $resultado;
 				floopets_BD::Disconnect();
 		}
+		function En_Proceso($ani_cod_animal)
+		{
+			//Instanciamos y nos conectamos a la bd
+			$Conexion = floopets_BD::Connect();
+			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			//Crear el query que vamos a realizar
+			$consulta = "UPDATE animal SET ani_estado='En Proceso' WHERE ani_cod_animal = ?" ;
+			$query = $Conexion->prepare($consulta);
+			$query->execute(array($ani_cod_animal));
+			floopets_BD::Disconnect();
+			
+		}
+			function solicitar($org_cod_organizacion, $usu_cod_usuario,$ani_cod_animal){
+
+		//Instanciamos y nos conectamos a la bd
+		$Conexion = floopets_BD::Connect();
+		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+		//Crear el query que vamos a realizar
+		$consulta = "INSERT INTO organizacion_usuario (org_cod_organizacion, usu_cod_usuario, ani_cod_animal) VALUES (?,?,?)";
+
+		$query = $Conexion->prepare($consulta);
+		$query->execute(array($org_cod_organizacion, $usu_cod_usuario, $ani_cod_animal));
+
+		floopets_BD::Disconnect();
+	}
 
 	}
 ?>

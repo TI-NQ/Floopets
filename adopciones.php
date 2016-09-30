@@ -149,11 +149,14 @@ if(isset($_GET["pet"])){
             <div class="mascota">
               <img src="Dashboard/View/img/imagen_animal/<?php echo $row["ani_carpeta"]."/".$row["ani_imagen"]?>">
             </div>
+            <form action="Dashboard/Controller/animal.controller.php" >
             <div class="detalle">
               <h5><?php echo $row["ani_nombre"]; ?></h5>
               <p>Edad: <?php echo $row["ani_edad"]; ?></p>
-              <button class="waves-effect waves-light btn">ADOPTAR</button>
+
+             <?php echo "<a class='btn waves-effect blue lighten-3' href='Dashboard/Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=enproceso'>Tomar</a>" ; ?>
             </div>
+            </form>
           </div>
         <?php
         }

@@ -16,6 +16,18 @@
   <!-- <div id="fback"> -->
   <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script type="text/javascript" src="WebFloopets/sweetalert/dist/sweetalert.min.js"></script>
+<script >
+          $(document).ready(function()
+        {
+          <?php
+            if(isset($_GET["m"]) and isset($_GET["tm"]))
+            {
+              echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
+            }
+           ?>
+        });
+        
+      </script>
 </head>
 <body>
   <script type="text/javascript">

@@ -118,6 +118,7 @@
 			</div>
 			<!-- Andrea Guzman-Adopciones -->
 			<div class="row seccion1" id="adopciones">
+			
 				<div class="container__perros col s12 m6 l6">
 
 					<div id="conteadop">

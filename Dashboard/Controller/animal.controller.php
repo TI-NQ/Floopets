@@ -2,6 +2,7 @@
 	session_start();
 	require_once("../Model/conexion.php");
 	require_once("../Model/animal.class.php");
+	require_once("../Model/usuarios.class.php");
 
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
@@ -73,6 +74,20 @@
 			}
 			header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje&tm=$tipo_mensaje");
 			break;
+			case 'enproceso':
+			$animal =  Gestion_animal::ReadbyID(base64_decode($_REQUEST["an"]));
+					
+			try {
+				Gestion_animal::En_Proceso($animal[0]);
+          $mensaje = base64_encode("Se elimino correctamente");
+					$tipo_mensaje=base64_encode("success");
+         // header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje&tm=$tipo_mensaje");
+        } catch (Exception $e) {
+          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
+         // header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
+        }
+			break;
+
 
 		case 'd':
 			try {
@@ -84,7 +99,6 @@
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
           header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
         }
-
 			break;
 	}
 
