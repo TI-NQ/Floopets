@@ -26,11 +26,13 @@
 		<link rel="stylesheet" type="text/css" href="WebFloopets/css/estilos.css">
 		<link rel="stylesheet" type="text/css" href="WebFloopets/css/owl.carousel.css">
 		<link rel="stylesheet" type="text/css" href="WebFloopets/css/owl.theme.css">
+		<link rel="stylesheet" type="text/css" href="WebFloopets/sweetalert/dist/sweetalert.css">
 		<!--Import jQuery before materialize.js-->
 		<script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js"></script>
 		<script type="text/javascript" src="WebFloopets/materialize/js/materialize.js"></script>
 		<script type="text/javascript" src ="WebFloopets/js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="WebFloopets/js/wow.js"></script>
+		  <script type="text/javascript" src="WebFloopets/sweetalert/dist/sweetalert.min.js"></script>
 		<script type="text/javascript">
 			wow = new WOW({
 				boxClass:     'wow',
@@ -76,6 +78,17 @@
 				$(".drag-target").click(function(){
 					$("#hamburger-menu").removeClass("open");
 				})
+			});
+			</script>
+			<script>
+			$(document).ready(function()
+			{
+				<?php
+					if(isset($_GET["m"]) and isset($_GET["tm"]))
+					{
+						echo "swal('".($_GET["m"])."','','".($_GET["tm"])."');";
+					}
+				 ?>
 			});
 			</script>
 		</head>

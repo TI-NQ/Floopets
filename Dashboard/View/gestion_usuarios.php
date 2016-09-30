@@ -7,7 +7,7 @@ require_once("../Model/conexion.php");
 require_once("../Model/usuarios.class.php");
 $user=Gestion_usuarios::ReadAll();
  ?>
-<div class="container">
+<div >
 
 <table id="datatable" class="display highlight centered responsive-table bordered">
 	<thead>
@@ -24,9 +24,7 @@ $user=Gestion_usuarios::ReadAll();
 		</tr>
 		<tbody>
 			<?php
-			@$mensaje = $_REQUEST["m"];
 
-			echo @$mensaje;
 
 			foreach ($user as $row) {
 
@@ -40,9 +38,9 @@ $user=Gestion_usuarios::ReadAll();
             <td>".$row["rol_nombre"]."</td>
             <td>".$row["usu_clave"]."</td>
 						<td>
-                    		<a href='../View/actualizar_usuario.php?us=".base64_encode($row["usu_cod_usuario"])."'>actualizar</a>
 
-                    		<a href='../Controller/usuarios.controller.php?us=".base64_encode($row["usu_cod_usuario"])."&accion=d'>eliminar</a>
+<a class='btn-floating waves-light waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_usuario')."&us=".base64_encode($row["usu_cod_usuario"])."'><i class='small material-icons'>edit</i></a>
+                    		<a class='btn-floating waves-light red waves-effect' href='../Controller/usuarios.controller.php?us=".base64_encode($row["usu_cod_usuario"])."&accion=d'><i class='small material-icons'>delete</i></a>
 
 					</tr>";
 			}

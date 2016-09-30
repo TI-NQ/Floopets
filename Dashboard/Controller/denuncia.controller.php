@@ -26,11 +26,12 @@
 					include("Upload_de_image.php");
 				}
 				Gestion_denuncia::Create($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen[0]);
-				$mensaje = "Se creo exitosamente";
+				$mensaje = "Su denuncia se creo exitosamente, en breve sera tomada por una fundacion.";
+        $tipo_mensaje = "info";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("Gestion_denuncia"));
+			header ("Location: ../../index.php?m=$mensaje&tm=$tipo_mensaje");
 
 			break;
 			case 'u':

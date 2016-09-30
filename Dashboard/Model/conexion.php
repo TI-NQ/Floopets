@@ -7,9 +7,9 @@ class floopets_BD{
 	//Static = puedo utilizar esta variable o metodo sin necesidad de instanciar una clase.
 
 	private static $db_host = "localhost";
-	private static $db_name = "floopets";
+	private static $db_name = "bsstudio_floopets";
 	private static $db_user = "root";
-	private static $db_pass = "1037571915";
+	private static $db_pass = "";
 
 	private static $conn = null;
 

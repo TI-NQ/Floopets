@@ -10,11 +10,11 @@ require_once("../Model/conexion.php");
  ?>
 <form action="../Controller/animal.controller.php" method="POST" enctype="multipart/form-data" id="form">
   <input type="hidden" readonly name="ani_cod_animal" required value="<?php echo $animal[0] ?>">
-  <input name="org_cod_organizacion" value="<?php  $mi_organizacion[1]?>" hidden>
+
 	<div class="form-group">
 		<input class="form-control" type="hidden" name="ra_cod_raza" required  value="<?php echo $animal[1] ?>">
 		<input class="form-control" type="hidden" name="org_cod_organizacion" required  value="<?php echo $animal[10] ?>">
-	</div> 
+	</div>
 	<div class="input-field col s6">
 		<label class="form-label">Nombre</label>
 		<input class="form-control" type="text" name="ani_nombre" value="<?php echo $animal[2] ?>" required>
@@ -47,8 +47,8 @@ require_once("../Model/conexion.php");
 		<label class="form-label">Descripcion</label>
 		<input class="form-control" type="text" name="ani_descripcion" value="<?php echo $animal[7] ?>"required>
 	</div>
-    
-    
+
+
 
 <div class="input-field col s6">
 <h4>sexo</h4>
@@ -60,7 +60,7 @@ require_once("../Model/conexion.php");
     <input name="ani_sexo[]" value="<?php echo $animal[9] ?>"type="radio" id="Hembra" />
     <label for="Hembra">Hembra</label>
   </p>
-  	
+
 	</div>
 	<div class="file-field input-field col s12">
 				<div class="btn">
@@ -68,7 +68,7 @@ require_once("../Model/conexion.php");
 					<input type="file" name="ani_imagen[]" class="form-control">
 				</div>
 				<div class="file-path-wrapper form-group">
-					<input class="form-control file-path validate"  type="text" placeholder="Puede ingresas mas de una imagen" name="ani_imagen" value="<?php echo $animal[11] ?>">
+					<input class="form-control file-path validate"  type="text" placeholder="Puede ingresas mas de una imagen" name="ani_imagen" value="<?php echo $animal[1] ?>">
 				</div>
 			</div>
 

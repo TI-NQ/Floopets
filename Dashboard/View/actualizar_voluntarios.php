@@ -3,7 +3,7 @@ require_once("../Model/conexion.php");
  require_once("../Model/voluntarios.class.php");
  $voluntarios =  gestion_voluntarios::ReadById(base64_decode($_REQUEST["vo"]));
  ?>
-<form action="../Controller/voluntarios.controller.php" method="POST" id="form">
+<form action="../Controller/voluntarios.controller.php" method="POST" id="form" enctype="multipart/form-data">
   <div class="form-group">
   <input type="text" name="vo_cod_voluntario" value="<?php echo $voluntarios[0]?>"hidden/>
   </div>
@@ -21,8 +21,8 @@ require_once("../Model/conexion.php");
 	</div>
   <div class="file-field input-field col s12 m6">
       <div class="btn">
-        <span>Galeria</span>
-        <input type="file" multiple name="Imagen_Upload[]">
+        <span>Foto</span>
+        <input type="file" multiple name="vo_imagen[]">
       </div>
       <div class="file-path-wrapper">
         <input class="file-path validate"  type="text" placeholder="foto" name="vo_imagen" value="<?php echo $voluntarios[4] ?>" >

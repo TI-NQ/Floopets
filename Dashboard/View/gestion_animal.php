@@ -44,6 +44,7 @@
    //     $result = $con->query($consulta);
 
     foreach ($animal as $row) {
+      
         echo"<div class='col l6 descrip'>
             <div class='row'>
               <div class='col l6 col m6'>

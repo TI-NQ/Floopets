@@ -45,7 +45,6 @@
 			case 'u':
 				$ani_cod_animal 		= $_POST["ani_cod_animal"];
 				$ra_cod_raza			= $_POST["ra_cod_raza"];
-				$org_cod_organizacion	= $_POST["org_cod_organizacion"];
 				$ani_nombre             = $_POST["ani_nombre"];
 				$ani_color				= $_POST["ani_color"];
 				$ani_tamanio			= $_POST["ani_tamanio"];
@@ -66,7 +65,7 @@
 					include("Upload_ani_image.php");
 				}
 
-				Gestion_animal::Update($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta);
+				Gestion_animal::Update($ani_cod_animal,$ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$ani_imagen,$ani_carpeta);
 				$mensaje = base64_encode("Se actualizo exitosamente");
 				$tipo_mensaje = base64_encode("success");
 			} catch (Exception $e) {

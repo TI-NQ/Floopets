@@ -37,13 +37,13 @@
       $_SESSION["usu_cedula"]       = $usuario[4];
       $_SESSION["usu_email"]        = $usuario[5];
       $_SESSION["cod_rol"]         = $usuario[6];
-      if($usuario[6]==4 || $usuario[6]==6){
+      if($usuario[6]==5 || $usuario[6]==7){
         $page = "../View/dashboard.php?p=".base64_encode("mi_perfil")."&m=".$msn;
         header("Location: $page");
       }
       // $page = "../View/dashboard.php?p=".base64_encode("mi_perfil")."&m=".$msn;
 
-      elseif($_SESSION["cod_rol"] == 5){
+      elseif($_SESSION["cod_rol"] == 6){
             $organizacion = Gestion_usuarios::tieneorganizacion($_SESSION["usu_cod_usuario"]);
 
             if(($organizacion[0] == "")OR($organizacion[0] == null)){

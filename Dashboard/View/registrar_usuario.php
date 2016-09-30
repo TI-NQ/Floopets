@@ -6,7 +6,7 @@
  ?>
 <h2 class="center">Registro usuarios</h2>
 				<form id="form"action="../Controller/usuarios.controller.php" method="POST">
-				 <input type="hidden" value="1" name="cod_rol"/>
+				 <input type="hidden" value="5" name="cod_rol"/>
 					<div class="form-group">
 						<label class="form-label">Nombre :</label>
 						<input class="form-control" type="text" name="usu_nombre" required>
