@@ -1,5 +1,6 @@
 <?php
 	require_once("../Model/conexion.php");
+    require_once("../Model/donacion.php");
 	require_once("../Model/organizacion.class.php");
 	require_once("../Model/tipo_donacion.class.php");
 	$tipo_donacion = Gestion_tipo_donacion::ReadAll();
@@ -19,30 +20,30 @@
 </div>
 <form id="form" action="../Controller/donacion.controller.php" method="POST" enctype="multipart/form-data">
 <div class="form-group">
-        <label>asunto</label>
+        <label>Asunto</label>
         <input type="text" name="don_nombre"></input>
     </div>
 	<div class="form-group">
-		<label>descripcion</label>
+		<label>Descripcion</label>
 		<input type="text" name="don_descripcion"></input>
 	</div>
     <div class="form-group">
-        <label>fecha</label>
+        <label>Fecha</label>
         <input type="date" name="don_fecha"></input>
     </div>
     <div class="file-field input-field col s12 m6">
        <div class="btn">
-         <span>imagen</span>
-         <input type="file" multiple name="don_imagen[]">
+         <span>Imagen</span>
+         <input type="file" class="form-control" name="don_imagen[]">
        </div>
        <div class="file-path-wrapper">
-         <input class="file-path validate"  type="text" placeholder="" name="don_imagen">
+         <input class="form-control file-path validate"  type="text" placeholder="" name="don_imagen">
        </div>
     </div>
 
 		<div class="form-group">
                         <select  Required name="org_cod_organizacion">
-                            <option value="" disabled selected>organizacion</option>
+                            <option value="" disabled selected>Organizacion</option>
                             <?php
                                  // Cargo la bd
                                  require_once("../Model/conexion.php");
@@ -60,7 +61,7 @@
                     </div>
                     <div class="form-group">
                         <select  Required name="td_cod_tipo_donacion">
-                            <option value="" disabled selected>tipo donacion</option>
+                            <option value="" disabled selected>Tipo donacion</option>
                             <?php
                                  // Cargo la bd
                                  require_once("../Model/conexion.php");
@@ -78,7 +79,7 @@
                     </div>
                     <div class="form-group">
                         <select   name="usu_cod_usuario">
-                            <option value="" disabled selected>usuario</option>
+                            <option value="" disabled selected>Usuario</option>
                             <?php
                                  // Cargo la bd
                                  require_once("../Model/conexion.php");

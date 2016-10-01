@@ -39,6 +39,9 @@ switch ($page) {
 	case 'gestion_donaciones':
 		require_once ("gestion_donacion.php");
 	break;
+	case 'nueva_donacion':
+		require_once ("registrar_donacion.php");
+	break;
 	//Componente de pagina que vinculara informacion sobre todas las denuncias realizadas y en esta las fundaciones podran escoger si dan seguimiento a la denuncia
 	case 'denuncias':
 		require_once("Gestion_denuncia.php");

@@ -9,7 +9,7 @@
 		case 'c':
 
 			// $usu_cod_usuario		= $_POST["usu_cod_usuario"];
-			$usu_cod_usuario				=$_POST["usu_cod_usuario"];
+			// $usu_cod_usuario				=$_POST["usu_cod_usuario"];
 			$usu_nombre 						= $_POST["usu_nombre"];
 			$usu_apellido 					=$_POST["usu_apellido"];
 			$usu_email							=$_POST["usu_email"];

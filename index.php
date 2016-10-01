@@ -229,8 +229,8 @@
 				</div>
 				<div class="container__historias col s12 m6 l6">
 	      		    <div id="conteadop">
-					    <p class="wow fadeInDown">Historias</p>
-					<button class="boton1 btn  waves-effect waves-light btn-large wow fadeInDown">Ver mas...</button>
+					    <p class="wow fadeInDown">¿Quieres ayudar a nuestras fundaciones amigas con una donación?, llena el formulario y se pondran en contacto contigo...</p>
+					<a href="login.php" class="boton1 btn  waves-effect waves-light btn-large wow fadeInDown">¡Quiero ayudar!</a>
 					</div>
 					<img src="WebFloopets/images/5.jpg" class="wow fadeInRight">
 				</div>
