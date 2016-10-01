@@ -13,7 +13,7 @@
 				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen));
 				floopets_BD::Disconnect();
 		}
-		
+
 		function Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen)
 			{
 				//Instanciamos y nos conectamos a la bd
@@ -93,7 +93,7 @@
 
 		}
 
-		
+
 
 		function Delete($usu_cod_usuario)
 		{
@@ -141,6 +141,22 @@
 				return $resultado;
 				floopets_BD::Disconnect();
 	}
+	function reademail($usu_email)
+		{
+			//Instanciamos y nos conectamos a la bd
+			$Conexion = floopets_BD::Connect();
+			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			//Crear el query que vamos a realizar
+			$consulta = "SELECT * FROM usuario WHERE usu_email=?";
+			$query = $Conexion->prepare($consulta);
+			$query->execute(array($usu_email));
+			//Devolvemos el resultado en un arreglo
+			//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+			//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+			$resultado = $query->fetch(PDO::FETCH_BOTH);
+			return $resultado;
+			floopets_BD::Disconnect();
+}
 	function tieneorganizacion($usu_cod_usuario){
       $Conexion = floopets_BD::Connect();
       $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);

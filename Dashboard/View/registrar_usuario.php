@@ -1,44 +1,160 @@
- <?php
-	if(isset($_GET["msn"]))
-	{
-		echo "swal( '".$_GET["msn"]."','', 'success');";
-	}
- ?>
-<h2 class="center">Registro usuarios</h2>
-				<form id="form"action="../Controller/usuarios.controller.php" method="POST">
-				 <input type="hidden" value="5" name="cod_rol"/>
-					<div class="form-group">
-						<label class="form-label">Nombre :</label>
-						<input class="form-control" type="text" name="usu_nombre" required>
-					</div>
-				  <div class="form-group">
-						<label class="form-label">Apellido :</label>
-						<input class="form-control" type="text" name="usu_apellido" required>
-					</div>
-				  <div class="form-group">
-						<label class="form-label">Telefono :</label>
-						<input class="form-control" type="number" name="usu_telefono" required>
-					</div>
-				  <div class="input-field col s12 m12">
-	                <input id="Cc" type="number" name="cedula" required>
-	                <label for="Cc">Documento de identidad*</label>
-	                <span id="resultadobusqueda" class="red-text accent-3 left"> </span>
-              </div>
-				  <div class="form-group">
-						<label class="form-label">Email :</label>
-						<input class="form-control" type="email" name="usu_email" required>
-					</div>
-					<div class="form-group">
-						<label>Contraseña:</label>
-						<input name="usu_clave" type="password" required class="form-control">
-					</div>
-					<div class="file-field input-field col s12">
+<script type="text/javascript">
+$(document).ready(function()
+{
+$("#Cc").change(function()
+{
+    var usuario = $("#Cc").val();
+    var accion = "existe_usuario";
+    $.post("../Controller/usuarios.controller.php", {Cc: usuario, accion: accion},
 
-		    <div class="file-path-wrapper">
-		      <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="usu_imagen"  >
-		    </div>
-		  </div>
-					<div class="form-group">
-						<button id="boton" name="accion" value="c" class="btn btn-primary" style="width: 100%">Registrar</button>
-					</div>
-				</form>
+    function(result)
+    {
+        $("#resultadobusqueda").html(result.msn);
+        if(result.ue == true)
+        {
+          $(".boton").prop("disabled",true);
+        }else{
+          $(".boton").prop("disabled",false);
+        }
+    }, "json");
+});
+$("#email").change(function()
+{
+    var email = $("#email").val();
+    var accion = "valida_correo";
+    $.post("../Controller/usuarios.controller.php", {em: email, accion: accion},
+
+    function(result)
+    {
+        $("#confirmaemail").html(result.m);
+        if(result.emi == true)
+        {
+          $(".boton").prop("disabled",true);
+        }else{
+          $(".boton").prop("disabled",false);
+        }
+    }, "json");
+});
+});
+</script>
+<script type="text/javascript">
+function correo() {
+  nombre = $('#nombre').val();
+  apellido = $('#apellido').val();
+  telefono = $('#telefono').val();
+  Cc = $('#Cc').val();
+  email = $('#email').val();
+  expresion = /\w+@\w+\.+[a-z]/;
+  if (nombre == "") {
+    $("#confirman").text("Este campo es obligatorio");
+    $('#nombre').focus();
+    return false;
+  }if(nombre != "") {
+    $("#confirman").text("");
+  }if (apellido == "") {
+    $("#confirmaa").text("Este campo es obligatorio");
+    $('#apellido').focus();
+    return false;
+  }if(apellido != "") {
+    $("#confirmaa").text("");
+  }
+  if (telefono == "") {
+    $("#confirmat").text("Este campo es obligatorio");
+    $('#telefono').focus();
+    return false;
+  }if(telefono != "") {
+    $("#confirmat").text("");
+  }if (Cc == "") {
+    $("#resultadobusqueda").text("Este campo es obligatorio");
+    $('#Cc').focus();
+    return false;
+  }if(Cc != "") {
+    $("#resultadobusqueda").text("");
+  }if (email == "") {
+    $("#confirmaemail").text("Este campo es obligatorio");
+    $('#email').focus();
+    return false;
+  }if(email != "") {
+    $("#confirmaemail").text("");
+  }
+  if(!expresion.test(email)){
+    $("#confirmaemail").text("Por favor ingrese un correo valido. Ejemplo (floopets@mascotas.com)");
+    $('#email').focus();
+    return false;
+  }else {
+    return true;
+  }
+}
+function validar(e) {
+tecla = (document.all) ? e.keyCode : e.which;
+if (tecla==8) return true;
+patron =/[A-Za-z\s]/;
+te = String.fromCharCode(tecla);
+return patron.test(te);
+}
+function solonumeros(e)
+  {
+  var keynum = window.event ? window.event.keyCode : e.which;
+  if ((keynum == 8) || (keynum == 46))
+  return true;
+  return /\d/.test(String.fromCharCode(keynum));
+};
+
+
+</script>
+     <h2 class="center animated zoomIn" style="background-color:#eee;">Nuevo usuario</h2>
+   <form id="form" class="col s12 animated zoomIn" action="../Controller/usuarios.controller.php" method="POST" enctype="multipart/form-data">
+
+     <div class="row">
+      <input type="hidden" value="5" name="cod_rol"/>
+       <div class="input-field col s6">
+         <input id="nombre" name="usu_nombre" type="text" class="validate" required onkeypress="return validar(event)">
+         <label for="nombre">Nombre</label>
+         <span id="confirman" class="red-text accent-3 left"></span>
+       </div>
+       <div class="input-field col s6">
+         <input id="apellido" type="text" name="usu_apellido" class="validate" required onkeypress="return validar(event)">
+         <label for="apellido">Apellido</label>
+         <span id="confirmaa" class="red-text accent-3 left"></span>
+       </div>
+       <div class="input-field col s12 m12" style="height:5px;">
+
+       </div>
+       <div class="input-field col s6">
+         <input class="col s12" id="telefono" type="text" name="usu_telefono" class="validate" required onkeypress="return solonumeros(event)">
+         <label for="telefono">Telefono</label>
+         <span id="confirmat" class="red-text accent-3 left"></span>
+       </div>
+       <div class="input-field col s6">
+         <input id="Cc" id="usu_cedula" type="text" class="validate" name="usu_cedula" required onkeypress="return solonumeros(event)">
+         <label for="usu_cedula">Documento de identidad</label>
+         <span id="resultadobusqueda" class="red-text accent-3 left"></span>
+     </div>
+     <div class="input-field col s12 m12" style="height:5px;">
+
+     </div>
+       <div class="input-field col s12">
+         <input id="email" type="email" name="usu_email" class="validate" required>
+         <label for="email">Correo Electronico</label>
+         <span id="confirmaemail" class="red-text accent-3 left"></span>
+       </div>
+
+       <div class="input-field col s6">
+         <input id="contraseña" type="password" name="usu_clave" class="validate" value="1234" hidden>
+         <!-- <label for="contraseña">Contraseña</label> -->
+       </div>
+       <div class="file-field input-field col s12 m12 form-group" style="margin-top:10px;">
+      <div class="btn left" id="btnlogin">
+        <span>imagen</span>
+        <input type="file" multiple name="usu_imagen[]" class="form-control">
+      </div>
+      <div class="file-path-wrapper form-group">
+        <input class="form-control file-path validate"  type="text" placeholder="" name="usu_imagen" >
+      </div>
+   </div>
+
+       <div class="col s11" >
+         <button class="waves-effect waves-light btn boton right" name="accion" id="btnlogin" value="c" onclick="return correo()">Registrar</button>
+       </div>
+     </div>
+   </form>

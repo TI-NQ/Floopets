@@ -26,22 +26,70 @@
             }
            ?>
         });
-        
+
       </script>
 </head>
 <body>
   <script type="text/javascript">
   function correo() {
-    email = document.getElementById('email').value;
+    nombre = $('#nombre').val();
+    apellido = $('#apellido').val();
+    telefono = $('#telefono').val();
+    Cc = $('#Cc').val();
+    email = $('#emailr').val();
+    contraseña=$('#contraseña').val();
+    contrase2=$('#validacontra').val();
     expresion = /\w+@\w+\.+[a-z]/;
-    if (!expresion.test(email)){
-      swal({
-        title: "Mensaje de FLOOPETS",
-        text:"Por favor ingrese un correo valido. Ejemplo (floopets@mascotas.com) ",
-        type: "info",
-      });
-      document.getElementById('email').focus();
+    if (nombre == "") {
+      $("#confirman").text("Este campo es obligatorio");
+      $('#nombre').focus();
       return false;
+    }if(nombre != "") {
+      $("#confirman").text("");
+    }if (apellido == "") {
+      $("#confirmaa").text("Este campo es obligatorio");
+      $('#apellido').focus();
+      return false;
+    }if(apellido != "") {
+      $("#confirmaa").text("");
+    }
+    if (telefono == "") {
+      $("#confirmat").text("Este campo es obligatorio");
+      $('#telefono').focus();
+      return false;
+    }if(telefono != "") {
+      $("#confirmat").text("");
+    }if (Cc == "") {
+      $("#resultadobusqueda").text("Este campo es obligatorio");
+      $('#Cc').focus();
+      return false;
+    }if(Cc != "") {
+      $("#resultadobusqueda").text("");
+    }if (email == "") {
+      $("#confirmaemail").text("Este campo es obligatorio");
+      $('#emailr').focus();
+      return false;
+    }if(email != "") {
+      $("#confirmaemail").text("");
+    }if (contraseña == "") {
+      $("#confirmacontras").text("Este campo es obligatorio");
+      $('#contraseña').focus();
+      return false;
+    }if(contraseña != "") {
+      $("#confirmacontras").text("");
+    }
+
+    if (contrase2 != contraseña) {
+      $("#validac").text("Las contraseñas no coinciden");
+      $('#validacontra').focus();
+      return false;
+    }
+    if(!expresion.test(email)){
+      $("#confirmaemail").text("Por favor ingrese un correo valido. Ejemplo (floopets@mascotas.com)");
+      $('#emailr').focus();
+      return false;
+    }else {
+      return true;
     }
   }
   function validar(e) {
@@ -51,28 +99,23 @@
   te = String.fromCharCode(tecla);
   return patron.test(te);
   }
-  function justNumbers(e)
+  function solonumeros(e)
     {
     var keynum = window.event ? window.event.keyCode : e.which;
     if ((keynum == 8) || (keynum == 46))
     return true;
-
     return /\d/.test(String.fromCharCode(keynum));
-    }
+  };
+
+
   </script>
   <script type="text/javascript">
       $(document).ready(function()
       {
         $('.modal-trigger').leanModal();
         $('.boton').prop('disabled', true);
-        <?php
-          if(isset($_GET["m"]) and isset($_GET["tm"]))
-          {
-            echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
-          }
-         ?>
         <!-- //ajax -->
-         $("#Cc").keyup(function()
+         $("#Cc").change(function()
          {
              var usuario = $("#Cc").val();
              var accion = "existe_usuario";
@@ -81,12 +124,6 @@
              function(result)
              {
                  $("#resultadobusqueda").html(result.msn);
-                 if(result.ue == true)
-                 {
-                   $(".boton").prop("disabled",true);
-                 }else{
-                   $(".boton").prop("disabled",false);
-                 }
              }, "json");
          });
          $( '#terminoscheck' ).on( 'change', function() {
@@ -95,6 +132,31 @@
            }else{
              $('.boton').prop('disabled', true);
            }
+ });
+ $("#emailr").change(function()
+ {
+     var email = $("#emailr").val();
+     var accion = "valida_correo";
+     $.post("Dashboard/Controller/usuarios.controller.php", {em: email, accion: accion},
+
+     function(result)
+     {
+         $("#confirmaemail").html(result.m);
+         if(result.emi == true)
+         {
+           $(".boton").prop("disabled",true);
+         }
+     }, "json");
+ });
+ $('#validacontra').keyup(function(){
+   var contra = $('#contraseña').val();
+   var contra2 = $('#validacontra').val();
+   if (contra2 != contra) {
+     $("#validac").text("Las contraseñas no coinciden");
+     return false;
+   }else {
+     $("#validac").text("");
+   }
  });
       })
   </script>
@@ -111,35 +173,45 @@
           <div class="row">
             <form class="col s12" action="Dashboard/Controller/usuarios.controller.php" method="POST" enctype="multipart/form-data">
               <div class="row">
-               <input type="hidden" value="1" name="cod_rol"/>
+               <input type="hidden" value="5" name="cod_rol"/>
                 <div class="input-field col s6">
                   <input id="nombre" name="usu_nombre" type="text" class="validate" required onkeypress="return validar(event)">
                   <label for="nombre">Nombre</label>
+                  <span id="confirman" class="red-text accent-3 col s12 left"></span>
                 </div>
                 <div class="input-field col s6">
                   <input id="apellido" type="text" name="usu_apellido" class="validate" required onkeypress="return validar(event)">
                   <label for="apellido">Apellido</label>
+                  <span id="confirmaa" class="red-text accent-3 col s12 left"></span>
                 </div>
                 <div class="input-field col s6">
-                  <input class="col s12" id="telefono" type="text" name="usu_telefono" class="validate" required onkeypress="return justNumbers(event);">
+                  <input class="col s12" id="telefono" type="text" name="usu_telefono" class="validate" required onkeypress="return solonumeros(event);">
                   <label for="telefono">Telefono</label>
+                  <span id="confirmat" class="red-text accent-3 col s12 left"></span>
                 </div>
                 <div class="input-field col s6">
-                  <input id="Cc" id="usu_cedula" type="text" class="validate" name="usu_cedula" required onkeypress="return justNumbers(event);">
+                  <input id="Cc" id="usu_cedula" type="text" class="validate" name="usu_cedula" required onkeypress="return solonumeros(event);">
                   <label for="usu_cedula">Documento de identidad</label>
-                  <span id="resultadobusqueda" class="red-text accent-3 left"></span>
+                  <span id="resultadobusqueda" class="red-text accent-3 col s12 left"></span>
               </div>
-              <div class="input-field col s12 m12" style="height:5px;">
+              <!-- <div class="input-field col s12 m12" style="height:5px;">
 
-              </div>
+              </div> -->
                 <div class="input-field col s12">
-                  <input id="email" type="email" name="usu_email" class="validate" required>
-                  <label for="email">Correo Electronico</label>
+                  <input id="emailr" type="email" name="usu_email" class="validate" required>
+                  <label for="emailr">Correo Electronico</label>
+                  <span id="confirmaemail" class="red-text accent-3 col s12 left"></span>
                 </div>
 
                 <div class="input-field col s12">
                   <input id="contraseña" type="password" name="usu_clave" class="validate" required>
                   <label for="contraseña">Contraseña</label>
+                  <span id="confirmacontras" class="red-text accent-3 col s12 left"></span>
+                </div>
+                <div class="input-field col s12">
+                  <input id="validacontra" type="password" class="validate" required>
+                  <label for="contraseña">Vuelve a escribir la contraseña</label>
+                  <span id="validac" class="red-text accent-3 col s12"></span>
                 </div>
                 <div class="file-field input-field col s12 m12 form-group" style="margin-top:10px;">
                <div class="btn" id="btnlogin" >

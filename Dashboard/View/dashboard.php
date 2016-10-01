@@ -49,7 +49,7 @@ if(!isset($_SESSION["usu_cod_usuario"])){
 	      	{
 	        	"url": "https://cdn.datatables.net/plug-ins/1.10.11/i18n/Spanish.json"
 	      	},
-	      	"iDisplayLength": 5
+	      	"iDisplayLength": 4
 	    	})
 			$(".dropdown-button").dropdown();
 	      	$('.modal-trigger').leanModal();
@@ -71,6 +71,11 @@ if(!isset($_SESSION["usu_cod_usuario"])){
             if(isset($_GET["m"]) and isset($_GET["tm"]))
             {
               echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
+            }elseif (isset($_GET["m"]))
+          	{
+              ?>swal({   title: '<?php echo base64_decode($_GET["m"]);?>', timer: 800,   showConfirmButton: false });
+              <?php
+
             }
            ?>
         });

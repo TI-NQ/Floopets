@@ -26,7 +26,7 @@
     }else{
 
       // Creamos variables de SESSION
-      $msn="Bienvenido ".$usuario[1]." ".$usuario[2];
+      $msn=base64_encode("Bienvenido ".$usuario[1]." ".$usuario[2]);
 
 
 
@@ -38,7 +38,7 @@
       $_SESSION["usu_email"]        = $usuario[5];
       $_SESSION["cod_rol"]         = $usuario[6];
       if($usuario[6]==5 || $usuario[6]==7){
-        $page = "../View/dashboard.php?p=".base64_encode("mi_perfil")."&m=".$msn;
+        $page = "../View/dashboard.php?p=".base64_encode("mi_perfil")."&m=$msn";
         header("Location: $page");
       }
       // $page = "../View/dashboard.php?p=".base64_encode("mi_perfil")."&m=".$msn;
