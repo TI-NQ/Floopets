@@ -3,9 +3,9 @@
 -- http://www.phpmyadmin.net
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 29-09-2016 a las 02:31:02
--- Versión del servidor: 10.1.13-MariaDB
--- Versión de PHP: 5.6.20
+-- Tiempo de generación: 03-10-2016 a las 01:56:59
+-- Versión del servidor: 10.1.9-MariaDB
+-- Versión de PHP: 5.6.15
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -19,8 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `floopets`
 --
-CREATE DATABASE IF NOT EXISTS `floopets` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `floopets`;
 
 -- --------------------------------------------------------
 
@@ -28,7 +26,6 @@ USE `floopets`;
 -- Estructura de tabla para la tabla `adopcion`
 --
 
-DROP TABLE IF EXISTS `adopcion`;
 CREATE TABLE `adopcion` (
   `ado_cod_adopcion` int(11) NOT NULL,
   `ani_cod_animal` int(11) NOT NULL,
@@ -50,7 +47,6 @@ INSERT INTO `adopcion` (`ado_cod_adopcion`, `ani_cod_animal`, `usu_cod_usuario`,
 -- Estructura de tabla para la tabla `animal`
 --
 
-DROP TABLE IF EXISTS `animal`;
 CREATE TABLE `animal` (
   `ani_cod_animal` int(11) NOT NULL,
   `ra_cod_raza` int(11) NOT NULL,
@@ -64,17 +60,18 @@ CREATE TABLE `animal` (
   `ani_sexo` varchar(30) NOT NULL,
   `org_cod_organizacion` int(11) NOT NULL,
   `ani_imagen` longtext NOT NULL,
-  `ani_carpeta` varchar(80) NOT NULL
+  `ani_carpeta` varchar(80) NOT NULL,
+  `ani_estado` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Volcado de datos para la tabla `animal`
 --
 
-INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_color`, `ani_tamanio`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`, `ani_imagen`, `ani_carpeta`) VALUES
-(14, 6, 'apoloa', '', '', 'no', 12, 'asjfajsdj', '5451', 'M', 2, '', ''),
-(23, 6, 'apoloñaa', 'morado', 'grande', 'si', 18, 'asfasdf', '285545', 'on', 11, '__until_the_bitter_end_fukuwa_render___by_akizayasdynamite-d4tu1yd.png', 'apolonaa1789'),
-(27, 6, 'gojan', 'blanco', 'grande', '', 18, 'asfasdf', '285545', 'on', 11, '3490f9fa8cf0a9131f19e7a8f390e2e0.jpg', 'gojan1014');
+INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_color`, `ani_tamanio`, `ani_esterilizado`, `ani_edad`, `ani_descripcion`, `ani_numero_microchip`, `ani_sexo`, `org_cod_organizacion`, `ani_imagen`, `ani_carpeta`, `ani_estado`) VALUES
+(14, 6, 'apoloa', '', '', 'no', 12, 'asjfajsdj', '5451', 'M', 2, '', '', 'adoptar'),
+(23, 6, 'apoloñaa', 'morado', 'grande', 'si', 18, 'asfasdf', '285545', 'on', 11, '__until_the_bitter_end_fukuwa_render___by_akizayasdynamite-d4tu1yd.png', 'apolonaa1789', 'adoptar'),
+(27, 6, 'gojan', 'blanco', 'grande', '', 18, 'asfasdf', '285545', 'on', 11, '3490f9fa8cf0a9131f19e7a8f390e2e0.jpg', 'gojan1014', 'En Proceso');
 
 -- --------------------------------------------------------
 
@@ -82,7 +79,6 @@ INSERT INTO `animal` (`ani_cod_animal`, `ra_cod_raza`, `ani_nombre`, `ani_color`
 -- Estructura de tabla para la tabla `cuidado`
 --
 
-DROP TABLE IF EXISTS `cuidado`;
 CREATE TABLE `cuidado` (
   `cu_cod_cuidado` int(11) NOT NULL,
   `cu_nombre` varchar(50) NOT NULL,
@@ -104,7 +100,6 @@ INSERT INTO `cuidado` (`cu_cod_cuidado`, `cu_nombre`, `cu_descripcion`, `galeria
 -- Estructura de tabla para la tabla `denuncia`
 --
 
-DROP TABLE IF EXISTS `denuncia`;
 CREATE TABLE `denuncia` (
   `de_cod_denuncia` int(11) NOT NULL,
   `td_cod_tipo_denuncia` int(11) NOT NULL,
@@ -130,7 +125,6 @@ INSERT INTO `denuncia` (`de_cod_denuncia`, `td_cod_tipo_denuncia`, `de_descripci
 -- Estructura de tabla para la tabla `denuncias_organizacion`
 --
 
-DROP TABLE IF EXISTS `denuncias_organizacion`;
 CREATE TABLE `denuncias_organizacion` (
   `de_cod_denuncia` int(11) NOT NULL,
   `org_cod_organizacion` int(11) NOT NULL
@@ -149,7 +143,6 @@ INSERT INTO `denuncias_organizacion` (`de_cod_denuncia`, `org_cod_organizacion`)
 -- Estructura de tabla para la tabla `donacion`
 --
 
-DROP TABLE IF EXISTS `donacion`;
 CREATE TABLE `donacion` (
   `don_cod_donacion` int(11) NOT NULL,
   `don_nombre` varchar(2000) NOT NULL,
@@ -180,7 +173,6 @@ INSERT INTO `donacion` (`don_cod_donacion`, `don_nombre`, `td_cod_tipo_donacion`
 -- Estructura de tabla para la tabla `evento`
 --
 
-DROP TABLE IF EXISTS `evento`;
 CREATE TABLE `evento` (
   `eve_cod_evento` int(11) NOT NULL,
   `te_cod_tipo_evento` int(11) NOT NULL,
@@ -211,7 +203,6 @@ INSERT INTO `evento` (`eve_cod_evento`, `te_cod_tipo_evento`, `eve_nombre`, `eve
 -- Estructura de tabla para la tabla `evento_organizacion`
 --
 
-DROP TABLE IF EXISTS `evento_organizacion`;
 CREATE TABLE `evento_organizacion` (
   `eve_cod_evento` int(11) NOT NULL,
   `org_cod_organizacion` int(11) NOT NULL
@@ -223,7 +214,6 @@ CREATE TABLE `evento_organizacion` (
 -- Estructura de tabla para la tabla `noticias`
 --
 
-DROP TABLE IF EXISTS `noticias`;
 CREATE TABLE `noticias` (
   `cod_noticia` int(11) NOT NULL,
   `usu_cod_usuario` int(11) NOT NULL,
@@ -241,7 +231,6 @@ CREATE TABLE `noticias` (
 -- Estructura de tabla para la tabla `organizacion`
 --
 
-DROP TABLE IF EXISTS `organizacion`;
 CREATE TABLE `organizacion` (
   `org_cod_organizacion` int(11) NOT NULL,
   `to_cod_tipo_organizacion` int(11) NOT NULL,
@@ -283,7 +272,6 @@ INSERT INTO `organizacion` (`org_cod_organizacion`, `to_cod_tipo_organizacion`, 
 -- Estructura de tabla para la tabla `organizacion_usuario`
 --
 
-DROP TABLE IF EXISTS `organizacion_usuario`;
 CREATE TABLE `organizacion_usuario` (
   `cod_org_usu` int(11) NOT NULL,
   `org_cod_organizacion` int(11) NOT NULL,
@@ -315,7 +303,6 @@ INSERT INTO `organizacion_usuario` (`cod_org_usu`, `org_cod_organizacion`, `usu_
 -- Estructura de tabla para la tabla `permiso`
 --
 
-DROP TABLE IF EXISTS `permiso`;
 CREATE TABLE `permiso` (
   `cod_permiso` int(11) NOT NULL,
   `permiso_nombre` varchar(50) NOT NULL
@@ -327,7 +314,6 @@ CREATE TABLE `permiso` (
 -- Estructura de tabla para la tabla `permiso_rol`
 --
 
-DROP TABLE IF EXISTS `permiso_rol`;
 CREATE TABLE `permiso_rol` (
   `cod_permiso` int(11) NOT NULL,
   `cod_rol` int(11) NOT NULL
@@ -339,7 +325,6 @@ CREATE TABLE `permiso_rol` (
 -- Estructura de tabla para la tabla `raza`
 --
 
-DROP TABLE IF EXISTS `raza`;
 CREATE TABLE `raza` (
   `ra_cod_raza` int(11) NOT NULL,
   `ra_nombre` varchar(50) NOT NULL,
@@ -362,7 +347,6 @@ INSERT INTO `raza` (`ra_cod_raza`, `ra_nombre`, `ta_cod_tipo_animal`, `cu_cod_cu
 -- Estructura de tabla para la tabla `rol`
 --
 
-DROP TABLE IF EXISTS `rol`;
 CREATE TABLE `rol` (
   `cod_rol` int(11) NOT NULL,
   `rol_nombre` varchar(50) NOT NULL
@@ -373,9 +357,28 @@ CREATE TABLE `rol` (
 --
 
 INSERT INTO `rol` (`cod_rol`, `rol_nombre`) VALUES
-(1, 'Usuario'),
 (2, 'Administrador'),
-(3, 'Organizacion');
+(3, 'Organizacion'),
+(5, 'Usuario');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `solicitud_adopcion`
+--
+
+CREATE TABLE `solicitud_adopcion` (
+  `ani_cod_animal` int(11) NOT NULL,
+  `usu_cod_usuario` int(11) NOT NULL,
+  `sol_estado` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Volcado de datos para la tabla `solicitud_adopcion`
+--
+
+INSERT INTO `solicitud_adopcion` (`ani_cod_animal`, `usu_cod_usuario`, `sol_estado`) VALUES
+(27, 3, 'Pendiente');
 
 -- --------------------------------------------------------
 
@@ -383,7 +386,6 @@ INSERT INTO `rol` (`cod_rol`, `rol_nombre`) VALUES
 -- Estructura de tabla para la tabla `tipo_animal`
 --
 
-DROP TABLE IF EXISTS `tipo_animal`;
 CREATE TABLE `tipo_animal` (
   `ta_cod_tipo_animal` int(11) NOT NULL,
   `ta_nombre` varchar(50) NOT NULL
@@ -403,7 +405,6 @@ INSERT INTO `tipo_animal` (`ta_cod_tipo_animal`, `ta_nombre`) VALUES
 -- Estructura de tabla para la tabla `tipo_denuncia`
 --
 
-DROP TABLE IF EXISTS `tipo_denuncia`;
 CREATE TABLE `tipo_denuncia` (
   `td_cod_tipo_denuncia` int(11) NOT NULL,
   `td_nombre` varchar(50) NOT NULL
@@ -422,7 +423,6 @@ INSERT INTO `tipo_denuncia` (`td_cod_tipo_denuncia`, `td_nombre`) VALUES
 -- Estructura de tabla para la tabla `tipo_donacion`
 --
 
-DROP TABLE IF EXISTS `tipo_donacion`;
 CREATE TABLE `tipo_donacion` (
   `td_cod_tipo_donacion` int(11) NOT NULL,
   `td_nombre` varchar(50) NOT NULL,
@@ -442,7 +442,6 @@ INSERT INTO `tipo_donacion` (`td_cod_tipo_donacion`, `td_nombre`, `td_estado`) V
 -- Estructura de tabla para la tabla `tipo_evento`
 --
 
-DROP TABLE IF EXISTS `tipo_evento`;
 CREATE TABLE `tipo_evento` (
   `te_cod_tipo_evento` int(11) NOT NULL,
   `te_nombre` varchar(50) NOT NULL
@@ -461,7 +460,6 @@ INSERT INTO `tipo_evento` (`te_cod_tipo_evento`, `te_nombre`) VALUES
 -- Estructura de tabla para la tabla `tipo_organizacion`
 --
 
-DROP TABLE IF EXISTS `tipo_organizacion`;
 CREATE TABLE `tipo_organizacion` (
   `to_cod_tipo_organizacion` int(11) NOT NULL,
   `to_nombre` varchar(100) NOT NULL
@@ -480,7 +478,6 @@ INSERT INTO `tipo_organizacion` (`to_cod_tipo_organizacion`, `to_nombre`) VALUES
 -- Estructura de tabla para la tabla `usuario`
 --
 
-DROP TABLE IF EXISTS `usuario`;
 CREATE TABLE `usuario` (
   `usu_cod_usuario` int(11) NOT NULL,
   `usu_nombre` varchar(50) NOT NULL,
@@ -498,13 +495,14 @@ CREATE TABLE `usuario` (
 --
 
 INSERT INTO `usuario` (`usu_cod_usuario`, `usu_nombre`, `usu_apellido`, `usu_telefono`, `usu_cedula`, `usu_email`, `cod_rol`, `usu_clave`, `usu_imagen`) VALUES
-(3, 'ertgedf', 'wsdfsdf', '545154', 25145, 'sa@sdfasd', 1, '1234', ''),
+(3, 'ertgedf', 'wsdfsdf', '545154', 25145, 'sa@sdfasd', 5, '1234', ''),
 (4, 'Andrea ', 'Orozco', '2774121', 24575, 'Andrea@orozco.com', 2, '1234', '2f5d5fbd01c25c5016cb2059f534d06e.jpg'),
 (7, 'Andrea', 'Garces', '2771217', 2844, 'Andrea@garces.com', 3, '123', ''),
 (8, 'Andrea', 'Orozco', '5747', 173781, 'saorozco@isena', 3, '123', 'cute-wallpapers-hd-11.jpg'),
 (9, 'Andrea', 'Orozco', '232332', 23452, 'saorozco@cami', 3, '123', 'cute-wallpapers-hd-11.jpg'),
 (10, 'RODRIGO', 'MENA', '2342', 2344, 'Rodrigo@mena.com', 3, '123', 'Mario_SM3DW.png'),
-(11, 'Mary', 'Garces', '3723832', 43842742, 'mary.com79@hotmail.com', 3, '123', '5d382344fa0e5b52303ee80aaaba1f37.jpg');
+(11, 'Mary', 'Garces', '3723832', 43842742, 'mary.com79@hotmail.com', 3, '123', '5d382344fa0e5b52303ee80aaaba1f37.jpg'),
+(12, 'Michael ', 'Gonzalez', '2811731', 1152684915, 'maicol_0114@hotmail.com', 5, '1152684915', '14508710_1434815523200109_1580175712_n.jpg');
 
 -- --------------------------------------------------------
 
@@ -512,7 +510,6 @@ INSERT INTO `usuario` (`usu_cod_usuario`, `usu_nombre`, `usu_apellido`, `usu_tel
 -- Estructura de tabla para la tabla `usuario_animal`
 --
 
-DROP TABLE IF EXISTS `usuario_animal`;
 CREATE TABLE `usuario_animal` (
   `usu_cod_usuario` int(11) NOT NULL,
   `ani_cod_animal` int(11) NOT NULL
@@ -524,7 +521,6 @@ CREATE TABLE `usuario_animal` (
 -- Estructura de tabla para la tabla `vacunas`
 --
 
-DROP TABLE IF EXISTS `vacunas`;
 CREATE TABLE `vacunas` (
   `vac_cod_vacuna` int(11) NOT NULL,
   `vac_nombre` varchar(100) NOT NULL,
@@ -545,7 +541,6 @@ INSERT INTO `vacunas` (`vac_cod_vacuna`, `vac_nombre`, `vac_fecha`, `vac_serial`
 -- Estructura de tabla para la tabla `vacuna_animal`
 --
 
-DROP TABLE IF EXISTS `vacuna_animal`;
 CREATE TABLE `vacuna_animal` (
   `ani_cod_animal` int(11) NOT NULL,
   `vac_cod_vacuna` int(11) NOT NULL
@@ -557,7 +552,6 @@ CREATE TABLE `vacuna_animal` (
 -- Estructura de tabla para la tabla `voluntarios`
 --
 
-DROP TABLE IF EXISTS `voluntarios`;
 CREATE TABLE `voluntarios` (
   `vo_cod_voluntario` int(11) NOT NULL,
   `vo_nombre` varchar(100) NOT NULL,
@@ -683,6 +677,12 @@ ALTER TABLE `raza`
 --
 ALTER TABLE `rol`
   ADD PRIMARY KEY (`cod_rol`);
+
+--
+-- Indices de la tabla `solicitud_adopcion`
+--
+ALTER TABLE `solicitud_adopcion`
+  ADD KEY `ani_cod_animal` (`ani_cod_animal`,`usu_cod_usuario`);
 
 --
 -- Indices de la tabla `tipo_animal`
@@ -842,7 +842,7 @@ ALTER TABLE `tipo_organizacion`
 -- AUTO_INCREMENT de la tabla `usuario`
 --
 ALTER TABLE `usuario`
-  MODIFY `usu_cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `usu_cod_usuario` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 --
 -- AUTO_INCREMENT de la tabla `vacunas`
 --
