@@ -84,21 +84,31 @@
 					include("Upload_usu_image.php");
 				}
 					Gestion_usuarios::Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen);
-					$mensaje = "Se actualizo correctamente";
+					if ($_SESSION["cod_rol"] == 5) {
+						$mensaje = base64_encode("Se actualizo correctamente");
+						$tipo_mensaje = base64_encode("success");
+						header("Location: ../View/dashboard.php?p=".base64_encode("mi_perfil")."&m=$mensaje&tm=$tipo_mensaje");
+					}elseif ($_SESSION["cod_rol"] == 7) {
+						$mensaje = base64_encode("Se actualizo correctamente");
+						$tipo_mensaje = base64_encode("success");
+						header("Location: ../View/dashboard.php?p=".base64_encode("gestionar_usuarios")."&m=$mensaje&tm=$tipo_mensaje");
+					}
+
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				}
-				header("Location: ../View/dashboard.php?p=".base64_encode("mi_perfil") );
+				// header("Location: ../View/dashboard.php?p=".base64_encode("mi_perfil") );
 				break;
 
 		case 'd':
 					try {
 		          $user = Gestion_usuarios::Delete(base64_decode($_REQUEST["us"]));
-		          $mensaje = "Se eliminó correctamente";
-		          header("Location: ../View/gestion_usuarios.php?m=".$mensaje);
+		          $mensaje = base64_encode("Se eliminó correctamente");
+							$tipo_mensaje = base64_encode("success");
+		          header("Location: ../View/dashboard.php?p=".base64_encode('gestionar_usuarios')."&m=$mensaje&tm=$tipo_mensaje");
 		        } catch (Exception $e) {
 		          $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-		          header("Location: ../View/dashboard.php?p=".base64_encode("mi_perfil") );
+		          header("Location: ../View/dashboard.php?p=".base64_encode("gestionar_usuarios") );
 
 		        }
 		      break;

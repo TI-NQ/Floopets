@@ -6,7 +6,7 @@
     }
   </style>
 <?php
-// Menú de usuario publico id_rol 1
+// Menú de usuario publico id_rol 5
 if($_SESSION["cod_rol"]==5){
 ?>
 <li>
@@ -36,7 +36,7 @@ if($_SESSION["cod_rol"]==5){
   <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('nueva_donacion')?>"><i class="fa fa-user" aria-hidden="true"></i>Realiza una donación</a></div>
 </li>
 <?php
-// Menú de Administrador publico id_rol 2
+// Menú de Administrador publico id_rol 7
 }elseif($_SESSION["cod_rol"]==7){
 ?>
 <li>
@@ -47,7 +47,7 @@ if($_SESSION["cod_rol"]==5){
 <li>
 <li>
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-building-o" aria-hidden="true"></i>Organizaciones</a></div>
-  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('registrar_organizacion')?>" class="item_menu">Nueva</a></p></div>
+  <!-- <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('registrar_organizacion')?>" class="item_menu">Nueva</a></p></div> -->
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('gestionar_organizacion')?>" class="item_menu">Gestionar</a></p></div>
 </li>
 <li>
@@ -62,7 +62,7 @@ if($_SESSION["cod_rol"]==5){
 </li>
 <!-- aqui metan el menu -->
 <?php
-// Menú de Organización publico id_rol 3
+// Menú de Organización publico id_rol 6
 }elseif ($_SESSION["cod_rol"]==6) {
   // require_once ("../Model/conexion.php");
   // require_once ("../Model/organizacion.class.php");
