@@ -31,9 +31,10 @@ if(isset($_GET["pet"])){
       <link rel="stylesheet" type="text/css" href="WebFloopets/font-awesome-4.6.3/css/font-awesome.css">
   		<!--Import materialize.css-->
   		<link type="text/css" rel="stylesheet" href="WebFloopets/materialize/css/materialize.css"  media="screen,projection"/>
-
+      <link rel="stylesheet" type="text/css" href="WebFloopets/sweetalert/dist/sweetalert.css">
     <script type="text/javascript" src="WebFloopets/js/jquery-1.12.1.min.js"></script>
     <script type="text/javascript" src="WebFloopets/materialize/js/materialize.js"></script>
+    <script type="text/javascript" src="WebFloopets/sweetalert/dist/sweetalert.min.js"></script>
 
     <link rel="stylesheet" href="WebFloopets/css/estilosint.css">
 
@@ -69,10 +70,17 @@ if(isset($_GET["pet"])){
           });
 
         });
-
+          <?php
+          if(isset($_GET["sol"]) )
+          {
+            echo "swal('".($_GET["sol"])."','','".($_GET["tm"])."');";
+          }
+         ?>
 
       });
       </script>
+
+
     </script>
   </head>
   <body>

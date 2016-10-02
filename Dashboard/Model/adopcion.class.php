@@ -13,6 +13,8 @@
 			$query->execute(array($ani_cod_animal,$usu_cod_usuario,$ado_imagen));
 			floopets_BD::Disconnect();
 		}
+
+		
 		function ReadAll()
 		{
 				//Instanciamos y nos conectamos a la bd

@@ -3,6 +3,7 @@
 	require_once("../Model/conexion.php");
 	require_once("../Model/animal.class.php");
 	require_once("../Model/usuarios.class.php");
+	
 
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
@@ -78,10 +79,25 @@
 			$animal =  Gestion_animal::ReadbyID(base64_decode($_REQUEST["an"]));
 					
 			try {
-				Gestion_animal::En_Proceso($animal[0]);
-          $mensaje = base64_encode("Se elimino correctamente");
-					$tipo_mensaje=base64_encode("success");
-         // header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje&tm=$tipo_mensaje");
+				$solicitudes=Gestion_animal::Validar_adopcion($_SESSION["usu_cod_usuario"]);
+				if (count($solicitudes)>0) {
+					$mensaje="Ya tienes una solicitud pendiente!";
+					$t_mensaje="error";
+					header("Location: ../../adopciones.php?&sol=$mensaje&tm=$t_mensaje");
+				}else{
+					Gestion_animal::En_Proceso($animal[0]);
+					$sol_estado="Pendiente";
+				Gestion_animal::Solicitud_adopcion($animal[0],$_SESSION["usu_cod_usuario"],$sol_estado);
+          		$mensaje = "Se envio tu solicitud de adopcion";
+          		$t_mensaje="success";
+          		header("Location: ../../adopciones.php?&sol=$mensaje&tm=$t_mensaje");
+				}
+				
+          
+
+         
+					
+          
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
          // header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
