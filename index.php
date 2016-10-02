@@ -113,12 +113,17 @@
 			</nav>
 			<div class="banner-video" id="Inicio">
 				<div class="frase"><img src="WebFloopets/images/fraseindex.png"></div>
-				<a class="ingresa btn waves-effect waves-light btn-large wow zoomIn" href="login.php">Ingresar a Floopets</a>
+				<?php if (isset($_SESSION["usu_cod_usuario"])) {
+					echo "<a class='ingresa btn waves-effect waves-light btn-large wow zoomIn' href='login.php'>Ir a Dashboard</a>";
+				}else {
+					echo "<a class='ingresa btn waves-effect waves-light btn-large wow zoomIn' href='login.php'>Ingresar a Floopets</a>";
+				} ?>
+				<!-- <a class="ingresa btn waves-effect waves-light btn-large wow zoomIn" href="login.php">Ingresar a Floopets</a> -->
 				<video src="WebFloopets/video/563398388.mp4" autoplay loop></video>
 			</div>
 			<!-- Andrea Guzman-Adopciones -->
 			<div class="row seccion1" id="adopciones">
-			
+
 				<div class="container__perros col s12 m6 l6">
 
 					<div id="conteadop">

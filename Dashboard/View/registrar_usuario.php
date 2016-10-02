@@ -102,7 +102,7 @@ function solonumeros(e)
 
 
 </script>
-     <h2 class="center animated zoomIn" style="background-color:#eee;">Nuevo usuario</h2>
+     <h3 class="center animated zoomIn">Nuevo usuario</h3>
    <form id="form" class="col s12 animated zoomIn" action="../Controller/usuarios.controller.php" method="POST" enctype="multipart/form-data">
 
      <div class="row">
@@ -141,15 +141,10 @@ function solonumeros(e)
 
        <div class="input-field col s6">
          <input id="contraseña" type="password" name="usu_clave" class="validate" value="1234" hidden>
-         <!-- <label for="contraseña">Contraseña</label> -->
        </div>
        <div class="file-field input-field col s12 m12 form-group" style="margin-top:10px;">
-      <div class="btn left" id="btnlogin">
-        <span>imagen</span>
-        <input type="file" multiple name="usu_imagen[]" class="form-control">
-      </div>
       <div class="file-path-wrapper form-group">
-        <input class="form-control file-path validate"  type="text" placeholder="" name="usu_imagen" >
+        <input class="form-control file-path validate"  type="text" name="usu_imagen" hidden>
       </div>
    </div>
 
