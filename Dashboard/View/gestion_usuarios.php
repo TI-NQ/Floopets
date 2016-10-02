@@ -1,6 +1,5 @@
-<button type="button" name="button">
-  <a href="registrar_usuario.php">Nuevo</a>
-</button>
+<a href="dashboard.php?p=<?php echo base64_encode('registrar_usuarios');?>" class="waves-effect waves-light btn boton left" id="btnlogin">Nuevo</a>
+
 <?php
 
 require_once("../Model/conexion.php");

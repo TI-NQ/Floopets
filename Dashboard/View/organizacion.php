@@ -7,22 +7,29 @@
   require_once ("../Model/animal.class.php");
 
   $organizacion=Gestion_organizacion::ReadbyID($_SESSION["org_cod_organizacion"]);
-  $nombre_org_logo = strtolower(str_replace('ñ', 'n', $organizacion["org_nombre"]));
+  $nombre_carpeta = strtolower(str_replace('ñ', 'n', $organizacion["org_nombre"]));
+  $nombre_carpeta = strtolower(str_replace(' ', '', $nombre_carpeta));
+  $nombre_org_logo = strtolower(str_replace('ñ', 'n', $organizacion["org_logo"]));
   $nombre_org_logo = strtolower(str_replace(' ', '', $nombre_org_logo));
   $adopciones=Gestion_adopcion::Readbyorg_cod($_SESSION["org_cod_organizacion"]);
   $animal=Gestion_animal::Nombresraza($_SESSION["org_cod_organizacion"]);
   $mis_voluntarios = Gestion_voluntarios::misvolun($_SESSION["org_cod_organizacion"]);
-  // print_r($animal);
-
-
-  // print_r($organizacion);
-  // print_r($adopciones);
+  // if (!isset($_SESSION["org_cod_organizacion"])) {
+  //   $mensaje="Debes registrar una fundacion";
+  //   $tipo_mensaje="info";
+  //   header("Location: dashboard.php?p=".base64_encode('registrar_organizacion')."&m=$mensaje&tm=$tipo_mensaje");
+  // }
 ?>
 
 <div class="row">
   <div class="col12">
+ <?php if ($nombre_org_logo=="") {
+   echo "<div class='center'><img class='responsive-img' style='width:200px; ;height:200px; ;' src='../../WebFloopets/images/base.jpg'></div>";
+ }else {
+   echo "<div class='center'><img class='responsive-img' style='width:200px; ;height:200px; ;' src='img/imagen_organizacion/".$nombre_carpeta."/".$nombre_org_logo."'></div>";
+ }
+ ?>
 
-    <div class="center"><img class='responsive-img' style='width:180px ;height:180px ;' src='img/imagen_organizacion/<?php echo $nombre_org_logo;?>/<?php echo $organizacion["org_logo"];?>'></div>
 
 
 

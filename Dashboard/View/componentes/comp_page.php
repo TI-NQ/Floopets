@@ -196,6 +196,12 @@ switch ($page) {
 	 case 'registrar_usuarios':
 	 require_once("registrar_usuario.php");
 	break;
+	case 'registrar_admin':
+	require_once("registrar_admin.php");
+ break;
+ case 'registrar_org':
+ require_once("registrar_orga.php");
+break;
 	 case 'denuncias_admin':
 	 require_once("gestion_denuncias_admin.php");
 	break;

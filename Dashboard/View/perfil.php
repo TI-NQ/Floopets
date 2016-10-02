@@ -17,7 +17,7 @@
     <?php
     if ($user_data[8] == "") {
       echo"
-      <img class='responsive-img' style='width:300px ;height:300px ;border-radius:5px;'
+      <img class='responsive-img' style='width:300px ;height:300px ;border-radius:10px;'
       src='../../WebFloopets/images/base.jpg'>
       ";
     }else {

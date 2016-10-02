@@ -85,16 +85,16 @@
 				floopets_BD::Disconnect();
 		}
 
-		 function Nombres()
+		 function Nombres($org_cod_organizacion)
    {
     //para el modificar por cada usuario usuario
     $conexion=floopets_BD::Connect();
     $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
-    $consulta="SELECT animal.*,raza.*,organizacion.* FROM animal INNER JOIN raza on raza.ra_cod_raza=animal.ra_cod_raza INNER JOIN organizacion on organizacion.org_cod_organizacion=animal.org_cod_organizacion ";
+    $consulta="SELECT animal.*,raza.*,organizacion.* FROM animal INNER JOIN raza on raza.ra_cod_raza=animal.ra_cod_raza INNER JOIN organizacion on organizacion.org_cod_organizacion=animal.org_cod_organizacion WHERE organizacion.org_cod_organizacion=?";
     // $consulta="SELECT * FROM citas  WHERE Cod_usu=?";
     $query=$conexion->prepare($consulta);
-    $query->execute(array());
+    $query->execute(array($org_cod_organizacion));
 
 	$resultado=$query->fetchAll(PDO::FETCH_BOTH);
 
@@ -145,7 +145,7 @@
 			$query = $Conexion->prepare($consulta);
 			$query->execute(array($ani_cod_animal));
 			floopets_BD::Disconnect();
-			
+
 		}
 			function solicitar($org_cod_organizacion, $usu_cod_usuario,$ani_cod_animal){
 
