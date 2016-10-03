@@ -8,6 +8,9 @@ if(isset($_GET["p"])){
 
 switch ($page) {
 	//Componente de pagina encargado de vincular datos de la fundacion que tiene la sesion activa
+	case'enviar_email':
+		require_once("enviar_email.php");
+	break;
 	case'mi_organizacion':
 		require_once("organizacion.php");
 	break;
@@ -24,8 +27,8 @@ switch ($page) {
 		require_once("gestion_animal.php");
 	break;
 	//Componente de pagina encargado de vincular formulario para registro de nueva adopcion
-	case 'nueva_adopcion':
-		require_once("registrar_adopcion.php");
+	case 'solicitudes_adopcion':
+		require_once("solicitudes_fundacion.php");
 	break;
 	//Componente de pagina encargado de vincular todas las adopciones creadas por la fundacion que tiene la sesion activa
 	case 'historial_adopciones':

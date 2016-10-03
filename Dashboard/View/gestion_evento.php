@@ -49,17 +49,10 @@ $evento=Gestion_evento::Nombres();
 
 	                     	</div>
 	                   		<div class='col l6'>
-	                   			<a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_evento')."&eve=".base64_encode($row['eve_cod_evento'])."'>
-
-	                          <i class='small material-icons'>mode_edit</i>
-	                          </a>
-	                      	</div>
+	                   			<a class='btn-floating waves-effect tooltipped red' data-position='bottom' data-tooltip='Anular evento' href='../Controller/evento.controller.php?cod_eve=".base64_encode($row[2])."&es_eve=".$Anulado=base64_encode('Anulado')."&accion=estado_eve'><i class='fa fa-ban'></i></a>
+													<a class='btn-floating waves-effect tooltipped green' data-position='bottom' data-tooltip='Publicar evento' href='../Controller/evento.controller.php?cod_eve=".base64_encode($row[2])."&es_eve=".$Anulado=base64_encode('Publicado')."&accion=estado_eve'><i class='fa fa-check'></i></a>
+													</div>
 	                      	<div class='col l6'>
-													";?>
-														<a href='#' id='btntrash' onclick="borrar('<?php echo $row["eve_cod_evento"];?>')" class='btn-floating waves-light red waves-effect'>
-	                          <i class='small material-icons'>delete</i>
-	                          </a>
-														<?php echo"
 	                      	</div>
 	                     </div>
 							<div class='col l6'>

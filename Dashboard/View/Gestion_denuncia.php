@@ -50,60 +50,66 @@ function borrar(cod){
 // @$mensaje = $_REQUEST["m"];
 //
 //   echo @$mensaje;
-      foreach ($denuncia as $row)
-      {
+if (count($denuncia)==0) {
+  echo "<h5>No hay denuncias pendientes</h5>";
+}
+else {
+  foreach ($denuncia as $row)
+  {
 
-        echo"<div class='col l6 descrip'>
-                <div class='row'>
-                  <div class='col l6 col m6'>
-                      <div class='col l7'>
-                        <span><b>Mascota :</b></span>
-                        <li>".$row["de_nombre"]."</li>
-                      </div>
-                      <div class='imagenmascota col l12'>
-                          <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
-                      </div>
-
-                      <a class='btn waves-effect blue lighten-3' href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=tomar'>Tomar</a>
-                      <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>
-                      <div class='col l6'>
-                      <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>
-                      <div class='col l6'>
-                             <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'>
-                              <i class='small material-icons'>mode_edit</i>
-                          </a>
-                      </div>
-                      ";
-                      ?>
-                      <!-- se reemplaza el href por el onclick que carga el delete -->
-                      <a href='#' id='btntrash' onclick="borrar('<?php echo $row["de_cod_denuncia"];?>')" class='btn-floating waves-light red waves-effect' >
-                    <?php
-                    echo "<i class='small material-icons'>delete</i>
-                      </a>
-                      </div>
+    echo"<div class='col l6 descrip'>
+            <div class='row'>
+              <div class='col l6 col m6'>
+                  <div class='col l7'>
+                    <span><b>Mascota :</b></span>
+                    <li>".$row["de_nombre"]."</li>
                   </div>
+                  <div class='imagenmascota col l12'>
+                      <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
+                  </div>
+
+                  <a class='btn waves-effect blue lighten-3' href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=tomar'>Tomar</a>
+                  <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>
                   <div class='col l6'>
-                    <ul class='descrip'>
-
-                      <span>Tipo de denuncia :</span>
-                          <li>".$row["td_nombre"]."</li>
-                      <span>Descripcion :</span>
-                            <li>".$row["de_descripcion"]."</li>
-                      <span>Contacto :</span>
-                            <li>".$row["de_contacto"]."</li>
-                      <span>Telefono :</span>
-                            <li>".$row["de_telefono"]."</li>
-                      <span>Fecha de denuncia :</span>
-                            <li>".$row["de_fecha"]."</li>
-                      <span>Estado :</span>
-                            <li>".$row["de_estado"]."</li>
-                    </ul>
+                  <input type='hidden' id='de_cod_denuncia' value='".$row["de_cod_denuncia"]."'>
+                  <div class='col l6'>
+                         <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'>
+                          <i class='small material-icons'>mode_edit</i>
+                      </a>
                   </div>
-                </div>
+                  ";
+                  ?>
+                  <!-- se reemplaza el href por el onclick que carga el delete -->
+                  <a href='#' id='btntrash' onclick="borrar('<?php echo $row["de_cod_denuncia"];?>')" class='btn-floating waves-light red waves-effect' >
+                <?php
+                echo "<i class='small material-icons'>delete</i>
+                  </a>
+                  </div>
               </div>
+              <div class='col l6'>
+                <ul class='descrip'>
 
-          ";
-      }
+                  <span>Tipo de denuncia :</span>
+                      <li>".$row["td_nombre"]."</li>
+                  <span>Descripcion :</span>
+                        <li>".$row["de_descripcion"]."</li>
+                  <span>Contacto :</span>
+                        <li>".$row["de_contacto"]."</li>
+                  <span>Telefono :</span>
+                        <li>".$row["de_telefono"]."</li>
+                  <span>Fecha de denuncia :</span>
+                        <li>".$row["de_fecha"]."</li>
+                  <span>Estado :</span>
+                        <li>".$row["de_estado"]."</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+      ";
+  }
+}
+
 
 ?>
 </div>

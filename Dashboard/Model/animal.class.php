@@ -210,6 +210,55 @@
 
 		floopets_BD::Disconnect();
 	}
+	function solicitudes_fundacion($org_cod_organizacion)
+		{
+			//Instanciamos y nos conectamos a la bd
+				$Conexion = floopets_BD::Connect();
+				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				//Crear el query que vamos a realizar
+				$consulta = "SELECT animal.*,usuario.*,solicitud_adopcion.*,raza.* FROM usuario INNER JOIN solicitud_adopcion ON usuario.usu_cod_usuario=solicitud_adopcion.usu_cod_usuario INNER JOIN animal ON solicitud_adopcion.ani_cod_animal=animal.ani_cod_animal INNER JOIN raza on animal.ra_cod_raza=raza.ra_cod_raza WHERE animal.org_cod_organizacion=? AND animal.ani_estado='En Proceso' AND solicitud_adopcion.sol_estado='Pendiente' ";
+				$query = $Conexion->prepare($consulta);
+				$query->execute(array($org_cod_organizacion));
+				//Devolvemos el resultado en un arreglo
+				//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+				//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+				$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+				return $resultado;
+				floopets_BD::Disconnect();
 
+		}
+		function UpdateEstadoani($ani_cod_animal)
+		{
+			//Instanciamos y nos conectamos a la bd
+				$Conexion = floopets_BD::Connect();
+				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				//Crear el query que vamos a realizar
+				$consulta = "UPDATE animal SET  ani_estado='Adoptado' WHERE ani_cod_animal=?" ;
+				$query = $Conexion->prepare($consulta);
+				$query->execute(array($ani_cod_animal));
+				//Devolvemos el resultado en un arreglo
+				//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+				//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+				
+				floopets_BD::Disconnect();
+
+		}
+		function UpdateEstadosoli($ani_cod_animal)
+		{
+			//Instanciamos y nos conectamos a la bd
+				$Conexion = floopets_BD::Connect();
+				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				//Crear el query que vamos a realizar
+				$consulta = "UPDATE solicitud_adopcion SET  sol_estado='Aprobado' WHERE ani_cod_animal=?" ;
+				$query = $Conexion->prepare($consulta);
+				$query->execute(array($ani_cod_animal));
+				//Devolvemos el resultado en un arreglo
+				//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+				//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+				
+				floopets_BD::Disconnect();
+
+		}
+		
 	}
 ?>
