@@ -75,22 +75,30 @@
 			}
 			header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje&tm=$tipo_mensaje");
 			break;
+
+
 			case 'enproceso':
+
 			$animal =  Gestion_animal::ReadbyID(base64_decode($_REQUEST["an"]));
 					
 			try {
+				//Aqui validamos que el usuario no tenga una una solicitud realizada
 				$solicitudes=Gestion_animal::Validar_adopcion($_SESSION["usu_cod_usuario"]);
 				if (count($solicitudes)>0) {
 					$mensaje="Ya tienes una solicitud pendiente!";
 					$error="error";
+					//Si tiene solicitud le indicamos al usuario que ya tiene una pendiente
 					header("Location: ../../adopciones.php?&sol_e=$mensaje&tm_e=$error");
 				}else{
+					//Actualizamos el estado del animal en adopcion a En Proceso
 					Gestion_animal::En_Proceso($animal[0]);
 					$sol_estado="Pendiente";
-				Gestion_animal::Solicitud_adopcion($animal[0],$_SESSION["usu_cod_usuario"],$sol_estado);
-          		$mensaje = "Se envio tu solicitud de adopcion";
-          		$t_mensaje="success";
-          		header("Location: ../View/dashboard.php?p=".base64_encode("solicitudes_enviadas")."&sol=$mensaje&tm=$t_mensaje");
+
+					//Creamos la solicitud de adopcion con la respectiva Gestion de la clase 
+					Gestion_animal::Solicitud_adopcion($animal[0],$_SESSION["usu_cod_usuario"],$sol_estado);
+          			$mensaje = "Se envio tu solicitud de adopcion";
+          			$t_mensaje="success";
+          			header("Location: ../View/dashboard.php?p=".base64_encode("solicitudes_enviadas")."&sol=$mensaje&tm=$t_mensaje");
 				}
 				
           

@@ -4,6 +4,7 @@ session_start();
 require_once("Dashboard/Model/conexion.php");
 require_once("Dashboard/Model/animal-copy.class.php");
 
+//Validacion de logueo para adoptar
 if($_SESSION["usu_cod_usuario"]==""){
     $msn = "Debes iniciar para adoptar!";
     $t="Advertencia";
