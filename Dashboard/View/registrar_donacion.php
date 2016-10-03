@@ -6,6 +6,54 @@
 	$tipo_donacion = Gestion_tipo_donacion::ReadAll();
 	$organizacion = Gestion_organizacion::ReadAll();
 ?>
+
+<script type="text/javascript">
+function validacion() {
+ 
+  asunto = $('#asunto').val();
+  descripcion = $('#descripcion').val();
+  fecha = $('#descripcion').val();
+  organizacion = $('#organizacion').val();
+  
+   if (asunto == "") {
+    $("#asunto_don").text("Debe llenar el campo asunto");
+    $('#asunto').focus();
+    return false;
+  }
+
+  if (descripcion == "") {
+    $("#descripcion_donacion").text("Debe llenar el campo descripcion");
+    $('#descripcion').focus();
+    return false;
+  }
+
+  if (fecha == "") {
+    $("#fecha_don").text("Debe seleccionar una fecha superior");
+    $('#fecha_donacion').focus();
+    return false;
+  }
+
+  }if (organizacion == "" || organizacion == null) {
+    $("#org_donacion").text("Seleccione una organizacion");
+    $('#organizacion').focus();
+    return false;
+  }
+
+  else {
+    return true;
+  }
+
+  
+};
+
+
+</script>
+
+
+
+
+
+
 <h2 class="center">Registrar Donación</h2>
 <div class="row">
 	<div class="fixed-action-btn horizontal click-to-toggle" style="position:relative;">
@@ -21,15 +69,18 @@
 <form id="form" action="../Controller/donacion.controller.php" method="POST" enctype="multipart/form-data">
 <div class="form-group">
         <label>Asunto</label>
-        <input type="text" name="don_nombre"></input>
+        <input type="text" name="don_nombre" id="asunto"></input>
+        <span id="asunto_don" class="red-text "></span>
     </div>
 	<div class="form-group">
 		<label>Descripcion</label>
-		<input type="text" name="don_descripcion"></input>
+		<input type="text" name="don_descripcion" id="descripcion"></input>
+        <span id="descripcion_donacion" class="red-text "></span>
 	</div>
     <div class="form-group">
         <label>Fecha</label>
-        <input type="date" name="don_fecha"></input>
+        <input type="date" name="don_fecha" id="fecha_donacion" min="<?php echo date('Y-m-d');?>" value="<?php echo date('Y-m-d');?>" ></input>
+        <!-- <span id="fecha_don" class="red-text "></span> -->
     </div>
     <div class="file-field input-field col s12 m6">
        <div class="btn">
@@ -42,7 +93,7 @@
     </div>
 
 		<div class="form-group">
-                        <select  Required name="org_cod_organizacion">
+                        <select  Required name="org_cod_organizacion" id="organizacion">
                             <option value="" disabled selected>Organizacion</option>
                             <?php
                                  // Cargo la bd
@@ -57,6 +108,7 @@
                                 }
                              ?>
                         </select>
+                        <span id="org_donacion" class="red-text "></span>
                         <label></label>
                     </div>
                     <div class="form-group">
@@ -96,6 +148,6 @@
                         <label></label>
                     </div>
 	<div class="form-group">
-		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
+		<button name="accion" value="c" class="btn btn-primary" onclick="return validacion()">Registrar</button>
 	</div>
 </form> 
