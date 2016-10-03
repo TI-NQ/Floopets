@@ -29,13 +29,32 @@
 		}
 
 
+
+		function organizacion_animal($ani_cod_animal)
+		{
+				//Instanciamos y nos conectamos a la bd
+			$Conexion = floopets_BD::Connect();
+			$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+			//Crear el query que vamos a realizar
+			$consulta = "SELECT organizacion.* FROM organizacion INNER JOIN animal on organizacion.org_cod_organizacion=animal.org_cod_organizacion INNER JOIN solicitud_adopcion on animal.ani_cod_animal=solicitud_adopcion.ani_cod_animal INNER JOIN usuario on solicitud_adopcion.usu_cod_usuario=usuario.usu_cod_usuario WHERE usuario.usu_cod_usuario=?";
+			$query = $Conexion->prepare($consulta);
+			$query->execute(array($ani_cod_animal));
+			//Devolvemos el resultado en un arreglo
+			//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+			//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+			$resultado = $query->fetch(PDO::FETCH_BOTH);
+			return $resultado;
+			floopets_BD::Disconnect();		
+		}
+
+
 		function Validar_adopcion($usu_cod_usuario)
 		{
 			//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
 				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 				//Crear el query que vamos a realizar
-				$consulta = "SELECT * FROM solicitud_adopcion WHERE usu_cod_usuario=?";
+				$consulta = "SELECT animal.*,usuario.*,solicitud_adopcion.*,raza.* FROM usuario INNER JOIN solicitud_adopcion ON usuario.usu_cod_usuario=solicitud_adopcion.usu_cod_usuario INNER JOIN animal ON solicitud_adopcion.ani_cod_animal=animal.ani_cod_animal INNER JOIN raza on animal.ra_cod_raza=raza.ra_cod_raza WHERE usuario.usu_cod_usuario=?";
 				$query = $Conexion->prepare($consulta);
 				$query->execute(array($usu_cod_usuario));
 				//Devolvemos el resultado en un arreglo

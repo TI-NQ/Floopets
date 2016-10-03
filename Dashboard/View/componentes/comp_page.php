@@ -11,6 +11,10 @@ switch ($page) {
 	case'mi_organizacion':
 		require_once("organizacion.php");
 	break;
+	//Componente de pagina encargado de visualizar las solicitudes enviadas de adopcion de cada usuario
+	case'solicitudes_enviadas':
+		require_once("solicitudes_enviadas.php");
+	break;
 	//Componente de pagina encargado de vincular formulario para el registro de una nueva mascota
 	case'nueva_mascota':
 		require_once("registrar_animal.php");

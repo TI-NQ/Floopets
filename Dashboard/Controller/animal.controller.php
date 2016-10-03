@@ -82,15 +82,15 @@
 				$solicitudes=Gestion_animal::Validar_adopcion($_SESSION["usu_cod_usuario"]);
 				if (count($solicitudes)>0) {
 					$mensaje="Ya tienes una solicitud pendiente!";
-					$t_mensaje="error";
-					header("Location: ../../adopciones.php?&sol=$mensaje&tm=$t_mensaje");
+					$error="error";
+					header("Location: ../../adopciones.php?&sol_e=$mensaje&tm_e=$error");
 				}else{
 					Gestion_animal::En_Proceso($animal[0]);
 					$sol_estado="Pendiente";
 				Gestion_animal::Solicitud_adopcion($animal[0],$_SESSION["usu_cod_usuario"],$sol_estado);
           		$mensaje = "Se envio tu solicitud de adopcion";
           		$t_mensaje="success";
-          		header("Location: ../../adopciones.php?&sol=$mensaje&tm=$t_mensaje");
+          		header("Location: ../View/dashboard.php?p=".base64_encode("solicitudes_enviadas")."&sol=$mensaje&tm=$t_mensaje");
 				}
 				
           

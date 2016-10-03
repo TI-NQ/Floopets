@@ -35,6 +35,9 @@ if($_SESSION["cod_rol"]==5){
 <li>
   <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('nueva_donacion')?>"><i class="fa fa-user" aria-hidden="true"></i>Realiza una donación</a></div>
 </li>
+<li>
+  <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('solicitudes_enviadas')?>"><i class="fa fa-user" aria-hidden="true"></i>Solicitudes enviadas</a></div>
+</li>
 <?php
 // Menú de Administrador publico id_rol 7
 }elseif($_SESSION["cod_rol"]==7){

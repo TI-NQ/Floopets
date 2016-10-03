@@ -2,6 +2,13 @@
 require_once("Dashboard/Model/conexion.php");
 require_once("Dashboard/Model/animal-copy.class.php");
 
+if(!isset($_SESSION["usu_cod_usuario"])){
+    $msn = "Debes iniciar para adoptar!";
+    $t="Advertencia";
+
+    header("Location: login.php?&ms=$msn&t=$t");
+  };
+
 if(isset($_GET["pet"])){
   $mascota = $_GET["pet"];
   $titulo = "ADOPTA UN ".$mascota;
@@ -70,12 +77,15 @@ if(isset($_GET["pet"])){
           });
 
         });
-          <?php
-          if(isset($_GET["sol"]) )
+
+        $(document).ready(function(){
+         <?php
+          if(isset($_GET["sol_e"]) )
           {
-            echo "swal('".($_GET["sol"])."','','".($_GET["tm"])."');";
+            echo "swal('".($_GET["sol_e"])."','','".($_GET["tm_e"])."');";
           }
          ?>
+ });
 
       });
       </script>
