@@ -80,7 +80,7 @@
 			$usu_cedula							=$_POST["usu_cedula"];
 			$usu_imagen   			= $_POST["usu_imagen"];
 			$usu_carpeta   			= $nombre_usu_imagen;
-			
+
 
 
 				try{
