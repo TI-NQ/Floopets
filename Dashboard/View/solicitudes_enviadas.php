@@ -40,6 +40,7 @@ $organizacion=Gestion_animal::organizacion_animal($_SESSION["usu_cod_usuario"]);
       <td>Edad</td>
       <td>Numero microchip</td>
       <td>Sexo</td>
+      <td>Estado solicitud</td>
       <td>Organizacion</td>
 		</tr>
 		<tbody>
@@ -57,7 +58,9 @@ $organizacion=Gestion_animal::organizacion_animal($_SESSION["usu_cod_usuario"]);
             <td>".$row["ani_edad"]."</td>
             <td>".$row["ani_numero_microchip"]."</td>
             <td>".$row["ani_sexo"]."</td>
+            <td>".$row["sol_estado"]."</td>
             <td>$organizacion[2]</td>
+
 
 						<td>
 
