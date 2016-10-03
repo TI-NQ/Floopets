@@ -9,22 +9,31 @@
 
     <?php
     foreach ($fundaciones as $row) {
+
     ?>
     <div class="row">
       <div class="col s12">
         <div class='imagenmascota col s4'>
                       <div style='width:180px ;height:180px ;'>
-                      <?php echo"<img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_organizacion/".$row["org_nombre"]."/".$row["org_logo"]."'>" ?>
+                        <?php
+                        if ($row["org_logo"]=="") {
+                          echo"<img class='circle responsive-img' style='width:180px ;height:180px ;' src='../../WebFloopets/images/base.jpg'>";
+                        }
+                        else {
+                           echo"<img  style='width:180px ;height:180px ;' src='img/imagen_organizacion/".$row["org_nombre"]."/".$row["org_logo"]."'>";
+                        }
+                         ?>
+
                       </div>
                   </div>
         <div class="col s2">
           <h5><?php echo $row[2];?></h5>
           <ul>
-            <li>Email: <span><?php echo $row[4];?></span></li>
-            <li>Telefono: <span><?php echo $row[5];?></span></li>
-            <li>Direccion: <span><?php echo $row[6];?></span></li>
+            <li>Email: <span><?php echo $row[5];?></span></li>
+            <li>Telefono: <span><?php echo $row[4];?></span></li>
+            <li>Direccion: <span><?php echo $row[7];?></span></li>
           </ul>
-          <a href="#" class="waves-effect btn">Ver mas...</a>
+
         </div>
       </div>
       </div>

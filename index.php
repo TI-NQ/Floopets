@@ -114,7 +114,7 @@
 			<div class="banner-video" id="Inicio">
 				<div class="frase"><img src="WebFloopets/images/fraseindex.png"></div>
 				<?php if (isset($_SESSION["usu_cod_usuario"])) {
-					echo "<a class='ingresa btn waves-effect waves-light btn-large wow zoomIn' href='Dashboard/View/dashboard.php?p=".base64_encode('mi_perfil')."'>Ir a Dashboard</a>";
+					echo "<a class='ingresa btn waves-effect waves-light btn-large wow zoomIn' href='Dashboard/View/dashboard.php?p=".base64_encode('mi_perfil')."'>Ir a mi Perfil</a>";
 				}else {
 					echo "<a class='ingresa btn waves-effect waves-light btn-large wow zoomIn' href='login.php'>Ingresar a Floopets</a>";
 				} ?>
@@ -364,7 +364,7 @@
 										</div>
 									</div>
 									<div class="modal-footer grey darken-3">
-										<button name="accion" value="c" class="modal-action waves-effect waves-green btn">Registrar</button>
+										<button name="accion" value="c" class="modal-action waves-effect btn">Registrar</button>
 									</div>
 								</div>
 							</div>

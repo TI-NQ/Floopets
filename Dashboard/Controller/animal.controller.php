@@ -3,7 +3,7 @@
 	require_once("../Model/conexion.php");
 	require_once("../Model/animal.class.php");
 	require_once("../Model/usuarios.class.php");
-	
+
 
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
@@ -45,19 +45,19 @@
 
 			break;
 			case 'u':
-				$ani_cod_animal 		= $_POST["ani_cod_animal"];
-				$ra_cod_raza			= $_POST["ra_cod_raza"];
-				$ani_nombre             = $_POST["ani_nombre"];
-				$ani_color				= $_POST["ani_color"];
-				$ani_tamanio			= $_POST["ani_tamanio"];
+						$ani_cod_animal 		= $_POST["ani_cod_animal"];
+						$ra_cod_raza			= $_POST["ra_cod_raza"];
+						$ani_nombre             = $_POST["ani_nombre"];
+						$ani_color				= $_POST["ani_color"];
+						$ani_tamanio			= $_POST["ani_tamanio"];
 		      	$ani_esterilizado     	= $_POST["ani_esterilizado"];
-		     	$ani_edad             	= $_POST["ani_edad"];
+		     		$ani_edad             	= $_POST["ani_edad"];
 		      	$ani_descripcion      	= $_POST["ani_descripcion"];
-		     	$ani_numero_microchip	= $_POST["ani_numero_microchip"];
+		     		$ani_numero_microchip	= $_POST["ani_numero_microchip"];
 		      	$ani_sexo				= implode(",", $_POST["ani_sexo"]);
 		      	$nombre_ani_imagen 		= strtolower(str_replace('ñ', 'n', $ani_nombre.rand(0,2000)));
-				$nombre_ani_imagen 		= strtolower(str_replace(' ', '', $nombre_ani_imagen));
-				$ani_carpeta   			= $nombre_ani_imagen;
+						$nombre_ani_imagen 		= strtolower(str_replace(' ', '', $nombre_ani_imagen));
+						$ani_carpeta   			= $nombre_ani_imagen;
 		      	$ani_imagen   			= $_POST["ani_imagen"];
 
 
@@ -80,7 +80,7 @@
 			case 'enproceso':
 
 			$animal =  Gestion_animal::ReadbyID(base64_decode($_REQUEST["an"]));
-					
+
 			try {
 				//Aqui validamos que el usuario no tenga una una solicitud realizada
 				$solicitudes=Gestion_animal::Validar_adopcion($_SESSION["usu_cod_usuario"]);
@@ -95,28 +95,29 @@
 						Gestion_animal::En_Proceso($animal[0]);
 						$sol_estado="Pendiente";
 
-						//Creamos la solicitud de adopcion con la respectiva Gestion de la clase 
+						//Creamos la solicitud de adopcion con la respectiva Gestion de la clase
 						Gestion_animal::Solicitud_adopcion($animal[0],$_SESSION["usu_cod_usuario"],$sol_estado);
           				$mensaje = "Se envio tu solicitud de adopcion";
           				$t_mensaje="success";
           				header("Location: ../View/dashboard.php?p=".base64_encode("solicitudes_enviadas")."&sol=$mensaje&tm=$t_mensaje");
 					}else{
-						$mensaje="No eres un usuario publico para adoptar!";
+						$mensaje="Lo Sentimos no puedes adoptar!";
 						$error="error";
 						header("Location: ../../adopciones.php?&sol_e=$mensaje&tm_e=$error");
 					}
 
-					
-				}
-				
-          
 
-         
-					
-          
+				}
+
+
+
+
+
+
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
-         // header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
+          header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
+				
         }
 			break;
 

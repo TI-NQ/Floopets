@@ -14,7 +14,7 @@
 
 			floopets_BD::Disconnect();
 		}
-function ReadAll()
+		function ReadAll()
 		{
 				//Instanciamos y nos conectamos a la bd
 				$Conexion = floopets_BD::Connect();
@@ -130,7 +130,7 @@ function ReadAll()
 
 		floopets_BD::Disconnect();
 	}
-	
+
 
 	}
  ?>
