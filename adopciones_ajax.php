@@ -17,7 +17,7 @@ foreach ($animales  as $row) {
     <div class="detalle">
       <h5><?php echo $row["ani_nombre"]; ?></h5>
       <p>Edad: <?php echo $row["ani_edad"]; ?></p>
-      <button class="waves-effect waves-light btn">ADOPTAR</button>
+     <?php echo "<a class='btn waves-effect blue lighten-3' href='Dashboard/Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=enproceso'>Adoptar</a>" ; ?>
     </div>
   </div>
 <?php

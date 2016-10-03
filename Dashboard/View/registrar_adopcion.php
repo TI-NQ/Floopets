@@ -25,7 +25,7 @@
 					<option value="" disabled selected>Usuario</option>
 					<?php
 							foreach ($usuarios as $row){
-									echo "<option value='".$row["usu_cod_usuario"]."'>".$row["usu_nombre"]."</option>";
+									echo "<option value='".$row["usu_cod_usuario"]."'>".$row["usu_nombre"]." ".$row["usu_apellido"]."</option>";
 							}
 					 ?>
 				</select>

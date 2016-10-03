@@ -216,7 +216,7 @@
                 <div class="file-field input-field col s12 m12 form-group" style="margin-top:10px;">
                <div class="btn" id="btnlogin" >
                  <span>imagen</span>
-                 <input type="file" multiple name="usu_imagen[]" class="form-control">
+                 <input type="file" name="usu_imagen[]" class="form-control">
                </div>
                <div class="file-path-wrapper form-group">
                  <input class="form-control file-path validate"  type="text" placeholder="" name="usu_imagen" >
