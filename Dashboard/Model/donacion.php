@@ -45,18 +45,6 @@
             return $resultado;
             floopets_BD::Disconnect();
         }
-
-        function Update($don_nombre,$don_cod_donacion,$don_descripcion,$don_fecha,$don_imagen,$org_cod_organizacion,$td_cod_tipo_donacion)
-        {
-            //Instanciamos y nos conectamos a la bd
-            $Conexion = floopets_BD::Connect();
-            $Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            //Crear el query que vamos a realizar
-            $consulta = "UPDATE donacion SET don_descripcion=?,don_fecha=?,don_imagen=?,org_cod_organizacion=? WHERE don_cod_donacion = ?" ;
-            $query = $Conexion->prepare($consulta);
-            $query->execute(array($don_descripcion,$don_fecha,$don_imagen,$org_cod_organizacion,$don_cod_donacion));
-            floopets_BD::Disconnect();
-        }
             function Delete($don_cod_donacion)
             {
                 //Instanciamos y nos conectamos a la bd
