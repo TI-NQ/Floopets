@@ -65,8 +65,8 @@ else {
                     <li>".$row["de_nombre"]."</li>
                   </div>
                   <div class='imagenmascota col l12'>
-                      <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
-                  </div>
+                          <img class='circle responsive-img' style='width:180px ;height:180px ;' src='img/imagen_denuncia/".$row["de_contacto"]."/".$row["de_imagen"]."'>
+                      </div>
 
                   <a class='btn waves-effect blue lighten-3' href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=tomar'>Tomar</a>
                   <input type='hidden' id='de_cod_denuncia' value='".base64_encode($row["de_cod_denuncia"])."'>

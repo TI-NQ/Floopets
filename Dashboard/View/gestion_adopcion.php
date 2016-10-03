@@ -16,6 +16,10 @@ $adopcion=Gestion_adopcion::solicitudesapro($org_cod_organizacion[1]);
 <div class="col l11 offset-l1">
 <?php
 	foreach ($adopcion as $row) {
+     $nombre_carpeta = strtolower(str_replace('ñ', 'n', $row["ani_carpeta"]));
+      $nombre_carpeta = strtolower(str_replace(' ', '', $nombre_carpeta));
+      $nombre_img_ani = strtolower(str_replace('ñ', 'n', $row["ani_imagen"]));
+      $nombre_img_ani = strtolower(str_replace(' ', '', $nombre_img_ani));
     echo"<div class='col l6 descrip'>
             <div class='row'>
                 <div class='col l6 col m6'>
@@ -23,9 +27,15 @@ $adopcion=Gestion_adopcion::solicitudesapro($org_cod_organizacion[1]);
                   <label>Codigo</label>
                     <span>".$row["ado_cod_adopcion"]."</span>
                 </div>
-                <div class='imagenmascota col l12'>                      
-                  <img class='responsive-img' style='width:250px ;height:250px ;' src='img/imagen_animal/".$row["ani_carpeta"]."/".$row["ani_imagen"]."'>                      
-                </div>
+                <div class='imagenmascota col l12'>
+                      <div>";
+                      if ($nombre_img_ani=="") {
+                        echo "<img class='responsive-img' style='width:200px ;height:200px ;border-radius:10px;' src='../../WebFloopets/images/base.jpg'>";
+                      }else {
+                        echo "<img class='responsive-img' style='width:200px ;height:200px ;border-radius:10px;' src='img/imagen_animal/".$nombre_carpeta."/".$nombre_img_ani."'>";
+                      }
+echo "</div>
+</div>
               </div>
                 <div class='col l6'>
                   <ul class='descrip'>

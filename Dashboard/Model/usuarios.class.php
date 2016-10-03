@@ -2,27 +2,27 @@
 
 	class Gestion_usuarios
 	{
-			function Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen)
+			function Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen,$usu_carpeta)
 			{
 				//Instanciamos y nos conectamos a la bd
 				$conexion=floopets_BD::Connect();
 				$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 				//Creamos el query de la consulta a la BD
-				$consulta ="INSERT INTO usuario (usu_nombre,usu_apellido,usu_telefono,usu_cedula,usu_email,cod_rol,usu_clave,usu_imagen) VALUES (?,?,?,?,?,?,?,?)";
+				$consulta ="INSERT INTO usuario (usu_nombre,usu_apellido,usu_telefono,usu_cedula,usu_email,cod_rol,usu_clave,usu_imagen,usu_carpeta) VALUES (?,?,?,?,?,?,?,?,?)";
 				$query = $conexion->prepare($consulta);
-				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen));
+				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen,$usu_carpeta));
 				floopets_BD::Disconnect();
 		}
 
-		function Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen)
+		function Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen,$usu_carpeta)
 			{
 				//Instanciamos y nos conectamos a la bd
 				$conexion=floopets_BD::Connect();
 				$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 				//Creamos el query de la consulta a la BD
-				$consulta ="UPDATE usuario SET usu_nombre = ?, usu_apellido = ?,usu_telefono=?,usu_cedula=?,usu_email=?,usu_clave=?,usu_imagen=? WHERE usu_cod_usuario = ?";
+				$consulta ="UPDATE usuario SET usu_nombre = ?, usu_apellido = ?,usu_telefono=?,usu_cedula=?,usu_email=?,usu_clave=?,usu_imagen=?,usu_carpeta=?  WHERE usu_cod_usuario = ?";
 				$query = $conexion->prepare($consulta);
-				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen,$usu_cod_usuario));
+				$query->execute(array($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen,$usu_carpeta,$usu_cod_usuario));
 				floopets_BD::Disconnect();
 		}
 		function ReadAll()

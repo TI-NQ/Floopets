@@ -37,6 +37,7 @@ $cuidado=Gestion_cuidado::ReadAll();
 
 
 			foreach ($cuidado as $row) {
+
           $nombre_cuidado = strtolower(str_replace('ñ', 'n', $row["cu_nombre"]));
          $nombre_cuidado = strtolower(str_replace(' ', '', $nombre_cuidado));
 				echo"
@@ -48,10 +49,14 @@ $cuidado=Gestion_cuidado::ReadAll();
                         <span>".$row["cu_nombre"]."</span>
                       </div>
                       <div class='imagenmascota col l12'>
-                          <div style='width:180px ;height:180px ;'>
-                           <img class='responsive-img' style='width:180px ;height:180px ;' src='img/imagen_cuidado/".$nombre_cuidado."/".$row["galeria"]."'>
-                          </div>
-                      </div>
+                      <div>";
+                      if ($nombre_cuidado=="") {
+                        echo "<img class='responsive-img' style='width:200px ;height:200px ;border-radius:10px;' src='../../WebFloopets/images/base.jpg'>";
+                      }else {
+                        echo "<img class='responsive-img' style='width:200px ;height:200px ;border-radius:10px;' src='img/imagen_cuidado/".$nombre_cuidado."/".$row["galeria"]."'>";
+                      }
+echo "</div>
+</div>
                       <div class='col l6'>
                              <a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode("actualizar_cuidado")."&cui=".base64_encode($row["cu_cod_cuidado"])."'>
                              <i class='small material-icons'>edit</i>
