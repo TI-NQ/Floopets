@@ -14,7 +14,7 @@
   <link rel="stylesheet" type="text/css" href="WebFloopets/css/style.css" media="all">
   <link href='http://fonts.googleapis.com/css?family=Roboto:900,900italic,500,400italic,100,700italic,300,700,500italic,100italic,300italic,400' rel='stylesheet' type='text/css'>
   <!-- <div id="fback"> -->
-  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+  <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script> -->
   <script type="text/javascript" src="WebFloopets/sweetalert/dist/sweetalert.min.js"></script>
 <script >
           $(document).ready(function()
@@ -69,6 +69,10 @@
       $("#confirmaemail").text("Este campo es obligatorio");
       $('#emailr').focus();
       return false;
+    }if(!expresion.test(email)){
+      $("#confirmaemail").text("Por favor ingrese un correo valido. Ejemplo (floopets@mascotas.com)");
+      $('#emailr').focus();
+      return false;
     }if(email != "") {
       $("#confirmaemail").text("");
     }if (contraseña == "") {
@@ -84,11 +88,7 @@
       $('#validacontra').focus();
       return false;
     }
-    if(!expresion.test(email)){
-      $("#confirmaemail").text("Por favor ingrese un correo valido. Ejemplo (floopets@mascotas.com)");
-      $('#emailr').focus();
-      return false;
-    }else {
+    else {
       return true;
     }
   }
