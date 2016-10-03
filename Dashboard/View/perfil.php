@@ -4,7 +4,7 @@
   require_once ("../Model/usuarios.class.php");
   $user_data=Gestion_usuarios::ReadbyID($_SESSION["usu_cod_usuario"]);
   $nombre_carpeta = strtolower(str_replace('ñ', 'n', $user_data["usu_carpeta"]));
-      $nombre_carpeta = strtolower(str_replace(' ', '', $nombre_carpeta));
+  $nombre_carpeta = strtolower(str_replace(' ', '', $nombre_carpeta));
   $nombre_usu_imagen= strtolower(str_replace('ñ', 'n', $user_data["usu_email"]));
   $nombre_usu_imagen = strtolower(str_replace(' ', '', $nombre_usu_imagen));
 
