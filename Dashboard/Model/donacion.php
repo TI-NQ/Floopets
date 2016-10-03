@@ -2,15 +2,15 @@
     class Gestion_donacion
     {
         // Metodo Create()
-        function Create($don_nombre,$don_descripcion,$don_fecha,$don_imagen,$org_cod_organizacion,$td_cod_tipo_donacion,$usu_cod_usuario)
+        function Create($don_nombre,$don_descripcion,$don_imagen,$org_cod_organizacion,$td_cod_tipo_donacion,$usu_cod_usuario)
         {
             //Instanciamos y nos conectamos a la bd
             $conexion=floopets_BD::Connect();
             $conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
             //Crear el query que vamos a realizar.
-            $consulta ="INSERT INTO donacion (don_nombre,don_fecha,don_descripcion,org_cod_organizacion,don_imagen,td_cod_tipo_donacion,usu_cod_usuario) VALUES (?,?,?,?,?,?,?)";
+            $consulta ="INSERT INTO donacion (don_nombre,don_descripcion,don_imagen,org_cod_organizacion,td_cod_tipo_donacion,usu_cod_usuario,don_fecha) VALUES (?,?,?,?,?,?,now())";
             $query = $conexion->prepare($consulta);
-            $query->execute(array($don_nombre,$don_descripcion,$don_fecha,$don_imagen,$org_cod_organizacion,$td_cod_tipo_donacion,$usu_cod_usuario));
+            $query->execute(array($don_nombre,$don_descripcion,$don_imagen,$org_cod_organizacion,$td_cod_tipo_donacion,$usu_cod_usuario));
             floopets_BD::Disconnect();
         }
         function ReadAll()

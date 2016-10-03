@@ -30,10 +30,10 @@ if($_SESSION["cod_rol"]==5){
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('cuidados_gatos')?>" class="item_menu" >Perros</a></p></div>
 </li>
 <li>
-  <div class="collapsible-header grey lighten-2"><a href="../../index.php#adopciones"><i class="fa fa-user" aria-hidden="true"></i>Adoptar</a></div>
+  <div class="collapsible-header grey lighten-2"><a href="../../adopciones.php"><i class="fa fa-user" aria-hidden="true"></i>Adoptar</a></div>
 </li>
 <li>
-  <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('nueva_donacion')?>"><i class="fa fa-user" aria-hidden="true"></i>Realiza una donación</a></div>
+  <!-- <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('nueva_donacion')?>"><i class="fa fa-user" aria-hidden="true"></i>Realiza una donación</a></div> -->
 </li>
 <li>
   <div class="collapsible-header grey lighten-2"><a href="dashboard.php?p=<?php echo base64_encode('solicitudes_enviadas')?>"><i class="fa fa-user" aria-hidden="true"></i>Solicitudes enviadas</a></div>
