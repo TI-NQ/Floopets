@@ -56,6 +56,7 @@
 						<td>
 
                    		<a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'>eliminar</a>
+                   		</td>
 
 					</tr>";
 			}

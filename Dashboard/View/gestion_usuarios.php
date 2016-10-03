@@ -60,8 +60,7 @@ $user=Gestion_usuarios::ReadAll();
             <td>".$row["usu_clave"]."</td>
 						<td>
 
-<a class='btn-floating waves-light waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_usuario')."&us=".base64_encode($row["usu_cod_usuario"])."'><i class='small material-icons'>edit</i></a>
-                    	";?>
+<a class='btn-floating waves-light waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_usuario')."&us=".base64_encode($row["usu_cod_usuario"])."'><i class='small material-icons'>edit</i></a>";?>
                         <a href='#' id='btntrash' onclick="borrar('<?php echo base64_encode($row["usu_cod_usuario"]);?>')" class='btn-floating waves-light red waves-effect'>
                         <i class='small material-icons'>delete</i>
                       </a><?php echo "</tr>"

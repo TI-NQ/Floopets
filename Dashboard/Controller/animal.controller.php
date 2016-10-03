@@ -3,6 +3,7 @@
 	require_once("../Model/conexion.php");
 	require_once("../Model/animal.class.php");
 	require_once("../Model/usuarios.class.php");
+	require_once("../Model/adopcion.class.php");
 	
 
 	$accion = $_REQUEST["accion"];
@@ -80,6 +81,7 @@
 			case 'enproceso':
 
 			$animal =  Gestion_animal::ReadbyID(base64_decode($_REQUEST["an"]));
+
 					
 			try {
 				//Aqui validamos que el usuario no tenga una una solicitud realizada
@@ -132,6 +134,24 @@
           header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
         }
 			break;
+			case 'aceptar':
+
+			$animal =  Gestion_animal::ReadbyID(base64_decode($_REQUEST["an"]));
+			$us =  Gestion_usuarios::ReadbyID(base64_decode($_REQUEST["us"]));
+
+
+			try {
+				Gestion_animal::UpdateEstadoani($_REQUEST["an"]);
+				Gestion_animal::UpdateEstadosoli(($_REQUEST["an"]));
+				 Gestion_adopcion::Create(($_REQUEST["an"]),($_REQUEST["us"]));
+				$mensaje = "Se registro exitosamente";
+			} catch (Exception $e) {
+				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
+			}
+			header("Location: ../View/dashboard.php?p=".base64_encode("solicitud_fundacion")."&m=$mensaje");
+
+			break;
+
 	}
 
  ?>
