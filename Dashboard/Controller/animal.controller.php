@@ -95,10 +95,11 @@
 				}
 
 				if ($respuesta>=1) {
-					$mensaje="Ya tienes una solicitud pendiente!";
-					$error="error";
+					$mensaje=base64_encode("Ya tienes una solicitud pendiente!");
+					$tipo_mensaje=base64_encode("error");
+
 					//Si tiene solicitud le indicamos al usuario que ya tiene una pendiente
-					header("Location: ../../adopciones.php?&sol_e=$mensaje&tm_e=$error");
+					header("Location: ../../adopciones.php?m=$mensaje&tm=$tipo_mensaje");
 				}else{
 					if ($_SESSION["cod_rol"]==5) {
 						//Actualizamos el estado del animal en adopcion a En Proceso
@@ -107,13 +108,13 @@
 
 						//Creamos la solicitud de adopcion con la respectiva Gestion de la clase
 						Gestion_animal::Solicitud_adopcion($animal[0],$_SESSION["usu_cod_usuario"],$sol_estado);
-          				$mensaje = "Se envio tu solicitud de adopcion";
-          				$t_mensaje="success";
-          				header("Location: ../View/dashboard.php?p=".base64_encode("solicitudes_enviadas")."&sol=$mensaje&tm=$t_mensaje");
+          				$mensaje = base64_encode("Se envio tu solicitud de adopcion");
+          				$t_mensaje=base64_encode("success");
+          				header("Location: ../View/dashboard.php?p=".base64_encode("solicitudes_enviadas")."&m=$mensaje&tm=$t_mensaje");
 					}else{
-						$mensaje="Lo Sentimos no puedes adoptar!";
-						$error="error";
-						header("Location: ../../adopciones.php?&sol_e=$mensaje&tm_e=$error");
+						$mensaje=base64_encode("Lo sentimos no puedes adoptar!");
+						$error=base64_encode("error");
+						header("Location: ../../adopciones.php?m=$mensaje&tm=$error");
 					}
 
 
@@ -130,6 +131,8 @@
 				
         }
 			break;
+
+		
 
 
 		case 'd':

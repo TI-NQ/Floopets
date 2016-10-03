@@ -16,9 +16,9 @@ $organizacion=Gestion_animal::organizacion_animal($_SESSION["usu_cod_usuario"]);
  <script type="text/javascript">
  $(document).ready(function(){
  	<?php
-          if(isset($_GET["sol"]) )
+          if(isset($_GET["m"]) )
           {
-            echo "swal('".($_GET["sol"])."','','".($_GET["tm"])."');";
+            echo "swal('".base64_decode(($_GET["m"]))."','','".base64_decode(($_GET["tm"]))."');";
           }
          ?>
  });
@@ -42,6 +42,7 @@ $organizacion=Gestion_animal::organizacion_animal($_SESSION["usu_cod_usuario"]);
       <td>Sexo</td>
       <td>Estado solicitud</td>
       <td>Organizacion</td>
+      <td>acciones</td>
 		</tr>
 		<tbody>
 			<?php
@@ -63,7 +64,7 @@ $organizacion=Gestion_animal::organizacion_animal($_SESSION["usu_cod_usuario"]);
 
 
 						<td>
-
+               <a class='btn-floating waves-light waves-effect' href='../Controller/adopcion.controller.php?an=".($row["ani_cod_animal"])."&accion=cancelarsoli'><i class='small material-icons'>not_interested</i></a>
 
                     	";?>
                         

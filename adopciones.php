@@ -88,9 +88,9 @@ if(isset($_GET["pet"])){
 
         $(document).ready(function(){
          <?php
-          if(isset($_GET["sol_e"]) )
+          if(isset($_GET["m"]) )
           {
-            echo "swal('".($_GET["sol_e"])."','','".($_GET["tm_e"])."');";
+            echo "swal('".(base64_decode($_GET["m"]))."','','".(base64_decode($_GET["tm"]))."');";
           }
          ?>
  });
