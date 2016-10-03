@@ -12,6 +12,7 @@
 <?php
 
 
+
 	foreach ($eventos_proximos as $row) {
 				echo"<div class='col l6 descrip'>
 	                	<div class='row'>
@@ -20,23 +21,25 @@
 		                        <span><b>Evento:</b></span>
 		                        <li>".$row["eve_nombre"]."</li>
 	                      	</div>
-	                  		<div class='imagenmascota col l12'>
+	                  		<div class='imagenmascota col l12'>";?>
+                          <?php
+                          if ($row["eve_imagen"]=="") {
+                          echo "<img class=' responsive-img' style='width:250px ;height:250px ;' src='../../WebFloopets/images/base.jpg'>";
+                          }
+                          else {
+                          echo  " <img class=' responsive-img' style='width:250px ;height:250px ;' src='img/imagen_evento/".$row["eve_carpeta"]."/".$row["eve_imagen"]."'>"; 
+                          }
 
-	                          <img class=' responsive-img' style='width:250px ;height:250px ;' src='img/imagen_evento/".$row["eve_carpeta"]."/".$row["eve_imagen"]."'>
+                           ?>
+                           <?php echo"
+
 
 	                     	</div>
 	                   		<div class='col l6'>
-	                   			<a class='btn-floating waves-effect' href='../View/dashboard.php?p=".base64_encode('actualizar_evento')."&eve=".base64_encode($row['eve_cod_evento'])."'>
 
-	                          <i class='small material-icons'>mode_edit</i>
-	                          </a>
 	                      	</div>
 	                      	<div class='col l6'>
-													";?>
-														<a href='#' id='btntrash' onclick="borrar('<?php echo $row["eve_cod_evento"];?>')" class='btn-floating waves-light red waves-effect'>
-	                          <i class='small material-icons'>delete</i>
-	                          </a>
-														<?php echo"
+
 	                      	</div>
 	                     </div>
 							<div class='col l6'>
@@ -73,5 +76,3 @@
 ?>
 </div>
 </div>
-
-

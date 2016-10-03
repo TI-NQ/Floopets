@@ -382,7 +382,7 @@
 							<map name="Map" id="Map">
 							    <area alt="Servicio Nacional de Aprendizaje SENA"  target="_blank" title="Servicio Nacional de Aprendizaje SENA" href="http://www.sena.edu.co/Paginas/Portada.aspx" shape="poly" coords="19,10,23,108,118,110,123,12" />
 							    <area alt="Visualizo la Web Creando Ideas"  target="_blank" title="Visualizo la Web Creando Ideas" href="http://visualizolaweb.com/" shape="poly" coords="163,15,161,109,399,111,395,18" />
-							    <area alt="Fundación ORCA" title="Fundación ORCA"  target="_blank"  href="http://www.fundacionorca.org/" shape="poly" coords="444,11,440,110,584,108,574,15" />
+							    <area alt="Fundación ORCA" title="Fundación ORCA" target="_blank"  href="http://www.fundacionorca.org/" shape="poly" coords="444,11,440,110,584,108,574,15" />
 
 							</map>
 						</div>

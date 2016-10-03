@@ -130,7 +130,7 @@
 		$fechasystem=date("Y-m-d");
 		$conexion=floopets_BD::Connect();
 		$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
-		$consulta="SELECT * FROM evento WHERE eve_fecha > $fechasystem";
+		$consulta="SELECT * FROM evento WHERE eve_fecha > $fechasystem AND eve_estado = 'Publicado'";
 		$query=$conexion->prepare($consulta);
 		$query->execute(array());
 		$resultado=$query->fetchALL(PDO::FETCH_BOTH);
