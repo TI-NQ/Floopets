@@ -21,6 +21,7 @@
 					Gestion_animal::UpdateEstadoani($ani_estado,($_REQUEST["an"]));
 					Gestion_adopcion::Create(($_REQUEST["an"]),($_REQUEST["us"]));
 
+
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}

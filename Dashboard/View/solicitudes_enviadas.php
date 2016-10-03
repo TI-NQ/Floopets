@@ -67,9 +67,8 @@ $organizacion=Gestion_animal::organizacion_animal($_SESSION["usu_cod_usuario"]);
                <a class='btn-floating waves-light waves-effect' href='../Controller/adopcion.controller.php?an=".($row["ani_cod_animal"])."&accion=cancelarsoli'><i class='small material-icons'>not_interested</i></a>
 
                     	";?>
-                        
-                      </a><?php echo "</tr>"
-					;
+                     <?php    
+              echo "</tr>";
 			}
 
 			 ?>
