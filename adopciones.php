@@ -3,7 +3,12 @@
 session_start();
 require_once("Dashboard/Model/conexion.php");
 require_once("Dashboard/Model/animal-copy.class.php");
+require_once("Dashboard/Model/organizacion.class.php");
+require_once("Dashboard/Model/raza.class.php");
 
+
+$funcadiones=Gestion_organizacion::ReadAll();
+$razas=Gestion_raza::ReadAll();
 //Validacion de logueo para adoptar
 if($_SESSION["usu_cod_usuario"]==""){
     $msn = "Debes iniciar para adoptar!";
@@ -145,7 +150,11 @@ if(isset($_GET["pet"])){
             <select class="browser-default">
               <option value="" disabled selected>Raza</option>
               <option value="all">No importa</option>
-
+              <?php
+              foreach ($razas as $row) {
+                echo "<option value = '".$row["ra_nombre"]."'>".$row["ra_nombre"]."</option>";
+              }
+             ?>
             </select>
           </div>
 
@@ -153,6 +162,11 @@ if(isset($_GET["pet"])){
             <select class="browser-default">
               <option value="" disabled selected>Fundación</option>
               <option value="all">No importa</option>
+              <?php
+              foreach ($funcadiones as $row) {
+                echo "<option value = '".$row["org_nombre"]."'>".$row["org_nombre"]."</option>";
+              }
+             ?>
             </select>
           </div>
         </form>

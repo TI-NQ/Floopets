@@ -90,15 +90,23 @@
 					//Si tiene solicitud le indicamos al usuario que ya tiene una pendiente
 					header("Location: ../../adopciones.php?&sol_e=$mensaje&tm_e=$error");
 				}else{
-					//Actualizamos el estado del animal en adopcion a En Proceso
-					Gestion_animal::En_Proceso($animal[0]);
-					$sol_estado="Pendiente";
+					if ($_SESSION["cod_rol"]==5) {
+						//Actualizamos el estado del animal en adopcion a En Proceso
+						Gestion_animal::En_Proceso($animal[0]);
+						$sol_estado="Pendiente";
 
-					//Creamos la solicitud de adopcion con la respectiva Gestion de la clase 
-					Gestion_animal::Solicitud_adopcion($animal[0],$_SESSION["usu_cod_usuario"],$sol_estado);
-          			$mensaje = "Se envio tu solicitud de adopcion";
-          			$t_mensaje="success";
-          			header("Location: ../View/dashboard.php?p=".base64_encode("solicitudes_enviadas")."&sol=$mensaje&tm=$t_mensaje");
+						//Creamos la solicitud de adopcion con la respectiva Gestion de la clase 
+						Gestion_animal::Solicitud_adopcion($animal[0],$_SESSION["usu_cod_usuario"],$sol_estado);
+          				$mensaje = "Se envio tu solicitud de adopcion";
+          				$t_mensaje="success";
+          				header("Location: ../View/dashboard.php?p=".base64_encode("solicitudes_enviadas")."&sol=$mensaje&tm=$t_mensaje");
+					}else{
+						$mensaje="No eres un usuario publico para adoptar!";
+						$error="error";
+						header("Location: ../../adopciones.php?&sol_e=$mensaje&tm_e=$error");
+					}
+
+					
 				}
 				
           
