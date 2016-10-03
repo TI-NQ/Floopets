@@ -21,7 +21,7 @@
 		  <td>Fecha Inicio</td>
       <td>Fecha Fin</td>
       <td>Estado</td>
-		  <td>Acciones</td>
+		  <!-- <td>Acciones</td> -->
 		</tr>
 	</thead>
 		<tbody>
@@ -38,13 +38,7 @@
             <td>".$row["eve_fecha_hasta"]."</td>
             <td>".$row["eve_estado"]."</td>
 
-
-
-						<td>
-                        <a href='dashboard.php?p=".base64_encode('actualizar_evento')."&eve=".base64_encode($row['eve_cod_evento'])."'><i class='fa fa-pencil'style='color:black !important ; font-size: 30px'></i></a>
-                    		<a href='../Controller/evento.controller.php?eve=".base64_encode($row["eve_cod_evento"])."&accion=d'><i class='fa fa-trash'style='color:red !important; font-size: 30px '></i></a>
-
-            </td>
+            
 
 					</tr>";
 			}
@@ -55,3 +49,8 @@
 </table>
 </div>
 </div>
+
+<!-- <td>
+<a  class='btn-floating waves-effect ' href='dashboard.php?p=".base64_encode('actualizar_evento')."&eve=".base64_encode($row['eve_cod_evento'])."'><i class='small material-icons'>mode_edit</i></a>
+<a  href='../Controller/evento.controller.php?eve=".base64_encode($row["eve_cod_evento"])."&accion=d'><i class='fa fa-trash'style='color:red !important; font-size: 30px '></i></a>
+</td> -->
