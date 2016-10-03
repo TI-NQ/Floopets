@@ -55,7 +55,7 @@ class Gestion_tipo_organizacion{
 
 
 		//Crear el query que vamos a realizar
-		$consulta = "SELECT * FROM tipo_organizacion LIMIT 1";
+		$consulta = "SELECT * FROM tipo_organizacion";
 
 		$query = $Conexion->prepare($consulta);
 		$query->execute();
@@ -64,7 +64,7 @@ class Gestion_tipo_organizacion{
 		//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
 		//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
 
-		$resultado = $query->fetch(PDO::FETCH_BOTH);
+		$resultado = $query->fetchALL(PDO::FETCH_BOTH);
 		return $resultado;
 
 		floopets_BD::Disconnect();
