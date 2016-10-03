@@ -84,7 +84,17 @@
 			try {
 				//Aqui validamos que el usuario no tenga una una solicitud realizada
 				$solicitudes=Gestion_animal::Validar_adopcion($_SESSION["usu_cod_usuario"]);
-				if (count($solicitudes)>0) {
+
+				//
+				$respuesta=0;
+
+				foreach ($solicitudes as $row) {
+					if ($row["sol_estado"]=="Pendiente"  || $row["sol_estado"]=="En Proceso") {
+						$respuesta=$respuesta+1;
+					}
+				}
+
+				if ($respuesta>=1) {
 					$mensaje="Ya tienes una solicitud pendiente!";
 					$error="error";
 					//Si tiene solicitud le indicamos al usuario que ya tiene una pendiente

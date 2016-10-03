@@ -103,6 +103,7 @@ echo "<i class='small material-icons'>delete</i>
 </div>";
 
 
+
       }
       }else{
         echo "<center><h3>No tiene mascotas</h3>

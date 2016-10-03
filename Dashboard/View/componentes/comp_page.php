@@ -24,7 +24,7 @@ switch ($page) {
 	break;
 	//Componente de pagina encargado de vincular informacion de mascotas segun fundacion o usuario que se encuentra con la sesion activa
 	case'mis_mascotas':
-		require_once("gestion_animal.php");
+		require_once("mis_mascotas.php");
 	break;
 	//Componente de pagina encargado de vincular formulario para registro de nueva adopcion
 	case 'solicitudes_adopcion':
