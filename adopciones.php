@@ -175,7 +175,7 @@ if(isset($_GET["pet"])){
               <h5><?php echo $row["ani_nombre"]; ?></h5>
               <p>Edad: <?php echo $row["ani_edad"]; ?></p>
 
-             <?php echo "<a class='btn waves-effect blue lighten-3' href='Dashboard/Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=enproceso'>Tomar</a>" ; ?>
+             <?php echo "<a class='btn waves-effect blue lighten-3' href='Dashboard/Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=enproceso'>Adoptar</a>" ; ?>
             </div>
             </form>
           </div>

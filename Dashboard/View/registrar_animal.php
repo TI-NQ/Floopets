@@ -102,12 +102,12 @@
 <div class="input-field col s6">
 <h4>sexo</h4>
 <p>
-    <input name="ani_sexo[]" type="radio" id="Macho" />
+    <input name="ani_sexo[]" value="Macho" type="radio" id="Macho" />
     <label for="Macho">Macho</label>
   </p>
   <p>
-    <input name="ani_sexo[]" type="radio" id="Hembra" />
-    <label for="Hembra">Hembra</label>
+    <input name="ani_sexo[]" value="Hembra" type="radio" id="Hembra" />
+    <label for="H">Hembra</label>
   </p>
   </div>
   	<input name="org_cod_organizacion" value="<?php echo $mi_organizacion[1]?>" hidden>
