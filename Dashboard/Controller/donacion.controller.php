@@ -1,4 +1,5 @@
 <?php
+session_start();
 	require_once("../Model/conexion.php");
 	require_once("../Model/donacion.php");
 
@@ -13,7 +14,7 @@
 			$nombre_don_imagen 	= strtolower(str_replace(' ', '', $nombre_don_imagen));
 			$org_cod_organizacion			= $_POST["org_cod_organizacion"];
 			$td_cod_tipo_donacion			= $_POST["td_cod_tipo_donacion"];
-			$usu_cod_usuario				= $_POST["usu_cod_usuario"];
+			$usu_cod_usuario				= $_SESSION["usu_cod_usuario"];
 			$count_galeria			= count($_FILES['don_imagen']['name']);
 
 			try {
