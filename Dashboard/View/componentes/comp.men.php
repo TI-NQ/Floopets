@@ -24,11 +24,7 @@ if($_SESSION["cod_rol"]==5){
   <div class="collapsible-header grey lighten-2"><a><i class="fa fa-calendar" aria-hidden="true"></i>Eventos</a></div>
   <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('proximos_eventos')?>" class="item_menu" >Proximos Eventos</a></p></div>
 </li>
-<li>
-  <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Cuidados</a></div>
-  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('cuidados_perros')?>" class="item_menu" >Gatos</a></p></div>
-  <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('cuidados_gatos')?>" class="item_menu" >Perros</a></p></div>
-</li>
+
 <li>
   <div class="collapsible-header grey lighten-2"><a href="../../index.php#adopciones"><i class="fa fa-user" aria-hidden="true"></i>Adoptar</a></div>
 </li>
