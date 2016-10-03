@@ -42,6 +42,23 @@
 				floopets_BD::Disconnect();
 		}
 
+		function Mis_mascotas($usu_cod_usuario)
+		{
+				//Instanciamos y nos conectamos a la bd
+				$Conexion = floopets_BD::Connect();
+				$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+				//Crear el query que vamos a realizar
+				$consulta = "SELECT animal.*,usuario.*,solicitud_adopcion.*,raza.* FROM usuario INNER JOIN solicitud_adopcion ON usuario.usu_cod_usuario=solicitud_adopcion.usu_cod_usuario INNER JOIN animal ON solicitud_adopcion.ani_cod_animal=animal.ani_cod_animal INNER JOIN raza on animal.ra_cod_raza=raza.ra_cod_raza WHERE usuario.usu_cod_usuario=? AND animal.ani_estado='adoptado' AND solicitud_adopcion.sol_estado='Aprobado' ";
+				$query = $Conexion->prepare($consulta);
+				$query->execute(array($usu_cod_usuario));
+				//Devolvemos el resultado en un arreglo
+				//Fetch: es el resultado que arroja la consulta en forma de un vector o matriz segun sea el caso
+				//Para consultar donde arroja mas de un dato el fatch debe ir acompañado con la palabra ALL
+				$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+				return $resultado;
+				floopets_BD::Disconnect();
+		}
+
 		function Readbyusu($usu_cod_usuario)
 		{
 			//Instanciamos y nos conectamos a la bd

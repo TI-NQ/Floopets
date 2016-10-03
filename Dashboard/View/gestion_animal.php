@@ -21,16 +21,13 @@ function borrar(cod){
 }
 </script>
 
-<div class="row">
-  <a href="dashboard.php?p=<?php echo base64_encode('nueva_mascota')?>" class="waves-effect btn animated zoomIn left " id="btnlogin">Nuevo</a>
-
-</div>
 
 
 <?php
     require_once("../Model/conexion.php");
     require_once("../Model/animal.class.php");
-    $animal=Gestion_animal::Nombres($_SESSION["org_cod_organizacion"]);
+    require_once("../Model/usuarios.class.php");
+    $mis_mascotas=Gestion_usuarios::Mis_mascotas($_SESSION["usu_cod_usuario"]);
     // print_r ($animal);
     // $animal=Gestion_animal::paginacion();
 
@@ -46,7 +43,7 @@ function borrar(cod){
    // $consulta = 'SELECT * FROM animal'.(($paginacion->get_page() - 1) * $paginas).','.$paginas;
    //     $result = $con->query($consulta);
 
-    foreach ($animal as $row) {
+    foreach ($mis_mascotas as $row) {
       $nombre_carpeta = strtolower(str_replace('ñ', 'n', $row["ani_carpeta"]));
       $nombre_carpeta = strtolower(str_replace(' ', '', $nombre_carpeta));
       $nombre_img_ani = strtolower(str_replace('ñ', 'n', $row["ani_imagen"]));
@@ -89,7 +86,7 @@ echo "<i class='small material-icons'>delete</i>
       <!--<label>Codigo</label>
           <li>".$row["ani_cod_animal"]."</li>-->
       <strong><label>Raza</label></strong>
-            <li>".$row[15]."</li>
+            <li>".$row["ra_nombre"]."</li>
        <label>Esterilizacion</label>
             <li>".$row["ani_esterilizado"]."</li>
        <label>Edad</label>
@@ -98,8 +95,7 @@ echo "<i class='small material-icons'>delete</i>
             <li>".$row["ani_numero_microchip"]."</li>
        <label>sexo</label>
             <li>".$row["ani_sexo"]."</li>
-            <label>Estado</label>
-                  <li>".$row[10]."</li>
+            
     </ul>
 </div>
 </div>
