@@ -21,9 +21,9 @@ $solicitudes=Gestion_animal::solicitudes_fundacion($org_cod_organizacion[1]);
  <script type="text/javascript">
  $(document).ready(function(){
  	<?php
-          if(isset($_GET["sol"]) )
+          if(isset($_GET["m"]) )
           {
-            echo "swal('".($_GET["sol"])."','','".($_GET["tm"])."');";
+            echo "swal('".($_GET["m"])."','','".($_GET["tm"])."');";
           }
          ?>
  });

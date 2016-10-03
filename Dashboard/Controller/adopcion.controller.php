@@ -15,7 +15,7 @@
 					$sol_estado="Aprobado";
 			try {
 
-					$mensaje = "se ha aprobado su solicitud";
+					$mensaje = "Adopcion aprobada";
 					$tipo_mensaje="success";
 					Gestion_animal::UpdateEstadosoli($sol_estado,($_REQUEST["an"]));
 					Gestion_animal::UpdateEstadoani($ani_estado,($_REQUEST["an"]));
