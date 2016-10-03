@@ -149,7 +149,7 @@ function solonumeros(e)
    </div>
 
        <div class="col s11" >
-         <button class="waves-effect waves-light btn boton right" name="accion" id="btnlogin" value="c" onclick="return correo()">Registrar</button>
+         <button class="waves-effect waves-light btn boton right" name="accion"  value="c" onclick="return correo()">Registrar</button>
        </div>
      </div>
    </form>

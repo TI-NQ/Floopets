@@ -171,7 +171,7 @@ function validacion() {
 
 		<div class="row">
 			<div class="file-field col s6">
-					<div class="btn left" id="btnlogin">
+					<div class="btn left" >
 						<span>Adjuntar Imágenes</span>
 						<input type="file" name="eve_imagen[]">
 					</div>
@@ -201,7 +201,7 @@ function validacion() {
 
 		</div>
 		<div class="col s11">
-			<button name="accion" value="c" class="btn btn-primary btn-envia"  id="btnlogin" onclick="return validacion()">Guardar</button>
+			<button name="accion" value="c" class="btn btn-primary btn-envia right"   onclick="return validacion()">Guardar</button>
 		</div>
 
 </form>
