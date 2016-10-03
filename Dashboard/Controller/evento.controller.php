@@ -25,11 +25,12 @@
 					include("Upload_eve_imagen.php");
 				}
 				Gestion_evento::Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta);
-				$mensaje = "Se creo exitosamente";
+				$mensaje = base64_encode("$eve_nombre se creo correctamente");
+				$tipo_mensaje= base64_encode("success");
+				header("Location: ../View/dashboard.php?p=".base64_encode("mis_eventos")."&m=$mensaje&tm=$tipo_mensaje");
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			 header("Location: ../View/dashboard.php?p=".base64_encode("gestion_evento"));
      	}else{
      		$mensaje="La fecha inicio es menor a la fecha fin";
      		header("Location: ../View/dashboard.php?p=".base64_encode("nuevo_evento")."&m=".$mensaje);
