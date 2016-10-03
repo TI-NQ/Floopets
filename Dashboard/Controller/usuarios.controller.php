@@ -67,7 +67,7 @@
 			break;
 
 		case 'u':
-				$usu_cod_usuario				=$_POST["usu_cod_usuario"];
+			$usu_cod_usuario				=$_POST["usu_cod_usuario"];
 			$usu_nombre 						= $_POST["usu_nombre"];
 			$usu_apellido 					=$_POST["usu_apellido"];
 			$usu_email							=$_POST["usu_email"];
@@ -78,6 +78,7 @@
 			$usu_clave							=$_POST["usu_clave"];
 			$usu_cedula							=$_POST["usu_cedula"];
 			$usu_imagen   			= $_POST["usu_imagen"];
+
 
 				try{
 					if($usu_imagen != ""){
@@ -91,13 +92,13 @@
 					}elseif ($_SESSION["cod_rol"] == 7) {
 						$mensaje = base64_encode("Se actualizo correctamente");
 						$tipo_mensaje = base64_encode("success");
-						header("Location: ../View/dashboard.php?p=".base64_encode("gestionar_usuarios")."&m=$mensaje&tm=$tipo_mensaje");
+						 	header("Location: ../View/dashboard.php?p=".base64_encode("gestionar_usuarios")."&m=$mensaje&tm=$tipo_mensaje");
 					}
 
 				}catch(Exception $e){
 					$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 				}
-				// header("Location: ../View/dashboard.php?p=".base64_encode("mi_perfil") );
+
 				break;
 
 		case 'd':
