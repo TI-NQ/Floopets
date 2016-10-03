@@ -20,6 +20,7 @@
 			$usu_clave							=$_POST["usu_clave"];
 			$usu_cedula							=$_POST["usu_cedula"];
 			$usu_imagen   			= $_POST["usu_imagen"];
+			$usu_carpeta   			= $nombre_usu_imagen;
 			$count_galeria		= count($_FILES['usu_imagen']['name']);
 
 			try {
@@ -46,7 +47,7 @@
 					$tipo_mensaje=base64_encode("error");
 					header("Location: ../../login.php?m=$mensaje&tm=$tipo_mensaje");
 				}else {
-					Gestion_usuarios::Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen);
+					Gestion_usuarios::Create($usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$cod_rol,$usu_clave,$usu_imagen,$usu_carpeta);
 					if ($_SESSION["cod_rol"]==7) {
 						$mensaje = base64_encode("El usuario ".$usu_nombre." se creo correctamente");
 						$tipo_mensaje = base64_encode("success");
@@ -78,13 +79,15 @@
 			$usu_clave							=$_POST["usu_clave"];
 			$usu_cedula							=$_POST["usu_cedula"];
 			$usu_imagen   			= $_POST["usu_imagen"];
+			$usu_carpeta   			= $nombre_usu_imagen;
+			
 
 
 				try{
 					if($usu_imagen != ""){
 					include("Upload_usu_image.php");
 				}
-					Gestion_usuarios::Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen);
+					Gestion_usuarios::Update($usu_cod_usuario,$usu_nombre,$usu_apellido,$usu_telefono,$usu_cedula,$usu_email,$usu_clave,$usu_imagen,$usu_carpeta);
 					if ($_SESSION["cod_rol"] == 5) {
 						$mensaje = base64_encode("Se actualizo correctamente");
 						$tipo_mensaje = base64_encode("success");
