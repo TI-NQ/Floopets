@@ -11,7 +11,7 @@
   $nombre_carpeta = strtolower(str_replace(' ', '', $nombre_carpeta));
   $nombre_org_logo = strtolower(str_replace('ñ', 'n', $organizacion["org_logo"]));
   $nombre_org_logo = strtolower(str_replace(' ', '', $nombre_org_logo));
-  $adopciones=Gestion_adopcion::Readbyorg_cod($_SESSION["org_cod_organizacion"]);
+  $adopciones=Gestion_adopcion::solicitudesapro($_SESSION["org_cod_organizacion"]);
   $animal=Gestion_animal::Nombresraza($_SESSION["org_cod_organizacion"]);
   $mis_voluntarios = Gestion_voluntarios::misvolun($_SESSION["org_cod_organizacion"]);
   // if (!isset($_SESSION["org_cod_organizacion"])) {
