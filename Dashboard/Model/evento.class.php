@@ -125,6 +125,23 @@
 
 	return $resultado;
   }
+	function eve_org($org_cod)
+{
+//para el modificar por cada usuario usuario
+$conexion=floopets_BD::Connect();
+$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+$consulta="SELECT tipo_evento.*,evento.* FROM evento INNER JOIN tipo_evento on tipo_evento.te_cod_tipo_evento=evento.te_cod_tipo_evento WHERE org_cod_organizacion=? AND eve_estado='Publicado'";
+
+$query=$conexion->prepare($consulta);
+$query->execute(array($org_cod));
+
+$resultado=$query->fetchAll(PDO::FETCH_BOTH);
+
+floopets_BD::Disconnect();
+
+return $resultado;
+}
 	function eventos_proximos(){
 		date_default_timezone_set("America/Bogota");
 		$fechasystem=date("Y-m-d");

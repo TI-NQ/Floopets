@@ -83,7 +83,7 @@ if($_SESSION["cod_rol"]==5){
     <li>
       <div class="collapsible-header grey lighten-2"><a><i class="fa fa-calendar" aria-hidden="true"></i>Eventos</a></div>
       <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('nuevo_evento')?>" class="item_menu">Nuevo</a></p></div>
-      <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('mis_eventos')?>" class="item_menu">Mis Eventos</a></p></div>
+      <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('eventos_org')?>" class="item_menu">Mis Eventos</a></p></div>
     </li>
     <!-- <li>
       <div class="collapsible-header grey lighten-2"><a><i class="fa fa-money" aria-hidden="true"></i>Donaciones</a></div>

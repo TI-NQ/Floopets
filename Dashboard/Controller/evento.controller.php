@@ -75,9 +75,7 @@
 				Gestion_evento::cambiar_estado($estado_eve,$cod_eve);
 				$mensaje = "Se actualizo exitosamente";
 				$tipo_mensaje = "success";
-				echo $cod_eve;
-				echo $estado_eve;
-				// header("Location: ../View/dashboard.php?p=".base64_encode("gestion_evento")."&m=$mensaje&tm=$tipo_mensaje");
+					header("Location: ../View/dashboard.php?p=".base64_encode("gestion_evento")."&m=$mensaje&tm=$tipo_mensaje");
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}

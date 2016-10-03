@@ -42,6 +42,9 @@ switch ($page) {
 	case 'mis_eventos':
 			require_once("gestion_evento.php");
 	break;
+	case 'eventos_org':
+			require_once("eventos_org.php");
+	break;
 	//Componente de pagina encargado de vincular la informacion sobre las donaciones que los usuarios realizaron a la fundacion que tiene la sesion activa
 	case 'gestion_donaciones':
 		require_once ("gestion_donacion.php");
