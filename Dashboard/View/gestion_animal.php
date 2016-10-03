@@ -43,7 +43,8 @@ function borrar(cod){
    // $consulta = 'SELECT * FROM animal'.(($paginacion->get_page() - 1) * $paginas).','.$paginas;
    //     $result = $con->query($consulta);
 
-    foreach ($mis_mascotas as $row) {
+      if (count( $mis_mascotas )>0) {
+            foreach ($mis_mascotas as $row) {
       $nombre_carpeta = strtolower(str_replace('ñ', 'n', $row["ani_carpeta"]));
       $nombre_carpeta = strtolower(str_replace(' ', '', $nombre_carpeta));
       $nombre_img_ani = strtolower(str_replace('ñ', 'n', $row["ani_imagen"]));
@@ -103,7 +104,18 @@ echo "<i class='small material-icons'>delete</i>
 
 
       }
+      }else{
+        echo "<center><h3>No tiene mascotas</h3>
+              <div>
+              <img src='img/perro_triste.jpg' style='width: 40%;'>
+              </div>
+              </center>
+
+        ";
+      }
+
   // $paginacion->render();
 ?>
+
 </div>
 </div>

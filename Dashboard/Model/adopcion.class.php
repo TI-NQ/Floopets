@@ -13,6 +13,7 @@
 			$query->execute(array($ani_cod_animal,$usu_cod_usuario));
 			floopets_BD::Disconnect();
 		}
+		
 		function solicitudesapro($org_cod_organizacion)
 		{
 			//Instanciamos y nos conectamos a la bd
