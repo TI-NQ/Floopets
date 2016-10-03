@@ -31,8 +31,8 @@
 		    </div>
 		  </div>
 			<div class="botones">
-				<a href="<?=$_SERVER['HTTP_REFERER'] ?>" class="waves-effect waves-light btn red darken-1 left">Cancelar</a>
-				<button class="waves-effect waves-light  btn right cyan darken-1" name="accion" value="c" style="margin-right: 50px;">Registrar</button>
+				<a href="<?=$_SERVER['HTTP_REFERER'] ?>" class="waves-effect waves-light btn grey darken-2 left left">Cancelar</a>
+				<button class="waves-effect waves-light  btn right" name="accion" value="c" style="margin-right: 50px;">Registrar</button>
 			</div>
 		</div>
 	</form>

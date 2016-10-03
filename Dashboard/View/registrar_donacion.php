@@ -3,9 +3,9 @@
   require_once("../Model/donacion.php");
 	require_once("../Model/organizacion.class.php");
 	require_once("../Model/tipo_donacion.class.php");
-
+$organizacion = Gestion_organizacion::ReadAll();
 	$tipo_donacion = Gestion_tipo_donacion::ReadAll();
-	$organizacion = Gestion_organizacion::ReadAll();
+
 ?>
 
 <script type="text/javascript">
@@ -51,34 +51,53 @@ function validacion() {
 </script>
 
 <h2 class="center">Registrar Donación</h2>
-
-<form id="form" action="../Controller/donacion.controller.php" method="POST" enctype="multipart/form-data">
-<div class="form-group">
-        <label>Asunto</label>
-        <input type="text" name="don_nombre" id="asunto"></input>
-        <span id="asunto_don" class="red-text "></span>
-    </div>
+<form id="form" action="../Controller/donacion.controller.php" method="post">
 	<div class="form-group">
-		<label>Descripcion</label>
-		<input type="text" name="don_descripcion" id="descripcion"></input>
-        <span id="descripcion_donacion" class="red-text "></span>
-	</div>
-    <div class="form-group">
-        <label>Fecha</label>
-        <input type="date" name="don_fecha" id="fecha_donacion" min="<?php echo date('Y-m-d');?>" value="<?php echo date('Y-m-d');?>" ></input>
-        <!-- <span id="fecha_don" class="red-text "></span> -->
-    </div>
-    <div class="file-field input-field col s12 m6">
-       <div class="btn">
-         <span>Imagen</span>
-         <input type="file" class="form-control" name="don_imagen[]">
-       </div>
-       <div class="file-path-wrapper">
-         <input class="form-control file-path validate"  type="text" placeholder="" name="don_imagen">
-       </div>
-    </div>
+	        <label>Asunto</label>
+	        <input type="text" name="don_nombre" id="asunto"></input>
+	        <span id="asunto_don" class="red-text "></span>
+	    </div>
+			<div class="form-group">
+				<label>Descripcion</label>
+				<input type="text" name="don_descripcion" id="descripcion"></input>
+		        <span id="descripcion_donacion" class="red-text "></span>
+			</div>
+<div class="input-field  col s6">
+	<select name="org_cod_organizacion">
+		<option disabled="" selected="">organizacion</option>
+		<?php foreach ($organizacion as $fila) {
+			echo "<option value='".$fila["org_cod_organizacion"]."'>".$fila["org_nombre"]."</option>";
+		} ?>
+	</select>
+	<span id="org_donacion" class="red-text "></span>
+</div>
+<div class="input-field col s6">
+	<select name="td_cod_tipo_donacion">
+		<option disabled selected>Tipo de donacion</option>
+		<?php foreach ($tipo_donacion as $fila) {
+			echo "<option value='".$fila["td_cod_tipo_donacion"]."'>".$fila["td_nombre"]."</option>";
+		} ?>
+	</select>
+	<span id="td_donacion" class="red-text "></span>
+</div>
+<div class="file-field input-field col s12 m6">
+	 <div class="btn">
+		 <span>Imagen</span>
+		 <input type="file" class="form-control" name="don_imagen[]">
+	 </div>
+	 <div class="file-path-wrapper">
+		 <input class="form-control file-path validate"  type="text" placeholder="" name="don_imagen">
+	 </div>
+</div>
+	<button class="waves-effect waves-light btn boton right" name="accion" id="btnlogin" value="c" onclick="return validacion()">Registrar</button>
+</form>
+<!-- <form id="form" action="../Controller/donacion.controller.php" method="POST" enctype="multipart/form-data">
+	<button name="accion" value="c"></button>
 
-		<div class="form-group">
+
+
+
+		<div class="form-group col s6">
                         <select  Required name="org_cod_organizacion" id="organizacion">
                             <option value="" disabled selected>Organizacion</option>
                             <?php
@@ -93,7 +112,7 @@ function validacion() {
                         <span id="org_donacion" class="red-text "></span>
                         <label></label>
                     </div>
-                    <div class="form-group">
+                    <div class="form-group col s6">
                         <select  Required name="td_cod_tipo_donacion">
                             <option value="" disabled selected>Tipo donacion</option>
                             <?php
@@ -107,7 +126,7 @@ function validacion() {
                         <label></label>
                     </div>
 
-	<div class="form-group">
-		<a name="accion" value="c" class="btn waves-effect " >Registrar</a>
-	</div>
-</form>
+										<div class="col s11" >
+											<button class="waves-effect waves-light btn boton right" name="accion" id="btnlogin" value="c">Registrar</button>
+										</div>
+</form> -->

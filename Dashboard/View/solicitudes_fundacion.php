@@ -72,7 +72,7 @@ $solicitudes=Gestion_animal::solicitudes_fundacion($org_cod_organizacion[1]);
 
 						<td>
             <a class='btn-floating waves-light waves-effect' href='../View/enviar_correo.php?p=".base64_encode('enviar_email')."&us=".base64_encode($row["usu_cod_usuario"])."'><i class='small material-icons'>perm_identity</i></a>
-            <a class='btn-floating waves-light waves-effect' href='../Controller/adopcion.controller.php?&an=".($row["ani_cod_animal"])."&accion=aceptar'><i class='small material-icons'>done</i></a>
+            <a class='btn-floating waves-light waves-effect' href='../Controller/adopcion.controller.php?an=".($row["ani_cod_animal"])."&us=".($row["usu_cod_usuario"])."&accion=aceptar'><i class='small material-icons'>done</i></a>
           </td>
 
 
