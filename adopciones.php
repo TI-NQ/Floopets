@@ -11,10 +11,10 @@ $funcadiones=Gestion_organizacion::ReadAll();
 $razas=Gestion_raza::ReadAll();
 //Validacion de logueo para adoptar
 if($_SESSION["usu_cod_usuario"]==""){
-    $msn = "Debes iniciar para adoptar!";
-    $t="Advertencia";
+    $m = base64_encode("Debes iniciar para adoptar!");
+    $tm=base64_encode("Advertencia");
 
-    header("Location: login.php?&ms=$msn&t=$t");
+    header("Location: login.php?&m=$m&tm=$tm");
   };
 
 if(isset($_GET["pet"])){

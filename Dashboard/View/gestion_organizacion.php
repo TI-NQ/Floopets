@@ -10,7 +10,9 @@ $organizacion=Gestion_organizacion::Nombres();
  ?>
 
 <div class="container">
+<div class="row">
 
+<h3>Gestión Organización</h3>
 
 <table id="datatable" class="display highlight centered responsive-table bordered">
 	<thead>
@@ -48,7 +50,7 @@ $organizacion=Gestion_organizacion::Nombres();
                           <!-- <i class='small material-icons'>delete</i>
                           </a> -->
                         <?php echo"
-                        <a href='dashboard.php?p=".base64_encode('actualizar_organizacion')."&org=".base64_encode($row['org_cod_organizacion'])."'><i class='fa fa-pencil'style='color:black !important ; font-size: 30px'></i></a>
+                        <a class='btn-floating waves-effect '  href='dashboard.php?p=".base64_encode('actualizar_organizacion')."&org=".base64_encode($row['org_cod_organizacion'])."'><i class='small material-icons'>mode_edit</i></a>
 
 
 
@@ -61,4 +63,5 @@ $organizacion=Gestion_organizacion::Nombres();
 		</tbody>
 	</thead>
 </table>
+</div>
 </div>

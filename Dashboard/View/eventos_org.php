@@ -2,7 +2,7 @@
 
 require_once("../Model/conexion.php");
 require_once("../Model/evento.class.php");
-$evento=Gestion_evento::Nombres();
+$evento=Gestion_evento::eve_org($_SESSION["org_cod_organizacion"]);
 
 // @$mensaje = $_REQUEST["m"];
 //
@@ -59,8 +59,6 @@ if (count($evento)==0) {
 echo "</div>
 </div>
 												<div class='col l6'>
-													<a class='btn-floating waves-effect tooltipped red' data-position='bottom' data-tooltip='Anular evento' href='../Controller/evento.controller.php?cod_eve=".base64_encode($row[2])."&es_eve=".$Anulado=base64_encode('Anulado')."&accion=estado_eve'><i class='fa fa-ban'></i></a>
-													<a class='btn-floating waves-effect tooltipped green' data-position='bottom' data-tooltip='Publicar evento' href='../Controller/evento.controller.php?cod_eve=".base64_encode($row[2])."&es_eve=".$Anulado=base64_encode('Publicado')."&accion=estado_eve'><i class='fa fa-check'></i></a>
 													</div>
 													<div class='col l6'>
 													</div>

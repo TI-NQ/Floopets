@@ -21,6 +21,9 @@
 		$org_email=$_POST["org_email"];
 		$nombre_org_logo 		= strtolower(str_replace('ñ', 'n', $org_nombre));
 		$nombre_org_logo 		= strtolower(str_replace(' ', '', $nombre_org_logo));
+		$nombre_org_logo 		= strtolower(str_replace('ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖØÙÚÛÜÝÞ
+ßàáâãäåæçèéêëìíîïðñòóôõöøùúûýýþÿŔŕ', 'aaaaaaaceeeeiiiidnoooooouuuuy
+bsaaaaaaaceeeeiiiidnoooooouuuyybyRr', $nombre_org_logo));
 		$org_telefono=$_POST["org_telefono"];
 		$org_direccion=$_POST["org_direccion"];
 		$org_logo=$_POST["org_logo"];
@@ -39,7 +42,7 @@
 				Gestion_organizacion::Createorganizacion($org_cod_organizacion, $usu_cod_usuario);
 				$_SESSION["org_cod_organizacion"] = $org_cod_organizacion;
 
- 				$mensaje=base64_encode("$organizacion se creo exitosamente");
+ 				$mensaje=base64_encode("$org_nombre se creo exitosamente");
 				$tipo_msn=base64_encode("success");
 
  			header("Location:../View/dashboard.php?p=".base64_encode("mi_organizacion")."&m=$mensaje&tm=$tipo_msn");

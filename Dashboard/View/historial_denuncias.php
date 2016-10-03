@@ -21,7 +21,7 @@
 		  <td>Correo Contacto</td>
       <td>Telefono</td>
       <td>Estado</td>
-		  <td>Acciones</td>
+		  <!-- <td>Acciones</td> -->
 		</tr>
 	</thead>
 		<tbody>
@@ -36,15 +36,7 @@
 						<td>".$row["de_nombre"]."</td>
             <td>".$row["de_contacto"]."</td>
             <td>".$row["de_telefono"]."</td>
-            <td>".$row["de_estado"]."</td>
-
-
-
-						<td>
-                        <a href='dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'><i class='fa fa-pencil'style='color:black !important ; font-size: 30px'></i></a>
-                    		<a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'><i class='fa fa-trash'style='color:red !important; font-size: 30px '></i></a>
-
-            </td>
+            <td>".$row["de_estado"]."</td>	
 
 					</tr>";
 			}
@@ -55,3 +47,9 @@
 </table>
 </div>
 </div>
+
+
+<!-- <td>
+<a href='dashboard.php?p=".base64_encode('actualizar_denuncia')."&dn=".base64_encode($row['de_cod_denuncia'])."'><i class='fa fa-pencil'style='color:black !important ; font-size: 30px'></i></a>
+<a href='../Controller/denuncia.controller.php?dn=".base64_encode($row["de_cod_denuncia"])."&accion=d'><i class='fa fa-trash'style='color:red !important; font-size: 30px '></i></a>
+</td> -->

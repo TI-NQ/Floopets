@@ -20,7 +20,7 @@
                           echo"<img class='responsive-img' style='width:180px ;height:180px ;' src='../../WebFloopets/images/base.jpg'>";
                         }
                         else {
-                           echo"<img  style='width:180px ;height:180px ;' src='img/imagen_organizacion/".$row["org_nombre"]."/".$row["org_logo"]."'>";
+                           echo"<img style='width:180px ;height:180px ;' src='img/imagen_organizacion/".$row["org_nombre"]."/".$row["org_logo"]."'>";
                         }
                          ?>
 

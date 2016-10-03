@@ -29,10 +29,10 @@
 				if($count_galeria != ""){
 					include("Upload_ani_image.php");
 				}
-				if ($tipo_animal==9 && $ra_cod_raza=="") {
-					$ra_cod_raza=2;
-				}elseif ($tipo_animal==10 && $ra_cod_raza=="") {
+				if ($tipo_animal==1 && $ra_cod_raza=="") {
 					$ra_cod_raza=1;
+				}elseif ($tipo_animal==2 && $ra_cod_raza=="") {
+					$ra_cod_raza=2;
 				}
 				Gestion_animal::Create($ra_cod_raza,$ani_nombre,$ani_color,$ani_tamanio,$ani_esterilizado,$ani_edad,$ani_descripcion,$ani_numero_microchip,$ani_sexo,$org_cod_organizacion,$ani_imagen,$ani_carpeta);
 				$mensaje = base64_encode("Se creo exitosamente");
@@ -128,7 +128,7 @@
         } catch (Exception $e) {
           $msn = "error:".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
           header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
-				
+
         }
 			break;
 

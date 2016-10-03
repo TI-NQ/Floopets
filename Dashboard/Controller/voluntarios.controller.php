@@ -22,8 +22,8 @@
 					include("Upload_vo_image.php");
 				}
 				Gestion_voluntarios::Create($vo_cod_voluntario,$vo_nombre,$vo_telefono,$vo_direccion,$vo_imagen,$org_cod_organizacion);
-				$mensaje = "Se envio su solicitud, en breve se pondran en contacto contigo";
-				$tipo_mensaje = "info";
+				$mensaje = base64_encode("Se envio su solicitud, en breve se pondran en contacto contigo");
+				$tipo_mensaje = base64_encode("info");
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}

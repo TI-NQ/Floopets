@@ -107,7 +107,7 @@
   </p>
   <p>
     <input name="ani_sexo[]" value="Hembra" type="radio" id="Hembra" />
-    <label for="H">Hembra</label>
+    <label for="Hembra">Hembra</label>
   </p>
   </div>
   	<input name="org_cod_organizacion" value="<?php echo $mi_organizacion[1]?>" hidden>

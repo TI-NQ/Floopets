@@ -86,7 +86,7 @@
 				<?php
 					if(isset($_GET["m"]) and isset($_GET["tm"]))
 					{
-						echo "swal('".($_GET["m"])."','','".($_GET["tm"])."');";
+						echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
 					}
 				 ?>
 			});
