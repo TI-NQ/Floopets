@@ -1,6 +1,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<form action="../Controller/raza.controller.php" method="POST" enctype="multipart/form-data">
-	<h1>Registrar Organización</h1>
+<form id="form"action="../Controller/raza.controller.php" method="POST" enctype="multipart/form-data">
+	<h1>Registrar nueva raza</h1>
 	<div class="form-group">
         <label class="form-label">Nombre de raza:</label>
         <input class="form-control" type="text" name="ra_nombre" required>
@@ -41,19 +41,20 @@
                         </select>
                         <label></label>
                     </div>
-<div class="form-group">
+<!-- <div class="form-group">
         <label class="form-label">Historia:</label>
         <input class="form-control" type="text" name="ra_historia" required>
-    </div>
-   <div class="file-field input-field col s12 m6">
+    </div> -->
+   <div class="file-field input-field col s12" >
        <div class="btn">
          <span>Galeria</span>
          <input type="file"  name="ra_imagen[]">
        </div>
        <div class="file-path-wrapper">
-         <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="galeria"  >
+         <input class="file-path validate"  type="text" placeholder="Puede subir mas de una imagen" name="ra_imagen"  >
        </div>
+		 </div>
 	<div class="form-group">
-		<button name="accion" value="c" class="btn btn-primary">Registrar</button>
+		<button id="btnlogin"name="accion" value="c" class="btn btn-primary">Registrar</button>
 	</div>
 </form>

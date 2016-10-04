@@ -81,6 +81,9 @@ if($_SESSION["cod_rol"]==5){
       <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('historial_adopciones')?>" class="item_menu">Historial</a></p></div>
     </li>
     <li>
+      <div class="collapsible-header grey lighten-2" ><a href="dashboard.php?p=<?php echo base64_encode('raza')?>"><i class="fa fa-paw" aria-hidden="true"></i>Raza</a></div>
+    </li>
+    <li>
       <div class="collapsible-header grey lighten-2"><a><i class="fa fa-calendar" aria-hidden="true"></i>Eventos</a></div>
       <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('nuevo_evento')?>" class="item_menu">Nuevo</a></p></div>
       <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('eventos_org')?>" class="item_menu">Mis Eventos</a></p></div>
@@ -103,11 +106,11 @@ if($_SESSION["cod_rol"]==5){
       <div class="collapsible-header grey lighten-2"><a><i class="fa fa-plus" aria-hidden="true"></i>Voluntarios</a></div>
       <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('voluntarios')?>" class="item_menu">Ver Voluntarios</a></p></div>
     </li>
-    <li>
+    <!-- <li>
       <div class="collapsible-header grey lighten-2"><a><i class="fa fa-paw" aria-hidden="true"></i>Cuidados</a></div>
       <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('registro_cuidados')?>" class="item_menu">Nuevo</a></p></div>
       <div class="collapsible-body"><p><a href="dashboard.php?p=<?php echo base64_encode('ver_cuidados')?>" class="item_menu">Ver Todos</a></p></div>
-    </li><?php
+    </li>--><?php
   }
 }
 ?>

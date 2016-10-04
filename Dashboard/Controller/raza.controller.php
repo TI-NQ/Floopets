@@ -11,21 +11,23 @@
 			$nombre_raza 	= strtolower(str_replace(' ', '', $nombre_raza));
 			$ta_cod_tipo_animal		= $_POST["ta_cod_tipo_animal"];
 			$cu_cod_cuidado		= $_POST["cu_cod_cuidado"];
-			$ra_historia			= $_POST["ra_historia"];
+			// $ra_historia			= $_POST["ra_historia"];
 			$ra_imagen				= $_POST["ra_imagen"];
 			$count_galeria			= count($_FILES['ra_imagen']['name']);
-			
+
 
 			try {
-				if($count_galeria >= 1){ 
+				if($count_galeria >= 1){
 					include("Upload_ra_imagen.php");
-				} 
-				Gestion_raza:: Create($ra_nombre,$ta_cod_tipo_animal,$cu_cod_cuidado,$ra_historia,$ra_imagen);
-				$mensaje = "Se creo exitosamente";
+				}
+				Gestion_raza:: Create($ra_nombre,$ta_cod_tipo_animal,$cu_cod_cuidado,$ra_imagen);
+				$mensaje = base64_encode("$ra_nombre se creo exitosamente");
+				$tipo_mensaje=base64_encode("success");
+				header("Location: ../View/dashboard.php?p=".base64_encode('raza')."&m=$mensaje&tm=$tipo_mensaje");
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/Gestion_raza.php?m=$mensaje");
+
 
 			break;
 			case 'u':
@@ -35,7 +37,7 @@
 				$cu_cod_cuidado		= $_POST["cu_cod_cuidado"];
 				$ra_historia			= $_POST["ra_historia"];
 				$ra_imagen				= $_POST["ra_imagen"];
-				
+
 
 			try {
 				Gestion_raza:: Update($ra_cod_raza,$ra_nombre,$ta_cod_tipo_animal,$cu_cod_cuidado,$ra_historia,$ra_imagen);
@@ -57,7 +59,7 @@
           header("Location: ../View/Gestion_raza.php?m=".$mensaje);
         }
       break;
-			
+
 	}
 
  ?>

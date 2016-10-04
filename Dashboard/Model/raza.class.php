@@ -4,16 +4,16 @@ class Gestion_raza{
 	//Metodo create()
 	//El metodo create guarda los datos en la tabla contactos, captura todos los parametros desde el  formulario
 
-	function Create($ra_nombre,$ta_cod_tipo_animal,$cu_cod_cuidado,$ra_historia,$ra_imagen){
+	function Create($ra_nombre,$ta_cod_tipo_animal,$cu_cod_cuidado,$ra_imagen){
 
 		//Instanciamos y nos conectamos a la bd
 		$Conexion = floopets_BD::Connect();
 		$Conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		//Crear el query que vamos a realizar
-		$consulta = "INSERT INTO raza (ra_nombre,ta_cod_tipo_animal,cu_cod_cuidado,ra_historia,ra_imagen) VALUES (?,?,?,?,?)";
+		$consulta = "INSERT INTO raza (ra_nombre,ta_cod_tipo_animal,cu_cod_cuidado,ra_imagen) VALUES (?,?,?,?)";
 
 		$query = $Conexion->prepare($consulta);
-		$query->execute(array($ra_nombre,$ta_cod_tipo_animal,$cu_cod_cuidado,$ra_historia,$ra_imagen));
+		$query->execute(array($ra_nombre,$ta_cod_tipo_animal,$cu_cod_cuidado,$ra_imagen));
 
 		floopets_BD::Disconnect();
 	}

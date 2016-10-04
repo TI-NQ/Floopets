@@ -21,6 +21,7 @@
 		      	$ani_sexo				= implode(",", $_POST["ani_sexo"]);
 		      	$nombre_ani_imagen 		= strtolower(str_replace('ñ', 'n', $ani_nombre.rand(0,2000)));
 				$nombre_ani_imagen 		= strtolower(str_replace(' ', '', $nombre_ani_imagen));
+				$nombre_ani_imagen 		= strtolower(str_replace('_', '', $nombre_ani_imagen));
 				$ani_carpeta   			= $nombre_ani_imagen;
 		      	$ani_imagen   			= $_POST["ani_imagen"];
 		    	 $count_galeria			= count($_FILES['ani_imagen']['name']);
@@ -137,10 +138,10 @@
 
         }
   				}
-			
+
 			break;
 
-		
+
 
 
 		case 'd':

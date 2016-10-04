@@ -7,7 +7,7 @@ require_once("Dashboard/Model/organizacion.class.php");
 require_once("Dashboard/Model/raza.class.php");
 
 
-$funcadiones=Gestion_organizacion::ReadAll();
+$fundaciones=Gestion_organizacion::ReadAll();
 $razas=Gestion_raza::ReadAll();
 //Validacion de logueo para adoptar
 
@@ -105,14 +105,14 @@ if(isset($_GET["pet"])){
     <nav id="slide-out" class="side-nav">
       <img id="logo" src="WebFloopets/images/logo-negro.png">
       <ul class="menu_floopets">
-        <li><a href="#Inicio" class="ancla"><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
-        <li><a href="#Quienessomos" class="ancla"><i class="icono izquierda fa fa-paw "></i> Equipo De Trabajo</a></li>
-        <li><a href="#adopciones" class="ancla"><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li>
-        <li><a href="#voluntarios" class="ancla"><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
-        <li><a href="#denuncias" class="ancla"><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota</a></li>
+        <li><a href="index.php#Inicio" ><i class="icono izquierda fa fa-paw"></i> Inicio</a></li>
+        <li><a href="index.php#Quienessomos" ><i class="icono izquierda fa fa-paw "></i> Equipo De Trabajo</a></li>
+        <!-- <li><a href="index.php#adopciones" ><i class="icono izquierda fa fa-paw"></i> Adopciones</a></li> -->
+        <li><a href="index.php#voluntarios" ><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
+        <li><a href="index.php#denuncias" ><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota</a></li>
         <li><a href="Eventos.php" ><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
-        <li><a href="#"><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
-        <li><a href="#"><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li>
+        <!-- <li><a href="#"><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
+        <li><a href="#"><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li> -->
       </ul>
     </nav>
     <header>
@@ -158,7 +158,7 @@ if(isset($_GET["pet"])){
               <option value="" disabled selected>Fundación</option>
               <option value="all">No importa</option>
               <?php
-              foreach ($funcadiones as $row) {
+              foreach ($fundaciones as $row) {
                 echo "<option value = '".$row["org_nombre"]."'>".$row["org_nombre"]."</option>";
               }
              ?>
@@ -173,22 +173,40 @@ if(isset($_GET["pet"])){
         <div class="row listado">
         <?php
         foreach ($animales  as $row) {
-        ?>
+          if ($row["ani_imagen"]=="") {
+            ?><div class="item col m4">
+              <div class="mascota">
+                <img src="WebFloopets/images/base.jpg">
+              </div>
+              <form action="Dashboard/Controller/animal.controller.php" >
+              <div class="detalle">
+                <h5><?php echo $row["ani_nombre"]; ?></h5>
+                <p>Edad: <?php echo $row["ani_edad"]; ?></p>
 
-          <div class="item col m4">
-            <div class="mascota">
-              <img src="Dashboard/View/img/imagen_animal/<?php echo $row["ani_carpeta"]."/".$row["ani_imagen"]?>">
-            </div>
-            <form action="Dashboard/Controller/animal.controller.php" >
-            <div class="detalle">
-              <h5><?php echo $row["ani_nombre"]; ?></h5>
-              <p>Edad: <?php echo $row["ani_edad"]; ?></p>
+               <?php echo "<a class='btn waves-effect blue lighten-3' href='Dashboard/Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=enproceso'>Adoptar</a>" ; ?>
+              </div>
+              </form>
+            </div><?php
+          }else {
+            $carpeta = strtolower(str_replace('ñ', 'n', $row["ani_carpeta"]));
+       			$carpeta = strtolower(str_replace(' ', '', $carpeta));
+       			$img_ani = strtolower(str_replace('ñ', 'n', $row["ani_imagen"]));
+       			$img_ani = strtolower(str_replace(' ', '', $img_ani));
+            $img_ani = strtolower(str_replace('_', '', $img_ani));
+            ?><div class="item col m4">
+              <div class="mascota">
+                <img src="Dashboard/View/img/imagen_animal/<?php echo $carpeta."/".$img_ani?>">
+              </div>
+              <form action="Dashboard/Controller/animal.controller.php" >
+              <div class="detalle">
+                <h5><?php echo $row["ani_nombre"]; ?></h5>
+                <p>Edad: <?php echo $row["ani_edad"]; ?></p>
 
-             <?php echo "<a class='btn waves-effect blue lighten-3' href='Dashboard/Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=enproceso'>Adoptar</a>" ; ?>
-            </div>
-            </form>
-          </div>
-        <?php
+               <?php echo "<a class='btn waves-effect blue lighten-3' href='Dashboard/Controller/animal.controller.php?an=".base64_encode($row["ani_cod_animal"])."&accion=enproceso'>Adoptar</a>" ; ?>
+              </div>
+              </form>
+            </div><?php
+          }
         }
         ?>
       </div>

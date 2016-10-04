@@ -212,6 +212,9 @@ switch ($page) {
  case 'registrar_org':
  require_once("registrar_orga.php");
 break;
+case 'raza':
+require_once("registrar_raza.php");
+break;
 	 case 'denuncias_admin':
 	 require_once("gestion_denuncias_admin.php");
 	break;
