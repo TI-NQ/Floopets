@@ -9,7 +9,7 @@ class floopets_BD{
 	private static $db_host = "localhost";
 	private static $db_name = "bsstudio_floopets";
 	private static $db_user = "bsstudio_floopet";
-	private static $db_pass = "iacrk6n6yss3";
+	private static $db_pass = "adsi900163";
 
 	private static $conn = null;
 
