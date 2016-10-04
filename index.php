@@ -206,11 +206,11 @@
 												 }
 				             }, "json");
 				         });
-<<<<<<< HEAD
+
 								});
-=======
+
 								 });
->>>>>>> origin/master
+
 
 				 </script>
 			<a href="#" data-activates="slide-out" class="button-collapse"><div id="hamburger-menu" class="hamburger-menu">
@@ -466,7 +466,8 @@
 										<div class="row">
 											<div class="input-field col s12 campos" style="z-index:1;">
 												<select name="org_cod_organizacion" id="org_vol">
-													<option value="" disabled selected></option>
+
+													<option value="" disabled selected>Fundaciones</option>
 													<?php
 														foreach ($organizacion as $row){
 															echo "<option value='".$row["org_cod_organizacion"]."'>".$row["org_nombre"]."</option>";
@@ -474,7 +475,7 @@
 													?>
 												</select>
 												<span id="confirmor" class="red-text accent-3 col s12 left"></span>
-												<label for="">Fundaciones</label>
+												
 											</div>
 										</div>
 										<div class="row">
