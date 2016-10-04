@@ -117,8 +117,91 @@
 				 ?>
 			});
 			</script>
+			
 		</head>
 		<body>
+			<script type="text/javascript">
+				function voluntarios() {
+			    cedula = $('#cedula').val();
+			    nombre = $('#nombre').val();
+			    telefono = $('#telefono').val();
+			    direccion = $('#direccion').val();
+			    org_vol = $('#org_vol').val();    
+			    
+
+			    if (cedula == "") {
+			      $("#confirmac").text("Este campo es obligatorio");
+			      $('#cedula').focus();
+			      return false;
+			    }if(cedula != "") {
+			      $("#confirmac").text("");
+			    }if (nombre == "") {
+			      $("#confirman").text("Este campo es obligatorio");
+			      $('#nombre').focus();
+			      return false;
+			    }if(nombre != "") {
+			      $("#confirman").text("");
+			    }
+			    if (telefono == "") {
+			      $("#confirmat").text("Este campo es obligatorio");
+			      $('#telefono').focus();
+			      return false;
+			    }if(telefono != "") {
+			      $("#confirmat").text("");
+			    }if (direccion == "") {
+			      $("#confirmd").text("Este campo es obligatorio");
+			      $('#direccion').focus();
+			      return false;
+			    }if(direccion != "") {
+			      $("#confirmd").text("");
+			    }if (org_vol == "") {
+			      $("#confirmor").text("Este campo es obligatorio");
+			      $('#org_vol').focus();
+			      return false;
+			    }if(org_vol != "") {
+			      $("#confirmor").text("");
+			    
+			    }
+			    else {
+			      return true;
+			    }
+			  }
+			  function validar(e) {
+			  tecla = (document.all) ? e.keyCode : e.which;
+			  if (tecla==8) return true;
+			  patron =/[A-Za-z\s]/;
+			  te = String.fromCharCode(tecla);
+			  return patron.test(te);
+			  }
+			  function solonumeros(e)
+			    {
+			    var keynum = window.event ? window.event.keyCode : e.which;
+			    if ((keynum == 8) || (keynum == 46))
+			    return true;
+			    return /\d/.test(String.fromCharCode(keynum));
+			  };
+
+
+			  </script>
+			    <script type="text/javascript">
+				      $(document).ready(function()
+				      {
+				        $('.modal-trigger').leanModal();
+				        $('.botn1').prop('disabled', true);
+				        <!-- //ajax -->
+				         $("#cedula").change(function()
+				         {
+				             var voluntario = $("#cedula").val();
+				             var accion = "existe_voluntario";
+				             $.post("Dashboard/Controller/voluntarios.controller.php", {cedula: voluntario, accion: accion},
+
+				             function(result)
+				             {
+				                 $("#confirmac").html(result.mn);
+				             }, "json");
+				         });
+				         
+				 </script>
 			<a href="#" data-activates="slide-out" class="button-collapse"><div id="hamburger-menu" class="hamburger-menu">
 			  <div class="first"></div>
 			  <div class="second"></div>
@@ -340,34 +423,38 @@
 										<div class="row">
 											<div class="input-field">
 												<div class="col s6 campos">
-													<label for="vo_cod_voluntario">Cedula</label>
-													<input  type="text" name="vo_cod_voluntario" required>
+													<label for="cedula">Cedula</label>
+													<input  type="text" name="vo_cod_voluntario" id="cedula" required onkeypress="return solonumeros(event);">
+													<span id="confirmac" class="red-text accent-3 col s12 left"></span>
 												</div>
 											</div>
 											<div class="input-field">
 												<div class="col s6 campos">
-													<label for="vo_nombre">Nombre</label>
-													<input type="text" name="vo_nombre" required>
+													<label for="nombre">Nombre</label>
+													<input type="text" name="vo_nombre" id="nombre" required onkeypress="return validar(event)"> 
+													<span id="confirman" class="red-text accent-3 col s12 left"></span>
 												</div>
 											</div>
 										</div>
 										<div class="row">
 											<div class="input-field">
 												<div class="col s6 campos">
-													<label for="vo_telefono">Telefono</label>
-													<input type="number" name="vo_telefono" required>
+													<label for="telefono">Telefono</label>
+													<input type="number" name="vo_telefono" id="telefono" required onkeypress="return solonumeros(event);">
+													<span id="confirmat" class="red-text accent-3 col s12 left"></span>
 												</div>
 											</div>
 											<div class="input-field">
 												<div class="col s6 campos">
-													<label for="vo_direccion">Direccion</label>
-													<input type="text" name="vo_direccion" required>
+													<label for="direccion">Direccion</label>
+													<input type="text" name="vo_direccion" id="direccion" required>
+													<span id="confirmd" class="red-text accent-3 col s12 left"></span>
 												</div>
 											</div>
 										</div>
 										<div class="row">
 											<div class="input-field col s12 campos" style="z-index:1;">
-												<select name="org_cod_organizacion" >
+												<select name="org_cod_organizacion" id="org_vol">
 													<option value="" disabled selected></option>
 													<?php
 														foreach ($organizacion as $row){
@@ -375,6 +462,7 @@
 														}
 													?>
 												</select>
+												<span id="confirmor" class="red-text accent-3 col s12 left"></span>
 												<label for="">Fundaciones</label>
 											</div>
 										</div>
@@ -392,7 +480,7 @@
 										</div>
 									</div>
 									<div class="modal-footer grey darken-3">
-										<button name="accion" value="c" class="modal-action waves-effect btn">Registrar</button>
+										<button name="accion" value="c" class="modal-action waves-effect btn botn1" onclick="return voluntarios()">Registrar</button>
 									</div>
 								</div>
 							</div>
