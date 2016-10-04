@@ -42,28 +42,7 @@
 			wow.init();
 		</script>
 	
-		<?php
-
-       if(isset($_GET["m"]) and isset($_GET["tm"])){
-         if($_GET["m"] != ""){
-           echo "<script>
-                   $(document).ready(function(){
-                      sweetAlert({
-                           title: '...',
-                           text: '".$_GET["m"]."',
-                           type: '".$_GET["tm"]."',
-                           showCancelButton: false,
-                           confirmButtonColor: '#4db6ac',
-                           confirmButtonText: 'Aceptar',
-                          cancelButtonText: 'No, cancel plx!',
-                           closeOnConfirm: false,
-                           closeOnCancel: false
-                       });
-                   });
-                </script>";
-           }
-         }
-?>
+		
 
 
 
@@ -115,6 +94,8 @@
 						echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
 					}
 				 ?>
+
+				 
 			});
 			</script>
 		</head>
