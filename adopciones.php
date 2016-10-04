@@ -80,6 +80,27 @@ if(isset($_GET["pet"])){
           });
 
         });
+        $(".raza").change(function(){
+          var raza = $(this).val();
+          $.post("adopciones_ajax.php", {raza: raza}, function(data){
+            $(".listado").html(data);
+          });
+
+        });
+        $(".sexo").change(function(){
+          var sexo = $(this).val();
+          $.post("adopciones_ajax.php", {sexo: sexo}, function(data){
+            $(".listado").html(data);
+          });
+
+        });
+        $(".fundacion").change(function(){
+          var fundacion = $(this).val();
+          $.post("adopciones_ajax.php", {fundacion: fundacion}, function(data){
+            $(".listado").html(data);
+          });
+
+        });
 
         $(document).ready(function(){
          <?php
@@ -133,18 +154,18 @@ if(isset($_GET["pet"])){
           </div>
 
           <div class="col m3">
-            <select class="browser-default">
+            <select class="browser-default sexo">
               <option value="" disabled selected>Genero</option>
-              <option value="M">Macho</option>
-              <option value="H">Hembra</option>
-              <option value="all">No importa</option>
+              <option value="Macho">Macho</option>
+              <option value="Hembra">Hembra</option>
+              <!-- <option value="all">No importa</option> -->
             </select>
           </div>
 
           <div class="col m3">
-            <select class="browser-default">
+            <select class="browser-default raza">
               <option value="" disabled selected>Raza</option>
-              <option value="all">No importa</option>
+              <!-- <option value="all">No importa</option> -->
               <?php
               foreach ($razas as $row) {
                 echo "<option value = '".$row["ra_nombre"]."'>".$row["ra_nombre"]."</option>";
@@ -154,9 +175,9 @@ if(isset($_GET["pet"])){
           </div>
 
           <div class="col m3">
-            <select class="browser-default">
+            <select class="browser-default fundacion">
               <option value="" disabled selected>Fundación</option>
-              <option value="all">No importa</option>
+              <!-- <option value="all">No importa</option> -->
               <?php
               foreach ($fundaciones as $row) {
                 echo "<option value = '".$row["org_nombre"]."'>".$row["org_nombre"]."</option>";
