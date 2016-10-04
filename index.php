@@ -41,7 +41,7 @@
 			})
 			wow.init();
 		</script>
-	
+
 		<?php
 
        if(isset($_GET["m"]) and isset($_GET["tm"])){
@@ -133,8 +133,8 @@
 					<li><a href="#voluntarios" class="ancla"><i class="icono izquierda fa fa-paw"></i> ¿Quieres ser voluntario?</a></li>
 					<li><a href="#denuncias" class="ancla"><i class="icono izquierda fa fa-paw"></i> Ayuda una Mascota</a></li>
 					<li><a href="Eventos.php" ><i class="icono izquierda fa fa-paw"></i> Eventos</a></li>
-					<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
-					<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li>
+					<!-- <li><a href="#"><i class="icono izquierda fa fa-paw"></i> Donaciones</a></li>
+					<li><a href="#"><i class="icono izquierda fa fa-paw"></i> Cuidados</a></li> -->
 				</ul>
 			</nav>
 			<div class="banner-video" id="Inicio">
