@@ -43,8 +43,10 @@
 		</script>
 		<?php
 
-       if(isset($_GET["m"]) and isset($_GET["tm"])){
-         if($_GET["m"] != ""){
+       if(isset($_GET["m"]) and isset($_GET["tm"]))
+			 {
+         if($_GET["m"] != "")
+				 {
            echo "<script>
                    $(document).ready(function(){
                       sweetAlert({
@@ -196,9 +198,19 @@
 				             function(result)
 				             {
 				                 $("#confirmac").html(result.mn);
+												 if(result.ue == true)
+												 {
+													 $(".botn1").prop("disabled",true);
+												 }else{
+													 $(".botn1").prop("disabled",false);
+												 }
 				             }, "json");
 				         });
+<<<<<<< HEAD
+								});
+=======
 								 });
+>>>>>>> origin/master
 
 				 </script>
 			<a href="#" data-activates="slide-out" class="button-collapse"><div id="hamburger-menu" class="hamburger-menu">
