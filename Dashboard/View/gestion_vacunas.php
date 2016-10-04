@@ -46,9 +46,9 @@ $vacunas=gestion_vacuna::ReadAll();
 		</tr>
 		<tbody>
 			<?php
-			@$mensaje = $_REQUEST["m"];
+			// @$mensaje = $_REQUEST["m"];
 
-			echo @$mensaje;
+			// echo @$mensaje;
 
 			foreach ($vacunas as $row) {
 				echo"<tr>

@@ -6,6 +6,7 @@ require_once("../Model/conexion.php");
 require_once("../Model/cuidado.class.php");
 $cuidado=Gestion_cuidado::ReadAll();
  ?>
+
  <script type="text/javascript">
  function borrar(cod){
    var codigo = cod;
@@ -70,9 +71,10 @@ echo "</div>
                       ?>
                       <!-- se reemplaza el href por el onclick que carga el delete -->
                       <a href='#' id='btntrash' onclick="borrar('<?php echo $row["cu_cod_cuidado"];?>')" class='btn-floating waves-light red waves-effect' >
+                      <i class='small material-icons'>delete</i></a>
                     <?php
-                    echo "<i class='small material-icons'>delete</i>
-                      </a>
+                    echo "
+                      
                       </div>
                   </div>
                   <div class='col l4'>

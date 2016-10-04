@@ -41,6 +41,32 @@
 			})
 			wow.init();
 		</script>
+	
+		<?php
+
+       if(isset($_GET["m"]) and isset($_GET["tm"])){
+         if($_GET["m"] != ""){
+           echo "<script>
+                   $(document).ready(function(){
+                      sweetAlert({
+                           title: '...',
+                           text: '".$_GET["m"]."',
+                           type: '".$_GET["tm"]."',
+                           showCancelButton: false,
+                           confirmButtonColor: '#4db6ac',
+                           confirmButtonText: 'Aceptar',
+                          cancelButtonText: 'No, cancel plx!',
+                           closeOnConfirm: false,
+                           closeOnCancel: false
+                       });
+                   });
+                </script>";
+           }
+         }
+?>
+
+
+
 		<!-- link del menu -->
 		<script src="WebFloopets/js/efecto_menu.js"></script>
 		<script src="WebFloopets/js/desplegar_ayuda.js"></script>
@@ -145,6 +171,8 @@
 					<img src="WebFloopets/recursos/images/linea-azul.png">
 				</div>
 			</div>
+
+
 			<!-- Andrea Guzman -->
 			<!--Contenedor ayuda una mascota Ricardo_ochoa -->
 			<div class="row seccion2">

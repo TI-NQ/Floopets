@@ -18,12 +18,13 @@
 					include("Upload_image.php");
 				}
 				Gestion_cuidado::Create($cu_nombre,$cu_descripcion,$galeria);
-				$mensaje = "Se creo exitosamente";
+				$mensaje = base64_encode("El cuidado se creo exitosamente");
+				$tipo_mensaje = base64_encode("success");
 
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("ver_cuidados")."&m=$mensaje");
+			header("Location: ../View/dashboard.php?p=".base64_encode("ver_cuidados")."&m=$mensaje&tm=$tipo_mensaje");
 
 			break;
 			case 'u':
@@ -41,11 +42,12 @@
 					include("Upload_image.php");
 				}
 				Gestion_cuidado::Update($cu_cod_cuidado,$cu_nombre,$cu_descripcion,$galeria);
-				$mensaje = "Se actializo exitosamente";
+				$mensaje = base64_encode("El cuidado se modifico exitosamente");
+					$tipo_mensaje = base64_encode("success");
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
-			header("Location: ../View/dashboard.php?p=".base64_encode("ver_cuidados"));
+			header("Location: ../View/dashboard.php?p=".base64_encode("ver_cuidados")."&m=$mensaje&tm=$tipo_mensaje");
 			break;
 
 		case 'd':

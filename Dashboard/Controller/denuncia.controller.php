@@ -27,7 +27,7 @@
 				}
 				Gestion_denuncia::Create($td_cod_tipo_denuncia,$de_descripcion,$de_contacto,$de_telefono,$de_nombre,$de_imagen[0]);
 				$mensaje = "Su denuncia se creo exitosamente, en breve sera tomada por una fundacion.";
-        $tipo_mensaje = "info";
+        		$tipo_mensaje = "info";
 			} catch (Exception $e) {
 				$mensaje = "Ha ocurrido un error, el error fue :".$e->getMessage()." en ".$e->getFile()." en la linea ".$e->getLine();
 			}
