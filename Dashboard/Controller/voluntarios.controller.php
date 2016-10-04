@@ -87,6 +87,26 @@
  				header("Location: ../View/dashboard.php?p=".base64_encode("mi_organizacion"));
 			break;
 
+			case 'existe_voluntario':
+			  	$vo_cod_voluntario = $_POST["cedula"];
+			  	try{
+			  		$voluntario = Gestion_voluntarios::ReadbyCV($vo_cod_voluntario);
+
+			  		if(count($voluntario[0]) > 0){
+			  			$existe = true;
+			  			$message = "Ya existe un voluntario con este documento";
+			  		}else{
+			  			$existe = false;
+			  			$message = "";
+			  		}
+			  	}catch(Exception $e){
+			  		echo $e->getMessage();
+			  	}
+
+			  	echo json_encode(array('ue' => $existe, 'mn' => $message));
+
+			  break;
+
 
 	}
 
