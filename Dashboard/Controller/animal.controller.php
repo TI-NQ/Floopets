@@ -81,7 +81,13 @@
 
 			$animal =  Gestion_animal::ReadbyID(base64_decode($_REQUEST["an"]));
 
-			try {
+			if($_SESSION["usu_cod_usuario"]==""){
+    			$m = base64_encode("Debes iniciar session para adoptar!");
+    			$tm=base64_encode("warning");
+
+    			header("Location: ../../login.php?ms=$m&tms=$tm");
+  				}else{
+  					try {
 				//Aqui validamos que el usuario no tenga una una solicitud realizada
 				$solicitudes=Gestion_animal::Validar_adopcion($_SESSION["usu_cod_usuario"]);
 
@@ -112,7 +118,7 @@
           				$t_mensaje=base64_encode("success");
           				header("Location: ../View/dashboard.php?p=".base64_encode("solicitudes_enviadas")."&m=$mensaje&tm=$t_mensaje");
 					}else{
-						$mensaje=base64_encode("Lo sentimos no puedes adoptar!");
+						$mensaje=base64_encode("Solo los usuarios publicos pueden adoptar!");
 						$error=base64_encode("error");
 						header("Location: ../../adopciones.php?m=$mensaje&tm=$error");
 					}
@@ -130,6 +136,8 @@
           header("Location: ../View/dashboard.php?p=".base64_encode("mis_mascotas")."&m=$mensaje");
 
         }
+  				}
+			
 			break;
 
 		

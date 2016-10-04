@@ -25,6 +25,13 @@
               echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
             }
            ?>
+
+           <?php
+          if(isset($_GET["ms"]) )
+          {
+            echo "swal('".base64_decode(($_GET["ms"]))."','','".base64_decode(($_GET["tms"]))."');";
+          }
+         ?>
         });
 
       </script>

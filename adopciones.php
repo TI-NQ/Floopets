@@ -10,12 +10,7 @@ require_once("Dashboard/Model/raza.class.php");
 $funcadiones=Gestion_organizacion::ReadAll();
 $razas=Gestion_raza::ReadAll();
 //Validacion de logueo para adoptar
-if($_SESSION["usu_cod_usuario"]==""){
-    $m = base64_encode("Debes iniciar para adoptar!");
-    $tm=base64_encode("Advertencia");
 
-    header("Location: login.php?&m=$m&tm=$tm");
-  };
 
 if(isset($_GET["pet"])){
   $mascota = $_GET["pet"];
