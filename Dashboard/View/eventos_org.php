@@ -2,7 +2,12 @@
 
 require_once("../Model/conexion.php");
 require_once("../Model/evento.class.php");
-$evento=Gestion_evento::eve_org($_SESSION["org_cod_organizacion"]);
+require_once("../Model/usuarios.class.php");
+//Esta consulta trae los datos de la organizacion que esta ligada siempre y cuando la tenga
+$org_cod_organizacion=Gestion_usuarios::Mi_Organizacion($_SESSION["usu_cod_usuario"]);
+
+//Esta consulta trae los eventos que tiene la organizacion
+$evento=Gestion_evento::mis_eventos($org_cod_organizacion[1]);
 
 // @$mensaje = $_REQUEST["m"];
 //

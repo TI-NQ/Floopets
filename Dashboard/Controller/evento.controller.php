@@ -1,6 +1,8 @@
 <?php
+session_start();
 	require_once("../Model/conexion.php");
 	require_once("../Model/evento.class.php");
+	require_once("../Model/usuarios.class.php");
 
 	$accion = $_REQUEST["accion"];
 	switch ($accion) {
@@ -19,12 +21,13 @@
       	$eve_estado 				=$_POST["eve_estado"];
       		$eve_carpeta   			= $nombre_eve_imagen;
      	$count_galeria				= count($_FILES['eve_imagen']['name']);
+     	$org_cod_organizacion=Gestion_usuarios::Mi_Organizacion($_SESSION["usu_cod_usuario"]);
      	if ($eve_fecha<=$eve_fecha_hasta) {
      		try {
 				if($count_galeria != ""){
 					include("Upload_eve_imagen.php");
 				}
-				Gestion_evento::Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta);
+				Gestion_evento::Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta,$org_cod_organizacion[1]);
 				$mensaje = base64_encode("$eve_nombre se creo correctamente");
 				$tipo_mensaje= base64_encode("success");
 				header("Location: ../View/dashboard.php?p=".base64_encode("mis_eventos")."&m=$mensaje&tm=$tipo_mensaje");

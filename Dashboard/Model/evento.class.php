@@ -1,20 +1,37 @@
 <?php
 	class Gestion_evento{
 
-		function Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta){
+		function Create($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta,$org_cod_organizacion){
 			//Instanciamos y nos conectamos a la bd
 			$conexion=floopets_BD::Connect();
 			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
 
 			//Creamos el query de la consulta a la BD
-			$consulta="INSERT INTO evento (te_cod_tipo_evento, eve_nombre, eve_direccion,eve_fecha, eve_fecha_hasta,eve_hora ,eve_hora_hasta, eve_descripcion , eve_imagen , eve_estado , eve_carpeta) VALUES (?,?,?,?,?,?,?,?,?,?,?)";
+			$consulta="INSERT INTO evento (te_cod_tipo_evento, eve_nombre, eve_direccion,eve_fecha, eve_fecha_hasta,eve_hora ,eve_hora_hasta, eve_descripcion , eve_imagen , eve_estado , eve_carpeta,org_cod_organizacion) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)";
 
 			$query=$conexion->prepare($consulta);
-			$query->execute(array($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta));
+			$query->execute(array($te_cod_tipo_evento,$eve_nombre,$eve_direccion,$eve_fecha,$eve_fecha_hasta,$eve_hora,$eve_hora_hasta,$eve_descripcion,$eve_imagen,$eve_estado,$eve_carpeta,$org_cod_organizacion));
 
 			floopets_BD::Disconnect();
 		}
 
+
+		function mis_eventos($org_cod_organizacion){
+			//Instanciamos y nos conectamos a la bd
+			$conexion=floopets_BD::Connect();
+			$conexion->setAttribute(PDO::ATTR_ERRMODE,PDO::ERRMODE_EXCEPTION);
+
+
+			//Creamos el query de la consulta a la BD
+			$consulta="SELECT tipo_evento.*,evento.* FROM tipo_evento INNER JOIN evento on tipo_evento.te_cod_tipo_evento=evento.te_cod_tipo_evento WHERE evento.org_cod_organizacion=? " ;
+
+			$query=$conexion->prepare($consulta);
+			$query->execute(array($org_cod_organizacion));
+			$resultado = $query->fetchALL(PDO::FETCH_BOTH);
+			floopets_BD::Disconnect();
+
+			return $resultado;
+		}
 
 		function ReadALL(){
 			//Instanciamos y nos conectamos a la bd
