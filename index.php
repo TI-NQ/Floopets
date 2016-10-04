@@ -33,6 +33,19 @@
 		<script type="text/javascript" src ="WebFloopets/js/owl.carousel.min.js"></script>
 		<script type="text/javascript" src="WebFloopets/js/wow.js"></script>
 		  <script type="text/javascript" src="WebFloopets/sweetalert/dist/sweetalert.min.js"></script>
+			<script>
+			$(document).ready(function()
+			{
+				<?php
+					if(isset($_GET["m"]) and isset($_GET["tm"]))
+					{
+						echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
+					}
+				 ?>
+
+
+			});
+			</script>
 		<script type="text/javascript">
 			wow = new WOW({
 				boxClass:     'wow',
@@ -41,7 +54,7 @@
 			})
 			wow.init();
 		</script>
-		<?php
+		<!-- <?php
 
        if(isset($_GET["m"]) and isset($_GET["tm"]))
 			 {
@@ -64,7 +77,7 @@
                 </script>";
            }
          }
-		?>
+		?> -->
 		<!-- link del menu -->
 		<script src="WebFloopets/js/efecto_menu.js"></script>
 		<script src="WebFloopets/js/desplegar_ayuda.js"></script>
@@ -104,19 +117,7 @@
 				})
 			});
 			</script>
-			<script>
-			$(document).ready(function()
-			{
-				<?php
-					if(isset($_GET["m"]) and isset($_GET["tm"]))
-					{
-						echo "swal('".base64_decode($_GET["m"])."','','".base64_decode($_GET["tm"])."');";
-					}
-				 ?>
 
-
-			});
-			</script>
 
 		</head>
 		<body>
@@ -475,7 +476,7 @@
 													?>
 												</select>
 												<span id="confirmor" class="red-text accent-3 col s12 left"></span>
-												
+
 											</div>
 										</div>
 										<div class="row">
