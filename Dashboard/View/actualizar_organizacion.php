@@ -4,6 +4,13 @@
 	$organizacion=Gestion_organizacion::ReadbyID(base64_decode($_REQUEST["org"]));
  ?>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+<div class="container">
+
+<h3>Actualizar Organización</h3>
+
+</div>
+<br><br>
 <form id="form" class="col s12" action="../Controller/organizacion.controller.php" method="POST">
   		<div class="row">
 				<div class="row">
@@ -50,7 +57,7 @@
                       </div>
                   </div>
 				</div>
-				<a href="<?=$_SERVER['HTTP_REFERER'] ?>" class="waves-effect waves-light btn red darken-1 left">Cancelar</a>
-				<button class="waves-effect waves-light  btn right cyan darken-1" name="accion" value="u" style="margin-right: 50px;">Actualizar</button>
+				<a href="<?=$_SERVER['HTTP_REFERER'] ?>" class="waves-effect waves-light btn grey darken-2 left">Cancelar</a>
+				<button class="waves-effect waves-light  btn right " name="accion" value="u" style="margin-right: 50px;">Actualizar</button>
   		</div>
 	</form>
