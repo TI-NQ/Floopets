@@ -41,14 +41,6 @@
 			})
 			wow.init();
 		</script>
-<<<<<<< HEAD
-
-=======
-	
-<<<<<<< HEAD
-		
-=======
->>>>>>> cde9d77d7997a7d7c782fa575cbd745feaf853c8
 		<?php
 
        if(isset($_GET["m"]) and isset($_GET["tm"])){
@@ -71,10 +63,6 @@
            }
          }
 		?>
->>>>>>> origin/master
-
-
-
 		<!-- link del menu -->
 		<script src="WebFloopets/js/efecto_menu.js"></script>
 		<script src="WebFloopets/js/desplegar_ayuda.js"></script>
@@ -124,10 +112,10 @@
 					}
 				 ?>
 
-				 
+
 			});
 			</script>
-			
+
 		</head>
 		<body>
 			<script type="text/javascript">
@@ -136,8 +124,8 @@
 			    nombre = $('#nombre').val();
 			    telefono = $('#telefono').val();
 			    direccion = $('#direccion').val();
-			    org_vol = $('#org_vol').val();    
-			    
+			    org_vol = $('#org_vol').val();
+
 
 			    if (cedula == "") {
 			      $("#confirmac").text("Este campo es obligatorio");
@@ -170,7 +158,7 @@
 			      return false;
 			    }if(org_vol != "") {
 			      $("#confirmor").text("");
-			    
+
 			    }
 			    else {
 			      return true;
@@ -210,7 +198,8 @@
 				                 $("#confirmac").html(result.mn);
 				             }, "json");
 				         });
-				         
+								 });
+
 				 </script>
 			<a href="#" data-activates="slide-out" class="button-collapse"><div id="hamburger-menu" class="hamburger-menu">
 			  <div class="first"></div>
@@ -441,7 +430,7 @@
 											<div class="input-field">
 												<div class="col s6 campos">
 													<label for="nombre">Nombre</label>
-													<input type="text" name="vo_nombre" id="nombre" required onkeypress="return validar(event)"> 
+													<input type="text" name="vo_nombre" id="nombre" required onkeypress="return validar(event)">
 													<span id="confirman" class="red-text accent-3 col s12 left"></span>
 												</div>
 											</div>
